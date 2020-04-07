@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_3621823108_2148321403
+#define COOKIE1_ 3621823108U
+#define COOKIE2_ 2148321403U
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -131,7 +133,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 3621823108U, 2148321403U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -234,7 +236,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3621823108U, 2148321403U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -490,7 +492,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3621823108U, 2148321403U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -590,7 +592,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 3621823108U, 2148321403U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
 
 
 static refalrts::FnResult func_PrintVersion(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -613,8 +615,8 @@ static refalrts::FnResult func_PrintVersion(refalrts::VM *vm, refalrts::Iter arg
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 AsIs: e.Product#1/2 HalfReuse: ','/1 }" a part of Refal-5-lambda compiler toolkit, version 2.5"/5 >/7 </8 & Prout/9"Copyright (c) 2008-2016, Alexander Konovalov, 2016-2020, BMSTU IU9 Department"/10 >/12 </13 & Prout/14"All rights reserved.\n"/15 >/17 Tile{ ]] }
-  refalrts::alloc_chars(vm, context[5], context[6], " a part of Refal-5-lambda compiler toolkit, version 2.5", 55);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 AsIs: e.Product#1/2 HalfReuse: ','/1 }" a part of Refal-5-lambda compiler toolkit, version 2.6"/5 >/7 </8 & Prout/9"Copyright (c) 2008-2016, Alexander Konovalov, 2016-2020, BMSTU IU9 Department"/10 >/12 </13 & Prout/14"All rights reserved.\n"/15 >/17 Tile{ ]] }
+  refalrts::alloc_chars(vm, context[5], context[6], " a part of Refal-5-lambda compiler toolkit, version 2.6", 55);
   refalrts::alloc_close_call(vm, context[7]);
   refalrts::alloc_open_call(vm, context[8]);
   refalrts::alloc_name(vm, context[9], functions[efunc_Prout]);

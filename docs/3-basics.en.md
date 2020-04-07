@@ -18,30 +18,30 @@ syntax). But these listed expressive means exist in the language.
 
 # Hello, World! Program
 
-In the [previous chapter](2-intro.en.md), we managed to compile and to run a
-program [`hello.ref`](hello.ref), which printed out a string “Hello, World!”.
+In the [previous chapter](2-intro.en.md), we've managed to compile and to run
+a program [`hello.ref`](hello.ref), which printed out a string “Hello, World!”.
 Let us learn how to read and understand its source code.
 
     $ENTRY Go {                                 /* 1 */
       /* empty */ = <Prout 'Hello, World!'>;    /* 2 */
     }                                           /* 3 */
 
-Attentive readers noticed this program is different from the other in the
+Attentive readers have noticed that this program differs from the other in the
 previous chapter: strings starting from `/*` and ending at `*/` were added.
 These are _comments._ Any text between `/*` and `*/` is ignored by the compiler
-and is used to clarify the program idea.
+and used to clarify the program idea.
 
-There were added comments in this program, line numbering (for convenience of
-a quick reference from the manual text) and the word `/*empty*/`, which
-emphasizes readers attention to the fact there is nothing at that place of the
-program. It sounds strange but it will make more sense.
+Comments, line numbering (for convenience of a quick reference from the manual text)
+and the word `/*empty*/` were added in this program; line numbering, which emphasizes
+readers' attention to the fact that there is nothing in this part of the program. It sounds
+strange but it will make more sense.
 
-The restricted by `/*` and `*/` signs comments are _multi-line._ It means `*/`
+Comments that are restricted to `/*` and `*/` are _multi-line._ This means that`*/`
 does not have to be on the same string that `/*`. There are not only multi-line
-comments but _single-lined._ Any string starts from `*` sign (in the first
+comments but _single-lined._ Any string starts with the `*` sign (in the first
 column) is ignored by the compiler.
 
-E.g. the next program is the same but is littered with useless comments.
+E.g. the next program is the same but filled  with useless comments.
 
     /*
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -71,7 +71,7 @@ Let’s get back to our function.
     }                                           /* 3 */
 
 Any program in Refal-5λ is a set of functions (it is a functional programming
-language after all). This program is not an exception. The `Go` function is
+language after all). This program is no an exception. The `Go` function is
 defined here. The function definition is written as the name of the function
 followed by a _block_ (the function body enclosed in braces: strings 1 and 3
 respectively). The `Go` name is not coincidentally: any Refal program must have
@@ -82,42 +82,42 @@ Hieroglyphic `$ENTRY` will be clarified in the next sections. Just need to know
 that the keyword `$ENTRY` must precede the `Go` (or `GO`) program entry point.
 
 There is a single function Go _sentence_ in the second string. A sentence is a
-rule, which defines how to put up the function value on an argument subset. A
-function can consist of several sentences, each ends with a `;` sign (a
+rule, which defines how to put the value of a function in a subset of arguments.
+A function can consist of several sentences, each ends with a `;` sign (a
 semicolon).  A semicolon may not be used at the end of the last sentence.
 
 Any sentence consists of two parts – _the left part, a pattern_, which describes
-a value subset of the function argument on which the sentence is applied. And
-_the right part, a result_ that describes the function value on the subset. The
+a value subset of the function argument that the sentence is applied to. And
+_the right part, a result_ that describes the function value in the subset. The
 left and the right parts are divided by `=` (equality) sign.
 
-Note. _In the future we will consider the extended Refal syntax in which
-sentence syntax will be more complicated._
+Note. _In the future, we will consider the extended Refal syntax, in which
+the sentence syntax will be more complicated._
 
-The sentence in the program `hello.ref` means that it can be applied on an
+The sentence in the program `hello.ref` means that it can be applied to an
 empty function argument only (there is nothing before the equality). The `/*
-empty */` comment stresses the fact. The right side describes the `Go` function
+empty */` comment highlights the fact. The right side describes the `Go` function
 definition with an empty argument as the result of the `Prout` function computing.
-A sequence of signs `Hello, World!` is transferred to it. A function call on
+A sequence of signs `Hello, World!` is transferred to it. A function call in
 Refal is written with angle brackets `<` and `>`. The function name has to be
 placed after the opening brace.
 
 The function Prout computes “emptiness” with any argument. However, its
-implementation has some side effects. It prints an argument on the screen. That
+implementation has some side effects. It prints an argument. That
 is why it is called.
 
-Almost all Refal programs are written actually for these side effects. After
-the function `Go` (or `GO`) computing the result is discarded and the program is
+Almost all Refal programs are written actually for these side effects. After calculating
+the  `Go` (or `GO`) function the result is discarded and the program is
 completed. The user sees only what was displayed on the screen by the function
 `Prout`, recorded to files or transferred “out” of the computing process by
 other ways.
 
 Note. _There are exceptions. On the one hand, these are automated tests
 (autotests) – programs that launch the testing function, check its result and
-are finalized. If this verification is successful the program is just
-completed. In another case the program termites by a fail-safe.  The tests run
-environment can distinguish these two cases and inform the user unsuccessful
-runs.  Another example are researches in the field of automatic program
+are finalized. If this verification is successful the program silently
+terminates. In another case the program crashes with an error. The tests run
+environment can distinguish between these two cases and inform the user about
+failed launches. Another example is research in the field of automatic program
 conversion and verification (e.g. by supercompilation). In this case, an
 interesting math function is written in Refal. It is fed to the tool (e.g
 Refal-5 supercompiler SCP4 (\[1], \[2], \[3])) and then the conversion result or
@@ -125,7 +125,7 @@ the function analysis are examined. Researches in the field of tool
 development is one of the most important Refal application today._
 
 The function `Prout` is one of the functions that is included in the language
-standard library. And it is implicitly available for using in any program. In
+standard library. And it is implicitly available for use in any program. In
 classic Refal-5 it is built in function that means it is implicitly defined in
 any program.  However, Refal-5λ allows us to write programs in which a standard
 library is not used.
@@ -165,15 +165,15 @@ function call is written with angular brackets. The empty value is written as
 an empty space. That means that the Refal program execution is the same thing
 as the function `<Go>` or `<Go /*empty*/>` call. In the first case, we haven’t
 written anything (we have attached one to the other) between the function name
-`Go` and the closing brace `>`. In the second case, we have stucked a comment
-for illustrative purposes. A function call with an empty argument is usually
-written without a comment inside.
+`Go` and the closing brace `>`. In the second case, we have stuck a comment for
+illustration. A function call with an empty argument is usually written without
+a comment inside.
 
 ## Examples of other programs.
 
 ### Programs with several sentences
 
-Before turning to other examples, we have to explain the syntax that is not
+Before moving to other examples, we have to explain the syntax that is not
 reflected in the `hello.ref` listing.
 
 First, Refal is a language with free syntax. The transition to a new line is
@@ -205,7 +205,7 @@ with a dash._
     }
 
 The left-hand parts of the sentences could be written together, for example
-`'00'`. It would not affect the work of the program because they were written
+`'00'`. It would not affect the program's performance because they were written
 separately for readability.
 
 It is easy to understand that the first sentence is applicable when the
@@ -268,7 +268,7 @@ Functions `BinAdd`, `BinSub`, `IsEqual` and `Go` can be put in one file (let's
 call it [`binmath-1.ref`](binmath-1.ref)) and compiled with the following
 command:
 
-    srefc binmath-1.ref
+    rlc binmath-1.ref
 
 then you get an executable file `binmath-1.exe` (or `binmath-1` on unix-like)
 that will print on startup
@@ -354,9 +354,9 @@ the right side of the sentence.
 
 We need to clarify the process of Refal function execution now.
 
-1. A sentence is selected from the left side of which you can get a function
+1. A sentence is selected from the left side in which you can get the function
    argument by changing the variables in it to some values. If there are
-   several such sentences, it is chosen with the one with the smallest number.
+   several such sentences, then the one with the smallest number is selected.
    If there wasn’t such sentence, then the program ends with an error of
    recognition impossible.
 2. The variables values are fixed when they request to the function argument
@@ -642,12 +642,12 @@ versions._
 
 To compile and run the program for Windows, type:
 
-    srefc pushkin.ref
+    rlc pushkin.ref
     pushkin.exe
 
 For Linux:
 
-    srefc pushkin.ref
+    rlc pushkin.ref
     ./pushkin
 
 The program should print the following:
@@ -710,7 +710,7 @@ _Number symbol_ or _macrodigit_ is a number in the range between 0 and 2³²−1
 written in decimal form. For example, 1, 10, 65536, 4294967295 (the biggest
 macrodigit).
 
-For the comfort by work on Refal, there are some integrated arithmetic
+For the comfort by work in Refal, there are some integrated arithmetic
 functions:
 
 * Add – summation,
@@ -826,7 +826,7 @@ split into parts)
 
 # Other types of symbols: words
 
-While programming on Refal the user often has a necessity to mark different
+While programming in Refal the user often has a necessity to mark different
 types of objects or conditions: it is possible for a function to end
 successfully or not. State machine can possibly have different conditions.
 A program can manipulate different types of objects (representation of tokens
@@ -906,14 +906,14 @@ identical to the words without quotes – `"Success"`, `"SyntaxError"`.
 
 ### Escape sequences
 
-At first glance, that it was impossible to write a character that represents
-single quote or composed character that containing double quote. But that's not
+At first glance, it was impossible to write a character representing a single
+quote or a composed character containing a double quote. But that's not
 true. We can use _escape sequences_ (special marking for some symbols) in a
 chain of letters and composed characters.
 
-Escape sequence looks like sign `\`, followed by one or more other signs. All of
-them make up one character (if it is written into single quotes), or one of
-characters in compound symbol. In Refal-5λ following escape sequence are
+Escape sequence looks like characters `\`, followed by one or more other signs. All of
+them make up a single character (if it is written in single quotes), or one of the
+characters in a  compound symbol.  In Refal-5λ following escape sequence are
 permissible:
 * `\'` — single quote, `'`,
 * `\"` — double quotation mark, `"`,
@@ -948,41 +948,41 @@ and vice versa for uniformity.
 
 > This section has alternative translations **one**, [two](3-basics.en-alt.md).
 
-We referred earlier to the functions in the right part of a sentence which are
-calculated somehow after a substitution of variables. Now it is time to
-specify, how exactly, because it is impossible to write effective programs and
-to execute debugging of programs on Refal-5λ without it.
+We have referred earlier to the functions in the right part of a sentence which are
+calculated somehow after a substitution of variables. Now it's time to clarify exactly
+how, because without this it is impossible to write effective programs and debug programs
+in Refal-5λ.
 
 It is said that the Refal program is executed by the _abstract refal-machine_ —
 the imaginary calculating machine that may understand the Refal syntax. This
 machine has two areas of memory: program field, storing all the definitions of
-functions of the program, and a view field, storing a current status of
-computation. The status of computation is described in the form of the _active
-expression_ – expression of the Refal language which contains activation
-brackets, but at the same time cannot contain variables.
+functions of the program, and a view field, storing the current status of
+computation. The status of computation is described as the active expression —
+the Refal expression which contains _activation brackets_, but at the same time
+cannot contain variables.
 
-Refal-maсhine executes the program step-by-step. Each step is an execution of
+Refal-maсhine executes the program step-by-step. Each step is the execution of
 the following sequence of actions.
 
-1. Refal-maсhine finds in a view field the most left couple of activation
-   brackets, such that doesn’t include other angle brackets in this call. This
-   section of a view field is called primary active sub-expression.
-2. Refal-maсhine observes what is on the right of the left activation bracket :
+1. The Refal machine finds the leftmost pair of activation brackets in the field
+    of view, one that does not include other angle brackets in this call.This section
+    of a view field is called the primary active sub-expression.
+2. The Refal-maсhine observes what is on the right of the left activation bracket :
    there should be the function name. If it is not there (language allows to
    write such a program), then the refal-machine stops with an error
    “recognition impossible”.
-3. Refal-maсhine finds function name in the program field. Function can be
-   either written on Refal or built-in. If it is the built-in function – the
+3. The Refal-maсhine finds a function name in the program field.The function can either
+    be written in Refal or built-in. If it is the built-in function – the
    refal-machine transfers control on the procedure in machine code
    implementing the logic of this function. If the function is written on
    Refal, the machine selects the first sentence of the function.
 4. If it is possible to choose such values of variables in the left part of the
    current sentence that it might become the function argument, then the
-   point 5 is implemented. Otherwise, the following sentence is selected and
+   point 5 has been implemented. Otherwise, the following sentence is selected and
    point 4 repeats. If there are no sentences anymore, then the refal-machine
-   stops with an error "recognition impossible".
+   stops with the error "recognition impossible".
 5. The found values of variables are added to the right part of the current
-   sentence. Refal-machine inserts received expression into the view field to
+   sentence. The Refal-machine inserts received expression into the view field at
    the place of the primary active subexpression.
 6. If there are activation brackets in the view field, then the refal-machine
    executes the following step – returns to the point 1. Otherwise, the
@@ -1002,9 +1002,9 @@ then the program won’t be started.
 
 Notes.
 
-1. _Classical REFAL-5 doesn’t support empty functions, any function has to have
+1. _Classical REFAL-5 doesn’t support empty functions, any function must to have
    at least one sentence. Refal-5λ supports – the call of such function leads
-   to an error "recognition impossible"._
+   to the error "recognition impossible"._
 2. _The current implementation at the time of the program creation can’t check
    that the `GO` or `Go` function is absent in the program. In this case there
    will be created the program which at start will display the error message
@@ -1013,9 +1013,9 @@ Notes.
 
 It is possible to make two important conclusions from this algorithm.
 
-Firstly, the primary active subexpression chooses the most left couple of
-activation brackets which isn’t containing in itself other activation brackets.
-It follows that Refal – is _applicative language,_ and an order of function
+Firstly, the primary active subexpression selects the leftmost pair of
+activation brackets that does not contain any other activation brackets.
+It follows that the Refal – is an _applicative language,_ and an order of function
 computations is accurately defined: from left to right. I.e. if there are
 several calls of functions in the right part of the sentence, then they will be
 calculated from left to right, from the most internal to the most external.
@@ -1026,17 +1026,17 @@ Secondly, it immediately follows from semantics of a view field that Refal
 implements so-called _optimization of a tail recursion._
 
 In many imperative programming languages the recursion is quite expensive —
-overhead costs on preservation of a context of calculations are needed – points
+it requires the overhead of maintaining the calculation context – points
 where process of execution has to return after the completion of a tail call.
 And the memory for this preservation is given out from limited area – a system
 stack. The programmer, as a rule, can’t control the size of a system stack,
-and at its overflow the program abnormally comes to the end. Therefore in such
-languages you are not to use a recursion for the implementation of the cyclic
-repeating actions (particularly as in imperative languages for this purpose
-there are iteration statements).
+and at its overflow the program abnormally comes to the end. Therefore, in such
+languages, you should not use a recursion to implement cyclically repeated
+actions (especially since there are iterative operators for this in imperative
+languages).
 
-In Refal functions don’t need to keep a context of calculations for return of a
-value as the function doing a recursive call comes to the end before the next
+The Refal functions do not need to keep a calculation context to return a
+value as the function that performs a recursive call is terminated before the next
 recursive call. And it means that if the recursive call in the right part of
 the sentence is executed the last, incomplete calculations won’t collect in the
 view field. I.e. In fact there won’t be observed the recursion (the enclosed
@@ -1265,27 +1265,27 @@ _cyclic processes_ and to use the term _iteration,_ etc.
 
 ## Object, pattern, active and result expressions
 
-Before we will continue study of Refal-5λ, necessary to institute several
-important definitions. We considered different types of Refal expressions that
+Before we continue studying Refal-5λ, it is necessary to institute several
+important definitions. We've considered different types of Refal expressions that
 can contain different syntactic constructions. Now it's time to introduce
 strict categorization.
 
-* Refal expression called _object expression_ that can contain only symbols and
-  round brackets. Accordingly, terms of which is object expression drafted
-  called _object terms._ Function arguments can be only object expression.
-* Expression that assembled from symbols, round and angular brackets called
-  _active expression_ or _ground expression._ Content of a field of vision can be
-  only active expression.
-* Expression assembled from symbols, structural brackets and variables called
-  _pattern expression_ or _pattern._ The left sentence part is pattern
+* Refal expression is called an _object expression_ that can contain only symbols and
+  round brackets. Accordingly, terms that make up an object expression are
+  called an _object terms._ Function arguments can be only an object expression.
+* An expression that assembled from symbols, round and angled brackets is called an
+  _active expression_ or a _ground expression._ The content of the view field can
+  only be an active expression.
+* An expression made up of symbols, structural brackets , and variables is called a
+  _pattern expression_ or _pattern._ The left sentence part is a pattern
   expression.
-* Expression assembled from symbols, round and angular brackets, variables
-  called _result expression_ or _result._ Right parts of sentence are result
-  expressions.
+* An expression made up of symbols, round and angled brackets,
+  variables is called a _result expression_ or _result._ The right parts of the
+  sentence are expressions of the result.
 
-Note: _the word ‘pattern’ often used like synonym of ‘left part’, and ‘the
-result’ like synonym of right part. This is right terminology too and meaning
-of word usually is clear by context._
+Note: _the word ‘pattern’ is often used as a synonym for ‘left part’, and ‘the
+result’ is often used as a synonym for the right part. This is also the correct
+terminology, and the meaning of the word is usually clear from the context._
 
 All four types of expressions can be imaged as a figure:
 
@@ -1299,12 +1299,12 @@ All four types of expressions can be imaged as a figure:
     Symbols,round       → → → → → → → → →   symbols, round and angular
   and angular brackets                         brackets, variables
 
-Object and active expressions exist only during the execution of a program like
-function arguments and the content of view field (the content of static boxes
-and stack could be added we will be considering later.) While pattern and
-result expressions exist only in source code like left and right parts of
+Object and active expressions exist only during the execution of a program such as
+function arguments and the content of the view field (the content of static boxes
+and stack could be added we will consider later.) While pattern and
+result expressions exist only in source code as left and right parts of
 sentences. The reason for this is that there were variables. Pattern expression
-is template describing multiple object expressions. Result expression is
+is a template that describes multiple object expressions. Result expression is
 template from which active expression is built.
 
 > *Translation to English of this hunk of this paper is prepared by*

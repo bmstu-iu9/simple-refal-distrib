@@ -15,13 +15,13 @@ goto :EOF
 
 :MAKE_PREFIXES
 setlocal
-  call ..\bin\srmake.bat %SCRIPT_FLAGS% rich%DEBUG%-prefix-exe ^
+  call ..\bin\rlmake.bat %SCRIPT_FLAGS% rich-prefix-exe ^
     -o ..\lib\rich%DEBUG%.exe-prefix || exit /b 1
 
-  call ..\bin\srmake.bat %SCRIPT_FLAGS% slim%DEBUG%-prefix-exe ^
+  call ..\bin\rlmake.bat %SCRIPT_FLAGS% slim-prefix-exe ^
     -o ..\lib\slim%DEBUG%.exe-prefix || exit /b 1
 
-  call ..\bin\srmake.bat %SCRIPT_FLAGS% --makelib rich%DEBUG%-prefix-lib ^
+  call ..\bin\rlmake.bat %SCRIPT_FLAGS% --makelib rich-prefix-lib ^
     -o ..\lib\rich%DEBUG%.lib-prefix || exit /b 1
 endlocal
 goto :EOF

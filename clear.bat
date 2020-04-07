@@ -1,5 +1,5 @@
 @echo off
 erase bin\*.exe
-if exist bin\*.dll erase bin\*.dll
-if exist bin\*.so erase bin\*.so
+if exist lib\*.dll erase lib\*.dll
+if exist lib\*.so erase lib\*.so
 erase lib\*.*-prefix

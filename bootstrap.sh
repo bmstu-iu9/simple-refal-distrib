@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ "$1" == "--debug" ]; then
-  DEBUG=ON
-else
-  DEBUG=OFF
-fi
-
 chmod +x bootstrap.sh clear.sh bin/sr{efc,make}
 
 source ./scripts/load-config.sh . || exit 1
@@ -18,18 +12,18 @@ make_dir() {
   DIR=$1
   TARGET=bin/$2$(platform_exe_suffix)
 
-  echo ... compile $2
-  if [ $DEBUG == ON ]; then
-    FILELIST=$(ls $DIR/*.cpp)
+  if [[ "$3" == "DEBUG" ]]; then
+    DEBUGDIR=debug
   else
-    FILELIST=$(
-      ls $DIR/*.cpp | \
-      grep -v refalrts-diagnostic-initializer | \
-      grep -v refalrts-debugger \
-    )
+    DEBUGDIR=debug-stubs
   fi
 
-  $CPPLINEE$TARGET -Ilib/scratch-rt $FILELIST \
+  echo ... compile $2
+  FILELIST=$(ls $DIR/*.cpp)
+  $CPPLINEE$TARGET \
+    -Ilib/scratch-rt \
+    -Ilib/scratch-rt/$DEBUGDIR \
+    $FILELIST \
     $(platform_subdir_lookup lib/scratch-rt)/refalrts-platform-specific.cpp \
     lib/scratch-rt/platform-POSIX/refalrts-platform-POSIX.cpp \
     $CPPLINEESUF
@@ -42,16 +36,22 @@ make_dir() {
   $APPENDER $TARGET $DIR/*.rasl || exit 1
 }
 
-make_dir compiler srefc-core
-make_dir lexgen lexgen
-make_dir srmake srmake-core
-make_dir rsl-decompiler rsl-decompiler
+make_dir compiler rlc-core
+make_dir lexgen rl-lexgen
+make_dir interpreter rlgo DEBUG
+make_dir make rlmake-core
+make_dir rsl-decompiler rl-rsl-decompiler
+
+cp bin/{rlc,srefc}-core$(platform_exe_suffix)
+cp bin/{rl-,}lexgen$(platform_exe_suffix)
+cp bin/{rl,sr}make-core$(platform_exe_suffix)
+cp bin/{rl-,}rsl-decompiler$(platform_exe_suffix)
 
 ( cd lib-prefixes && ./make.sh ) || exit 1
 
 for L in Hash Library GetOpt LibraryEx Platform; do
-  bin/srmake --scratch -X-OCdDPRS --makelib "lib/src/$L" \
-    -o "bin/$L$(platform_lib_suffix)" || exit 1
+  bin/rlmake --scratch -X-OCdDPRS --makelib "lib/src/$L" \
+    -o "lib/$L$(platform_lib_suffix)" || exit 1
 done
 
 rm -f $APPENDER

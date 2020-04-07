@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_3036607253_156879999
+#define COOKIE1_ 3036607253U
+#define COOKIE2_ 156879999U
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -148,7 +150,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 3036607253U, 156879999U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -251,7 +253,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3036607253U, 156879999U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -507,7 +509,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3036607253U, 156879999U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -607,7 +609,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 3036607253U, 156879999U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
 
 
 static refalrts::FnResult func_GenerateFromDFA(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -713,7 +715,7 @@ static refalrts::FnResult func_WriteFunction(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteFunction("WriteFunction", 3036607253U, 156879999U, func_WriteFunction);
+static refalrts::NativeReference nat_ref_WriteFunction("WriteFunction", COOKIE1_, COOKIE2_, func_WriteFunction);
 
 
 static refalrts::FnResult func_WriteAlternative(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -759,7 +761,7 @@ static refalrts::FnResult func_WriteAlternative(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteAlternative("WriteAlternative", 3036607253U, 156879999U, func_WriteAlternative);
+static refalrts::NativeReference nat_ref_WriteAlternative("WriteAlternative", COOKIE1_, COOKIE2_, func_WriteAlternative);
 
 
 static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -810,7 +812,7 @@ static refalrts::FnResult func_gen_WriteAlternativem_Aux_S2L1(refalrts::VM *vm, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", 3036607253U, 156879999U, func_gen_WriteAlternativem_Aux_S2L1);
+static refalrts::NativeReference nat_ref_gen_WriteAlternativem_Aux_S2L1("WriteAlternative-Aux$2\\1", COOKIE1_, COOKIE2_, func_gen_WriteAlternativem_Aux_S2L1);
 
 
 static refalrts::FnResult func_WriteAlternativem_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -937,7 +939,7 @@ static refalrts::FnResult func_WriteAlternativem_Aux(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WriteAlternativem_Aux("WriteAlternative-Aux", 3036607253U, 156879999U, func_WriteAlternativem_Aux);
+static refalrts::NativeReference nat_ref_WriteAlternativem_Aux("WriteAlternative-Aux", COOKIE1_, COOKIE2_, func_WriteAlternativem_Aux);
 
 
 static refalrts::FnResult func_Head(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1020,7 +1022,7 @@ static refalrts::FnResult func_Head(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Head("Head", 3036607253U, 156879999U, func_Head);
+static refalrts::NativeReference nat_ref_Head("Head", COOKIE1_, COOKIE2_, func_Head);
 
 
 static refalrts::FnResult func_Flush(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1130,7 +1132,7 @@ static refalrts::FnResult func_Flush(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Flush("Flush", 3036607253U, 156879999U, func_Flush);
+static refalrts::NativeReference nat_ref_Flush("Flush", COOKIE1_, COOKIE2_, func_Flush);
 
 
 static refalrts::FnResult func_NextStatem_L(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1198,7 +1200,7 @@ static refalrts::FnResult func_NextStatem_L(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", 3036607253U, 156879999U, func_NextStatem_L);
+static refalrts::NativeReference nat_ref_NextStatem_L("NextState-L", COOKIE1_, COOKIE2_, func_NextStatem_L);
 
 
 static refalrts::FnResult func_NextStatem_R(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1274,7 +1276,7 @@ static refalrts::FnResult func_NextStatem_R(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_NextStatem_R("NextState-R", 3036607253U, 156879999U, func_NextStatem_R);
+static refalrts::NativeReference nat_ref_NextStatem_R("NextState-R", COOKIE1_, COOKIE2_, func_NextStatem_R);
 
 
 //End of file

@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_2196706149_3254941665
+#define COOKIE1_ 2196706149U
+#define COOKIE2_ 3254941665U
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -135,7 +137,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 2196706149U, 3254941665U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -238,7 +240,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 2196706149U, 3254941665U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -494,7 +496,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 2196706149U, 3254941665U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -594,7 +596,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 2196706149U, 3254941665U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
 
 
 static refalrts::FnResult func_Flexm_Desugar(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -670,7 +672,7 @@ static refalrts::FnResult func_Passm_RemoveRange(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveRange("Pass-RemoveRange", 2196706149U, 3254941665U, func_Passm_RemoveRange);
+static refalrts::NativeReference nat_ref_Passm_RemoveRange("Pass-RemoveRange", COOKIE1_, COOKIE2_, func_Passm_RemoveRange);
 
 
 static refalrts::FnResult func_Passm_RemoveOpt(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -702,7 +704,7 @@ static refalrts::FnResult func_Passm_RemoveOpt(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveOpt("Pass-RemoveOpt", 2196706149U, 3254941665U, func_Passm_RemoveOpt);
+static refalrts::NativeReference nat_ref_Passm_RemoveOpt("Pass-RemoveOpt", COOKIE1_, COOKIE2_, func_Passm_RemoveOpt);
 
 
 static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -734,7 +736,7 @@ static refalrts::FnResult func_Passm_RemoveOneMany(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Passm_RemoveOneMany("Pass-RemoveOneMany", 2196706149U, 3254941665U, func_Passm_RemoveOneMany);
+static refalrts::NativeReference nat_ref_Passm_RemoveOneMany("Pass-RemoveOneMany", COOKIE1_, COOKIE2_, func_Passm_RemoveOneMany);
 
 
 //End of file

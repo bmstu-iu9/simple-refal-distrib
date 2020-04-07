@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_2835852153_894198459
+#define COOKIE1_ 2835852153U
+#define COOKIE2_ 894198459U
 
 enum efunc {
   efunc_HashLittle2m_Chars = 0,
@@ -18,7 +20,7 @@ enum efunc {
 
 using refalrts::UInt32;
 
-#line 22 "Hash.cpp"
+#line 24 "Hash.cpp"
 
 static refalrts::FnResult func_HashLittle2m_Chars(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -183,7 +185,7 @@ static refalrts::FnResult func_HashLittle2m_Chars(refalrts::VM *vm, refalrts::It
 #undef final
 #undef mix
   return refalrts::cSuccess;
-#line 187 "Hash.cpp"
+#line 189 "Hash.cpp"
 }
 
 static refalrts::NativeReference nat_ref_HashLittle2m_Chars("HashLittle2-Chars", 0U, 0U, func_HashLittle2m_Chars);

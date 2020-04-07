@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_4145616865_25143199
+#define COOKIE1_ 4145616865U
+#define COOKIE2_ 25143199U
 
 enum efunc {
   efunc_FoldErrors = 0,
@@ -133,7 +135,7 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 4145616865U, 25143199U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", COOKIE1_, COOKIE2_, func_Inc);
 
 
 static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -409,7 +411,7 @@ static refalrts::FnResult func_MarkupArguments(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", 4145616865U, 25143199U, func_MarkupArguments);
+static refalrts::NativeReference nat_ref_MarkupArguments("MarkupArguments", COOKIE1_, COOKIE2_, func_MarkupArguments);
 
 
 static refalrts::FnResult func_MarkupAllFiles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -491,7 +493,7 @@ static refalrts::FnResult func_MarkupAllFiles(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", 4145616865U, 25143199U, func_MarkupAllFiles);
+static refalrts::NativeReference nat_ref_MarkupAllFiles("MarkupAllFiles", COOKIE1_, COOKIE2_, func_MarkupAllFiles);
 
 
 static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1036,7 +1038,7 @@ static refalrts::FnResult func_ResolveOpts(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", 4145616865U, 25143199U, func_ResolveOpts);
+static refalrts::NativeReference nat_ref_ResolveOpts("ResolveOpts", COOKIE1_, COOKIE2_, func_ResolveOpts);
 
 
 static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1218,7 +1220,7 @@ static refalrts::FnResult func_ResolveOptsm_LongParam(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", 4145616865U, 25143199U, func_ResolveOptsm_LongParam);
+static refalrts::NativeReference nat_ref_ResolveOptsm_LongParam("ResolveOpts-LongParam", COOKIE1_, COOKIE2_, func_ResolveOptsm_LongParam);
 
 
 static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1510,7 +1512,7 @@ static refalrts::FnResult func_ResolveOptsm_Long(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", 4145616865U, 25143199U, func_ResolveOptsm_Long);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Long("ResolveOpts-Long", COOKIE1_, COOKIE2_, func_ResolveOptsm_Long);
 
 
 static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1940,7 +1942,7 @@ static refalrts::FnResult func_ResolveOptsm_Short(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", 4145616865U, 25143199U, func_ResolveOptsm_Short);
+static refalrts::NativeReference nat_ref_ResolveOptsm_Short("ResolveOpts-Short", COOKIE1_, COOKIE2_, func_ResolveOptsm_Short);
 
 
 static refalrts::FnResult func_FoldErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1979,7 +1981,7 @@ static refalrts::FnResult func_FoldErrors(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", 4145616865U, 25143199U, func_FoldErrors);
+static refalrts::NativeReference nat_ref_FoldErrors("FoldErrors", COOKIE1_, COOKIE2_, func_FoldErrors);
 
 
 static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2083,7 +2085,7 @@ static refalrts::FnResult func_DoFoldErrors(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", 4145616865U, 25143199U, func_DoFoldErrors);
+static refalrts::NativeReference nat_ref_DoFoldErrors("DoFoldErrors", COOKIE1_, COOKIE2_, func_DoFoldErrors);
 
 
 //End of file

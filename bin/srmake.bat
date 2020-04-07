@@ -38,10 +38,6 @@ setlocal
   if "%~1"=="--debug" ( set DEBUG=TRUE& goto NEXT )
   if "%~1"=="--no-debug" ( set DEBUG=FALSE& goto NEXT )
 
-  :: TODO: удалить после обновления стабильной версии
-  if "%~1"=="--rich-debug" ( set PREFIX=rich& set DEBUG=TRUE& goto NEXT )
-  if "%~1"=="--slim-debug" ( set PREFIX=rich& set DEBUG=TRUE& goto NEXT )
-
   goto EXIT_LOOP
 
 :NEXT
@@ -52,7 +48,11 @@ setlocal
 :EXIT_LOOP
 
   set D=
-  if "%DEBUG%"=="TRUE" set D=-d "%LIBDIR%\%PREFIX%\debug"
+  if "%DEBUG%"=="TRUE" (
+    set D=-D "%LIBDIR%\%PREFIX%-rt\debug"
+  ) else (
+    set D=-D "%LIBDIR%\%PREFIX%-rt\debug-stubs"
+  )
   if "%BIND%"=="AUTO" set D=%D% -d "%LIBDIR%\%PREFIX%"
   if "%BIND%"=="STATIC" set D=%D% -d "%LIBDIR%\%PREFIX%\exe"
   set D=%D% -D "%LIBDIR%\%PREFIX%-rt" -d "%LIBDIR%\references"
@@ -64,7 +64,22 @@ setlocal
   )
 
   set PATH=%BINDIR%;%PATH%
-  if "%MODE%"=="srefc" (
+  if "%MODE%"=="rlc" (
+    rlc-core ^
+      -OC %SREFC_FLAGS% ^
+      --exesuffix=.exe --libsuffix=.dll %CPP% ^
+      --cppflags="%CPPLINE_FLAGS%" --chmod-x-command= ^
+      -d "%LIBDIR%\common" --prelude=refal5-builtins.refi ^
+      %PREFIX% %D% -d "%LIBDIR%" %ARGS%
+  ) else if "%MODE%"=="rlmake" (
+    rlmake-core ^
+      -s srefc-core.exe ^
+      -X-OC %SRMAKE_FLAGS% ^
+      -X--exesuffix=.exe -X--libsuffix=.dll %CPP% ^
+      --thru=--cppflags="%CPPLINE_FLAGS%" -X--chmod-x-command= ^
+      -d "%LIBDIR%\common" --prelude=refal5-builtins.refi ^
+      %PREFIX% %D% -d "%LIBDIR%" %RT% %ARGS%
+  ) else if "%MODE%"=="srefc" (
     srefc-core ^
       -OC %SREFC_FLAGS% ^
       --exesuffix=.exe --libsuffix=.dll %CPP% ^
@@ -80,7 +95,7 @@ setlocal
       -d "%LIBDIR%\common" --prelude=refal5-builtins.refi ^
       %PREFIX% %D% -d "%LIBDIR%" %RT% %ARGS%
   ) else (
-    echo BAD SCRIPT NAME %BAT%, expected srefc.bat or srmake.bat
+    echo BAD SCRIPT NAME %BAT%, expected rlc.bat or rlmake.bat
   )
 endlocal
 

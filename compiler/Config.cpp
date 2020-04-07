@@ -4,6 +4,8 @@
 #include "refalrts.h"
 
 #define cookie_ns cookie_ns_3764140058_892661704
+#define COOKIE1_ 3764140058U
+#define COOKIE2_ 892661704U
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -207,7 +209,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 3764140058U, 892661704U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -310,7 +312,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 3764140058U, 892661704U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -566,7 +568,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 3764140058U, 892661704U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -666,7 +668,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 3764140058U, 892661704U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
 
 
 static refalrts::FnResult func_Configm_Create(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2397,7 +2399,7 @@ static refalrts::FnResult func_gen_Configm_SetOptFlags_B1(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Configm_SetOptFlags_B1("Config-SetOptFlags:1", 3764140058U, 892661704U, func_gen_Configm_SetOptFlags_B1);
+static refalrts::NativeReference nat_ref_gen_Configm_SetOptFlags_B1("Config-SetOptFlags:1", COOKIE1_, COOKIE2_, func_gen_Configm_SetOptFlags_B1);
 
 
 static refalrts::FnResult func_Configm_SetOptFlags(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2619,7 +2621,7 @@ static refalrts::FnResult func_ParseOptFlags(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseOptFlags("ParseOptFlags", 3764140058U, 892661704U, func_ParseOptFlags);
+static refalrts::NativeReference nat_ref_ParseOptFlags("ParseOptFlags", COOKIE1_, COOKIE2_, func_ParseOptFlags);
 
 
 static refalrts::FnResult func_ParseOptLetters(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2774,7 +2776,7 @@ static refalrts::FnResult func_ParseOptLetters(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ParseOptLetters("ParseOptLetters", 3764140058U, 892661704U, func_ParseOptLetters);
+static refalrts::NativeReference nat_ref_ParseOptLetters("ParseOptLetters", COOKIE1_, COOKIE2_, func_ParseOptLetters);
 
 
 static refalrts::FnResult func_ValidFlag(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2977,7 +2979,7 @@ static refalrts::FnResult func_ValidFlag(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ValidFlag("ValidFlag", 3764140058U, 892661704U, func_ValidFlag);
+static refalrts::NativeReference nat_ref_ValidFlag("ValidFlag", COOKIE1_, COOKIE2_, func_ValidFlag);
 
 
 static refalrts::FnResult func_Flagsm_Unique(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3049,7 +3051,7 @@ static refalrts::FnResult func_Flagsm_Unique(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Flagsm_Unique("Flags-Unique", 3764140058U, 892661704U, func_Flagsm_Unique);
+static refalrts::NativeReference nat_ref_Flagsm_Unique("Flags-Unique", COOKIE1_, COOKIE2_, func_Flagsm_Unique);
 
 
 static refalrts::FnResult func_Optm_Add(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3170,7 +3172,7 @@ static refalrts::FnResult func_Optm_Add(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Add("Opt-Add", 3764140058U, 892661704U, func_Optm_Add);
+static refalrts::NativeReference nat_ref_Optm_Add("Opt-Add", COOKIE1_, COOKIE2_, func_Optm_Add);
 
 
 static refalrts::FnResult func_Optm_Remove(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3291,7 +3293,7 @@ static refalrts::FnResult func_Optm_Remove(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Remove("Opt-Remove", 3764140058U, 892661704U, func_Optm_Remove);
+static refalrts::NativeReference nat_ref_Optm_Remove("Opt-Remove", COOKIE1_, COOKIE2_, func_Optm_Remove);
 
 
 static refalrts::FnResult func_Optm_Assign(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3331,7 +3333,7 @@ static refalrts::FnResult func_Optm_Assign(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Optm_Assign("Opt-Assign", 3764140058U, 892661704U, func_Optm_Assign);
+static refalrts::NativeReference nat_ref_Optm_Assign("Opt-Assign", COOKIE1_, COOKIE2_, func_Optm_Assign);
 
 
 static refalrts::FnResult func_Configm_GetErrorFile(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5965,7 +5967,7 @@ static refalrts::FnResult func_gen_Configm_SetTreeOptCycles_B1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Configm_SetTreeOptCycles_B1("Config-SetTreeOptCycles:1", 3764140058U, 892661704U, func_gen_Configm_SetTreeOptCycles_B1);
+static refalrts::NativeReference nat_ref_gen_Configm_SetTreeOptCycles_B1("Config-SetTreeOptCycles:1", COOKIE1_, COOKIE2_, func_gen_Configm_SetTreeOptCycles_B1);
 
 
 static refalrts::FnResult func_Configm_SetTreeOptCycles(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6238,7 +6240,7 @@ static refalrts::FnResult func_gen_Configm_GetTempDir_B1(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Configm_GetTempDir_B1("Config-GetTempDir:1", 3764140058U, 892661704U, func_gen_Configm_GetTempDir_B1);
+static refalrts::NativeReference nat_ref_gen_Configm_GetTempDir_B1("Config-GetTempDir:1", COOKIE1_, COOKIE2_, func_gen_Configm_GetTempDir_B1);
 
 
 static refalrts::FnResult func_Configm_GetTempDir(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {

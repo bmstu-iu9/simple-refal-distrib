@@ -5,13 +5,13 @@ SRMAKE_FLAGS=${SRMAKE_FLAGS}
 make_prefixes() {
   DEBUG=$1
 
-  ../bin/srmake "${SCRIPT_FLAGS[@]}" rich"$DEBUG"-prefix-exe \
+  ../bin/rlmake "${SCRIPT_FLAGS[@]}" rich-prefix-exe \
     -o ../lib/rich"$DEBUG".exe-prefix || exit 1
 
-  ../bin/srmake "${SCRIPT_FLAGS[@]}" slim"$DEBUG"-prefix-exe \
+  ../bin/rlmake "${SCRIPT_FLAGS[@]}" slim-prefix-exe \
     -o ../lib/slim"$DEBUG".exe-prefix || exit 1
 
-  ../bin/srmake "${SCRIPT_FLAGS[@]}" --makelib  rich"$DEBUG"-prefix-lib \
+  ../bin/rlmake "${SCRIPT_FLAGS[@]}" --makelib  rich-prefix-lib \
     -o ../lib/rich"$DEBUG".lib-prefix || exit 1
 }
 

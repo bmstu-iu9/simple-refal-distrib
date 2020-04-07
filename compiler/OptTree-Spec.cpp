@@ -3,7 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1186792883_2077983025
+#define cookie_ns cookie_ns_1372363746_3676383312
+#define COOKIE1_ 1372363746U
+#define COOKIE2_ 3676383312U
 
 enum efunc {
   efunc_gen_Mu_C1 = 0,
@@ -25,12 +27,12 @@ enum efunc {
   efunc_Reduce = 16,
   efunc_DoMapAccum = 17,
   efunc_DoMapAccumm_Aux = 18,
-  efunc_MapAccum = 19,
-  efunc_Fetch = 20,
-  efunc_Pipe = 21,
-  efunc_gen_Pipe_S2L1 = 22,
-  efunc_gen_Pipe_S3L1 = 23,
-  efunc_gen_MapAccum_Z2 = 24,
+  efunc_Fetch = 19,
+  efunc_Pipe = 20,
+  efunc_gen_Pipe_S2L1 = 21,
+  efunc_gen_Pipe_S3L1 = 22,
+  efunc_gen_MapAccum_Z2 = 23,
+  efunc_MapAccum = 24,
   efunc_gen_OptTreem_Specm_ExtractOptInfo_A1L2 = 25,
   efunc_gen_OptTreem_Specm_ExtractOptInfo_A1 = 26,
   efunc_SpecUnit = 27,
@@ -289,7 +291,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Mu("Mu", 1186792883U, 2077983025U, func_Mu);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -350,9 +352,9 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
     //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 2077983025UL);
+    refalrts::alloc_number(vm, context[9], 3676383312UL);
     refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 1186792883UL);
+    refalrts::reinit_number(context[5], 1372363746UL);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -379,8 +381,8 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
   //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 1186792883UL);
-  refalrts::reinit_number(context[7], 2077983025UL);
+  refalrts::reinit_number(context[5], 1372363746UL);
+  refalrts::reinit_number(context[7], 3676383312UL);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -392,7 +394,7 @@ static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", 1186792883U, 2077983025U, func_gen_u_u_Mum_Aux_S13B1);
+static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
 
 
 static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -648,7 +650,7 @@ static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", 1186792883U, 2077983025U, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -748,7 +750,7 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_Residue("Residue", 1186792883U, 2077983025U, func_Residue);
+static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
 
 
 static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -825,7 +827,7 @@ static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Apply("Apply", 1186792883U, 2077983025U, func_Apply);
+static refalrts::NativeReference nat_ref_Apply("Apply", COOKIE1_, COOKIE2_, func_Apply);
 
 
 static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -898,7 +900,7 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Map("Map", 1186792883U, 2077983025U, func_Map);
+static refalrts::NativeReference nat_ref_Map("Map", COOKIE1_, COOKIE2_, func_Map);
 
 
 static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -979,7 +981,7 @@ static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Reduce("Reduce", 1186792883U, 2077983025U, func_Reduce);
+static refalrts::NativeReference nat_ref_Reduce("Reduce", COOKIE1_, COOKIE2_, func_Reduce);
 
 
 static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1019,7 +1021,7 @@ static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Fetch("Fetch", 1186792883U, 2077983025U, func_Fetch);
+static refalrts::NativeReference nat_ref_Fetch("Fetch", COOKIE1_, COOKIE2_, func_Fetch);
 
 
 static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1066,7 +1068,7 @@ static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapAccum("MapAccum", 1186792883U, 2077983025U, func_MapAccum);
+static refalrts::NativeReference nat_ref_MapAccum("MapAccum", COOKIE1_, COOKIE2_, func_MapAccum);
 
 
 static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1167,7 +1169,7 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", 1186792883U, 2077983025U, func_DoMapAccum);
+static refalrts::NativeReference nat_ref_DoMapAccum("DoMapAccum", COOKIE1_, COOKIE2_, func_DoMapAccum);
 
 
 static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1230,45 +1232,7 @@ static refalrts::FnResult func_DoMapAccumm_Aux(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", 1186792883U, 2077983025U, func_DoMapAccumm_Aux);
-
-
-static refalrts::FnResult func_MapReduce(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 9 elems
-  refalrts::Iter context[9];
-  refalrts::zeros( context, 9 );
-  // </0 & MapReduce/4 t.Fn#1/5 t.Acc#1/7 e.Tail#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
-  if( ! context[8] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Tail#1 as range 2
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: t.Acc#1: 7
-  //DEBUG: e.Tail#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & MapAccum/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 AsIs: e.Tail#1/2 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_MapAccum]);
-  refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[0] );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_MapReduce("MapReduce", 1186792883U, 2077983025U, func_MapReduce);
+static refalrts::NativeReference nat_ref_DoMapAccumm_Aux("DoMapAccum-Aux", COOKIE1_, COOKIE2_, func_DoMapAccumm_Aux);
 
 
 static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1308,7 +1272,7 @@ static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_UnBracket("UnBracket", 1186792883U, 2077983025U, func_UnBracket);
+static refalrts::NativeReference nat_ref_UnBracket("UnBracket", COOKIE1_, COOKIE2_, func_UnBracket);
 
 
 static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1344,7 +1308,7 @@ static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", 1186792883U, 2077983025U, func_DelAccumulator);
+static refalrts::NativeReference nat_ref_DelAccumulator("DelAccumulator", COOKIE1_, COOKIE2_, func_DelAccumulator);
 
 
 static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1381,7 +1345,7 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Inc("Inc", 1186792883U, 2077983025U, func_Inc);
+static refalrts::NativeReference nat_ref_Inc("Inc", COOKIE1_, COOKIE2_, func_Inc);
 
 
 static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1451,7 +1415,7 @@ static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Dec("Dec", 1186792883U, 2077983025U, func_Dec);
+static refalrts::NativeReference nat_ref_Dec("Dec", COOKIE1_, COOKIE2_, func_Dec);
 
 
 static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1512,7 +1476,7 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", 1186792883U, 2077983025U, func_gen_Pipe_S2L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S2L1("Pipe$2\\1", COOKIE1_, COOKIE2_, func_gen_Pipe_S2L1);
 
 
 static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1544,7 +1508,7 @@ static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", 1186792883U, 2077983025U, func_gen_Pipe_S3L1);
+static refalrts::NativeReference nat_ref_gen_Pipe_S3L1("Pipe$3\\1", COOKIE1_, COOKIE2_, func_gen_Pipe_S3L1);
 
 
 static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1632,37 +1596,7 @@ static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Pipe("Pipe", 1186792883U, 2077983025U, func_Pipe);
-
-
-static refalrts::FnResult func_Seq(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 5 elems
-  refalrts::Iter context[5];
-  refalrts::zeros( context, 5 );
-  // </0 & Seq/4 e.Funcs#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Funcs#1 as range 2
-  //DEBUG: e.Funcs#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Pipe/4 AsIs: e.Funcs#1/2 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_Pipe]);
-  refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[0] );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_Seq("Seq", 1186792883U, 2077983025U, func_Seq);
+static refalrts::NativeReference nat_ref_Pipe("Pipe", COOKIE1_, COOKIE2_, func_Pipe);
 
 
 static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1768,7 +1702,7 @@ static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_B1(refalrts::VM
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_B1("OptTree-Spec-ExtractOptInfo:1", 1186792883U, 2077983025U, func_gen_OptTreem_Specm_ExtractOptInfo_B1);
+static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_B1("OptTree-Spec-ExtractOptInfo:1", COOKIE1_, COOKIE2_, func_gen_OptTreem_Specm_ExtractOptInfo_B1);
 
 
 static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1863,7 +1797,7 @@ static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1(refalrts::VM
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1("OptTree-Spec-ExtractOptInfo=1", 1186792883U, 2077983025U, func_gen_OptTreem_Specm_ExtractOptInfo_A1);
+static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1("OptTree-Spec-ExtractOptInfo=1", COOKIE1_, COOKIE2_, func_gen_OptTreem_Specm_ExtractOptInfo_A1);
 
 
 static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -1973,7 +1907,7 @@ static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1L1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1L1("OptTree-Spec-ExtractOptInfo=1\\1", 1186792883U, 2077983025U, func_gen_OptTreem_Specm_ExtractOptInfo_A1L1);
+static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1L1("OptTree-Spec-ExtractOptInfo=1\\1", COOKIE1_, COOKIE2_, func_gen_OptTreem_Specm_ExtractOptInfo_A1L1);
 
 
 static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1L2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2117,7 +2051,7 @@ static refalrts::FnResult func_gen_OptTreem_Specm_ExtractOptInfo_A1L2(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1L2("OptTree-Spec-ExtractOptInfo=1\\2", 1186792883U, 2077983025U, func_gen_OptTreem_Specm_ExtractOptInfo_A1L2);
+static refalrts::NativeReference nat_ref_gen_OptTreem_Specm_ExtractOptInfo_A1L2("OptTree-Spec-ExtractOptInfo=1\\2", COOKIE1_, COOKIE2_, func_gen_OptTreem_Specm_ExtractOptInfo_A1L2);
 
 
 static refalrts::FnResult func_OptTreem_Specm_ExtractOptInfo(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2241,7 +2175,7 @@ static refalrts::FnResult func_gen_OptTreem_Spec_S3A1(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_OptTreem_Spec_S3A1("OptTree-Spec$3=1", 1186792883U, 2077983025U, func_gen_OptTreem_Spec_S3A1);
+static refalrts::NativeReference nat_ref_gen_OptTreem_Spec_S3A1("OptTree-Spec$3=1", COOKIE1_, COOKIE2_, func_gen_OptTreem_Spec_S3A1);
 
 
 static refalrts::FnResult func_OptTreem_Spec(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2441,7 +2375,7 @@ static refalrts::FnResult func_gen_SpecUnit_S1A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecUnit_S1A1("SpecUnit$1=1", 1186792883U, 2077983025U, func_gen_SpecUnit_S1A1);
+static refalrts::NativeReference nat_ref_gen_SpecUnit_S1A1("SpecUnit$1=1", COOKIE1_, COOKIE2_, func_gen_SpecUnit_S1A1);
 
 
 static refalrts::FnResult func_SpecUnit(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2556,7 +2490,7 @@ static refalrts::FnResult func_SpecUnit(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SpecUnit("SpecUnit", 1186792883U, 2077983025U, func_SpecUnit);
+static refalrts::NativeReference nat_ref_SpecUnit("SpecUnit", COOKIE1_, COOKIE2_, func_SpecUnit);
 
 
 static refalrts::FnResult func_gen_SpecSentence_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2632,7 +2566,7 @@ static refalrts::FnResult func_gen_SpecSentence_A2(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecSentence_A2("SpecSentence=2", 1186792883U, 2077983025U, func_gen_SpecSentence_A2);
+static refalrts::NativeReference nat_ref_gen_SpecSentence_A2("SpecSentence=2", COOKIE1_, COOKIE2_, func_gen_SpecSentence_A2);
 
 
 static refalrts::FnResult func_gen_SpecSentence_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2713,7 +2647,7 @@ static refalrts::FnResult func_gen_SpecSentence_A1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecSentence_A1("SpecSentence=1", 1186792883U, 2077983025U, func_gen_SpecSentence_A1);
+static refalrts::NativeReference nat_ref_gen_SpecSentence_A1("SpecSentence=1", COOKIE1_, COOKIE2_, func_gen_SpecSentence_A1);
 
 
 static refalrts::FnResult func_gen_SpecSentence_A1L1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2794,7 +2728,7 @@ static refalrts::FnResult func_gen_SpecSentence_A1L1A1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecSentence_A1L1A1("SpecSentence=1\\1=1", 1186792883U, 2077983025U, func_gen_SpecSentence_A1L1A1);
+static refalrts::NativeReference nat_ref_gen_SpecSentence_A1L1A1("SpecSentence=1\\1=1", COOKIE1_, COOKIE2_, func_gen_SpecSentence_A1L1A1);
 
 
 static refalrts::FnResult func_gen_SpecSentence_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2914,7 +2848,7 @@ static refalrts::FnResult func_gen_SpecSentence_A1L1(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecSentence_A1L1("SpecSentence=1\\1", 1186792883U, 2077983025U, func_gen_SpecSentence_A1L1);
+static refalrts::NativeReference nat_ref_gen_SpecSentence_A1L1("SpecSentence=1\\1", COOKIE1_, COOKIE2_, func_gen_SpecSentence_A1L1);
 
 
 static refalrts::FnResult func_SpecSentence(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3019,7 +2953,7 @@ static refalrts::FnResult func_SpecSentence(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SpecSentence("SpecSentence", 1186792883U, 2077983025U, func_SpecSentence);
+static refalrts::NativeReference nat_ref_SpecSentence("SpecSentence", COOKIE1_, COOKIE2_, func_SpecSentence);
 
 
 static refalrts::FnResult func_gen_SpecResult_S2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3071,7 +3005,7 @@ static refalrts::FnResult func_gen_SpecResult_S2L1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecResult_S2L1("SpecResult$2\\1", 1186792883U, 2077983025U, func_gen_SpecResult_S2L1);
+static refalrts::NativeReference nat_ref_gen_SpecResult_S2L1("SpecResult$2\\1", COOKIE1_, COOKIE2_, func_gen_SpecResult_S2L1);
 
 
 static refalrts::FnResult func_SpecResult(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3152,7 +3086,7 @@ static refalrts::FnResult func_SpecResult(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SpecResult("SpecResult", 1186792883U, 2077983025U, func_SpecResult);
+static refalrts::NativeReference nat_ref_SpecResult("SpecResult", COOKIE1_, COOKIE2_, func_SpecResult);
 
 
 static refalrts::FnResult func_gen_SpecTerm_S1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3241,7 +3175,7 @@ static refalrts::FnResult func_gen_SpecTerm_S1A2(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecTerm_S1A2("SpecTerm$1=2", 1186792883U, 2077983025U, func_gen_SpecTerm_S1A2);
+static refalrts::NativeReference nat_ref_gen_SpecTerm_S1A2("SpecTerm$1=2", COOKIE1_, COOKIE2_, func_gen_SpecTerm_S1A2);
 
 
 static refalrts::FnResult func_gen_SpecTerm_S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3310,7 +3244,7 @@ static refalrts::FnResult func_gen_SpecTerm_S2A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecTerm_S2A1("SpecTerm$2=1", 1186792883U, 2077983025U, func_gen_SpecTerm_S2A1);
+static refalrts::NativeReference nat_ref_gen_SpecTerm_S2A1("SpecTerm$2=1", COOKIE1_, COOKIE2_, func_gen_SpecTerm_S2A1);
 
 
 static refalrts::FnResult func_gen_SpecTerm_S3A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3366,7 +3300,7 @@ static refalrts::FnResult func_gen_SpecTerm_S3A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecTerm_S3A1("SpecTerm$3=1", 1186792883U, 2077983025U, func_gen_SpecTerm_S3A1);
+static refalrts::NativeReference nat_ref_gen_SpecTerm_S3A1("SpecTerm$3=1", COOKIE1_, COOKIE2_, func_gen_SpecTerm_S3A1);
 
 
 static refalrts::FnResult func_gen_SpecTerm_S4A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3422,7 +3356,7 @@ static refalrts::FnResult func_gen_SpecTerm_S4A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecTerm_S4A1("SpecTerm$4=1", 1186792883U, 2077983025U, func_gen_SpecTerm_S4A1);
+static refalrts::NativeReference nat_ref_gen_SpecTerm_S4A1("SpecTerm$4=1", COOKIE1_, COOKIE2_, func_gen_SpecTerm_S4A1);
 
 
 static refalrts::FnResult func_gen_SpecTerm_S5A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3487,7 +3421,7 @@ static refalrts::FnResult func_gen_SpecTerm_S5A1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecTerm_S5A1("SpecTerm$5=1", 1186792883U, 2077983025U, func_gen_SpecTerm_S5A1);
+static refalrts::NativeReference nat_ref_gen_SpecTerm_S5A1("SpecTerm$5=1", COOKIE1_, COOKIE2_, func_gen_SpecTerm_S5A1);
 
 
 static refalrts::FnResult func_SpecTerm(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -3901,7 +3835,7 @@ static refalrts::FnResult func_SpecTerm(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SpecTerm("SpecTerm", 1186792883U, 2077983025U, func_SpecTerm);
+static refalrts::NativeReference nat_ref_SpecTerm("SpecTerm", COOKIE1_, COOKIE2_, func_SpecTerm);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4131,7 +4065,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2B1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2B1("SpecCall:1$1:1$2:1$2:1", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1S2B1S2B1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2B1("SpecCall:1$1:1$2:1$2:1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1S2B1S2B1);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4253,7 +4187,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2A2(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2A2("SpecCall:1$1:1$2:1$2=2", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1S2B1S2A2);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2A2("SpecCall:1$1:1$2:1$2=2", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1S2B1S2A2);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4394,7 +4328,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1S2A1(refalrts::VM *vm, ref
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2A1("SpecCall:1$1:1$2:1$2=1", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1S2B1S2A1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1S2A1("SpecCall:1$1:1$2:1$2=1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1S2B1S2A1);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4633,7 +4567,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1S2B1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1("SpecCall:1$1:1$2:1", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1S2B1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2B1("SpecCall:1$1:1$2:1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1S2B1);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4760,7 +4694,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1S2A1(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2A1("SpecCall:1$1:1$2=1", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1S2A1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1S2A1("SpecCall:1$1:1$2=1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1S2A1);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -4969,7 +4903,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1B1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1("SpecCall:1$1:1", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1B1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1B1("SpecCall:1$1:1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1B1);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1S1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5085,7 +5019,7 @@ static refalrts::FnResult func_gen_SpecCall_B1S1A2(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1A2("SpecCall:1$1=2", 1186792883U, 2077983025U, func_gen_SpecCall_B1S1A2);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1S1A2("SpecCall:1$1=2", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1S1A2);
 
 
 static refalrts::FnResult func_gen_SpecCall_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5324,7 +5258,7 @@ static refalrts::FnResult func_gen_SpecCall_B1(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_SpecCall_B1("SpecCall:1", 1186792883U, 2077983025U, func_gen_SpecCall_B1);
+static refalrts::NativeReference nat_ref_gen_SpecCall_B1("SpecCall:1", COOKIE1_, COOKIE2_, func_gen_SpecCall_B1);
 
 
 static refalrts::FnResult func_SpecCall(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5425,7 +5359,7 @@ static refalrts::FnResult func_SpecCall(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SpecCall("SpecCall", 1186792883U, 2077983025U, func_SpecCall);
+static refalrts::NativeReference nat_ref_SpecCall("SpecCall", COOKIE1_, COOKIE2_, func_SpecCall);
 
 
 static refalrts::FnResult func_gen_IsActiveMatches_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5508,7 +5442,7 @@ static refalrts::FnResult func_gen_IsActiveMatches_L1(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_IsActiveMatches_L1("IsActiveMatches\\1", 1186792883U, 2077983025U, func_gen_IsActiveMatches_L1);
+static refalrts::NativeReference nat_ref_gen_IsActiveMatches_L1("IsActiveMatches\\1", COOKIE1_, COOKIE2_, func_gen_IsActiveMatches_L1);
 
 
 static refalrts::FnResult func_IsActiveMatches(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5545,7 +5479,7 @@ static refalrts::FnResult func_IsActiveMatches(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IsActiveMatches("IsActiveMatches", 1186792883U, 2077983025U, func_IsActiveMatches);
+static refalrts::NativeReference nat_ref_IsActiveMatches("IsActiveMatches", COOKIE1_, COOKIE2_, func_IsActiveMatches);
 
 
 static refalrts::FnResult func_gen_IsActiveExpr_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5748,7 +5682,7 @@ static refalrts::FnResult func_gen_IsActiveExpr_L1(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_IsActiveExpr_L1("IsActiveExpr\\1", 1186792883U, 2077983025U, func_gen_IsActiveExpr_L1);
+static refalrts::NativeReference nat_ref_gen_IsActiveExpr_L1("IsActiveExpr\\1", COOKIE1_, COOKIE2_, func_gen_IsActiveExpr_L1);
 
 
 static refalrts::FnResult func_IsActiveExpr(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5789,7 +5723,7 @@ static refalrts::FnResult func_IsActiveExpr(refalrts::VM *vm, refalrts::Iter arg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IsActiveExpr("IsActiveExpr", 1186792883U, 2077983025U, func_IsActiveExpr);
+static refalrts::NativeReference nat_ref_IsActiveExpr("IsActiveExpr", COOKIE1_, COOKIE2_, func_IsActiveExpr);
 
 
 static refalrts::FnResult func_gen_IsSoundBody_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5840,7 +5774,7 @@ static refalrts::FnResult func_gen_IsSoundBody_B1(refalrts::VM *vm, refalrts::It
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_IsSoundBody_B1("IsSoundBody:1", 1186792883U, 2077983025U, func_gen_IsSoundBody_B1);
+static refalrts::NativeReference nat_ref_gen_IsSoundBody_B1("IsSoundBody:1", COOKIE1_, COOKIE2_, func_gen_IsSoundBody_B1);
 
 
 static refalrts::FnResult func_IsSoundBody(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5882,7 +5816,7 @@ static refalrts::FnResult func_IsSoundBody(refalrts::VM *vm, refalrts::Iter arg_
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IsSoundBody("IsSoundBody", 1186792883U, 2077983025U, func_IsSoundBody);
+static refalrts::NativeReference nat_ref_IsSoundBody("IsSoundBody", COOKIE1_, COOKIE2_, func_IsSoundBody);
 
 
 static refalrts::FnResult func_gen_FindClosuresInPatternsm_Body_L1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -5949,7 +5883,7 @@ static refalrts::FnResult func_gen_FindClosuresInPatternsm_Body_L1L1(refalrts::V
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindClosuresInPatternsm_Body_L1L1("FindClosuresInPatterns-Body\\1\\1", 1186792883U, 2077983025U, func_gen_FindClosuresInPatternsm_Body_L1L1);
+static refalrts::NativeReference nat_ref_gen_FindClosuresInPatternsm_Body_L1L1("FindClosuresInPatterns-Body\\1\\1", COOKIE1_, COOKIE2_, func_gen_FindClosuresInPatternsm_Body_L1L1);
 
 
 static refalrts::FnResult func_gen_FindClosuresInPatternsm_Body_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6015,7 +5949,7 @@ static refalrts::FnResult func_gen_FindClosuresInPatternsm_Body_L1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindClosuresInPatternsm_Body_L1("FindClosuresInPatterns-Body\\1", 1186792883U, 2077983025U, func_gen_FindClosuresInPatternsm_Body_L1);
+static refalrts::NativeReference nat_ref_gen_FindClosuresInPatternsm_Body_L1("FindClosuresInPatterns-Body\\1", COOKIE1_, COOKIE2_, func_gen_FindClosuresInPatternsm_Body_L1);
 
 
 static refalrts::FnResult func_FindClosuresInPatternsm_Body(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6045,7 +5979,7 @@ static refalrts::FnResult func_FindClosuresInPatternsm_Body(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Body("FindClosuresInPatterns-Body", 1186792883U, 2077983025U, func_FindClosuresInPatternsm_Body);
+static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Body("FindClosuresInPatterns-Body", COOKIE1_, COOKIE2_, func_FindClosuresInPatternsm_Body);
 
 
 static refalrts::FnResult func_FindClosuresInPatternsm_Pattern(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6075,7 +6009,7 @@ static refalrts::FnResult func_FindClosuresInPatternsm_Pattern(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Pattern("FindClosuresInPatterns-Pattern", 1186792883U, 2077983025U, func_FindClosuresInPatternsm_Pattern);
+static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Pattern("FindClosuresInPatterns-Pattern", COOKIE1_, COOKIE2_, func_FindClosuresInPatternsm_Pattern);
 
 
 static refalrts::FnResult func_FindClosuresInPatternsm_Term(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6227,7 +6161,7 @@ static refalrts::FnResult func_FindClosuresInPatternsm_Term(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Term("FindClosuresInPatterns-Term", 1186792883U, 2077983025U, func_FindClosuresInPatternsm_Term);
+static refalrts::NativeReference nat_ref_FindClosuresInPatternsm_Term("FindClosuresInPatterns-Term", COOKIE1_, COOKIE2_, func_FindClosuresInPatternsm_Term);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSignature_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6287,7 +6221,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSignature_L1(refalrts::VM *vm, r
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSignature_L1("Spec-PrepareSignature\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareSignature_L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSignature_L1("Spec-PrepareSignature\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSignature_L1);
 
 
 static refalrts::FnResult func_Specm_PrepareSignature(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6332,7 +6266,7 @@ static refalrts::FnResult func_Specm_PrepareSignature(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_PrepareSignature("Spec-PrepareSignature", 1186792883U, 2077983025U, func_Specm_PrepareSignature);
+static refalrts::NativeReference nat_ref_Specm_PrepareSignature("Spec-PrepareSignature", COOKIE1_, COOKIE2_, func_Specm_PrepareSignature);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6380,7 +6314,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2("Spec-RenameSignatureVars=2", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A2);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2("Spec-RenameSignatureVars=2", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A2);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S2A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6490,7 +6424,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S2A1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S2A1("Spec-RenameSignatureVars=2\\1$2=1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A2L1S2A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S2A1("Spec-RenameSignatureVars=2\\1$2=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A2L1S2A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S3A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6600,7 +6534,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S3A1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S3A1("Spec-RenameSignatureVars=2\\1$3=1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A2L1S3A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S3A1("Spec-RenameSignatureVars=2\\1$3=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A2L1S3A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S4A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -6710,7 +6644,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1S4A1(refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S4A1("Spec-RenameSignatureVars=2\\1$4=1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A2L1S4A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1S4A1("Spec-RenameSignatureVars=2\\1$4=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A2L1S4A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7029,7 +6963,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A2L1(refalrts::VM *
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1("Spec-RenameSignatureVars=2\\1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A2L1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A2L1("Spec-RenameSignatureVars=2\\1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A2L1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7090,7 +7024,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A1(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A1("Spec-RenameSignatureVars=1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A1("Spec-RenameSignatureVars=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7133,7 +7067,7 @@ static refalrts::FnResult func_gen_Specm_RenameSignatureVars_A1L1(refalrts::VM *
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A1L1("Spec-RenameSignatureVars=1\\1", 1186792883U, 2077983025U, func_gen_Specm_RenameSignatureVars_A1L1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameSignatureVars_A1L1("Spec-RenameSignatureVars=1\\1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameSignatureVars_A1L1);
 
 
 static refalrts::FnResult func_Specm_RenameSignatureVars(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7185,7 +7119,7 @@ static refalrts::FnResult func_Specm_RenameSignatureVars(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_RenameSignatureVars("Spec-RenameSignatureVars", 1186792883U, 2077983025U, func_Specm_RenameSignatureVars);
+static refalrts::NativeReference nat_ref_Specm_RenameSignatureVars("Spec-RenameSignatureVars", COOKIE1_, COOKIE2_, func_Specm_RenameSignatureVars);
 
 
 static refalrts::FnResult func_Specm_FindInSignatures(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7291,7 +7225,7 @@ static refalrts::FnResult func_Specm_FindInSignatures(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_FindInSignatures("Spec-FindInSignatures", 1186792883U, 2077983025U, func_Specm_FindInSignatures);
+static refalrts::NativeReference nat_ref_Specm_FindInSignatures("Spec-FindInSignatures", COOKIE1_, COOKIE2_, func_Specm_FindInSignatures);
 
 
 static refalrts::FnResult func_gen_Specm_IsTrivialSignature_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7385,7 +7319,7 @@ static refalrts::FnResult func_gen_Specm_IsTrivialSignature_L1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_IsTrivialSignature_L1("Spec-IsTrivialSignature\\1", 1186792883U, 2077983025U, func_gen_Specm_IsTrivialSignature_L1);
+static refalrts::NativeReference nat_ref_gen_Specm_IsTrivialSignature_L1("Spec-IsTrivialSignature\\1", COOKIE1_, COOKIE2_, func_gen_Specm_IsTrivialSignature_L1);
 
 
 static refalrts::FnResult func_Specm_IsTrivialSignature(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7422,7 +7356,7 @@ static refalrts::FnResult func_Specm_IsTrivialSignature(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_IsTrivialSignature("Spec-IsTrivialSignature", 1186792883U, 2077983025U, func_Specm_IsTrivialSignature);
+static refalrts::NativeReference nat_ref_Specm_IsTrivialSignature("Spec-IsTrivialSignature", COOKIE1_, COOKIE2_, func_Specm_IsTrivialSignature);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7457,7 +7391,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A3(refalrts::VM *v
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A3("Spec-PrepareCallOrPattern=3", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A3);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A3("Spec-PrepareCallOrPattern=3", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A3);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7553,7 +7487,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A3L1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A3L1("Spec-PrepareCallOrPattern=3\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A3L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A3L1("Spec-PrepareCallOrPattern=3\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A3L1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7597,7 +7531,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A2(refalrts::VM *v
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A2("Spec-PrepareCallOrPattern=2", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A2);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A2("Spec-PrepareCallOrPattern=2", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A2);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A2L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7683,7 +7617,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A2L1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A2L1("Spec-PrepareCallOrPattern=2\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A2L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A2L1("Spec-PrepareCallOrPattern=2\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A2L1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7750,7 +7684,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A1(refalrts::VM *v
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A1("Spec-PrepareCallOrPattern=1", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A1("Spec-PrepareCallOrPattern=1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7817,7 +7751,7 @@ static refalrts::FnResult func_gen_Specm_PrepareCallOrPattern_A1L1(refalrts::VM 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A1L1("Spec-PrepareCallOrPattern=1\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareCallOrPattern_A1L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareCallOrPattern_A1L1("Spec-PrepareCallOrPattern=1\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareCallOrPattern_A1L1);
 
 
 static refalrts::FnResult func_Specm_PrepareCallOrPattern(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7882,7 +7816,7 @@ static refalrts::FnResult func_Specm_PrepareCallOrPattern(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_PrepareCallOrPattern("Spec-PrepareCallOrPattern", 1186792883U, 2077983025U, func_Specm_PrepareCallOrPattern);
+static refalrts::NativeReference nat_ref_Specm_PrepareCallOrPattern("Spec-PrepareCallOrPattern", COOKIE1_, COOKIE2_, func_Specm_PrepareCallOrPattern);
 
 
 static refalrts::FnResult func_gen_Specm_RenameGenericMatch_L1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7996,7 +7930,7 @@ static refalrts::FnResult func_gen_Specm_RenameGenericMatch_L1A1(refalrts::VM *v
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_L1A1("Spec-RenameGenericMatch\\1=1", 1186792883U, 2077983025U, func_gen_Specm_RenameGenericMatch_L1A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_L1A1("Spec-RenameGenericMatch\\1=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameGenericMatch_L1A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameGenericMatch_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8092,7 +8026,7 @@ static refalrts::FnResult func_gen_Specm_RenameGenericMatch_L1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_L1("Spec-RenameGenericMatch\\1", 1186792883U, 2077983025U, func_gen_Specm_RenameGenericMatch_L1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_L1("Spec-RenameGenericMatch\\1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameGenericMatch_L1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameGenericMatch_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8166,7 +8100,7 @@ static refalrts::FnResult func_gen_Specm_RenameGenericMatch_A1(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_A1("Spec-RenameGenericMatch=1", 1186792883U, 2077983025U, func_gen_Specm_RenameGenericMatch_A1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_A1("Spec-RenameGenericMatch=1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameGenericMatch_A1);
 
 
 static refalrts::FnResult func_gen_Specm_RenameGenericMatch_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8228,7 +8162,7 @@ static refalrts::FnResult func_gen_Specm_RenameGenericMatch_A1L1(refalrts::VM *v
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_A1L1("Spec-RenameGenericMatch=1\\1", 1186792883U, 2077983025U, func_gen_Specm_RenameGenericMatch_A1L1);
+static refalrts::NativeReference nat_ref_gen_Specm_RenameGenericMatch_A1L1("Spec-RenameGenericMatch=1\\1", COOKIE1_, COOKIE2_, func_gen_Specm_RenameGenericMatch_A1L1);
 
 
 static refalrts::FnResult func_Specm_RenameGenericMatch(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8315,7 +8249,7 @@ static refalrts::FnResult func_Specm_RenameGenericMatch(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_RenameGenericMatch("Spec-RenameGenericMatch", 1186792883U, 2077983025U, func_Specm_RenameGenericMatch);
+static refalrts::NativeReference nat_ref_Specm_RenameGenericMatch("Spec-RenameGenericMatch", COOKIE1_, COOKIE2_, func_Specm_RenameGenericMatch);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8450,7 +8384,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A3(refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A3("Spec-PrepareSpecializedFuncBody\\1=3", 1186792883U, 2077983025U, func_gen_Specm_PrepareSpecializedFuncBody_L1A3);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A3("Spec-PrepareSpecializedFuncBody\\1=3", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSpecializedFuncBody_L1A3);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A3L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8518,7 +8452,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A3L1(refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A3L1("Spec-PrepareSpecializedFuncBody\\1=3\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareSpecializedFuncBody_L1A3L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A3L1("Spec-PrepareSpecializedFuncBody\\1=3\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSpecializedFuncBody_L1A3L1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8625,7 +8559,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A2(refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A2("Spec-PrepareSpecializedFuncBody\\1=2", 1186792883U, 2077983025U, func_gen_Specm_PrepareSpecializedFuncBody_L1A2);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A2("Spec-PrepareSpecializedFuncBody\\1=2", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSpecializedFuncBody_L1A2);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8747,7 +8681,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1A1(refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A1("Spec-PrepareSpecializedFuncBody\\1=1", 1186792883U, 2077983025U, func_gen_Specm_PrepareSpecializedFuncBody_L1A1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1A1("Spec-PrepareSpecializedFuncBody\\1=1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSpecializedFuncBody_L1A1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8869,7 +8803,7 @@ static refalrts::FnResult func_gen_Specm_PrepareSpecializedFuncBody_L1(refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1("Spec-PrepareSpecializedFuncBody\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareSpecializedFuncBody_L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareSpecializedFuncBody_L1("Spec-PrepareSpecializedFuncBody\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareSpecializedFuncBody_L1);
 
 
 static refalrts::FnResult func_Specm_PrepareSpecializedFuncBody(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8943,7 +8877,7 @@ static refalrts::FnResult func_Specm_PrepareSpecializedFuncBody(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_PrepareSpecializedFuncBody("Spec-PrepareSpecializedFuncBody", 1186792883U, 2077983025U, func_Specm_PrepareSpecializedFuncBody);
+static refalrts::NativeReference nat_ref_Specm_PrepareSpecializedFuncBody("Spec-PrepareSpecializedFuncBody", COOKIE1_, COOKIE2_, func_Specm_PrepareSpecializedFuncBody);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareConditions_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -8993,7 +8927,7 @@ static refalrts::FnResult func_gen_Specm_PrepareConditions_A1(refalrts::VM *vm, 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareConditions_A1("Spec-PrepareConditions=1", 1186792883U, 2077983025U, func_gen_Specm_PrepareConditions_A1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareConditions_A1("Spec-PrepareConditions=1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareConditions_A1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareConditions_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9110,7 +9044,7 @@ static refalrts::FnResult func_gen_Specm_PrepareConditions_A1L1(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareConditions_A1L1("Spec-PrepareConditions=1\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareConditions_A1L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareConditions_A1L1("Spec-PrepareConditions=1\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareConditions_A1L1);
 
 
 static refalrts::FnResult func_Specm_PrepareConditions(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9185,7 +9119,7 @@ static refalrts::FnResult func_Specm_PrepareConditions(refalrts::VM *vm, refalrt
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_PrepareConditions("Spec-PrepareConditions", 1186792883U, 2077983025U, func_Specm_PrepareConditions);
+static refalrts::NativeReference nat_ref_Specm_PrepareConditions("Spec-PrepareConditions", COOKIE1_, COOKIE2_, func_Specm_PrepareConditions);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareResult_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9225,7 +9159,7 @@ static refalrts::FnResult func_gen_Specm_PrepareResult_A1(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareResult_A1("Spec-PrepareResult=1", 1186792883U, 2077983025U, func_gen_Specm_PrepareResult_A1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareResult_A1("Spec-PrepareResult=1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareResult_A1);
 
 
 static refalrts::FnResult func_gen_Specm_PrepareResult_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9293,7 +9227,7 @@ static refalrts::FnResult func_gen_Specm_PrepareResult_A1L1(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Specm_PrepareResult_A1L1("Spec-PrepareResult=1\\1", 1186792883U, 2077983025U, func_gen_Specm_PrepareResult_A1L1);
+static refalrts::NativeReference nat_ref_gen_Specm_PrepareResult_A1L1("Spec-PrepareResult=1\\1", COOKIE1_, COOKIE2_, func_gen_Specm_PrepareResult_A1L1);
 
 
 static refalrts::FnResult func_Specm_PrepareResult(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9348,7 +9282,7 @@ static refalrts::FnResult func_Specm_PrepareResult(refalrts::VM *vm, refalrts::I
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_Specm_PrepareResult("Spec-PrepareResult", 1186792883U, 2077983025U, func_Specm_PrepareResult);
+static refalrts::NativeReference nat_ref_Specm_PrepareResult("Spec-PrepareResult", COOKIE1_, COOKIE2_, func_Specm_PrepareResult);
 
 
 static refalrts::FnResult func_OptTreem_Specm_Finalize(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9468,7 +9402,7 @@ static refalrts::FnResult func_SVarm_IsInSet(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_SVarm_IsInSet("SVar-IsInSet", 1186792883U, 2077983025U, func_SVarm_IsInSet);
+static refalrts::NativeReference nat_ref_SVarm_IsInSet("SVar-IsInSet", COOKIE1_, COOKIE2_, func_SVarm_IsInSet);
 
 
 static refalrts::FnResult func_IsSpecStaticVar(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9562,7 +9496,7 @@ static refalrts::FnResult func_IsSpecStaticVar(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IsSpecStaticVar("IsSpecStaticVar", 1186792883U, 2077983025U, func_IsSpecStaticVar);
+static refalrts::NativeReference nat_ref_IsSpecStaticVar("IsSpecStaticVar", COOKIE1_, COOKIE2_, func_IsSpecStaticVar);
 
 
 static refalrts::FnResult func_WrapEVar(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9710,7 +9644,7 @@ static refalrts::FnResult func_WrapEVar(refalrts::VM *vm, refalrts::Iter arg_beg
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_WrapEVar("WrapEVar", 1186792883U, 2077983025U, func_WrapEVar);
+static refalrts::NativeReference nat_ref_WrapEVar("WrapEVar", COOKIE1_, COOKIE2_, func_WrapEVar);
 
 
 static refalrts::FnResult func_RemoveRepeatings(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9789,7 +9723,7 @@ static refalrts::FnResult func_RemoveRepeatings(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_RemoveRepeatings("RemoveRepeatings", 1186792883U, 2077983025U, func_RemoveRepeatings);
+static refalrts::NativeReference nat_ref_RemoveRepeatings("RemoveRepeatings", COOKIE1_, COOKIE2_, func_RemoveRepeatings);
 
 
 static refalrts::FnResult func_ExtractVariablesm_Exprm_Wrapper(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9831,7 +9765,7 @@ static refalrts::FnResult func_ExtractVariablesm_Exprm_Wrapper(refalrts::VM *vm,
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_ExtractVariablesm_Exprm_Wrapper("ExtractVariables-Expr-Wrapper", 1186792883U, 2077983025U, func_ExtractVariablesm_Exprm_Wrapper);
+static refalrts::NativeReference nat_ref_ExtractVariablesm_Exprm_Wrapper("ExtractVariables-Expr-Wrapper", COOKIE1_, COOKIE2_, func_ExtractVariablesm_Exprm_Wrapper);
 
 
 static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -9890,7 +9824,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1("GenericMatch-Wrapper:1$1=1", 1186792883U, 2077983025U, func_gen_GenericMatchm_Wrapper_B1S1A1);
+static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1("GenericMatch-Wrapper:1$1=1", COOKIE1_, COOKIE2_, func_gen_GenericMatchm_Wrapper_B1S1A1);
 
 
 static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1L1B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10033,7 +9967,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1L1B1(refalrts::VM
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1L1B1("GenericMatch-Wrapper:1$1=1\\1:1", 1186792883U, 2077983025U, func_gen_GenericMatchm_Wrapper_B1S1A1L1B1);
+static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1L1B1("GenericMatch-Wrapper:1$1=1\\1:1", COOKIE1_, COOKIE2_, func_gen_GenericMatchm_Wrapper_B1S1A1L1B1);
 
 
 static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10132,7 +10066,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1S1A1L1(refalrts::VM *
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1L1("GenericMatch-Wrapper:1$1=1\\1", 1186792883U, 2077983025U, func_gen_GenericMatchm_Wrapper_B1S1A1L1);
+static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1S1A1L1("GenericMatch-Wrapper:1$1=1\\1", COOKIE1_, COOKIE2_, func_gen_GenericMatchm_Wrapper_B1S1A1L1);
 
 
 static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10213,7 +10147,7 @@ static refalrts::FnResult func_gen_GenericMatchm_Wrapper_B1(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1("GenericMatch-Wrapper:1", 1186792883U, 2077983025U, func_gen_GenericMatchm_Wrapper_B1);
+static refalrts::NativeReference nat_ref_gen_GenericMatchm_Wrapper_B1("GenericMatch-Wrapper:1", COOKIE1_, COOKIE2_, func_gen_GenericMatchm_Wrapper_B1);
 
 
 static refalrts::FnResult func_GenericMatchm_Wrapper(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10273,7 +10207,7 @@ static refalrts::FnResult func_GenericMatchm_Wrapper(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_GenericMatchm_Wrapper("GenericMatch-Wrapper", 1186792883U, 2077983025U, func_GenericMatchm_Wrapper);
+static refalrts::NativeReference nat_ref_GenericMatchm_Wrapper("GenericMatch-Wrapper", COOKIE1_, COOKIE2_, func_GenericMatchm_Wrapper);
 
 
 static refalrts::FnResult func_gen_IsColdArg_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10444,7 +10378,7 @@ static refalrts::FnResult func_gen_IsColdArg_L1(refalrts::VM *vm, refalrts::Iter
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_IsColdArg_L1("IsColdArg\\1", 1186792883U, 2077983025U, func_gen_IsColdArg_L1);
+static refalrts::NativeReference nat_ref_gen_IsColdArg_L1("IsColdArg\\1", COOKIE1_, COOKIE2_, func_gen_IsColdArg_L1);
 
 
 static refalrts::FnResult func_IsColdArg(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10481,7 +10415,7 @@ static refalrts::FnResult func_IsColdArg(refalrts::VM *vm, refalrts::Iter arg_be
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_IsColdArg("IsColdArg", 1186792883U, 2077983025U, func_IsColdArg);
+static refalrts::NativeReference nat_ref_IsColdArg("IsColdArg", COOKIE1_, COOKIE2_, func_IsColdArg);
 
 
 static refalrts::FnResult func_FindAndFormatVarTerm(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10511,7 +10445,7 @@ static refalrts::FnResult func_FindAndFormatVarTerm(refalrts::VM *vm, refalrts::
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindAndFormatVarTerm("FindAndFormatVarTerm", 1186792883U, 2077983025U, func_FindAndFormatVarTerm);
+static refalrts::NativeReference nat_ref_FindAndFormatVarTerm("FindAndFormatVarTerm", COOKIE1_, COOKIE2_, func_FindAndFormatVarTerm);
 
 
 static refalrts::FnResult func_FindAndFormatVarTermm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10792,7 +10726,7 @@ static refalrts::FnResult func_FindAndFormatVarTermm_Aux(refalrts::VM *vm, refal
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindAndFormatVarTermm_Aux("FindAndFormatVarTerm-Aux", 1186792883U, 2077983025U, func_FindAndFormatVarTermm_Aux);
+static refalrts::NativeReference nat_ref_FindAndFormatVarTermm_Aux("FindAndFormatVarTerm-Aux", COOKIE1_, COOKIE2_, func_FindAndFormatVarTermm_Aux);
 
 
 static refalrts::FnResult func_gen_MapGenericMatches_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10858,7 +10792,7 @@ static refalrts::FnResult func_gen_MapGenericMatches_A1(refalrts::VM *vm, refalr
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_MapGenericMatches_A1("MapGenericMatches=1", 1186792883U, 2077983025U, func_gen_MapGenericMatches_A1);
+static refalrts::NativeReference nat_ref_gen_MapGenericMatches_A1("MapGenericMatches=1", COOKIE1_, COOKIE2_, func_gen_MapGenericMatches_A1);
 
 
 static refalrts::FnResult func_gen_MapGenericMatches_A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -10964,7 +10898,7 @@ static refalrts::FnResult func_gen_MapGenericMatches_A1L1(refalrts::VM *vm, refa
   return refalrts::cRecognitionImpossible;
 }
 
-static refalrts::NativeReference nat_ref_gen_MapGenericMatches_A1L1("MapGenericMatches=1\\1", 1186792883U, 2077983025U, func_gen_MapGenericMatches_A1L1);
+static refalrts::NativeReference nat_ref_gen_MapGenericMatches_A1L1("MapGenericMatches=1\\1", COOKIE1_, COOKIE2_, func_gen_MapGenericMatches_A1L1);
 
 
 static refalrts::FnResult func_MapGenericMatches(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11033,7 +10967,7 @@ static refalrts::FnResult func_MapGenericMatches(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_MapGenericMatches("MapGenericMatches", 1186792883U, 2077983025U, func_MapGenericMatches);
+static refalrts::NativeReference nat_ref_MapGenericMatches("MapGenericMatches", COOKIE1_, COOKIE2_, func_MapGenericMatches);
 
 
 static refalrts::FnResult func_gen_FindReplacem_GenericMatchesm_Val_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11111,7 +11045,7 @@ static refalrts::FnResult func_gen_FindReplacem_GenericMatchesm_Val_L1(refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindReplacem_GenericMatchesm_Val_L1("FindReplace-GenericMatches-Val\\1", 1186792883U, 2077983025U, func_gen_FindReplacem_GenericMatchesm_Val_L1);
+static refalrts::NativeReference nat_ref_gen_FindReplacem_GenericMatchesm_Val_L1("FindReplace-GenericMatches-Val\\1", COOKIE1_, COOKIE2_, func_gen_FindReplacem_GenericMatchesm_Val_L1);
 
 
 static refalrts::FnResult func_FindReplacem_GenericMatchesm_Val(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11171,7 +11105,7 @@ static refalrts::FnResult func_FindReplacem_GenericMatchesm_Val(refalrts::VM *vm
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindReplacem_GenericMatchesm_Val("FindReplace-GenericMatches-Val", 1186792883U, 2077983025U, func_FindReplacem_GenericMatchesm_Val);
+static refalrts::NativeReference nat_ref_FindReplacem_GenericMatchesm_Val("FindReplace-GenericMatches-Val", COOKIE1_, COOKIE2_, func_FindReplacem_GenericMatchesm_Val);
 
 
 static refalrts::FnResult func_gen_FindReplacem_ExprList_L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11243,7 +11177,7 @@ static refalrts::FnResult func_gen_FindReplacem_ExprList_L1(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindReplacem_ExprList_L1("FindReplace-ExprList\\1", 1186792883U, 2077983025U, func_gen_FindReplacem_ExprList_L1);
+static refalrts::NativeReference nat_ref_gen_FindReplacem_ExprList_L1("FindReplace-ExprList\\1", COOKIE1_, COOKIE2_, func_gen_FindReplacem_ExprList_L1);
 
 
 static refalrts::FnResult func_FindReplacem_ExprList(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11303,7 +11237,7 @@ static refalrts::FnResult func_FindReplacem_ExprList(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindReplacem_ExprList("FindReplace-ExprList", 1186792883U, 2077983025U, func_FindReplacem_ExprList);
+static refalrts::NativeReference nat_ref_FindReplacem_ExprList("FindReplace-ExprList", COOKIE1_, COOKIE2_, func_FindReplacem_ExprList);
 
 
 static refalrts::FnResult func_gen_FindReplacem_Expr_S5A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11371,7 +11305,7 @@ static refalrts::FnResult func_gen_FindReplacem_Expr_S5A1(refalrts::VM *vm, refa
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindReplacem_Expr_S5A1("FindReplace-Expr$5=1", 1186792883U, 2077983025U, func_gen_FindReplacem_Expr_S5A1);
+static refalrts::NativeReference nat_ref_gen_FindReplacem_Expr_S5A1("FindReplace-Expr$5=1", COOKIE1_, COOKIE2_, func_gen_FindReplacem_Expr_S5A1);
 
 
 static refalrts::FnResult func_gen_FindReplacem_Expr_S5A1L1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11453,7 +11387,7 @@ static refalrts::FnResult func_gen_FindReplacem_Expr_S5A1L1(refalrts::VM *vm, re
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_FindReplacem_Expr_S5A1L1("FindReplace-Expr$5=1\\1", 1186792883U, 2077983025U, func_gen_FindReplacem_Expr_S5A1L1);
+static refalrts::NativeReference nat_ref_gen_FindReplacem_Expr_S5A1L1("FindReplace-Expr$5=1\\1", COOKIE1_, COOKIE2_, func_gen_FindReplacem_Expr_S5A1L1);
 
 
 static refalrts::FnResult func_FindReplacem_Expr(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11679,7 +11613,7 @@ static refalrts::FnResult func_FindReplacem_Expr(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindReplacem_Expr("FindReplace-Expr", 1186792883U, 2077983025U, func_FindReplacem_Expr);
+static refalrts::NativeReference nat_ref_FindReplacem_Expr("FindReplace-Expr", COOKIE1_, COOKIE2_, func_FindReplacem_Expr);
 
 
 static refalrts::FnResult func_FindReplacem_Term(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11920,7 +11854,7 @@ static refalrts::FnResult func_FindReplacem_Term(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_FindReplacem_Term("FindReplace-Term", 1186792883U, 2077983025U, func_FindReplacem_Term);
+static refalrts::NativeReference nat_ref_FindReplacem_Term("FindReplace-Term", COOKIE1_, COOKIE2_, func_FindReplacem_Term);
 
 
 static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -11963,7 +11897,7 @@ static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", 1186792883U, 2077983025U, func_gen_MapAccum_Z1);
+static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z1);
 
 
 static refalrts::FnResult func_gen_Reduce_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12120,7 +12054,7 @@ static refalrts::FnResult func_gen_Reduce_Z1(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z1("Reduce@1", 1186792883U, 2077983025U, func_gen_Reduce_Z1);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z1("Reduce@1", COOKIE1_, COOKIE2_, func_gen_Reduce_Z1);
 
 
 static refalrts::FnResult func_gen_Reduce_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12377,7 +12311,7 @@ static refalrts::FnResult func_gen_Reduce_Z2(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z2("Reduce@2", 1186792883U, 2077983025U, func_gen_Reduce_Z2);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z2("Reduce@2", COOKIE1_, COOKIE2_, func_gen_Reduce_Z2);
 
 
 static refalrts::FnResult func_gen_IsActiveExpr_L1D4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12469,7 +12403,7 @@ static refalrts::FnResult func_gen_IsActiveExpr_L1D4(refalrts::VM *vm, refalrts:
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_IsActiveExpr_L1D4("IsActiveExpr\\1*4", 1186792883U, 2077983025U, func_gen_IsActiveExpr_L1D4);
+static refalrts::NativeReference nat_ref_gen_IsActiveExpr_L1D4("IsActiveExpr\\1*4", COOKIE1_, COOKIE2_, func_gen_IsActiveExpr_L1D4);
 
 
 static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12594,7 +12528,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", 1186792883U, 2077983025U, func_gen_Map_Z1);
+static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", COOKIE1_, COOKIE2_, func_gen_Map_Z1);
 
 
 static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12720,7 +12654,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z2("Map@2", 1186792883U, 2077983025U, func_gen_Map_Z2);
+static refalrts::NativeReference nat_ref_gen_Map_Z2("Map@2", COOKIE1_, COOKIE2_, func_gen_Map_Z2);
 
 
 static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12785,7 +12719,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z3("Map@3", 1186792883U, 2077983025U, func_gen_Map_Z3);
+static refalrts::NativeReference nat_ref_gen_Map_Z3("Map@3", COOKIE1_, COOKIE2_, func_gen_Map_Z3);
 
 
 static refalrts::FnResult func_gen_Reduce_Z3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -12909,7 +12843,7 @@ static refalrts::FnResult func_gen_Reduce_Z3(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z3("Reduce@3", 1186792883U, 2077983025U, func_gen_Reduce_Z3);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z3("Reduce@3", COOKIE1_, COOKIE2_, func_gen_Reduce_Z3);
 
 
 static refalrts::FnResult func_gen_Reduce_Z4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -13085,7 +13019,7 @@ static refalrts::FnResult func_gen_Reduce_Z4(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z4("Reduce@4", 1186792883U, 2077983025U, func_gen_Reduce_Z4);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z4("Reduce@4", COOKIE1_, COOKIE2_, func_gen_Reduce_Z4);
 
 
 static refalrts::FnResult func_gen_Reduce_Z5(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -13267,7 +13201,7 @@ static refalrts::FnResult func_gen_Reduce_Z5(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z5("Reduce@5", 1186792883U, 2077983025U, func_gen_Reduce_Z5);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z5("Reduce@5", COOKIE1_, COOKIE2_, func_gen_Reduce_Z5);
 
 
 static refalrts::FnResult func_gen_Reduce_Z6(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -13518,7 +13452,7 @@ static refalrts::FnResult func_gen_Reduce_Z6(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z6("Reduce@6", 1186792883U, 2077983025U, func_gen_Reduce_Z6);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z6("Reduce@6", COOKIE1_, COOKIE2_, func_gen_Reduce_Z6);
 
 
 static refalrts::FnResult func_gen_Reduce_Z7(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -13799,7 +13733,7 @@ static refalrts::FnResult func_gen_Reduce_Z7(refalrts::VM *vm, refalrts::Iter ar
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Reduce_Z7("Reduce@7", 1186792883U, 2077983025U, func_gen_Reduce_Z7);
+static refalrts::NativeReference nat_ref_gen_Reduce_Z7("Reduce@7", COOKIE1_, COOKIE2_, func_gen_Reduce_Z7);
 
 
 static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -13864,7 +13798,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z4("Map@4", 1186792883U, 2077983025U, func_gen_Map_Z4);
+static refalrts::NativeReference nat_ref_gen_Map_Z4("Map@4", COOKIE1_, COOKIE2_, func_gen_Map_Z4);
 
 
 static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14043,7 +13977,7 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z5("Map@5", 1186792883U, 2077983025U, func_gen_Map_Z5);
+static refalrts::NativeReference nat_ref_gen_Map_Z5("Map@5", COOKIE1_, COOKIE2_, func_gen_Map_Z5);
 
 
 static refalrts::FnResult func_gen_Map_Z6(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14213,7 +14147,7 @@ static refalrts::FnResult func_gen_Map_Z6(refalrts::VM *vm, refalrts::Iter arg_b
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z6("Map@6", 1186792883U, 2077983025U, func_gen_Map_Z6);
+static refalrts::NativeReference nat_ref_gen_Map_Z6("Map@6", COOKIE1_, COOKIE2_, func_gen_Map_Z6);
 
 
 static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14372,7 +14306,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z1("DoMapAccum@1", 1186792883U, 2077983025U, func_gen_DoMapAccum_Z1);
+static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z1("DoMapAccum@1", COOKIE1_, COOKIE2_, func_gen_DoMapAccum_Z1);
 
 
 static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14432,7 +14366,7 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z1("DoMapAccum-Aux@1", 1186792883U, 2077983025U, func_gen_DoMapAccumm_Aux_Z1);
+static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z1("DoMapAccum-Aux@1", COOKIE1_, COOKIE2_, func_gen_DoMapAccumm_Aux_Z1);
 
 
 static refalrts::FnResult func_gen_MapAccum_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14475,7 +14409,7 @@ static refalrts::FnResult func_gen_MapAccum_Z2(refalrts::VM *vm, refalrts::Iter 
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_MapAccum_Z2("MapAccum@2", 1186792883U, 2077983025U, func_gen_MapAccum_Z2);
+static refalrts::NativeReference nat_ref_gen_MapAccum_Z2("MapAccum@2", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z2);
 
 
 static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14713,7 +14647,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z2("DoMapAccum@2", 1186792883U, 2077983025U, func_gen_DoMapAccum_Z2);
+static refalrts::NativeReference nat_ref_gen_DoMapAccum_Z2("DoMapAccum@2", COOKIE1_, COOKIE2_, func_gen_DoMapAccum_Z2);
 
 
 static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -14773,7 +14707,7 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z2(refalrts::VM *vm, refalrts
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z2("DoMapAccum-Aux@2", 1186792883U, 2077983025U, func_gen_DoMapAccumm_Aux_Z2);
+static refalrts::NativeReference nat_ref_gen_DoMapAccumm_Aux_Z2("DoMapAccum-Aux@2", COOKIE1_, COOKIE2_, func_gen_DoMapAccumm_Aux_Z2);
 
 
 //End of file

@@ -1,8 +1,10 @@
 /bin/*-core*
+/bin/rl-*
+/bin/rlgo*
 /bin/lexgen*
 /bin/rsl-decompiler*
-/bin/*.dll
-/bin/*.so
+/lib/*.dll
+/lib/*.so
 *.exe-prefix
 *.lib-prefix
 c-plus-plus.conf.bat
