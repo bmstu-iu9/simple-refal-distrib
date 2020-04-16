@@ -25,37 +25,128 @@
 *-------------------------------------------------------------------------------
 
 
-/*
-  <__FindMuPtr e.LocalScope e.FuncName> == s.FuncPtr | []
-*/
-$ENTRY __FindMuPtr {
-  s.Cookie1 s.Cookie2 e.FuncName
-    = <PtrFromName s.Cookie1 s.Cookie2 e.FuncName>
-      <PtrFromName 0 0 e.FuncName>
-    : {
-        s.FnPtr e.Rest = s.FnPtr;
+/**
+  <__Meta_Mu t.MuFunc e.Arg $table> == e.Res
 
-        /* empty */ = /* empty */;
-      };
+  t.MuFunc ::= s.WORD | (s.CHAR+) | s.FUNCTION | s.CLOSURE | s.Op
+  s.Op ::=
+      '+' | '/' | '%' | '*' | '?' | '-'
+    | "+" | "/" | "%" | "*" | "?" | "-"
+*/
+%%
+namespace cookie_ns {
+
+refalrts::RefalFunction *function_for_name(
+  refalrts::VM *vm, refalrts::RefalFunction *metatable, const char *name
+) {
+  if (name[0] != '\0' && name[1] == '\0') {
+    switch (name[0]) {
+      case '+': name = "Add"; break;
+      case '/': name = "Div"; break;
+      case '%': name = "Mod"; break;
+      case '*': name = "Mul"; break;
+      case '?': name = "Residue"; break;
+      case '-': name = "Sub"; break;
+
+      default:
+        return 0;
+    }
+  }
+
+  refalrts::RefalFunction *func =
+    refalrts::function_for_name(vm, metatable, name);
+
+  if (func == 0) {
+    const refalrts::RefalFuncName func_name(name, 0, 0);
+    refalrts::Module *current = refalrts::current_module(vm);
+
+    func = refalrts::lookup_function_in_module(vm, current, func_name);
+    if (func == 0) {
+      func = refalrts::lookup_function_in_domain(vm, func_name);
+    }
+  }
+
+  return func;
 }
 
+}  // namespace cookie_ns
+%%
 
-/**
-  <PtrFromName e.Scope e.FuncName> == s.FUNCTION | []
+$ENTRY __Meta_Mu {
+%%
+  refalrts::Iter content_b = 0;
+  refalrts::Iter content_e = 0;
+  refalrts::Iter pfunc_name =
+    refalrts::call_left(content_b, content_e, arg_begin, arg_end);
 
-  e.Scope ::= s.Cookie1 s.Cookie2
-  s.Cookie1, s.Cookie2 ::= s.NUMBER
-  e.FuncName ::= s.COMPOUND | s.CHAR*
-*/
-$ENTRY PtrFromName {
-  s.Cookie1 s.Cookie2 e.FuncName
-    = <Module-LookupFunction
-        CURRENT-AND-GLOBAL s.Cookie1 s.Cookie2 e.FuncName
-      >
-    : {
-        Success s.FuncPtr = s.FuncPtr;
-        Fails = /* пусто */;
-      };
+  refalrts::Iter tMuFunc = 0;
+  if (! refalrts::tvar_left(tMuFunc, content_b, content_e)) {
+    return refalrts::cRecognitionImpossible;
+  }
+
+  refalrts::Iter sTable = 0;
+  if (
+    ! refalrts::svar_right(sTable, content_b, content_e)
+    || refalrts::cDataFunction != sTable->tag
+    || ! refalrts::is_metatable(vm, sTable->function_info)
+  ) {
+    return refalrts::cRecognitionImpossible;
+  }
+
+  if (
+    refalrts::cDataFunction == tMuFunc->tag
+    || refalrts::cDataClosure == tMuFunc->tag
+  ) {
+    refalrts::splice_to_freelist(vm, pfunc_name, pfunc_name);
+    refalrts::splice_to_freelist(vm, sTable, sTable);
+    refalrts::push_stack(vm, arg_end);
+    refalrts::push_stack(vm, arg_begin);
+    return refalrts::cSuccess;
+  }
+
+  refalrts::RefalFunction *metatable = sTable->function_info;
+
+  refalrts::RefalFunction *func;
+  refalrts::Iter inner_b = 0, inner_e = 0;
+  refalrts::Iter tMuFunc_end = tMuFunc;
+
+  if (refalrts::cDataIdentifier == tMuFunc->tag) {
+    func = refalrts::function_for_ident(vm, metatable, tMuFunc->ident_info);
+
+    if (func == 0) {
+      const char *name = tMuFunc->ident_info->name();
+      func = cookie_ns::function_for_name(vm, metatable, name);
+    }
+  } else if (refalrts::brackets_term(inner_b, inner_e, tMuFunc)) {
+    char name[300] = "";
+    unsigned read = read_chars(name, sizeof(name) - 1, inner_b, inner_e);
+    name[read] = '\0';
+
+    // Слишком длинное имя функции или нашлись не литеры
+    if (! refalrts::empty_seq(inner_b, inner_e)) {
+      return refalrts::cRecognitionImpossible;
+    }
+
+    func = cookie_ns::function_for_name(vm, metatable, name);
+    tMuFunc_end = tMuFunc->link_info;
+  } else if (refalrts::cDataChar == tMuFunc->tag) {
+    char name[2] = { tMuFunc->char_info, '\0' };
+    func = cookie_ns::function_for_name(vm, metatable, name);
+  } else {
+    return refalrts::cRecognitionImpossible;
+  }
+
+  if (func == 0) {
+    return refalrts::cRecognitionImpossible;
+  }
+
+  refalrts::update_name(pfunc_name, func);
+  refalrts::splice_to_freelist(vm, tMuFunc, tMuFunc_end);
+  refalrts::splice_to_freelist(vm, sTable, sTable);
+  refalrts::push_stack(vm, arg_end);
+  refalrts::push_stack(vm, arg_begin);
+  return refalrts::cSuccess;
+%%
 }
 
 
@@ -1139,44 +1230,26 @@ $ENTRY Numb {
 }
 
 Numb-Aux {
-  e.String = <DoNumb &Numb-Ok &Numb-Fail () e.String>;
+  e.String = <DoNumb (0) e.String>;
 }
 
 DoNumb {
-  s.Ok s.Fail (e.Digits) '0' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 0) e.Rest>;
-  s.Ok s.Fail (e.Digits) '1' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 1) e.Rest>;
-  s.Ok s.Fail (e.Digits) '2' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 2) e.Rest>;
-  s.Ok s.Fail (e.Digits) '3' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 3) e.Rest>;
-  s.Ok s.Fail (e.Digits) '4' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 4) e.Rest>;
-  s.Ok s.Fail (e.Digits) '5' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 5) e.Rest>;
-  s.Ok s.Fail (e.Digits) '6' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 6) e.Rest>;
-  s.Ok s.Fail (e.Digits) '7' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 7) e.Rest>;
-  s.Ok s.Fail (e.Digits) '8' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 8) e.Rest>;
-  s.Ok s.Fail (e.Digits) '9' e.Rest = <DoNumb s.Ok s.Fail (e.Digits 9) e.Rest>;
+  (e.Value) '0' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 0> e.Rest>;
+  (e.Value) '1' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 1> e.Rest>;
+  (e.Value) '2' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 2> e.Rest>;
+  (e.Value) '3' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 3> e.Rest>;
+  (e.Value) '4' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 4> e.Rest>;
+  (e.Value) '5' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 5> e.Rest>;
+  (e.Value) '6' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 6> e.Rest>;
+  (e.Value) '7' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 7> e.Rest>;
+  (e.Value) '8' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 8> e.Rest>;
+  (e.Value) '9' e.Rest = <DoNumb <DoNumb-AddDigit e.Value 9> e.Rest>;
 
-  s.Ok s.Fail () e.Rest = <s.Fail e.Rest>;
-  s.Ok s.Fail (e.Digits) e.Rest = <s.Ok (<Numb-Wrap e.Digits>) e.Rest>;
+  (e.Value) e.Rest = e.Value;
 }
 
-Numb-Ok {
-  (e.Number) e.Rest = e.Number;
-}
-
-Numb-Fail {
-  e.Rest = 0;
-}
-
-Numb-Wrap {
-  e.Digits = <DoNumb-Wrap (0) e.Digits>;
-}
-
-DoNumb-Wrap {
-  (e.Result) s.NextDigit e.Digits
-    = <DoNumb-Wrap
-        (<Add-Nat (<Mul-Nat-Line e.Result 10>) s.NextDigit>) e.Digits
-      >;
-
-  (e.Result) = e.Result;
+DoNumb-AddDigit {
+  e.Value s.Digit = (<Add-Nat (<Mul-Nat-Line e.Value 10>) s.Digit>);
 }
 
 
@@ -1299,7 +1372,7 @@ $ENTRY Prout {
 }
 
 /**
-  Proud and Trout is synonyms for Prout :-)
+  Proud and Trout are synonyms for Prout :-)
 */
 $ENTRY Proud { e.AnyExpression = <Prout e.AnyExpression>; }
 $ENTRY Trout { e.AnyExpression = <Prout e.AnyExpression>; }
@@ -1320,7 +1393,6 @@ $ENTRY Put {
 namespace cookie_ns {
 
 enum {
-  cFlags_ReturnHandle   = 1 << 3,
   cFlags_Transparent    = 1 << 5,
   cFlags_NoEOL          = 1 << 8,
 };
@@ -1438,13 +1510,8 @@ refalrts::FnResult cookie_ns::fwrite_line(
     return refalrts::cRecognitionImpossible;
   }
 
-  refalrts::Iter res = arg_begin;
   if (flags & cFlags_Transparent) {
-    res = refalrts::splice_evar(res, content_b, content_e);
-  }
-
-  if (flags & cFlags_ReturnHandle) {
-    refalrts::splice_stvar(res, pfile_handle);
+    refalrts::splice_evar(arg_begin, content_b, content_e);
   }
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
@@ -1544,6 +1611,7 @@ refalrts::GlobalRef<unsigned long> g_start_step;
 /*
   <__Step-Start e.Any> == []
   <__Step-End e.Any> == []
+  <__Step-Drop e.Any> == []
 */
 $ENTRY __Step-Start {
 %%
@@ -1565,6 +1633,16 @@ $ENTRY __Step-End {
   cookie_ns::g_correction.ref(vm) +=
     (cookie_ns::raw_step(vm) - cookie_ns::g_start_step.ref(vm)) + 1;
   cookie_ns::g_start_step.ref(vm) = 0;
+
+  refalrts::splice_to_freelist(vm, arg_begin, arg_end);
+  return refalrts::cSuccess;
+%%
+}
+
+$ENTRY __Step-Drop {
+%%
+  /* Шаг вызова себя и шаг предыдущей функции */
+  cookie_ns::g_correction.ref(vm) += 2;
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
@@ -1690,11 +1768,11 @@ $ENTRY Symb {
 }
 
 Symb-Nat {
-  s.Number = <StrFromInt s.Number>;
+  s.Number = <StrFromMacroDigit s.Number>;
 
   e.Number
     = <Divmod-Nat (e.Number) 1000000000 () ()> : (e.Div) s.Mod
-    = <DoLast 9 ('000000000' <StrFromInt s.Mod>)> : (e.Zeros) e.StrDigits
+    = <DoLast 9 ('000000000' <StrFromMacroDigit s.Mod>)> : (e.Zeros) e.StrDigits
     = <Symb-Nat e.Div> e.StrDigits;
 }
 
@@ -1995,7 +2073,7 @@ Xxin-Scan {
     = <Sysfun-Xxin-ERROR 'Unbalanced )'>;
 
   /* EXIT FROM RECURSION */
-  s.FileNo General ('^' e.Scanned) 'N' s.0 0 = <FClose s.FileNo> e.Scanned;
+  s.FileNo General ('^' e.Scanned) 'N' s.0 0 = <Close s.FileNo> e.Scanned;
 
   s.FileNo General ((General t.Stack e.Scanned) e.Inner) 'N' s.0 0
     = <Sysfun-Xxin-ERROR 'Unbalanced ('>;
@@ -2114,7 +2192,7 @@ Xxout-Wrap {
   s.FileNo s.Width e.Text
     = <DoFirst s.Width () e.Text>
     : {
-        (e.Line) /* empty */ = <Write-Aux s.FileNo e.Line> <FClose s.FileNo>;
+        (e.Line) /* empty */ = <Write-Aux s.FileNo e.Line> <Close s.FileNo>;
 
         (e.Line) e.Rest
           = <Putout-Aux s.FileNo e.Line>
@@ -2138,7 +2216,7 @@ Xxout-Scan {
     = '"' e.Chars '"' <Xxout-Scan <Type e.Tail>>;
 
   'N' s.0 s.Number e.Tail
-    = <StrFromInt s.Number> ' ' <Xxout-Scan <Type e.Tail>>;
+    = <StrFromMacroDigit s.Number> ' ' <Xxout-Scan <Type e.Tail>>;
 
   'P' s.S s.Printable e.Tail
     = <Xxout-Chars () 'P' s.S s.Printable e.Tail> : (e.Chars) s.T s.S^ e.Tail^
@@ -2363,32 +2441,8 @@ $ENTRY Exit {
   54. <Close s.FileNo> == []
   If file not opened function never does.
 */
-%%
-namespace cookie_ns {
-
-enum CloseMode { cCloseMode_Silent, cCloseMode_Fail };
-
-extern refalrts::FnResult close(
-  refalrts::VM *vm, const refalrts::RefalIdentifier *identifiers,
-  refalrts::Iter arg_begin, refalrts::Iter arg_end, CloseMode mode
-);
-
-}  // namespace cookie_ns
-%%
-
 $ENTRY Close {
 %%
-  return cookie_ns::close(
-    vm, identifiers, arg_begin, arg_end, cookie_ns::cCloseMode_Silent
-  );
-%%
-}
-
-%%
-refalrts::FnResult cookie_ns::close(
-  refalrts::VM *vm, const refalrts::RefalIdentifier *identifiers,
-  refalrts::Iter arg_begin, refalrts::Iter arg_end, CloseMode mode
-) {
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
   refalrts::call_left(content_b, content_e, arg_begin, arg_end);
@@ -2402,33 +2456,16 @@ refalrts::FnResult cookie_ns::close(
   }
 
   FILE *handle = extract_file_handle(vm, identifiers, pfile_handle);
-  switch (mode) {
-  case cookie_ns::cCloseMode_Silent:
-    if (handle) {
-      if (! release_file_handle(vm, pfile_handle)) {
-        return refalrts::cRecognitionImpossible;
-      }
-    }
-    break;
-
-  case cookie_ns::cCloseMode_Fail:
-    if (! handle) {
-      return refalrts::cRecognitionImpossible;
-    }
-
+  if (handle) {
     if (! release_file_handle(vm, pfile_handle)) {
       return refalrts::cRecognitionImpossible;
     }
-    break;
-
-  default:
-    refalrts_switch_default_violation(mode);
   }
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-}
 %%
+}
 
 
 /**
@@ -3082,56 +3119,17 @@ $ENTRY GetPPID {
 * Ввод-вывод
 
 /**
-  <FClose s.FileNo> == []
-  If file not opened function never does.
-*/
-$ENTRY FClose {
-%%
-  return cookie_ns::close(
-    vm, identifiers, arg_begin, arg_end, cookie_ns::cCloseMode_Fail
-  );
-%%
-}
-
-
-/**
   <Open-Auto t.Mode e.FileName> == s.FileNo
   t.Mode ::=
       'r' | 'w' | 'a'
     | 'R' | 'W' | 'A'
     | s.COMPOUND | (s.CHAR*)
-
-  FOpen (deprecated) is synonim for Open-Auto
 */
 $ENTRY Open-Auto {
   t.Mode s.FileNameChar e.FileName
     = <GetFreeHandle> : s.FreeHandle
     = <Open t.Mode s.FreeHandle s.FileNameChar e.FileName>
       s.FreeHandle;
-}
-
-$ENTRY FOpen {
-  t.Mode e.FileName = <Open-Auto t.Mode e.FileName>
-}
-
-
-/**
-  <FReadLine s.FileNo> == s.FileNo s.CHAR* 0?
-*/
-$ENTRY FReadLine {
-  s.FileNo = s.FileNo <Get-Aux s.FileNo>;
-}
-
-
-/**
-  <FWriteLine s.FileNo e.AnyExpression> == s.FileNo
-*/
-$ENTRY FWriteLine {
-%%
-  return cookie_ns::fwrite_line(
-    vm, identifiers, arg_begin, arg_end, cookie_ns::cFlags_ReturnHandle
-  );
-%%
 }
 
 
@@ -3166,50 +3164,12 @@ GetFreeHandle {
 }
 
 
-/**
-  <ReadLine> == s.CHAR* 0?
-*/
-$ENTRY ReadLine {
-  = <Get stdin>;
-}
-
-
-/**
-  <WriteLine e.AnyExpression> == []
-
-  Synonym for Prout
-*/
-$ENTRY WriteLine {
-  e.AnyExpression = <Putout stdout e.AnyExpression>;
-}
-
-
 * Работа с типами символов
 
-/**
-  <IntFromStr s.DIGIT-CHAR* e.NotDigitExpr>
-    == Success s.MACRODIGIT e.NotDigitExpr
-  <IntFromStr e.NotDigitExpr>
-    == Fails e.NotDigitExpr
+/*
+  <StrFromMacroDigit s.MACRODIGIT> == s.DIGIT-CHAR+
 */
-$ENTRY IntFromStr {
-  e.String
-    = <DoNumb
-          {
-            (e.MacroDigits s.LastDigit) e.Rest = Success s.LastDigit e.Rest;
-          }
-          {
-            e.Rest = Fails e.Rest;
-          }
-        () e.String
-      >;
-}
-
-
-/**
-  <StrFromInt s.MACRODIGIT> == s.DIGIT-CHAR+
-*/
-$ENTRY StrFromInt {
+StrFromMacroDigit {
 %%
   refalrts::Iter content_b = 0;
   refalrts::Iter content_e = 0;
@@ -3397,8 +3357,6 @@ bool cookie_ns::compare(refalrts::Iter left, refalrts::Iter right) {
 /**
   <WriteBytes s.FileNo s.Byte*> == []
   s.Byte ::= s.MACRODIGIT | s.CHAR
-
-  FWriteBytes (deprecated) is synonim for WriteBytes
 */
 $ENTRY WriteBytes {
 %%
@@ -3445,10 +3403,6 @@ $ENTRY WriteBytes {
 %%
 }
 
-$ENTRY FWriteBytes {
-  s.FileNo e.Bytes = <WriteBytes s.FileNo e.Bytes>;
-}
-
 
 /**
   <ReadBytes s.FileNo s.CountBytes> == e.ReadBytes
@@ -3457,8 +3411,6 @@ $ENTRY FWriteBytes {
   e.ReadBytes ::= s.MACRODIGIT*
 
   |e.ReadBytes| <= s.CountBytes
-
-  FReadBytes (deprecated) is synonim for ReadBytes
 */
 $ENTRY ReadBytes {
 %%
@@ -3517,10 +3469,6 @@ $ENTRY ReadBytes {
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
 %%
-}
-
-$ENTRY FReadBytes {
-  s.FileNo s.Count = <ReadBytes s.FileNo s.Count>;
 }
 
 

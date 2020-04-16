@@ -11,11 +11,6 @@ setlocal
   call :MAKE_DIR make rlmake-core || exit /b 1
   call :MAKE_DIR rsl-decompiler rl-rsl-decompiler || exit /b 1
 
-  copy bin\rlc-core.exe bin\srefc-core.exe
-  copy bin\rl-lexgen.exe bin\lexgen.exe
-  copy bin\rlmake-core.exe bin\srmake-core.exe
-  copy bin\rl-rsl-decompiler.exe bin\rsl-decompiler.exe
-
   pushd lib-prefixes
   call make.bat || exit /b 1
   popd

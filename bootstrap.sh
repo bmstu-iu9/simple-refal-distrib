@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x bootstrap.sh clear.sh bin/sr{efc,make}
+chmod +x bootstrap.sh clear.sh bin/rl{c,make}
 
 source ./scripts/load-config.sh . || exit 1
 source ./scripts/platform-specific.sh
@@ -41,11 +41,6 @@ make_dir lexgen rl-lexgen
 make_dir interpreter rlgo DEBUG
 make_dir make rlmake-core
 make_dir rsl-decompiler rl-rsl-decompiler
-
-cp bin/{rlc,srefc}-core$(platform_exe_suffix)
-cp bin/{rl-,}lexgen$(platform_exe_suffix)
-cp bin/{rl,sr}make-core$(platform_exe_suffix)
-cp bin/{rl-,}rsl-decompiler$(platform_exe_suffix)
 
 ( cd lib-prefixes && ./make.sh ) || exit 1
 

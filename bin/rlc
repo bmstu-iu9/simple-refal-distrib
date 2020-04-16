@@ -14,9 +14,8 @@ CPPLINEE=${CPPLINEE}
 CPPLINEL=${CPPLINEL}
 CPPLINEESUF=${CPPLINEESUF}
 CPPLINELSUF=${CPPLINELSUF}
-CPPLINE_FLAGS=${CPPLINE_FLAGS}
-SREFC_FLAGS=${SREFC_FLAGS}
-SRMAKE_FLAGS=${SRMAKE_FLAGS}
+RLC_FLAGS=${RLC_FLAGS}
+RLMAKE_FLAGS=${RLMAKE_FLAGS}
 
 # shellcheck disable=SC1090
 source "$DISTRDIR/scripts/platform-specific.sh"
@@ -85,22 +84,22 @@ main() {
   fi
 
   PATH=${BINDIR}:$PATH
-  if [[ "$MODE" = "srefc" || "$MODE" = "rlc" ]]; then
+  if [[ "$MODE" = "rlc" ]]; then
     # shellcheck disable=SC2086
     rlc-core \
-      -OC ${SREFC_FLAGS} \
+      -OC ${RLC_FLAGS} \
       "--exesuffix=$(platform_exe_suffix)" "--libsuffix=$(platform_lib_suffix)" \
-      "${CPP[@]}" --cppflags="$CPPLINE_FLAGS" --chmod-x-command="chmod +x" \
+      "${CPP[@]}" --chmod-x-command="chmod +x" \
       -d "$LIBDIR/common" --prelude=refal5-builtins.refi \
       ${PREFIX} "${D[@]}" -d "$LIBDIR" "$@"
-  elif [[ "$MODE" = "srmake" || "$MODE" = "rlmake" ]]; then
+  elif [[ "$MODE" = "rlmake" ]]; then
     # shellcheck disable=SC2086
     rlmake-core \
-      -s "srefc-core" \
-      -X-OC ${SRMAKE_FLAGS} \
+      --rlc-command="rlc-core" \
+      -X-OC ${RLMAKE_FLAGS} \
       "-X--exesuffix=$(platform_exe_suffix)" "-X--libsuffix=$(platform_lib_suffix)" \
       "${CPP[@]}" \
-      --thru=--cppflags="$CPPLINE_FLAGS"  -X--chmod-x-command="chmod +x" \
+      -X--chmod-x-command="chmod +x" \
       -d "$LIBDIR/common" --prelude=refal5-builtins.refi \
       ${PREFIX} "${D[@]}" -d "$LIBDIR" "${RT[@]}" "$@"
   else

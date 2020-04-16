@@ -1,3 +1,6 @@
+#include <string.h>
+
+
 #include "refalrts-functions.h"
 #include "refalrts-commands.h"
 
@@ -70,3 +73,29 @@ const refalrts::RASLCommand refalrts::RefalCondFunctionNative::run[] = {
 };
 
 const refalrts::UInt32 refalrts::ModuleRepresentant::FAKE_COOKIE;
+
+refalrts::RefalFunction *
+refalrts::Metatable::lookup(const refalrts::RefalIdentifier ident) {
+  std::vector<Pair>::iterator p, end;
+  p = pairs.begin();
+  end = pairs.end();
+
+  while (p != end && idents[p->ident] != ident) {
+    ++p;
+  }
+
+  return p != end ? functions[p->func] : 0;
+}
+
+refalrts::RefalFunction *
+refalrts::Metatable::lookup(const char *name) {
+  std::vector<Pair>::iterator p, end;
+  p = pairs.begin();
+  end = pairs.end();
+
+  while (p != end && strcmp(idents[p->ident]->name(), name) != 0) {
+    ++p;
+  }
+
+  return p != end ? functions[p->func] : 0;
+}

@@ -3,132 +3,174 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1620770682_884010706
-#define COOKIE1_ 1620770682U
-#define COOKIE2_ 884010706U
+#define cookie_ns cookie_ns_3944365452_2356764072
+#define COOKIE1_ 3944365452U
+#define COOKIE2_ 2356764072U
 
 enum efunc {
-  efunc_gen_Mu_C1 = 0,
-  efunc_u_u_Stepm_Start = 1,
-  efunc_u_u_Mum_Aux = 2,
-  efunc_u_u_Stepm_End = 3,
-  efunc_u_u_FindMuPtr = 4,
-  efunc_Add = 5,
-  efunc_Div = 6,
-  efunc_Mod = 7,
-  efunc_Mul = 8,
-  efunc_Residue = 9,
-  efunc_Sub = 10,
-  efunc_gen_u_u_Mum_Aux_S13B1 = 11,
-  efunc_Type = 12,
-  efunc_gen_Residue_C1 = 13,
-  efunc_Map = 14,
-  efunc_Apply = 15,
-  efunc_Reduce = 16,
-  efunc_DoMapAccum = 17,
-  efunc_DoMapAccumm_Aux = 18,
-  efunc_Fetch = 19,
-  efunc_Pipe = 20,
-  efunc_gen_Pipe_S2L1 = 21,
-  efunc_gen_Pipe_S3L1 = 22,
-  efunc_FindDivisionAndGenerate = 23,
-  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A3 = 24,
-  efunc_GenPattern = 25,
-  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A2 = 26,
-  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1 = 27,
-  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1 = 28,
-  efunc_Max = 29,
-  efunc_gen_FindDivisionAndGenerate_B1S1A3 = 30,
-  efunc_gen_FindDivisionAndGenerate_B1S1A2 = 31,
-  efunc_gen_FindDivisionAndGenerate_B1S1A1 = 32,
-  efunc_GenerateGroupWithGCGSubst = 33,
-  efunc_gen_FindDivisionAndGenerate_B1 = 34,
-  efunc_FindDivision = 35,
-  efunc_gen_GenerateGroupWithGCGSubst_S2A4 = 36,
-  efunc_gen_GenerateGroupWithGCGSubst_S2A3 = 37,
-  efunc_NarrowSentenceSubstitutions = 38,
-  efunc_CodeForSubst = 39,
-  efunc_gen_GenerateGroupWithGCGSubst_S2A2 = 40,
-  efunc_GenerateSingleSentence = 41,
-  efunc_EnumerateVarsm_Subst = 42,
-  efunc_gen_GenerateGroupWithGCGSubst_S2A1 = 43,
-  efunc_MakeSavers = 44,
-  efunc_gen_CodeForSubst_A2 = 45,
-  efunc_ComposeVars = 46,
-  efunc_gen_CodeForSubst_A1 = 47,
-  efunc_gen_GenerateSingleSentence_A2 = 48,
-  efunc_GenResult = 49,
-  efunc_gen_GenerateSingleSentence_A1 = 50,
-  efunc_gen_ComposeVars_S1A1 = 51,
-  efunc_gen_ComposeVars_S1A1B1 = 52,
-  efunc_gen_EnumerateVarsRec_L1S2A1 = 53,
-  efunc_EnumerateVarsRec = 54,
-  efunc_gen_EnumerateVarsRec_L1S3A1 = 55,
-  efunc_gen_MapAccum_Z1 = 56,
-  efunc_gen_EnumerateVarsm_Subst_L1A1 = 57,
-  efunc_gen_MapAccum_Z2 = 58,
-  efunc_DoFindDivision = 59,
-  efunc_MakeTrivialSubstImage = 60,
-  efunc_gen_FindDivision_A3 = 61,
-  efunc_gen_FindDivision_C1 = 62,
-  efunc_gen_FindDivision_A2 = 63,
-  efunc_ImagedSentence = 64,
-  efunc_Substm_BuildImage = 65,
-  efunc_gen_ImagedSentence_A1 = 66,
-  efunc_gen_Map_Z1 = 67,
-  efunc_Substm_Collapse = 68,
-  efunc_gen_DoFindDivision_S1B1 = 69,
-  efunc_gen_DoFindDivision_S1A2 = 70,
-  efunc_Substm_Generalization = 71,
-  efunc_gen_DoFindDivision_S1A1 = 72,
-  efunc_NarrowSubst = 73,
-  efunc_gen_Map_Z2 = 74,
-  efunc_gen_NarrowSubst_S1A1 = 75,
-  efunc_GenericMatch = 76,
-  efunc_BuildImage = 77,
-  efunc_BuildImagem_Term = 78,
-  efunc_gen_Map_Z3 = 79,
-  efunc_Generalization = 80,
-  efunc_Generalizationm_Term = 81,
-  efunc_Collapse = 82,
-  efunc_Collapsem_Term = 83,
-  efunc_gen_Map_Z4 = 84,
-  efunc_gen_DoMapAccum_Z1 = 85,
-  efunc_gen_DoMapAccum_Z2 = 86,
-  efunc_gen_MakeTrivialSubstImage_L1D2 = 87,
-  efunc_gen_NarrowSentenceSubstitutions_L1D1 = 88,
-  efunc_gen_Substm_BuildImage_L1D2 = 89,
-  efunc_gen_Substm_Collapse_L1D3 = 90,
-  efunc_gen_DoMapAccumm_Aux_Z1 = 91,
-  efunc_gen_EnumerateVarsRec_L1D4 = 92,
-  efunc_gen_DoMapAccumm_Aux_Z2 = 93,
-  efunc_gen_EnumerateVarsm_Subst_L1D1 = 94,
+  efunc_u_u_Stepm_Drop = 0,
+  efunc_u_u_Metau_Mu = 1,
+  efunc_d_table = 2,
+  efunc_Map = 3,
+  efunc_Apply = 4,
+  efunc_Reduce = 5,
+  efunc_DoMapAccum = 6,
+  efunc_DoMapAccumm_Aux = 7,
+  efunc_Add = 8,
+  efunc_Sub = 9,
+  efunc_Fetch = 10,
+  efunc_Pipe = 11,
+  efunc_gen_Pipe_S2L1 = 12,
+  efunc_gen_Pipe_S3L1 = 13,
+  efunc_FindDivisionAndGenerate = 14,
+  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A3 = 15,
+  efunc_GenPattern = 16,
+  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A2 = 17,
+  efunc_gen_Map_Z1 = 18,
+  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1 = 19,
+  efunc_Max = 20,
+  efunc_gen_FindDivisionAndGenerate_B1S1A3 = 21,
+  efunc_gen_FindDivisionAndGenerate_B1S1A2 = 22,
+  efunc_gen_FindDivisionAndGenerate_B1S1A1 = 23,
+  efunc_GenerateGroupWithGCGSubst = 24,
+  efunc_gen_FindDivisionAndGenerate_B1 = 25,
+  efunc_FindDivision = 26,
+  efunc_gen_GenerateGroupWithGCGSubst_S2A4 = 27,
+  efunc_gen_GenerateGroupWithGCGSubst_S2A3 = 28,
+  efunc_NarrowSentenceSubstitutions = 29,
+  efunc_CodeForSubst = 30,
+  efunc_gen_GenerateGroupWithGCGSubst_S2A2 = 31,
+  efunc_GenerateSingleSentence = 32,
+  efunc_EnumerateVarsm_Subst = 33,
+  efunc_gen_GenerateGroupWithGCGSubst_S2A1 = 34,
+  efunc_MakeSavers = 35,
+  efunc_gen_CodeForSubst_A2 = 36,
+  efunc_ComposeVars = 37,
+  efunc_gen_CodeForSubst_A1 = 38,
+  efunc_gen_GenerateSingleSentence_A2 = 39,
+  efunc_GenResult = 40,
+  efunc_gen_GenerateSingleSentence_A1 = 41,
+  efunc_gen_ComposeVars_S1A1 = 42,
+  efunc_gen_ComposeVars_S1A1B1 = 43,
+  efunc_gen_EnumerateVarsRec_L1S2A1 = 44,
+  efunc_EnumerateVarsRec = 45,
+  efunc_gen_EnumerateVarsRec_L1S3A1 = 46,
+  efunc_gen_MapAccum_Z1 = 47,
+  efunc_gen_EnumerateVarsm_Subst_L1A1 = 48,
+  efunc_gen_MapAccum_Z2 = 49,
+  efunc_DoFindDivision = 50,
+  efunc_MakeTrivialSubstImage = 51,
+  efunc_gen_FindDivision_A3 = 52,
+  efunc_gen_FindDivision_C1 = 53,
+  efunc_gen_FindDivision_A2 = 54,
+  efunc_ImagedSentence = 55,
+  efunc_Substm_BuildImage = 56,
+  efunc_gen_ImagedSentence_A1 = 57,
+  efunc_gen_Map_Z2 = 58,
+  efunc_Substm_Collapse = 59,
+  efunc_gen_DoFindDivision_S1B1 = 60,
+  efunc_gen_DoFindDivision_S1A2 = 61,
+  efunc_Substm_Generalization = 62,
+  efunc_gen_DoFindDivision_S1A1 = 63,
+  efunc_NarrowSubst = 64,
+  efunc_gen_Map_Z3 = 65,
+  efunc_gen_NarrowSubst_S1A1 = 66,
+  efunc_GenericMatch = 67,
+  efunc_BuildImage = 68,
+  efunc_BuildImagem_Term = 69,
+  efunc_gen_Map_Z4 = 70,
+  efunc_Generalization = 71,
+  efunc_Generalizationm_Term = 72,
+  efunc_Collapse = 73,
+  efunc_Collapsem_Term = 74,
+  efunc_gen_Map_Z5 = 75,
+  efunc_Mu = 76,
+  efunc_Up = 77,
+  efunc_Evm_met = 78,
+  efunc_Residue = 79,
+  efunc_u_u_Metau_Residue = 80,
+  efunc_MapAccum = 81,
+  efunc_UnBracket = 82,
+  efunc_DelAccumulator = 83,
+  efunc_Inc = 84,
+  efunc_Dec = 85,
+  efunc_HighLevelRASLm_Functionm_Conjoint = 86,
+  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1D1 = 87,
+  efunc_gen_Map_Z0 = 88,
+  efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1 = 89,
+  efunc_gen_DoMapAccum_Z1 = 90,
+  efunc_gen_MapAccum_Z0 = 91,
+  efunc_gen_EnumerateVarsRec_L1 = 92,
+  efunc_gen_DoMapAccum_Z2 = 93,
+  efunc_gen_EnumerateVarsm_Subst_L1 = 94,
+  efunc_gen_MakeTrivialSubstImage_L1D2 = 95,
+  efunc_gen_MakeTrivialSubstImage_L1 = 96,
+  efunc_gen_NarrowSentenceSubstitutions_L1D1 = 97,
+  efunc_gen_NarrowSentenceSubstitutions_L1 = 98,
+  efunc_gen_Substm_BuildImage_L1D2 = 99,
+  efunc_gen_Substm_BuildImage_L1 = 100,
+  efunc_gen_Substm_Collapse_L1D3 = 101,
+  efunc_gen_Substm_Collapse_L1 = 102,
+  efunc_gen_DoMapAccumm_Aux_Z1 = 103,
+  efunc_gen_EnumerateVarsRec_L1D4 = 104,
+  efunc_gen_DoMapAccum_Z0 = 105,
+  efunc_gen_DoMapAccumm_Aux_Z2 = 106,
+  efunc_gen_EnumerateVarsm_Subst_L1D1 = 107,
+  efunc_gen_DoMapAccumm_Aux_Z0 = 108,
 };
 
 
 enum ident {
-  ident_k43_ = 0,
-  ident_k47_ = 1,
-  ident_k37_ = 2,
-  ident_k42_ = 3,
-  ident_k63_ = 4,
-  ident_m_ = 5,
-  ident_Function = 6,
-  ident_CmdIssueMemory = 7,
-  ident_CmdOpenELoop = 8,
-  ident_CmdFail = 9,
-  ident_TkVariable = 10,
-  ident_CmdSentence = 11,
-  ident_ForGroup = 12,
-  ident_ForAllSentences = 13,
-  ident_Junk = 14,
-  ident_S = 15,
-  ident_T = 16,
-  ident_E = 17,
-  ident_Brackets = 18,
-  ident_ADTm_Brackets = 19,
-  ident_MN = 20,
-  ident_Clear = 21,
+  ident_Function = 0,
+  ident_CmdIssueMemory = 1,
+  ident_CmdOpenELoop = 2,
+  ident_CmdFail = 3,
+  ident_TkVariable = 4,
+  ident_CmdSentence = 5,
+  ident_ForGroup = 6,
+  ident_ForAllSentences = 7,
+  ident_Junk = 8,
+  ident_S = 9,
+  ident_T = 10,
+  ident_E = 11,
+  ident_Brackets = 12,
+  ident_ADTm_Brackets = 13,
+  ident_MN = 14,
+  ident_Clear = 15,
+  ident_Mu = 16,
+  ident_Up = 17,
+  ident_Evm_met = 18,
+  ident_Residue = 19,
+  ident_u_u_Metau_Residue = 20,
+  ident_Apply = 21,
+  ident_Map = 22,
+  ident_Reduce = 23,
+  ident_Fetch = 24,
+  ident_MapAccum = 25,
+  ident_DoMapAccum = 26,
+  ident_DoMapAccumm_Aux = 27,
+  ident_UnBracket = 28,
+  ident_DelAccumulator = 29,
+  ident_Inc = 30,
+  ident_Dec = 31,
+  ident_Pipe = 32,
+  ident_HighLevelRASLm_Functionm_Conjoint = 33,
+  ident_FindDivisionAndGenerate = 34,
+  ident_GenerateGroupWithGCGSubst = 35,
+  ident_CodeForSubst = 36,
+  ident_GenerateSingleSentence = 37,
+  ident_ComposeVars = 38,
+  ident_EnumerateVarsRec = 39,
+  ident_EnumerateVarsm_Subst = 40,
+  ident_FindDivision = 41,
+  ident_ImagedSentence = 42,
+  ident_MakeTrivialSubstImage = 43,
+  ident_DoFindDivision = 44,
+  ident_NarrowSentenceSubstitutions = 45,
+  ident_NarrowSubst = 46,
+  ident_Substm_BuildImage = 47,
+  ident_Substm_Generalization = 48,
+  ident_Substm_Collapse = 49,
 };
 
 
@@ -138,457 +180,42 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  // </0 & Mu/4 t.Function#1/5 e.Arg#1/2 >/1
+  // issue here memory for vars with 9 elems
+  refalrts::Iter context[9];
+  refalrts::zeros( context, 9 );
+  // </0 & Mu/4 e.Arg#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
   // closed e.Arg#1 as range 2
-  //DEBUG: t.Function#1: 5
   //DEBUG: e.Arg#1: 2
-  //2: e.Arg#1
-  //5: t.Function#1
-  //15: t.Function#1
-
-  refalrts::reset_allocator(vm);
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  refalrts::alloc_open_call(vm, context[7]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_gen_Mu_C1]);
-  refalrts::alloc_open_call(vm, context[10]);
-  refalrts::alloc_name(vm, context[11], functions[efunc_u_u_Stepm_Start]);
-  refalrts::alloc_close_call(vm, context[12]);
-  refalrts::alloc_open_call(vm, context[13]);
-  refalrts::alloc_name(vm, context[14], functions[efunc_u_u_Mum_Aux]);
-  refalrts::copy_stvar(vm, context[15], context[5]);
-  refalrts::alloc_close_call(vm, context[16]);
-  refalrts::alloc_close_call(vm, context[8]);
-  refalrts::push_stack( vm, context[8] );
-  refalrts::push_stack( vm, context[7] );
-  res = refalrts::splice_elem( res, context[8] );
-  refalrts::push_stack( vm, context[16] );
-  refalrts::push_stack( vm, context[13] );
-  res = refalrts::splice_elem( res, context[16] );
-  res = refalrts::splice_stvar( res, context[15] );
-  res = refalrts::splice_elem( res, context[14] );
-  res = refalrts::splice_elem( res, context[13] );
-  refalrts::push_stack( vm, context[12] );
-  refalrts::push_stack( vm, context[10] );
-  res = refalrts::splice_elem( res, context[12] );
-  res = refalrts::splice_elem( res, context[11] );
-  res = refalrts::splice_elem( res, context[10] );
-  res = refalrts::splice_elem( res, context[9] );
-  res = refalrts::splice_elem( res, context[7] );
-  refalrts::use( res );
-  refalrts::FnResult rec_res = refalrts::recursive_call_main_loop(vm);
-  if (rec_res != refalrts::cSuccess)
-    return rec_res;
-  refalrts::this_is_generated_function(vm);
-  do {
-    // </7 & Mu?1/11 s.Function-Ptr#2/12 >/8
-    context[9] = 0;
-    context[10] = 0;
-    context[11] = refalrts::call_left( context[9], context[10], context[7], context[8] );
-    if( ! refalrts::svar_left( context[12], context[9], context[10] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[9], context[10] ) )
-      continue;
-    //DEBUG: t.Function#1: 5
-    //DEBUG: e.Arg#1: 2
-    //DEBUG: s.Function-Ptr#2: 12
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name(context[4], functions[efunc_u_u_Stepm_End]);
-    refalrts::reinit_close_call(context[7]);
-    refalrts::reinit_open_call(context[11]);
-    refalrts::push_stack( vm, context[1] );
-    refalrts::push_stack( vm, context[11] );
-    refalrts::push_stack( vm, context[7] );
-    refalrts::push_stack( vm, context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[7], context[12] );
-    refalrts::splice_to_freelist_open( vm, context[4], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  refalrts::splice_to_freelist(vm, context[7], context[8]);
-  return refalrts::cRecognitionImpossible;
-}
-
-static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
-
-
-static refalrts::FnResult func_gen_u_u_Mum_Aux_S13B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 11 elems
-  refalrts::Iter context[11];
-  refalrts::zeros( context, 11 );
-  // </0 & __Mu-Aux$13:1/4 e.new#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & __Mu-Aux$13:1/4 s.new#1/5 s.new#2/6 t.new#3/7 >/1
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
-  if( ! context[8] )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // </0 & __Mu-Aux$13:1/4 s.new#4/5 s.new#5/6 s.new#6/7 >/1
-    if( ! refalrts::svar_term( context[7], context[7] ) )
-      continue;
-    do {
-      // </0 & __Mu-Aux$13:1/4 'F'/5 s.SubType#2/6 s.FnPtr#2/7 >/1
-      if( ! refalrts::char_term( 'F', context[5] ) )
-        continue;
-      //DEBUG: s.SubType#2: 6
-      //DEBUG: s.FnPtr#2: 7
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux$13:1/4 'F'/5 s.SubType#2/6 s.FnPtr#2/7 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.FnPtr2 #7/1 ]] }
-      refalrts::reinit_svar( context[1], context[7] );
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    // </0 & __Mu-Aux$13:1/4 'W'/5 s.SubType#2/6 s.FnName#2/7 >/1
-    if( ! refalrts::char_term( 'W', context[5] ) )
-      continue;
-    //DEBUG: s.SubType#2: 6
-    //DEBUG: s.FnName#2: 7
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.SubType#2/6 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } <Cookie2>/9 Tile{ AsIs: s.FnName#2/7 AsIs: >/1 ]] }
-    refalrts::alloc_number(vm, context[9], 884010706UL);
-    refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-    refalrts::reinit_number(context[5], 1620770682UL);
-    refalrts::push_stack( vm, context[1] );
-    refalrts::push_stack( vm, context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[7];
-    res = refalrts::splice_evar( res, context[9], context[9] );
-    refalrts::splice_to_freelist_open( vm, context[5], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  // </0 & __Mu-Aux$13:1/4 'B'/5 s.0#2/6 (/7 e.FnName#2/9 )/8 >/1
-  context[9] = 0;
-  context[10] = 0;
-  if( ! refalrts::brackets_term( context[9], context[10], context[7] ) )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::char_term( 'B', context[5] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.FnName#2 as range 9
-  //DEBUG: s.0#2: 6
-  //DEBUG: e.FnName#2: 9
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} s.0#2/6 {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & __FindMuPtr/4 HalfReuse: <Cookie1>/5 } Tile{ HalfReuse: <Cookie2>/7 } Tile{ AsIs: e.FnName#2/9 } Tile{ AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_u_u_FindMuPtr]);
-  refalrts::reinit_number(context[5], 1620770682UL);
-  refalrts::reinit_number(context[7], 884010706UL);
-  refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
-  refalrts::splice_to_freelist_open( vm, context[5], res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_u_u_Mum_Aux_S13B1("__Mu-Aux$13:1", COOKIE1_, COOKIE2_, func_gen_u_u_Mum_Aux_S13B1);
-
-
-static refalrts::FnResult func_u_u_Mum_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 10 elems
-  refalrts::Iter context[10];
-  refalrts::zeros( context, 10 );
-  // </0 & __Mu-Aux/4 e.new#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & __Mu-Aux/4 t.new#1/5 >/1
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  do {
-    // </0 & __Mu-Aux/4 s.new#2/5 >/1
-    if( ! refalrts::svar_term( context[5], context[5] ) )
-      continue;
-    do {
-      // </0 & __Mu-Aux/4 '+'/5 >/1
-      if( ! refalrts::char_term( '+', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '+'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Add]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 '/'/5 >/1
-      if( ! refalrts::char_term( '/', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '/'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Div]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 '%'/5 >/1
-      if( ! refalrts::char_term( '%', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '%'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Mod]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 '*'/5 >/1
-      if( ! refalrts::char_term( '*', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '*'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Mul]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 '?'/5 >/1
-      if( ! refalrts::char_term( '?', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '?'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Residue]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 '-'/5 >/1
-      if( ! refalrts::char_term( '-', context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 '-'/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Sub]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 # +/5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_k43_], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # +/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Add/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Add]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 # //5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_k47_], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # //5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Div/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Div]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 # %/5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_k37_], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # %/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mod/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Mod]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 # */5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_k42_], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # */5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Mul/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Mul]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    do {
-      // </0 & __Mu-Aux/4 # ?/5 >/1
-      if( ! refalrts::ident_term( identifiers[ident_k63_], context[5] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # ?/5 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: & Residue/1 ]] }
-      refalrts::reinit_name(context[1], functions[efunc_Residue]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[1];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    // </0 & __Mu-Aux/4 # -/5 >/1
-    if( ! refalrts::ident_term( identifiers[ident_m_], context[5] ) )
-      continue;
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & __Mu-Aux/4 # -/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: & Sub/1 ]] }
-    refalrts::reinit_name(context[1], functions[efunc_Sub]);
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    refalrts::splice_to_freelist_open( vm, trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  // </0 & __Mu-Aux/4 t.Function#1/5 >/1
-  //DEBUG: t.Function#1: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </7 & __Mu-Aux$13:1/8 Tile{ AsIs: </0 Reuse: & Type/4 AsIs: t.Function#1/5 AsIs: >/1 } >/9 Tile{ ]] }
-  refalrts::alloc_open_call(vm, context[7]);
-  refalrts::alloc_name(vm, context[8], functions[efunc_gen_u_u_Mum_Aux_S13B1]);
-  refalrts::alloc_close_call(vm, context[9]);
-  refalrts::update_name(context[4], functions[efunc_Type]);
-  refalrts::push_stack( vm, context[9] );
-  refalrts::push_stack( vm, context[7] );
-  refalrts::push_stack( vm, context[1] );
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
+  refalrts::alloc_close_call(vm, context[7]);
+  refalrts::alloc_close_call(vm, context[8]);
+  refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
+  refalrts::reinit_name(context[1], functions[efunc_d_table]);
+  refalrts::push_stack( vm, context[8] );
   refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[7] );
+  refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[7], context[8] );
+  res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_u_u_Mum_Aux("__Mu-Aux", COOKIE1_, COOKIE2_, func_u_u_Mum_Aux);
+static refalrts::NativeReference nat_ref_Mu("Mu", COOKIE1_, COOKIE2_, func_Mu);
 
 
 static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -597,98 +224,87 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 17 elems
-  refalrts::Iter context[17];
-  refalrts::zeros( context, 17 );
-  // </0 & Residue/4 t.Function#1/5 e.Arg#1/2 >/1
+  // issue here memory for vars with 12 elems
+  refalrts::Iter context[12];
+  refalrts::zeros( context, 12 );
+  // </0 & Residue/4 e.Arg#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
   // closed e.Arg#1 as range 2
-  //DEBUG: t.Function#1: 5
   //DEBUG: e.Arg#1: 2
-  //2: e.Arg#1
-  //5: t.Function#1
-  //15: t.Function#1
 
   refalrts::reset_allocator(vm);
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  refalrts::alloc_open_call(vm, context[7]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_gen_Residue_C1]);
-  refalrts::alloc_open_call(vm, context[10]);
-  refalrts::alloc_name(vm, context[11], functions[efunc_u_u_Stepm_Start]);
-  refalrts::alloc_close_call(vm, context[12]);
-  refalrts::alloc_open_call(vm, context[13]);
-  refalrts::alloc_name(vm, context[14], functions[efunc_u_u_Mum_Aux]);
-  refalrts::copy_stvar(vm, context[15], context[5]);
-  refalrts::alloc_close_call(vm, context[16]);
-  refalrts::alloc_close_call(vm, context[8]);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 </8 & __Step-Drop/9 >/10 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
+  refalrts::alloc_close_call(vm, context[7]);
+  refalrts::alloc_open_call(vm, context[8]);
+  refalrts::alloc_name(vm, context[9], functions[efunc_u_u_Stepm_Drop]);
+  refalrts::alloc_close_call(vm, context[10]);
+  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
+  refalrts::reinit_name(context[1], functions[efunc_d_table]);
+  refalrts::push_stack( vm, context[11] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[10] );
   refalrts::push_stack( vm, context[8] );
   refalrts::push_stack( vm, context[7] );
-  res = refalrts::splice_elem( res, context[8] );
-  refalrts::push_stack( vm, context[16] );
-  refalrts::push_stack( vm, context[13] );
-  res = refalrts::splice_elem( res, context[16] );
-  res = refalrts::splice_stvar( res, context[15] );
-  res = refalrts::splice_elem( res, context[14] );
-  res = refalrts::splice_elem( res, context[13] );
-  refalrts::push_stack( vm, context[12] );
-  refalrts::push_stack( vm, context[10] );
-  res = refalrts::splice_elem( res, context[12] );
-  res = refalrts::splice_elem( res, context[11] );
-  res = refalrts::splice_elem( res, context[10] );
-  res = refalrts::splice_elem( res, context[9] );
-  res = refalrts::splice_elem( res, context[7] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[5], context[10] );
   refalrts::use( res );
-  refalrts::FnResult rec_res = refalrts::recursive_call_main_loop(vm);
-  if (rec_res != refalrts::cSuccess)
-    return rec_res;
-  refalrts::this_is_generated_function(vm);
-  do {
-    // </7 & Residue?1/11 s.Function-Ptr#2/12 >/8
-    context[9] = 0;
-    context[10] = 0;
-    context[11] = refalrts::call_left( context[9], context[10], context[7], context[8] );
-    if( ! refalrts::svar_left( context[12], context[9], context[10] ) )
-      continue;
-    if( ! refalrts::empty_seq( context[9], context[10] ) )
-      continue;
-    //DEBUG: t.Function#1: 5
-    //DEBUG: e.Arg#1: 2
-    //DEBUG: s.Function-Ptr#2: 12
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} t.Function#1/5 {REMOVED TILE} {REMOVED TILE} >/8 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Step-End/4 } Tile{ HalfReuse: >/7 HalfReuse: </11 AsIs: s.Function-Ptr#2/12 } Tile{ AsIs: e.Arg#1/2 } Tile{ AsIs: >/1 ]] }
-    refalrts::update_name(context[4], functions[efunc_u_u_Stepm_End]);
-    refalrts::reinit_close_call(context[7]);
-    refalrts::reinit_open_call(context[11]);
-    refalrts::push_stack( vm, context[1] );
-    refalrts::push_stack( vm, context[11] );
-    refalrts::push_stack( vm, context[7] );
-    refalrts::push_stack( vm, context[0] );
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[2], context[3] );
-    res = refalrts::splice_evar( res, context[7], context[12] );
-    refalrts::splice_to_freelist_open( vm, context[4], res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  refalrts::splice_to_freelist(vm, context[7], context[8]);
-  return refalrts::cRecognitionImpossible;
+  return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_Residue("Residue", COOKIE1_, COOKIE2_, func_Residue);
+
+
+static refalrts::FnResult func_u_u_Metau_Residue(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 8 elems
+  refalrts::Iter context[8];
+  refalrts::zeros( context, 8 );
+  // </0 & __Meta_Residue/4 e.Arg#1/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.Arg#1 as range 2
+  //DEBUG: e.Arg#1: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
+  refalrts::alloc_close_call(vm, context[7]);
+  refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[7] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[7] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COOKIE1_, COOKIE2_, func_u_u_Metau_Residue);
 
 
 static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2059,9 +1675,9 @@ static refalrts::FnResult func_HighLevelRASLm_Functionm_Conjoint(refalrts::VM *v
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 16 elems
-  refalrts::Iter context[16];
-  refalrts::zeros( context, 16 );
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
   // </0 & HighLevelRASL-Function-Conjoint/4 s.FnGenSubst#1/5 s.FnGenResult#1/6 s.ScopeClass#1/7 (/10 e.Name#1/8 )/11 e.Sentences#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2090,23 +1706,22 @@ static refalrts::FnResult func_HighLevelRASLm_Functionm_Conjoint(refalrts::VM *v
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL-Function-Conjoint=1/4 } Tile{ AsIs: s.ScopeClass#1/7 AsIs: (/10 AsIs: e.Name#1/8 AsIs: )/11 } Tile{ AsIs: s.FnGenSubst#1/5 AsIs: s.FnGenResult#1/6 } </12 & Map/13 & HighLevelRASL-Function-Conjoint=1\1/14 Tile{ AsIs: e.Sentences#1/2 } >/15 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL-Function-Conjoint=1/4 } Tile{ AsIs: s.ScopeClass#1/7 AsIs: (/10 AsIs: e.Name#1/8 AsIs: )/11 } Tile{ AsIs: s.FnGenSubst#1/5 AsIs: s.FnGenResult#1/6 } </12 & Map@1/13 Tile{ AsIs: e.Sentences#1/2 } >/14 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[12]);
-  refalrts::alloc_name(vm, context[13], functions[efunc_Map]);
-  refalrts::alloc_name(vm, context[14], functions[efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1]);
-  refalrts::alloc_close_call(vm, context[15]);
+  refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z1]);
+  refalrts::alloc_close_call(vm, context[14]);
   refalrts::update_name(context[4], functions[efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[15] );
+  refalrts::push_stack( vm, context[14] );
   refalrts::push_stack( vm, context[12] );
   refalrts::link_brackets( context[10], context[11] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[15], context[15] );
+  res = refalrts::splice_evar( res, context[14], context[14] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[12], context[14] );
+  res = refalrts::splice_evar( res, context[12], context[13] );
   res = refalrts::splice_evar( res, context[5], context[6] );
   res = refalrts::splice_evar( res, context[7], context[11] );
   refalrts::use( res );
@@ -4813,8 +4428,8 @@ static refalrts::FnResult func_MakeTrivialSubstImage(refalrts::VM *vm, refalrts:
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@1/4 AsIs: e.SubstImage#1/2 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_gen_Map_Z1]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@2/4 AsIs: e.SubstImage#1/2 AsIs: >/1 ]] }
+  refalrts::update_name(context[4], functions[efunc_gen_Map_Z2]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   return refalrts::cSuccess;
@@ -5396,9 +5011,9 @@ static refalrts::FnResult func_NarrowSentenceSubstitutions(refalrts::VM *vm, ref
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Map@2/7 AsIs: e.NewGCG-Subst#1/5 HalfReuse: (/8 AsIs: e.Sentences#1/2 HalfReuse: )/1 } Tile{ HalfReuse: >/0 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Map@3/7 AsIs: e.NewGCG-Subst#1/5 HalfReuse: (/8 AsIs: e.Sentences#1/2 HalfReuse: )/1 } Tile{ HalfReuse: >/0 } Tile{ ]] }
   refalrts::reinit_open_call(context[4]);
-  refalrts::reinit_name(context[7], functions[efunc_gen_Map_Z2]);
+  refalrts::reinit_name(context[7], functions[efunc_gen_Map_Z3]);
   refalrts::reinit_open_bracket(context[8]);
   refalrts::reinit_close_bracket(context[1]);
   refalrts::reinit_close_call(context[0]);
@@ -5755,8 +5370,8 @@ static refalrts::FnResult func_Substm_BuildImage(refalrts::VM *vm, refalrts::Ite
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@3/4 AsIs: e.Substitution#1/2 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_gen_Map_Z3]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@4/4 AsIs: e.Substitution#1/2 AsIs: >/1 ]] }
+  refalrts::update_name(context[4], functions[efunc_gen_Map_Z4]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   return refalrts::cSuccess;
@@ -6253,8 +5868,8 @@ static refalrts::FnResult func_Substm_Collapse(refalrts::VM *vm, refalrts::Iter 
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@4/4 AsIs: e.Substitution#1/2 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_gen_Map_Z4]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@5/4 AsIs: e.Substitution#1/2 AsIs: >/1 ]] }
+  refalrts::update_name(context[4], functions[efunc_gen_Map_Z5]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   return refalrts::cSuccess;
@@ -6263,101 +5878,15 @@ static refalrts::FnResult func_Substm_Collapse(refalrts::VM *vm, refalrts::Iter 
 static refalrts::NativeReference nat_ref_Substm_Collapse("Subst-Collapse", COOKIE1_, COOKIE2_, func_Substm_Collapse);
 
 
-static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 9 elems
-  refalrts::Iter context[9];
-  refalrts::zeros( context, 9 );
-  // </0 & MapAccum@1/4 t.Acc#1/5 e.Tail#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Tail#1 as range 2
-  //DEBUG: t.Acc#1: 5
-  //DEBUG: e.Tail#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 AsIs: t.Acc#1/5 AsIs: e.Tail#1/2 HalfReuse: (/1 } )/7 >/8 Tile{ ]] }
-  refalrts::alloc_close_bracket(vm, context[7]);
-  refalrts::alloc_close_call(vm, context[8]);
-  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z1]);
-  refalrts::reinit_open_bracket(context[1]);
-  refalrts::push_stack( vm, context[8] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[1], context[7] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z1);
-
-
-static refalrts::FnResult func_gen_MapAccum_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 9 elems
-  refalrts::Iter context[9];
-  refalrts::zeros( context, 9 );
-  // </0 & MapAccum@2/4 t.Acc#1/5 e.Tail#1/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Tail#1 as range 2
-  //DEBUG: t.Acc#1: 5
-  //DEBUG: e.Tail#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 AsIs: t.Acc#1/5 AsIs: e.Tail#1/2 HalfReuse: (/1 } )/7 >/8 Tile{ ]] }
-  refalrts::alloc_close_bracket(vm, context[7]);
-  refalrts::alloc_close_call(vm, context[8]);
-  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z2]);
-  refalrts::reinit_open_bracket(context[1]);
-  refalrts::push_stack( vm, context[8] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::link_brackets( context[1], context[7] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[8] );
-  refalrts::use( res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_gen_MapAccum_Z2("MapAccum@2", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z2);
-
-
 static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 36 elems
-  refalrts::Iter context[36];
-  refalrts::zeros( context, 36 );
+  // issue here memory for vars with 29 elems
+  refalrts::Iter context[29];
+  refalrts::zeros( context, 29 );
   // </0 & Map@1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -6374,7 +5903,307 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     // closed e.new#2 as range 5
     do {
-      // </0 & Map@1/4 (/7 t.new#3/19 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
+      // </0 & Map@1/4 (/7 (/15 e.1#0/13 )/16 e.2#0/11 (/19 e.3#0/17 )/20 )/8 e.Tail#1/9 >/1
+      context[9] = context[5];
+      context[10] = context[6];
+      context[11] = 0;
+      context[12] = 0;
+      if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
+        continue;
+      context[13] = 0;
+      context[14] = 0;
+      context[15] = refalrts::brackets_left( context[13], context[14], context[11], context[12] );
+      if( ! context[15] )
+        continue;
+      refalrts::bracket_pointers(context[15], context[16]);
+      context[17] = 0;
+      context[18] = 0;
+      context[19] = refalrts::brackets_right( context[17], context[18], context[11], context[12] );
+      if( ! context[19] )
+        continue;
+      refalrts::bracket_pointers(context[19], context[20]);
+      // closed e.1#0 as range 13
+      // closed e.2#0 as range 11
+      // closed e.3#0 as range 17
+      // closed e.Tail#1 as range 9
+      //DEBUG: e.1#0: 13
+      //DEBUG: e.2#0: 11
+      //DEBUG: e.3#0: 17
+      //DEBUG: e.Tail#1: 9
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 AsIs: (/7 } Tile{ AsIs: e.1#0/13 } ':'/21 Tile{ AsIs: (/15 }"enew"/22 0/24 )/25 )/26 Tile{ AsIs: )/16 AsIs: e.2#0/11 AsIs: (/19 AsIs: e.3#0/17 AsIs: )/20 AsIs: )/8 } </27 & Map@1/28 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+      refalrts::alloc_char(vm, context[21], ':');
+      refalrts::alloc_chars(vm, context[22], context[23], "enew", 4);
+      refalrts::alloc_number(vm, context[24], 0UL);
+      refalrts::alloc_close_bracket(vm, context[25]);
+      refalrts::alloc_close_bracket(vm, context[26]);
+      refalrts::alloc_open_call(vm, context[27]);
+      refalrts::alloc_name(vm, context[28], functions[efunc_gen_Map_Z1]);
+      refalrts::reinit_open_bracket(context[0]);
+      refalrts::reinit_open_bracket(context[4]);
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[27] );
+      refalrts::link_brackets( context[0], context[8] );
+      refalrts::link_brackets( context[19], context[20] );
+      refalrts::link_brackets( context[4], context[16] );
+      refalrts::link_brackets( context[7], context[26] );
+      refalrts::link_brackets( context[15], context[25] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      res = refalrts::splice_evar( res, context[9], context[10] );
+      res = refalrts::splice_evar( res, context[27], context[28] );
+      res = refalrts::splice_evar( res, context[16], context[8] );
+      res = refalrts::splice_evar( res, context[22], context[26] );
+      res = refalrts::splice_evar( res, context[15], context[15] );
+      res = refalrts::splice_evar( res, context[21], context[21] );
+      res = refalrts::splice_evar( res, context[13], context[14] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & Map@1/4 t.Next#1/7 e.Tail#1/9 >/1
+    context[9] = context[5];
+    context[10] = context[6];
+    // closed e.Tail#1 as range 9
+    //DEBUG: t.Next#1: 7
+    //DEBUG: e.Tail#1: 9
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & HighLevelRASL-Function-Conjoint=1\1*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@1/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_close_call(vm, context[11]);
+    refalrts::alloc_open_call(vm, context[12]);
+    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z1]);
+    refalrts::update_name(context[4], functions[efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1D1]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[12] );
+    refalrts::push_stack( vm, context[11] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    res = refalrts::splice_evar( res, context[11], context[13] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & Map@1/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Map@1/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & Map@1/4 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: e.items#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & HighLevelRASL-Function-Conjoint=1\1/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_HighLevelRASLm_Functionm_Conjoint_A1L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", COOKIE1_, COOKIE2_, func_gen_Map_Z1);
+
+
+static refalrts::FnResult func_gen_MapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
+  // </0 & MapAccum@1/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & MapAccum@1/4 t.new#1/5 e.new#2/2 >/1
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.new#2 as range 2
+  do {
+    // </0 & MapAccum@1/4 t.Acc#1/5 e.Tail#1/7 >/1
+    context[7] = context[2];
+    context[8] = context[3];
+    // closed e.Tail#1 as range 7
+    //DEBUG: t.Acc#1: 5
+    //DEBUG: e.Tail#1: 7
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 AsIs: t.Acc#1/5 } (/9 Tile{ AsIs: e.Tail#1/7 } )/10 Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_bracket(vm, context[9]);
+    refalrts::alloc_close_bracket(vm, context[10]);
+    refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z1]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[9], context[10] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    res = refalrts::splice_evar( res, context[9], context[9] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MapAccum@1/4 t.accum#0/5 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: t.accum#0: 5
+  //DEBUG: e.items#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & MapAccum@0/0 Reuse: & EnumerateVarsRec\1/4 AsIs: t.accum#0/5 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_MapAccum_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_EnumerateVarsRec_L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[7] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MapAccum_Z1("MapAccum@1", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z1);
+
+
+static refalrts::FnResult func_gen_MapAccum_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
+  // </0 & MapAccum@2/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & MapAccum@2/4 t.new#1/5 e.new#2/2 >/1
+  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
+  if( ! context[6] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.new#2 as range 2
+  do {
+    // </0 & MapAccum@2/4 t.Acc#1/5 e.Tail#1/7 >/1
+    context[7] = context[2];
+    context[8] = context[3];
+    // closed e.Tail#1 as range 7
+    //DEBUG: t.Acc#1: 5
+    //DEBUG: e.Tail#1: 7
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 AsIs: t.Acc#1/5 } (/9 Tile{ AsIs: e.Tail#1/7 } )/10 Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_open_bracket(vm, context[9]);
+    refalrts::alloc_close_bracket(vm, context[10]);
+    refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z2]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[9], context[10] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    res = refalrts::splice_evar( res, context[9], context[9] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MapAccum@2/4 t.accum#0/5 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: t.accum#0: 5
+  //DEBUG: e.items#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & MapAccum@0/0 Reuse: & EnumerateVars-Subst\1/4 AsIs: t.accum#0/5 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_MapAccum_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_EnumerateVarsm_Subst_L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[7] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MapAccum_Z2("MapAccum@2", COOKIE1_, COOKIE2_, func_gen_MapAccum_Z2);
+
+
+static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 36 elems
+  refalrts::Iter context[36];
+  refalrts::zeros( context, 36 );
+  // </0 & Map@2/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  do {
+    // </0 & Map@2/4 t.new#1/7 e.new#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
+    if( ! context[8] )
+      continue;
+    // closed e.new#2 as range 5
+    do {
+      // </0 & Map@2/4 (/7 t.new#3/19 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
@@ -6400,7 +6229,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::empty_seq( context[11], context[12] ) )
         continue;
       do {
-        // </0 & Map@1/4 (/7 t.#0/19 ':'/17 (/15 'e'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+        // </0 & Map@2/4 (/7 t.#0/19 ':'/17 (/15 'e'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
         context[21] = context[13];
         context[22] = context[14];
         context[23] = context[9];
@@ -6415,7 +6244,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} t.#0/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 HalfReuse: # MN/7 } ':'/25 0/26 ','/27 (/28 )/29 ','/30 (/31 )/32 )/33 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </34 & Map@1/35 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 HalfReuse: # MN/7 } ':'/25 0/26 ','/27 (/28 )/29 ','/30 (/31 )/32 )/33 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </34 & Map@2/35 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_char(vm, context[25], ':');
         refalrts::alloc_number(vm, context[26], 0UL);
         refalrts::alloc_char(vm, context[27], ',');
@@ -6426,7 +6255,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::alloc_close_bracket(vm, context[32]);
         refalrts::alloc_close_bracket(vm, context[33]);
         refalrts::alloc_open_call(vm, context[34]);
-        refalrts::alloc_name(vm, context[35], functions[efunc_gen_Map_Z1]);
+        refalrts::alloc_name(vm, context[35], functions[efunc_gen_Map_Z2]);
         refalrts::reinit_open_bracket(context[0]);
         refalrts::reinit_open_bracket(context[4]);
         refalrts::reinit_ident(context[7], identifiers[ident_MN]);
@@ -6449,7 +6278,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & Map@1/4 (/7 t.#0/19 ':'/17 (/15 s.ST#2/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+      // </0 & Map@2/4 (/7 t.#0/19 ':'/17 (/15 s.ST#2/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
       context[21] = context[13];
       context[22] = context[14];
       context[23] = context[9];
@@ -6463,11 +6292,11 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} t.#0/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 HalfReuse: # TkVariable/7 } s.ST#2/18/25 )/26 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: s.ST#2/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </27 & Map@1/28 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: (/4 HalfReuse: # TkVariable/7 } s.ST#2/18/25 )/26 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: s.ST#2/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </27 & Map@2/28 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
       refalrts::copy_stvar(vm, context[25], context[18]);
       refalrts::alloc_close_bracket(vm, context[26]);
       refalrts::alloc_open_call(vm, context[27]);
-      refalrts::alloc_name(vm, context[28], functions[efunc_gen_Map_Z1]);
+      refalrts::alloc_name(vm, context[28], functions[efunc_gen_Map_Z2]);
       refalrts::reinit_open_bracket(context[0]);
       refalrts::reinit_open_bracket(context[4]);
       refalrts::reinit_ident(context[7], identifiers[ident_TkVariable]);
@@ -6488,7 +6317,7 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@1/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@2/4 t.Next#1/7 e.Tail#1/9 >/1
     context[9] = context[5];
     context[10] = context[6];
     // closed e.Tail#1 as range 9
@@ -6497,10 +6326,10 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & MakeTrivialSubstImage\1*2/4 AsIs: t.Next#1/7 } >/11 </12 & Map@1/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & MakeTrivialSubstImage\1*2/4 AsIs: t.Next#1/7 } >/11 </12 & Map@2/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
-    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z1]);
+    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z2]);
     refalrts::update_name(context[4], functions[efunc_gen_MakeTrivialSubstImage_L1D2]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[12] );
@@ -6516,24 +6345,46 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@1/4 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & Map@2/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Map@2/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & Map@2/4 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: e.items#0: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Map@1/4 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & MakeTrivialSubstImage\1/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_MakeTrivialSubstImage_L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z1("Map@1", COOKIE1_, COOKIE2_, func_gen_Map_Z1);
+static refalrts::NativeReference nat_ref_gen_Map_Z2("Map@2", COOKIE1_, COOKIE2_, func_gen_Map_Z2);
 
 
-static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -6542,14 +6393,14 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 38 elems
   refalrts::Iter context[38];
   refalrts::zeros( context, 38 );
-  // </0 & Map@2/4 e.new#0/2 >/1
+  // </0 & Map@3/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & Map@2/4 e.new#1/2 (/7 e.new#2/5 )/8 >/1
+  // </0 & Map@3/4 e.new#1/2 (/7 e.new#2/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
@@ -6559,7 +6410,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   // closed e.new#1 as range 2
   // closed e.new#2 as range 5
   do {
-    // </0 & Map@2/4 e.new#3/9 (/7 t.new#4/13 e.new#5/11 )/8 >/1
+    // </0 & Map@3/4 e.new#3/9 (/7 t.new#4/13 e.new#5/11 )/8 >/1
     context[9] = context[2];
     context[10] = context[3];
     context[11] = context[5];
@@ -6570,7 +6421,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     // closed e.new#5 as range 11
     do {
-      // </0 & Map@2/4 e.NewGCG-Subst#1/15 (/7 (/13 (/23 e.1#0/21 )/24 e.2#0/19 (/27 e.3#0/25 )/28 )/14 e.Tail#1/17 )/8 >/1
+      // </0 & Map@3/4 e.NewGCG-Subst#1/15 (/7 (/13 (/23 e.1#0/21 )/24 e.2#0/19 (/27 e.3#0/25 )/28 )/14 e.Tail#1/17 )/8 >/1
       context[15] = context[9];
       context[16] = context[10];
       context[17] = context[11];
@@ -6604,7 +6455,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 AsIs: (/23 } </29 & NarrowSubst/30 (/31 e.NewGCG-Subst#1/15/32 )/34 (/35 Tile{ AsIs: e.1#0/21 } )/36 >/37 Tile{ AsIs: )/24 AsIs: e.2#0/19 AsIs: (/27 AsIs: e.3#0/25 AsIs: )/28 AsIs: )/14 } Tile{ AsIs: </0 AsIs: & Map@2/4 AsIs: e.NewGCG-Subst#1/15 AsIs: (/7 } Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/13 AsIs: (/23 } </29 & NarrowSubst/30 (/31 e.NewGCG-Subst#1/15/32 )/34 (/35 Tile{ AsIs: e.1#0/21 } )/36 >/37 Tile{ AsIs: )/24 AsIs: e.2#0/19 AsIs: (/27 AsIs: e.3#0/25 AsIs: )/28 AsIs: )/14 } Tile{ AsIs: </0 AsIs: & Map@3/4 AsIs: e.NewGCG-Subst#1/15 AsIs: (/7 } Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[29]);
       refalrts::alloc_name(vm, context[30], functions[efunc_NarrowSubst]);
       refalrts::alloc_open_bracket(vm, context[31]);
@@ -6638,7 +6489,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@2/4 e.NewGCG-Subst#1/15 (/7 t.Next#1/13 e.Tail#1/17 )/8 >/1
+    // </0 & Map@3/4 e.NewGCG-Subst#1/15 (/7 t.Next#1/13 e.Tail#1/17 )/8 >/1
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[11];
@@ -6651,7 +6502,7 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </19 & NarrowSentenceSubstitutions\1*1/20 (/21 e.NewGCG-Subst#1/15/22 )/24 Tile{ AsIs: t.Next#1/13 } >/25 Tile{ AsIs: </0 AsIs: & Map@2/4 AsIs: e.NewGCG-Subst#1/15 AsIs: (/7 } Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </19 & NarrowSentenceSubstitutions\1*1/20 (/21 e.NewGCG-Subst#1/15/22 )/24 Tile{ AsIs: t.Next#1/13 } >/25 Tile{ AsIs: </0 AsIs: & Map@3/4 AsIs: e.NewGCG-Subst#1/15 AsIs: (/7 } Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[19]);
     refalrts::alloc_name(vm, context[20], functions[efunc_gen_NarrowSentenceSubstitutions_L1D1]);
     refalrts::alloc_open_bracket(vm, context[21]);
@@ -6677,26 +6528,60 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@2/4 e.NewGCG-Subst#1/2 (/7 )/8 >/1
-  if( ! refalrts::empty_seq( context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & Map@3/4 e.NewGCG-Subst#1/9 (/7 )/8 >/1
+    context[9] = context[2];
+    context[10] = context[3];
+    if( ! refalrts::empty_seq( context[5], context[6] ) )
+      continue;
+    // closed e.NewGCG-Subst#1 as range 9
+    //DEBUG: e.NewGCG-Subst#1: 9
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Map@3/4 e.NewGCG-Subst#1/9 (/7 )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & Map@3/4 e.NewGCG-Subst#1/2 (/7 e.items#0/5 )/8 >/1
   // closed e.NewGCG-Subst#1 as range 2
+  // closed e.items#0 as range 5
   //DEBUG: e.NewGCG-Subst#1: 2
+  //DEBUG: e.items#0: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Map@2/4 e.NewGCG-Subst#1/2 (/7 )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@0/4 } [*]/9 & NarrowSentenceSubstitutions\1/10 Tile{ AsIs: (/7 } Tile{ AsIs: e.NewGCG-Subst#1/2 } Tile{ AsIs: )/8 } {*}/11 Tile{ AsIs: e.items#0/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_closure_head(vm, context[9]);
+  refalrts::alloc_name(vm, context[10], functions[efunc_gen_NarrowSentenceSubstitutions_L1]);
+  refalrts::alloc_unwrapped_closure(vm, context[11], context[9]);
+  refalrts::update_name(context[4], functions[efunc_gen_Map_Z0]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[9], context[10] );
+  refalrts::use( res );
+  refalrts::wrap_closure( context[11] );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z2("Map@2", COOKIE1_, COOKIE2_, func_gen_Map_Z2);
+static refalrts::NativeReference nat_ref_gen_Map_Z3("Map@3", COOKIE1_, COOKIE2_, func_gen_Map_Z3);
 
 
-static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -6705,7 +6590,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 30 elems
   refalrts::Iter context[30];
   refalrts::zeros( context, 30 );
-  // </0 & Map@3/4 e.new#0/2 >/1
+  // </0 & Map@4/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -6713,7 +6598,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
   do {
-    // </0 & Map@3/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@4/4 t.new#1/7 e.new#2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
@@ -6721,7 +6606,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     // closed e.new#2 as range 5
     do {
-      // </0 & Map@3/4 (/7 e.new#3/11 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
+      // </0 & Map@4/4 (/7 e.new#3/11 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
@@ -6743,7 +6628,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
         continue;
       // closed e.new#5 as range 13
       do {
-        // </0 & Map@3/4 (/7 e.2#0/19 ':'/17 (/15 'e'/18 e.3#0/21 )/16 )/8 e.Tail#1/23 >/1
+        // </0 & Map@4/4 (/7 e.2#0/19 ':'/17 (/15 'e'/18 e.3#0/21 )/16 )/8 e.Tail#1/23 >/1
         context[19] = context[11];
         context[20] = context[12];
         context[21] = context[13];
@@ -6761,10 +6646,10 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & BuildImage/7 } Tile{ AsIs: e.2#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.3#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@3/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & BuildImage/7 } Tile{ AsIs: e.2#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.3#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@4/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[25]);
         refalrts::alloc_open_call(vm, context[26]);
-        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z3]);
+        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z4]);
         refalrts::reinit_open_bracket(context[0]);
         refalrts::reinit_open_call(context[4]);
         refalrts::reinit_name(context[7], functions[efunc_BuildImage]);
@@ -6787,7 +6672,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & Map@3/4 (/7 t.#0/25 ':'/17 (/15 s.ST#2/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+      // </0 & Map@4/4 (/7 t.#0/25 ':'/17 (/15 s.ST#2/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
       context[19] = context[11];
       context[20] = context[12];
       context[21] = context[13];
@@ -6808,10 +6693,10 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & BuildImage-Term/7 AsIs: t.#0/25 } >/27 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: s.ST#2/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </28 & Map@3/29 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & BuildImage-Term/7 AsIs: t.#0/25 } >/27 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: s.ST#2/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </28 & Map@4/29 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
       refalrts::alloc_close_call(vm, context[27]);
       refalrts::alloc_open_call(vm, context[28]);
-      refalrts::alloc_name(vm, context[29], functions[efunc_gen_Map_Z3]);
+      refalrts::alloc_name(vm, context[29], functions[efunc_gen_Map_Z4]);
       refalrts::reinit_open_bracket(context[0]);
       refalrts::reinit_open_call(context[4]);
       refalrts::reinit_name(context[7], functions[efunc_BuildImagem_Term]);
@@ -6833,7 +6718,7 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@3/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@4/4 t.Next#1/7 e.Tail#1/9 >/1
     context[9] = context[5];
     context[10] = context[6];
     // closed e.Tail#1 as range 9
@@ -6842,10 +6727,10 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Subst-BuildImage\1*2/4 AsIs: t.Next#1/7 } >/11 </12 & Map@3/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Subst-BuildImage\1*2/4 AsIs: t.Next#1/7 } >/11 </12 & Map@4/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
-    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z3]);
+    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z4]);
     refalrts::update_name(context[4], functions[efunc_gen_Substm_BuildImage_L1D2]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[12] );
@@ -6861,24 +6746,46 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@3/4 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & Map@4/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Map@4/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & Map@4/4 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: e.items#0: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Map@3/4 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & Subst-BuildImage\1/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_Substm_BuildImage_L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z3("Map@3", COOKIE1_, COOKIE2_, func_gen_Map_Z3);
+static refalrts::NativeReference nat_ref_gen_Map_Z4("Map@4", COOKIE1_, COOKIE2_, func_gen_Map_Z4);
 
 
-static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -6887,7 +6794,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 28 elems
   refalrts::Iter context[28];
   refalrts::zeros( context, 28 );
-  // </0 & Map@4/4 e.new#0/2 >/1
+  // </0 & Map@5/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -6895,7 +6802,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
   do {
-    // </0 & Map@4/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@5/4 t.new#1/7 e.new#2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
@@ -6903,7 +6810,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     // closed e.new#2 as range 5
     do {
-      // </0 & Map@4/4 (/7 t.new#3/19 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
+      // </0 & Map@5/4 (/7 t.new#3/19 ':'/17 (/15 s.new#4/18 e.new#5/13 )/16 )/8 e.new#6/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
@@ -6929,7 +6836,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::empty_seq( context[11], context[12] ) )
         continue;
       do {
-        // </0 & Map@4/4 (/7 t.#0/19 ':'/17 (/15 'e'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+        // </0 & Map@5/4 (/7 t.#0/19 ':'/17 (/15 'e'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
         context[21] = context[13];
         context[22] = context[14];
         context[23] = context[9];
@@ -6944,10 +6851,10 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Collapse/7 AsIs: t.#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@4/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Collapse/7 AsIs: t.#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 'e'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@5/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[25]);
         refalrts::alloc_open_call(vm, context[26]);
-        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z4]);
+        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z5]);
         refalrts::reinit_open_bracket(context[0]);
         refalrts::reinit_open_call(context[4]);
         refalrts::reinit_name(context[7], functions[efunc_Collapse]);
@@ -6970,7 +6877,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & Map@4/4 (/7 t.#0/19 ':'/17 (/15 't'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+        // </0 & Map@5/4 (/7 t.#0/19 ':'/17 (/15 't'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
         context[21] = context[13];
         context[22] = context[14];
         context[23] = context[9];
@@ -6985,10 +6892,10 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Collapse-Term/7 AsIs: t.#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 't'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@4/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ HalfReuse: (/0 HalfReuse: </4 HalfReuse: & Collapse-Term/7 AsIs: t.#0/19 } >/25 Tile{ AsIs: ':'/17 AsIs: (/15 AsIs: 't'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } </26 & Map@5/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[25]);
         refalrts::alloc_open_call(vm, context[26]);
-        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z4]);
+        refalrts::alloc_name(vm, context[27], functions[efunc_gen_Map_Z5]);
         refalrts::reinit_open_bracket(context[0]);
         refalrts::reinit_open_call(context[4]);
         refalrts::reinit_name(context[7], functions[efunc_Collapsem_Term]);
@@ -7010,7 +6917,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & Map@4/4 (/7 t.#0/19 ':'/17 (/15 's'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
+      // </0 & Map@5/4 (/7 t.#0/19 ':'/17 (/15 's'/18 e.4#0/21 )/16 )/8 e.Tail#1/23 >/1
       context[21] = context[13];
       context[22] = context[14];
       context[23] = context[9];
@@ -7025,7 +6932,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: t.#0/19 AsIs: ':'/17 AsIs: (/15 AsIs: 's'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } Tile{ AsIs: </0 AsIs: & Map@4/4 } Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: t.#0/19 AsIs: ':'/17 AsIs: (/15 AsIs: 's'/18 AsIs: e.4#0/21 AsIs: )/16 AsIs: )/8 } Tile{ AsIs: </0 AsIs: & Map@5/4 } Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: >/1 ]] }
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[8] );
@@ -7041,7 +6948,7 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@4/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@5/4 t.Next#1/7 e.Tail#1/9 >/1
     context[9] = context[5];
     context[10] = context[6];
     // closed e.Tail#1 as range 9
@@ -7050,10 +6957,10 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Subst-Collapse\1*3/4 AsIs: t.Next#1/7 } >/11 </12 & Map@4/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Subst-Collapse\1*3/4 AsIs: t.Next#1/7 } >/11 </12 & Map@5/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
-    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z4]);
+    refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z5]);
     refalrts::update_name(context[4], functions[efunc_gen_Substm_Collapse_L1D3]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[12] );
@@ -7069,21 +6976,43 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@4/4 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & Map@5/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & Map@5/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & Map@5/4 e.items#0/2 >/1
+  // closed e.items#0 as range 2
+  //DEBUG: e.items#0: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Map@4/4 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & Subst-Collapse\1/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
+  refalrts::update_name(context[4], functions[efunc_gen_Substm_Collapse_L1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_gen_Map_Z4("Map@4", COOKIE1_, COOKIE2_, func_gen_Map_Z4);
+static refalrts::NativeReference nat_ref_gen_Map_Z5("Map@5", COOKIE1_, COOKIE2_, func_gen_Map_Z5);
 
 
 static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -7115,28 +7044,28 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 2
   do {
-    // </0 & DoMapAccum@1/4 t.new#4/9 t.new#5/15 e.new#6/11 (/7 e.new#7/13 )/8 >/1
+    // </0 & DoMapAccum@1/4 t.new#4/9 e.new#5/11 (/7 t.new#6/15 e.new#7/13 )/8 >/1
     context[11] = context[2];
     context[12] = context[3];
     context[13] = context[5];
     context[14] = context[6];
-    // closed e.new#7 as range 13
-    context[16] = refalrts::tvar_left( context[15], context[11], context[12] );
+    // closed e.new#5 as range 11
+    context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
     if( ! context[16] )
       continue;
-    // closed e.new#6 as range 11
+    // closed e.new#7 as range 13
     do {
-      // </0 & DoMapAccum@1/4 s.new#8/9 t.new#9/15 e.new#10/17 (/7 e.new#11/19 )/8 >/1
+      // </0 & DoMapAccum@1/4 s.new#8/9 e.new#9/17 (/7 t.new#10/15 e.new#11/19 )/8 >/1
       context[17] = context[11];
       context[18] = context[12];
       context[19] = context[13];
       context[20] = context[14];
       if( ! refalrts::svar_term( context[9], context[9] ) )
         continue;
-      // closed e.new#10 as range 17
+      // closed e.new#9 as range 17
       // closed e.new#11 as range 19
       do {
-        // </0 & DoMapAccum@1/4 s.new#12/9 (/15 s.new#13/27 e.new#14/25 )/16 e.new#15/21 (/7 e.new#16/23 )/8 >/1
+        // </0 & DoMapAccum@1/4 s.new#12/9 e.new#13/21 (/7 (/15 s.new#14/27 e.new#15/25 )/16 e.new#16/23 )/8 >/1
         context[21] = context[17];
         context[22] = context[18];
         context[23] = context[19];
@@ -7145,250 +7074,250 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
         context[26] = 0;
         if( ! refalrts::brackets_term( context[25], context[26], context[15] ) )
           continue;
-        // closed e.new#15 as range 21
+        // closed e.new#13 as range 21
         // closed e.new#16 as range 23
         if( ! refalrts::svar_left( context[27], context[25], context[26] ) )
           continue;
-        // closed e.new#14 as range 25
+        // closed e.new#15 as range 25
         do {
-          // </0 & DoMapAccum@1/4 s.Next#2/9 (/15 # TkVariable/27 s.Type#2/34 )/16 e.Tail#1/30 (/7 e.Scanned#1/32 )/8 >/1
-          context[28] = context[25];
-          context[29] = context[26];
-          context[30] = context[21];
-          context[31] = context[22];
+          // </0 & DoMapAccum@1/4 s.Next#2/9 e.Scanned#1/28 (/7 (/15 # TkVariable/27 s.Type#2/34 )/16 e.Tail#1/32 )/8 >/1
+          context[28] = context[21];
+          context[29] = context[22];
+          context[30] = context[25];
+          context[31] = context[26];
           context[32] = context[23];
           context[33] = context[24];
           if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[27] ) )
             continue;
-          // closed e.Tail#1 as range 30
-          // closed e.Scanned#1 as range 32
-          if( ! refalrts::svar_left( context[34], context[28], context[29] ) )
+          // closed e.Scanned#1 as range 28
+          // closed e.Tail#1 as range 32
+          if( ! refalrts::svar_left( context[34], context[30], context[31] ) )
             continue;
-          if( ! refalrts::empty_seq( context[28], context[29] ) )
+          if( ! refalrts::empty_seq( context[30], context[31] ) )
             continue;
           //DEBUG: s.Next#2: 9
-          //DEBUG: e.Tail#1: 30
-          //DEBUG: e.Scanned#1: 32
+          //DEBUG: e.Scanned#1: 28
+          //DEBUG: e.Tail#1: 32
           //DEBUG: s.Type#2: 34
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum-Aux@1/16 AsIs: e.Tail#1/30 AsIs: (/7 AsIs: e.Scanned#1/32 AsIs: )/8 HalfReuse: (/1 } </35 & Add/36 Tile{ HalfReuse: 1/4 AsIs: s.Next#2/9 } >/37 Tile{ AsIs: (/15 AsIs: # TkVariable/27 AsIs: s.Type#2/34 }"new"/38 s.Next#2/9/40 )/41 )/42 >/43 Tile{ ]] }
-          refalrts::alloc_open_call(vm, context[35]);
-          refalrts::alloc_name(vm, context[36], functions[efunc_Add]);
-          refalrts::alloc_close_call(vm, context[37]);
-          refalrts::alloc_chars(vm, context[38], context[39], "new", 3);
-          refalrts::copy_stvar(vm, context[40], context[9]);
-          refalrts::alloc_close_bracket(vm, context[41]);
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@1/4 } Tile{ AsIs: e.Scanned#1/28 } (/35 </36 & Add/37 1/38 Tile{ AsIs: s.Next#2/9 } Tile{ HalfReuse: >/7 AsIs: (/15 AsIs: # TkVariable/27 AsIs: s.Type#2/34 }"new"/39 s.Next#2/9/41 )/42 )/43 Tile{ HalfReuse: (/16 AsIs: e.Tail#1/32 AsIs: )/8 AsIs: >/1 ]] }
+          refalrts::alloc_open_bracket(vm, context[35]);
+          refalrts::alloc_open_call(vm, context[36]);
+          refalrts::alloc_name(vm, context[37], functions[efunc_Add]);
+          refalrts::alloc_number(vm, context[38], 1UL);
+          refalrts::alloc_chars(vm, context[39], context[40], "new", 3);
+          refalrts::copy_stvar(vm, context[41], context[9]);
           refalrts::alloc_close_bracket(vm, context[42]);
-          refalrts::alloc_close_call(vm, context[43]);
-          refalrts::reinit_name(context[16], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
-          refalrts::reinit_open_bracket(context[1]);
-          refalrts::reinit_number(context[4], 1UL);
-          refalrts::push_stack( vm, context[43] );
+          refalrts::alloc_close_bracket(vm, context[43]);
+          refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
+          refalrts::reinit_close_call(context[7]);
+          refalrts::reinit_open_bracket(context[16]);
+          refalrts::push_stack( vm, context[1] );
           refalrts::push_stack( vm, context[0] );
-          refalrts::link_brackets( context[1], context[42] );
-          refalrts::link_brackets( context[15], context[41] );
-          refalrts::push_stack( vm, context[37] );
-          refalrts::push_stack( vm, context[35] );
-          refalrts::link_brackets( context[7], context[8] );
+          refalrts::link_brackets( context[16], context[8] );
+          refalrts::link_brackets( context[35], context[43] );
+          refalrts::link_brackets( context[15], context[42] );
+          refalrts::push_stack( vm, context[7] );
+          refalrts::push_stack( vm, context[36] );
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
-          refalrts::Iter res = arg_end->next;
-          res = refalrts::splice_evar( res, context[38], context[43] );
-          res = refalrts::splice_evar( res, context[15], context[34] );
-          res = refalrts::splice_evar( res, context[37], context[37] );
-          res = refalrts::splice_evar( res, context[4], context[9] );
-          res = refalrts::splice_evar( res, context[35], context[36] );
-          res = refalrts::splice_evar( res, context[16], context[1] );
+          refalrts::Iter res = context[16];
+          res = refalrts::splice_evar( res, context[39], context[43] );
+          res = refalrts::splice_evar( res, context[7], context[34] );
+          res = refalrts::splice_evar( res, context[9], context[9] );
+          res = refalrts::splice_evar( res, context[35], context[38] );
+          res = refalrts::splice_evar( res, context[28], context[29] );
           refalrts::use( res );
           return refalrts::cSuccess;
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & DoMapAccum@1/4 s.Next#2/9 (/15 # Brackets/27 e.0#0/28 )/16 e.Tail#1/30 (/7 e.Scanned#1/32 )/8 >/1
-          context[28] = context[25];
-          context[29] = context[26];
-          context[30] = context[21];
-          context[31] = context[22];
+          // </0 & DoMapAccum@1/4 s.Next#2/9 e.Scanned#1/28 (/7 (/15 # Brackets/27 e.0#0/30 )/16 e.Tail#1/32 )/8 >/1
+          context[28] = context[21];
+          context[29] = context[22];
+          context[30] = context[25];
+          context[31] = context[26];
           context[32] = context[23];
           context[33] = context[24];
           if( ! refalrts::ident_term( identifiers[ident_Brackets], context[27] ) )
             continue;
-          // closed e.0#0 as range 28
-          // closed e.Tail#1 as range 30
-          // closed e.Scanned#1 as range 32
+          // closed e.Scanned#1 as range 28
+          // closed e.0#0 as range 30
+          // closed e.Tail#1 as range 32
           //DEBUG: s.Next#2: 9
-          //DEBUG: e.0#0: 28
-          //DEBUG: e.Tail#1: 30
-          //DEBUG: e.Scanned#1: 32
+          //DEBUG: e.Scanned#1: 28
+          //DEBUG: e.0#0: 30
+          //DEBUG: e.Tail#1: 32
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </34 Tile{ HalfReuse: & DoMapAccum-Aux@1/16 AsIs: e.Tail#1/30 AsIs: (/7 AsIs: e.Scanned#1/32 AsIs: )/8 HalfReuse: (/1 } Tile{ HalfReuse: </15 HalfReuse: & EnumerateVarsRec\1$2=1/27 } Tile{ AsIs: </0 Reuse: & EnumerateVarsRec/4 AsIs: s.Next#2/9 } Tile{ AsIs: e.0#0/28 } >/35 >/36 )/37 >/38 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@1/4 } Tile{ AsIs: e.Scanned#1/28 } Tile{ AsIs: (/7 HalfReuse: </15 HalfReuse: & EnumerateVarsRec\1$2=1/27 } </34 & EnumerateVarsRec/35 Tile{ AsIs: s.Next#2/9 } Tile{ AsIs: e.0#0/30 } >/36 >/37 )/38 Tile{ HalfReuse: (/16 AsIs: e.Tail#1/32 AsIs: )/8 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[34]);
-          refalrts::alloc_close_call(vm, context[35]);
+          refalrts::alloc_name(vm, context[35], functions[efunc_EnumerateVarsRec]);
           refalrts::alloc_close_call(vm, context[36]);
-          refalrts::alloc_close_bracket(vm, context[37]);
-          refalrts::alloc_close_call(vm, context[38]);
-          refalrts::reinit_name(context[16], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
-          refalrts::reinit_open_bracket(context[1]);
+          refalrts::alloc_close_call(vm, context[37]);
+          refalrts::alloc_close_bracket(vm, context[38]);
+          refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
           refalrts::reinit_open_call(context[15]);
           refalrts::reinit_name(context[27], functions[efunc_gen_EnumerateVarsRec_L1S2A1]);
-          refalrts::update_name(context[4], functions[efunc_EnumerateVarsRec]);
-          refalrts::push_stack( vm, context[38] );
-          refalrts::push_stack( vm, context[34] );
-          refalrts::link_brackets( context[1], context[37] );
-          refalrts::push_stack( vm, context[36] );
-          refalrts::push_stack( vm, context[15] );
-          refalrts::push_stack( vm, context[35] );
+          refalrts::reinit_open_bracket(context[16]);
+          refalrts::push_stack( vm, context[1] );
           refalrts::push_stack( vm, context[0] );
-          refalrts::link_brackets( context[7], context[8] );
+          refalrts::link_brackets( context[16], context[8] );
+          refalrts::link_brackets( context[7], context[38] );
+          refalrts::push_stack( vm, context[37] );
+          refalrts::push_stack( vm, context[15] );
+          refalrts::push_stack( vm, context[36] );
+          refalrts::push_stack( vm, context[34] );
           refalrts::Iter trash_prev = arg_begin->prev;
           refalrts::use(trash_prev);
-          refalrts::Iter res = arg_end->next;
-          res = refalrts::splice_evar( res, context[35], context[38] );
+          refalrts::Iter res = context[16];
+          res = refalrts::splice_evar( res, context[36], context[38] );
+          res = refalrts::splice_evar( res, context[30], context[31] );
+          res = refalrts::splice_evar( res, context[9], context[9] );
+          res = refalrts::splice_evar( res, context[34], context[35] );
+          res = refalrts::splice_evar( res, context[7], context[27] );
           res = refalrts::splice_evar( res, context[28], context[29] );
-          res = refalrts::splice_evar( res, context[0], context[9] );
-          res = refalrts::splice_evar( res, context[15], context[27] );
-          res = refalrts::splice_evar( res, context[16], context[1] );
-          res = refalrts::splice_evar( res, context[34], context[34] );
           refalrts::use( res );
           return refalrts::cSuccess;
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & DoMapAccum@1/4 s.Next#2/9 (/15 # ADT-Brackets/27 (/36 e.2#0/34 )/37 e.1#0/28 )/16 e.Tail#1/30 (/7 e.Scanned#1/32 )/8 >/1
-        context[28] = context[25];
-        context[29] = context[26];
-        context[30] = context[21];
-        context[31] = context[22];
+        // </0 & DoMapAccum@1/4 s.Next#2/9 e.Scanned#1/28 (/7 (/15 # ADT-Brackets/27 (/36 e.2#0/34 )/37 e.1#0/30 )/16 e.Tail#1/32 )/8 >/1
+        context[28] = context[21];
+        context[29] = context[22];
+        context[30] = context[25];
+        context[31] = context[26];
         context[32] = context[23];
         context[33] = context[24];
         if( ! refalrts::ident_term( identifiers[ident_ADTm_Brackets], context[27] ) )
           continue;
         context[34] = 0;
         context[35] = 0;
-        context[36] = refalrts::brackets_left( context[34], context[35], context[28], context[29] );
+        context[36] = refalrts::brackets_left( context[34], context[35], context[30], context[31] );
         if( ! context[36] )
           continue;
         refalrts::bracket_pointers(context[36], context[37]);
+        // closed e.Scanned#1 as range 28
         // closed e.2#0 as range 34
-        // closed e.1#0 as range 28
-        // closed e.Tail#1 as range 30
-        // closed e.Scanned#1 as range 32
+        // closed e.1#0 as range 30
+        // closed e.Tail#1 as range 32
         //DEBUG: s.Next#2: 9
+        //DEBUG: e.Scanned#1: 28
         //DEBUG: e.2#0: 34
-        //DEBUG: e.1#0: 28
-        //DEBUG: e.Tail#1: 30
-        //DEBUG: e.Scanned#1: 32
+        //DEBUG: e.1#0: 30
+        //DEBUG: e.Tail#1: 32
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </38 Tile{ HalfReuse: & DoMapAccum-Aux@1/16 AsIs: e.Tail#1/30 AsIs: (/7 AsIs: e.Scanned#1/32 AsIs: )/8 HalfReuse: (/1 } Tile{ HalfReuse: </15 HalfReuse: & EnumerateVarsRec\1$3=1/27 AsIs: (/36 AsIs: e.2#0/34 AsIs: )/37 } Tile{ AsIs: </0 Reuse: & EnumerateVarsRec/4 AsIs: s.Next#2/9 } Tile{ AsIs: e.1#0/28 } >/39 >/40 )/41 >/42 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@1/4 } Tile{ AsIs: e.Scanned#1/28 } Tile{ AsIs: (/7 HalfReuse: </15 HalfReuse: & EnumerateVarsRec\1$3=1/27 AsIs: (/36 AsIs: e.2#0/34 AsIs: )/37 } </38 & EnumerateVarsRec/39 Tile{ AsIs: s.Next#2/9 } Tile{ AsIs: e.1#0/30 } >/40 >/41 )/42 Tile{ HalfReuse: (/16 AsIs: e.Tail#1/32 AsIs: )/8 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[38]);
-        refalrts::alloc_close_call(vm, context[39]);
+        refalrts::alloc_name(vm, context[39], functions[efunc_EnumerateVarsRec]);
         refalrts::alloc_close_call(vm, context[40]);
-        refalrts::alloc_close_bracket(vm, context[41]);
-        refalrts::alloc_close_call(vm, context[42]);
-        refalrts::reinit_name(context[16], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
-        refalrts::reinit_open_bracket(context[1]);
+        refalrts::alloc_close_call(vm, context[41]);
+        refalrts::alloc_close_bracket(vm, context[42]);
+        refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
         refalrts::reinit_open_call(context[15]);
         refalrts::reinit_name(context[27], functions[efunc_gen_EnumerateVarsRec_L1S3A1]);
-        refalrts::update_name(context[4], functions[efunc_EnumerateVarsRec]);
-        refalrts::push_stack( vm, context[42] );
-        refalrts::push_stack( vm, context[38] );
-        refalrts::link_brackets( context[1], context[41] );
-        refalrts::push_stack( vm, context[40] );
-        refalrts::push_stack( vm, context[15] );
-        refalrts::push_stack( vm, context[39] );
+        refalrts::reinit_open_bracket(context[16]);
+        refalrts::push_stack( vm, context[1] );
         refalrts::push_stack( vm, context[0] );
+        refalrts::link_brackets( context[16], context[8] );
+        refalrts::link_brackets( context[7], context[42] );
+        refalrts::push_stack( vm, context[41] );
+        refalrts::push_stack( vm, context[15] );
+        refalrts::push_stack( vm, context[40] );
+        refalrts::push_stack( vm, context[38] );
         refalrts::link_brackets( context[36], context[37] );
-        refalrts::link_brackets( context[7], context[8] );
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
-        refalrts::Iter res = arg_end->next;
-        res = refalrts::splice_evar( res, context[39], context[42] );
+        refalrts::Iter res = context[16];
+        res = refalrts::splice_evar( res, context[40], context[42] );
+        res = refalrts::splice_evar( res, context[30], context[31] );
+        res = refalrts::splice_evar( res, context[9], context[9] );
+        res = refalrts::splice_evar( res, context[38], context[39] );
+        res = refalrts::splice_evar( res, context[7], context[37] );
         res = refalrts::splice_evar( res, context[28], context[29] );
-        res = refalrts::splice_evar( res, context[0], context[9] );
-        res = refalrts::splice_evar( res, context[15], context[37] );
-        res = refalrts::splice_evar( res, context[16], context[1] );
-        res = refalrts::splice_evar( res, context[38], context[38] );
         refalrts::use( res );
         return refalrts::cSuccess;
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & DoMapAccum@1/4 s.Next#2/9 t.Next#1/15 e.Tail#1/21 (/7 e.Scanned#1/23 )/8 >/1
+      // </0 & DoMapAccum@1/4 s.Next#2/9 e.Scanned#1/21 (/7 t.Next#1/15 e.Tail#1/23 )/8 >/1
       context[21] = context[17];
       context[22] = context[18];
       context[23] = context[19];
       context[24] = context[20];
-      // closed e.Tail#1 as range 21
-      // closed e.Scanned#1 as range 23
+      // closed e.Scanned#1 as range 21
+      // closed e.Tail#1 as range 23
       //DEBUG: t.Next#1: 15
       //DEBUG: s.Next#2: 9
-      //DEBUG: e.Tail#1: 21
-      //DEBUG: e.Scanned#1: 23
+      //DEBUG: e.Scanned#1: 21
+      //DEBUG: e.Tail#1: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@1/4 } Tile{ AsIs: e.Tail#1/21 } Tile{ AsIs: (/7 AsIs: e.Scanned#1/23 AsIs: )/8 HalfReuse: (/1 } Tile{ AsIs: s.Next#2/9 AsIs: t.Next#1/15 } )/25 >/26 Tile{ ]] }
-      refalrts::alloc_close_bracket(vm, context[25]);
-      refalrts::alloc_close_call(vm, context[26]);
+      //TRASH: {REMOVED TILE} s.Next#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@1/4 } Tile{ AsIs: e.Scanned#1/21 } (/25 Tile{ HalfReuse: s.Next2 #9/7 AsIs: t.Next#1/15 } )/26 (/27 Tile{ AsIs: e.Tail#1/23 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
+      refalrts::alloc_open_bracket(vm, context[25]);
+      refalrts::alloc_close_bracket(vm, context[26]);
+      refalrts::alloc_open_bracket(vm, context[27]);
       refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
-      refalrts::reinit_open_bracket(context[1]);
-      refalrts::push_stack( vm, context[26] );
+      refalrts::reinit_svar( context[7], context[9] );
+      refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[1], context[25] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::link_brackets( context[27], context[8] );
+      refalrts::link_brackets( context[25], context[26] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[25], context[26] );
-      res = refalrts::splice_evar( res, context[9], context[16] );
-      res = refalrts::splice_evar( res, context[7], context[1] );
+      refalrts::Iter res = context[8];
+      res = refalrts::splice_evar( res, context[23], context[24] );
+      res = refalrts::splice_evar( res, context[26], context[27] );
+      res = refalrts::splice_evar( res, context[7], context[16] );
+      res = refalrts::splice_evar( res, context[25], context[25] );
       res = refalrts::splice_evar( res, context[21], context[22] );
-      refalrts::use( res );
+      refalrts::splice_to_freelist_open( vm, context[4], res );
       return refalrts::cSuccess;
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & DoMapAccum@1/4 t.Acc#1/9 t.Next#1/15 e.Tail#1/17 (/7 e.Scanned#1/19 )/8 >/1
+    // </0 & DoMapAccum@1/4 t.Acc#1/9 e.Scanned#1/17 (/7 t.Next#1/15 e.Tail#1/19 )/8 >/1
     context[17] = context[11];
     context[18] = context[12];
     context[19] = context[13];
     context[20] = context[14];
-    // closed e.Tail#1 as range 17
-    // closed e.Scanned#1 as range 19
+    // closed e.Scanned#1 as range 17
+    // closed e.Tail#1 as range 19
     //DEBUG: t.Acc#1: 9
     //DEBUG: t.Next#1: 15
-    //DEBUG: e.Tail#1: 17
-    //DEBUG: e.Scanned#1: 19
+    //DEBUG: e.Scanned#1: 17
+    //DEBUG: e.Tail#1: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </21 & DoMapAccum-Aux@1/22 Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: (/7 AsIs: e.Scanned#1/19 AsIs: )/8 HalfReuse: (/1 } Tile{ AsIs: </0 Reuse: & EnumerateVarsRec\1*4/4 AsIs: t.Acc#1/9 AsIs: t.Next#1/15 } >/23 )/24 >/25 Tile{ ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </21 & DoMapAccum-Aux@1/22 Tile{ AsIs: e.Scanned#1/17 } Tile{ AsIs: (/7 } Tile{ AsIs: </0 Reuse: & EnumerateVarsRec\1*4/4 AsIs: t.Acc#1/9 } Tile{ AsIs: t.Next#1/15 } >/23 )/24 (/25 Tile{ AsIs: e.Tail#1/19 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[21]);
     refalrts::alloc_name(vm, context[22], functions[efunc_gen_DoMapAccumm_Aux_Z1]);
     refalrts::alloc_close_call(vm, context[23]);
     refalrts::alloc_close_bracket(vm, context[24]);
-    refalrts::alloc_close_call(vm, context[25]);
-    refalrts::reinit_open_bracket(context[1]);
+    refalrts::alloc_open_bracket(vm, context[25]);
     refalrts::update_name(context[4], functions[efunc_gen_EnumerateVarsRec_L1D4]);
-    refalrts::push_stack( vm, context[25] );
+    refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[21] );
-    refalrts::link_brackets( context[1], context[24] );
+    refalrts::link_brackets( context[25], context[8] );
+    refalrts::link_brackets( context[7], context[24] );
     refalrts::push_stack( vm, context[23] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[19], context[20] );
     res = refalrts::splice_evar( res, context[23], context[25] );
-    res = refalrts::splice_evar( res, context[0], context[16] );
-    res = refalrts::splice_evar( res, context[7], context[1] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[0], context[10] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
     res = refalrts::splice_evar( res, context[17], context[18] );
     res = refalrts::splice_evar( res, context[21], context[22] );
     refalrts::use( res );
@@ -7396,22 +7325,54 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum@1/4 t.Acc#1/9 (/7 e.Scanned#1/5 )/8 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 5
-  //DEBUG: t.Acc#1: 9
-  //DEBUG: e.Scanned#1: 5
+  do {
+    // </0 & DoMapAccum@1/4 t.Acc#1/9 e.Scanned#1/11 (/7 )/8 >/1
+    context[11] = context[2];
+    context[12] = context[3];
+    if( ! refalrts::empty_seq( context[5], context[6] ) )
+      continue;
+    // closed e.Scanned#1 as range 11
+    //DEBUG: t.Acc#1: 9
+    //DEBUG: e.Scanned#1: 11
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & DoMapAccum@1/4 {REMOVED TILE} {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/9 } Tile{ AsIs: e.Scanned#1/11 } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & DoMapAccum@1/4 t.acc#0/9 e.scanned#0/2 (/7 e.items#0/5 )/8 >/1
+  // closed e.scanned#0 as range 2
+  // closed e.items#0 as range 5
+  //DEBUG: t.acc#0: 9
+  //DEBUG: e.scanned#0: 2
+  //DEBUG: e.items#0: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & DoMapAccum@1/4 {REMOVED TILE} (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/9 } Tile{ AsIs: e.Scanned#1/5 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@0/4 } & EnumerateVarsRec\1/11 Tile{ AsIs: t.acc#0/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.scanned#0/2 } Tile{ AsIs: )/8 } Tile{ AsIs: e.items#0/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_name(vm, context[11], functions[efunc_gen_EnumerateVarsRec_L1]);
+  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z0]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
   res = refalrts::splice_evar( res, context[9], context[10] );
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
@@ -7424,9 +7385,9 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 33 elems
-  refalrts::Iter context[33];
-  refalrts::zeros( context, 33 );
+  // issue here memory for vars with 34 elems
+  refalrts::Iter context[34];
+  refalrts::zeros( context, 34 );
   // </0 & DoMapAccum@2/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -7447,18 +7408,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 2
   do {
-    // </0 & DoMapAccum@2/4 t.new#4/9 t.new#5/15 e.new#6/11 (/7 e.new#7/13 )/8 >/1
+    // </0 & DoMapAccum@2/4 t.new#4/9 e.new#5/11 (/7 t.new#6/15 e.new#7/13 )/8 >/1
     context[11] = context[2];
     context[12] = context[3];
     context[13] = context[5];
     context[14] = context[6];
-    // closed e.new#7 as range 13
-    context[16] = refalrts::tvar_left( context[15], context[11], context[12] );
+    // closed e.new#5 as range 11
+    context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
     if( ! context[16] )
       continue;
-    // closed e.new#6 as range 11
+    // closed e.new#7 as range 13
     do {
-      // </0 & DoMapAccum@2/4 s.NextNumber#2/9 (/15 e.2#0/21 ':'/27 (/25 e.1#0/23 )/26 )/16 e.Tail#1/17 (/7 e.Scanned#1/19 )/8 >/1
+      // </0 & DoMapAccum@2/4 s.NextNumber#2/9 e.Scanned#1/17 (/7 (/15 e.2#0/21 ':'/27 (/25 e.1#0/23 )/26 )/16 e.Tail#1/19 )/8 >/1
       context[17] = context[11];
       context[18] = context[12];
       context[19] = context[13];
@@ -7478,89 +7439,88 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
       context[27] = refalrts::char_right( ':', context[21], context[22] );
       if( ! context[27] )
         continue;
+      // closed e.Scanned#1 as range 17
       // closed e.2#0 as range 21
       // closed e.1#0 as range 23
-      // closed e.Tail#1 as range 17
-      // closed e.Scanned#1 as range 19
+      // closed e.Tail#1 as range 19
       //DEBUG: s.NextNumber#2: 9
+      //DEBUG: e.Scanned#1: 17
       //DEBUG: e.2#0: 21
       //DEBUG: e.1#0: 23
-      //DEBUG: e.Tail#1: 17
-      //DEBUG: e.Scanned#1: 19
+      //DEBUG: e.Tail#1: 19
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: </26 HalfReuse: & DoMapAccum-Aux@2/16 AsIs: e.Tail#1/17 AsIs: (/7 AsIs: e.Scanned#1/19 AsIs: )/8 HalfReuse: (/1 } </28 Tile{ HalfReuse: & EnumerateVars-Subst\1=1/27 AsIs: (/25 } Tile{ AsIs: e.1#0/23 } Tile{ HalfReuse: )/15 } Tile{ AsIs: </0 Reuse: & EnumerateVarsRec/4 AsIs: s.NextNumber#2/9 } Tile{ AsIs: e.2#0/21 } >/29 >/30 )/31 >/32 Tile{ ]] }
-      refalrts::alloc_open_call(vm, context[28]);
-      refalrts::alloc_close_call(vm, context[29]);
-      refalrts::alloc_close_call(vm, context[30]);
-      refalrts::alloc_close_bracket(vm, context[31]);
-      refalrts::alloc_close_call(vm, context[32]);
-      refalrts::reinit_open_call(context[26]);
-      refalrts::reinit_name(context[16], functions[efunc_gen_DoMapAccumm_Aux_Z2]);
-      refalrts::reinit_open_bracket(context[1]);
-      refalrts::reinit_name(context[27], functions[efunc_gen_EnumerateVarsm_Subst_L1A1]);
-      refalrts::reinit_close_bracket(context[15]);
-      refalrts::update_name(context[4], functions[efunc_EnumerateVarsRec]);
-      refalrts::push_stack( vm, context[32] );
-      refalrts::push_stack( vm, context[26] );
-      refalrts::link_brackets( context[1], context[31] );
-      refalrts::push_stack( vm, context[30] );
-      refalrts::push_stack( vm, context[28] );
-      refalrts::push_stack( vm, context[29] );
+      //TRASH: {REMOVED TILE} s.NextNumber#2/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@2/4 } Tile{ AsIs: e.Scanned#1/17 } (/28 </29 & EnumerateVars-Subst\1=1/30 (/31 Tile{ AsIs: e.1#0/23 } )/32 </33 Tile{ HalfReuse: & EnumerateVarsRec/7 HalfReuse: s.NextNumber2 #9/15 AsIs: e.2#0/21 HalfReuse: >/27 HalfReuse: >/25 } Tile{ AsIs: )/26 HalfReuse: (/16 AsIs: e.Tail#1/19 AsIs: )/8 AsIs: >/1 ]] }
+      refalrts::alloc_open_bracket(vm, context[28]);
+      refalrts::alloc_open_call(vm, context[29]);
+      refalrts::alloc_name(vm, context[30], functions[efunc_gen_EnumerateVarsm_Subst_L1A1]);
+      refalrts::alloc_open_bracket(vm, context[31]);
+      refalrts::alloc_close_bracket(vm, context[32]);
+      refalrts::alloc_open_call(vm, context[33]);
+      refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z2]);
+      refalrts::reinit_name(context[7], functions[efunc_EnumerateVarsRec]);
+      refalrts::reinit_svar( context[15], context[9] );
+      refalrts::reinit_close_call(context[27]);
+      refalrts::reinit_close_call(context[25]);
+      refalrts::reinit_open_bracket(context[16]);
+      refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
-      refalrts::link_brackets( context[25], context[15] );
-      refalrts::link_brackets( context[7], context[8] );
+      refalrts::link_brackets( context[16], context[8] );
+      refalrts::link_brackets( context[28], context[26] );
+      refalrts::push_stack( vm, context[25] );
+      refalrts::push_stack( vm, context[29] );
+      refalrts::push_stack( vm, context[27] );
+      refalrts::push_stack( vm, context[33] );
+      refalrts::link_brackets( context[31], context[32] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[29], context[32] );
-      res = refalrts::splice_evar( res, context[21], context[22] );
-      res = refalrts::splice_evar( res, context[0], context[9] );
-      res = refalrts::splice_evar( res, context[15], context[15] );
+      refalrts::Iter res = context[26];
+      res = refalrts::splice_evar( res, context[7], context[25] );
+      res = refalrts::splice_evar( res, context[32], context[33] );
       res = refalrts::splice_evar( res, context[23], context[24] );
-      res = refalrts::splice_evar( res, context[27], context[25] );
-      res = refalrts::splice_evar( res, context[28], context[28] );
-      res = refalrts::splice_evar( res, context[26], context[1] );
-      refalrts::use( res );
+      res = refalrts::splice_evar( res, context[28], context[31] );
+      res = refalrts::splice_evar( res, context[17], context[18] );
+      refalrts::splice_to_freelist_open( vm, context[4], res );
       return refalrts::cSuccess;
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & DoMapAccum@2/4 t.Acc#1/9 t.Next#1/15 e.Tail#1/17 (/7 e.Scanned#1/19 )/8 >/1
+    // </0 & DoMapAccum@2/4 t.Acc#1/9 e.Scanned#1/17 (/7 t.Next#1/15 e.Tail#1/19 )/8 >/1
     context[17] = context[11];
     context[18] = context[12];
     context[19] = context[13];
     context[20] = context[14];
-    // closed e.Tail#1 as range 17
-    // closed e.Scanned#1 as range 19
+    // closed e.Scanned#1 as range 17
+    // closed e.Tail#1 as range 19
     //DEBUG: t.Acc#1: 9
     //DEBUG: t.Next#1: 15
-    //DEBUG: e.Tail#1: 17
-    //DEBUG: e.Scanned#1: 19
+    //DEBUG: e.Scanned#1: 17
+    //DEBUG: e.Tail#1: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </21 & DoMapAccum-Aux@2/22 Tile{ AsIs: e.Tail#1/17 } Tile{ AsIs: (/7 AsIs: e.Scanned#1/19 AsIs: )/8 HalfReuse: (/1 } Tile{ AsIs: </0 Reuse: & EnumerateVars-Subst\1*1/4 AsIs: t.Acc#1/9 AsIs: t.Next#1/15 } >/23 )/24 >/25 Tile{ ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } </21 & DoMapAccum-Aux@2/22 Tile{ AsIs: e.Scanned#1/17 } Tile{ AsIs: (/7 } Tile{ AsIs: </0 Reuse: & EnumerateVars-Subst\1*1/4 AsIs: t.Acc#1/9 } Tile{ AsIs: t.Next#1/15 } >/23 )/24 (/25 Tile{ AsIs: e.Tail#1/19 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[21]);
     refalrts::alloc_name(vm, context[22], functions[efunc_gen_DoMapAccumm_Aux_Z2]);
     refalrts::alloc_close_call(vm, context[23]);
     refalrts::alloc_close_bracket(vm, context[24]);
-    refalrts::alloc_close_call(vm, context[25]);
-    refalrts::reinit_open_bracket(context[1]);
+    refalrts::alloc_open_bracket(vm, context[25]);
     refalrts::update_name(context[4], functions[efunc_gen_EnumerateVarsm_Subst_L1D1]);
-    refalrts::push_stack( vm, context[25] );
+    refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[21] );
-    refalrts::link_brackets( context[1], context[24] );
+    refalrts::link_brackets( context[25], context[8] );
+    refalrts::link_brackets( context[7], context[24] );
     refalrts::push_stack( vm, context[23] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[7], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = arg_end->next;
+    refalrts::Iter res = context[8];
+    res = refalrts::splice_evar( res, context[19], context[20] );
     res = refalrts::splice_evar( res, context[23], context[25] );
-    res = refalrts::splice_evar( res, context[0], context[16] );
-    res = refalrts::splice_evar( res, context[7], context[1] );
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[0], context[10] );
+    res = refalrts::splice_evar( res, context[7], context[7] );
     res = refalrts::splice_evar( res, context[17], context[18] );
     res = refalrts::splice_evar( res, context[21], context[22] );
     refalrts::use( res );
@@ -7568,22 +7528,54 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum@2/4 t.Acc#1/9 (/7 e.Scanned#1/5 )/8 >/1
-  if( ! refalrts::empty_seq( context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 5
-  //DEBUG: t.Acc#1: 9
-  //DEBUG: e.Scanned#1: 5
+  do {
+    // </0 & DoMapAccum@2/4 t.Acc#1/9 e.Scanned#1/11 (/7 )/8 >/1
+    context[11] = context[2];
+    context[12] = context[3];
+    if( ! refalrts::empty_seq( context[5], context[6] ) )
+      continue;
+    // closed e.Scanned#1 as range 11
+    //DEBUG: t.Acc#1: 9
+    //DEBUG: e.Scanned#1: 11
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & DoMapAccum@2/4 {REMOVED TILE} {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/9 } Tile{ AsIs: e.Scanned#1/11 } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    res = refalrts::splice_evar( res, context[11], context[12] );
+    res = refalrts::splice_evar( res, context[9], context[10] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & DoMapAccum@2/4 t.acc#0/9 e.scanned#0/2 (/7 e.items#0/5 )/8 >/1
+  // closed e.scanned#0 as range 2
+  // closed e.items#0 as range 5
+  //DEBUG: t.acc#0: 9
+  //DEBUG: e.scanned#0: 2
+  //DEBUG: e.items#0: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & DoMapAccum@2/4 {REMOVED TILE} (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/9 } Tile{ AsIs: e.Scanned#1/5 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@0/4 } & EnumerateVars-Subst\1/11 Tile{ AsIs: t.acc#0/9 } Tile{ AsIs: (/7 } Tile{ AsIs: e.scanned#0/2 } Tile{ AsIs: )/8 } Tile{ AsIs: e.items#0/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_name(vm, context[11], functions[efunc_gen_EnumerateVarsm_Subst_L1]);
+  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z0]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = arg_end->next;
+  refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[7], context[7] );
   res = refalrts::splice_evar( res, context[9], context[10] );
-  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  res = refalrts::splice_evar( res, context[11], context[11] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
@@ -7596,15 +7588,17 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
-  // </0 & DoMapAccum-Aux@1/4 e.Tail#1/2 (/11 e.Scanned#1/9 )/12 (/7 t.Acc#1/13 e.StepScanned#1/5 )/8 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & DoMapAccum-Aux@1/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoMapAccum-Aux@1/4 e.new#1/2 (/11 e.new#2/9 )/12 (/7 e.new#3/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
@@ -7617,33 +7611,73 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z1(refalrts::VM *vm, refalrts
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.Tail#1 as range 2
-  // closed e.Scanned#1 as range 9
-  context[14] = refalrts::tvar_left( context[13], context[5], context[6] );
-  if( ! context[14] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.StepScanned#1 as range 5
-  //DEBUG: e.Tail#1: 2
-  //DEBUG: e.Scanned#1: 9
-  //DEBUG: t.Acc#1: 13
-  //DEBUG: e.StepScanned#1: 5
+  // closed e.new#1 as range 2
+  // closed e.new#2 as range 9
+  // closed e.new#3 as range 5
+  do {
+    // </0 & DoMapAccum-Aux@1/4 e.Scanned#1/13 (/11 t.Acc#1/19 e.StepScanned#1/15 )/12 (/7 e.Tail#1/17 )/8 >/1
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[9];
+    context[16] = context[10];
+    context[17] = context[5];
+    context[18] = context[6];
+    // closed e.Scanned#1 as range 13
+    // closed e.Tail#1 as range 17
+    context[20] = refalrts::tvar_left( context[19], context[15], context[16] );
+    if( ! context[20] )
+      continue;
+    // closed e.StepScanned#1 as range 15
+    //DEBUG: e.Scanned#1: 13
+    //DEBUG: e.Tail#1: 17
+    //DEBUG: t.Acc#1: 19
+    //DEBUG: e.StepScanned#1: 15
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 {REMOVED TILE} {REMOVED TILE} )/12 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 } Tile{ AsIs: t.Acc#1/19 } Tile{ AsIs: e.Scanned#1/13 } Tile{ AsIs: e.StepScanned#1/15 } Tile{ AsIs: (/7 AsIs: e.Tail#1/17 AsIs: )/8 AsIs: >/1 ]] }
+    refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z1]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[7];
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    refalrts::splice_to_freelist_open( vm, context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & DoMapAccum-Aux@1/4 e.scanned#0/2 (/11 e.acc-and-step-scanned#0/9 )/12 (/7 e.items#0/5 )/8 >/1
+  // closed e.scanned#0 as range 2
+  // closed e.acc-and-step-scanned#0 as range 9
+  // closed e.items#0 as range 5
+  //DEBUG: e.scanned#0: 2
+  //DEBUG: e.acc-and-step-scanned#0: 9
+  //DEBUG: e.items#0: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 {REMOVED TILE} )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 } Tile{ AsIs: t.Acc#1/13 } Tile{ AsIs: e.Tail#1/2 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: e.StepScanned#1/5 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z1]);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@0/4 } & EnumerateVarsRec\1/13 Tile{ AsIs: (/7 } Tile{ AsIs: e.scanned#0/2 } Tile{ AsIs: )/8 } Tile{ AsIs: (/11 AsIs: e.acc-and-step-scanned#0/9 AsIs: )/12 } Tile{ AsIs: e.items#0/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_name(vm, context[13], functions[efunc_gen_EnumerateVarsRec_L1]);
+  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[11], context[12] );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[8];
+  refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  refalrts::splice_to_freelist_open( vm, context[4], res );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 
@@ -7656,15 +7690,17 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z2(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 15 elems
-  refalrts::Iter context[15];
-  refalrts::zeros( context, 15 );
-  // </0 & DoMapAccum-Aux@2/4 e.Tail#1/2 (/11 e.Scanned#1/9 )/12 (/7 t.Acc#1/13 e.StepScanned#1/5 )/8 >/1
+  // issue here memory for vars with 21 elems
+  refalrts::Iter context[21];
+  refalrts::zeros( context, 21 );
+  // </0 & DoMapAccum-Aux@2/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & DoMapAccum-Aux@2/4 e.new#1/2 (/11 e.new#2/9 )/12 (/7 e.new#3/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
@@ -7677,33 +7713,73 @@ static refalrts::FnResult func_gen_DoMapAccumm_Aux_Z2(refalrts::VM *vm, refalrts
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.Tail#1 as range 2
-  // closed e.Scanned#1 as range 9
-  context[14] = refalrts::tvar_left( context[13], context[5], context[6] );
-  if( ! context[14] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.StepScanned#1 as range 5
-  //DEBUG: e.Tail#1: 2
-  //DEBUG: e.Scanned#1: 9
-  //DEBUG: t.Acc#1: 13
-  //DEBUG: e.StepScanned#1: 5
+  // closed e.new#1 as range 2
+  // closed e.new#2 as range 9
+  // closed e.new#3 as range 5
+  do {
+    // </0 & DoMapAccum-Aux@2/4 e.Scanned#1/13 (/11 t.Acc#1/19 e.StepScanned#1/15 )/12 (/7 e.Tail#1/17 )/8 >/1
+    context[13] = context[2];
+    context[14] = context[3];
+    context[15] = context[9];
+    context[16] = context[10];
+    context[17] = context[5];
+    context[18] = context[6];
+    // closed e.Scanned#1 as range 13
+    // closed e.Tail#1 as range 17
+    context[20] = refalrts::tvar_left( context[19], context[15], context[16] );
+    if( ! context[20] )
+      continue;
+    // closed e.StepScanned#1 as range 15
+    //DEBUG: e.Scanned#1: 13
+    //DEBUG: e.Tail#1: 17
+    //DEBUG: t.Acc#1: 19
+    //DEBUG: e.StepScanned#1: 15
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 {REMOVED TILE} {REMOVED TILE} )/12 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 } Tile{ AsIs: t.Acc#1/19 } Tile{ AsIs: e.Scanned#1/13 } Tile{ AsIs: e.StepScanned#1/15 } Tile{ AsIs: (/7 AsIs: e.Tail#1/17 AsIs: )/8 AsIs: >/1 ]] }
+    refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z2]);
+    refalrts::push_stack( vm, context[1] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[7], context[8] );
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[7];
+    res = refalrts::splice_evar( res, context[15], context[16] );
+    res = refalrts::splice_evar( res, context[13], context[14] );
+    res = refalrts::splice_evar( res, context[19], context[20] );
+    refalrts::splice_to_freelist_open( vm, context[4], res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & DoMapAccum-Aux@2/4 e.scanned#0/2 (/11 e.acc-and-step-scanned#0/9 )/12 (/7 e.items#0/5 )/8 >/1
+  // closed e.scanned#0 as range 2
+  // closed e.acc-and-step-scanned#0 as range 9
+  // closed e.items#0 as range 5
+  //DEBUG: e.scanned#0: 2
+  //DEBUG: e.acc-and-step-scanned#0: 9
+  //DEBUG: e.items#0: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} (/11 {REMOVED TILE} )/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 } Tile{ AsIs: t.Acc#1/13 } Tile{ AsIs: e.Tail#1/2 } Tile{ AsIs: (/7 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: e.StepScanned#1/5 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
-  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z2]);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum-Aux@0/4 } & EnumerateVars-Subst\1/13 Tile{ AsIs: (/7 } Tile{ AsIs: e.scanned#0/2 } Tile{ AsIs: )/8 } Tile{ AsIs: (/11 AsIs: e.acc-and-step-scanned#0/9 AsIs: )/12 } Tile{ AsIs: e.items#0/5 } Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_name(vm, context[13], functions[efunc_gen_EnumerateVarsm_Subst_L1]);
+  refalrts::update_name(context[4], functions[efunc_gen_DoMapAccumm_Aux_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[11], context[12] );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[8];
+  refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[9], context[10] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[11], context[12] );
+  res = refalrts::splice_evar( res, context[8], context[8] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[13], context[14] );
-  refalrts::splice_to_freelist_open( vm, context[4], res );
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[13], context[13] );
+  refalrts::use( res );
   return refalrts::cSuccess;
 }
 

@@ -1,6 +1,0 @@
-//FROM Library
-$EXTERN WriteLine;
-
-$ENTRY Go {
-  = <WriteLine 'Hello, World!'>;
-}

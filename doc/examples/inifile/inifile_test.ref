@@ -1,11 +1,8 @@
-//FROM inifile
+*$FROM inifile
 $EXTERN LoadIniFile;
 
-//FROM LibraryEx
-$EXTERN ArgList, WriteLine, Map, Fetch;
-
-//FROM Library
-$EXTERN StrFromInt;
+*$FROM LibraryEx
+$EXTERN ArgList, Prout, Map, Fetch;
 
 $ENTRY Go {
   = <Main <ArgList>>;
@@ -13,38 +10,38 @@ $ENTRY Go {
 
 Main {
   (e.ProgName)
-    = <WriteLine 'Usage: ' e.ProgName ' file1.ini file2.ini ...'>;
+    = <Prout 'Usage: ' e.ProgName ' file1.ini file2.ini ...'>;
 
   (e.ProgName) e.IniFiles
     = <Map
         {
           (e.IniFile)
-            = <WriteLine 'Parse ' e.IniFile>
+            = <Prout 'Parse ' e.IniFile>
               <Fetch
                 <LoadIniFile e.IniFile> {
                   (e.IniContent)
-                    = <WriteLine 'In ' e.IniFile ' no parse errors'>
+                    = <Prout 'In ' e.IniFile ' no parse errors'>
                       <PrintIni (e.IniFile) e.IniContent>;
 
                   (e.IniContent) e.Errors
-                    = <WriteLine 'Errors:'>
+                    = <Prout 'Errors:'>
                       <Map
                         {
-                          (s.LineNumber #BadLine)
-                            = <WriteLine
-                                '* Bad line at ' <StrFromInt s.LineNumber>
+                          (s.LineNumber BadLine)
+                            = <Prout
+                                '* Bad line at ' <Symb s.LineNumber>
                               >;
 
-                          (s.LineNumber #EmptyParameterName)
-                            = <WriteLine
+                          (s.LineNumber EmptyParameterName)
+                            = <Prout
                                 '* Expected parameter name before ''='' at '
-                                <StrFromInt s.LineNumber>
+                                <Symb s.LineNumber>
                               >;
 
-                          (s.LineNumber #ReassignParameter e.Name)
-                            = <WriteLine
+                          (s.LineNumber ReassignParameter e.Name)
+                            = <Prout
                                 '* Reassign parameter ' e.Name ' at '
-                                <StrFromInt s.LineNumber>
+                                <Symb s.LineNumber>
                                 ', use last assigned value'
                               >;
                         }
@@ -60,28 +57,28 @@ Main {
 
 WriteLineAt {
   s.LineNumber e.Text
-    = <WriteLine <StrFromInt s.LineNumber> ': ' e.Text>;
+    = <Prout <Symb s.LineNumber> ': ' e.Text>;
 }
 
 PrintIni {
   (e.FileName) e.FileContent
-    = <WriteLine>
-      <WriteLine 'Content of ' e.FileName>
+    = <Prout>
+      <Prout 'Content of ' e.FileName>
       <Map
         {
-          (s.SectionPos #General)
-            = <WriteLine '(Default section) - empty'>;
+          (s.SectionPos General)
+            = <Prout '(Default section) - empty'>;
 
-          (s.SectionPos #General e.Parameters)
-            = <WriteLine '(Default section)'>
+          (s.SectionPos General e.Parameters)
+            = <Prout '(Default section)'>
               <PrintParameters e.Parameters>;
 
           (s.SectionPos (e.Section))
-            = <WriteLine>
+            = <Prout>
               <WriteLineAt s.SectionPos '[' e.Section '] - empty'>;
 
           (s.SectionPos (e.Section) e.Parameters)
-            = <WriteLine>
+            = <Prout>
               <WriteLineAt s.SectionPos '[' e.Section ']'>
               <PrintParameters e.Parameters>;
         }

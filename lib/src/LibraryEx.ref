@@ -1,8 +1,8 @@
 $INCLUDE "LibraryEx";
 
 *$FROM Library
-$EXTERN FOpen, FClose, FReadLine, FWriteLine, Add, Sub, IntFromStr, Arg,
-  SymbCompare, FReadBytes, FWriteBytes;
+$EXTERN Open-Auto, Close, Get, Putout, Add, Sub, Arg,
+  SymbCompare, ReadBytes, WriteBytes;
 
 $ENTRY Apply;
 
@@ -12,10 +12,6 @@ $ENTRY Reduce;
 
 $ENTRY Fetch;
 
-$ENTRY Y {
-  s.Y-Func = { e.Arg = <<s.Y-Func <Y s.Y-Func>> e.Arg>; };
-}
-
 $ENTRY MapAccum;
 
 $ENTRY UnBracket;
@@ -23,71 +19,69 @@ $ENTRY UnBracket;
 $ENTRY DelAccumulator;
 
 $ENTRY LoadFile {
-  e.FileName = <DoLoadFile <FReadLine <FOpen 'r' e.FileName>>>;
+  e.FileName
+    = <Open-Auto 'r' e.FileName> : t.File
+    = <DoLoadFile t.File <Get t.File>>;
 }
 
 DoLoadFile {
-  t.File 0 = <FClose t.File>;
+  t.File 0 = <Close t.File>;
 
-  t.File e.Line 0 = (e.Line) <FClose t.File>;
+  t.File e.Line 0 = (e.Line) <Close t.File>;
 
-  t.File e.Line = (e.Line) <DoLoadFile <FReadLine t.File>>;
+  t.File e.Line = (e.Line) <DoLoadFile t.File <Get t.File>>;
 }
 
 $ENTRY SaveFile {
-  (e.FileName) e.Lines = <SaveFile-Handle <FOpen 'w' e.FileName> e.Lines>;
+  (e.FileName) e.Lines = <SaveFile-Handle <Open-Auto 'w' e.FileName> e.Lines>;
 }
 
 $ENTRY AppendFile {
-  (e.FileName) e.Lines = <SaveFile-Handle <FOpen 'a' e.FileName> e.Lines>;
+  (e.FileName) e.Lines = <SaveFile-Handle <Open-Auto 'a' e.FileName> e.Lines>;
 }
 
 SaveFile-Handle {
   s.FileHandle e.Lines
-    = <FClose
-        <Reduce
-          {
-            s.FileHandle^ (e.Line) = <FWriteLine s.FileHandle e.Line>;
-          }
-          s.FileHandle
-          e.Lines
-        >
-      >;
+    = <Map
+        {
+          (e.Line) = <Putout s.FileHandle e.Line>;
+        }
+        e.Lines
+      >
+      <Close s.FileHandle>;
 }
 
 $ENTRY LoadBytes {
-  e.FileName = <DoLoadBytes <FOpen ('rb') e.FileName>>;
+  e.FileName = <DoLoadBytes <Open-Auto ('rb') e.FileName>>;
 }
 
 DoLoadBytes {
   s.FileHandle
-    = <FReadBytes s.FileHandle 4096>
+    = <ReadBytes s.FileHandle 4096>
     : {
-        /* пусто */ = <FClose s.FileHandle>;
+        /* пусто */ = <Close s.FileHandle>;
         e.Bytes = e.Bytes <DoLoadBytes s.FileHandle>;
       };
 }
 
 $ENTRY SaveBytes {
-  (e.FileName) e.Bytes = <SaveBytes-Handle <FOpen ('wb') e.FileName> e.Bytes>;
+  (e.FileName) e.Bytes
+    = <SaveBytes-Handle <Open-Auto ('wb') e.FileName> e.Bytes>;
 }
 
 $ENTRY AppendBytes {
-  (e.FileName) e.Bytes = <SaveBytes-Handle <FOpen ('ab') e.FileName> e.Bytes>;
+  (e.FileName) e.Bytes
+    = <SaveBytes-Handle <Open-Auto ('ab') e.FileName> e.Bytes>;
 }
 
 SaveBytes-Handle {
   s.FileHandle e.Bytes
-    = <FWriteBytes s.FileHandle e.Bytes>
-      <FClose s.FileHandle>;
+    = <WriteBytes s.FileHandle e.Bytes>
+      <Close s.FileHandle>;
 }
 
 $ENTRY Inc;
 $ENTRY Dec;
-
-$ENTRY FastIntFromStr {
-  e.Digits = <IntFromStr e.Digits> : Success s.Number = s.Number;
-}
 
 /**
   <ArgList> == (e.Arg)+

@@ -437,6 +437,16 @@ public:
     return res;
   }
 
+  Metatable *new_metatable(
+    RefalFuncName name,
+    RefalFunction **functions,
+    const RefalIdentifier *idents
+  ) {
+    Metatable* res = new Metatable(name, functions, idents);
+    m_allocated_functions.push_back(res);
+    return res;
+  }
+
   bool alloc_nodes(Iter& begin, Iter& end);
   void free_nodes(Iter begin, Iter end);
   void swap_save(Iter begin, Iter end);
