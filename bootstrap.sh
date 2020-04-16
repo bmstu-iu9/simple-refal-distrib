@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x bootstrap.sh clear.sh bin/rl{c,make}
+chmod +x bootstrap.sh clear.sh bin/rl{c,make} lib-prefixes/make.sh
 
 source ./scripts/load-config.sh . || exit 1
 source ./scripts/platform-specific.sh
