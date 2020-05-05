@@ -1,5 +1,8 @@
 # Introduction in language
 
+<div id="toc"></div>
+<script src="toc.js"></script>
+
 ## What is REFAL? What is Refal-5λ?
 REFAL – functional programming language, oriented on symbols data elaboration:
 computer programs analyzing, transmission, text elaboration based on natural
@@ -226,7 +229,7 @@ memory will be printed. It should be so._
 It will be said about the meaning of written in `hello.ref` file in the next
 [chapter](3-basics.en.md).
 
-# References
+## References
 
 1. V.F.Turchin. Metaalgorythmic language. Cybernetics №4, 1968, pages 45-54.
    Available in the Internet:

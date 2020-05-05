@@ -253,7 +253,7 @@ static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COO
 static void version(FILE *output) {
   fprintf(
     output,
-    "rlgo, a part of Refal-5-lambda compiler toolkit, version 3.0\n"
+    "rlgo, a part of Refal-5-lambda compiler toolkit, version 3.0.1\n"
     "Copyright (c) 2008-2016, Alexander Konovalov, "
     "2016-2020, BMSTU IU9 Department\n"
     "All rights reserved.\n\n"

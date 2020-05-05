@@ -225,14 +225,6 @@ public:
 public:
   // Операции сопоставления с образцом
 
-  static Iter next(Iter current) {
-    return current->next;
-  }
-
-  static Iter prev(Iter current) {
-    return current->prev;
-  }
-
   static void move_left(Iter& first, Iter& last) {
     // assert((first == 0) == (last == 0));
     if (first == 0) assert (last == 0);
@@ -242,7 +234,7 @@ public:
       first = 0;
       last = 0;
     } else {
-      first = next(first);
+      first = first->next;
     }
   }
 
@@ -255,7 +247,7 @@ public:
       first = 0;
       last = 0;
     } else {
-      last = prev(last);
+      last = last->prev;
     }
   }
 
@@ -418,9 +410,9 @@ public:
 
     Iter right_bracket = pos->link_info;
 
-    if (next(pos) != right_bracket) {
-      res_first = next(pos);
-      res_last = prev(right_bracket);
+    if (pos->next != right_bracket) {
+      res_first = pos->next;
+      res_last = right_bracket->prev;
     } else {
       res_first = 0;
       res_last = 0;
@@ -442,9 +434,9 @@ public:
       Iter left_bracket = first;
       Iter right_bracket = left_bracket->link_info;
 
-      if (next(left_bracket) != right_bracket) {
-        res_first = next(left_bracket);
-        res_last = prev(right_bracket);
+      if (left_bracket->next != right_bracket) {
+        res_first = left_bracket->next;
+        res_last = right_bracket->prev;
       } else {
         res_first = 0;
         res_last = 0;
@@ -454,7 +446,7 @@ public:
         first = 0;
         last = 0;
       } else {
-        first = next(right_bracket);
+        first = right_bracket->next;
       }
 
       return left_bracket;
@@ -474,9 +466,9 @@ public:
       Iter right_bracket = last;
       Iter left_bracket = right_bracket->link_info;
 
-      if (next(left_bracket) != right_bracket) {
-        res_first = next(left_bracket);
-        res_last = prev(right_bracket);
+      if (left_bracket->next != right_bracket) {
+        res_first = left_bracket->next;
+        res_last = right_bracket->prev;
       } else {
         res_first = 0;
         res_last = 0;
@@ -486,7 +478,7 @@ public:
         first = 0;
         last = 0;
       } else {
-        last = prev(left_bracket);
+        last = left_bracket->prev;
       }
 
       return left_bracket;
@@ -504,7 +496,7 @@ public:
       return 0;
     }
 
-    Iter adt_tag = next(pos);
+    Iter adt_tag = pos->next;
 
     assert (adt_tag->tag == cDataFunction);
     if (adt_tag->function_info != tag) {
@@ -513,9 +505,9 @@ public:
 
     Iter right_bracket = pos->link_info;
 
-    if (next(adt_tag) != right_bracket) {
-      res_first = next(adt_tag);
-      res_last = prev(right_bracket);
+    if (adt_tag->next != right_bracket) {
+      res_first = adt_tag->next;
+      res_last = right_bracket->prev;
     } else {
       res_first = 0;
       res_last = 0;
@@ -538,7 +530,7 @@ public:
     } else {
       Iter left_bracket = first;
       Iter right_bracket = left_bracket->link_info;
-      Iter pnext = next(left_bracket);
+      Iter pnext = left_bracket->next;
 
       if (pnext == right_bracket) {
         return 0;
@@ -547,9 +539,9 @@ public:
       } else if (pnext->function_info != tag) {
         return 0;
       } else {
-        if (next(pnext) != right_bracket) {
-          res_first = next(pnext);
-          res_last = prev(right_bracket);
+        if (pnext->next != right_bracket) {
+          res_first = pnext->next;
+          res_last = right_bracket->prev;
         } else {
           res_first = 0;
           res_last = 0;
@@ -559,7 +551,7 @@ public:
           first = 0;
           last = 0;
         } else {
-          first = next(right_bracket);
+          first = right_bracket->next;
         }
 
         return left_bracket;
@@ -581,7 +573,7 @@ public:
     } else {
       Iter right_bracket = last;
       Iter left_bracket = right_bracket->link_info;
-      Iter pnext = next(left_bracket);
+      Iter pnext = left_bracket->next;
 
       if (pnext == right_bracket) {
         return 0;
@@ -590,9 +582,9 @@ public:
       } else if (pnext->function_info != tag) {
         return 0;
       } else {
-        if (next(pnext) != right_bracket) {
-          res_first = next(pnext);
-          res_last = prev(right_bracket);
+        if (pnext->next != right_bracket) {
+          res_first = pnext->next;
+          res_last = right_bracket->prev;
         } else {
           res_first = 0;
           res_last = 0;
@@ -602,7 +594,7 @@ public:
           first = 0;
           last = 0;
         } else {
-          last = prev(left_bracket);
+          last = left_bracket->prev;
         }
 
         return left_bracket;
@@ -611,7 +603,7 @@ public:
   }
 
   static void adt_pointers(Iter left_bracket, Iter& tag, Iter& right_bracket) {
-    Iter pnext = next(left_bracket);
+    Iter pnext = left_bracket->next;
     tag = pnext;
     right_bracket = left_bracket->link_info;
   }
@@ -624,13 +616,13 @@ public:
 
     Iter left_bracket = first;
     Iter right_bracket = last;
-    Iter function = next(left_bracket);
+    Iter function = left_bracket->next;
 
     assert(left_bracket->link_info == right_bracket);
 
-    if (next(function) != right_bracket) {
-      res_first = next(function);
-      res_last = prev(right_bracket);
+    if (function->next != right_bracket) {
+      res_first = function->next;
+      res_last = right_bracket->prev;
     } else {
       res_first = 0;
       res_last = 0;
@@ -640,7 +632,7 @@ public:
   }
 
   static void call_pointers(Iter left_bracket, Iter& tag, Iter& right_bracket) {
-    Iter pnext = next(left_bracket);
+    Iter pnext = left_bracket->next;
     tag = pnext;
     right_bracket = left_bracket->link_info;
   }
@@ -783,7 +775,6 @@ public:
   // Операции построения результата
 
   void reset_allocator();
-  void copy_node(Iter& res, Iter sample);
 
 private:
 
@@ -815,9 +806,11 @@ public:
       Iter end_of_res;
       copy_evar(stvar_res, end_of_res, stvar_sample, end_of_sample);
     } else {
-      copy_node(stvar_res, stvar_sample);
+      copy_svar(stvar_res, stvar_sample);
     }
   }
+
+  void copy_svar(Iter& svar_res, Iter svar_sample);
 
   // TODO: а нафига она нужна?
   void alloc_copy_evar(Iter& res, Iter evar_b_sample, Iter evar_e_sample) {
@@ -831,7 +824,19 @@ public:
 
 private:
 
-  void alloc_node(Iter& res);
+  void alloc_node(Iter& res, DataTag tag) {
+    ensure_memory();
+
+    if (refalrts::cDataClosure == m_free_ptr->tag) {
+      free_closure();
+    }
+
+    res = m_free_ptr;
+    m_free_ptr = m_free_ptr->next;
+    res->tag = tag;
+  }
+
+  void free_closure();
   void ensure_memory() {
     if ((m_free_ptr == & m_end_free_list) && ! create_nodes()) {
       longjmp (*m_memory_fail, 1);
@@ -842,71 +847,58 @@ private:
 public:
 
   void alloc_char(Iter& res, char ch) {
-    alloc_node(res);
-    res->tag = cDataChar;
+    alloc_node(res, cDataChar);
     res->char_info = ch;
   }
 
   void alloc_number(Iter& res, RefalNumber num) {
-    alloc_node(res);
-    res->tag = cDataNumber;
+    alloc_node(res, cDataNumber);
     res->number_info = num;
   }
 
   void alloc_name(Iter& res, RefalFunction *fn) {
-    alloc_node(res);
-    res->tag = cDataFunction;
+    alloc_node(res, cDataFunction);
     res->function_info = fn;
   }
 
   void alloc_ident(Iter& res, RefalIdentifier ident) {
-    alloc_node(res);
-    res->tag = cDataIdentifier;
+    alloc_node(res, cDataIdentifier);
     res->ident_info = ident;
   }
-
-private:
-
-  void alloc_some_bracket(Iter& res, DataTag tag) {
-    alloc_node(res);
-    res->tag = tag;
-}
 
 public:
 
   void alloc_open_adt(Iter& res) {
-    alloc_some_bracket(res, cDataOpenADT);
+    alloc_node(res, cDataOpenADT);
   }
 
   void alloc_close_adt(Iter& res) {
-    alloc_some_bracket(res, cDataCloseADT);
+    alloc_node(res, cDataCloseADT);
   }
 
   void alloc_open_bracket(Iter& res) {
-    alloc_some_bracket(res, cDataOpenBracket);
+    alloc_node(res, cDataOpenBracket);
   }
 
   void alloc_close_bracket(Iter& res) {
-    alloc_some_bracket(res, cDataCloseBracket);
+    alloc_node(res, cDataCloseBracket);
   }
 
   void alloc_open_call(Iter& res) {
-    alloc_some_bracket(res, cDataOpenCall);
+    alloc_node(res, cDataOpenCall);
   }
 
   void alloc_close_call(Iter& res) {
-    alloc_some_bracket(res, cDataCloseCall);
+    alloc_node(res, cDataCloseCall);
   }
 
   void alloc_closure_head(Iter& res) {
-    alloc_node(res);
-    res->tag = cDataClosureHead;
+    alloc_node(res, cDataClosureHead);
     res->number_info = 1;
   }
 
   void alloc_unwrapped_closure(Iter& res, Iter head) {
-    alloc_node(res);
-    res->tag = cDataUnwrappedClosure;
+    alloc_node(res, cDataUnwrappedClosure);
     res->link_info = head;
   }
 

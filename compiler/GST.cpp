@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1624858928_1687472786
-#define COOKIE1_ 1624858928U
-#define COOKIE2_ 1687472786U
+#define cookie_ns cookie_ns_4079395943_3177836280
+#define COOKIE1_ 4079395943U
+#define COOKIE2_ 3177836280U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
@@ -34,7 +34,7 @@ enum efunc {
   efunc_DelAccumulator = 23,
   efunc_gen_Map_Z1 = 24,
   efunc_DoOverlapOffsets = 25,
-  efunc_AlignEnumExprs = 26,
+  efunc_EnumExprs = 26,
   efunc_gen_TileCandidates_L1 = 27,
   efunc_OverlapChain = 28,
   efunc_GlueTiles = 29,
@@ -128,7 +128,7 @@ enum ident {
   ident_Enum = 30,
   ident_DeEnum = 31,
   ident_TileCandidates = 32,
-  ident_AlignEnumExprs = 33,
+  ident_EnumExprs = 33,
   ident_DoOverlapOffsets = 34,
   ident_OverlapChain = 35,
   ident_ZipItems = 36,
@@ -1754,8 +1754,8 @@ static refalrts::FnResult func_TileCandidates(refalrts::VM *vm, refalrts::Iter a
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & AlignEnumExprs/13 0/14 (/15 )/16 (/17 Tile{ AsIs: e.Pattern#1/5 } )/18 (/19 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } & TileCandidates\1/20 >/21 Tile{ ]] }
-  refalrts::alloc_name(vm, context[13], functions[efunc_AlignEnumExprs]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 HalfReuse: </7 } & EnumExprs/13 0/14 (/15 )/16 (/17 Tile{ AsIs: e.Pattern#1/5 } )/18 (/19 Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.Result#1/9 AsIs: )/12 AsIs: >/1 } & TileCandidates\1/20 >/21 Tile{ ]] }
+  refalrts::alloc_name(vm, context[13], functions[efunc_EnumExprs]);
   refalrts::alloc_number(vm, context[14], 0UL);
   refalrts::alloc_open_bracket(vm, context[15]);
   refalrts::alloc_close_bracket(vm, context[16]);
@@ -1789,7 +1789,7 @@ static refalrts::FnResult func_TileCandidates(refalrts::VM *vm, refalrts::Iter a
 static refalrts::NativeReference nat_ref_TileCandidates("TileCandidates", COOKIE1_, COOKIE2_, func_TileCandidates);
 
 
-static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+static refalrts::FnResult func_EnumExprs(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
   refalrts::RefalFunction **functions;
@@ -1798,14 +1798,14 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
   // issue here memory for vars with 52 elems
   refalrts::Iter context[52];
   refalrts::zeros( context, 52 );
-  // </0 & AlignEnumExprs/4 e.new#0/2 >/1
+  // </0 & EnumExprs/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & AlignEnumExprs/4 s.new#1/21 (/19 e.new#2/17 )/20 (/15 e.new#3/13 )/16 (/11 e.new#4/9 )/12 (/7 e.new#5/5 )/8 >/1
+  // </0 & EnumExprs/4 s.new#1/21 (/19 e.new#2/17 )/20 (/15 e.new#3/13 )/16 (/11 e.new#4/9 )/12 (/7 e.new#5/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_right( context[5], context[6], context[2], context[3] );
@@ -1839,7 +1839,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & AlignEnumExprs/4 s.new#6/21 (/19 e.new#7/22 )/20 (/15 e.new#8/24 )/16 (/11 e.new#9/26 )/12 (/7 t.new#10/30 e.new#11/28 )/8 >/1
+    // </0 & EnumExprs/4 s.new#6/21 (/19 e.new#7/22 )/20 (/15 e.new#8/24 )/16 (/11 e.new#9/26 )/12 (/7 t.new#10/30 e.new#11/28 )/8 >/1
     context[22] = context[17];
     context[23] = context[18];
     context[24] = context[13];
@@ -1856,7 +1856,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
       continue;
     // closed e.new#11 as range 28
     do {
-      // </0 & AlignEnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/32 )/20 (/15 t.PatternItem#1/40 e.Pattern#1/34 )/16 (/11 e.ScannedResult#1/36 )/12 (/7 t.ResultItem#1/30 e.Result#1/38 )/8 >/1
+      // </0 & EnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/32 )/20 (/15 t.PatternItem#1/40 e.Pattern#1/34 )/16 (/11 e.ScannedResult#1/36 )/12 (/7 t.ResultItem#1/30 e.Result#1/38 )/8 >/1
       context[32] = context[22];
       context[33] = context[23];
       context[34] = context[24];
@@ -1882,7 +1882,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </42 & Add/43 1/44 Tile{ AsIs: s.Num#1/21 } >/45 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/32 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/40 } )/46 )/47 (/48 Tile{ AsIs: e.Pattern#1/34 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/36 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/30 } )/49 )/50 (/51 Tile{ AsIs: e.Result#1/38 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & EnumExprs/4 } </42 & Add/43 1/44 Tile{ AsIs: s.Num#1/21 } >/45 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/32 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/40 } )/46 )/47 (/48 Tile{ AsIs: e.Pattern#1/34 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/36 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/30 } )/49 )/50 (/51 Tile{ AsIs: e.Result#1/38 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[42]);
       refalrts::alloc_name(vm, context[43], functions[efunc_Add]);
       refalrts::alloc_number(vm, context[44], 1UL);
@@ -1924,7 +1924,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & AlignEnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/32 )/20 (/15 )/16 (/11 e.ScannedResult#1/34 )/12 (/7 t.ResultItem#1/30 e.Result#1/36 )/8 >/1
+    // </0 & EnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/32 )/20 (/15 )/16 (/11 e.ScannedResult#1/34 )/12 (/7 t.ResultItem#1/30 e.Result#1/36 )/8 >/1
     context[32] = context[22];
     context[33] = context[23];
     context[34] = context[26];
@@ -1943,56 +1943,48 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
     //DEBUG: e.Result#1: 36
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </38 & Add/39 1/40 Tile{ AsIs: s.Num#1/21 HalfReuse: >/19 } (/41 Tile{ AsIs: e.ScannedPattern#1/32 } (/42 s.Num#1/21/43 '*'/44 )/45 Tile{ AsIs: )/20 AsIs: (/15 AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/34 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/30 } )/46 )/47 (/48 Tile{ AsIs: e.Result#1/36 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & EnumExprs/4 } </38 & Add/39 1/40 Tile{ AsIs: s.Num#1/21 } >/41 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/32 AsIs: )/20 AsIs: (/15 AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/34 HalfReuse: (/12 HalfReuse: s.Num1 #21/7 AsIs: t.ResultItem#1/30 } )/42 )/43 (/44 Tile{ AsIs: e.Result#1/36 } Tile{ AsIs: )/8 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[38]);
     refalrts::alloc_name(vm, context[39], functions[efunc_Add]);
     refalrts::alloc_number(vm, context[40], 1UL);
-    refalrts::alloc_open_bracket(vm, context[41]);
-    refalrts::alloc_open_bracket(vm, context[42]);
-    refalrts::copy_stvar(vm, context[43], context[21]);
-    refalrts::alloc_char(vm, context[44], '*');
-    refalrts::alloc_close_bracket(vm, context[45]);
-    refalrts::alloc_close_bracket(vm, context[46]);
-    refalrts::alloc_close_bracket(vm, context[47]);
-    refalrts::alloc_open_bracket(vm, context[48]);
-    refalrts::reinit_close_call(context[19]);
+    refalrts::alloc_close_call(vm, context[41]);
+    refalrts::alloc_close_bracket(vm, context[42]);
+    refalrts::alloc_close_bracket(vm, context[43]);
+    refalrts::alloc_open_bracket(vm, context[44]);
     refalrts::reinit_open_bracket(context[12]);
     refalrts::reinit_svar( context[7], context[21] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[48], context[8] );
-    refalrts::link_brackets( context[11], context[47] );
-    refalrts::link_brackets( context[12], context[46] );
+    refalrts::link_brackets( context[44], context[8] );
+    refalrts::link_brackets( context[11], context[43] );
+    refalrts::link_brackets( context[12], context[42] );
     refalrts::link_brackets( context[15], context[16] );
-    refalrts::link_brackets( context[41], context[20] );
-    refalrts::link_brackets( context[42], context[45] );
-    refalrts::push_stack( vm, context[19] );
+    refalrts::link_brackets( context[19], context[20] );
+    refalrts::push_stack( vm, context[41] );
     refalrts::push_stack( vm, context[38] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[8];
     res = refalrts::splice_evar( res, context[36], context[37] );
-    res = refalrts::splice_evar( res, context[46], context[48] );
-    res = refalrts::splice_evar( res, context[20], context[31] );
-    res = refalrts::splice_evar( res, context[42], context[45] );
-    res = refalrts::splice_evar( res, context[32], context[33] );
+    res = refalrts::splice_evar( res, context[42], context[44] );
+    res = refalrts::splice_evar( res, context[19], context[31] );
     res = refalrts::splice_evar( res, context[41], context[41] );
-    res = refalrts::splice_evar( res, context[21], context[19] );
+    res = refalrts::splice_evar( res, context[21], context[21] );
     res = refalrts::splice_evar( res, context[38], context[40] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & AlignEnumExprs/4 s.new#6/21 (/19 e.new#7/17 )/20 (/15 e.new#8/13 )/16 (/11 e.new#9/9 )/12 (/7 )/8 >/1
+  // </0 & EnumExprs/4 s.new#6/21 (/19 e.new#7/17 )/20 (/15 e.new#8/13 )/16 (/11 e.new#9/9 )/12 (/7 )/8 >/1
   if( ! refalrts::empty_seq( context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.new#7 as range 17
   // closed e.new#8 as range 13
   // closed e.new#9 as range 9
   do {
-    // </0 & AlignEnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/22 )/20 (/15 t.PatternItem#1/28 e.Pattern#1/24 )/16 (/11 e.ScannedResult#1/26 )/12 (/7 )/8 >/1
+    // </0 & EnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/22 )/20 (/15 t.PatternItem#1/28 e.Pattern#1/24 )/16 (/11 e.ScannedResult#1/26 )/12 (/7 )/8 >/1
     context[22] = context[17];
     context[23] = context[18];
     context[24] = context[13];
@@ -2012,8 +2004,8 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
     //DEBUG: e.Pattern#1: 24
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & AlignEnumExprs/4 } </30 & Add/31 1/32 Tile{ AsIs: s.Num#1/21 } >/33 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/22 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/28 } )/34 Tile{ AsIs: )/16 AsIs: (/11 } Tile{ AsIs: e.Pattern#1/24 } )/35 (/36 Tile{ AsIs: e.ScannedResult#1/26 } (/37 s.Num#1/21/38 '*'/39 )/40 Tile{ AsIs: )/12 AsIs: (/7 AsIs: )/8 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & EnumExprs/4 } </30 & Add/31 1/32 Tile{ AsIs: s.Num#1/21 } >/33 Tile{ AsIs: (/19 AsIs: e.ScannedPattern#1/22 HalfReuse: (/20 HalfReuse: s.Num1 #21/15 AsIs: t.PatternItem#1/28 } )/34 )/35 (/36 Tile{ AsIs: e.Pattern#1/24 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/26 AsIs: )/12 AsIs: (/7 AsIs: )/8 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[30]);
     refalrts::alloc_name(vm, context[31], functions[efunc_Add]);
     refalrts::alloc_number(vm, context[32], 1UL);
@@ -2021,31 +2013,22 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
     refalrts::alloc_close_bracket(vm, context[34]);
     refalrts::alloc_close_bracket(vm, context[35]);
     refalrts::alloc_open_bracket(vm, context[36]);
-    refalrts::alloc_open_bracket(vm, context[37]);
-    refalrts::copy_stvar(vm, context[38], context[21]);
-    refalrts::alloc_char(vm, context[39], '*');
-    refalrts::alloc_close_bracket(vm, context[40]);
     refalrts::reinit_open_bracket(context[20]);
     refalrts::reinit_svar( context[15], context[21] );
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::link_brackets( context[7], context[8] );
-    refalrts::link_brackets( context[36], context[12] );
-    refalrts::link_brackets( context[37], context[40] );
-    refalrts::link_brackets( context[11], context[35] );
-    refalrts::link_brackets( context[19], context[16] );
+    refalrts::link_brackets( context[11], context[12] );
+    refalrts::link_brackets( context[36], context[16] );
+    refalrts::link_brackets( context[19], context[35] );
     refalrts::link_brackets( context[20], context[34] );
     refalrts::push_stack( vm, context[33] );
     refalrts::push_stack( vm, context[30] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[12];
-    res = refalrts::splice_evar( res, context[37], context[40] );
-    res = refalrts::splice_evar( res, context[26], context[27] );
-    res = refalrts::splice_evar( res, context[35], context[36] );
+    refalrts::Iter res = context[16];
     res = refalrts::splice_evar( res, context[24], context[25] );
-    res = refalrts::splice_evar( res, context[16], context[11] );
-    res = refalrts::splice_evar( res, context[34], context[34] );
+    res = refalrts::splice_evar( res, context[34], context[36] );
     res = refalrts::splice_evar( res, context[19], context[29] );
     res = refalrts::splice_evar( res, context[33], context[33] );
     res = refalrts::splice_evar( res, context[21], context[21] );
@@ -2055,7 +2038,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & AlignEnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/17 )/20 (/15 )/16 (/11 e.ScannedResult#1/9 )/12 (/7 )/8 >/1
+  // </0 & EnumExprs/4 s.Num#1/21 (/19 e.ScannedPattern#1/17 )/20 (/15 )/16 (/11 e.ScannedResult#1/9 )/12 (/7 )/8 >/1
   if( ! refalrts::empty_seq( context[13], context[14] ) )
     return refalrts::cRecognitionImpossible;
   // closed e.ScannedPattern#1 as range 17
@@ -2065,7 +2048,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
   //DEBUG: e.ScannedResult#1: 9
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} & AlignEnumExprs/4 s.Num#1/21 (/19 {REMOVED TILE} )/20 (/15 {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} & EnumExprs/4 s.Num#1/21 (/19 {REMOVED TILE} )/20 (/15 {REMOVED TILE} (/7 )/8 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.ScannedPattern#1/17 } Tile{ AsIs: )/16 AsIs: (/11 AsIs: e.ScannedResult#1/9 AsIs: )/12 } Tile{ ]] }
   refalrts::reinit_open_bracket(context[0]);
   refalrts::link_brackets( context[11], context[12] );
@@ -2079,7 +2062,7 @@ static refalrts::FnResult func_AlignEnumExprs(refalrts::VM *vm, refalrts::Iter a
   return refalrts::cSuccess;
 }
 
-static refalrts::NativeReference nat_ref_AlignEnumExprs("AlignEnumExprs", COOKIE1_, COOKIE2_, func_AlignEnumExprs);
+static refalrts::NativeReference nat_ref_EnumExprs("EnumExprs", COOKIE1_, COOKIE2_, func_EnumExprs);
 
 
 static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
@@ -2088,9 +2071,9 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 44 elems
-  refalrts::Iter context[44];
-  refalrts::zeros( context, 44 );
+  // issue here memory for vars with 52 elems
+  refalrts::Iter context[52];
+  refalrts::zeros( context, 52 );
   // </0 & DoOverlapOffsets/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2130,7 +2113,7 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
   // closed e.new#3 as range 13
   // closed e.new#4 as range 17
   do {
-    // </0 & DoOverlapOffsets/4 (/7 e.Pattern#1/21 t.Last#1/31 )/8 (/11 e.OverlappedPattern#1/23 )/12 (/15 e.OverlappedResult#1/25 )/16 (/19 t.First#1/29 e.Result#1/27 )/20 >/1
+    // </0 & DoOverlapOffsets/4 (/7 e.new#5/21 )/8 (/11 e.new#6/23 )/12 (/15 e.new#7/25 )/16 (/19 t.new#8/29 e.new#9/27 )/20 >/1
     context[21] = context[5];
     context[22] = context[6];
     context[23] = context[9];
@@ -2139,105 +2122,253 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
     context[26] = context[14];
     context[27] = context[17];
     context[28] = context[18];
-    // closed e.OverlappedPattern#1 as range 23
-    // closed e.OverlappedResult#1 as range 25
+    // closed e.new#5 as range 21
+    // closed e.new#6 as range 23
+    // closed e.new#7 as range 25
     context[30] = refalrts::tvar_left( context[29], context[27], context[28] );
     if( ! context[30] )
       continue;
-    // closed e.Result#1 as range 27
-    context[32] = refalrts::tvar_right( context[31], context[21], context[22] );
-    if( ! context[32] )
+    // closed e.new#9 as range 27
+    do {
+      // </0 & DoOverlapOffsets/4 (/7 e.Pattern#1/31 t.Last#1/39 )/8 (/11 e.OverlappedPattern#1/33 )/12 (/15 e.OverlappedResult#1/35 )/16 (/19 t.First#1/29 e.Result#1/37 )/20 >/1
+      context[31] = context[21];
+      context[32] = context[22];
+      context[33] = context[23];
+      context[34] = context[24];
+      context[35] = context[25];
+      context[36] = context[26];
+      context[37] = context[27];
+      context[38] = context[28];
+      // closed e.OverlappedPattern#1 as range 33
+      // closed e.OverlappedResult#1 as range 35
+      // closed e.Result#1 as range 37
+      context[40] = refalrts::tvar_right( context[39], context[31], context[32] );
+      if( ! context[40] )
+        continue;
+      // closed e.Pattern#1 as range 31
+      //DEBUG: t.First#1: 29
+      //DEBUG: e.OverlappedPattern#1: 33
+      //DEBUG: e.OverlappedResult#1: 35
+      //DEBUG: e.Result#1: 37
+      //DEBUG: t.Last#1: 39
+      //DEBUG: e.Pattern#1: 31
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ } </41 Tile{ HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/33 AsIs: )/12 AsIs: (/15 AsIs: e.OverlappedResult#1/35 AsIs: )/16 HalfReuse: >/19 } Tile{ AsIs: </0 AsIs: & DoOverlapOffsets/4 AsIs: (/7 } Tile{ AsIs: e.Pattern#1/31 } )/42 (/43 Tile{ AsIs: t.Last#1/39 } e.OverlappedPattern#1/33/44 )/46 (/47 e.OverlappedResult#1/35/48 Tile{ AsIs: t.First#1/29 } )/50 (/51 Tile{ AsIs: e.Result#1/37 } Tile{ AsIs: )/20 AsIs: >/1 ]] }
+      refalrts::alloc_open_call(vm, context[41]);
+      refalrts::alloc_close_bracket(vm, context[42]);
+      refalrts::alloc_open_bracket(vm, context[43]);
+      refalrts::copy_evar(vm, context[44], context[45], context[33], context[34]);
+      refalrts::alloc_close_bracket(vm, context[46]);
+      refalrts::alloc_open_bracket(vm, context[47]);
+      refalrts::copy_evar(vm, context[48], context[49], context[35], context[36]);
+      refalrts::alloc_close_bracket(vm, context[50]);
+      refalrts::alloc_open_bracket(vm, context[51]);
+      refalrts::reinit_name(context[8], functions[efunc_OverlapChain]);
+      refalrts::reinit_close_call(context[19]);
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[0] );
+      refalrts::link_brackets( context[51], context[20] );
+      refalrts::link_brackets( context[47], context[50] );
+      refalrts::link_brackets( context[43], context[46] );
+      refalrts::link_brackets( context[7], context[42] );
+      refalrts::push_stack( vm, context[19] );
+      refalrts::push_stack( vm, context[41] );
+      refalrts::link_brackets( context[15], context[16] );
+      refalrts::link_brackets( context[11], context[12] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[20];
+      res = refalrts::splice_evar( res, context[37], context[38] );
+      res = refalrts::splice_evar( res, context[50], context[51] );
+      res = refalrts::splice_evar( res, context[29], context[30] );
+      res = refalrts::splice_evar( res, context[48], context[49] );
+      res = refalrts::splice_evar( res, context[46], context[47] );
+      res = refalrts::splice_evar( res, context[44], context[45] );
+      res = refalrts::splice_evar( res, context[39], context[40] );
+      res = refalrts::splice_evar( res, context[42], context[43] );
+      res = refalrts::splice_evar( res, context[31], context[32] );
+      res = refalrts::splice_evar( res, context[0], context[7] );
+      res = refalrts::splice_evar( res, context[8], context[19] );
+      res = refalrts::splice_evar( res, context[41], context[41] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & DoOverlapOffsets/4 (/7 )/8 (/11 e.OverlappedPattern#1/31 )/12 (/15 t.Skip#1/37 e.OverlappedResult#1/33 )/16 (/19 t.Next#1/29 e.Result#1/35 )/20 >/1
+    context[31] = context[23];
+    context[32] = context[24];
+    context[33] = context[25];
+    context[34] = context[26];
+    context[35] = context[27];
+    context[36] = context[28];
+    if( ! refalrts::empty_seq( context[21], context[22] ) )
       continue;
-    // closed e.Pattern#1 as range 21
-    //DEBUG: e.OverlappedPattern#1: 23
-    //DEBUG: e.OverlappedResult#1: 25
-    //DEBUG: t.First#1: 29
-    //DEBUG: e.Result#1: 27
-    //DEBUG: t.Last#1: 31
-    //DEBUG: e.Pattern#1: 21
+    // closed e.OverlappedPattern#1 as range 31
+    // closed e.Result#1 as range 35
+    context[38] = refalrts::tvar_left( context[37], context[33], context[34] );
+    if( ! context[38] )
+      continue;
+    // closed e.OverlappedResult#1 as range 33
+    //DEBUG: t.Next#1: 29
+    //DEBUG: e.OverlappedPattern#1: 31
+    //DEBUG: e.Result#1: 35
+    //DEBUG: t.Skip#1: 37
+    //DEBUG: e.OverlappedResult#1: 33
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </33 Tile{ HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/23 AsIs: )/12 AsIs: (/15 AsIs: e.OverlappedResult#1/25 AsIs: )/16 HalfReuse: >/19 } Tile{ AsIs: </0 AsIs: & DoOverlapOffsets/4 AsIs: (/7 } Tile{ AsIs: e.Pattern#1/21 } )/34 (/35 Tile{ AsIs: t.Last#1/31 } e.OverlappedPattern#1/23/36 )/38 (/39 e.OverlappedResult#1/25/40 Tile{ AsIs: t.First#1/29 } )/42 (/43 Tile{ AsIs: e.Result#1/27 } Tile{ AsIs: )/20 AsIs: >/1 ]] }
-    refalrts::alloc_open_call(vm, context[33]);
-    refalrts::alloc_close_bracket(vm, context[34]);
-    refalrts::alloc_open_bracket(vm, context[35]);
-    refalrts::copy_evar(vm, context[36], context[37], context[23], context[24]);
-    refalrts::alloc_close_bracket(vm, context[38]);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/31 AsIs: )/12 AsIs: (/15 AsIs: t.Skip#1/37 AsIs: e.OverlappedResult#1/33 AsIs: )/16 HalfReuse: >/19 } Tile{ AsIs: </0 AsIs: & DoOverlapOffsets/4 } (/39 )/40 (/41 e.OverlappedPattern#1/31/42 )/44 (/45 e.OverlappedResult#1/33/46 Tile{ AsIs: t.Next#1/29 } )/48 (/49 Tile{ AsIs: e.Result#1/35 } Tile{ AsIs: )/20 AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[39]);
-    refalrts::copy_evar(vm, context[40], context[41], context[25], context[26]);
-    refalrts::alloc_close_bracket(vm, context[42]);
-    refalrts::alloc_open_bracket(vm, context[43]);
+    refalrts::alloc_close_bracket(vm, context[40]);
+    refalrts::alloc_open_bracket(vm, context[41]);
+    refalrts::copy_evar(vm, context[42], context[43], context[31], context[32]);
+    refalrts::alloc_close_bracket(vm, context[44]);
+    refalrts::alloc_open_bracket(vm, context[45]);
+    refalrts::copy_evar(vm, context[46], context[47], context[33], context[34]);
+    refalrts::alloc_close_bracket(vm, context[48]);
+    refalrts::alloc_open_bracket(vm, context[49]);
+    refalrts::reinit_open_call(context[7]);
     refalrts::reinit_name(context[8], functions[efunc_OverlapChain]);
     refalrts::reinit_close_call(context[19]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::link_brackets( context[43], context[20] );
-    refalrts::link_brackets( context[39], context[42] );
-    refalrts::link_brackets( context[35], context[38] );
-    refalrts::link_brackets( context[7], context[34] );
+    refalrts::link_brackets( context[49], context[20] );
+    refalrts::link_brackets( context[45], context[48] );
+    refalrts::link_brackets( context[41], context[44] );
+    refalrts::link_brackets( context[39], context[40] );
     refalrts::push_stack( vm, context[19] );
-    refalrts::push_stack( vm, context[33] );
+    refalrts::push_stack( vm, context[7] );
     refalrts::link_brackets( context[15], context[16] );
     refalrts::link_brackets( context[11], context[12] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[20];
-    res = refalrts::splice_evar( res, context[27], context[28] );
-    res = refalrts::splice_evar( res, context[42], context[43] );
+    res = refalrts::splice_evar( res, context[35], context[36] );
+    res = refalrts::splice_evar( res, context[48], context[49] );
     res = refalrts::splice_evar( res, context[29], context[30] );
-    res = refalrts::splice_evar( res, context[40], context[41] );
-    res = refalrts::splice_evar( res, context[38], context[39] );
-    res = refalrts::splice_evar( res, context[36], context[37] );
-    res = refalrts::splice_evar( res, context[31], context[32] );
-    res = refalrts::splice_evar( res, context[34], context[35] );
-    res = refalrts::splice_evar( res, context[21], context[22] );
-    res = refalrts::splice_evar( res, context[0], context[7] );
-    res = refalrts::splice_evar( res, context[8], context[19] );
-    res = refalrts::splice_evar( res, context[33], context[33] );
+    res = refalrts::splice_evar( res, context[46], context[47] );
+    res = refalrts::splice_evar( res, context[39], context[45] );
+    res = refalrts::splice_evar( res, context[0], context[4] );
+    res = refalrts::splice_evar( res, context[7], context[19] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoOverlapOffsets/4 (/7 )/8 (/11 e.new#5/9 )/12 (/15 e.new#6/13 )/16 (/19 )/20 >/1
-  if( ! refalrts::empty_seq( context[5], context[6] ) )
-    return refalrts::cRecognitionImpossible;
+  // </0 & DoOverlapOffsets/4 (/7 e.new#5/5 )/8 (/11 e.new#6/9 )/12 (/15 e.new#7/13 )/16 (/19 )/20 >/1
   if( ! refalrts::empty_seq( context[17], context[18] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#5 as range 9
-  // closed e.new#6 as range 13
+  // closed e.new#5 as range 5
+  // closed e.new#6 as range 9
+  // closed e.new#7 as range 13
   do {
-    // </0 & DoOverlapOffsets/4 (/7 )/8 (/11 e.OverlappedPattern#1/21 t.Last#1/27 )/12 (/15 t.First#1/25 e.OverlappedResult#1/23 )/16 (/19 )/20 >/1
-    context[21] = context[9];
-    context[22] = context[10];
-    context[23] = context[13];
-    context[24] = context[14];
-    context[26] = refalrts::tvar_left( context[25], context[23], context[24] );
-    if( ! context[26] )
-      continue;
-    // closed e.OverlappedResult#1 as range 23
-    context[28] = refalrts::tvar_right( context[27], context[21], context[22] );
+    // </0 & DoOverlapOffsets/4 (/7 e.new#8/21 )/8 (/11 e.new#9/23 t.new#10/27 )/12 (/15 e.new#11/25 )/16 (/19 )/20 >/1
+    context[21] = context[5];
+    context[22] = context[6];
+    context[23] = context[9];
+    context[24] = context[10];
+    context[25] = context[13];
+    context[26] = context[14];
+    // closed e.new#8 as range 21
+    // closed e.new#11 as range 25
+    context[28] = refalrts::tvar_right( context[27], context[23], context[24] );
     if( ! context[28] )
       continue;
-    // closed e.OverlappedPattern#1 as range 21
-    //DEBUG: t.First#1: 25
-    //DEBUG: e.OverlappedResult#1: 23
+    // closed e.new#9 as range 23
+    do {
+      // </0 & DoOverlapOffsets/4 (/7 e.Pattern#1/29 t.Next#1/35 )/8 (/11 e.OverlappedPattern#1/31 t.Skip#1/27 )/12 (/15 e.OverlappedResult#1/33 )/16 (/19 )/20 >/1
+      context[29] = context[21];
+      context[30] = context[22];
+      context[31] = context[23];
+      context[32] = context[24];
+      context[33] = context[25];
+      context[34] = context[26];
+      // closed e.OverlappedPattern#1 as range 31
+      // closed e.OverlappedResult#1 as range 33
+      context[36] = refalrts::tvar_right( context[35], context[29], context[30] );
+      if( ! context[36] )
+        continue;
+      // closed e.Pattern#1 as range 29
+      //DEBUG: t.Skip#1: 27
+      //DEBUG: e.OverlappedPattern#1: 31
+      //DEBUG: e.OverlappedResult#1: 33
+      //DEBUG: t.Next#1: 35
+      //DEBUG: e.Pattern#1: 29
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/31 AsIs: t.Skip#1/27 AsIs: )/12 AsIs: (/15 AsIs: e.OverlappedResult#1/33 AsIs: )/16 HalfReuse: >/19 HalfReuse: </20 HalfReuse: & DoOverlapOffsets/1 } (/37 Tile{ AsIs: e.Pattern#1/29 } Tile{ HalfReuse: )/4 AsIs: (/7 } Tile{ AsIs: t.Next#1/35 } e.OverlappedPattern#1/31/38 )/40 (/41 e.OverlappedResult#1/33/42 )/44 (/45 )/46 >/47 Tile{ ]] }
+      refalrts::alloc_open_bracket(vm, context[37]);
+      refalrts::copy_evar(vm, context[38], context[39], context[31], context[32]);
+      refalrts::alloc_close_bracket(vm, context[40]);
+      refalrts::alloc_open_bracket(vm, context[41]);
+      refalrts::copy_evar(vm, context[42], context[43], context[33], context[34]);
+      refalrts::alloc_close_bracket(vm, context[44]);
+      refalrts::alloc_open_bracket(vm, context[45]);
+      refalrts::alloc_close_bracket(vm, context[46]);
+      refalrts::alloc_close_call(vm, context[47]);
+      refalrts::reinit_name(context[8], functions[efunc_OverlapChain]);
+      refalrts::reinit_close_call(context[19]);
+      refalrts::reinit_open_call(context[20]);
+      refalrts::reinit_name(context[1], functions[efunc_DoOverlapOffsets]);
+      refalrts::reinit_close_bracket(context[4]);
+      refalrts::push_stack( vm, context[47] );
+      refalrts::push_stack( vm, context[20] );
+      refalrts::link_brackets( context[45], context[46] );
+      refalrts::link_brackets( context[41], context[44] );
+      refalrts::link_brackets( context[7], context[40] );
+      refalrts::link_brackets( context[37], context[4] );
+      refalrts::push_stack( vm, context[19] );
+      refalrts::push_stack( vm, context[0] );
+      refalrts::link_brackets( context[15], context[16] );
+      refalrts::link_brackets( context[11], context[12] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = arg_end->next;
+      res = refalrts::splice_evar( res, context[40], context[47] );
+      res = refalrts::splice_evar( res, context[38], context[39] );
+      res = refalrts::splice_evar( res, context[35], context[36] );
+      res = refalrts::splice_evar( res, context[4], context[7] );
+      res = refalrts::splice_evar( res, context[29], context[30] );
+      res = refalrts::splice_evar( res, context[37], context[37] );
+      res = refalrts::splice_evar( res, context[8], context[1] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & DoOverlapOffsets/4 (/7 )/8 (/11 e.OverlappedPattern#1/29 t.Last#1/27 )/12 (/15 t.First#1/33 e.OverlappedResult#1/31 )/16 (/19 )/20 >/1
+    context[29] = context[23];
+    context[30] = context[24];
+    context[31] = context[25];
+    context[32] = context[26];
+    if( ! refalrts::empty_seq( context[21], context[22] ) )
+      continue;
+    // closed e.OverlappedPattern#1 as range 29
+    context[34] = refalrts::tvar_left( context[33], context[31], context[32] );
+    if( ! context[34] )
+      continue;
+    // closed e.OverlappedResult#1 as range 31
     //DEBUG: t.Last#1: 27
-    //DEBUG: e.OverlappedPattern#1: 21
+    //DEBUG: e.OverlappedPattern#1: 29
+    //DEBUG: t.First#1: 33
+    //DEBUG: e.OverlappedResult#1: 31
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/21 AsIs: t.Last#1/27 AsIs: )/12 AsIs: (/15 AsIs: t.First#1/25 AsIs: e.OverlappedResult#1/23 AsIs: )/16 HalfReuse: >/19 HalfReuse: </20 HalfReuse: & DoOverlapOffsets/1 } Tile{ HalfReuse: (/0 HalfReuse: )/4 } (/29 e.OverlappedPattern#1/21/30 )/32 (/33 e.OverlappedResult#1/23/34 )/36 (/37 )/38 >/39 Tile{ ]] }
-    refalrts::alloc_open_bracket(vm, context[29]);
-    refalrts::copy_evar(vm, context[30], context[31], context[21], context[22]);
-    refalrts::alloc_close_bracket(vm, context[32]);
-    refalrts::alloc_open_bracket(vm, context[33]);
-    refalrts::copy_evar(vm, context[34], context[35], context[23], context[24]);
-    refalrts::alloc_close_bracket(vm, context[36]);
-    refalrts::alloc_open_bracket(vm, context[37]);
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </7 HalfReuse: & OverlapChain/8 AsIs: (/11 AsIs: e.OverlappedPattern#1/29 AsIs: t.Last#1/27 AsIs: )/12 AsIs: (/15 AsIs: t.First#1/33 AsIs: e.OverlappedResult#1/31 AsIs: )/16 HalfReuse: >/19 HalfReuse: </20 HalfReuse: & DoOverlapOffsets/1 } Tile{ HalfReuse: (/0 HalfReuse: )/4 } (/35 e.OverlappedPattern#1/29/36 )/38 (/39 e.OverlappedResult#1/31/40 )/42 (/43 )/44 >/45 Tile{ ]] }
+    refalrts::alloc_open_bracket(vm, context[35]);
+    refalrts::copy_evar(vm, context[36], context[37], context[29], context[30]);
     refalrts::alloc_close_bracket(vm, context[38]);
-    refalrts::alloc_close_call(vm, context[39]);
+    refalrts::alloc_open_bracket(vm, context[39]);
+    refalrts::copy_evar(vm, context[40], context[41], context[31], context[32]);
+    refalrts::alloc_close_bracket(vm, context[42]);
+    refalrts::alloc_open_bracket(vm, context[43]);
+    refalrts::alloc_close_bracket(vm, context[44]);
+    refalrts::alloc_close_call(vm, context[45]);
     refalrts::reinit_open_call(context[7]);
     refalrts::reinit_name(context[8], functions[efunc_OverlapChain]);
     refalrts::reinit_close_call(context[19]);
@@ -2245,11 +2376,11 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
     refalrts::reinit_name(context[1], functions[efunc_DoOverlapOffsets]);
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
-    refalrts::push_stack( vm, context[39] );
+    refalrts::push_stack( vm, context[45] );
     refalrts::push_stack( vm, context[20] );
-    refalrts::link_brackets( context[37], context[38] );
-    refalrts::link_brackets( context[33], context[36] );
-    refalrts::link_brackets( context[29], context[32] );
+    refalrts::link_brackets( context[43], context[44] );
+    refalrts::link_brackets( context[39], context[42] );
+    refalrts::link_brackets( context[35], context[38] );
     refalrts::link_brackets( context[0], context[4] );
     refalrts::push_stack( vm, context[19] );
     refalrts::push_stack( vm, context[7] );
@@ -2258,7 +2389,7 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[29], context[39] );
+    res = refalrts::splice_evar( res, context[35], context[45] );
     res = refalrts::splice_evar( res, context[0], context[4] );
     res = refalrts::splice_evar( res, context[7], context[1] );
     refalrts::use( res );
@@ -2267,6 +2398,8 @@ static refalrts::FnResult func_DoOverlapOffsets(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   // </0 & DoOverlapOffsets/4 (/7 )/8 (/11 )/12 (/15 )/16 (/19 )/20 >/1
+  if( ! refalrts::empty_seq( context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[13], context[14] ) )
@@ -5014,447 +5147,122 @@ static refalrts::FnResult func_OverlapItem(refalrts::VM *vm, refalrts::Iter arg_
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & OverlapItem/4 t.new#1/5 t.new#2/7 >/1
-  context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
-  if( ! context[6] )
+  // </0 & OverlapItem/4 (/7 e.new#1/5 s.new#2/11 )/8 t.new#3/9 >/1
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
     return refalrts::cRecognitionImpossible;
-  context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
-  if( ! context[8] )
+  refalrts::bracket_pointers(context[7], context[8]);
+  context[10] = refalrts::tvar_left( context[9], context[2], context[3] );
+  if( ! context[10] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
+  if( ! refalrts::svar_right( context[11], context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.new#1 as range 5
   do {
-    // </0 & OverlapItem/4 (/5 e.new#3/9 s.new#4/11 )/6 t.new#5/7 >/1
-    context[9] = 0;
-    context[10] = 0;
-    if( ! refalrts::brackets_term( context[9], context[10], context[5] ) )
+    // </0 & OverlapItem/4 (/7 s.new#6/14 e.new#7/12 s.new#5/11 )/8 t.new#4/9 >/1
+    context[12] = context[5];
+    context[13] = context[6];
+    if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
       continue;
-    if( ! refalrts::svar_right( context[11], context[9], context[10] ) )
-      continue;
-    // closed e.new#3 as range 9
+    // closed e.new#7 as range 12
     do {
-      // </0 & OverlapItem/4 (/5 s.new#7/14 e.new#8/12 s.new#6/11 )/6 t.new#9/7 >/1
-      context[12] = context[9];
-      context[13] = context[10];
-      if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
-        continue;
-      // closed e.new#8 as range 12
-      do {
-        // </0 & OverlapItem/4 (/5 s.new#11/14 e.new#12/15 s.new#10/11 )/6 (/7 s.new#13/19 e.new#14/17 )/8 >/1
-        context[15] = context[12];
-        context[16] = context[13];
-        context[17] = 0;
-        context[18] = 0;
-        if( ! refalrts::brackets_term( context[17], context[18], context[7] ) )
-          continue;
-        // closed e.new#12 as range 15
-        if( ! refalrts::svar_left( context[19], context[17], context[18] ) )
-          continue;
-        // closed e.new#14 as range 17
-        do {
-          // </0 & OverlapItem/4 (/5 # TkVariable/14 'e'/24 e.Index#1/20 s.Offset#1/11 )/6 (/7 # TkVariable/19 'e'/25 e.Index#1/26 )/8 >/1
-          context[20] = context[15];
-          context[21] = context[16];
-          context[22] = context[17];
-          context[23] = context[18];
-          if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[14] ) )
-            continue;
-          if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[19] ) )
-            continue;
-          context[24] = refalrts::char_left( 'e', context[20], context[21] );
-          if( ! context[24] )
-            continue;
-          context[25] = refalrts::char_left( 'e', context[22], context[23] );
-          if( ! context[25] )
-            continue;
-          // closed e.Index#1 as range 20
-          if( ! refalrts::repeated_evar_left( vm, context[26], context[27], context[20], context[21], context[22], context[23] ) )
-            continue;
-          if( ! refalrts::empty_seq( context[22], context[23] ) )
-            continue;
-          //DEBUG: s.Offset#1: 11
-          //DEBUG: e.Index#1: 20
-
-          refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/14 'e'/24 e.Index#1/20 s.Offset#1/11 )/6 (/7 # TkVariable/19 'e'/25 e.Index#1/26 {REMOVED TILE}
-          //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIsE/1 ]] }
-          refalrts::reinit_number(context[8], 3UL);
-          refalrts::reinit_ident(context[1], identifiers[ident_AsIsE]);
-          refalrts::Iter trash_prev = arg_begin->prev;
-          refalrts::use(trash_prev);
-          refalrts::Iter res = context[8];
-          refalrts::splice_to_freelist_open( vm, trash_prev, res );
-          return refalrts::cSuccess;
-        } while ( 0 );
-        refalrts::stop_sentence(vm);
-
-        // </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/20 s.Offset#1/11 )/6 (/7 s.AnyType#1/19 e.Info#1/24 )/8 >/1
-        context[20] = context[15];
-        context[21] = context[16];
-        context[22] = context[17];
-        context[23] = context[18];
-        if( ! refalrts::repeated_stvar_term( vm, context[19], context[14] ) )
-          continue;
-        // closed e.Info#1 as range 20
-        if( ! refalrts::repeated_evar_left( vm, context[24], context[25], context[20], context[21], context[22], context[23] ) )
-          continue;
-        if( ! refalrts::empty_seq( context[22], context[23] ) )
-          continue;
-        //DEBUG: s.AnyType#1: 14
-        //DEBUG: s.Offset#1: 11
-        //DEBUG: e.Info#1: 20
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/20 s.Offset#1/11 )/6 (/7 s.AnyType#1/19 e.Info#1/24 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
-        refalrts::reinit_number(context[8], 3UL);
-        refalrts::reinit_ident(context[1], identifiers[ident_AsIs]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[8];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      do {
-        // </0 & OverlapItem/4 (/5 # TkVariable/14 s.Mode#1/17 e.Index#1/15 s.Offset#1/11 )/6 t.AnyItem#1/7 >/1
-        context[15] = context[12];
-        context[16] = context[13];
-        if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[14] ) )
-          continue;
-        if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
-          continue;
-        // closed e.Index#1 as range 15
-        //DEBUG: t.AnyItem#1: 7
-        //DEBUG: s.Offset#1: 11
-        //DEBUG: s.Mode#1: 17
-        //DEBUG: e.Index#1: 15
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # TkVariable/14 s.Mode#1/17 e.Index#1/15 s.Offset#1/11 )/6 t.AnyItem#1/7 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-        refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[1];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      // </0 & OverlapItem/4 (/5 s.new#11/14 e.new#12/15 s.new#10/11 )/6 (/7 s.new#13/19 e.new#14/17 )/8 >/1
+      // </0 & OverlapItem/4 (/7 s.new#11/14 e.new#12/15 s.new#10/11 )/8 (/9 s.new#8/19 e.new#9/17 )/10 >/1
       context[15] = context[12];
       context[16] = context[13];
       context[17] = 0;
       context[18] = 0;
-      if( ! refalrts::brackets_term( context[17], context[18], context[7] ) )
+      if( ! refalrts::brackets_term( context[17], context[18], context[9] ) )
         continue;
       // closed e.new#12 as range 15
       if( ! refalrts::svar_left( context[19], context[17], context[18] ) )
         continue;
-      // closed e.new#14 as range 17
+      // closed e.new#9 as range 17
       do {
-        // </0 & OverlapItem/4 (/5 s.new#16/14 e.new#17/20 s.new#15/11 )/6 (/7 # TkVariable/19 s.new#18/24 e.new#19/22 )/8 >/1
+        // </0 & OverlapItem/4 (/7 # TkVariable/14 'e'/24 e.Index#1/20 s.Offset#1/11 )/8 (/9 # TkVariable/19 'e'/25 e.Index#1/26 )/10 >/1
         context[20] = context[15];
         context[21] = context[16];
         context[22] = context[17];
         context[23] = context[18];
+        if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[14] ) )
+          continue;
         if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[19] ) )
           continue;
-        // closed e.new#17 as range 20
-        if( ! refalrts::svar_left( context[24], context[22], context[23] ) )
+        context[24] = refalrts::char_left( 'e', context[20], context[21] );
+        if( ! context[24] )
           continue;
-        // closed e.new#19 as range 22
-        do {
-          // </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/6 (/7 # TkVariable/19 's'/24 e.Index#1/27 )/8 >/1
-          context[25] = context[20];
-          context[26] = context[21];
-          context[27] = context[22];
-          context[28] = context[23];
-          if( ! refalrts::char_term( 's', context[24] ) )
-            continue;
-          // closed e.Info#1 as range 25
-          // closed e.Index#1 as range 27
-          //DEBUG: s.AnyType#1: 14
-          //DEBUG: s.Offset#1: 11
-          //DEBUG: e.Info#1: 25
-          //DEBUG: e.Index#1: 27
-
-          refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/6 (/7 # TkVariable/19 's'/24 e.Index#1/27 {REMOVED TILE}
-          //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
-          refalrts::reinit_number(context[8], 1UL);
-          refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
-          refalrts::Iter trash_prev = arg_begin->prev;
-          refalrts::use(trash_prev);
-          refalrts::Iter res = context[8];
-          refalrts::splice_to_freelist_open( vm, trash_prev, res );
-          return refalrts::cSuccess;
-        } while ( 0 );
-        refalrts::stop_sentence(vm);
-
-        // </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/6 (/7 # TkVariable/19 s.Mode#1/24 e.Index#1/27 )/8 >/1
-        context[25] = context[20];
-        context[26] = context[21];
-        context[27] = context[22];
-        context[28] = context[23];
-        // closed e.Info#1 as range 25
-        // closed e.Index#1 as range 27
-        //DEBUG: s.AnyType#1: 14
+        context[25] = refalrts::char_left( 'e', context[22], context[23] );
+        if( ! context[25] )
+          continue;
+        // closed e.Index#1 as range 20
+        if( ! refalrts::repeated_evar_left( vm, context[26], context[27], context[20], context[21], context[22], context[23] ) )
+          continue;
+        if( ! refalrts::empty_seq( context[22], context[23] ) )
+          continue;
         //DEBUG: s.Offset#1: 11
-        //DEBUG: s.Mode#1: 24
-        //DEBUG: e.Info#1: 25
-        //DEBUG: e.Index#1: 27
+        //DEBUG: e.Index#1: 20
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/6 (/7 # TkVariable/19 s.Mode#1/24 e.Index#1/27 )/8 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-        refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
+        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # TkVariable/14 'e'/24 e.Index#1/20 s.Offset#1/11 )/8 (/9 # TkVariable/19 'e'/25 e.Index#1/26 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/10 HalfReuse: # AsIsE/1 ]] }
+        refalrts::reinit_number(context[10], 3UL);
+        refalrts::reinit_ident(context[1], identifiers[ident_AsIsE]);
         refalrts::Iter trash_prev = arg_begin->prev;
         refalrts::use(trash_prev);
-        refalrts::Iter res = context[1];
+        refalrts::Iter res = context[10];
         refalrts::splice_to_freelist_open( vm, trash_prev, res );
         return refalrts::cSuccess;
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      do {
-        // </0 & OverlapItem/4 (/5 s.new#16/14 e.new#17/20 s.new#15/11 )/6 (/7 s.new#18/19 )/8 >/1
-        context[20] = context[15];
-        context[21] = context[16];
-        if( ! refalrts::empty_seq( context[17], context[18] ) )
-          continue;
-        // closed e.new#17 as range 20
-        do {
-          // </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/6 (/7 # LEFT-EDGE/19 )/8 >/1
-          context[22] = context[20];
-          context[23] = context[21];
-          if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[19] ) )
-            continue;
-          // closed e.Info1#1 as range 22
-          //DEBUG: s.Type1#1: 14
-          //DEBUG: s.Offset#1: 11
-          //DEBUG: e.Info1#1: 22
-
-          refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/6 (/7 # LEFT-EDGE/19 )/8 {REMOVED TILE}
-          //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-          refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
-          refalrts::Iter trash_prev = arg_begin->prev;
-          refalrts::use(trash_prev);
-          refalrts::Iter res = context[1];
-          refalrts::splice_to_freelist_open( vm, trash_prev, res );
-          return refalrts::cSuccess;
-        } while ( 0 );
-        refalrts::stop_sentence(vm);
-
-        // </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/6 (/7 # RIGHT-EDGE/19 )/8 >/1
-        context[22] = context[20];
-        context[23] = context[21];
-        if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[19] ) )
-          continue;
-        // closed e.Info1#1 as range 22
-        //DEBUG: s.Type1#1: 14
-        //DEBUG: s.Offset#1: 11
-        //DEBUG: e.Info1#1: 22
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/6 (/7 # RIGHT-EDGE/19 )/8 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-        refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[1];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      do {
-        // </0 & OverlapItem/4 (/5 # Symbol/14 s.new#16/24 e.new#17/20 s.new#15/11 )/6 (/7 # Symbol/19 s.new#18/25 e.new#19/22 )/8 >/1
-        context[20] = context[15];
-        context[21] = context[16];
-        context[22] = context[17];
-        context[23] = context[18];
-        if( ! refalrts::ident_term( identifiers[ident_Symbol], context[14] ) )
-          continue;
-        if( ! refalrts::ident_term( identifiers[ident_Symbol], context[19] ) )
-          continue;
-        if( ! refalrts::svar_left( context[24], context[20], context[21] ) )
-          continue;
-        // closed e.new#17 as range 20
-        if( ! refalrts::svar_left( context[25], context[22], context[23] ) )
-          continue;
-        // closed e.new#19 as range 22
-        do {
-          // </0 & OverlapItem/4 (/5 # Symbol/14 s.Type#1/24 e.Info1#1/26 s.Offset#1/11 )/6 (/7 # Symbol/19 s.Type#1/25 e.Info2#1/28 )/8 >/1
-          context[26] = context[20];
-          context[27] = context[21];
-          context[28] = context[22];
-          context[29] = context[23];
-          if( ! refalrts::repeated_stvar_term( vm, context[25], context[24] ) )
-            continue;
-          // closed e.Info1#1 as range 26
-          // closed e.Info2#1 as range 28
-          //DEBUG: s.Type#1: 24
-          //DEBUG: s.Offset#1: 11
-          //DEBUG: e.Info1#1: 26
-          //DEBUG: e.Info2#1: 28
-
-          refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # Symbol/14 s.Type#1/24 e.Info1#1/26 s.Offset#1/11 )/6 (/7 # Symbol/19 s.Type#1/25 e.Info2#1/28 {REMOVED TILE}
-          //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/8 HalfReuse: # Reuse/1 ]] }
-          refalrts::reinit_number(context[8], 2UL);
-          refalrts::reinit_ident(context[1], identifiers[ident_Reuse]);
-          refalrts::Iter trash_prev = arg_begin->prev;
-          refalrts::use(trash_prev);
-          refalrts::Iter res = context[8];
-          refalrts::splice_to_freelist_open( vm, trash_prev, res );
-          return refalrts::cSuccess;
-        } while ( 0 );
-        refalrts::stop_sentence(vm);
-
-        // </0 & OverlapItem/4 (/5 # Symbol/14 s.Type1#1/24 e.Info1#1/26 s.Offset#1/11 )/6 (/7 # Symbol/19 s.Type2#1/25 e.Info2#1/28 )/8 >/1
-        context[26] = context[20];
-        context[27] = context[21];
-        context[28] = context[22];
-        context[29] = context[23];
-        // closed e.Info1#1 as range 26
-        // closed e.Info2#1 as range 28
-        //DEBUG: s.Type1#1: 24
-        //DEBUG: s.Offset#1: 11
-        //DEBUG: s.Type2#1: 25
-        //DEBUG: e.Info1#1: 26
-        //DEBUG: e.Info2#1: 28
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # Symbol/14 s.Type1#1/24 e.Info1#1/26 s.Offset#1/11 )/6 (/7 # Symbol/19 s.Type2#1/25 e.Info2#1/28 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
-        refalrts::reinit_number(context[8], 1UL);
-        refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[8];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      do {
-        // </0 & OverlapItem/4 (/5 s.Type#1/14 e.Info1#1/20 s.Offset#1/11 )/6 (/7 s.Type#1/19 e.Info2#1/22 )/8 >/1
-        context[20] = context[15];
-        context[21] = context[16];
-        context[22] = context[17];
-        context[23] = context[18];
-        if( ! refalrts::repeated_stvar_term( vm, context[19], context[14] ) )
-          continue;
-        // closed e.Info1#1 as range 20
-        // closed e.Info2#1 as range 22
-        //DEBUG: s.Type#1: 14
-        //DEBUG: s.Offset#1: 11
-        //DEBUG: e.Info1#1: 20
-        //DEBUG: e.Info2#1: 22
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type#1/14 e.Info1#1/20 s.Offset#1/11 )/6 (/7 s.Type#1/19 e.Info2#1/22 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/8 HalfReuse: # Reuse/1 ]] }
-        refalrts::reinit_number(context[8], 2UL);
-        refalrts::reinit_ident(context[1], identifiers[ident_Reuse]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[8];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      // </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/20 s.Offset#1/11 )/6 (/7 s.Type2#1/19 e.Info2#1/22 )/8 >/1
+      // </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/20 s.Offset#1/11 )/8 (/9 s.AnyType#1/19 e.Info#1/24 )/10 >/1
       context[20] = context[15];
       context[21] = context[16];
       context[22] = context[17];
       context[23] = context[18];
-      // closed e.Info1#1 as range 20
-      // closed e.Info2#1 as range 22
-      //DEBUG: s.Type1#1: 14
+      if( ! refalrts::repeated_stvar_term( vm, context[19], context[14] ) )
+        continue;
+      // closed e.Info#1 as range 20
+      if( ! refalrts::repeated_evar_left( vm, context[24], context[25], context[20], context[21], context[22], context[23] ) )
+        continue;
+      if( ! refalrts::empty_seq( context[22], context[23] ) )
+        continue;
+      //DEBUG: s.AnyType#1: 14
       //DEBUG: s.Offset#1: 11
-      //DEBUG: s.Type2#1: 19
-      //DEBUG: e.Info1#1: 20
-      //DEBUG: e.Info2#1: 22
+      //DEBUG: e.Info#1: 20
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 s.Type1#1/14 e.Info1#1/20 s.Offset#1/11 )/6 (/7 s.Type2#1/19 e.Info2#1/22 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/8 HalfReuse: # HalfReuse/1 ]] }
-      refalrts::reinit_number(context[8], 1UL);
-      refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = context[8];
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( 0 );
-    refalrts::stop_sentence(vm);
-
-    // </0 & OverlapItem/4 (/5 s.new#6/11 )/6 t.new#7/7 >/1
-    if( ! refalrts::empty_seq( context[9], context[10] ) )
-      continue;
-    do {
-      // </0 & OverlapItem/4 (/5 s.new#8/11 )/6 (/7 s.new#9/14 )/8 >/1
-      context[12] = 0;
-      context[13] = 0;
-      if( ! refalrts::brackets_term( context[12], context[13], context[7] ) )
-        continue;
-      if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
-        continue;
-      if( ! refalrts::empty_seq( context[12], context[13] ) )
-        continue;
-      do {
-        // </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 (/7 # LEFT-EDGE/14 )/8 >/1
-        if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[11] ) )
-          continue;
-        if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[14] ) )
-          continue;
-
-        refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 (/7 # LEFT-EDGE/14 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
-        refalrts::reinit_number(context[8], 3UL);
-        refalrts::reinit_ident(context[1], identifiers[ident_AsIs]);
-        refalrts::Iter trash_prev = arg_begin->prev;
-        refalrts::use(trash_prev);
-        refalrts::Iter res = context[8];
-        refalrts::splice_to_freelist_open( vm, trash_prev, res );
-        return refalrts::cSuccess;
-      } while ( 0 );
-      refalrts::stop_sentence(vm);
-
-      // </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 (/7 # RIGHT-EDGE/14 )/8 >/1
-      if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[11] ) )
-        continue;
-      if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[14] ) )
-        continue;
-
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 (/7 # RIGHT-EDGE/14 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/8 HalfReuse: # AsIs/1 ]] }
-      refalrts::reinit_number(context[8], 3UL);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/20 s.Offset#1/11 )/8 (/9 s.AnyType#1/19 e.Info#1/24 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/10 HalfReuse: # AsIs/1 ]] }
+      refalrts::reinit_number(context[10], 3UL);
       refalrts::reinit_ident(context[1], identifiers[ident_AsIs]);
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
-      refalrts::Iter res = context[8];
+      refalrts::Iter res = context[10];
       refalrts::splice_to_freelist_open( vm, trash_prev, res );
       return refalrts::cSuccess;
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 >/1
-      if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[11] ) )
+      // </0 & OverlapItem/4 (/7 # TkVariable/14 s.Mode#1/17 e.Index#1/15 s.Offset#1/11 )/8 t.AnyItem#1/9 >/1
+      context[15] = context[12];
+      context[16] = context[13];
+      if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[14] ) )
         continue;
-      //DEBUG: t.Other#1: 7
+      if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
+        continue;
+      // closed e.Index#1 as range 15
+      //DEBUG: t.AnyItem#1: 9
+      //DEBUG: s.Offset#1: 11
+      //DEBUG: s.Mode#1: 17
+      //DEBUG: e.Index#1: 15
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # LEFT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # TkVariable/14 s.Mode#1/17 e.Index#1/15 s.Offset#1/11 )/8 t.AnyItem#1/9 {REMOVED TILE}
       //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
       refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
       refalrts::Iter trash_prev = arg_begin->prev;
@@ -5465,31 +5273,318 @@ static refalrts::FnResult func_OverlapItem(refalrts::VM *vm, refalrts::Iter arg_
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 >/1
-    if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[11] ) )
+    // </0 & OverlapItem/4 (/7 s.new#11/14 e.new#12/15 s.new#10/11 )/8 (/9 s.new#8/19 e.new#9/17 )/10 >/1
+    context[15] = context[12];
+    context[16] = context[13];
+    context[17] = 0;
+    context[18] = 0;
+    if( ! refalrts::brackets_term( context[17], context[18], context[9] ) )
       continue;
-    //DEBUG: t.Other#1: 7
+    // closed e.new#12 as range 15
+    if( ! refalrts::svar_left( context[19], context[17], context[18] ) )
+      continue;
+    // closed e.new#9 as range 17
+    do {
+      // </0 & OverlapItem/4 (/7 s.new#16/14 e.new#17/20 s.new#15/11 )/8 (/9 # TkVariable/19 s.new#13/24 e.new#14/22 )/10 >/1
+      context[20] = context[15];
+      context[21] = context[16];
+      context[22] = context[17];
+      context[23] = context[18];
+      if( ! refalrts::ident_term( identifiers[ident_TkVariable], context[19] ) )
+        continue;
+      // closed e.new#17 as range 20
+      if( ! refalrts::svar_left( context[24], context[22], context[23] ) )
+        continue;
+      // closed e.new#14 as range 22
+      do {
+        // </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/8 (/9 # TkVariable/19 's'/24 e.Index#1/27 )/10 >/1
+        context[25] = context[20];
+        context[26] = context[21];
+        context[27] = context[22];
+        context[28] = context[23];
+        if( ! refalrts::char_term( 's', context[24] ) )
+          continue;
+        // closed e.Info#1 as range 25
+        // closed e.Index#1 as range 27
+        //DEBUG: s.AnyType#1: 14
+        //DEBUG: s.Offset#1: 11
+        //DEBUG: e.Info#1: 25
+        //DEBUG: e.Index#1: 27
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/8 (/9 # TkVariable/19 's'/24 e.Index#1/27 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/10 HalfReuse: # HalfReuse/1 ]] }
+        refalrts::reinit_number(context[10], 1UL);
+        refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[10];
+        refalrts::splice_to_freelist_open( vm, trash_prev, res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/8 (/9 # TkVariable/19 s.Mode#1/24 e.Index#1/27 )/10 >/1
+      context[25] = context[20];
+      context[26] = context[21];
+      context[27] = context[22];
+      context[28] = context[23];
+      // closed e.Info#1 as range 25
+      // closed e.Index#1 as range 27
+      //DEBUG: s.AnyType#1: 14
+      //DEBUG: s.Offset#1: 11
+      //DEBUG: s.Mode#1: 24
+      //DEBUG: e.Info#1: 25
+      //DEBUG: e.Index#1: 27
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.AnyType#1/14 e.Info#1/25 s.Offset#1/11 )/8 (/9 # TkVariable/19 s.Mode#1/24 e.Index#1/27 )/10 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
+      refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    do {
+      // </0 & OverlapItem/4 (/7 s.new#15/14 e.new#16/20 s.new#14/11 )/8 (/9 s.new#13/19 )/10 >/1
+      context[20] = context[15];
+      context[21] = context[16];
+      if( ! refalrts::empty_seq( context[17], context[18] ) )
+        continue;
+      // closed e.new#16 as range 20
+      do {
+        // </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/8 (/9 # LEFT-EDGE/19 )/10 >/1
+        context[22] = context[20];
+        context[23] = context[21];
+        if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[19] ) )
+          continue;
+        // closed e.Info1#1 as range 22
+        //DEBUG: s.Type1#1: 14
+        //DEBUG: s.Offset#1: 11
+        //DEBUG: e.Info1#1: 22
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/8 (/9 # LEFT-EDGE/19 )/10 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
+        refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[1];
+        refalrts::splice_to_freelist_open( vm, trash_prev, res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/8 (/9 # RIGHT-EDGE/19 )/10 >/1
+      context[22] = context[20];
+      context[23] = context[21];
+      if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[19] ) )
+        continue;
+      // closed e.Info1#1 as range 22
+      //DEBUG: s.Type1#1: 14
+      //DEBUG: s.Offset#1: 11
+      //DEBUG: e.Info1#1: 22
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/22 s.Offset#1/11 )/8 (/9 # RIGHT-EDGE/19 )/10 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
+      refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    do {
+      // </0 & OverlapItem/4 (/7 # Symbol/14 s.new#16/24 e.new#17/20 s.new#15/11 )/8 (/9 # Symbol/19 s.new#13/25 e.new#14/22 )/10 >/1
+      context[20] = context[15];
+      context[21] = context[16];
+      context[22] = context[17];
+      context[23] = context[18];
+      if( ! refalrts::ident_term( identifiers[ident_Symbol], context[14] ) )
+        continue;
+      if( ! refalrts::ident_term( identifiers[ident_Symbol], context[19] ) )
+        continue;
+      if( ! refalrts::svar_left( context[24], context[20], context[21] ) )
+        continue;
+      // closed e.new#17 as range 20
+      if( ! refalrts::svar_left( context[25], context[22], context[23] ) )
+        continue;
+      // closed e.new#14 as range 22
+      do {
+        // </0 & OverlapItem/4 (/7 # Symbol/14 s.Type#1/24 e.Info1#1/26 s.Offset#1/11 )/8 (/9 # Symbol/19 s.Type#1/25 e.Info2#1/28 )/10 >/1
+        context[26] = context[20];
+        context[27] = context[21];
+        context[28] = context[22];
+        context[29] = context[23];
+        if( ! refalrts::repeated_stvar_term( vm, context[25], context[24] ) )
+          continue;
+        // closed e.Info1#1 as range 26
+        // closed e.Info2#1 as range 28
+        //DEBUG: s.Type#1: 24
+        //DEBUG: s.Offset#1: 11
+        //DEBUG: e.Info1#1: 26
+        //DEBUG: e.Info2#1: 28
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # Symbol/14 s.Type#1/24 e.Info1#1/26 s.Offset#1/11 )/8 (/9 # Symbol/19 s.Type#1/25 e.Info2#1/28 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/10 HalfReuse: # Reuse/1 ]] }
+        refalrts::reinit_number(context[10], 2UL);
+        refalrts::reinit_ident(context[1], identifiers[ident_Reuse]);
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[10];
+        refalrts::splice_to_freelist_open( vm, trash_prev, res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & OverlapItem/4 (/7 # Symbol/14 s.Type1#1/24 e.Info1#1/26 s.Offset#1/11 )/8 (/9 # Symbol/19 s.Type2#1/25 e.Info2#1/28 )/10 >/1
+      context[26] = context[20];
+      context[27] = context[21];
+      context[28] = context[22];
+      context[29] = context[23];
+      // closed e.Info1#1 as range 26
+      // closed e.Info2#1 as range 28
+      //DEBUG: s.Type1#1: 24
+      //DEBUG: s.Offset#1: 11
+      //DEBUG: s.Type2#1: 25
+      //DEBUG: e.Info1#1: 26
+      //DEBUG: e.Info2#1: 28
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # Symbol/14 s.Type1#1/24 e.Info1#1/26 s.Offset#1/11 )/8 (/9 # Symbol/19 s.Type2#1/25 e.Info2#1/28 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/10 HalfReuse: # HalfReuse/1 ]] }
+      refalrts::reinit_number(context[10], 1UL);
+      refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[10];
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    do {
+      // </0 & OverlapItem/4 (/7 s.Type#1/14 e.Info1#1/20 s.Offset#1/11 )/8 (/9 s.Type#1/19 e.Info2#1/22 )/10 >/1
+      context[20] = context[15];
+      context[21] = context[16];
+      context[22] = context[17];
+      context[23] = context[18];
+      if( ! refalrts::repeated_stvar_term( vm, context[19], context[14] ) )
+        continue;
+      // closed e.Info1#1 as range 20
+      // closed e.Info2#1 as range 22
+      //DEBUG: s.Type#1: 14
+      //DEBUG: s.Offset#1: 11
+      //DEBUG: e.Info1#1: 20
+      //DEBUG: e.Info2#1: 22
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.Type#1/14 e.Info1#1/20 s.Offset#1/11 )/8 (/9 s.Type#1/19 e.Info2#1/22 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: 2/10 HalfReuse: # Reuse/1 ]] }
+      refalrts::reinit_number(context[10], 2UL);
+      refalrts::reinit_ident(context[1], identifiers[ident_Reuse]);
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[10];
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/20 s.Offset#1/11 )/8 (/9 s.Type2#1/19 e.Info2#1/22 )/10 >/1
+    context[20] = context[15];
+    context[21] = context[16];
+    context[22] = context[17];
+    context[23] = context[18];
+    // closed e.Info1#1 as range 20
+    // closed e.Info2#1 as range 22
+    //DEBUG: s.Type1#1: 14
+    //DEBUG: s.Offset#1: 11
+    //DEBUG: s.Type2#1: 19
+    //DEBUG: e.Info1#1: 20
+    //DEBUG: e.Info2#1: 22
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/5 # RIGHT-EDGE/11 )/6 t.Other#1/7 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
-    refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
+    //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 s.Type1#1/14 e.Info1#1/20 s.Offset#1/11 )/8 (/9 s.Type2#1/19 e.Info2#1/22 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 1/10 HalfReuse: # HalfReuse/1 ]] }
+    refalrts::reinit_number(context[10], 1UL);
+    refalrts::reinit_ident(context[1], identifiers[ident_HalfReuse]);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
+    refalrts::Iter res = context[10];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & OverlapItem/4 (/7 s.new#5/11 )/8 t.new#4/9 >/1
+  if( ! refalrts::empty_seq( context[5], context[6] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & OverlapItem/4 (/7 s.new#7/11 )/8 (/9 s.new#6/14 )/10 >/1
+    context[12] = 0;
+    context[13] = 0;
+    if( ! refalrts::brackets_term( context[12], context[13], context[9] ) )
+      continue;
+    if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
+      continue;
+    if( ! refalrts::empty_seq( context[12], context[13] ) )
+      continue;
+    do {
+      // </0 & OverlapItem/4 (/7 # LEFT-EDGE/11 )/8 (/9 # LEFT-EDGE/14 )/10 >/1
+      if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[11] ) )
+        continue;
+      if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[14] ) )
+        continue;
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # LEFT-EDGE/11 )/8 (/9 # LEFT-EDGE/14 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/10 HalfReuse: # AsIs/1 ]] }
+      refalrts::reinit_number(context[10], 3UL);
+      refalrts::reinit_ident(context[1], identifiers[ident_AsIs]);
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[10];
+      refalrts::splice_to_freelist_open( vm, trash_prev, res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & OverlapItem/4 (/7 # RIGHT-EDGE/11 )/8 (/9 # RIGHT-EDGE/14 )/10 >/1
+    if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[11] ) )
+      continue;
+    if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[14] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # RIGHT-EDGE/11 )/8 (/9 # RIGHT-EDGE/14 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: 3/10 HalfReuse: # AsIs/1 ]] }
+    refalrts::reinit_number(context[10], 3UL);
+    refalrts::reinit_ident(context[1], identifiers[ident_AsIs]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[10];
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 >/1
-    if( ! refalrts::char_term( '*', context[7] ) )
+    // </0 & OverlapItem/4 (/7 # LEFT-EDGE/11 )/8 t.Other#1/9 >/1
+    if( ! refalrts::ident_term( identifiers[ident_LEFTm_EDGE], context[11] ) )
       continue;
-    //DEBUG: t.AnyItem#1: 5
+    //DEBUG: t.Other#1: 9
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & OverlapItem/4 t.AnyItem#1/5 '*'/7 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # LEFT-EDGE/11 )/8 t.Other#1/9 {REMOVED TILE}
     //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
     refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -5500,13 +5595,13 @@ static refalrts::FnResult func_OverlapItem(refalrts::VM *vm, refalrts::Iter arg_
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 >/1
-  if( ! refalrts::char_term( '*', context[5] ) )
+  // </0 & OverlapItem/4 (/7 # RIGHT-EDGE/11 )/8 t.Other#1/9 >/1
+  if( ! refalrts::ident_term( identifiers[ident_RIGHTm_EDGE], context[11] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.AnyItem#1: 7
+  //DEBUG: t.Other#1: 9
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & OverlapItem/4 '*'/5 t.AnyItem#1/7 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & OverlapItem/4 (/7 # RIGHT-EDGE/11 )/8 t.Other#1/9 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # NoOverlap/1 ]] }
   refalrts::reinit_ident(context[1], identifiers[ident_NoOverlap]);
   refalrts::Iter trash_prev = arg_begin->prev;

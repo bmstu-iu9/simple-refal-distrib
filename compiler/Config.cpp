@@ -2587,23 +2587,18 @@ static refalrts::FnResult func_ParseOptLetters(refalrts::VM *vm, refalrts::Iter 
       //DEBUG: e.FlagNames#2: 16
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Flag#1/13 {REMOVED TILE} {REMOVED TILE} # True/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseOptLetters/4 AsIs: (/7 } Tile{ AsIs: </14 Reuse: & Flags-Unique/18 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: e.FlagNames#2/16 } Tile{ AsIs: >/15 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Flags#1/11 } Tile{ AsIs: >/1 ]] }
-      refalrts::update_name(context[18], functions[efunc_Flagsm_Unique]);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Flag#1/13 {REMOVED TILE} </14 & ParseOptLetters$1?1/18 # True/19 {REMOVED TILE} >/15 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 AsIs: & ParseOptLetters/4 AsIs: (/7 } Tile{ AsIs: e.Scanned#1/9 } Tile{ AsIs: e.FlagNames#2/16 } Tile{ AsIs: )/8 } Tile{ AsIs: e.Flags#1/11 } Tile{ AsIs: >/1 ]] }
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
       refalrts::link_brackets( context[7], context[8] );
-      refalrts::push_stack( vm, context[15] );
-      refalrts::push_stack( vm, context[14] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = context[1];
       res = refalrts::splice_evar( res, context[11], context[12] );
       res = refalrts::splice_evar( res, context[8], context[8] );
-      res = refalrts::splice_evar( res, context[15], context[15] );
       res = refalrts::splice_evar( res, context[16], context[17] );
       res = refalrts::splice_evar( res, context[9], context[10] );
-      res = refalrts::splice_evar( res, context[14], context[18] );
       refalrts::splice_to_freelist_open( vm, context[7], res );
       return refalrts::cSuccess;
     } while ( 0 );
@@ -2624,14 +2619,18 @@ static refalrts::FnResult func_ParseOptLetters(refalrts::VM *vm, refalrts::Iter 
     //DEBUG: e.Scanned#1: 9
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} & ParseOptLetters/4 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: # Success/0 } Tile{ AsIs: e.Scanned#1/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: # Success/0 HalfReuse: </4 HalfReuse: & Flags-Unique/7 AsIs: e.Scanned#1/9 HalfReuse: >/8 } Tile{ ]] }
     refalrts::reinit_ident(context[0], identifiers[ident_Success]);
+    refalrts::reinit_open_call(context[4]);
+    refalrts::reinit_name(context[7], functions[efunc_Flagsm_Unique]);
+    refalrts::reinit_close_call(context[8]);
+    refalrts::push_stack( vm, context[8] );
+    refalrts::push_stack( vm, context[4] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[9], context[10] );
-    refalrts::splice_to_freelist_open( vm, context[0], res );
+    refalrts::splice_to_freelist_open( vm, context[8], res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);
@@ -2881,6 +2880,74 @@ static refalrts::FnResult func_ValidFlag(refalrts::VM *vm, refalrts::Iter arg_be
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
+  do {
+    // </0 & ValidFlag/4 'G'/5 >/1
+    if( ! refalrts::char_term( 'G', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & ValidFlag/4 'G'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_True]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & ValidFlag/4 'x'/5 >/1
+    if( ! refalrts::char_term( 'x', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & ValidFlag/4 'x'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_True]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & ValidFlag/4 'y'/5 >/1
+    if( ! refalrts::char_term( 'y', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & ValidFlag/4 'y'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_True]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & ValidFlag/4 'z'/5 >/1
+    if( ! refalrts::char_term( 'z', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & ValidFlag/4 'z'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_True]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
   // </0 & ValidFlag/4 s.Other#1/5 >/1
   //DEBUG: s.Other#1: 5
 
@@ -2904,9 +2971,9 @@ static refalrts::FnResult func_Flagsm_Unique(refalrts::VM *vm, refalrts::Iter ar
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 13 elems
-  refalrts::Iter context[13];
-  refalrts::zeros( context, 13 );
+  // issue here memory for vars with 17 elems
+  refalrts::Iter context[17];
+  refalrts::zeros( context, 17 );
   // </0 & Flags-Unique/4 e.new#0/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2914,54 +2981,59 @@ static refalrts::FnResult func_Flagsm_Unique(refalrts::VM *vm, refalrts::Iter ar
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
   // closed e.new#0 as range 2
-  // </0 & Flags-Unique/4 e.new#1/2 s.new#2/5 >/1
-  if( ! refalrts::svar_right( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 2
   do {
-    // </0 & Flags-Unique/4 e.Flags-B#1/8 s.Repeated#1/12 e.Flags-E#1/10 s.Repeated#1/5 >/1
-    context[6] = context[2];
-    context[7] = context[3];
+    // </0 & Flags-Unique/4 e.Flags-B#1/7 s.Repeated#1/11 e.Flags-M#1/12 s.Repeated#1/16 e.Flags-E#1/14 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    context[7] = 0;
     context[8] = 0;
-    context[9] = 0;
     refalrts::start_e_loop(vm);
     do {
+      context[9] = context[5];
       context[10] = context[6];
-      context[11] = context[7];
-      if( ! refalrts::repeated_stvar_left( vm, context[12], context[5], context[10], context[11] ) )
+      if( ! refalrts::svar_left( context[11], context[9], context[10] ) )
         continue;
-      // closed e.Flags-E#1 as range 10
-      //DEBUG: s.Repeated#1: 5
-      //DEBUG: e.Flags-B#1: 8
-      //DEBUG: e.Flags-E#1: 10
+      context[12] = 0;
+      context[13] = 0;
+      refalrts::start_e_loop(vm);
+      do {
+        context[14] = context[9];
+        context[15] = context[10];
+        if( ! refalrts::repeated_stvar_left( vm, context[16], context[11], context[14], context[15] ) )
+          continue;
+        // closed e.Flags-E#1 as range 14
+        //DEBUG: e.Flags-B#1: 7
+        //DEBUG: s.Repeated#1: 11
+        //DEBUG: e.Flags-M#1: 12
+        //DEBUG: e.Flags-E#1: 14
 
-      refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & Flags-Unique/4 {REMOVED TILE} s.Repeated#1/12 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: e.Flags-B#1/8 } Tile{ AsIs: s.Repeated#1/5 } Tile{ AsIs: e.Flags-E#1/10 } Tile{ ]] }
-      refalrts::Iter trash_prev = arg_begin->prev;
-      refalrts::use(trash_prev);
-      refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[10], context[11] );
-      res = refalrts::splice_evar( res, context[5], context[5] );
-      res = refalrts::splice_evar( res, context[8], context[9] );
-      refalrts::splice_to_freelist_open( vm, trash_prev, res );
-      return refalrts::cSuccess;
-    } while ( refalrts::open_evar_advance( context[8], context[9], context[6], context[7] ) );
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.Repeated#1/16 {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 AsIs: & Flags-Unique/4 AsIs: e.Flags-B#1/7 AsIs: s.Repeated#1/11 } Tile{ AsIs: e.Flags-M#1/12 } Tile{ AsIs: e.Flags-E#1/14 } Tile{ AsIs: >/1 ]] }
+        refalrts::push_stack( vm, context[1] );
+        refalrts::push_stack( vm, context[0] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[1];
+        res = refalrts::splice_evar( res, context[14], context[15] );
+        res = refalrts::splice_evar( res, context[12], context[13] );
+        refalrts::splice_to_freelist_open( vm, context[11], res );
+        return refalrts::cSuccess;
+      } while ( refalrts::open_evar_advance( context[12], context[13], context[9], context[10] ) );
+    } while ( refalrts::open_evar_advance( context[7], context[8], context[5], context[6] ) );
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Flags-Unique/4 e.Flags#1/2 s.New#1/5 >/1
+  // </0 & Flags-Unique/4 e.Flags#1/2 >/1
   // closed e.Flags#1 as range 2
-  //DEBUG: s.New#1: 5
   //DEBUG: e.Flags#1: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Flags-Unique/4 {REMOVED TILE} s.New#1/5 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Flags#1/2 } Tile{ HalfReuse: s.New1 #5/1 ]] }
-  refalrts::reinit_svar( context[1], context[5] );
+  //TRASH: {REMOVED TILE} </0 & Flags-Unique/4 {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Flags#1/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
+  refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
   refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;

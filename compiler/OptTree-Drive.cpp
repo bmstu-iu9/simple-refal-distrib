@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_3180177130_1353305843
-#define COOKIE1_ 3180177130U
-#define COOKIE2_ 1353305843U
+#define cookie_ns cookie_ns_1880988631_3370160168
+#define COOKIE1_ 1880988631U
+#define COOKIE2_ 3370160168U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
@@ -92,72 +92,73 @@ enum efunc {
   efunc_gen_FindOptimizedCallm_Term_S1A1 = 81,
   efunc_gen_FindOptimizedCallm_Term_S2A1 = 82,
   efunc_gen_FindOptimizedCallm_Term_S3B1 = 83,
-  efunc_ApplySolution = 84,
-  efunc_gen_Map_Z3 = 85,
-  efunc_ApplyContractions = 86,
-  efunc_gen_ApplySolution_A1 = 87,
-  efunc_ApplyAssigns = 88,
-  efunc_ApplyAssignsm_Term = 89,
-  efunc_gen_Map_Z4 = 90,
-  efunc_ApplyContractionsm_Term = 91,
-  efunc_gen_Map_Z5 = 92,
-  efunc_gen_ApplyContractionsm_Term_S3B1 = 93,
-  efunc_CleanupColdm_Body = 94,
-  efunc_gen_Map_Z6 = 95,
-  efunc_gen_Map_Z7 = 96,
-  efunc_CleanupColdm_Result = 97,
-  efunc_gen_Map_Z8 = 98,
-  efunc_gen_Map_Z9 = 99,
-  efunc_Mu = 100,
-  efunc_Up = 101,
-  efunc_Evm_met = 102,
-  efunc_Residue = 103,
-  efunc_u_u_Metau_Residue = 104,
-  efunc_MapAccum = 105,
-  efunc_UnBracket = 106,
-  efunc_DelAccumulator = 107,
-  efunc_Inc = 108,
-  efunc_OptTreem_Drivem_Prepare = 109,
-  efunc_OptTreem_Drive = 110,
-  efunc_CutSUF = 111,
-  efunc_FindOptimizedCallm_Term = 112,
-  efunc_OptTreem_Drivem_CleanupColdCalls = 113,
-  efunc_CleanupColdm_Sentence = 114,
-  efunc_CleanupColdm_Term = 115,
-  efunc_gen_UpdateDriveInfo_A3L1D1 = 116,
-  efunc_gen_Map_Z0 = 117,
-  efunc_gen_UpdateDriveInfo_A3L1 = 118,
-  efunc_gen_DoMapAccum_Z1 = 119,
-  efunc_gen_UpdateDriveInfo_A3L2 = 120,
-  efunc_gen_MapAccum_Z0 = 121,
-  efunc_gen_DoMapAccum_Z2 = 122,
-  efunc_gen_UpdateDriveInfo_A1L1 = 123,
-  efunc_gen_DoMapAccum_Z3 = 124,
-  efunc_gen_DriveInlineOptimizerTick_S2A2L1 = 125,
-  efunc_gen_IsPassiveCall_L1D2 = 126,
-  efunc_gen_Reduce_Z0 = 127,
-  efunc_gen_IsPassiveCall_L1 = 128,
-  efunc_gen_IsLexprm_Aux_S2L1 = 129,
-  efunc_gen_OptFunction_A1L1D1 = 130,
-  efunc_gen_OptFunction_A1L1 = 131,
-  efunc_gen_DoMapAccum_Z4 = 132,
-  efunc_gen_OptSentencem_Aux_L1 = 133,
-  efunc_gen_DoMapAccum_Z5 = 134,
-  efunc_gen_ApplySolutions_L1 = 135,
-  efunc_gen_ApplyAssigns_L1 = 136,
-  efunc_gen_ApplyContractions_L1 = 137,
-  efunc_gen_OptTreem_Drivem_CleanupColdCalls_L1 = 138,
-  efunc_gen_CleanupColdm_Sentence_L1D1 = 139,
-  efunc_gen_CleanupColdm_Sentence_L1 = 140,
-  efunc_gen_DoMapAccumm_Aux_Z1 = 141,
-  efunc_gen_DoMapAccum_Z0 = 142,
-  efunc_gen_DoMapAccumm_Aux_Z2 = 143,
-  efunc_gen_UpdateDriveInfo_A1L1D3 = 144,
-  efunc_gen_DoMapAccumm_Aux_Z3 = 145,
-  efunc_gen_DoMapAccumm_Aux_Z4 = 146,
-  efunc_gen_OptSentencem_Aux_L1D1 = 147,
-  efunc_gen_DoMapAccumm_Aux_Z5 = 148,
-  efunc_gen_DoMapAccumm_Aux_Z0 = 149,
+  efunc_gen_FindOptimizedCallm_Term_S4A1 = 84,
+  efunc_ApplySolution = 85,
+  efunc_gen_Map_Z3 = 86,
+  efunc_ApplyContractions = 87,
+  efunc_gen_ApplySolution_A1 = 88,
+  efunc_ApplyAssigns = 89,
+  efunc_ApplyAssignsm_Term = 90,
+  efunc_gen_Map_Z4 = 91,
+  efunc_ApplyContractionsm_Term = 92,
+  efunc_gen_Map_Z5 = 93,
+  efunc_gen_ApplyContractionsm_Term_S3B1 = 94,
+  efunc_CleanupColdm_Body = 95,
+  efunc_gen_Map_Z6 = 96,
+  efunc_gen_Map_Z7 = 97,
+  efunc_CleanupColdm_Result = 98,
+  efunc_gen_Map_Z8 = 99,
+  efunc_gen_Map_Z9 = 100,
+  efunc_Mu = 101,
+  efunc_Up = 102,
+  efunc_Evm_met = 103,
+  efunc_Residue = 104,
+  efunc_u_u_Metau_Residue = 105,
+  efunc_MapAccum = 106,
+  efunc_UnBracket = 107,
+  efunc_DelAccumulator = 108,
+  efunc_Inc = 109,
+  efunc_OptTreem_Drivem_Prepare = 110,
+  efunc_OptTreem_Drive = 111,
+  efunc_CutSUF = 112,
+  efunc_FindOptimizedCallm_Term = 113,
+  efunc_OptTreem_Drivem_CleanupColdCalls = 114,
+  efunc_CleanupColdm_Sentence = 115,
+  efunc_CleanupColdm_Term = 116,
+  efunc_gen_UpdateDriveInfo_A3L1D1 = 117,
+  efunc_gen_Map_Z0 = 118,
+  efunc_gen_UpdateDriveInfo_A3L1 = 119,
+  efunc_gen_DoMapAccum_Z1 = 120,
+  efunc_gen_UpdateDriveInfo_A3L2 = 121,
+  efunc_gen_MapAccum_Z0 = 122,
+  efunc_gen_DoMapAccum_Z2 = 123,
+  efunc_gen_UpdateDriveInfo_A1L1 = 124,
+  efunc_gen_DoMapAccum_Z3 = 125,
+  efunc_gen_DriveInlineOptimizerTick_S2A2L1 = 126,
+  efunc_gen_IsPassiveCall_L1D2 = 127,
+  efunc_gen_Reduce_Z0 = 128,
+  efunc_gen_IsPassiveCall_L1 = 129,
+  efunc_gen_IsLexprm_Aux_S2L1 = 130,
+  efunc_gen_OptFunction_A1L1D1 = 131,
+  efunc_gen_OptFunction_A1L1 = 132,
+  efunc_gen_DoMapAccum_Z4 = 133,
+  efunc_gen_OptSentencem_Aux_L1 = 134,
+  efunc_gen_DoMapAccum_Z5 = 135,
+  efunc_gen_ApplySolutions_L1 = 136,
+  efunc_gen_ApplyAssigns_L1 = 137,
+  efunc_gen_ApplyContractions_L1 = 138,
+  efunc_gen_OptTreem_Drivem_CleanupColdCalls_L1 = 139,
+  efunc_gen_CleanupColdm_Sentence_L1D1 = 140,
+  efunc_gen_CleanupColdm_Sentence_L1 = 141,
+  efunc_gen_DoMapAccumm_Aux_Z1 = 142,
+  efunc_gen_DoMapAccum_Z0 = 143,
+  efunc_gen_DoMapAccumm_Aux_Z2 = 144,
+  efunc_gen_UpdateDriveInfo_A1L1D3 = 145,
+  efunc_gen_DoMapAccumm_Aux_Z3 = 146,
+  efunc_gen_DoMapAccumm_Aux_Z4 = 147,
+  efunc_gen_OptSentencem_Aux_L1D1 = 148,
+  efunc_gen_DoMapAccumm_Aux_Z5 = 149,
+  efunc_gen_DoMapAccumm_Aux_Z0 = 150,
 };
 
 
@@ -7482,6 +7483,57 @@ static refalrts::FnResult func_gen_FindOptimizedCallm_Term_S3B1(refalrts::VM *vm
 static refalrts::NativeReference nat_ref_gen_FindOptimizedCallm_Term_S3B1("FindOptimizedCall-Term$3:1", COOKIE1_, COOKIE2_, func_gen_FindOptimizedCallm_Term_S3B1);
 
 
+static refalrts::FnResult func_gen_FindOptimizedCallm_Term_S4A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 11 elems
+  refalrts::Iter context[11];
+  refalrts::zeros( context, 11 );
+  // </0 & FindOptimizedCall-Term$4=1/4 (/7 e.OptFuncNames#2/5 t.Found#2/9 )/8 e.Expr#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  context[5] = 0;
+  context[6] = 0;
+  context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
+  if( ! context[7] )
+    return refalrts::cRecognitionImpossible;
+  refalrts::bracket_pointers(context[7], context[8]);
+  // closed e.Expr#2 as range 2
+  context[10] = refalrts::tvar_right( context[9], context[5], context[6] );
+  if( ! context[10] )
+    return refalrts::cRecognitionImpossible;
+  // closed e.OptFuncNames#2 as range 5
+  //DEBUG: e.Expr#2: 2
+  //DEBUG: t.Found#2: 9
+  //DEBUG: e.OptFuncNames#2: 5
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.OptFuncNames#2/5 AsIs: t.Found#2/9 AsIs: )/8 } Tile{ HalfReuse: (/0 HalfReuse: # CallBrackets/4 } Tile{ AsIs: e.Expr#2/2 } Tile{ HalfReuse: )/1 ]] }
+  refalrts::reinit_open_bracket(context[0]);
+  refalrts::reinit_ident(context[4], identifiers[ident_CallBrackets]);
+  refalrts::reinit_close_bracket(context[1]);
+  refalrts::link_brackets( context[0], context[1] );
+  refalrts::link_brackets( context[7], context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[2], context[3] );
+  res = refalrts::splice_evar( res, context[0], context[4] );
+  res = refalrts::splice_evar( res, context[7], context[8] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_FindOptimizedCallm_Term_S4A1("FindOptimizedCall-Term$4=1", COOKIE1_, COOKIE2_, func_gen_FindOptimizedCallm_Term_S4A1);
+
+
 static refalrts::FnResult func_FindOptimizedCallm_Term(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
@@ -7565,41 +7617,88 @@ static refalrts::FnResult func_FindOptimizedCallm_Term(refalrts::VM *vm, refalrt
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & FindOptimizedCall-Term/4 (/7 e.new#10/18 # None/11 )/8 (/9 s.new#7/17 (/24 e.new#8/22 )/25 e.new#9/20 )/10 >/1
-    context[18] = context[13];
-    context[19] = context[14];
-    context[20] = context[15];
-    context[21] = context[16];
-    context[22] = 0;
-    context[23] = 0;
-    context[24] = refalrts::brackets_left( context[22], context[23], context[20], context[21] );
-    if( ! context[24] )
-      continue;
-    refalrts::bracket_pointers(context[24], context[25]);
-    // closed e.new#10 as range 18
-    // closed e.new#8 as range 22
-    // closed e.new#9 as range 20
     do {
-      // </0 & FindOptimizedCall-Term/4 (/7 e.OptFuncNames#1/26 # None/11 )/8 (/9 # ADT-Brackets/17 (/24 e.Name#1/28 )/25 e.Expr#1/30 )/10 >/1
+      // </0 & FindOptimizedCall-Term/4 (/7 e.new#10/18 # None/11 )/8 (/9 s.new#7/17 (/24 e.new#8/22 )/25 e.new#9/20 )/10 >/1
+      context[18] = context[13];
+      context[19] = context[14];
+      context[20] = context[15];
+      context[21] = context[16];
+      context[22] = 0;
+      context[23] = 0;
+      context[24] = refalrts::brackets_left( context[22], context[23], context[20], context[21] );
+      if( ! context[24] )
+        continue;
+      refalrts::bracket_pointers(context[24], context[25]);
+      // closed e.new#10 as range 18
+      // closed e.new#8 as range 22
+      // closed e.new#9 as range 20
+      do {
+        // </0 & FindOptimizedCall-Term/4 (/7 e.OptFuncNames#1/26 # None/11 )/8 (/9 # ADT-Brackets/17 (/24 e.Name#1/28 )/25 e.Expr#1/30 )/10 >/1
+        context[26] = context[18];
+        context[27] = context[19];
+        context[28] = context[22];
+        context[29] = context[23];
+        context[30] = context[20];
+        context[31] = context[21];
+        if( ! refalrts::ident_term( identifiers[ident_ADTm_Brackets], context[17] ) )
+          continue;
+        // closed e.OptFuncNames#1 as range 26
+        // closed e.Name#1 as range 28
+        // closed e.Expr#1 as range 30
+        //DEBUG: e.OptFuncNames#1: 26
+        //DEBUG: e.Name#1: 28
+        //DEBUG: e.Expr#1: 30
+
+        refalrts::reset_allocator(vm);
+        //TRASH: {REMOVED TILE} {REMOVED TILE} # None/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindOptimizedCall-Term$2=1/4 AsIs: (/7 } Tile{ AsIs: e.Name#1/28 } Tile{ AsIs: )/8 HalfReuse: </9 HalfReuse: & FindOptimizedCall/17 AsIs: (/24 } Tile{ AsIs: e.OptFuncNames#1/26 } Tile{ AsIs: )/25 AsIs: e.Expr#1/30 HalfReuse: >/10 AsIs: >/1 ]] }
+        refalrts::update_name(context[4], functions[efunc_gen_FindOptimizedCallm_Term_S2A1]);
+        refalrts::reinit_open_call(context[9]);
+        refalrts::reinit_name(context[17], functions[efunc_FindOptimizedCall]);
+        refalrts::reinit_close_call(context[10]);
+        refalrts::push_stack( vm, context[1] );
+        refalrts::push_stack( vm, context[0] );
+        refalrts::push_stack( vm, context[10] );
+        refalrts::push_stack( vm, context[9] );
+        refalrts::link_brackets( context[24], context[25] );
+        refalrts::link_brackets( context[7], context[8] );
+        refalrts::Iter trash_prev = arg_begin->prev;
+        refalrts::use(trash_prev);
+        refalrts::Iter res = context[25];
+        res = refalrts::splice_evar( res, context[26], context[27] );
+        res = refalrts::splice_evar( res, context[8], context[24] );
+        res = refalrts::splice_evar( res, context[28], context[29] );
+        refalrts::splice_to_freelist_open( vm, context[7], res );
+        return refalrts::cSuccess;
+      } while ( 0 );
+      refalrts::stop_sentence(vm);
+
+      // </0 & FindOptimizedCall-Term/4 (/7 e.OptFuncNames#1/26 # None/11 )/8 (/9 # CallBrackets/17 (/24 # Symbol/32 # Name/33 e.Name#1/28 )/25 e.Arg#1/30 )/10 >/1
       context[26] = context[18];
       context[27] = context[19];
       context[28] = context[22];
       context[29] = context[23];
       context[30] = context[20];
       context[31] = context[21];
-      if( ! refalrts::ident_term( identifiers[ident_ADTm_Brackets], context[17] ) )
+      if( ! refalrts::ident_term( identifiers[ident_CallBrackets], context[17] ) )
+        continue;
+      context[32] = refalrts::ident_left( identifiers[ident_Symbol], context[28], context[29] );
+      if( ! context[32] )
+        continue;
+      context[33] = refalrts::ident_left( identifiers[ident_Name], context[28], context[29] );
+      if( ! context[33] )
         continue;
       // closed e.OptFuncNames#1 as range 26
       // closed e.Name#1 as range 28
-      // closed e.Expr#1 as range 30
+      // closed e.Arg#1 as range 30
       //DEBUG: e.OptFuncNames#1: 26
       //DEBUG: e.Name#1: 28
-      //DEBUG: e.Expr#1: 30
+      //DEBUG: e.Arg#1: 30
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} # None/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindOptimizedCall-Term$2=1/4 AsIs: (/7 } Tile{ AsIs: e.Name#1/28 } Tile{ AsIs: )/8 HalfReuse: </9 HalfReuse: & FindOptimizedCall/17 AsIs: (/24 } Tile{ AsIs: e.OptFuncNames#1/26 } Tile{ AsIs: )/25 AsIs: e.Expr#1/30 HalfReuse: >/10 AsIs: >/1 ]] }
-      refalrts::update_name(context[4], functions[efunc_gen_FindOptimizedCallm_Term_S2A1]);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} # None/11 {REMOVED TILE} # Symbol/32 # Name/33 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindOptimizedCall-Term$3:1/4 AsIs: (/7 } Tile{ AsIs: e.Name#1/28 } Tile{ AsIs: )/8 HalfReuse: </9 HalfReuse: & FindOptimizedCall/17 AsIs: (/24 } Tile{ AsIs: e.OptFuncNames#1/26 } Tile{ AsIs: )/25 AsIs: e.Arg#1/30 HalfReuse: >/10 AsIs: >/1 ]] }
+      refalrts::update_name(context[4], functions[efunc_gen_FindOptimizedCallm_Term_S3B1]);
       refalrts::reinit_open_call(context[9]);
       refalrts::reinit_name(context[17], functions[efunc_FindOptimizedCall]);
       refalrts::reinit_close_call(context[10]);
@@ -7620,48 +7719,38 @@ static refalrts::FnResult func_FindOptimizedCallm_Term(refalrts::VM *vm, refalrt
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & FindOptimizedCall-Term/4 (/7 e.OptFuncNames#1/26 # None/11 )/8 (/9 # CallBrackets/17 (/24 # Symbol/32 # Name/33 e.Name#1/28 )/25 e.Arg#1/30 )/10 >/1
-    context[26] = context[18];
-    context[27] = context[19];
-    context[28] = context[22];
-    context[29] = context[23];
-    context[30] = context[20];
-    context[31] = context[21];
+    // </0 & FindOptimizedCall-Term/4 (/7 e.OptFuncNames#1/18 # None/11 )/8 (/9 # CallBrackets/17 e.Expr#1/20 )/10 >/1
+    context[18] = context[13];
+    context[19] = context[14];
+    context[20] = context[15];
+    context[21] = context[16];
     if( ! refalrts::ident_term( identifiers[ident_CallBrackets], context[17] ) )
       continue;
-    context[32] = refalrts::ident_left( identifiers[ident_Symbol], context[28], context[29] );
-    if( ! context[32] )
-      continue;
-    context[33] = refalrts::ident_left( identifiers[ident_Name], context[28], context[29] );
-    if( ! context[33] )
-      continue;
-    // closed e.OptFuncNames#1 as range 26
-    // closed e.Name#1 as range 28
-    // closed e.Arg#1 as range 30
-    //DEBUG: e.OptFuncNames#1: 26
-    //DEBUG: e.Name#1: 28
-    //DEBUG: e.Arg#1: 30
+    // closed e.OptFuncNames#1 as range 18
+    // closed e.Expr#1 as range 20
+    //DEBUG: e.OptFuncNames#1: 18
+    //DEBUG: e.Expr#1: 20
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} # None/11 {REMOVED TILE} # Symbol/32 # Name/33 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindOptimizedCall-Term$3:1/4 AsIs: (/7 } Tile{ AsIs: e.Name#1/28 } Tile{ AsIs: )/8 HalfReuse: </9 HalfReuse: & FindOptimizedCall/17 AsIs: (/24 } Tile{ AsIs: e.OptFuncNames#1/26 } Tile{ AsIs: )/25 AsIs: e.Arg#1/30 HalfReuse: >/10 AsIs: >/1 ]] }
-    refalrts::update_name(context[4], functions[efunc_gen_FindOptimizedCallm_Term_S3B1]);
-    refalrts::reinit_open_call(context[9]);
-    refalrts::reinit_name(context[17], functions[efunc_FindOptimizedCall]);
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # CallBrackets/17 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: </8 HalfReuse: & FindOptimizedCall-Term$4=1/9 } Tile{ AsIs: </0 Reuse: & FindOptimizedCall/4 AsIs: (/7 AsIs: e.OptFuncNames#1/18 HalfReuse: )/11 } Tile{ AsIs: e.Expr#1/20 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+    refalrts::reinit_open_call(context[8]);
+    refalrts::reinit_name(context[9], functions[efunc_gen_FindOptimizedCallm_Term_S4A1]);
+    refalrts::update_name(context[4], functions[efunc_FindOptimizedCall]);
+    refalrts::reinit_close_bracket(context[11]);
     refalrts::reinit_close_call(context[10]);
     refalrts::push_stack( vm, context[1] );
-    refalrts::push_stack( vm, context[0] );
+    refalrts::push_stack( vm, context[8] );
     refalrts::push_stack( vm, context[10] );
-    refalrts::push_stack( vm, context[9] );
-    refalrts::link_brackets( context[24], context[25] );
-    refalrts::link_brackets( context[7], context[8] );
+    refalrts::push_stack( vm, context[0] );
+    refalrts::link_brackets( context[7], context[11] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
-    refalrts::Iter res = context[25];
-    res = refalrts::splice_evar( res, context[26], context[27] );
-    res = refalrts::splice_evar( res, context[8], context[24] );
-    res = refalrts::splice_evar( res, context[28], context[29] );
-    refalrts::splice_to_freelist_open( vm, context[7], res );
+    refalrts::Iter res = context[10];
+    res = refalrts::splice_evar( res, context[20], context[21] );
+    res = refalrts::splice_evar( res, context[0], context[11] );
+    res = refalrts::splice_evar( res, context[8], context[9] );
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
   } while ( 0 );
   refalrts::stop_sentence(vm);

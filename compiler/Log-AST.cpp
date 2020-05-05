@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2023984466_4116851864
-#define COOKIE1_ 2023984466U
-#define COOKIE2_ 4116851864U
+#define cookie_ns cookie_ns_1248222528_3803648475
+#define COOKIE1_ 1248222528U
+#define COOKIE2_ 3803648475U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
@@ -30,77 +30,79 @@ enum efunc {
   efunc_ColdFunction = 19,
   efunc_DisplayName = 20,
   efunc_InlineExpr = 21,
-  efunc_DoLongLine = 22,
+  efunc_Compare = 22,
   efunc_MAXm_LINE = 23,
-  efunc_Functionm_Aux = 24,
-  efunc_InlineTerm = 25,
-  efunc_Sentences = 26,
-  efunc_Entry = 27,
-  efunc_gen_Map_Z2 = 28,
-  efunc_Sentence = 29,
-  efunc_PutComment = 30,
-  efunc_gen_Sentence_S2C1 = 31,
-  efunc_gen_Sentence_S2C2 = 32,
-  efunc_LongLine = 33,
-  efunc_Tail = 34,
-  efunc_Expression = 35,
-  efunc_InlineSubexpr = 36,
-  efunc_gen_Tail_S1B1 = 37,
-  efunc_gen_Tail_S1A1 = 38,
-  efunc_DoExpression = 39,
-  efunc_gen_DoExpression_S3B1S1B1S1C1 = 40,
-  efunc_MultilineTerm = 41,
-  efunc_gen_DoExpression_S3B1S1B1S2C1 = 42,
-  efunc_gen_DoExpression_S3B1S1B1 = 43,
-  efunc_gen_DoExpression_S3B1 = 44,
-  efunc_AppendTerm = 45,
-  efunc_gen_DoExpression_S3A2 = 46,
-  efunc_gen_DoExpression_S3A1 = 47,
-  efunc_MultilineTermm_Prefix = 48,
-  efunc_TkVariable = 49,
-  efunc_gen_MultilineTermm_Prefix_B1D9 = 50,
-  efunc_CharRep = 51,
-  efunc_Symb = 52,
-  efunc_Compound = 53,
-  efunc_gen_Compound_S1C1 = 54,
-  efunc_IsIdent = 55,
-  efunc_DoCompound = 56,
-  efunc_gen_IsIdent_S1C1 = 57,
-  efunc_Type = 58,
-  efunc_DoIsIdent = 59,
-  efunc_gen_DoIsIdent_S3C1 = 60,
-  efunc_gen_DoIsIdent_S4C1 = 61,
-  efunc_gen_CharRep_S7C1 = 62,
-  efunc_Ord = 63,
-  efunc_gen_CharRep_S7C2 = 64,
-  efunc_Compare = 65,
-  efunc_HexDigit = 66,
-  efunc_Mod = 67,
-  efunc_Div = 68,
-  efunc_gen_HexDigit_C1 = 69,
-  efunc_First = 70,
-  efunc_DoInlineExpr = 71,
-  efunc_Mu = 72,
-  efunc_Up = 73,
-  efunc_Evm_met = 74,
-  efunc_Residue = 75,
-  efunc_u_u_Metau_Residue = 76,
-  efunc_MapAccum = 77,
-  efunc_UnBracket = 78,
-  efunc_DelAccumulator = 79,
-  efunc_Inc = 80,
-  efunc_Dec = 81,
-  efunc_Logm_TextFromAST = 82,
-  efunc_Element = 83,
-  efunc_Symbol = 84,
-  efunc_Brackets = 85,
-  efunc_ADTm_Brackets = 86,
-  efunc_CallBrackets = 87,
-  efunc_ColdCallBrackets = 88,
-  efunc_ClosureBrackets = 89,
-  efunc_gen_Map_Z0 = 90,
-  efunc_gen_Functionm_Aux_S3L1D1 = 91,
-  efunc_gen_Functionm_Aux_S3L1 = 92,
+  efunc_gen_LongLine_B1 = 24,
+  efunc_gen_LongLine_A1 = 25,
+  efunc_Lenw = 26,
+  efunc_Functionm_Aux = 27,
+  efunc_InlineTerm = 28,
+  efunc_Sentences = 29,
+  efunc_Entry = 30,
+  efunc_gen_Map_Z2 = 31,
+  efunc_Sentence = 32,
+  efunc_PutComment = 33,
+  efunc_gen_Sentence_S2C1 = 34,
+  efunc_gen_Sentence_S2C2 = 35,
+  efunc_LongLine = 36,
+  efunc_Tail = 37,
+  efunc_Expression = 38,
+  efunc_InlineSubexpr = 39,
+  efunc_gen_Tail_S1B1 = 40,
+  efunc_gen_Tail_S1A1 = 41,
+  efunc_DoExpression = 42,
+  efunc_gen_DoExpression_S3B1S1B1S1C1 = 43,
+  efunc_MultilineTerm = 44,
+  efunc_gen_DoExpression_S3B1S1B1S2C1 = 45,
+  efunc_gen_DoExpression_S3B1S1B1 = 46,
+  efunc_gen_DoExpression_S3B1 = 47,
+  efunc_AppendTerm = 48,
+  efunc_gen_DoExpression_S3A2 = 49,
+  efunc_gen_DoExpression_S3A1 = 50,
+  efunc_MultilineTermm_Prefix = 51,
+  efunc_TkVariable = 52,
+  efunc_gen_MultilineTermm_Prefix_B1D9 = 53,
+  efunc_CharRep = 54,
+  efunc_Symb = 55,
+  efunc_Compound = 56,
+  efunc_gen_Compound_S1C1 = 57,
+  efunc_IsIdent = 58,
+  efunc_DoCompound = 59,
+  efunc_gen_IsIdent_S1C1 = 60,
+  efunc_Type = 61,
+  efunc_DoIsIdent = 62,
+  efunc_gen_DoIsIdent_S3C1 = 63,
+  efunc_gen_DoIsIdent_S4C1 = 64,
+  efunc_gen_CharRep_S7C1 = 65,
+  efunc_Ord = 66,
+  efunc_gen_CharRep_S7C2 = 67,
+  efunc_HexDigit = 68,
+  efunc_Mod = 69,
+  efunc_Div = 70,
+  efunc_gen_HexDigit_C1 = 71,
+  efunc_First = 72,
+  efunc_DoInlineExpr = 73,
+  efunc_Mu = 74,
+  efunc_Up = 75,
+  efunc_Evm_met = 76,
+  efunc_Residue = 77,
+  efunc_u_u_Metau_Residue = 78,
+  efunc_MapAccum = 79,
+  efunc_UnBracket = 80,
+  efunc_DelAccumulator = 81,
+  efunc_Inc = 82,
+  efunc_Dec = 83,
+  efunc_Logm_TextFromAST = 84,
+  efunc_Element = 85,
+  efunc_Symbol = 86,
+  efunc_Brackets = 87,
+  efunc_ADTm_Brackets = 88,
+  efunc_CallBrackets = 89,
+  efunc_ColdCallBrackets = 90,
+  efunc_ClosureBrackets = 91,
+  efunc_gen_Map_Z0 = 92,
+  efunc_gen_Functionm_Aux_S3L1D1 = 93,
+  efunc_gen_Functionm_Aux_S3L1 = 94,
 };
 
 
@@ -119,8 +121,8 @@ enum ident {
   ident_Spec = 11,
   ident_DriveInfo = 12,
   ident_SpecInfo = 13,
-  ident_False = 14,
-  ident_True = 15,
+  ident_True = 14,
+  ident_False = 15,
   ident_Sentences = 16,
   ident_NativeBody = 17,
   ident_Metatable = 18,
@@ -164,27 +166,26 @@ enum ident {
   ident_Element = 56,
   ident_MAXm_LINE = 57,
   ident_LongLine = 58,
-  ident_DoLongLine = 59,
-  ident_Functionm_Aux = 60,
-  ident_Entry = 61,
-  ident_Sentence = 62,
-  ident_InlineExpr = 63,
-  ident_PutComment = 64,
-  ident_Tail = 65,
-  ident_Expression = 66,
-  ident_DoExpression = 67,
-  ident_AppendTerm = 68,
-  ident_InlineTerm = 69,
-  ident_MultilineTerm = 70,
-  ident_MultilineTermm_Prefix = 71,
-  ident_Compound = 72,
-  ident_DoCompound = 73,
-  ident_IsIdent = 74,
-  ident_DoIsIdent = 75,
-  ident_CharRep = 76,
-  ident_HexDigit = 77,
-  ident_InlineSubexpr = 78,
-  ident_DoInlineExpr = 79,
+  ident_Functionm_Aux = 59,
+  ident_Entry = 60,
+  ident_Sentence = 61,
+  ident_InlineExpr = 62,
+  ident_PutComment = 63,
+  ident_Tail = 64,
+  ident_Expression = 65,
+  ident_DoExpression = 66,
+  ident_AppendTerm = 67,
+  ident_InlineTerm = 68,
+  ident_MultilineTerm = 69,
+  ident_MultilineTermm_Prefix = 70,
+  ident_Compound = 71,
+  ident_DoCompound = 72,
+  ident_IsIdent = 73,
+  ident_DoIsIdent = 74,
+  ident_CharRep = 75,
+  ident_HexDigit = 76,
+  ident_InlineSubexpr = 77,
+  ident_DoInlineExpr = 78,
 };
 
 
@@ -1995,6 +1996,111 @@ static refalrts::FnResult func_MAXm_LINE(refalrts::VM *vm, refalrts::Iter arg_be
 static refalrts::NativeReference nat_ref_MAXm_LINE("MAX-LINE", COOKIE1_, COOKIE2_, func_MAXm_LINE);
 
 
+static refalrts::FnResult func_gen_LongLine_B1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 6 elems
+  refalrts::Iter context[6];
+  refalrts::zeros( context, 6 );
+  // </0 & LongLine:1/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  // </0 & LongLine:1/4 s.new#1/5 >/1
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  if( ! refalrts::empty_seq( context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  do {
+    // </0 & LongLine:1/4 '+'/5 >/1
+    if( ! refalrts::char_term( '+', context[5] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & LongLine:1/4 '+'/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
+    refalrts::reinit_ident(context[1], identifiers[ident_True]);
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[1];
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & LongLine:1/4 s._#3/5 >/1
+  //DEBUG: s._#3: 5
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} </0 & LongLine:1/4 s._#3/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: # False/1 ]] }
+  refalrts::reinit_ident(context[1], identifiers[ident_False]);
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  refalrts::splice_to_freelist_open( vm, trash_prev, res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_LongLine_B1("LongLine:1", COOKIE1_, COOKIE2_, func_gen_LongLine_B1);
+
+
+static refalrts::FnResult func_gen_LongLine_A1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 12 elems
+  refalrts::Iter context[12];
+  refalrts::zeros( context, 12 );
+  // </0 & LongLine=1/4 s.Len#2/5 e.Line#2/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
+    return refalrts::cRecognitionImpossible;
+  // closed e.Line#2 as range 2
+  //DEBUG: s.Len#2: 5
+  //DEBUG: e.Line#2: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE} e.Line#2/2 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & LongLine:1/4 } </6 & Compare/7 Tile{ AsIs: s.Len#2/5 } </8 & MAX-LINE/9 >/10 >/11 Tile{ AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[6]);
+  refalrts::alloc_name(vm, context[7], functions[efunc_Compare]);
+  refalrts::alloc_open_call(vm, context[8]);
+  refalrts::alloc_name(vm, context[9], functions[efunc_MAXm_LINE]);
+  refalrts::alloc_close_call(vm, context[10]);
+  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::update_name(context[4], functions[efunc_gen_LongLine_B1]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
+  refalrts::push_stack( vm, context[11] );
+  refalrts::push_stack( vm, context[6] );
+  refalrts::push_stack( vm, context[10] );
+  refalrts::push_stack( vm, context[8] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[1];
+  res = refalrts::splice_evar( res, context[8], context[11] );
+  res = refalrts::splice_evar( res, context[5], context[5] );
+  res = refalrts::splice_evar( res, context[6], context[7] );
+  refalrts::splice_to_freelist_open( vm, context[4], res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_LongLine_A1("LongLine=1", COOKIE1_, COOKIE2_, func_gen_LongLine_A1);
+
+
 static refalrts::FnResult func_LongLine(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
   refalrts::this_is_generated_function(vm);
@@ -2014,119 +2120,27 @@ static refalrts::FnResult func_LongLine(refalrts::VM *vm, refalrts::Iter arg_beg
   //DEBUG: e.Line#1: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & DoLongLine/6 </7 Tile{ HalfReuse: & MAX-LINE/0 HalfReuse: >/4 AsIs: e.Line#1/2 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & LongLine=1/6 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Line#1/2 AsIs: >/1 } >/7 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
-  refalrts::alloc_name(vm, context[6], functions[efunc_DoLongLine]);
-  refalrts::alloc_open_call(vm, context[7]);
-  refalrts::reinit_name(context[0], functions[efunc_MAXm_LINE]);
-  refalrts::reinit_close_call(context[4]);
-  refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[5] );
-  refalrts::push_stack( vm, context[4] );
+  refalrts::alloc_name(vm, context[6], functions[efunc_gen_LongLine_A1]);
+  refalrts::alloc_close_call(vm, context[7]);
+  refalrts::update_name(context[4], functions[efunc_Lenw]);
   refalrts::push_stack( vm, context[7] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
-  refalrts::Iter res = context[0];
-  res = refalrts::splice_evar( res, context[5], context[7] );
+  refalrts::Iter res = arg_end->next;
+  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[0], context[1] );
+  res = refalrts::splice_evar( res, context[5], context[6] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
 
 static refalrts::NativeReference nat_ref_LongLine("LongLine", COOKIE1_, COOKIE2_, func_LongLine);
-
-
-static refalrts::FnResult func_DoLongLine(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
-  (void) vm;
-  refalrts::this_is_generated_function(vm);
-  refalrts::RefalFunction **functions;
-  const refalrts::RefalIdentifier *identifiers;
-  refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
-  // </0 & DoLongLine/4 e.new#0/2 >/1
-  context[0] = arg_begin;
-  context[1] = arg_end;
-  context[2] = 0;
-  context[3] = 0;
-  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoLongLine/4 s.new#1/5 e.new#2/2 >/1
-  if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
-    return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
-  do {
-    // </0 & DoLongLine/4 s.Len#1/5 >/1
-    if( ! refalrts::empty_seq( context[2], context[3] ) )
-      continue;
-    //DEBUG: s.Len#1: 5
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & DoLongLine/4 s.Len#1/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # False/1 ]] }
-    refalrts::reinit_ident(context[1], identifiers[ident_False]);
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    refalrts::splice_to_freelist_open( vm, trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  do {
-    // </0 & DoLongLine/4 0/5 e.Line#1/6 >/1
-    context[6] = context[2];
-    context[7] = context[3];
-    if( ! refalrts::number_term( 0UL, context[5] ) )
-      continue;
-    // closed e.Line#1 as range 6
-    //DEBUG: e.Line#1: 6
-
-    refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & DoLongLine/4 0/5 e.Line#1/6 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # True/1 ]] }
-    refalrts::reinit_ident(context[1], identifiers[ident_True]);
-    refalrts::Iter trash_prev = arg_begin->prev;
-    refalrts::use(trash_prev);
-    refalrts::Iter res = context[1];
-    refalrts::splice_to_freelist_open( vm, trash_prev, res );
-    return refalrts::cSuccess;
-  } while ( 0 );
-  refalrts::stop_sentence(vm);
-
-  // </0 & DoLongLine/4 s.Len#1/5 t.Next#1/6 e.Line#1/2 >/1
-  context[7] = refalrts::tvar_left( context[6], context[2], context[3] );
-  if( ! context[7] )
-    return refalrts::cRecognitionImpossible;
-  // closed e.Line#1 as range 2
-  //DEBUG: s.Len#1: 5
-  //DEBUG: t.Next#1: 6
-  //DEBUG: e.Line#1: 2
-
-  refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} t.Next#1/6 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoLongLine/4 } </8 & Sub/9 Tile{ AsIs: s.Len#1/5 } 1/10 >/11 Tile{ AsIs: e.Line#1/2 } Tile{ AsIs: >/1 ]] }
-  refalrts::alloc_open_call(vm, context[8]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_Sub]);
-  refalrts::alloc_number(vm, context[10], 1UL);
-  refalrts::alloc_close_call(vm, context[11]);
-  refalrts::push_stack( vm, context[1] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[11] );
-  refalrts::push_stack( vm, context[8] );
-  refalrts::Iter trash_prev = arg_begin->prev;
-  refalrts::use(trash_prev);
-  refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[10], context[11] );
-  res = refalrts::splice_evar( res, context[5], context[5] );
-  res = refalrts::splice_evar( res, context[8], context[9] );
-  refalrts::splice_to_freelist_open( vm, context[4], res );
-  return refalrts::cSuccess;
-}
-
-static refalrts::NativeReference nat_ref_DoLongLine("DoLongLine", COOKIE1_, COOKIE2_, func_DoLongLine);
 
 
 static refalrts::FnResult func_Function(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {

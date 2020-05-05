@@ -294,7 +294,7 @@ void vm_alloc_copy_evar(
 void vm_alloc_copy_svar(
   refalrts::VM *vm, refalrts::Iter& svar_res, refalrts::Iter svar_sample
 ) {
-  vm->copy_node(svar_res, svar_sample);
+  vm->copy_svar(svar_res, svar_sample);
 }
 
 void vm_alloc_char(refalrts::VM *vm, refalrts::Iter& res, char ch) {
@@ -538,7 +538,7 @@ int main(int argc, char **argv) {
   }
 
   // TODO: правильный порядок финализации
-  profiler.end_profiler();
+  profiler.end_profiler(&domain);
   refalrts::FnResult res_unload;
   domain.unload(&vm, res_unload);
   if (res == refalrts::cSuccess) {
