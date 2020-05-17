@@ -1,5 +1,7 @@
 @echo off
 setlocal
+  if exist *.rasl erase *.rasl
+
   set SCRIPT_FLAGS=--scratch --static
   set DEBUG=
   call :MAKE_PREFIXES || exit /b 1

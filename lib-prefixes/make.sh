@@ -15,6 +15,8 @@ make_prefixes() {
     -o ../lib/rich"$DEBUG".lib-prefix || exit 1
 }
 
+rm -f *.rasl
+
 SCRIPT_FLAGS=( --scratch --static )
 make_prefixes "" || exit 1
 

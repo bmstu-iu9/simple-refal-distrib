@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_1702956446_854783491
-#define COOKIE1_ 1702956446U
-#define COOKIE2_ 854783491U
+#define cookie_ns cookie_ns_2184842814_4142693668
+#define COOKIE1_ 2184842814U
+#define COOKIE2_ 4142693668U
 
 enum efunc {
   efunc_u_u_Metau_Mu = 0,
@@ -91,6 +91,10 @@ enum efunc {
   efunc_gen_LoadProgramModule_B1 = 80,
   efunc_gen_FindEntryPoint_B1S2B1 = 81,
   efunc_gen_FindEntryPoint_B1 = 82,
+  efunc_gen_Go_A5Z0 = 83,
+  efunc_gen_Go_A4Z0 = 84,
+  efunc_gen_LoadProgramModule_B1Z0 = 85,
+  efunc_gen_FindEntryPoint_B1Z0 = 86,
 };
 
 
@@ -253,7 +257,7 @@ static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COO
 static void version(FILE *output) {
   fprintf(
     output,
-    "rlgo, a part of Refal-5-lambda compiler toolkit, version 3.0.1\n"
+    "rlgo, a part of Refal-5-lambda compiler toolkit, version 3.1\n"
     "Copyright (c) 2008-2016, Alexander Konovalov, "
     "2016-2020, BMSTU IU9 Department\n"
     "All rights reserved.\n\n"
@@ -274,7 +278,7 @@ static void help(FILE *output) {
     refalrts::DiagnosticConfig::help
   );
 }
-#line 278 "main.cpp"
+#line 282 "main.cpp"
 
 static refalrts::FnResult func_gen_Go_A6(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -650,7 +654,7 @@ static refalrts::FnResult func_ReadInterpreterFlags(refalrts::VM *vm, refalrts::
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 654 "main.cpp"
+#line 658 "main.cpp"
 }
 
 static refalrts::NativeReference nat_ref_ReadInterpreterFlags("ReadInterpreterFlags", COOKIE1_, COOKIE2_, func_ReadInterpreterFlags);

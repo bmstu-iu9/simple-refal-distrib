@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2733278523_2786777343
-#define COOKIE1_ 2733278523U
-#define COOKIE2_ 2786777343U
+#define cookie_ns cookie_ns_2428742722_1109477042
+#define COOKIE1_ 2428742722U
+#define COOKIE2_ 1109477042U
 
 enum efunc {
   efunc_u_u_Metau_Mu = 0,
@@ -215,6 +215,34 @@ enum efunc {
   efunc_PathSeparator = 204,
   efunc_INIT = 205,
   efunc_FINAL = 206,
+  efunc_gen_Addm_Nat_S1B1Z0 = 207,
+  efunc_gen_Cp_B1Z0 = 208,
+  efunc_gen_Dg_B1Z0 = 209,
+  efunc_gen_Divmodm_Nat_S1A1Z0 = 210,
+  efunc_gen_Divmodm_Nat_S2A5Z0 = 211,
+  efunc_gen_Divmodm_Nat_S2A4Z0 = 212,
+  efunc_gen_Divmodm_Nat_S2A3Z0 = 213,
+  efunc_gen_Divmodm_Nat_S2A2Z0 = 214,
+  efunc_gen_Divmodm_Nat_S2A1Z0 = 215,
+  efunc_gen_Divmodm_CalcDigits_B1Z0 = 216,
+  efunc_gen_Divmodm_CalcDigits_A1Z0 = 217,
+  efunc_gen_Divmodm_GetNextDigit_S2A1Z0 = 218,
+  efunc_gen_Implode_S1B1Z0 = 219,
+  efunc_gen_Mulm_Natm_Line_S2B1Z0 = 220,
+  efunc_gen_Rp_B1Z0 = 221,
+  efunc_gen_Subm_Nat_B1Z0 = 222,
+  efunc_gen_DoSubm_Natm_Nat_S1B2Z0 = 223,
+  efunc_gen_Symb_B1Z0 = 224,
+  efunc_gen_Symb_A1Z0 = 225,
+  efunc_gen_Symbm_Nat_S2A2Z0 = 226,
+  efunc_gen_Sysfunm_Xxin_B1Z0 = 227,
+  efunc_gen_Xxinm_Scan_S14B1Z0 = 228,
+  efunc_gen_Xxinm_Scan_S38B1Z0 = 229,
+  efunc_gen_Xxoutm_Wrap_B1Z0 = 230,
+  efunc_gen_Xxoutm_Scan_S4A1Z0 = 231,
+  efunc_gen_Xxoutm_Chars_S7A1Z0 = 232,
+  efunc_gen_Openm_Auto_A1Z0 = 233,
+  efunc_gen_IsDirectorySeparator_B1Z0 = 234,
 };
 
 
@@ -317,7 +345,7 @@ enum ident {
 
 #include "refalrts-platform-specific.h"
 
-#line 321 "Library.cpp"
+#line 349 "Library.cpp"
 #line 37 "Library.ref"
 namespace cookie_ns {
 
@@ -355,7 +383,7 @@ refalrts::RefalFunction *function_for_name(
 }
 
 }  // namespace cookie_ns
-#line 359 "Library.cpp"
+#line 387 "Library.cpp"
 
 static refalrts::FnResult func_u_u_Metau_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -435,7 +463,7 @@ static refalrts::FnResult func_u_u_Metau_Mu(refalrts::VM *vm, refalrts::Iter arg
   refalrts::push_stack(vm, arg_end);
   refalrts::push_stack(vm, arg_begin);
   return refalrts::cSuccess;
-#line 439 "Library.cpp"
+#line 467 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_u_u_Metau_Mu("__Meta_Mu", 0U, 0U, func_u_u_Metau_Mu);
@@ -2247,7 +2275,7 @@ static refalrts::NativeReference nat_ref_Addm_Nat("Add-Nat", COOKIE1_, COOKIE2_,
   refalrts::RefalNumber first = pFirst->number_info; \
   refalrts::RefalNumber second = pSecond->number_info;
 
-#line 2251 "Library.cpp"
+#line 2279 "Library.cpp"
 
 static refalrts::FnResult func_Addm_Digits(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -2271,7 +2299,7 @@ static refalrts::FnResult func_Addm_Digits(refalrts::VM *vm, refalrts::Iter arg_
   }
 
   return refalrts::cSuccess;
-#line 2275 "Library.cpp"
+#line 2303 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Addm_Digits("Add-Digits", COOKIE1_, COOKIE2_, func_Addm_Digits);
@@ -2306,7 +2334,7 @@ static refalrts::FnResult func_Arg(refalrts::VM *vm, refalrts::Iter arg_begin, r
   refalrts::splice_evar(arg_begin, param_begin, param_end);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 2310 "Library.cpp"
+#line 2338 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Arg("Arg", 0U, 0U, func_Arg);
@@ -2463,7 +2491,7 @@ struct ChrConv {
 };
 
 }  // unnamed namespace
-#line 2467 "Library.cpp"
+#line 2495 "Library.cpp"
 
 static refalrts::FnResult func_Chr(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -2472,7 +2500,7 @@ static refalrts::FnResult func_Chr(refalrts::VM *vm, refalrts::Iter arg_begin, r
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 396 "Library.ref"
   return convert(vm, arg_begin, arg_end, ChrConv());
-#line 2476 "Library.cpp"
+#line 2504 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Chr("Chr", 0U, 0U, func_Chr);
@@ -3306,7 +3334,7 @@ static refalrts::FnResult func_Divmodm_Digits(refalrts::VM *vm, refalrts::Iter a
   refalrts::splice_to_freelist(vm, arg_end, arg_end);
 
   return refalrts::cSuccess;
-#line 3310 "Library.cpp"
+#line 3338 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Divmodm_Digits("Divmod-Digits", COOKIE1_, COOKIE2_, func_Divmodm_Digits);
@@ -4091,7 +4119,7 @@ static refalrts::FnResult func_gen_Divmodm_Nat_S2A1B1(refalrts::VM *vm, refalrts
         refalrts::reinit_number(pfunc, 32 - shift);
         refalrts::splice_to_freelist(vm, pvalue, arg_end);
         return refalrts::cSuccess;
-#line 4095 "Library.cpp"
+#line 4123 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_gen_Divmodm_Nat_S2A1B1("Divmod-Nat$2=1:1", COOKIE1_, COOKIE2_, func_gen_Divmodm_Nat_S2A1B1);
@@ -4279,7 +4307,7 @@ static refalrts::FnResult func_Divmodm_Shl(refalrts::VM *vm, refalrts::Iter arg_
 
   refalrts::splice_to_freelist(vm, arg_begin, garbage_end);
   return refalrts::cSuccess;
-#line 4283 "Library.cpp"
+#line 4311 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Divmodm_Shl("Divmod-Shl", COOKIE1_, COOKIE2_, func_Divmodm_Shl);
@@ -5169,7 +5197,7 @@ void long_mul(
 );
 
 }  // namespace cookie_ns
-#line 5173 "Library.cpp"
+#line 5201 "Library.cpp"
 
 static refalrts::FnResult func_Divmodm_GuessDigit(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -5264,7 +5292,7 @@ static refalrts::FnResult func_Divmodm_GuessDigit(refalrts::VM *vm, refalrts::It
   refalrts::splice_to_freelist(vm, pN1, arg_end);
 
   return refalrts::cSuccess;
-#line 5268 "Library.cpp"
+#line 5296 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Divmodm_GuessDigit("Divmod-GuessDigit", COOKIE1_, COOKIE2_, func_Divmodm_GuessDigit);
@@ -5294,7 +5322,7 @@ static refalrts::FnResult func_Explode(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::splice_evar(arg_begin, content_b, content_e);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 5298 "Library.cpp"
+#line 5326 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Explode("Explode", 0U, 0U, func_Explode);
@@ -5338,7 +5366,7 @@ static refalrts::FnResult func_First(refalrts::VM *vm, refalrts::Iter arg_begin,
   refalrts::splice_to_freelist(vm, arg_end, arg_end);
 
   return refalrts::cSuccess;
-#line 5342 "Library.cpp"
+#line 5370 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_First("First", 0U, 0U, func_First);
@@ -5572,7 +5600,7 @@ bool reopen_handle(
 }
 
 }  // unnamed namespace
-#line 5576 "Library.cpp"
+#line 5604 "Library.cpp"
 
 static refalrts::FnResult func_Autoopen(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -5612,7 +5640,7 @@ static refalrts::FnResult func_Autoopen(refalrts::VM *vm, refalrts::Iter arg_beg
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 5616 "Library.cpp"
+#line 5644 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Autoopen("Autoopen", COOKIE1_, COOKIE2_, func_Autoopen);
@@ -5661,7 +5689,7 @@ static refalrts::FnResult func_Getm_Aux(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::splice_from_freelist(vm, arg_begin);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 5665 "Library.cpp"
+#line 5693 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Getm_Aux("Get-Aux", COOKIE1_, COOKIE2_, func_Getm_Aux);
@@ -6184,7 +6212,7 @@ static refalrts::FnResult func_Last(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::splice_to_freelist(vm, arg_end, arg_end);
 
   return refalrts::cSuccess;
-#line 6188 "Library.cpp"
+#line 6216 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Last("Last", 0U, 0U, func_Last);
@@ -6219,7 +6247,7 @@ static refalrts::FnResult func_Lenw(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::splice_to_freelist(vm, arg_end, arg_end);
 
   return refalrts::cSuccess;
-#line 6223 "Library.cpp"
+#line 6251 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Lenw("Lenw", 0U, 0U, func_Lenw);
@@ -6238,7 +6266,7 @@ struct LowerConv {
 };
 
 }  // unnamed namespace
-#line 6242 "Library.cpp"
+#line 6270 "Library.cpp"
 
 static refalrts::FnResult func_Lower(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -6247,7 +6275,7 @@ static refalrts::FnResult func_Lower(refalrts::VM *vm, refalrts::Iter arg_begin,
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 1159 "Library.ref"
   return convert(vm, arg_begin, arg_end, LowerConv());
-#line 6251 "Library.cpp"
+#line 6279 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Lower("Lower", 0U, 0U, func_Lower);
@@ -6678,7 +6706,7 @@ void cookie_ns::long_mul(
   res_low = (Zz << 16) + (Dd & 0xFFFFU);
   res_high = Aa + (Bb >> 16) + (Cc >> 16) + (Zz >> 16);
 }
-#line 6682 "Library.cpp"
+#line 6710 "Library.cpp"
 
 static refalrts::FnResult func_Mulm_Digits(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -6701,7 +6729,7 @@ static refalrts::FnResult func_Mulm_Digits(refalrts::VM *vm, refalrts::Iter arg_
   }
 
   return refalrts::cSuccess;
-#line 6705 "Library.cpp"
+#line 6733 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Mulm_Digits("Mul-Digits", COOKIE1_, COOKIE2_, func_Mulm_Digits);
@@ -7927,7 +7955,7 @@ static refalrts::FnResult func_Open(refalrts::VM *vm, refalrts::Iter arg_begin, 
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 7931 "Library.cpp"
+#line 7959 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Open("Open", 0U, 0U, func_Open);
@@ -7947,7 +7975,7 @@ struct OrdConv {
 };
 
 }  // unnamed namespace
-#line 7951 "Library.cpp"
+#line 7979 "Library.cpp"
 
 static refalrts::FnResult func_Ord(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -7956,7 +7984,7 @@ static refalrts::FnResult func_Ord(refalrts::VM *vm, refalrts::Iter arg_begin, r
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 1418 "Library.ref"
   return convert(vm, arg_begin, arg_end, OrdConv());
-#line 7960 "Library.cpp"
+#line 7988 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Ord("Ord", 0U, 0U, func_Ord);
@@ -8184,7 +8212,7 @@ extern refalrts::FnResult fwrite_line(
 );
 
 }  // namespace cookie_ns
-#line 8188 "Library.cpp"
+#line 8216 "Library.cpp"
 
 static refalrts::FnResult func_Putm_Aux(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -8195,7 +8223,7 @@ static refalrts::FnResult func_Putm_Aux(refalrts::VM *vm, refalrts::Iter arg_beg
   return cookie_ns::fwrite_line(
     vm, identifiers, arg_begin, arg_end, cookie_ns::cFlags_Transparent
   );
-#line 8199 "Library.cpp"
+#line 8227 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Putm_Aux("Put-Aux", COOKIE1_, COOKIE2_, func_Putm_Aux);
@@ -8304,7 +8332,7 @@ refalrts::FnResult cookie_ns::fwrite_line(
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
 }
-#line 8308 "Library.cpp"
+#line 8336 "Library.cpp"
 
 static refalrts::FnResult func_Putout(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -8378,7 +8406,7 @@ static refalrts::FnResult func_Putoutm_Aux(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 1600 "Library.ref"
   return cookie_ns::fwrite_line(vm, identifiers, arg_begin, arg_end, 0);
-#line 8382 "Library.cpp"
+#line 8410 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Putoutm_Aux("Putout-Aux", COOKIE1_, COOKIE2_, func_Putoutm_Aux);
@@ -8585,7 +8613,7 @@ extern unsigned long raw_step(refalrts::VM *vm);
 refalrts::GlobalRef<unsigned long> g_correction;
 
 }  // namespace cookie_ns
-#line 8589 "Library.cpp"
+#line 8617 "Library.cpp"
 
 static refalrts::FnResult func_Step(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -8610,7 +8638,7 @@ static refalrts::FnResult func_Step(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::splice_to_freelist(vm, pfunc, arg_end);
 
   return refalrts::cSuccess;
-#line 8614 "Library.cpp"
+#line 8642 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Step("Step", 0U, 0U, func_Step);
@@ -8632,7 +8660,7 @@ namespace cookie_ns {
 refalrts::GlobalRef<unsigned long> g_start_step;
 
 }  // namespace cookie_ns
-#line 8636 "Library.cpp"
+#line 8664 "Library.cpp"
 
 static refalrts::FnResult func_u_u_Stepm_Start(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -8647,7 +8675,7 @@ static refalrts::FnResult func_u_u_Stepm_Start(refalrts::VM *vm, refalrts::Iter 
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 8651 "Library.cpp"
+#line 8679 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_u_u_Stepm_Start("__Step-Start", 0U, 0U, func_u_u_Stepm_Start);
@@ -8668,7 +8696,7 @@ static refalrts::FnResult func_u_u_Stepm_End(refalrts::VM *vm, refalrts::Iter ar
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 8672 "Library.cpp"
+#line 8700 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_u_u_Stepm_End("__Step-End", 0U, 0U, func_u_u_Stepm_End);
@@ -8685,7 +8713,7 @@ static refalrts::FnResult func_u_u_Stepm_Drop(refalrts::VM *vm, refalrts::Iter a
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 8689 "Library.cpp"
+#line 8717 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_u_u_Stepm_Drop("__Step-Drop", 0U, 0U, func_u_u_Stepm_Drop);
@@ -8846,7 +8874,7 @@ static refalrts::FnResult func_Subm_Digits(refalrts::VM *vm, refalrts::Iter arg_
   }
 
   return refalrts::cSuccess;
-#line 8850 "Library.cpp"
+#line 8878 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Subm_Digits("Sub-Digits", COOKIE1_, COOKIE2_, func_Subm_Digits);
@@ -9589,7 +9617,7 @@ static refalrts::FnResult func_gen_DoSubm_Natm_Nat_S1B1(refalrts::VM *vm, refalr
         }
 
         return refalrts::cSuccess;
-#line 9593 "Library.cpp"
+#line 9621 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_gen_DoSubm_Natm_Nat_S1B1("DoSub-Nat-Nat$1:1", COOKIE1_, COOKIE2_, func_gen_DoSubm_Natm_Nat_S1B1);
@@ -10360,7 +10388,7 @@ static refalrts::FnResult func_Time(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::splice_evar(arg_begin, content_b, content_e);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 10364 "Library.cpp"
+#line 10392 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Time("Time", 0U, 0U, func_Time);
@@ -10464,7 +10492,7 @@ static refalrts::FnResult func_Type(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::splice_to_freelist(vm, arg_end, arg_end);
 
   return refalrts::cSuccess;
-#line 10468 "Library.cpp"
+#line 10496 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Type("Type", 0U, 0U, func_Type);
@@ -10483,7 +10511,7 @@ struct UpperConv {
 };
 
 }  // unnamed namespace
-#line 10487 "Library.cpp"
+#line 10515 "Library.cpp"
 
 static refalrts::FnResult func_Upper(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -10492,7 +10520,7 @@ static refalrts::FnResult func_Upper(refalrts::VM *vm, refalrts::Iter arg_begin,
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 2020 "Library.ref"
   return convert(vm, arg_begin, arg_end, UpperConv());
-#line 10496 "Library.cpp"
+#line 10524 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Upper("Upper", 0U, 0U, func_Upper);
@@ -15429,7 +15457,7 @@ refalrts::FnResult string_from_seq(
 }
 
 }  // unnamed namespace
-#line 15433 "Library.cpp"
+#line 15461 "Library.cpp"
 
 static refalrts::FnResult func_GetEnv(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -15462,7 +15490,7 @@ static refalrts::FnResult func_GetEnv(refalrts::VM *vm, refalrts::Iter arg_begin
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 15466 "Library.cpp"
+#line 15494 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_GetEnv("GetEnv", 0U, 0U, func_GetEnv);
@@ -15505,7 +15533,7 @@ static refalrts::FnResult func_System(refalrts::VM *vm, refalrts::Iter arg_begin
 
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 15509 "Library.cpp"
+#line 15537 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_System("System", 0U, 0U, func_System);
@@ -15541,7 +15569,7 @@ static refalrts::FnResult func_Exit(refalrts::VM *vm, refalrts::Iter arg_begin, 
 
   refalrts::set_return_code(vm, sign * static_cast<int>(pretcode->number_info));
   return refalrts::cExit;
-#line 15545 "Library.cpp"
+#line 15573 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Exit("Exit", 0U, 0U, func_Exit);
@@ -15574,7 +15602,7 @@ static refalrts::FnResult func_Close(refalrts::VM *vm, refalrts::Iter arg_begin,
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 15578 "Library.cpp"
+#line 15606 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Close("Close", 0U, 0U, func_Close);
@@ -15612,7 +15640,7 @@ static refalrts::FnResult func_ExistFile(refalrts::VM *vm, refalrts::Iter arg_be
 
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 15616 "Library.cpp"
+#line 15644 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_ExistFile("ExistFile", 0U, 0U, func_ExistFile);
@@ -15643,7 +15671,7 @@ static refalrts::FnResult func_GetCurrentDirectory(refalrts::VM *vm, refalrts::I
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
 
   return refalrts::cSuccess;
-#line 15647 "Library.cpp"
+#line 15675 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_GetCurrentDirectory("GetCurrentDirectory", 0U, 0U, func_GetCurrentDirectory);
@@ -15692,7 +15720,7 @@ static refalrts::FnResult func_RemoveFile(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::splice_to_freelist(vm, content_b, content_e);
   refalrts::link_brackets(pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 15696 "Library.cpp"
+#line 15724 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_RemoveFile("RemoveFile", 0U, 0U, func_RemoveFile);
@@ -15726,7 +15754,7 @@ static refalrts::FnResult func_Implodeu_Ext(refalrts::VM *vm, refalrts::Iter arg
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
 
   return refalrts::cSuccess;
-#line 15730 "Library.cpp"
+#line 15758 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Implodeu_Ext("Implode_Ext", 0U, 0U, func_Implodeu_Ext);
@@ -15780,7 +15808,7 @@ namespace {
 refalrts::GlobalRef<clock_t> g_time_elapsed_edge;
 
 }  // unnamed namespace
-#line 15784 "Library.cpp"
+#line 15812 "Library.cpp"
 
 static refalrts::FnResult func_TimeElapsed(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -15820,7 +15848,7 @@ static refalrts::FnResult func_TimeElapsed(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::splice_evar(arg_begin, content_b, content_e);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 15824 "Library.cpp"
+#line 15852 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_TimeElapsed("TimeElapsed", 0U, 0U, func_TimeElapsed);
@@ -16627,7 +16655,7 @@ static refalrts::FnResult func_Comparem_Digits(refalrts::VM *vm, refalrts::Iter 
   refalrts::reinit_char(arg_begin, res);
   refalrts::splice_to_freelist(vm, pFunc, arg_end);
   return refalrts::cSuccess;
-#line 16631 "Library.cpp"
+#line 16659 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Comparem_Digits("Compare-Digits", COOKIE1_, COOKIE2_, func_Comparem_Digits);
@@ -16786,7 +16814,7 @@ bool positive_digit_arg(
 }
 
 }  // unnamed namespace
-#line 16790 "Library.cpp"
+#line 16818 "Library.cpp"
 
 static refalrts::FnResult func_Random(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -16828,7 +16856,7 @@ static refalrts::FnResult func_Random(refalrts::VM *vm, refalrts::Iter arg_begin
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
 
   return refalrts::cSuccess;
-#line 16832 "Library.cpp"
+#line 16860 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Random("Random", 0U, 0U, func_Random);
@@ -16853,7 +16881,7 @@ static refalrts::FnResult func_RandomDigit(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
 
   return refalrts::cSuccess;
-#line 16857 "Library.cpp"
+#line 16885 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_RandomDigit("RandomDigit", 0U, 0U, func_RandomDigit);
@@ -16933,7 +16961,7 @@ static refalrts::FnResult func_Writem_Aux(refalrts::VM *vm, refalrts::Iter arg_b
   return cookie_ns::fwrite_line(
     vm, identifiers, arg_begin, arg_end, cookie_ns::cFlags_NoEOL
   );
-#line 16937 "Library.cpp"
+#line 16965 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Writem_Aux("Write-Aux", COOKIE1_, COOKIE2_, func_Writem_Aux);
@@ -17372,7 +17400,7 @@ static refalrts::FnResult func_SizeOf(refalrts::VM *vm, refalrts::Iter arg_begin
   refalrts::reinit_number(arg_begin, result);
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 17376 "Library.cpp"
+#line 17404 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_SizeOf("SizeOf", 0U, 0U, func_SizeOf);
@@ -17386,7 +17414,7 @@ refalrts::FnResult return_pid(
 );
 
 }  // namespace cookie_ns
-#line 17390 "Library.cpp"
+#line 17418 "Library.cpp"
 
 static refalrts::FnResult func_GetPID(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -17397,7 +17425,7 @@ static refalrts::FnResult func_GetPID(refalrts::VM *vm, refalrts::Iter arg_begin
   return cookie_ns::return_pid(
     vm, refalrts::api::get_pid(), arg_begin, arg_end
   );
-#line 17401 "Library.cpp"
+#line 17429 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_GetPID("GetPID", 0U, 0U, func_GetPID);
@@ -17419,7 +17447,7 @@ refalrts::FnResult cookie_ns::return_pid(
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
 }
-#line 17423 "Library.cpp"
+#line 17451 "Library.cpp"
 
 static refalrts::FnResult func_GetPPID(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -17430,7 +17458,7 @@ static refalrts::FnResult func_GetPPID(refalrts::VM *vm, refalrts::Iter arg_begi
   return cookie_ns::return_pid(
     vm, refalrts::api::get_ppid(), arg_begin, arg_end
   );
-#line 17434 "Library.cpp"
+#line 17462 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_GetPPID("GetPPID", 0U, 0U, func_GetPPID);
@@ -17572,7 +17600,7 @@ static refalrts::FnResult func_GetFreeHandle(refalrts::VM *vm, refalrts::Iter ar
   refalrts::reinit_number(arg_begin, free_file);
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 17576 "Library.cpp"
+#line 17604 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_GetFreeHandle("GetFreeHandle", COOKIE1_, COOKIE2_, func_GetFreeHandle);
@@ -17631,7 +17659,7 @@ static refalrts::FnResult func_StrFromMacroDigit(refalrts::VM *vm, refalrts::Ite
   refalrts::splice_to_freelist(vm, begin_splice, arg_end);
 
   return refalrts::cSuccess;
-#line 17635 "Library.cpp"
+#line 17663 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_StrFromMacroDigit("StrFromMacroDigit", COOKIE1_, COOKIE2_, func_StrFromMacroDigit);
@@ -17642,7 +17670,7 @@ namespace cookie_ns {
 bool compare(refalrts::Iter left, refalrts::Iter right);
 
 } // namespace cookie_ns
-#line 17646 "Library.cpp"
+#line 17674 "Library.cpp"
 
 static refalrts::FnResult func_SymbCompare(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -17664,7 +17692,7 @@ static refalrts::FnResult func_SymbCompare(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::splice_to_freelist(vm, arg_begin, pFunc);
   refalrts::splice_to_freelist(vm, pY, arg_end);
   return refalrts::cSuccess;
-#line 17668 "Library.cpp"
+#line 17696 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_SymbCompare("SymbCompare", 0U, 0U, func_SymbCompare);
@@ -17766,7 +17794,7 @@ bool cookie_ns::compare(refalrts::Iter left, refalrts::Iter right) {
   refalrts::reinit_char(left, order);
   return true;
 }
-#line 17770 "Library.cpp"
+#line 17798 "Library.cpp"
 
 static refalrts::FnResult func_WriteBytes(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -17814,7 +17842,7 @@ static refalrts::FnResult func_WriteBytes(refalrts::VM *vm, refalrts::Iter arg_b
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 17818 "Library.cpp"
+#line 17846 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_WriteBytes("WriteBytes", 0U, 0U, func_WriteBytes);
@@ -17880,7 +17908,7 @@ static refalrts::FnResult func_ReadBytes(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::splice_evar(arg_begin, begin, end);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 17884 "Library.cpp"
+#line 17912 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_ReadBytes("ReadBytes", 0U, 0U, func_ReadBytes);
@@ -17920,7 +17948,7 @@ static refalrts::FnResult func_FTell(refalrts::VM *vm, refalrts::Iter arg_begin,
   refalrts::reinit_number(arg_begin, static_cast<refalrts::RefalNumber>(pos));
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 17924 "Library.cpp"
+#line 17952 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_FTell("FTell", 0U, 0U, func_FTell);
@@ -17987,7 +18015,7 @@ static refalrts::FnResult func_FSeek(refalrts::VM *vm, refalrts::Iter arg_begin,
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 17991 "Library.cpp"
+#line 18019 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_FSeek("FSeek", 0U, 0U, func_FSeek);
@@ -18041,7 +18069,7 @@ static refalrts::FnResult func_RenameFile(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::reinit_ident(arg_begin, i_result);
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
   return refalrts::cSuccess;
-#line 18045 "Library.cpp"
+#line 18073 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_RenameFile("RenameFile", 0U, 0U, func_RenameFile);
@@ -18093,7 +18121,7 @@ static refalrts::FnResult func_Modulem_Load(refalrts::VM *vm, refalrts::Iter arg
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 18097 "Library.cpp"
+#line 18125 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Modulem_Load("Module-Load", 0U, 0U, func_Modulem_Load);
@@ -18133,7 +18161,7 @@ static refalrts::FnResult func_Modulem_Unload(refalrts::VM *vm, refalrts::Iter a
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 18137 "Library.cpp"
+#line 18165 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Modulem_Unload("Module-Unload", 0U, 0U, func_Modulem_Unload);
@@ -18173,7 +18201,7 @@ refalrts::RefalFunction *function_for_module(
 );
 
 }  // namespace cookie_ns
-#line 18177 "Library.cpp"
+#line 18205 "Library.cpp"
 
 static refalrts::FnResult func_Modulem_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -18244,7 +18272,7 @@ static refalrts::FnResult func_Modulem_Mu(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::push_stack(vm, arg_end);
   refalrts::push_stack(vm, arg_begin);
   return refalrts::cSuccess;
-#line 18248 "Library.cpp"
+#line 18276 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Modulem_Mu("Module-Mu", 0U, 0U, func_Modulem_Mu);
@@ -18351,7 +18379,7 @@ refalrts::RefalFunction *cookie_ns::function_for_module(
 
   return result;
 }
-#line 18355 "Library.cpp"
+#line 18383 "Library.cpp"
 #line 4015 "Library.ref"
 namespace cookie_ns {
 
@@ -18362,7 +18390,7 @@ refalrts::FnResult find_function(
 );
 
 }  // namespace cookie_ns
-#line 18366 "Library.cpp"
+#line 18394 "Library.cpp"
 
 static refalrts::FnResult func_Modulem_LookupFunction(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -18371,7 +18399,7 @@ static refalrts::FnResult func_Modulem_LookupFunction(refalrts::VM *vm, refalrts
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 4028 "Library.ref"
   return cookie_ns::find_function(vm, identifiers, arg_begin, arg_end, false);
-#line 18375 "Library.cpp"
+#line 18403 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Modulem_LookupFunction("Module-LookupFunction", 0U, 0U, func_Modulem_LookupFunction);
@@ -18442,7 +18470,7 @@ refalrts::FnResult cookie_ns::find_function(
 
   return refalrts::cSuccess;
 }
-#line 18446 "Library.cpp"
+#line 18474 "Library.cpp"
 
 static refalrts::FnResult func_Modulem_FunctionPtr(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -18451,7 +18479,7 @@ static refalrts::FnResult func_Modulem_FunctionPtr(refalrts::VM *vm, refalrts::I
   refalrts::load_constants(arg_begin, &functions, &identifiers);
 #line 4107 "Library.ref"
   return cookie_ns::find_function(vm, identifiers, arg_begin, arg_end, true);
-#line 18455 "Library.cpp"
+#line 18483 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Modulem_FunctionPtr("Module-FunctionPtr", 0U, 0U, func_Modulem_FunctionPtr);
@@ -18482,7 +18510,7 @@ static refalrts::FnResult func_Platform(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
 
   return refalrts::cSuccess;
-#line 18486 "Library.cpp"
+#line 18514 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_Platform("Platform", 0U, 0U, func_Platform);
@@ -18508,7 +18536,7 @@ static refalrts::FnResult func_DirectorySeparators(refalrts::VM *vm, refalrts::I
   refalrts::splice_evar(arg_begin, content_b, content_e);
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 18512 "Library.cpp"
+#line 18540 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_DirectorySeparators("DirectorySeparators", COOKIE1_, COOKIE2_, func_DirectorySeparators);
@@ -18721,7 +18749,7 @@ static refalrts::FnResult func_PathSeparator(refalrts::VM *vm, refalrts::Iter ar
   refalrts::splice_to_freelist(vm, pfunc_name, arg_end);
 
   return refalrts::cSuccess;
-#line 18725 "Library.cpp"
+#line 18753 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_PathSeparator("PathSeparator", 0U, 0U, func_PathSeparator);
@@ -18751,7 +18779,7 @@ static refalrts::FnResult func_INIT(refalrts::VM *vm, refalrts::Iter arg_begin, 
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 18755 "Library.cpp"
+#line 18783 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_INIT("INIT", COOKIE1_, COOKIE2_, func_INIT);
@@ -18783,7 +18811,7 @@ static refalrts::FnResult func_FINAL(refalrts::VM *vm, refalrts::Iter arg_begin,
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 18787 "Library.cpp"
+#line 18815 "Library.cpp"
 }
 
 static refalrts::NativeReference nat_ref_FINAL("FINAL", COOKIE1_, COOKIE2_, func_FINAL);

@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_3339448756_1492215491
-#define COOKIE1_ 3339448756U
-#define COOKIE2_ 1492215491U
+#define cookie_ns cookie_ns_3254002280_747639734
+#define COOKIE1_ 3254002280U
+#define COOKIE2_ 747639734U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
