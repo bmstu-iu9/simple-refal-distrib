@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_3254002280_747639734
-#define COOKIE1_ 3254002280U
-#define COOKIE2_ 747639734U
+#define cookie_ns cookie_ns_1408079115_2540331707
+#define COOKIE1_ 1408079115U
+#define COOKIE2_ 2540331707U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
@@ -28,60 +28,66 @@ enum efunc {
   efunc_Exit = 17,
   efunc_Map = 18,
   efunc_gen_MakeProject_S2L1 = 19,
-  efunc_PrintSrcPos = 20,
+  efunc_gen_PrintSrcPos_D2 = 20,
   efunc_gen_RunRLCompiler_S2L2 = 21,
   efunc_gen_RunRLCompiler_S2B1 = 22,
   efunc_System = 23,
   efunc_gen_RunRLCompiler_S2L1 = 24,
   efunc_gen_RunRLCompiler_S2L3 = 25,
-  efunc_MakeOptionalFlag = 26,
+  efunc_gen_MakeOptionalFlag_B1Z1 = 26,
   efunc_gen_RunRLCompiler_S2A15 = 27,
   efunc_Configm_GetCppCompilerLibSuf = 28,
-  efunc_Configm_GetCppCompilerExeSuf = 29,
-  efunc_gen_RunRLCompiler_S2A14 = 30,
-  efunc_MakeBoolFlag = 31,
-  efunc_Configm_GetOverwriteExistRasls = 32,
-  efunc_gen_RunRLCompiler_S2A13 = 33,
-  efunc_Configm_GetTempDir = 34,
-  efunc_gen_RunRLCompiler_S2A12 = 35,
-  efunc_Configm_GetKeepRasls = 36,
-  efunc_gen_RunRLCompiler_S2A11 = 37,
-  efunc_Configm_GetPrelude = 38,
-  efunc_gen_RunRLCompiler_S2A10 = 39,
-  efunc_Configm_GetIncorporateds = 40,
-  efunc_gen_RunRLCompiler_S2A9 = 41,
-  efunc_Configm_GetReferences = 42,
-  efunc_gen_RunRLCompiler_S2A8 = 43,
-  efunc_GetPrefix = 44,
-  efunc_gen_RunRLCompiler_S2A7 = 45,
-  efunc_MakeSearchFolderFlags = 46,
-  efunc_gen_RunRLCompiler_S2A6 = 47,
-  efunc_MakeTargetFileFlag = 48,
-  efunc_gen_RunRLCompiler_S2A5 = 49,
-  efunc_MakeTargetModeFlag = 50,
-  efunc_gen_RunRLCompiler_S2A4 = 51,
-  efunc_Configm_GetCppCompilerLib = 52,
-  efunc_gen_RunRLCompiler_S2A3 = 53,
-  efunc_gen_RunRLCompiler_S2A2 = 54,
-  efunc_Configm_GetCppCompilerExe = 55,
-  efunc_gen_RunRLCompiler_S1L1 = 56,
-  efunc_Configm_GetRLCompiler = 57,
-  efunc_gen_RunRLCompiler_S2A1 = 58,
-  efunc_gen_MakeOptionalFlag_B1 = 59,
-  efunc_gen_MakeTargetModeFlag_B1 = 60,
-  efunc_Configm_GetTargetMode = 61,
-  efunc_gen_MakeTargetFileFlag_B1 = 62,
-  efunc_Configm_GetTargetFileName = 63,
-  efunc_gen_MakeSearchFolderFlags_L1 = 64,
-  efunc_Configm_GetFolders = 65,
-  efunc_gen_GetPrefix_B1 = 66,
-  efunc_Configm_GetPrefix = 67,
-  efunc_Mu = 68,
-  efunc_Up = 69,
-  efunc_Evm_met = 70,
-  efunc_Residue = 71,
-  efunc_u_u_Metau_Residue = 72,
-  efunc_Go = 73,
+  efunc_gen_MakeOptionalFlag_B1Z2 = 29,
+  efunc_Configm_GetCppCompilerExeSuf = 30,
+  efunc_gen_RunRLCompiler_S2A14 = 31,
+  efunc_MakeBoolFlag = 32,
+  efunc_Configm_GetOverwriteExistRasls = 33,
+  efunc_gen_RunRLCompiler_S2A13 = 34,
+  efunc_Configm_GetTempDir = 35,
+  efunc_gen_RunRLCompiler_S2A12 = 36,
+  efunc_Configm_GetKeepRasls = 37,
+  efunc_gen_RunRLCompiler_S2A11 = 38,
+  efunc_Configm_GetPrelude = 39,
+  efunc_gen_RunRLCompiler_S2A10 = 40,
+  efunc_Configm_GetIncorporateds = 41,
+  efunc_gen_RunRLCompiler_S2A9 = 42,
+  efunc_Configm_GetReferences = 43,
+  efunc_gen_RunRLCompiler_S2A8 = 44,
+  efunc_gen_GetPrefix_B1 = 45,
+  efunc_Configm_GetPrefix = 46,
+  efunc_gen_RunRLCompiler_S2A7 = 47,
+  efunc_gen_MakeSearchFolderFlags_L1 = 48,
+  efunc_Configm_GetFolders = 49,
+  efunc_gen_RunRLCompiler_S2A6 = 50,
+  efunc_gen_MakeTargetFileFlag_B1 = 51,
+  efunc_Configm_GetTargetFileName = 52,
+  efunc_gen_RunRLCompiler_S2A5 = 53,
+  efunc_gen_MakeTargetModeFlag_B1 = 54,
+  efunc_Configm_GetTargetMode = 55,
+  efunc_gen_RunRLCompiler_S2A4 = 56,
+  efunc_gen_MakeOptionalFlag_B1Z3 = 57,
+  efunc_Configm_GetCppCompilerLib = 58,
+  efunc_gen_RunRLCompiler_S2A3 = 59,
+  efunc_gen_RunRLCompiler_S2A2 = 60,
+  efunc_gen_MakeOptionalFlag_B1Z4 = 61,
+  efunc_Configm_GetCppCompilerExe = 62,
+  efunc_gen_RunRLCompiler_S1L1 = 63,
+  efunc_Configm_GetRLCompiler = 64,
+  efunc_gen_RunRLCompiler_S2A1 = 65,
+  efunc_gen_MakeOptionalFlag_B1 = 66,
+  efunc_Mu = 67,
+  efunc_Up = 68,
+  efunc_Evm_met = 69,
+  efunc_Residue = 70,
+  efunc_u_u_Metau_Residue = 71,
+  efunc_Go = 72,
+  efunc_PrintSrcPos = 73,
+  efunc_MakeOptionalFlag = 74,
+  efunc_MakeTargetModeFlag = 75,
+  efunc_MakeTargetFileFlag = 76,
+  efunc_MakeSearchFolderFlags = 77,
+  efunc_GetPrefix = 78,
+  efunc_gen_MakeOptionalFlag_B1Z0 = 79,
 };
 
 
@@ -159,7 +165,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
@@ -175,9 +181,9 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 9 elems
+  refalrts::Iter context[9];
+  refalrts::zeros( context, 9 );
   // </0 & Residue/4 e.Arg#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -189,28 +195,23 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 </8 & __Step-Drop/9 >/10 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
-  refalrts::alloc_open_call(vm, context[8]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_u_u_Stepm_Drop]);
-  refalrts::alloc_close_call(vm, context[10]);
-  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::alloc_close_call(vm, context[8]);
   refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
   refalrts::reinit_name(context[1], functions[efunc_d_table]);
-  refalrts::push_stack( vm, context[11] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[10] );
   refalrts::push_stack( vm, context[8] );
+  refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[10] );
+  res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -368,7 +369,7 @@ static refalrts::FnResult func_Main(refalrts::VM *vm, refalrts::Iter arg_begin, 
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[8], context[1] );
   refalrts::splice_to_freelist_open( vm, context[7], res );
   return refalrts::cSuccess;
@@ -456,7 +457,7 @@ static refalrts::FnResult func_gen_MakeProject_S1A2(refalrts::VM *vm, refalrts::
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[13], context[13] );
+  res = refalrts::splice_elem( res, context[13] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[11], context[12] );
   refalrts::use( res );
@@ -508,7 +509,7 @@ static refalrts::FnResult func_gen_MakeProject_S1A1(refalrts::VM *vm, refalrts::
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[8], context[13] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_elem( res, context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -566,9 +567,9 @@ static refalrts::FnResult func_gen_MakeProject_S2L1(refalrts::VM *vm, refalrts::
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[5], context[6] );
   res = refalrts::splice_evar( res, context[16], context[18] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[12], context[15] );
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[10], context[11] );
   refalrts::use( res );
   return refalrts::cSuccess;
@@ -625,7 +626,7 @@ static refalrts::FnResult func_MakeProject(refalrts::VM *vm, refalrts::Iter arg_
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[13], context[13] );
+    res = refalrts::splice_elem( res, context[13] );
     res = refalrts::splice_evar( res, context[5], context[1] );
     res = refalrts::splice_evar( res, context[10], context[12] );
     refalrts::use( res );
@@ -730,7 +731,7 @@ static refalrts::FnResult func_PrintSrcPos(refalrts::VM *vm, refalrts::Iter arg_
   refalrts::use(trash_prev);
   refalrts::Iter res = context[6];
   res = refalrts::splice_evar( res, context[0], context[4] );
-  res = refalrts::splice_evar( res, context[5], context[5] );
+  res = refalrts::splice_elem( res, context[5] );
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::splice_to_freelist_open( vm, trash_prev, res );
   return refalrts::cSuccess;
@@ -768,7 +769,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S1L1(refalrts::VM *vm, refalrts
     return refalrts::cRecognitionImpossible;
   // closed e.new#2 as range 5
   do {
-    // </0 & RunRLCompiler$1\1/4 (/7 # Error/9 t.SrcPos#2/12 e.Message#2/10 )/8 >/1
+    // </0 & RunRLCompiler$1\1/4 (/7 # Error/9 t.new#3/12 e.new#4/10 )/8 >/1
     context[10] = context[5];
     context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_Error], context[9] ) )
@@ -776,30 +777,111 @@ static refalrts::FnResult func_gen_RunRLCompiler_S1L1(refalrts::VM *vm, refalrts
     context[13] = refalrts::tvar_left( context[12], context[10], context[11] );
     if( ! context[13] )
       continue;
-    // closed e.Message#2 as range 10
+    // closed e.new#4 as range 10
+    do {
+      // </0 & RunRLCompiler$1\1/4 (/7 # Error/9 # CMD-LINE/12 e.Message#2/14 )/8 >/1
+      context[14] = context[10];
+      context[15] = context[11];
+      if( ! refalrts::ident_term( identifiers[ident_CMDm_LINE], context[12] ) )
+        continue;
+      // closed e.Message#2 as range 14
+      //DEBUG: e.Message#2: 14
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: 'c'/7 HalfReuse: 'o'/9 HalfReuse: 'm'/12 }"ma"/16 Tile{ HalfReuse: 'n'/8 }"d line: "/18 Tile{ AsIs: e.Message#2/14 } Tile{ AsIs: >/1 ]] }
+      refalrts::alloc_chars(vm, context[16], context[17], "ma", 2);
+      refalrts::alloc_chars(vm, context[18], context[19], "d line: ", 8);
+      refalrts::update_name(context[4], functions[efunc_Prout]);
+      refalrts::reinit_char(context[7], 'c');
+      refalrts::reinit_char(context[9], 'o');
+      refalrts::reinit_char(context[12], 'm');
+      refalrts::reinit_char(context[8], 'n');
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[0] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      res = refalrts::splice_evar( res, context[14], context[15] );
+      res = refalrts::splice_evar( res, context[18], context[19] );
+      res = refalrts::splice_elem( res, context[8] );
+      res = refalrts::splice_evar( res, context[16], context[17] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    do {
+      // </0 & RunRLCompiler$1\1/4 (/7 # Error/9 (/12 s.LineNum#1/18 e.0#0/16 )/13 e.Message#2/14 )/8 >/1
+      context[14] = context[10];
+      context[15] = context[11];
+      context[16] = 0;
+      context[17] = 0;
+      if( ! refalrts::brackets_term( context[16], context[17], context[12] ) )
+        continue;
+      // closed e.Message#2 as range 14
+      if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
+        continue;
+      // closed e.0#0 as range 16
+      //DEBUG: e.Message#2: 14
+      //DEBUG: s.LineNum#1: 18
+      //DEBUG: e.0#0: 16
+
+      refalrts::reset_allocator(vm);
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 } Tile{ AsIs: e.0#0/16 } Tile{ HalfReuse: ':'/7 HalfReuse: </9 HalfReuse: & Symb/12 AsIs: s.LineNum#1/18 } Tile{ HalfReuse: >/13 } ':'/19 Tile{ HalfReuse: ' '/8 } Tile{ AsIs: e.Message#2/14 } Tile{ AsIs: >/1 ]] }
+      refalrts::alloc_char(vm, context[19], ':');
+      refalrts::update_name(context[4], functions[efunc_Prout]);
+      refalrts::reinit_char(context[7], ':');
+      refalrts::reinit_open_call(context[9]);
+      refalrts::reinit_name(context[12], functions[efunc_Symb]);
+      refalrts::reinit_close_call(context[13]);
+      refalrts::reinit_char(context[8], ' ');
+      refalrts::push_stack( vm, context[1] );
+      refalrts::push_stack( vm, context[0] );
+      refalrts::push_stack( vm, context[13] );
+      refalrts::push_stack( vm, context[9] );
+      refalrts::Iter trash_prev = arg_begin->prev;
+      refalrts::use(trash_prev);
+      refalrts::Iter res = context[1];
+      res = refalrts::splice_evar( res, context[14], context[15] );
+      res = refalrts::splice_elem( res, context[8] );
+      res = refalrts::splice_elem( res, context[19] );
+      res = refalrts::splice_elem( res, context[13] );
+      res = refalrts::splice_evar( res, context[7], context[18] );
+      res = refalrts::splice_evar( res, context[16], context[17] );
+      refalrts::use( res );
+      return refalrts::cSuccess;
+    } while ( 0 );
+    refalrts::stop_sentence(vm);
+
+    // </0 & RunRLCompiler$1\1/4 (/7 # Error/9 t.SrcPos#2/12 e.Message#2/14 )/8 >/1
+    context[14] = context[10];
+    context[15] = context[11];
+    // closed e.Message#2 as range 14
     //DEBUG: t.SrcPos#2: 12
-    //DEBUG: e.Message#2: 10
+    //DEBUG: e.Message#2: 14
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: </7 HalfReuse: & PrintSrcPos/9 AsIs: t.SrcPos#2/12 } >/14 Tile{ HalfReuse: ':'/8 } ' '/15 Tile{ AsIs: e.Message#2/10 } Tile{ AsIs: >/1 ]] }
-    refalrts::alloc_close_call(vm, context[14]);
-    refalrts::alloc_char(vm, context[15], ' ');
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 HalfReuse: </7 HalfReuse: & PrintSrcPos*2/9 AsIs: t.SrcPos#2/12 } >/16 Tile{ HalfReuse: ':'/8 } ' '/17 Tile{ AsIs: e.Message#2/14 } Tile{ AsIs: >/1 ]] }
+    refalrts::alloc_close_call(vm, context[16]);
+    refalrts::alloc_char(vm, context[17], ' ');
     refalrts::update_name(context[4], functions[efunc_Prout]);
     refalrts::reinit_open_call(context[7]);
-    refalrts::reinit_name(context[9], functions[efunc_PrintSrcPos]);
+    refalrts::reinit_name(context[9], functions[efunc_gen_PrintSrcPos_D2]);
     refalrts::reinit_char(context[8], ':');
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
-    refalrts::push_stack( vm, context[14] );
+    refalrts::push_stack( vm, context[16] );
     refalrts::push_stack( vm, context[7] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
-    res = refalrts::splice_evar( res, context[10], context[11] );
-    res = refalrts::splice_evar( res, context[15], context[15] );
-    res = refalrts::splice_evar( res, context[8], context[8] );
-    res = refalrts::splice_evar( res, context[14], context[14] );
+    res = refalrts::splice_evar( res, context[14], context[15] );
+    res = refalrts::splice_elem( res, context[17] );
+    res = refalrts::splice_elem( res, context[8] );
+    res = refalrts::splice_elem( res, context[16] );
     refalrts::use( res );
     return refalrts::cSuccess;
   } while ( 0 );
@@ -1019,7 +1101,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2L1(refalrts::VM *vm, refalrts
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[0], context[8] );
   res = refalrts::splice_evar( res, context[11], context[12] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_elem( res, context[1] );
   res = refalrts::splice_evar( res, context[9], context[10] );
   refalrts::use( res );
   return refalrts::cSuccess;
@@ -1069,7 +1151,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2L2(refalrts::VM *vm, refalrts
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[0], context[8] );
   res = refalrts::splice_evar( res, context[11], context[12] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_elem( res, context[1] );
   res = refalrts::splice_evar( res, context[9], context[10] );
   refalrts::use( res );
   return refalrts::cSuccess;
@@ -1414,13 +1496,13 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A15(refalrts::VM *vm, refalrt
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[76], context[76] );
+  res = refalrts::splice_elem( res, context[76] );
   res = refalrts::splice_evar( res, context[60], context[64] );
-  res = refalrts::splice_evar( res, context[75], context[75] );
+  res = refalrts::splice_elem( res, context[75] );
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[57], context[58] );
   res = refalrts::splice_evar( res, context[53], context[54] );
-  res = refalrts::splice_evar( res, context[74], context[74] );
+  res = refalrts::splice_elem( res, context[74] );
   res = refalrts::splice_evar( res, context[49], context[50] );
   res = refalrts::splice_evar( res, context[72], context[73] );
   res = refalrts::splice_evar( res, context[47], context[51] );
@@ -1434,7 +1516,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A15(refalrts::VM *vm, refalrt
   res = refalrts::splice_evar( res, context[12], context[15] );
   res = refalrts::splice_evar( res, context[56], context[59] );
   res = refalrts::splice_evar( res, context[28], context[35] );
-  res = refalrts::splice_evar( res, context[65], context[65] );
+  res = refalrts::splice_elem( res, context[65] );
   res = refalrts::splice_evar( res, context[52], context[55] );
   res = refalrts::splice_evar( res, context[16], context[19] );
   res = refalrts::splice_evar( res, context[20], context[23] );
@@ -1445,7 +1527,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A15(refalrts::VM *vm, refalrt
   res = refalrts::splice_evar( res, context[13], context[14] );
   res = refalrts::splice_evar( res, context[9], context[10] );
   res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[44], context[44] );
+  res = refalrts::splice_elem( res, context[44] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -1589,13 +1671,14 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A14(refalrts::VM *vm, refalrt
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=15/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 AsIs: e.SearchFolderFlags#7/25 AsIs: )/28 AsIs: (/31 AsIs: e.Prefix#8/29 AsIs: )/32 AsIs: (/35 AsIs: e.Prelude#11/33 AsIs: )/36 AsIs: (/39 AsIs: e.References#9/37 AsIs: )/40 AsIs: (/43 AsIs: e.IncorporatedLibs#10/41 AsIs: )/44 AsIs: (/47 AsIs: e.KeepRasls#12/45 AsIs: )/48 AsIs: (/51 AsIs: e.TempDir#13/49 AsIs: )/52 AsIs: (/55 AsIs: e.OverwriteExistRasls#14/53 AsIs: )/56 AsIs: (/59 } Tile{ AsIs: e.CppCompilerExeSuf#15/2 } )/63 (/64 Tile{ AsIs: e.Units#1/57 } )/65 </66 & MakeOptionalFlag/67 Tile{ HalfReuse: & Config-GetCppCompilerLibSuf/60 AsIs: t.Config#1/61 }"cpp-command-lib-suf"/68 >/70 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=15/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 AsIs: e.SearchFolderFlags#7/25 AsIs: )/28 AsIs: (/31 AsIs: e.Prefix#8/29 AsIs: )/32 AsIs: (/35 AsIs: e.Prelude#11/33 AsIs: )/36 AsIs: (/39 AsIs: e.References#9/37 AsIs: )/40 AsIs: (/43 AsIs: e.IncorporatedLibs#10/41 AsIs: )/44 AsIs: (/47 AsIs: e.KeepRasls#12/45 AsIs: )/48 AsIs: (/51 AsIs: e.TempDir#13/49 AsIs: )/52 AsIs: (/55 AsIs: e.OverwriteExistRasls#14/53 AsIs: )/56 AsIs: (/59 } Tile{ AsIs: e.CppCompilerExeSuf#15/2 } )/63 (/64 Tile{ AsIs: e.Units#1/57 } )/65 </66 & MakeOptionalFlag:1@1/67 </68 Tile{ HalfReuse: & Config-GetCppCompilerLibSuf/60 AsIs: t.Config#1/61 } >/69 >/70 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[63]);
   refalrts::alloc_open_bracket(vm, context[64]);
   refalrts::alloc_close_bracket(vm, context[65]);
   refalrts::alloc_open_call(vm, context[66]);
-  refalrts::alloc_name(vm, context[67], functions[efunc_MakeOptionalFlag]);
-  refalrts::alloc_chars(vm, context[68], context[69], "cpp-command-lib-suf", 19);
+  refalrts::alloc_name(vm, context[67], functions[efunc_gen_MakeOptionalFlag_B1Z1]);
+  refalrts::alloc_open_call(vm, context[68]);
+  refalrts::alloc_close_call(vm, context[69]);
   refalrts::alloc_close_call(vm, context[70]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A15]);
   refalrts::reinit_name(context[60], functions[efunc_Configm_GetCppCompilerLibSuf]);
@@ -1603,6 +1686,8 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A14(refalrts::VM *vm, refalrt
   refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[70] );
   refalrts::push_stack( vm, context[66] );
+  refalrts::push_stack( vm, context[69] );
+  refalrts::push_stack( vm, context[68] );
   refalrts::link_brackets( context[64], context[65] );
   refalrts::link_brackets( context[59], context[63] );
   refalrts::link_brackets( context[55], context[56] );
@@ -1621,9 +1706,9 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A14(refalrts::VM *vm, refalrt
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[68], context[70] );
+  res = refalrts::splice_evar( res, context[69], context[70] );
   res = refalrts::splice_evar( res, context[60], context[62] );
-  res = refalrts::splice_evar( res, context[65], context[67] );
+  res = refalrts::splice_evar( res, context[65], context[68] );
   res = refalrts::splice_evar( res, context[57], context[58] );
   res = refalrts::splice_evar( res, context[63], context[64] );
   res = refalrts::splice_evar( res, context[2], context[3] );
@@ -1762,20 +1847,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A13(refalrts::VM *vm, refalrt
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=14/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 AsIs: e.SearchFolderFlags#7/25 AsIs: )/28 AsIs: (/31 AsIs: e.Prefix#8/29 AsIs: )/32 AsIs: (/35 AsIs: e.Prelude#11/33 AsIs: )/36 AsIs: (/39 AsIs: e.References#9/37 AsIs: )/40 AsIs: (/43 AsIs: e.IncorporatedLibs#10/41 AsIs: )/44 AsIs: (/47 AsIs: e.KeepRasls#12/45 AsIs: )/48 AsIs: (/51 AsIs: e.TempDir#13/49 AsIs: )/52 AsIs: (/55 } Tile{ AsIs: e.OverwriteExistRasls#14/2 } )/59 (/60 Tile{ AsIs: e.Units#1/53 } Tile{ AsIs: )/56 AsIs: t.Config#1/57 } </61 & MakeOptionalFlag/62 & Config-GetCppCompilerExeSuf/63 t.Config#1/57/64"cpp-command-exe-suf"/66 >/68 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=14/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 AsIs: e.SearchFolderFlags#7/25 AsIs: )/28 AsIs: (/31 AsIs: e.Prefix#8/29 AsIs: )/32 AsIs: (/35 AsIs: e.Prelude#11/33 AsIs: )/36 AsIs: (/39 AsIs: e.References#9/37 AsIs: )/40 AsIs: (/43 AsIs: e.IncorporatedLibs#10/41 AsIs: )/44 AsIs: (/47 AsIs: e.KeepRasls#12/45 AsIs: )/48 AsIs: (/51 AsIs: e.TempDir#13/49 AsIs: )/52 AsIs: (/55 } Tile{ AsIs: e.OverwriteExistRasls#14/2 } )/59 (/60 Tile{ AsIs: e.Units#1/53 } Tile{ AsIs: )/56 AsIs: t.Config#1/57 } </61 & MakeOptionalFlag:1@2/62 </63 & Config-GetCppCompilerExeSuf/64 t.Config#1/57/65 >/67 >/68 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[59]);
   refalrts::alloc_open_bracket(vm, context[60]);
   refalrts::alloc_open_call(vm, context[61]);
-  refalrts::alloc_name(vm, context[62], functions[efunc_MakeOptionalFlag]);
-  refalrts::alloc_name(vm, context[63], functions[efunc_Configm_GetCppCompilerExeSuf]);
-  refalrts::copy_evar(vm, context[64], context[65], context[57], context[58]);
-  refalrts::alloc_chars(vm, context[66], context[67], "cpp-command-exe-suf", 19);
+  refalrts::alloc_name(vm, context[62], functions[efunc_gen_MakeOptionalFlag_B1Z2]);
+  refalrts::alloc_open_call(vm, context[63]);
+  refalrts::alloc_name(vm, context[64], functions[efunc_Configm_GetCppCompilerExeSuf]);
+  refalrts::copy_evar(vm, context[65], context[66], context[57], context[58]);
+  refalrts::alloc_close_call(vm, context[67]);
   refalrts::alloc_close_call(vm, context[68]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A14]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[68] );
   refalrts::push_stack( vm, context[61] );
+  refalrts::push_stack( vm, context[67] );
+  refalrts::push_stack( vm, context[63] );
   refalrts::link_brackets( context[60], context[56] );
   refalrts::link_brackets( context[55], context[59] );
   refalrts::link_brackets( context[51], context[52] );
@@ -2648,9 +2736,9 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A6(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 38 elems
-  refalrts::Iter context[38];
-  refalrts::zeros( context, 38 );
+  // issue here memory for vars with 41 elems
+  refalrts::Iter context[41];
+  refalrts::zeros( context, 41 );
   // </0 & RunRLCompiler$2=6/4 (/7 e.RLCompiler#2/5 )/8 (/11 e.TargetModeFlag#5/9 )/12 (/15 e.CppCompilerExe#3/13 )/16 (/19 e.CppCompilerLib#4/17 )/20 (/23 e.TargetFileFlag#6/21 )/24 (/27 e.Units#1/25 )/28 t.Config#1/29 e.SearchFolderFlags#7/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2714,18 +2802,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A6(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=7/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 } Tile{ AsIs: e.SearchFolderFlags#7/2 } )/31 (/32 Tile{ AsIs: e.Units#1/25 } Tile{ AsIs: )/28 AsIs: t.Config#1/29 } </33 & GetPrefix/34 t.Config#1/29/35 >/37 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=7/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 AsIs: e.TargetFileFlag#6/21 AsIs: )/24 AsIs: (/27 } Tile{ AsIs: e.SearchFolderFlags#7/2 } )/31 (/32 Tile{ AsIs: e.Units#1/25 } Tile{ AsIs: )/28 AsIs: t.Config#1/29 } </33 & GetPrefix:1/34 </35 & Config-GetPrefix/36 t.Config#1/29/37 >/39 >/40 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[31]);
   refalrts::alloc_open_bracket(vm, context[32]);
   refalrts::alloc_open_call(vm, context[33]);
-  refalrts::alloc_name(vm, context[34], functions[efunc_GetPrefix]);
-  refalrts::copy_evar(vm, context[35], context[36], context[29], context[30]);
-  refalrts::alloc_close_call(vm, context[37]);
+  refalrts::alloc_name(vm, context[34], functions[efunc_gen_GetPrefix_B1]);
+  refalrts::alloc_open_call(vm, context[35]);
+  refalrts::alloc_name(vm, context[36], functions[efunc_Configm_GetPrefix]);
+  refalrts::copy_evar(vm, context[37], context[38], context[29], context[30]);
+  refalrts::alloc_close_call(vm, context[39]);
+  refalrts::alloc_close_call(vm, context[40]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A7]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[37] );
+  refalrts::push_stack( vm, context[40] );
   refalrts::push_stack( vm, context[33] );
+  refalrts::push_stack( vm, context[39] );
+  refalrts::push_stack( vm, context[35] );
   refalrts::link_brackets( context[32], context[28] );
   refalrts::link_brackets( context[27], context[31] );
   refalrts::link_brackets( context[23], context[24] );
@@ -2736,7 +2829,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A6(refalrts::VM *vm, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[33], context[37] );
+  res = refalrts::splice_evar( res, context[33], context[40] );
   res = refalrts::splice_evar( res, context[28], context[30] );
   res = refalrts::splice_evar( res, context[25], context[26] );
   res = refalrts::splice_evar( res, context[31], context[32] );
@@ -2754,9 +2847,9 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A5(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 34 elems
-  refalrts::Iter context[34];
-  refalrts::zeros( context, 34 );
+  // issue here memory for vars with 38 elems
+  refalrts::Iter context[38];
+  refalrts::zeros( context, 38 );
   // </0 & RunRLCompiler$2=5/4 (/7 e.RLCompiler#2/5 )/8 (/11 e.TargetModeFlag#5/9 )/12 (/15 e.CppCompilerExe#3/13 )/16 (/19 e.CppCompilerLib#4/17 )/20 (/23 e.Units#1/21 )/24 t.Config#1/25 e.TargetFileFlag#6/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2812,18 +2905,24 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A5(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=6/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 } Tile{ AsIs: e.TargetFileFlag#6/2 } )/27 (/28 Tile{ AsIs: e.Units#1/21 } Tile{ AsIs: )/24 AsIs: t.Config#1/25 } </29 & MakeSearchFolderFlags/30 t.Config#1/25/31 >/33 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=6/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.TargetModeFlag#5/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerExe#3/13 AsIs: )/16 AsIs: (/19 AsIs: e.CppCompilerLib#4/17 AsIs: )/20 AsIs: (/23 } Tile{ AsIs: e.TargetFileFlag#6/2 } )/27 (/28 Tile{ AsIs: e.Units#1/21 } Tile{ AsIs: )/24 AsIs: t.Config#1/25 } </29 & Map/30 & MakeSearchFolderFlags\1/31 </32 & Config-GetFolders/33 t.Config#1/25/34 >/36 >/37 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[27]);
   refalrts::alloc_open_bracket(vm, context[28]);
   refalrts::alloc_open_call(vm, context[29]);
-  refalrts::alloc_name(vm, context[30], functions[efunc_MakeSearchFolderFlags]);
-  refalrts::copy_evar(vm, context[31], context[32], context[25], context[26]);
-  refalrts::alloc_close_call(vm, context[33]);
+  refalrts::alloc_name(vm, context[30], functions[efunc_Map]);
+  refalrts::alloc_name(vm, context[31], functions[efunc_gen_MakeSearchFolderFlags_L1]);
+  refalrts::alloc_open_call(vm, context[32]);
+  refalrts::alloc_name(vm, context[33], functions[efunc_Configm_GetFolders]);
+  refalrts::copy_evar(vm, context[34], context[35], context[25], context[26]);
+  refalrts::alloc_close_call(vm, context[36]);
+  refalrts::alloc_close_call(vm, context[37]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A6]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[33] );
+  refalrts::push_stack( vm, context[37] );
   refalrts::push_stack( vm, context[29] );
+  refalrts::push_stack( vm, context[36] );
+  refalrts::push_stack( vm, context[32] );
   refalrts::link_brackets( context[28], context[24] );
   refalrts::link_brackets( context[23], context[27] );
   refalrts::link_brackets( context[19], context[20] );
@@ -2833,7 +2932,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A5(refalrts::VM *vm, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[29], context[33] );
+  res = refalrts::splice_evar( res, context[29], context[37] );
   res = refalrts::splice_evar( res, context[24], context[26] );
   res = refalrts::splice_evar( res, context[21], context[22] );
   res = refalrts::splice_evar( res, context[27], context[28] );
@@ -2851,9 +2950,9 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A4(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 30 elems
-  refalrts::Iter context[30];
-  refalrts::zeros( context, 30 );
+  // issue here memory for vars with 33 elems
+  refalrts::Iter context[33];
+  refalrts::zeros( context, 33 );
   // </0 & RunRLCompiler$2=4/4 (/7 e.RLCompiler#2/5 )/8 (/11 e.CppCompilerExe#3/9 )/12 (/15 e.CppCompilerLib#4/13 )/16 (/19 e.Units#1/17 )/20 t.Config#1/21 e.TargetModeFlag#5/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2901,18 +3000,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A4(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=5/4 AsIs: (/7 } Tile{ AsIs: e.RLCompiler#2/5 } )/23 (/24 Tile{ AsIs: e.TargetModeFlag#5/2 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.CppCompilerExe#3/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerLib#4/13 AsIs: )/16 AsIs: (/19 AsIs: e.Units#1/17 AsIs: )/20 AsIs: t.Config#1/21 } </25 & MakeTargetFileFlag/26 t.Config#1/21/27 >/29 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=5/4 AsIs: (/7 } Tile{ AsIs: e.RLCompiler#2/5 } )/23 (/24 Tile{ AsIs: e.TargetModeFlag#5/2 } Tile{ AsIs: )/8 AsIs: (/11 AsIs: e.CppCompilerExe#3/9 AsIs: )/12 AsIs: (/15 AsIs: e.CppCompilerLib#4/13 AsIs: )/16 AsIs: (/19 AsIs: e.Units#1/17 AsIs: )/20 AsIs: t.Config#1/21 } </25 & MakeTargetFileFlag:1/26 </27 & Config-GetTargetFileName/28 t.Config#1/21/29 >/31 >/32 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[23]);
   refalrts::alloc_open_bracket(vm, context[24]);
   refalrts::alloc_open_call(vm, context[25]);
-  refalrts::alloc_name(vm, context[26], functions[efunc_MakeTargetFileFlag]);
-  refalrts::copy_evar(vm, context[27], context[28], context[21], context[22]);
-  refalrts::alloc_close_call(vm, context[29]);
+  refalrts::alloc_name(vm, context[26], functions[efunc_gen_MakeTargetFileFlag_B1]);
+  refalrts::alloc_open_call(vm, context[27]);
+  refalrts::alloc_name(vm, context[28], functions[efunc_Configm_GetTargetFileName]);
+  refalrts::copy_evar(vm, context[29], context[30], context[21], context[22]);
+  refalrts::alloc_close_call(vm, context[31]);
+  refalrts::alloc_close_call(vm, context[32]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A5]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[29] );
+  refalrts::push_stack( vm, context[32] );
   refalrts::push_stack( vm, context[25] );
+  refalrts::push_stack( vm, context[31] );
+  refalrts::push_stack( vm, context[27] );
   refalrts::link_brackets( context[19], context[20] );
   refalrts::link_brackets( context[15], context[16] );
   refalrts::link_brackets( context[11], context[12] );
@@ -2921,7 +3025,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A4(refalrts::VM *vm, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[25], context[29] );
+  res = refalrts::splice_evar( res, context[25], context[32] );
   res = refalrts::splice_evar( res, context[8], context[22] );
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[23], context[24] );
@@ -2939,9 +3043,9 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A3(refalrts::VM *vm, refalrts
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 26 elems
-  refalrts::Iter context[26];
-  refalrts::zeros( context, 26 );
+  // issue here memory for vars with 29 elems
+  refalrts::Iter context[29];
+  refalrts::zeros( context, 29 );
   // </0 & RunRLCompiler$2=3/4 (/7 e.RLCompiler#2/5 )/8 (/11 e.CppCompilerExe#3/9 )/12 (/15 e.Units#1/13 )/16 t.Config#1/17 e.CppCompilerLib#4/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -2981,18 +3085,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A3(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=4/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.CppCompilerExe#3/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.CppCompilerLib#4/2 } )/19 (/20 Tile{ AsIs: e.Units#1/13 } Tile{ AsIs: )/16 AsIs: t.Config#1/17 } </21 & MakeTargetModeFlag/22 t.Config#1/17/23 >/25 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=4/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 AsIs: e.CppCompilerExe#3/9 AsIs: )/12 AsIs: (/15 } Tile{ AsIs: e.CppCompilerLib#4/2 } )/19 (/20 Tile{ AsIs: e.Units#1/13 } Tile{ AsIs: )/16 AsIs: t.Config#1/17 } </21 & MakeTargetModeFlag:1/22 </23 & Config-GetTargetMode/24 t.Config#1/17/25 >/27 >/28 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[19]);
   refalrts::alloc_open_bracket(vm, context[20]);
   refalrts::alloc_open_call(vm, context[21]);
-  refalrts::alloc_name(vm, context[22], functions[efunc_MakeTargetModeFlag]);
-  refalrts::copy_evar(vm, context[23], context[24], context[17], context[18]);
-  refalrts::alloc_close_call(vm, context[25]);
+  refalrts::alloc_name(vm, context[22], functions[efunc_gen_MakeTargetModeFlag_B1]);
+  refalrts::alloc_open_call(vm, context[23]);
+  refalrts::alloc_name(vm, context[24], functions[efunc_Configm_GetTargetMode]);
+  refalrts::copy_evar(vm, context[25], context[26], context[17], context[18]);
+  refalrts::alloc_close_call(vm, context[27]);
+  refalrts::alloc_close_call(vm, context[28]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A4]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[25] );
+  refalrts::push_stack( vm, context[28] );
   refalrts::push_stack( vm, context[21] );
+  refalrts::push_stack( vm, context[27] );
+  refalrts::push_stack( vm, context[23] );
   refalrts::link_brackets( context[20], context[16] );
   refalrts::link_brackets( context[15], context[19] );
   refalrts::link_brackets( context[11], context[12] );
@@ -3000,7 +3109,7 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A3(refalrts::VM *vm, refalrts
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[21], context[25] );
+  res = refalrts::splice_evar( res, context[21], context[28] );
   res = refalrts::splice_evar( res, context[16], context[18] );
   res = refalrts::splice_evar( res, context[13], context[14] );
   res = refalrts::splice_evar( res, context[19], context[20] );
@@ -3052,20 +3161,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A2(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=3/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.CppCompilerExe#3/2 } )/15 (/16 Tile{ AsIs: e.Units#1/9 } Tile{ AsIs: )/12 AsIs: t.Config#1/13 } </17 & MakeOptionalFlag/18 & Config-GetCppCompilerLib/19 t.Config#1/13/20"cpp-command-lib"/22 >/24 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & RunRLCompiler$2=3/4 AsIs: (/7 AsIs: e.RLCompiler#2/5 AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.CppCompilerExe#3/2 } )/15 (/16 Tile{ AsIs: e.Units#1/9 } Tile{ AsIs: )/12 AsIs: t.Config#1/13 } </17 & MakeOptionalFlag:1@3/18 </19 & Config-GetCppCompilerLib/20 t.Config#1/13/21 >/23 >/24 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_bracket(vm, context[15]);
   refalrts::alloc_open_bracket(vm, context[16]);
   refalrts::alloc_open_call(vm, context[17]);
-  refalrts::alloc_name(vm, context[18], functions[efunc_MakeOptionalFlag]);
-  refalrts::alloc_name(vm, context[19], functions[efunc_Configm_GetCppCompilerLib]);
-  refalrts::copy_evar(vm, context[20], context[21], context[13], context[14]);
-  refalrts::alloc_chars(vm, context[22], context[23], "cpp-command-lib", 15);
+  refalrts::alloc_name(vm, context[18], functions[efunc_gen_MakeOptionalFlag_B1Z3]);
+  refalrts::alloc_open_call(vm, context[19]);
+  refalrts::alloc_name(vm, context[20], functions[efunc_Configm_GetCppCompilerLib]);
+  refalrts::copy_evar(vm, context[21], context[22], context[13], context[14]);
+  refalrts::alloc_close_call(vm, context[23]);
   refalrts::alloc_close_call(vm, context[24]);
   refalrts::update_name(context[4], functions[efunc_gen_RunRLCompiler_S2A3]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[24] );
   refalrts::push_stack( vm, context[17] );
+  refalrts::push_stack( vm, context[23] );
+  refalrts::push_stack( vm, context[19] );
   refalrts::link_brackets( context[16], context[12] );
   refalrts::link_brackets( context[11], context[15] );
   refalrts::link_brackets( context[7], context[8] );
@@ -3116,20 +3228,23 @@ static refalrts::FnResult func_gen_RunRLCompiler_S2A1(refalrts::VM *vm, refalrts
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 } & RunRLCompiler$2=2/11 (/12 Tile{ AsIs: e.RLCompiler#2/2 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Units#1/5 AsIs: )/8 AsIs: t.Config#1/9 } </13 & MakeOptionalFlag/14 & Config-GetCppCompilerExe/15 t.Config#1/9/16"cpp-command-exe"/18 >/20 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 } & RunRLCompiler$2=2/11 (/12 Tile{ AsIs: e.RLCompiler#2/2 } Tile{ HalfReuse: )/4 AsIs: (/7 AsIs: e.Units#1/5 AsIs: )/8 AsIs: t.Config#1/9 } </13 & MakeOptionalFlag:1@4/14 </15 & Config-GetCppCompilerExe/16 t.Config#1/9/17 >/19 >/20 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_name(vm, context[11], functions[efunc_gen_RunRLCompiler_S2A2]);
   refalrts::alloc_open_bracket(vm, context[12]);
   refalrts::alloc_open_call(vm, context[13]);
-  refalrts::alloc_name(vm, context[14], functions[efunc_MakeOptionalFlag]);
-  refalrts::alloc_name(vm, context[15], functions[efunc_Configm_GetCppCompilerExe]);
-  refalrts::copy_evar(vm, context[16], context[17], context[9], context[10]);
-  refalrts::alloc_chars(vm, context[18], context[19], "cpp-command-exe", 15);
+  refalrts::alloc_name(vm, context[14], functions[efunc_gen_MakeOptionalFlag_B1Z4]);
+  refalrts::alloc_open_call(vm, context[15]);
+  refalrts::alloc_name(vm, context[16], functions[efunc_Configm_GetCppCompilerExe]);
+  refalrts::copy_evar(vm, context[17], context[18], context[9], context[10]);
+  refalrts::alloc_close_call(vm, context[19]);
   refalrts::alloc_close_call(vm, context[20]);
   refalrts::reinit_close_bracket(context[4]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[20] );
   refalrts::push_stack( vm, context[13] );
+  refalrts::push_stack( vm, context[19] );
+  refalrts::push_stack( vm, context[15] );
   refalrts::link_brackets( context[7], context[8] );
   refalrts::link_brackets( context[12], context[4] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -3216,7 +3331,7 @@ static refalrts::FnResult func_RunRLCompiler(refalrts::VM *vm, refalrts::Iter ar
       refalrts::Iter res = arg_end->next;
       res = refalrts::splice_evar( res, context[21], context[24] );
       res = refalrts::splice_evar( res, context[15], context[1] );
-      res = refalrts::splice_evar( res, context[20], context[20] );
+      res = refalrts::splice_elem( res, context[20] );
       refalrts::splice_to_freelist_open( vm, context[4], res );
       return refalrts::cSuccess;
     } while ( refalrts::open_evar_advance( context[9], context[10], context[7], context[8] ) );
@@ -3248,9 +3363,9 @@ static refalrts::FnResult func_RunRLCompiler(refalrts::VM *vm, refalrts::Iter ar
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[9], context[13] );
   res = refalrts::splice_evar( res, context[5], context[6] );
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_elem( res, context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -3322,7 +3437,7 @@ static refalrts::FnResult func_gen_MakeOptionalFlag_B1(refalrts::VM *vm, refalrt
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -3371,11 +3486,11 @@ static refalrts::FnResult func_MakeOptionalFlag(refalrts::VM *vm, refalrts::Iter
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_elem( res, context[11] );
   res = refalrts::splice_evar( res, context[5], context[7] );
   res = refalrts::splice_evar( res, context[9], context[10] );
   res = refalrts::splice_evar( res, context[2], context[3] );
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -3542,7 +3657,7 @@ static refalrts::FnResult func_MakeTargetModeFlag(refalrts::VM *vm, refalrts::It
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
@@ -3647,7 +3762,7 @@ static refalrts::FnResult func_MakeTargetFileFlag(refalrts::VM *vm, refalrts::It
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
@@ -3713,7 +3828,7 @@ static refalrts::FnResult func_gen_MakeSearchFolderFlags_L1(refalrts::VM *vm, re
       refalrts::Iter res = arg_end->next;
       res = refalrts::splice_evar( res, context[0], context[6] );
       res = refalrts::splice_evar( res, context[14], context[15] );
-      res = refalrts::splice_evar( res, context[1], context[1] );
+      res = refalrts::splice_elem( res, context[1] );
       res = refalrts::splice_evar( res, context[12], context[13] );
       refalrts::use( res );
       return refalrts::cSuccess;
@@ -3744,7 +3859,7 @@ static refalrts::FnResult func_gen_MakeSearchFolderFlags_L1(refalrts::VM *vm, re
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[0], context[6] );
     res = refalrts::splice_evar( res, context[14], context[15] );
-    res = refalrts::splice_evar( res, context[1], context[1] );
+    res = refalrts::splice_elem( res, context[1] );
     res = refalrts::splice_evar( res, context[12], context[13] );
     refalrts::use( res );
     return refalrts::cSuccess;
@@ -3811,7 +3926,7 @@ static refalrts::FnResult func_MakeSearchFolderFlags(refalrts::VM *vm, refalrts:
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[10], context[10] );
+  res = refalrts::splice_elem( res, context[10] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[7], context[9] );
   refalrts::use( res );
@@ -3885,7 +4000,7 @@ static refalrts::FnResult func_MakeBoolFlag(refalrts::VM *vm, refalrts::Iter arg
   refalrts::Iter res = arg_end->next;
   res = refalrts::splice_evar( res, context[2], context[3] );
   res = refalrts::splice_evar( res, context[8], context[9] );
-  res = refalrts::splice_evar( res, context[1], context[1] );
+  res = refalrts::splice_elem( res, context[1] );
   res = refalrts::splice_evar( res, context[6], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
@@ -3985,7 +4100,7 @@ static refalrts::FnResult func_GetPrefix(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::use( res );
@@ -3993,6 +4108,334 @@ static refalrts::FnResult func_GetPrefix(refalrts::VM *vm, refalrts::Iter arg_be
 }
 
 static refalrts::NativeReference nat_ref_GetPrefix("GetPrefix", COOKIE1_, COOKIE2_, func_GetPrefix);
+
+
+static refalrts::FnResult func_gen_MakeOptionalFlag_B1Z1(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & MakeOptionalFlag:1@1/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  do {
+    // </0 & MakeOptionalFlag:1@1/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1@1/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & MakeOptionalFlag:1@1/4 e.Value#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    // closed e.Value#2 as range 5
+    //DEBUG: e.Value#2: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" --cpp-command-lib-suf"/7 Tile{ HalfReuse: '='/0 HalfReuse: '\"'/4 AsIs: e.Value#2/5 HalfReuse: '\"'/1 ]] }
+    refalrts::alloc_chars(vm, context[7], context[8], " --cpp-command-lib-suf", 22);
+    refalrts::reinit_char(context[0], '=');
+    refalrts::reinit_char(context[4], '\"');
+    refalrts::reinit_char(context[1], '\"');
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[0];
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MakeOptionalFlag:1@1/4 e.dyn#0/2 >/1
+  // closed e.dyn#0 as range 2
+  //DEBUG: e.dyn#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & MakeOptionalFlag:1@0/6 (/7"cpp-command-lib-su"/8 Tile{ HalfReuse: 'f'/0 HalfReuse: )/4 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_gen_MakeOptionalFlag_B1Z0]);
+  refalrts::alloc_open_bracket(vm, context[7]);
+  refalrts::alloc_chars(vm, context[8], context[9], "cpp-command-lib-su", 18);
+  refalrts::reinit_char(context[0], 'f');
+  refalrts::reinit_close_bracket(context[4]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::link_brackets( context[7], context[4] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MakeOptionalFlag_B1Z1("MakeOptionalFlag:1@1", COOKIE1_, COOKIE2_, func_gen_MakeOptionalFlag_B1Z1);
+
+
+static refalrts::FnResult func_gen_MakeOptionalFlag_B1Z2(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & MakeOptionalFlag:1@2/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  do {
+    // </0 & MakeOptionalFlag:1@2/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1@2/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & MakeOptionalFlag:1@2/4 e.Value#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    // closed e.Value#2 as range 5
+    //DEBUG: e.Value#2: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" --cpp-command-exe-suf"/7 Tile{ HalfReuse: '='/0 HalfReuse: '\"'/4 AsIs: e.Value#2/5 HalfReuse: '\"'/1 ]] }
+    refalrts::alloc_chars(vm, context[7], context[8], " --cpp-command-exe-suf", 22);
+    refalrts::reinit_char(context[0], '=');
+    refalrts::reinit_char(context[4], '\"');
+    refalrts::reinit_char(context[1], '\"');
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[0];
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MakeOptionalFlag:1@2/4 e.dyn#0/2 >/1
+  // closed e.dyn#0 as range 2
+  //DEBUG: e.dyn#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & MakeOptionalFlag:1@0/6 (/7"cpp-command-exe-su"/8 Tile{ HalfReuse: 'f'/0 HalfReuse: )/4 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_gen_MakeOptionalFlag_B1Z0]);
+  refalrts::alloc_open_bracket(vm, context[7]);
+  refalrts::alloc_chars(vm, context[8], context[9], "cpp-command-exe-su", 18);
+  refalrts::reinit_char(context[0], 'f');
+  refalrts::reinit_close_bracket(context[4]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::link_brackets( context[7], context[4] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MakeOptionalFlag_B1Z2("MakeOptionalFlag:1@2", COOKIE1_, COOKIE2_, func_gen_MakeOptionalFlag_B1Z2);
+
+
+static refalrts::FnResult func_gen_MakeOptionalFlag_B1Z3(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & MakeOptionalFlag:1@3/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  do {
+    // </0 & MakeOptionalFlag:1@3/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1@3/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & MakeOptionalFlag:1@3/4 e.Value#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    // closed e.Value#2 as range 5
+    //DEBUG: e.Value#2: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" --cpp-command-lib"/7 Tile{ HalfReuse: '='/0 HalfReuse: '\"'/4 AsIs: e.Value#2/5 HalfReuse: '\"'/1 ]] }
+    refalrts::alloc_chars(vm, context[7], context[8], " --cpp-command-lib", 18);
+    refalrts::reinit_char(context[0], '=');
+    refalrts::reinit_char(context[4], '\"');
+    refalrts::reinit_char(context[1], '\"');
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[0];
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MakeOptionalFlag:1@3/4 e.dyn#0/2 >/1
+  // closed e.dyn#0 as range 2
+  //DEBUG: e.dyn#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & MakeOptionalFlag:1@0/6 (/7"cpp-command-li"/8 Tile{ HalfReuse: 'b'/0 HalfReuse: )/4 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_gen_MakeOptionalFlag_B1Z0]);
+  refalrts::alloc_open_bracket(vm, context[7]);
+  refalrts::alloc_chars(vm, context[8], context[9], "cpp-command-li", 14);
+  refalrts::reinit_char(context[0], 'b');
+  refalrts::reinit_close_bracket(context[4]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::link_brackets( context[7], context[4] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MakeOptionalFlag_B1Z3("MakeOptionalFlag:1@3", COOKIE1_, COOKIE2_, func_gen_MakeOptionalFlag_B1Z3);
+
+
+static refalrts::FnResult func_gen_MakeOptionalFlag_B1Z4(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
+  (void) vm;
+  refalrts::this_is_generated_function(vm);
+  refalrts::RefalFunction **functions;
+  const refalrts::RefalIdentifier *identifiers;
+  refalrts::load_constants(arg_begin, &functions, &identifiers);
+  // issue here memory for vars with 10 elems
+  refalrts::Iter context[10];
+  refalrts::zeros( context, 10 );
+  // </0 & MakeOptionalFlag:1@4/4 e.new#0/2 >/1
+  context[0] = arg_begin;
+  context[1] = arg_end;
+  context[2] = 0;
+  context[3] = 0;
+  context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
+  // closed e.new#0 as range 2
+  do {
+    // </0 & MakeOptionalFlag:1@4/4 >/1
+    if( ! refalrts::empty_seq( context[2], context[3] ) )
+      continue;
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} </0 & MakeOptionalFlag:1@4/4 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ ]] }
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = arg_end->next;
+    refalrts::splice_to_freelist_open( vm, trash_prev, res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  do {
+    // </0 & MakeOptionalFlag:1@4/4 e.Value#2/5 >/1
+    context[5] = context[2];
+    context[6] = context[3];
+    // closed e.Value#2 as range 5
+    //DEBUG: e.Value#2: 5
+
+    refalrts::reset_allocator(vm);
+    //TRASH: {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ }" --cpp-command-exe"/7 Tile{ HalfReuse: '='/0 HalfReuse: '\"'/4 AsIs: e.Value#2/5 HalfReuse: '\"'/1 ]] }
+    refalrts::alloc_chars(vm, context[7], context[8], " --cpp-command-exe", 18);
+    refalrts::reinit_char(context[0], '=');
+    refalrts::reinit_char(context[4], '\"');
+    refalrts::reinit_char(context[1], '\"');
+    refalrts::Iter trash_prev = arg_begin->prev;
+    refalrts::use(trash_prev);
+    refalrts::Iter res = context[0];
+    res = refalrts::splice_evar( res, context[7], context[8] );
+    refalrts::use( res );
+    return refalrts::cSuccess;
+  } while ( 0 );
+  refalrts::stop_sentence(vm);
+
+  // </0 & MakeOptionalFlag:1@4/4 e.dyn#0/2 >/1
+  // closed e.dyn#0 as range 2
+  //DEBUG: e.dyn#0: 2
+
+  refalrts::reset_allocator(vm);
+  //TRASH: {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } </5 & MakeOptionalFlag:1@0/6 (/7"cpp-command-ex"/8 Tile{ HalfReuse: 'e'/0 HalfReuse: )/4 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  refalrts::alloc_open_call(vm, context[5]);
+  refalrts::alloc_name(vm, context[6], functions[efunc_gen_MakeOptionalFlag_B1Z0]);
+  refalrts::alloc_open_bracket(vm, context[7]);
+  refalrts::alloc_chars(vm, context[8], context[9], "cpp-command-ex", 14);
+  refalrts::reinit_char(context[0], 'e');
+  refalrts::reinit_close_bracket(context[4]);
+  refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[5] );
+  refalrts::link_brackets( context[7], context[4] );
+  refalrts::Iter trash_prev = arg_begin->prev;
+  refalrts::use(trash_prev);
+  refalrts::Iter res = context[0];
+  res = refalrts::splice_evar( res, context[5], context[9] );
+  refalrts::use( res );
+  return refalrts::cSuccess;
+}
+
+static refalrts::NativeReference nat_ref_gen_MakeOptionalFlag_B1Z4("MakeOptionalFlag:1@4", COOKIE1_, COOKIE2_, func_gen_MakeOptionalFlag_B1Z4);
 
 
 //End of file

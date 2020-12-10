@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_4175659379_1509140302
-#define COOKIE1_ 4175659379U
-#define COOKIE2_ 1509140302U
+#define cookie_ns cookie_ns_4091361114_1375170275
+#define COOKIE1_ 4091361114U
+#define COOKIE2_ 1375170275U
 
 enum efunc {
   efunc_u_u_Stepm_Drop = 0,
@@ -163,7 +163,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
@@ -179,9 +179,9 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 9 elems
+  refalrts::Iter context[9];
+  refalrts::zeros( context, 9 );
   // </0 & Residue/4 e.Arg#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -193,28 +193,23 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 </8 & __Step-Drop/9 >/10 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
-  refalrts::alloc_open_call(vm, context[8]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_u_u_Stepm_Drop]);
-  refalrts::alloc_close_call(vm, context[10]);
-  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::alloc_close_call(vm, context[8]);
   refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
   refalrts::reinit_name(context[1], functions[efunc_d_table]);
-  refalrts::push_stack( vm, context[11] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[10] );
   refalrts::push_stack( vm, context[8] );
+  refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[10] );
+  res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -757,9 +752,9 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[9], context[9] );
+      res = refalrts::splice_elem( res, context[9] );
       res = refalrts::splice_evar( res, context[17], context[18] );
-      res = refalrts::splice_evar( res, context[0], context[0] );
+      res = refalrts::splice_elem( res, context[0] );
       res = refalrts::splice_evar( res, context[10], context[1] );
       res = refalrts::splice_evar( res, context[4], context[22] );
       refalrts::use( res );
@@ -812,9 +807,9 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = arg_end->next;
-      res = refalrts::splice_evar( res, context[9], context[9] );
+      res = refalrts::splice_elem( res, context[9] );
       res = refalrts::splice_evar( res, context[17], context[18] );
-      res = refalrts::splice_evar( res, context[0], context[0] );
+      res = refalrts::splice_elem( res, context[0] );
       res = refalrts::splice_evar( res, context[10], context[1] );
       res = refalrts::splice_evar( res, context[4], context[22] );
       refalrts::use( res );
@@ -862,7 +857,7 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[13], context[14] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_elem( res, context[9] );
     res = refalrts::splice_evar( res, context[4], context[18] );
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
@@ -1078,9 +1073,9 @@ static refalrts::FnResult func_Configm_AddRLCompilerFlag(refalrts::VM *vm, refal
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
-    res = refalrts::splice_evar( res, context[21], context[21] );
+    res = refalrts::splice_elem( res, context[21] );
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[0], context[0] );
+    res = refalrts::splice_elem( res, context[0] );
     res = refalrts::splice_evar( res, context[9], context[1] );
     res = refalrts::splice_evar( res, context[4], context[17] );
     refalrts::use( res );
@@ -1637,8 +1632,8 @@ static refalrts::FnResult func_Configm_AddReference(refalrts::VM *vm, refalrts::
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[0], context[0] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_elem( res, context[0] );
+    res = refalrts::splice_elem( res, context[9] );
     res = refalrts::splice_evar( res, context[2], context[3] );
     res = refalrts::splice_evar( res, context[4], context[17] );
     refalrts::use( res );
@@ -2126,8 +2121,8 @@ static refalrts::FnResult func_Configm_AddRuntimeFile(refalrts::VM *vm, refalrts
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[0], context[0] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_elem( res, context[0] );
+    res = refalrts::splice_elem( res, context[9] );
     res = refalrts::splice_evar( res, context[2], context[3] );
     res = refalrts::splice_evar( res, context[4], context[17] );
     refalrts::use( res );
@@ -2258,8 +2253,8 @@ static refalrts::FnResult func_Configm_AddIncorporated(refalrts::VM *vm, refalrt
     refalrts::use(trash_prev);
     refalrts::Iter res = context[1];
     res = refalrts::splice_evar( res, context[12], context[13] );
-    res = refalrts::splice_evar( res, context[0], context[0] );
-    res = refalrts::splice_evar( res, context[9], context[9] );
+    res = refalrts::splice_elem( res, context[0] );
+    res = refalrts::splice_elem( res, context[9] );
     res = refalrts::splice_evar( res, context[2], context[3] );
     res = refalrts::splice_evar( res, context[4], context[17] );
     refalrts::use( res );
@@ -2394,7 +2389,7 @@ static refalrts::FnResult func_Configm_SetKeepRasls(refalrts::VM *vm, refalrts::
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[18], context[9] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_evar( res, context[4], context[19] );
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;
@@ -2653,7 +2648,7 @@ static refalrts::FnResult func_Configm_SetOverwriteExistRasls(refalrts::VM *vm, 
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
     res = refalrts::splice_evar( res, context[18], context[9] );
-    res = refalrts::splice_evar( res, context[10], context[10] );
+    res = refalrts::splice_elem( res, context[10] );
     res = refalrts::splice_evar( res, context[4], context[19] );
     refalrts::splice_to_freelist_open( vm, trash_prev, res );
     return refalrts::cSuccess;

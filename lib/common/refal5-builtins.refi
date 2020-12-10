@@ -1,6 +1,6 @@
 *$EXTENDED;
 *===============================================================================
-*  Предобъявления и определения встроенных функций Рефала-5λ
+*  Предобъявления и определения встроенных функций Рефала-5λ
 *===============================================================================
 
 
@@ -236,13 +236,13 @@ $EXTERN Dn;
 
 
 /**
-  48. Up — not implemented yet
+  48. Up — not implemented yet
 */
 $ENUM Up;
 
 
 /**
-  49. Ev-met — not implemented yet
+  49. Ev-met — not implemented yet
 */
 $ENUM Ev-met;
 
@@ -377,3 +377,11 @@ $EXTERN GetPID;
 
 *$FROM Library
 $EXTERN GetPPID;
+
+$INTRINSIC __Meta_Mu;
+$INTRINSIC Add, Div, Divmod, Mod, Mul, Sub, Compare;
+$INTRINSIC Chr, Ord, Upper, Lower;
+$INTRINSIC Explode, Implode, Implode_Ext, Explode_Ext;
+$INTRINSIC First, Last, Lenw;
+$INTRINSIC Numb, Symb;
+$INTRINSIC Type;

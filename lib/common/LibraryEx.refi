@@ -9,7 +9,7 @@
   e.Arg, e.Res, e.Bounded ::= e.AnyExpr
 */
 Apply {
-  s.Fn e.Argument = <s.Fn e.Argument>;
+  s.Fn e.Argument = <Mu s.Fn e.Argument>;
 
   (t.Closure e.Bounded) e.Argument
     = <Apply t.Closure e.Bounded e.Argument>;
@@ -68,6 +68,7 @@ MapAccum {
 }
 
 $SPEC MapAccum t.FUNC t.accum e.items;
+$INLINE MapAccum;
 
 DoMapAccum {
   t.Fn t.Acc (e.Scanned) t.Next e.Tail

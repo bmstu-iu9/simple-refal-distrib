@@ -3,9 +3,9 @@
 
 #include "refalrts.h"
 
-#define cookie_ns cookie_ns_2184842814_4142693668
-#define COOKIE1_ 2184842814U
-#define COOKIE2_ 4142693668U
+#define cookie_ns cookie_ns_3966773985_1140540962
+#define COOKIE1_ 3966773985U
+#define COOKIE2_ 1140540962U
 
 enum efunc {
   efunc_u_u_Metau_Mu = 0,
@@ -82,28 +82,24 @@ enum efunc {
   efunc_gen_Go_A5 = 71,
   efunc_gen_Go_A4 = 72,
   efunc_gen_Go_A3 = 73,
-  efunc_FindEntryPoint = 74,
+  efunc_gen_FindEntryPoint_B1 = 74,
   efunc_gen_Go_A2 = 75,
-  efunc_LoadProgramModule = 76,
+  efunc_gen_LoadProgramModule_B1 = 76,
   efunc_gen_Go_A1 = 77,
   efunc_Go = 78,
   efunc_ReadInterpreterFlags = 79,
-  efunc_gen_LoadProgramModule_B1 = 80,
+  efunc_LoadProgramModule = 80,
   efunc_gen_FindEntryPoint_B1S2B1 = 81,
-  efunc_gen_FindEntryPoint_B1 = 82,
-  efunc_gen_Go_A5Z0 = 83,
-  efunc_gen_Go_A4Z0 = 84,
-  efunc_gen_LoadProgramModule_B1Z0 = 85,
-  efunc_gen_FindEntryPoint_B1Z0 = 86,
+  efunc_FindEntryPoint = 82,
 };
 
 
 enum ident {
-  ident_Success = 0,
-  ident_Fails = 1,
-  ident_stderr = 2,
-  ident_GO = 3,
-  ident_Go = 4,
+  ident_Go = 0,
+  ident_Success = 1,
+  ident_Fails = 2,
+  ident_stderr = 3,
+  ident_GO = 4,
   ident_Mu = 5,
   ident_Up = 6,
   ident_Evm_met = 7,
@@ -149,7 +145,7 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
@@ -165,9 +161,9 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 9 elems
+  refalrts::Iter context[9];
+  refalrts::zeros( context, 9 );
   // </0 & Residue/4 e.Arg#1/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -179,28 +175,23 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 </8 & __Step-Drop/9 >/10 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
-  refalrts::alloc_open_call(vm, context[8]);
-  refalrts::alloc_name(vm, context[9], functions[efunc_u_u_Stepm_Drop]);
-  refalrts::alloc_close_call(vm, context[10]);
-  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::alloc_close_call(vm, context[8]);
   refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
   refalrts::reinit_name(context[1], functions[efunc_d_table]);
-  refalrts::push_stack( vm, context[11] );
-  refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[10] );
   refalrts::push_stack( vm, context[8] );
+  refalrts::push_stack( vm, context[0] );
   refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_elem( res, context[8] );
   res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[10] );
+  res = refalrts::splice_evar( res, context[5], context[7] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -254,10 +245,12 @@ static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COO
 #include "refalrts-diagnostic-defs.h"
 #include "refalrts-vm.h"
 
+#define VERSION "3.2"
+
 static void version(FILE *output) {
   fprintf(
     output,
-    "rlgo, a part of Refal-5-lambda compiler toolkit, version 3.1\n"
+    "rlgo, a part of Refal-5-lambda compiler toolkit, version " VERSION "\n"
     "Copyright (c) 2008-2016, Alexander Konovalov, "
     "2016-2020, BMSTU IU9 Department\n"
     "All rights reserved.\n\n"
@@ -267,7 +260,7 @@ static void version(FILE *output) {
 static void help(FILE *output) {
   fprintf(
     output,
-    "Interpreter (loader) for Refal-5-lambda modules, version 2.5\n"
+    "Interpreter (loader) for Refal-5-lambda modules, version " VERSION "\n"
     "Command line:\n\n"
     "    interpreter [--param=value ...] module [module options]\n"
     "    interpreter --help\n\n"
@@ -278,7 +271,7 @@ static void help(FILE *output) {
     refalrts::DiagnosticConfig::help
   );
 }
-#line 282 "main.cpp"
+#line 275 "main.cpp"
 
 static refalrts::FnResult func_gen_Go_A6(refalrts::VM *vm, refalrts::Iter arg_begin, refalrts::Iter arg_end) {
   (void) vm;
@@ -347,7 +340,7 @@ static refalrts::FnResult func_gen_Go_A5(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = context[1];
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[5], context[6] );
   res = refalrts::splice_evar( res, context[7], context[8] );
   refalrts::splice_to_freelist_open( vm, context[4], res );
@@ -395,9 +388,9 @@ static refalrts::FnResult func_gen_Go_A4(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[9], context[9] );
+  res = refalrts::splice_elem( res, context[9] );
   res = refalrts::splice_evar( res, context[7], context[1] );
-  res = refalrts::splice_evar( res, context[8], context[8] );
+  res = refalrts::splice_elem( res, context[8] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -411,9 +404,9 @@ static refalrts::FnResult func_gen_Go_A3(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 12 elems
-  refalrts::Iter context[12];
-  refalrts::zeros( context, 12 );
+  // issue here memory for vars with 18 elems
+  refalrts::Iter context[18];
+  refalrts::zeros( context, 18 );
   // </0 & Go=3/4 t.Handle#4/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -429,21 +422,28 @@ static refalrts::FnResult func_gen_Go_A3(refalrts::VM *vm, refalrts::Iter arg_be
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=4/4 AsIs: t.Handle#4/5 HalfReuse: </1 } & FindEntryPoint/7 t.Handle#4/5/8 >/10 >/11 Tile{ ]] }
-  refalrts::alloc_name(vm, context[7], functions[efunc_FindEntryPoint]);
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=4/4 AsIs: t.Handle#4/5 HalfReuse: </1 } & FindEntryPoint:1/7 t.Handle#4/5/8 </10 & Module-LookupFunction/11 t.Handle#4/5/12 # Go/14 >/15 >/16 >/17 Tile{ ]] }
+  refalrts::alloc_name(vm, context[7], functions[efunc_gen_FindEntryPoint_B1]);
   refalrts::copy_evar(vm, context[8], context[9], context[5], context[6]);
-  refalrts::alloc_close_call(vm, context[10]);
-  refalrts::alloc_close_call(vm, context[11]);
+  refalrts::alloc_open_call(vm, context[10]);
+  refalrts::alloc_name(vm, context[11], functions[efunc_Modulem_LookupFunction]);
+  refalrts::copy_evar(vm, context[12], context[13], context[5], context[6]);
+  refalrts::alloc_ident(vm, context[14], identifiers[ident_Go]);
+  refalrts::alloc_close_call(vm, context[15]);
+  refalrts::alloc_close_call(vm, context[16]);
+  refalrts::alloc_close_call(vm, context[17]);
   refalrts::update_name(context[4], functions[efunc_gen_Go_A4]);
   refalrts::reinit_open_call(context[1]);
-  refalrts::push_stack( vm, context[11] );
+  refalrts::push_stack( vm, context[17] );
   refalrts::push_stack( vm, context[0] );
-  refalrts::push_stack( vm, context[10] );
+  refalrts::push_stack( vm, context[16] );
   refalrts::push_stack( vm, context[1] );
+  refalrts::push_stack( vm, context[15] );
+  refalrts::push_stack( vm, context[10] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[11] );
+  res = refalrts::splice_evar( res, context[7], context[17] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -457,9 +457,9 @@ static refalrts::FnResult func_gen_Go_A2(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-  // issue here memory for vars with 8 elems
-  refalrts::Iter context[8];
-  refalrts::zeros( context, 8 );
+  // issue here memory for vars with 15 elems
+  refalrts::Iter context[15];
+  refalrts::zeros( context, 15 );
   // </0 & Go=2/4 e.Module#3/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
@@ -471,21 +471,30 @@ static refalrts::FnResult func_gen_Go_A2(refalrts::VM *vm, refalrts::Iter arg_be
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & Go=3/6 Tile{ AsIs: </0 Reuse: & LoadProgramModule/4 AsIs: e.Module#3/2 AsIs: >/1 } >/7 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & Go=3/6 </7 & LoadProgramModule:1/8 (/9 e.Module#3/2/10 )/12 Tile{ AsIs: </0 Reuse: & Module-Load/4 AsIs: e.Module#3/2 AsIs: >/1 } >/13 >/14 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_Go_A3]);
-  refalrts::alloc_close_call(vm, context[7]);
-  refalrts::update_name(context[4], functions[efunc_LoadProgramModule]);
-  refalrts::push_stack( vm, context[7] );
+  refalrts::alloc_open_call(vm, context[7]);
+  refalrts::alloc_name(vm, context[8], functions[efunc_gen_LoadProgramModule_B1]);
+  refalrts::alloc_open_bracket(vm, context[9]);
+  refalrts::copy_evar(vm, context[10], context[11], context[2], context[3]);
+  refalrts::alloc_close_bracket(vm, context[12]);
+  refalrts::alloc_close_call(vm, context[13]);
+  refalrts::alloc_close_call(vm, context[14]);
+  refalrts::update_name(context[4], functions[efunc_Modulem_Load]);
+  refalrts::push_stack( vm, context[14] );
   refalrts::push_stack( vm, context[5] );
+  refalrts::push_stack( vm, context[13] );
+  refalrts::push_stack( vm, context[7] );
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
+  refalrts::link_brackets( context[9], context[12] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[7], context[7] );
+  res = refalrts::splice_evar( res, context[13], context[14] );
   res = refalrts::splice_evar( res, context[0], context[1] );
-  res = refalrts::splice_evar( res, context[5], context[6] );
+  res = refalrts::splice_evar( res, context[5], context[12] );
   refalrts::use( res );
   return refalrts::cSuccess;
 }
@@ -581,7 +590,7 @@ static refalrts::FnResult func_ReadInterpreterFlags(refalrts::VM *vm, refalrts::
   refalrts::RefalFunction **functions;
   const refalrts::RefalIdentifier *identifiers;
   refalrts::load_constants(arg_begin, &functions, &identifiers);
-#line 51 "main.ref"
+#line 53 "main.ref"
   using refalrts::DiagnosticConfig;
   DiagnosticConfig *diagnostic_config = vm->diagnostic_config();
 
@@ -654,7 +663,7 @@ static refalrts::FnResult func_ReadInterpreterFlags(refalrts::VM *vm, refalrts::
 
   refalrts::splice_to_freelist(vm, arg_begin, arg_end);
   return refalrts::cSuccess;
-#line 658 "main.cpp"
+#line 667 "main.cpp"
 }
 
 static refalrts::NativeReference nat_ref_ReadInterpreterFlags("ReadInterpreterFlags", COOKIE1_, COOKIE2_, func_ReadInterpreterFlags);
@@ -792,7 +801,7 @@ static refalrts::FnResult func_LoadProgramModule(refalrts::VM *vm, refalrts::Ite
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[11], context[11] );
+  res = refalrts::splice_elem( res, context[11] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[5], context[10] );
   refalrts::use( res );
@@ -947,7 +956,7 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1(refalrts::VM *vm, refalrts:
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
-  res = refalrts::splice_evar( res, context[10], context[10] );
+  res = refalrts::splice_elem( res, context[10] );
   res = refalrts::splice_evar( res, context[0], context[1] );
   res = refalrts::splice_evar( res, context[8], context[9] );
   refalrts::use( res );
