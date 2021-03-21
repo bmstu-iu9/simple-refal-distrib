@@ -18,14 +18,22 @@ make_dir() {
     DEBUGDIR=debug-stubs
   fi
 
+  PLATFORM="$(platform_subdir_lookup lib/scratch-rt)"
+
+  if [[ -e "$PLATFORM/refalrts-platform-POSIX.cpp" ]]; then
+    POSIXCPP="$PLATFORM/refalrts-platform-POSIX.cpp"
+  else
+    POSIXCPP=lib/scratch-rt/platform-POSIX/refalrts-platform-POSIX.cpp
+  fi
+
   echo ... compile $2
   FILELIST=$(ls $DIR/*.cpp)
   $CPPLINEE$TARGET \
     -Ilib/scratch-rt \
     -Ilib/scratch-rt/$DEBUGDIR \
     $FILELIST \
-    $(platform_subdir_lookup lib/scratch-rt)/refalrts-platform-specific.cpp \
-    lib/scratch-rt/platform-POSIX/refalrts-platform-POSIX.cpp \
+    "$PLATFORM/refalrts-platform-specific.cpp" \
+    "$POSIXCPP" \
     $CPPLINEESUF
 
   if [ ! -e $TARGET ]; then
