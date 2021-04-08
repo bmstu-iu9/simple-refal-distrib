@@ -245,7 +245,7 @@ static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COO
 #include "refalrts-diagnostic-defs.h"
 #include "refalrts-vm.h"
 
-#define VERSION "3.3"
+#define VERSION "3.3.1"
 
 static void version(FILE *output) {
   fprintf(
