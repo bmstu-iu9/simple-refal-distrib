@@ -44,18 +44,18 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Mu/4 e.Arg#1/2 >/1
+  // </0 & Mu/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -88,18 +88,18 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Residue/4 e.Arg#1/2 >/1
+  // </0 & Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -132,18 +132,18 @@ static refalrts::FnResult func_u_u_Metau_Residue(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & __Meta_Residue/4 e.Arg#1/2 >/1
+  // </0 & __Meta_Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -172,7 +172,7 @@ static refalrts::FnResult func_ErrorAt(refalrts::VM *vm, refalrts::Iter arg_begi
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & ErrorAt/4 (/7 s.Number#1/9 e.File#1/5 )/8 e.Text#1/2 >/1
+  // </0 & ErrorAt/4 (/7 s.Number/9 e.File/5 )/8 e.Text/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -184,17 +184,17 @@ static refalrts::FnResult func_ErrorAt(refalrts::VM *vm, refalrts::Iter arg_begi
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.Text#1 as range 2
+  // closed e.Text as range 2
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.File#1 as range 5
-  //DEBUG: e.Text#1: 2
-  //DEBUG: s.Number#1: 9
-  //DEBUG: e.File#1: 5
+  // closed e.File as range 5
+  //DEBUG: e.Text: 2
+  //DEBUG: s.Number: 9
+  //DEBUG: e.File: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & Symb/7 AsIs: s.Number#1/9 } >/12":ERROR:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Text#1/2 AsIs: >/1 } </15 & Exit/16 1/17 >/18 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 } Tile{ AsIs: e.File/5 } ':'/10 </11 Tile{ HalfReuse: & Symb/7 AsIs: s.Number/9 } >/12":ERROR:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Text/2 AsIs: >/1 } </15 & Exit/16 1/17 >/18 Tile{ ]] }
   refalrts::alloc_char(vm, context[10], ':');
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::alloc_close_call(vm, context[12]);
@@ -237,7 +237,7 @@ static refalrts::FnResult func_WarningAt(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & WarningAt/4 (/7 s.Number#1/9 e.File#1/5 )/8 e.Message#1/2 >/1
+  // </0 & WarningAt/4 (/7 s.Number/9 e.File/5 )/8 e.Message/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -249,17 +249,17 @@ static refalrts::FnResult func_WarningAt(refalrts::VM *vm, refalrts::Iter arg_be
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.Message#1 as range 2
+  // closed e.Message as range 2
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.File#1 as range 5
-  //DEBUG: e.Message#1: 2
-  //DEBUG: s.Number#1: 9
-  //DEBUG: e.File#1: 5
+  // closed e.File as range 5
+  //DEBUG: e.Message: 2
+  //DEBUG: s.Number: 9
+  //DEBUG: e.File: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 } Tile{ AsIs: e.File#1/5 } ':'/10 </11 Tile{ HalfReuse: & Symb/7 AsIs: s.Number#1/9 } >/12":WARNING:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Message#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Prout/4 } Tile{ AsIs: e.File/5 } ':'/10 </11 Tile{ HalfReuse: & Symb/7 AsIs: s.Number/9 } >/12":WARNING:"/13 Tile{ HalfReuse: ' '/8 AsIs: e.Message/2 AsIs: >/1 ]] }
   refalrts::alloc_char(vm, context[10], ':');
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::alloc_close_call(vm, context[12]);

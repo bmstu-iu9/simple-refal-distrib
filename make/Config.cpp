@@ -138,18 +138,18 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Mu/4 e.Arg#1/2 >/1
+  // </0 & Mu/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -182,18 +182,18 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Residue/4 e.Arg#1/2 >/1
+  // </0 & Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -226,18 +226,18 @@ static refalrts::FnResult func_u_u_Metau_Residue(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & __Meta_Residue/4 e.Arg#1/2 >/1
+  // </0 & __Meta_Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -380,7 +380,7 @@ static refalrts::FnResult func_Configm_GetCppCompilerExe(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetCppCompilerExe/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExe/18 e.CppCompilerExe#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetCppCompilerExe/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExe/18 e.CppCompilerExe/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -409,15 +409,15 @@ static refalrts::FnResult func_Configm_GetCppCompilerExe(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerExe], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.CppCompilerExe#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.CppCompilerExe#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.CppCompilerExe as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.CppCompilerExe: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerExe/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExe/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerExe#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerExe/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExe/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerExe/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -440,7 +440,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerExe(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetCppCompilerExe/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExe/18 e.OldCppCompilerExe#1/14 )/17 e.Params-E#1/12 ]/9 e.CppCompilerExe#1/2 >/1
+  // </0 & Config-SetCppCompilerExe/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExe/18 e.OldCppCompilerExe/14 )/17 e.Params-E/12 ]/9 e.CppCompilerExe/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -452,7 +452,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerExe(refalrts::VM *vm, refal
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.CppCompilerExe#1 as range 2
+  // closed e.CppCompilerExe as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -468,16 +468,16 @@ static refalrts::FnResult func_Configm_SetCppCompilerExe(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerExe], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldCppCompilerExe#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.CppCompilerExe#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldCppCompilerExe#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldCppCompilerExe as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.CppCompilerExe: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldCppCompilerExe: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerExe#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # CppCompilerExe/18 } Tile{ AsIs: e.CppCompilerExe#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerExe/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # CppCompilerExe/18 } Tile{ AsIs: e.CppCompilerExe/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -505,7 +505,7 @@ static refalrts::FnResult func_Configm_GetCppCompilerLib(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetCppCompilerLib/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLib/18 e.CppCompilerLib#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetCppCompilerLib/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLib/18 e.CppCompilerLib/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -534,15 +534,15 @@ static refalrts::FnResult func_Configm_GetCppCompilerLib(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerLib], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.CppCompilerLib#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.CppCompilerLib#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.CppCompilerLib as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.CppCompilerLib: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerLib/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLib/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerLib#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerLib/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLib/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerLib/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -565,7 +565,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerLib(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetCppCompilerLib/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLib/18 e.OldCppCompilerLib#1/14 )/17 e.Params-E#1/12 ]/9 e.CppCompilerLib#1/2 >/1
+  // </0 & Config-SetCppCompilerLib/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLib/18 e.OldCppCompilerLib/14 )/17 e.Params-E/12 ]/9 e.CppCompilerLib/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -577,7 +577,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerLib(refalrts::VM *vm, refal
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.CppCompilerLib#1 as range 2
+  // closed e.CppCompilerLib as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -593,16 +593,16 @@ static refalrts::FnResult func_Configm_SetCppCompilerLib(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerLib], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldCppCompilerLib#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.CppCompilerLib#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldCppCompilerLib#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldCppCompilerLib as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.CppCompilerLib: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldCppCompilerLib: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerLib#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # CppCompilerLib/18 } Tile{ AsIs: e.CppCompilerLib#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerLib/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # CppCompilerLib/18 } Tile{ AsIs: e.CppCompilerLib/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -630,7 +630,7 @@ static refalrts::FnResult func_Configm_GetFolders(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetFolders/4 [/7Config/8 e.Params-B#1/10 (/16 # Folders/18 e.Folders#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetFolders/4 [/7Config/8 e.Params-B/10 (/16 # Folders/18 e.Folders/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -659,15 +659,15 @@ static refalrts::FnResult func_Configm_GetFolders(refalrts::VM *vm, refalrts::It
     context[18] = refalrts::ident_left( identifiers[ident_Folders], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Folders#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Folders#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Folders as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Folders: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetFolders/4 [/7Config/8 e.Params-B#1/10 (/16 # Folders/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Folders#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetFolders/4 [/7Config/8 e.Params-B/10 (/16 # Folders/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Folders/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -690,33 +690,33 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  // </0 & Config-AddFolder/4 e.new#0/2 >/1
+  // </0 & Config-AddFolder/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Config-AddFolder/4 [/7Config/8 e.new#1/5 ]/9 s.new#2/10 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & Config-AddFolder/4 [/7Config/8 e.new1/5 ]/9 s.new2/10 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::adt_left( context[5], context[6], functions[efunc_Config], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#3 as range 2
+  // closed e.new3 as range 2
   do {
-    // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B#1/15 (/21 # Folders/23 e.Folders#1/19 )/22 e.Params-E#1/17 ]/9 # Search/10 e.Path#1/13 >/1
+    // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B/15 (/21 # Folders/23 e.Folders/19 )/22 e.Params-E/17 ]/9 # Search/10 e.Path/13 >/1
     context[11] = context[5];
     context[12] = context[6];
     context[13] = context[2];
     context[14] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Search], context[10] ) )
       continue;
-    // closed e.Path#1 as range 13
+    // closed e.Path as range 13
     context[15] = 0;
     context[16] = 0;
     refalrts::start_e_loop(vm);
@@ -732,16 +732,16 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
       context[23] = refalrts::ident_left( identifiers[ident_Folders], context[19], context[20] );
       if( ! context[23] )
         continue;
-      // closed e.Folders#1 as range 19
-      // closed e.Params-E#1 as range 17
-      //DEBUG: e.Path#1: 13
-      //DEBUG: e.Params-B#1: 15
-      //DEBUG: e.Folders#1: 19
-      //DEBUG: e.Params-E#1: 17
+      // closed e.Folders as range 19
+      // closed e.Params-E as range 17
+      //DEBUG: e.Path: 13
+      //DEBUG: e.Params-B: 15
+      //DEBUG: e.Folders: 19
+      //DEBUG: e.Params-E: 17
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/15 AsIs: (/21 AsIs: # Folders/23 AsIs: e.Folders#1/19 HalfReuse: (/22 } Tile{ AsIs: # Search/10 AsIs: e.Path#1/13 HalfReuse: )/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/17 } Tile{ AsIs: ]/9 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/15 AsIs: (/21 AsIs: # Folders/23 AsIs: e.Folders/19 HalfReuse: (/22 } Tile{ AsIs: # Search/10 AsIs: e.Path/13 HalfReuse: )/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/17 } Tile{ AsIs: ]/9 } Tile{ ]] }
       refalrts::reinit_ident(context[4], identifiers[ident_Success]);
       refalrts::reinit_open_bracket(context[22]);
       refalrts::reinit_close_bracket(context[1]);
@@ -764,14 +764,14 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B#1/15 (/21 # Folders/23 e.Folders#1/19 )/22 e.Params-E#1/17 ]/9 # Runtime/10 e.Path#1/13 >/1
+    // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B/15 (/21 # Folders/23 e.Folders/19 )/22 e.Params-E/17 ]/9 # Runtime/10 e.Path/13 >/1
     context[11] = context[5];
     context[12] = context[6];
     context[13] = context[2];
     context[14] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Runtime], context[10] ) )
       continue;
-    // closed e.Path#1 as range 13
+    // closed e.Path as range 13
     context[15] = 0;
     context[16] = 0;
     refalrts::start_e_loop(vm);
@@ -787,16 +787,16 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
       context[23] = refalrts::ident_left( identifiers[ident_Folders], context[19], context[20] );
       if( ! context[23] )
         continue;
-      // closed e.Folders#1 as range 19
-      // closed e.Params-E#1 as range 17
-      //DEBUG: e.Path#1: 13
-      //DEBUG: e.Params-B#1: 15
-      //DEBUG: e.Folders#1: 19
-      //DEBUG: e.Params-E#1: 17
+      // closed e.Folders as range 19
+      // closed e.Params-E as range 17
+      //DEBUG: e.Path: 13
+      //DEBUG: e.Params-B: 15
+      //DEBUG: e.Folders: 19
+      //DEBUG: e.Params-E: 17
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/15 AsIs: (/21 AsIs: # Folders/23 AsIs: e.Folders#1/19 HalfReuse: (/22 } Tile{ AsIs: # Runtime/10 AsIs: e.Path#1/13 HalfReuse: )/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/17 } Tile{ AsIs: ]/9 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/15 AsIs: (/21 AsIs: # Folders/23 AsIs: e.Folders/19 HalfReuse: (/22 } Tile{ AsIs: # Runtime/10 AsIs: e.Path/13 HalfReuse: )/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/17 } Tile{ AsIs: ]/9 } Tile{ ]] }
       refalrts::reinit_ident(context[4], identifiers[ident_Success]);
       refalrts::reinit_open_bracket(context[22]);
       refalrts::reinit_close_bracket(context[1]);
@@ -818,7 +818,7 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B#1/11 (/17 # Folders/19 e.Folders#1/15 )/18 e.Params-E#1/13 ]/9 # REF5RSL/10 >/1
+  // </0 & Config-AddFolder/4 [/7Config/8 e.Params-B/11 (/17 # Folders/19 e.Folders/15 )/18 e.Params-E/13 ]/9 # REF5RSL/10 >/1
   if( ! refalrts::ident_term( identifiers[ident_REF5RSL], context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -838,15 +838,15 @@ static refalrts::FnResult func_Configm_AddFolder(refalrts::VM *vm, refalrts::Ite
     context[19] = refalrts::ident_left( identifiers[ident_Folders], context[15], context[16] );
     if( ! context[19] )
       continue;
-    // closed e.Folders#1 as range 15
-    // closed e.Params-E#1 as range 13
-    //DEBUG: e.Params-B#1: 11
-    //DEBUG: e.Folders#1: 15
-    //DEBUG: e.Params-E#1: 13
+    // closed e.Folders as range 15
+    // closed e.Params-E as range 13
+    //DEBUG: e.Params-B: 11
+    //DEBUG: e.Folders: 15
+    //DEBUG: e.Params-E: 13
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} # REF5RSL/10 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/11 AsIs: (/17 AsIs: # Folders/19 AsIs: e.Folders#1/15 HalfReuse: # REF5RSL/18 } Tile{ HalfReuse: )/9 } Tile{ AsIs: e.Params-E#1/13 } Tile{ HalfReuse: ]/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/11 AsIs: (/17 AsIs: # Folders/19 AsIs: e.Folders/15 HalfReuse: # REF5RSL/18 } Tile{ HalfReuse: )/9 } Tile{ AsIs: e.Params-E/13 } Tile{ HalfReuse: ]/1 ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::reinit_ident(context[18], identifiers[ident_REF5RSL]);
     refalrts::reinit_close_bracket(context[9]);
@@ -877,7 +877,7 @@ static refalrts::FnResult func_Configm_GetRLCompiler(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  // </0 & Config-GetRLCompiler/4 [/7Config/8 e.Params-B#1/10 (/16 # RLCompiler/18 (/21 e.Compiler#1/19 )/22 e.Flags#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetRLCompiler/4 [/7Config/8 e.Params-B/10 (/16 # RLCompiler/18 (/21 e.Compiler/19 )/22 e.Flags/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -912,17 +912,17 @@ static refalrts::FnResult func_Configm_GetRLCompiler(refalrts::VM *vm, refalrts:
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    // closed e.Compiler#1 as range 19
-    // closed e.Flags#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Compiler#1: 19
-    //DEBUG: e.Flags#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Compiler as range 19
+    // closed e.Flags as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Compiler: 19
+    //DEBUG: e.Flags: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetRLCompiler/4 [/7Config/8 e.Params-B#1/10 (/16 # RLCompiler/18 (/21 {REMOVED TILE} )/22 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Compiler#1/19 } Tile{ AsIs: e.Flags#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetRLCompiler/4 [/7Config/8 e.Params-B/10 (/16 # RLCompiler/18 (/21 {REMOVED TILE} )/22 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Compiler/19 } Tile{ AsIs: e.Flags/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -946,7 +946,7 @@ static refalrts::FnResult func_Configm_SetRLCompiler(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 23 elems
   refalrts::Iter context[23];
   refalrts::zeros( context, 23 );
-  // </0 & Config-SetRLCompiler/4 [/7Config/8 e.Params-B#1/10 (/16 # RLCompiler/18 (/21 e.OldCompiler#1/19 )/22 e.Flags#1/14 )/17 e.Params-E#1/12 ]/9 e.RLCompiler#1/2 >/1
+  // </0 & Config-SetRLCompiler/4 [/7Config/8 e.Params-B/10 (/16 # RLCompiler/18 (/21 e.OldCompiler/19 )/22 e.Flags/14 )/17 e.Params-E/12 ]/9 e.RLCompiler/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -958,7 +958,7 @@ static refalrts::FnResult func_Configm_SetRLCompiler(refalrts::VM *vm, refalrts:
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.RLCompiler#1 as range 2
+  // closed e.RLCompiler as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -980,18 +980,18 @@ static refalrts::FnResult func_Configm_SetRLCompiler(refalrts::VM *vm, refalrts:
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    // closed e.OldCompiler#1 as range 19
-    // closed e.Flags#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.RLCompiler#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldCompiler#1: 19
-    //DEBUG: e.Flags#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldCompiler as range 19
+    // closed e.Flags as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.RLCompiler: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldCompiler: 19
+    //DEBUG: e.Flags: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCompiler#1/19 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # RLCompiler/18 AsIs: (/21 } Tile{ AsIs: e.RLCompiler#1/2 } Tile{ AsIs: )/22 AsIs: e.Flags#1/14 AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCompiler/19 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # RLCompiler/18 AsIs: (/21 } Tile{ AsIs: e.RLCompiler/2 } Tile{ AsIs: )/22 AsIs: e.Flags/14 AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -1020,7 +1020,7 @@ static refalrts::FnResult func_Configm_AddRLCompilerFlag(refalrts::VM *vm, refal
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  // </0 & Config-AddRLCompilerFlag/4 [/7Config/8 e.Params-B#1/10 (/16 # RLCompiler/18 t.RLCompiler#1/19 e.Flags#1/14 )/17 e.Params-E#1/12 ]/9 e.NewFlags#1/2 >/1
+  // </0 & Config-AddRLCompilerFlag/4 [/7Config/8 e.Params-B/10 (/16 # RLCompiler/18 t.RLCompiler/19 e.Flags/14 )/17 e.Params-E/12 ]/9 e.NewFlags/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1032,7 +1032,7 @@ static refalrts::FnResult func_Configm_AddRLCompilerFlag(refalrts::VM *vm, refal
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewFlags#1 as range 2
+  // closed e.NewFlags as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1048,20 +1048,20 @@ static refalrts::FnResult func_Configm_AddRLCompilerFlag(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_RLCompiler], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Params-E#1 as range 12
+    // closed e.Params-E as range 12
     context[20] = refalrts::tvar_left( context[19], context[14], context[15] );
     if( ! context[20] )
       continue;
-    // closed e.Flags#1 as range 14
-    //DEBUG: e.NewFlags#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Params-E#1: 12
-    //DEBUG: t.RLCompiler#1: 19
-    //DEBUG: e.Flags#1: 14
+    // closed e.Flags as range 14
+    //DEBUG: e.NewFlags: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Params-E: 12
+    //DEBUG: t.RLCompiler: 19
+    //DEBUG: e.Flags: 14
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # RLCompiler/18 AsIs: t.RLCompiler#1/19 AsIs: e.Flags#1/14 HalfReuse: ' '/17 } Tile{ HalfReuse: '\"'/9 AsIs: e.NewFlags#1/2 HalfReuse: '\"'/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/12 } ]/21 Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # RLCompiler/18 AsIs: t.RLCompiler/19 AsIs: e.Flags/14 HalfReuse: ' '/17 } Tile{ HalfReuse: '\"'/9 AsIs: e.NewFlags/2 HalfReuse: '\"'/1 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/12 } ]/21 Tile{ ]] }
     refalrts::alloc_close_adt(vm, context[21]);
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::reinit_char(context[17], ' ');
@@ -1096,7 +1096,7 @@ static refalrts::FnResult func_Configm_GetTargetFileName(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetTargetFileName/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetFileName/18 e.TargetFileName#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetTargetFileName/4 [/7Config/8 e.Params-B/10 (/16 # TargetFileName/18 e.TargetFileName/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1125,15 +1125,15 @@ static refalrts::FnResult func_Configm_GetTargetFileName(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_TargetFileName], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.TargetFileName#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.TargetFileName#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.TargetFileName as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.TargetFileName: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetTargetFileName/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetFileName/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.TargetFileName#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetTargetFileName/4 [/7Config/8 e.Params-B/10 (/16 # TargetFileName/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.TargetFileName/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1156,7 +1156,7 @@ static refalrts::FnResult func_Configm_SetTargetFileName(refalrts::VM *vm, refal
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetTargetFileName/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetFileName/18 e.OldTargetFileName#1/14 )/17 e.Params-E#1/12 ]/9 e.NewTargetFileName#1/2 >/1
+  // </0 & Config-SetTargetFileName/4 [/7Config/8 e.Params-B/10 (/16 # TargetFileName/18 e.OldTargetFileName/14 )/17 e.Params-E/12 ]/9 e.NewTargetFileName/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1168,7 +1168,7 @@ static refalrts::FnResult func_Configm_SetTargetFileName(refalrts::VM *vm, refal
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewTargetFileName#1 as range 2
+  // closed e.NewTargetFileName as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1184,16 +1184,16 @@ static refalrts::FnResult func_Configm_SetTargetFileName(refalrts::VM *vm, refal
     context[18] = refalrts::ident_left( identifiers[ident_TargetFileName], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldTargetFileName#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewTargetFileName#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldTargetFileName#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldTargetFileName as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewTargetFileName: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldTargetFileName: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldTargetFileName#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # TargetFileName/18 } Tile{ AsIs: e.NewTargetFileName#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldTargetFileName/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # TargetFileName/18 } Tile{ AsIs: e.NewTargetFileName/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -1221,7 +1221,7 @@ static refalrts::FnResult func_Configm_GetSourceFile(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetSourceFile/4 [/7Config/8 e.Params-B#1/10 (/16 # SourceFile/18 e.FileName#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetSourceFile/4 [/7Config/8 e.Params-B/10 (/16 # SourceFile/18 e.FileName/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1250,15 +1250,15 @@ static refalrts::FnResult func_Configm_GetSourceFile(refalrts::VM *vm, refalrts:
     context[18] = refalrts::ident_left( identifiers[ident_SourceFile], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.FileName#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.FileName#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.FileName as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.FileName: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetSourceFile/4 [/7Config/8 e.Params-B#1/10 (/16 # SourceFile/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.FileName#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetSourceFile/4 [/7Config/8 e.Params-B/10 (/16 # SourceFile/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.FileName/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1281,29 +1281,29 @@ static refalrts::FnResult func_Configm_SetSourceFile(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  // </0 & Config-SetSourceFile/4 e.new#0/2 >/1
+  // </0 & Config-SetSourceFile/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Config-SetSourceFile/4 [/7Config/8 e.new#1/5 ]/9 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & Config-SetSourceFile/4 [/7Config/8 e.new1/5 ]/9 e.new2/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::adt_left( context[5], context[6], functions[efunc_Config], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 2
   do {
-    // </0 & Config-SetSourceFile/4 [/7Config/8 e.Params-B#1/14 (/20 # SourceFile/22 # NotSet/23 )/21 e.Params-E#1/16 ]/9 e.SourceFile#1/12 >/1
+    // </0 & Config-SetSourceFile/4 [/7Config/8 e.Params-B/14 (/20 # SourceFile/22 # NotSet/23 )/21 e.Params-E/16 ]/9 e.SourceFile/12 >/1
     context[10] = context[5];
     context[11] = context[6];
     context[12] = context[2];
     context[13] = context[3];
-    // closed e.SourceFile#1 as range 12
+    // closed e.SourceFile as range 12
     context[14] = 0;
     context[15] = 0;
     refalrts::start_e_loop(vm);
@@ -1324,14 +1324,14 @@ static refalrts::FnResult func_Configm_SetSourceFile(refalrts::VM *vm, refalrts:
         continue;
       if( ! refalrts::empty_seq( context[18], context[19] ) )
         continue;
-      // closed e.Params-E#1 as range 16
-      //DEBUG: e.SourceFile#1: 12
-      //DEBUG: e.Params-B#1: 14
-      //DEBUG: e.Params-E#1: 16
+      // closed e.Params-E as range 16
+      //DEBUG: e.SourceFile: 12
+      //DEBUG: e.Params-B: 14
+      //DEBUG: e.Params-E: 16
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE} # NotSet/23 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/14 AsIs: (/20 AsIs: # SourceFile/22 } Tile{ AsIs: e.SourceFile#1/12 } Tile{ AsIs: )/21 AsIs: e.Params-E#1/16 AsIs: ]/9 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/14 AsIs: (/20 AsIs: # SourceFile/22 } Tile{ AsIs: e.SourceFile/12 } Tile{ AsIs: )/21 AsIs: e.Params-E/16 AsIs: ]/9 } Tile{ ]] }
       refalrts::reinit_ident(context[4], identifiers[ident_Success]);
       refalrts::link_brackets( context[7], context[9] );
       refalrts::link_brackets( context[20], context[21] );
@@ -1347,8 +1347,8 @@ static refalrts::FnResult func_Configm_SetSourceFile(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Config-SetSourceFile/4 [/7Config/8 e.Params-B#1/10 (/16 # SourceFile/18 e.OldSourceFile#1/14 )/17 e.Params-E#1/12 ]/9 e.SourceFile#1/2 >/1
-  // closed e.SourceFile#1 as range 2
+  // </0 & Config-SetSourceFile/4 [/7Config/8 e.Params-B/10 (/16 # SourceFile/18 e.OldSourceFile/14 )/17 e.Params-E/12 ]/9 e.SourceFile/2 >/1
+  // closed e.SourceFile as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1364,15 +1364,15 @@ static refalrts::FnResult func_Configm_SetSourceFile(refalrts::VM *vm, refalrts:
     context[18] = refalrts::ident_left( identifiers[ident_SourceFile], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldSourceFile#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.SourceFile#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldSourceFile#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldSourceFile as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.SourceFile: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldSourceFile: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} [/7Config/8 e.Params-B#1/10 (/16 # SourceFile/18 e.OldSourceFile#1/14 )/17 e.Params-E#1/12 ]/9 e.SourceFile#1/2 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} [/7Config/8 e.Params-B/10 (/16 # SourceFile/18 e.OldSourceFile/14 )/17 e.Params-E/12 ]/9 e.SourceFile/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: # Fails/0 HalfReuse: # ManySourceFiles/4 } Tile{ ]] }
     refalrts::reinit_ident(context[0], identifiers[ident_Fails]);
     refalrts::reinit_ident(context[4], identifiers[ident_ManySourceFiles]);
@@ -1397,7 +1397,7 @@ static refalrts::FnResult func_Configm_GetPrefix(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetPrefix/4 [/7Config/8 e.Params-B#1/10 (/16 # Prefix/18 e.Prefix#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetPrefix/4 [/7Config/8 e.Params-B/10 (/16 # Prefix/18 e.Prefix/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1426,15 +1426,15 @@ static refalrts::FnResult func_Configm_GetPrefix(refalrts::VM *vm, refalrts::Ite
     context[18] = refalrts::ident_left( identifiers[ident_Prefix], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Prefix#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Prefix#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Prefix as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Prefix: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetPrefix/4 [/7Config/8 e.Params-B#1/10 (/16 # Prefix/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Prefix#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetPrefix/4 [/7Config/8 e.Params-B/10 (/16 # Prefix/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Prefix/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1457,7 +1457,7 @@ static refalrts::FnResult func_Configm_SetPrefix(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetPrefix/4 [/7Config/8 e.Params-B#1/10 (/16 # Prefix/18 e.OldPrefix#1/14 )/17 e.Params-E#1/12 ]/9 e.NewPrefix#1/2 >/1
+  // </0 & Config-SetPrefix/4 [/7Config/8 e.Params-B/10 (/16 # Prefix/18 e.OldPrefix/14 )/17 e.Params-E/12 ]/9 e.NewPrefix/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1469,7 +1469,7 @@ static refalrts::FnResult func_Configm_SetPrefix(refalrts::VM *vm, refalrts::Ite
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewPrefix#1 as range 2
+  // closed e.NewPrefix as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1485,16 +1485,16 @@ static refalrts::FnResult func_Configm_SetPrefix(refalrts::VM *vm, refalrts::Ite
     context[18] = refalrts::ident_left( identifiers[ident_Prefix], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldPrefix#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewPrefix#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldPrefix#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldPrefix as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewPrefix: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldPrefix: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldPrefix#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # Prefix/18 } Tile{ AsIs: e.NewPrefix#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldPrefix/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # Prefix/18 } Tile{ AsIs: e.NewPrefix/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -1522,7 +1522,7 @@ static refalrts::FnResult func_Configm_GetReferences(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetReferences/4 [/7Config/8 e.Params-B#1/10 (/16 # References/18 e.References#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetReferences/4 [/7Config/8 e.Params-B/10 (/16 # References/18 e.References/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1551,15 +1551,15 @@ static refalrts::FnResult func_Configm_GetReferences(refalrts::VM *vm, refalrts:
     context[18] = refalrts::ident_left( identifiers[ident_References], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.References#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.References#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.References as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.References: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetReferences/4 [/7Config/8 e.Params-B#1/10 (/16 # References/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.References#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetReferences/4 [/7Config/8 e.Params-B/10 (/16 # References/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.References/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1582,7 +1582,7 @@ static refalrts::FnResult func_Configm_AddReference(refalrts::VM *vm, refalrts::
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-AddReference/4 [/7Config/8 e.Params-B#1/10 (/16 # References/18 e.References#1/14 )/17 e.Params-E#1/12 ]/9 e.NewReference#1/2 >/1
+  // </0 & Config-AddReference/4 [/7Config/8 e.Params-B/10 (/16 # References/18 e.References/14 )/17 e.Params-E/12 ]/9 e.NewReference/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1594,7 +1594,7 @@ static refalrts::FnResult func_Configm_AddReference(refalrts::VM *vm, refalrts::
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewReference#1 as range 2
+  // closed e.NewReference as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1610,16 +1610,16 @@ static refalrts::FnResult func_Configm_AddReference(refalrts::VM *vm, refalrts::
     context[18] = refalrts::ident_left( identifiers[ident_References], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.References#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewReference#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.References#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.References as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewReference: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.References: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # References/18 AsIs: e.References#1/14 HalfReuse: (/17 } Tile{ AsIs: e.NewReference#1/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/12 } Tile{ HalfReuse: ]/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # References/18 AsIs: e.References/14 HalfReuse: (/17 } Tile{ AsIs: e.NewReference/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/12 } Tile{ HalfReuse: ]/1 ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::reinit_open_bracket(context[17]);
     refalrts::reinit_close_bracket(context[9]);
@@ -1654,7 +1654,7 @@ static refalrts::FnResult func_Configm_GetTargetMode(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & Config-GetTargetMode/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetMode/18 s.TargetMode#1/19 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetTargetMode/4 [/7Config/8 e.Params-B/10 (/16 # TargetMode/18 s.TargetMode/19 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1683,18 +1683,18 @@ static refalrts::FnResult func_Configm_GetTargetMode(refalrts::VM *vm, refalrts:
     context[18] = refalrts::ident_left( identifiers[ident_TargetMode], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Params-E#1 as range 12
+    // closed e.Params-E as range 12
     if( ! refalrts::svar_left( context[19], context[14], context[15] ) )
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Params-E#1: 12
-    //DEBUG: s.TargetMode#1: 19
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Params-E: 12
+    //DEBUG: s.TargetMode: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetTargetMode/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetMode/18 s.TargetMode#1/19 )/17 e.Params-E#1/12 ]/9 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.TargetMode1 #19/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetTargetMode/4 [/7Config/8 e.Params-B/10 (/16 # TargetMode/18 s.TargetMode/19 )/17 e.Params-E/12 ]/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.TargetMode19 /1 ]] }
     refalrts::reinit_svar( context[1], context[19] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -1717,35 +1717,35 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 27 elems
   refalrts::Iter context[27];
   refalrts::zeros( context, 27 );
-  // </0 & Config-SetTargetMode/4 e.new#0/2 >/1
+  // </0 & Config-SetTargetMode/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Config-SetTargetMode/4 [/7Config/8 e.new#1/5 ]/9 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & Config-SetTargetMode/4 [/7Config/8 e.new1/5 ]/9 e.new2/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::adt_left( context[5], context[6], functions[efunc_Config], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 2
   do {
-    // </0 & Config-SetTargetMode/4 [/7Config/8 e.new#4/10 ]/9 s.new#3/14 >/1
+    // </0 & Config-SetTargetMode/4 [/7Config/8 e.new4/10 ]/9 s.new3/14 >/1
     context[10] = context[5];
     context[11] = context[6];
     context[12] = context[2];
     context[13] = context[3];
-    // closed e.new#4 as range 10
+    // closed e.new4 as range 10
     if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
       continue;
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
     do {
-      // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B#1/17 (/23 # TargetMode/25 # DefaultEXE/26 )/24 e.Params-E#1/19 ]/9 s.NewTargetMode#1/14 >/1
+      // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B/17 (/23 # TargetMode/25 # DefaultEXE/26 )/24 e.Params-E/19 ]/9 s.NewTargetMode/14 >/1
       context[15] = context[10];
       context[16] = context[11];
       context[17] = 0;
@@ -1768,14 +1768,14 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
           continue;
         if( ! refalrts::empty_seq( context[21], context[22] ) )
           continue;
-        // closed e.Params-E#1 as range 19
-        //DEBUG: s.NewTargetMode#1: 14
-        //DEBUG: e.Params-B#1: 17
-        //DEBUG: e.Params-E#1: 19
+        // closed e.Params-E as range 19
+        //DEBUG: s.NewTargetMode: 14
+        //DEBUG: e.Params-B: 17
+        //DEBUG: e.Params-E: 19
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NewTargetMode#1/14 >/1 {REMOVED TILE}
-        //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/17 AsIs: (/23 AsIs: # TargetMode/25 HalfReuse: s.NewTargetMode1 #14/26 AsIs: )/24 AsIs: e.Params-E#1/19 AsIs: ]/9 } Tile{ ]] }
+        //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.NewTargetMode/14 >/1 {REMOVED TILE}
+        //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/17 AsIs: (/23 AsIs: # TargetMode/25 HalfReuse: s.NewTargetMode14 /26 AsIs: )/24 AsIs: e.Params-E/19 AsIs: ]/9 } Tile{ ]] }
         refalrts::reinit_ident(context[4], identifiers[ident_Success]);
         refalrts::reinit_svar( context[26], context[14] );
         refalrts::link_brackets( context[7], context[9] );
@@ -1790,7 +1790,7 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B#1/17 (/23 # TargetMode/25 s.TargetMode#1/26 )/24 e.Params-E#1/19 ]/9 s.TargetMode#1/14 >/1
+    // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B/17 (/23 # TargetMode/25 s.TargetMode/26 )/24 e.Params-E/19 ]/9 s.TargetMode/14 >/1
     context[15] = context[10];
     context[16] = context[11];
     context[17] = 0;
@@ -1812,14 +1812,14 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
         continue;
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
-      // closed e.Params-E#1 as range 19
-      //DEBUG: s.TargetMode#1: 14
-      //DEBUG: e.Params-B#1: 17
-      //DEBUG: e.Params-E#1: 19
+      // closed e.Params-E as range 19
+      //DEBUG: s.TargetMode: 14
+      //DEBUG: e.Params-B: 17
+      //DEBUG: e.Params-E: 19
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.TargetMode#1/14 >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/17 AsIs: (/23 AsIs: # TargetMode/25 AsIs: s.TargetMode#1/26 AsIs: )/24 AsIs: e.Params-E#1/19 AsIs: ]/9 } Tile{ ]] }
+      //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.TargetMode/14 >/1 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/17 AsIs: (/23 AsIs: # TargetMode/25 AsIs: s.TargetMode/26 AsIs: )/24 AsIs: e.Params-E/19 AsIs: ]/9 } Tile{ ]] }
       refalrts::reinit_ident(context[4], identifiers[ident_Success]);
       refalrts::link_brackets( context[7], context[9] );
       refalrts::link_brackets( context[23], context[24] );
@@ -1833,8 +1833,8 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B#1/10 (/16 # TargetMode/18 s.OldTargetMode#1/19 )/17 e.Params-E#1/12 ]/9 e.NewTargetMode#1/2 >/1
-  // closed e.NewTargetMode#1 as range 2
+  // </0 & Config-SetTargetMode/4 [/7Config/8 e.Params-B/10 (/16 # TargetMode/18 s.OldTargetMode/19 )/17 e.Params-E/12 ]/9 e.NewTargetMode/2 >/1
+  // closed e.NewTargetMode as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1850,18 +1850,18 @@ static refalrts::FnResult func_Configm_SetTargetMode(refalrts::VM *vm, refalrts:
     context[18] = refalrts::ident_left( identifiers[ident_TargetMode], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Params-E#1 as range 12
+    // closed e.Params-E as range 12
     if( ! refalrts::svar_left( context[19], context[14], context[15] ) )
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
-    //DEBUG: e.NewTargetMode#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Params-E#1: 12
-    //DEBUG: s.OldTargetMode#1: 19
+    //DEBUG: e.NewTargetMode: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Params-E: 12
+    //DEBUG: s.OldTargetMode: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} [/7Config/8 e.Params-B#1/10 (/16 # TargetMode/18 s.OldTargetMode#1/19 )/17 e.Params-E#1/12 ]/9 e.NewTargetMode#1/2 >/1 {REMOVED TILE}
+    //TRASH: {REMOVED TILE} [/7Config/8 e.Params-B/10 (/16 # TargetMode/18 s.OldTargetMode/19 )/17 e.Params-E/12 ]/9 e.NewTargetMode/2 >/1 {REMOVED TILE}
     //RESULT: Tile{ [[ HalfReuse: # Fails/0 HalfReuse: # TargetModeAlreadySet/4 } Tile{ ]] }
     refalrts::reinit_ident(context[0], identifiers[ident_Fails]);
     refalrts::reinit_ident(context[4], identifiers[ident_TargetModeAlreadySet]);
@@ -1886,7 +1886,7 @@ static refalrts::FnResult func_Configm_GetPrelude(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B#1/10 (/16 # Prelude/18 e.Prelude#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B/10 (/16 # Prelude/18 e.Prelude/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1915,15 +1915,15 @@ static refalrts::FnResult func_Configm_GetPrelude(refalrts::VM *vm, refalrts::It
     context[18] = refalrts::ident_left( identifiers[ident_Prelude], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Prelude#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Prelude#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Prelude as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Prelude: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B#1/10 (/16 # Prelude/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Prelude#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetPrelude/4 [/7Config/8 e.Params-B/10 (/16 # Prelude/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Prelude/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -1946,7 +1946,7 @@ static refalrts::FnResult func_Configm_SetPrelude(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetPrelude/4 [/7Config/8 e.Params-B#1/10 (/16 # Prelude/18 e.OldPrelude#1/14 )/17 e.Params-E#1/12 ]/9 e.NewPrelude#1/2 >/1
+  // </0 & Config-SetPrelude/4 [/7Config/8 e.Params-B/10 (/16 # Prelude/18 e.OldPrelude/14 )/17 e.Params-E/12 ]/9 e.NewPrelude/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1958,7 +1958,7 @@ static refalrts::FnResult func_Configm_SetPrelude(refalrts::VM *vm, refalrts::It
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewPrelude#1 as range 2
+  // closed e.NewPrelude as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -1974,16 +1974,16 @@ static refalrts::FnResult func_Configm_SetPrelude(refalrts::VM *vm, refalrts::It
     context[18] = refalrts::ident_left( identifiers[ident_Prelude], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldPrelude#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewPrelude#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldPrelude#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldPrelude as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewPrelude: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldPrelude: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldPrelude#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # Prelude/18 } Tile{ AsIs: e.NewPrelude#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldPrelude/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # Prelude/18 } Tile{ AsIs: e.NewPrelude/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -2011,7 +2011,7 @@ static refalrts::FnResult func_Configm_GetRuntimeFiles(refalrts::VM *vm, refalrt
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetRuntimeFiles/4 [/7Config/8 e.Params-B#1/10 (/16 # Runtime/18 e.Files#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetRuntimeFiles/4 [/7Config/8 e.Params-B/10 (/16 # Runtime/18 e.Files/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2040,15 +2040,15 @@ static refalrts::FnResult func_Configm_GetRuntimeFiles(refalrts::VM *vm, refalrt
     context[18] = refalrts::ident_left( identifiers[ident_Runtime], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Files#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Files#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Files as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Files: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetRuntimeFiles/4 [/7Config/8 e.Params-B#1/10 (/16 # Runtime/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.Files#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetRuntimeFiles/4 [/7Config/8 e.Params-B/10 (/16 # Runtime/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.Files/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -2071,7 +2071,7 @@ static refalrts::FnResult func_Configm_AddRuntimeFile(refalrts::VM *vm, refalrts
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-AddRuntimeFile/4 [/7Config/8 e.Params-B#1/10 (/16 # Runtime/18 e.Files#1/14 )/17 e.Params-E#1/12 ]/9 e.NewFile#1/2 >/1
+  // </0 & Config-AddRuntimeFile/4 [/7Config/8 e.Params-B/10 (/16 # Runtime/18 e.Files/14 )/17 e.Params-E/12 ]/9 e.NewFile/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2083,7 +2083,7 @@ static refalrts::FnResult func_Configm_AddRuntimeFile(refalrts::VM *vm, refalrts
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewFile#1 as range 2
+  // closed e.NewFile as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -2099,16 +2099,16 @@ static refalrts::FnResult func_Configm_AddRuntimeFile(refalrts::VM *vm, refalrts
     context[18] = refalrts::ident_left( identifiers[ident_Runtime], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Files#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewFile#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Files#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.Files as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewFile: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Files: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # Runtime/18 AsIs: e.Files#1/14 HalfReuse: (/17 } Tile{ AsIs: e.NewFile#1/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/12 } Tile{ HalfReuse: ]/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # Runtime/18 AsIs: e.Files/14 HalfReuse: (/17 } Tile{ AsIs: e.NewFile/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/12 } Tile{ HalfReuse: ]/1 ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::reinit_open_bracket(context[17]);
     refalrts::reinit_close_bracket(context[9]);
@@ -2143,7 +2143,7 @@ static refalrts::FnResult func_Configm_GetIncorporateds(refalrts::VM *vm, refalr
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetIncorporateds/4 [/7Config/8 e.Params-B#1/10 (/16 # Incorporateds/18 e.LibNames#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetIncorporateds/4 [/7Config/8 e.Params-B/10 (/16 # Incorporateds/18 e.LibNames/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2172,15 +2172,15 @@ static refalrts::FnResult func_Configm_GetIncorporateds(refalrts::VM *vm, refalr
     context[18] = refalrts::ident_left( identifiers[ident_Incorporateds], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.LibNames#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.LibNames#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.LibNames as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.LibNames: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetIncorporateds/4 [/7Config/8 e.Params-B#1/10 (/16 # Incorporateds/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.LibNames#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetIncorporateds/4 [/7Config/8 e.Params-B/10 (/16 # Incorporateds/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.LibNames/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -2203,7 +2203,7 @@ static refalrts::FnResult func_Configm_AddIncorporated(refalrts::VM *vm, refalrt
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-AddIncorporated/4 [/7Config/8 e.Params-B#1/10 (/16 # Incorporateds/18 e.LibNames#1/14 )/17 e.Params-E#1/12 ]/9 e.NewLibName#1/2 >/1
+  // </0 & Config-AddIncorporated/4 [/7Config/8 e.Params-B/10 (/16 # Incorporateds/18 e.LibNames/14 )/17 e.Params-E/12 ]/9 e.NewLibName/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2215,7 +2215,7 @@ static refalrts::FnResult func_Configm_AddIncorporated(refalrts::VM *vm, refalrt
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewLibName#1 as range 2
+  // closed e.NewLibName as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -2231,16 +2231,16 @@ static refalrts::FnResult func_Configm_AddIncorporated(refalrts::VM *vm, refalrt
     context[18] = refalrts::ident_left( identifiers[ident_Incorporateds], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.LibNames#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewLibName#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.LibNames#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.LibNames as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewLibName: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.LibNames: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # Incorporateds/18 AsIs: e.LibNames#1/14 HalfReuse: (/17 } Tile{ AsIs: e.NewLibName#1/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E#1/12 } Tile{ HalfReuse: ]/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # Incorporateds/18 AsIs: e.LibNames/14 HalfReuse: (/17 } Tile{ AsIs: e.NewLibName/2 } Tile{ HalfReuse: )/9 } Tile{ HalfReuse: )/0 } Tile{ AsIs: e.Params-E/12 } Tile{ HalfReuse: ]/1 ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::reinit_open_bracket(context[17]);
     refalrts::reinit_close_bracket(context[9]);
@@ -2275,7 +2275,7 @@ static refalrts::FnResult func_Configm_GetKeepRasls(refalrts::VM *vm, refalrts::
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & Config-GetKeepRasls/4 [/7Config/8 e.Params-B#1/10 (/16 # KeepRasls/18 s.Value#1/19 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetKeepRasls/4 [/7Config/8 e.Params-B/10 (/16 # KeepRasls/18 s.Value/19 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2304,18 +2304,18 @@ static refalrts::FnResult func_Configm_GetKeepRasls(refalrts::VM *vm, refalrts::
     context[18] = refalrts::ident_left( identifiers[ident_KeepRasls], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Params-E#1 as range 12
+    // closed e.Params-E as range 12
     if( ! refalrts::svar_left( context[19], context[14], context[15] ) )
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Params-E#1: 12
-    //DEBUG: s.Value#1: 19
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Params-E: 12
+    //DEBUG: s.Value: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetKeepRasls/4 [/7Config/8 e.Params-B#1/10 (/16 # KeepRasls/18 s.Value#1/19 )/17 e.Params-E#1/12 ]/9 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Value1 #19/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetKeepRasls/4 [/7Config/8 e.Params-B/10 (/16 # KeepRasls/18 s.Value/19 )/17 e.Params-E/12 ]/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Value19 /1 ]] }
     refalrts::reinit_svar( context[1], context[19] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2338,7 +2338,7 @@ static refalrts::FnResult func_Configm_SetKeepRasls(refalrts::VM *vm, refalrts::
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & Config-SetKeepRasls/4 [/7Config/8 e.Params-B#1/11 (/17 # KeepRasls/19 s.OldValue#1/20 )/18 e.Params-E#1/13 ]/9 s.NewValue#1/10 >/1
+  // </0 & Config-SetKeepRasls/4 [/7Config/8 e.Params-B/11 (/17 # KeepRasls/19 s.OldValue/20 )/18 e.Params-E/13 ]/9 s.NewValue/10 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2369,19 +2369,19 @@ static refalrts::FnResult func_Configm_SetKeepRasls(refalrts::VM *vm, refalrts::
     context[19] = refalrts::ident_left( identifiers[ident_KeepRasls], context[15], context[16] );
     if( ! context[19] )
       continue;
-    // closed e.Params-E#1 as range 13
+    // closed e.Params-E as range 13
     if( ! refalrts::svar_left( context[20], context[15], context[16] ) )
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
-    //DEBUG: s.NewValue#1: 10
-    //DEBUG: e.Params-B#1: 11
-    //DEBUG: e.Params-E#1: 13
-    //DEBUG: s.OldValue#1: 20
+    //DEBUG: s.NewValue: 10
+    //DEBUG: e.Params-B: 11
+    //DEBUG: e.Params-E: 13
+    //DEBUG: s.OldValue: 20
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.OldValue#1/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/11 AsIs: (/17 AsIs: # KeepRasls/19 } Tile{ AsIs: s.NewValue#1/10 } Tile{ AsIs: )/18 AsIs: e.Params-E#1/13 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.OldValue/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/11 AsIs: (/17 AsIs: # KeepRasls/19 } Tile{ AsIs: s.NewValue/10 } Tile{ AsIs: )/18 AsIs: e.Params-E/13 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[17], context[18] );
@@ -2409,7 +2409,7 @@ static refalrts::FnResult func_Configm_GetTempDir(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetTempDir/4 [/7Config/8 e.Params-B#1/10 (/16 # TempDir/18 e.DirName#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetTempDir/4 [/7Config/8 e.Params-B/10 (/16 # TempDir/18 e.DirName/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2438,15 +2438,15 @@ static refalrts::FnResult func_Configm_GetTempDir(refalrts::VM *vm, refalrts::It
     context[18] = refalrts::ident_left( identifiers[ident_TempDir], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.DirName#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.DirName#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.DirName as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.DirName: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetTempDir/4 [/7Config/8 e.Params-B#1/10 (/16 # TempDir/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.DirName#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetTempDir/4 [/7Config/8 e.Params-B/10 (/16 # TempDir/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.DirName/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -2469,7 +2469,7 @@ static refalrts::FnResult func_Configm_SetTempDir(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetTempDir/4 [/7Config/8 e.Params-B#1/10 (/16 # TempDir/18 e.OldDirName#1/14 )/17 e.Params-E#1/12 ]/9 e.NewDirName#1/2 >/1
+  // </0 & Config-SetTempDir/4 [/7Config/8 e.Params-B/10 (/16 # TempDir/18 e.OldDirName/14 )/17 e.Params-E/12 ]/9 e.NewDirName/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2481,7 +2481,7 @@ static refalrts::FnResult func_Configm_SetTempDir(refalrts::VM *vm, refalrts::It
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.NewDirName#1 as range 2
+  // closed e.NewDirName as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -2497,16 +2497,16 @@ static refalrts::FnResult func_Configm_SetTempDir(refalrts::VM *vm, refalrts::It
     context[18] = refalrts::ident_left( identifiers[ident_TempDir], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldDirName#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.NewDirName#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldDirName#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldDirName as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.NewDirName: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldDirName: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldDirName#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # TempDir/18 } Tile{ AsIs: e.NewDirName#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldDirName/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # TempDir/18 } Tile{ AsIs: e.NewDirName/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -2534,7 +2534,7 @@ static refalrts::FnResult func_Configm_GetOverwriteExistRasls(refalrts::VM *vm, 
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & Config-GetOverwriteExistRasls/4 [/7Config/8 e.Params-B#1/10 (/16 # OverwriteExistRasls/18 s.Value#1/19 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetOverwriteExistRasls/4 [/7Config/8 e.Params-B/10 (/16 # OverwriteExistRasls/18 s.Value/19 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2563,18 +2563,18 @@ static refalrts::FnResult func_Configm_GetOverwriteExistRasls(refalrts::VM *vm, 
     context[18] = refalrts::ident_left( identifiers[ident_OverwriteExistRasls], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.Params-E#1 as range 12
+    // closed e.Params-E as range 12
     if( ! refalrts::svar_left( context[19], context[14], context[15] ) )
       continue;
     if( ! refalrts::empty_seq( context[14], context[15] ) )
       continue;
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.Params-E#1: 12
-    //DEBUG: s.Value#1: 19
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.Params-E: 12
+    //DEBUG: s.Value: 19
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetOverwriteExistRasls/4 [/7Config/8 e.Params-B#1/10 (/16 # OverwriteExistRasls/18 s.Value#1/19 )/17 e.Params-E#1/12 ]/9 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Value1 #19/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetOverwriteExistRasls/4 [/7Config/8 e.Params-B/10 (/16 # OverwriteExistRasls/18 s.Value/19 )/17 e.Params-E/12 ]/9 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Value19 /1 ]] }
     refalrts::reinit_svar( context[1], context[19] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -2597,7 +2597,7 @@ static refalrts::FnResult func_Configm_SetOverwriteExistRasls(refalrts::VM *vm, 
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & Config-SetOverwriteExistRasls/4 [/7Config/8 e.Params-B#1/11 (/17 # OverwriteExistRasls/19 s.OldValue#1/20 )/18 e.Params-E#1/13 ]/9 s.NewValue#1/10 >/1
+  // </0 & Config-SetOverwriteExistRasls/4 [/7Config/8 e.Params-B/11 (/17 # OverwriteExistRasls/19 s.OldValue/20 )/18 e.Params-E/13 ]/9 s.NewValue/10 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2628,19 +2628,19 @@ static refalrts::FnResult func_Configm_SetOverwriteExistRasls(refalrts::VM *vm, 
     context[19] = refalrts::ident_left( identifiers[ident_OverwriteExistRasls], context[15], context[16] );
     if( ! context[19] )
       continue;
-    // closed e.Params-E#1 as range 13
+    // closed e.Params-E as range 13
     if( ! refalrts::svar_left( context[20], context[15], context[16] ) )
       continue;
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
-    //DEBUG: s.NewValue#1: 10
-    //DEBUG: e.Params-B#1: 11
-    //DEBUG: e.Params-E#1: 13
-    //DEBUG: s.OldValue#1: 20
+    //DEBUG: s.NewValue: 10
+    //DEBUG: e.Params-B: 11
+    //DEBUG: e.Params-E: 13
+    //DEBUG: s.OldValue: 20
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.OldValue#1/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/11 AsIs: (/17 AsIs: # OverwriteExistRasls/19 } Tile{ AsIs: s.NewValue#1/10 } Tile{ AsIs: )/18 AsIs: e.Params-E#1/13 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} s.OldValue/20 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/11 AsIs: (/17 AsIs: # OverwriteExistRasls/19 } Tile{ AsIs: s.NewValue/10 } Tile{ AsIs: )/18 AsIs: e.Params-E/13 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[17], context[18] );
@@ -2668,7 +2668,7 @@ static refalrts::FnResult func_Configm_GetCppCompilerExeSuf(refalrts::VM *vm, re
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetCppCompilerExeSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExeSuf/18 e.CppCompilerExeSuf#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetCppCompilerExeSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExeSuf/18 e.CppCompilerExeSuf/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2697,15 +2697,15 @@ static refalrts::FnResult func_Configm_GetCppCompilerExeSuf(refalrts::VM *vm, re
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerExeSuf], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.CppCompilerExeSuf#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.CppCompilerExeSuf#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.CppCompilerExeSuf as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.CppCompilerExeSuf: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerExeSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExeSuf/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerExeSuf#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerExeSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExeSuf/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerExeSuf/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -2728,7 +2728,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerExeSuf(refalrts::VM *vm, re
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetCppCompilerExeSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerExeSuf/18 e.OldCppCompilerExeSuf#1/14 )/17 e.Params-E#1/12 ]/9 e.CppCompilerExeSuf#1/2 >/1
+  // </0 & Config-SetCppCompilerExeSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerExeSuf/18 e.OldCppCompilerExeSuf/14 )/17 e.Params-E/12 ]/9 e.CppCompilerExeSuf/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2740,7 +2740,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerExeSuf(refalrts::VM *vm, re
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.CppCompilerExeSuf#1 as range 2
+  // closed e.CppCompilerExeSuf as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -2756,16 +2756,16 @@ static refalrts::FnResult func_Configm_SetCppCompilerExeSuf(refalrts::VM *vm, re
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerExeSuf], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldCppCompilerExeSuf#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.CppCompilerExeSuf#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldCppCompilerExeSuf#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldCppCompilerExeSuf as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.CppCompilerExeSuf: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldCppCompilerExeSuf: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerExeSuf#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # CppCompilerExeSuf/18 } Tile{ AsIs: e.CppCompilerExeSuf#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerExeSuf/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # CppCompilerExeSuf/18 } Tile{ AsIs: e.CppCompilerExeSuf/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );
@@ -2793,7 +2793,7 @@ static refalrts::FnResult func_Configm_GetCppCompilerLibSuf(refalrts::VM *vm, re
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-GetCppCompilerLibSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLibSuf/18 e.CppCompilerLibSuf#1/14 )/17 e.Params-E#1/12 ]/9 >/1
+  // </0 & Config-GetCppCompilerLibSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLibSuf/18 e.CppCompilerLibSuf/14 )/17 e.Params-E/12 ]/9 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2822,15 +2822,15 @@ static refalrts::FnResult func_Configm_GetCppCompilerLibSuf(refalrts::VM *vm, re
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerLibSuf], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.CppCompilerLibSuf#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.CppCompilerLibSuf#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.CppCompilerLibSuf as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.CppCompilerLibSuf: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerLibSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLibSuf/18 {REMOVED TILE} )/17 e.Params-E#1/12 ]/9 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerLibSuf#1/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & Config-GetCppCompilerLibSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLibSuf/18 {REMOVED TILE} )/17 e.Params-E/12 ]/9 >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.CppCompilerLibSuf/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -2853,7 +2853,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerLibSuf(refalrts::VM *vm, re
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & Config-SetCppCompilerLibSuf/4 [/7Config/8 e.Params-B#1/10 (/16 # CppCompilerLibSuf/18 e.OldCppCompilerLibSuf#1/14 )/17 e.Params-E#1/12 ]/9 e.CppCompilerLibSuf#1/2 >/1
+  // </0 & Config-SetCppCompilerLibSuf/4 [/7Config/8 e.Params-B/10 (/16 # CppCompilerLibSuf/18 e.OldCppCompilerLibSuf/14 )/17 e.Params-E/12 ]/9 e.CppCompilerLibSuf/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -2865,7 +2865,7 @@ static refalrts::FnResult func_Configm_SetCppCompilerLibSuf(refalrts::VM *vm, re
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::adt_pointers(context[7], context[8], context[9]);
-  // closed e.CppCompilerLibSuf#1 as range 2
+  // closed e.CppCompilerLibSuf as range 2
   context[10] = 0;
   context[11] = 0;
   refalrts::start_e_loop(vm);
@@ -2881,16 +2881,16 @@ static refalrts::FnResult func_Configm_SetCppCompilerLibSuf(refalrts::VM *vm, re
     context[18] = refalrts::ident_left( identifiers[ident_CppCompilerLibSuf], context[14], context[15] );
     if( ! context[18] )
       continue;
-    // closed e.OldCppCompilerLibSuf#1 as range 14
-    // closed e.Params-E#1 as range 12
-    //DEBUG: e.CppCompilerLibSuf#1: 2
-    //DEBUG: e.Params-B#1: 10
-    //DEBUG: e.OldCppCompilerLibSuf#1: 14
-    //DEBUG: e.Params-E#1: 12
+    // closed e.OldCppCompilerLibSuf as range 14
+    // closed e.Params-E as range 12
+    //DEBUG: e.CppCompilerLibSuf: 2
+    //DEBUG: e.Params-B: 10
+    //DEBUG: e.OldCppCompilerLibSuf: 14
+    //DEBUG: e.Params-E: 12
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerLibSuf#1/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B#1/10 AsIs: (/16 AsIs: # CppCompilerLibSuf/18 } Tile{ AsIs: e.CppCompilerLibSuf#1/2 } Tile{ AsIs: )/17 AsIs: e.Params-E#1/12 AsIs: ]/9 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 {REMOVED TILE} e.OldCppCompilerLibSuf/14 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: # Success/4 AsIs: [/7 AsIs: & Config/8 AsIs: e.Params-B/10 AsIs: (/16 AsIs: # CppCompilerLibSuf/18 } Tile{ AsIs: e.CppCompilerLibSuf/2 } Tile{ AsIs: )/17 AsIs: e.Params-E/12 AsIs: ]/9 } Tile{ ]] }
     refalrts::reinit_ident(context[4], identifiers[ident_Success]);
     refalrts::link_brackets( context[7], context[9] );
     refalrts::link_brackets( context[16], context[17] );

@@ -120,18 +120,18 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Mu/4 e.Arg#1/2 >/1
+  // </0 & Mu/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -164,18 +164,18 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Residue/4 e.Arg#1/2 >/1
+  // </0 & Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -208,18 +208,18 @@ static refalrts::FnResult func_u_u_Metau_Residue(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & __Meta_Residue/4 e.Arg#1/2 >/1
+  // </0 & __Meta_Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -245,14 +245,14 @@ static refalrts::NativeReference nat_ref_u_u_Metau_Residue("__Meta_Residue", COO
 #include "refalrts-diagnostic-defs.h"
 #include "refalrts-vm.h"
 
-#define VERSION "3.2"
+#define VERSION "3.3"
 
 static void version(FILE *output) {
   fprintf(
     output,
     "rlgo, a part of Refal-5-lambda compiler toolkit, version " VERSION "\n"
     "Copyright (c) 2008-2016, Alexander Konovalov, "
-    "2016-2020, BMSTU IU9 Department\n"
+    "2016-2021, BMSTU IU9 Department\n"
     "All rights reserved.\n\n"
   );
 }
@@ -313,7 +313,7 @@ static refalrts::FnResult func_gen_Go_A5(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & Go=5/4 t.Handle#4/5 e.Skipped#6/2 >/1
+  // </0 & Go=5/4 t.Handle/5 e.Skipped/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -322,13 +322,13 @@ static refalrts::FnResult func_gen_Go_A5(refalrts::VM *vm, refalrts::Iter arg_be
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Skipped#6 as range 2
-  //DEBUG: t.Handle#4: 5
-  //DEBUG: e.Skipped#6: 2
+  // closed e.Skipped as range 2
+  //DEBUG: t.Handle: 5
+  //DEBUG: e.Skipped: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} e.Skipped#6/2 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=6/4 } </7 & Module-Unload/8 Tile{ AsIs: t.Handle#4/5 } >/9 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} e.Skipped/2 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=6/4 } </7 & Module-Unload/8 Tile{ AsIs: t.Handle/5 } >/9 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[7]);
   refalrts::alloc_name(vm, context[8], functions[efunc_Modulem_Unload]);
   refalrts::alloc_close_call(vm, context[9]);
@@ -359,7 +359,7 @@ static refalrts::FnResult func_gen_Go_A4(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & Go=4/4 t.Handle#4/5 s.EntryPoint#5/7 >/1
+  // </0 & Go=4/4 t.Handle/5 s.EntryPoint/7 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -372,12 +372,12 @@ static refalrts::FnResult func_gen_Go_A4(refalrts::VM *vm, refalrts::Iter arg_be
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Handle#4: 5
-  //DEBUG: s.EntryPoint#5: 7
+  //DEBUG: t.Handle: 5
+  //DEBUG: s.EntryPoint: 7
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=5/4 AsIs: t.Handle#4/5 } </8 Tile{ AsIs: s.EntryPoint#5/7 AsIs: >/1 } >/9 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=5/4 AsIs: t.Handle/5 } </8 Tile{ AsIs: s.EntryPoint/7 AsIs: >/1 } >/9 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[8]);
   refalrts::alloc_close_call(vm, context[9]);
   refalrts::update_name(context[4], functions[efunc_gen_Go_A5]);
@@ -407,7 +407,7 @@ static refalrts::FnResult func_gen_Go_A3(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & Go=3/4 t.Handle#4/5 >/1
+  // </0 & Go=3/4 t.Handle/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -418,11 +418,11 @@ static refalrts::FnResult func_gen_Go_A3(refalrts::VM *vm, refalrts::Iter arg_be
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Handle#4: 5
+  //DEBUG: t.Handle: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=4/4 AsIs: t.Handle#4/5 HalfReuse: </1 } & FindEntryPoint:1/7 t.Handle#4/5/8 </10 & Module-LookupFunction/11 t.Handle#4/5/12 # Go/14 >/15 >/16 >/17 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Go=4/4 AsIs: t.Handle/5 HalfReuse: </1 } & FindEntryPoint:1/7 t.Handle/5/8 </10 & Module-LookupFunction/11 t.Handle/5/12 # Go/14 >/15 >/16 >/17 Tile{ ]] }
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_FindEntryPoint_B1]);
   refalrts::copy_evar(vm, context[8], context[9], context[5], context[6]);
   refalrts::alloc_open_call(vm, context[10]);
@@ -460,18 +460,18 @@ static refalrts::FnResult func_gen_Go_A2(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & Go=2/4 e.Module#3/2 >/1
+  // </0 & Go=2/4 e.Module/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Module#3 as range 2
-  //DEBUG: e.Module#3: 2
+  // closed e.Module as range 2
+  //DEBUG: e.Module: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & Go=3/6 </7 & LoadProgramModule:1/8 (/9 e.Module#3/2/10 )/12 Tile{ AsIs: </0 Reuse: & Module-Load/4 AsIs: e.Module#3/2 AsIs: >/1 } >/13 >/14 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & Go=3/6 </7 & LoadProgramModule:1/8 (/9 e.Module/2/10 )/12 Tile{ AsIs: </0 Reuse: & Module-Load/4 AsIs: e.Module/2 AsIs: >/1 } >/13 >/14 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_Go_A3]);
   refalrts::alloc_open_call(vm, context[7]);
@@ -678,44 +678,44 @@ static refalrts::FnResult func_gen_LoadProgramModule_B1(refalrts::VM *vm, refalr
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & LoadProgramModule:1/4 e.new#0/2 >/1
+  // </0 & LoadProgramModule:1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & LoadProgramModule:1/4 (/7 e.new#1/5 )/8 s.new#2/9 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & LoadProgramModule:1/4 (/7 e.new1/5 )/8 s.new2/9 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#3 as range 2
+  // closed e.new3 as range 2
   do {
-    // </0 & LoadProgramModule:1/4 (/7 e.Module#1/10 )/8 # Success/9 t.Handle#2/14 >/1
+    // </0 & LoadProgramModule:1/4 (/7 e.Module/10 )/8 # Success/9 t.Handle/14 >/1
     context[10] = context[5];
     context[11] = context[6];
     context[12] = context[2];
     context[13] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Success], context[9] ) )
       continue;
-    // closed e.Module#1 as range 10
+    // closed e.Module as range 10
     context[15] = refalrts::tvar_left( context[14], context[12], context[13] );
     if( ! context[15] )
       continue;
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
-    //DEBUG: e.Module#1: 10
-    //DEBUG: t.Handle#2: 14
+    //DEBUG: e.Module: 10
+    //DEBUG: t.Handle: 14
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & LoadProgramModule:1/4 (/7 e.Module#1/10 )/8 # Success/9 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: t.Handle#2/14 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & LoadProgramModule:1/4 (/7 e.Module/10 )/8 # Success/9 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Handle/14 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -725,17 +725,17 @@ static refalrts::FnResult func_gen_LoadProgramModule_B1(refalrts::VM *vm, refalr
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & LoadProgramModule:1/4 (/7 e.Module#1/5 )/8 # Fails/9 e.Errors#2/2 >/1
+  // </0 & LoadProgramModule:1/4 (/7 e.Module/5 )/8 # Fails/9 e.Errors/2 >/1
   if( ! refalrts::ident_term( identifiers[ident_Fails], context[9] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Module#1 as range 5
-  // closed e.Errors#2 as range 2
-  //DEBUG: e.Module#1: 5
-  //DEBUG: e.Errors#2: 2
+  // closed e.Module as range 5
+  // closed e.Errors as range 2
+  //DEBUG: e.Module: 5
+  //DEBUG: e.Errors: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Errors#2/2 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Putout/4 HalfReuse: # stderr/7 }"Ca"/10 Tile{ HalfReuse: 'n'/8 HalfReuse: '\''/9 }"t load module "/12 Tile{ AsIs: e.Module#1/5 } >/14 </15 & Exit/16 157/17 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Errors/2 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Putout/4 HalfReuse: # stderr/7 }"Ca"/10 Tile{ HalfReuse: 'n'/8 HalfReuse: '\''/9 }"t load module "/12 Tile{ AsIs: e.Module/5 } >/14 </15 & Exit/16 157/17 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_chars(vm, context[10], context[11], "Ca", 2);
   refalrts::alloc_chars(vm, context[12], context[13], "t load module ", 14);
   refalrts::alloc_close_call(vm, context[14]);
@@ -774,18 +774,18 @@ static refalrts::FnResult func_LoadProgramModule(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & LoadProgramModule/4 e.Module#1/2 >/1
+  // </0 & LoadProgramModule/4 e.Module/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Module#1 as range 2
-  //DEBUG: e.Module#1: 2
+  // closed e.Module as range 2
+  //DEBUG: e.Module: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & LoadProgramModule:1/6 (/7 e.Module#1/2/8 )/10 Tile{ AsIs: </0 Reuse: & Module-Load/4 AsIs: e.Module#1/2 AsIs: >/1 } >/11 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & LoadProgramModule:1/6 (/7 e.Module/2/8 )/10 Tile{ AsIs: </0 Reuse: & Module-Load/4 AsIs: e.Module/2 AsIs: >/1 } >/11 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_LoadProgramModule_B1]);
   refalrts::alloc_open_bracket(vm, context[7]);
@@ -820,19 +820,19 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1S2B1(refalrts::VM *vm, refal
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & FindEntryPoint:1$2:1/4 e.new#0/2 >/1
+  // </0 & FindEntryPoint:1$2:1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & FindEntryPoint:1$2:1/4 e.new#1/2 s.new#2/5 >/1
+  // closed e.new as range 2
+  // </0 & FindEntryPoint:1$2:1/4 e.new1/2 s.new2/5 >/1
   if( ! refalrts::svar_right( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 2
+  // closed e.new1 as range 2
   do {
-    // </0 & FindEntryPoint:1$2:1/4 # Success/8 s.GO#3/5 >/1
+    // </0 & FindEntryPoint:1$2:1/4 # Success/8 s.GO/5 >/1
     context[6] = context[2];
     context[7] = context[3];
     context[8] = refalrts::ident_left( identifiers[ident_Success], context[6], context[7] );
@@ -840,11 +840,11 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1S2B1(refalrts::VM *vm, refal
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.GO#3: 5
+    //DEBUG: s.GO: 5
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & FindEntryPoint:1$2:1/4 # Success/8 s.GO#3/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.GO3 #5/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & FindEntryPoint:1$2:1/4 # Success/8 s.GO/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.GO5 /1 ]] }
     refalrts::reinit_svar( context[1], context[5] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -894,22 +894,22 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & FindEntryPoint:1/4 e.new#0/2 >/1
+  // </0 & FindEntryPoint:1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & FindEntryPoint:1/4 e.new#1/2 t.new#2/6 s.new#3/5 >/1
+  // closed e.new as range 2
+  // </0 & FindEntryPoint:1/4 e.new1/2 t.new2/6 s.new3/5 >/1
   if( ! refalrts::svar_right( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[7] = refalrts::tvar_right( context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 2
+  // closed e.new1 as range 2
   do {
-    // </0 & FindEntryPoint:1/4 t.Handle#1/10 # Success/6 s.Go#2/5 >/1
+    // </0 & FindEntryPoint:1/4 t.Handle/10 # Success/6 s.Go/5 >/1
     context[8] = context[2];
     context[9] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Success], context[6] ) )
@@ -919,12 +919,12 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1(refalrts::VM *vm, refalrts:
       continue;
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
-    //DEBUG: s.Go#2: 5
-    //DEBUG: t.Handle#1: 10
+    //DEBUG: s.Go: 5
+    //DEBUG: t.Handle: 10
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & FindEntryPoint:1/4 t.Handle#1/10 # Success/6 s.Go#2/5 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Go2 #5/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & FindEntryPoint:1/4 t.Handle/10 # Success/6 s.Go/5 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Go5 /1 ]] }
     refalrts::reinit_svar( context[1], context[5] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -934,16 +934,16 @@ static refalrts::FnResult func_gen_FindEntryPoint_B1(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & FindEntryPoint:1/4 t.Handle#1/6 # Fails/5 >/1
+  // </0 & FindEntryPoint:1/4 t.Handle/6 # Fails/5 >/1
   if( ! refalrts::ident_term( identifiers[ident_Fails], context[5] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Handle#1: 6
+  //DEBUG: t.Handle: 6
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </8 & FindEntryPoint:1$2:1/9 Tile{ AsIs: </0 Reuse: & Module-LookupFunction/4 AsIs: t.Handle#1/6 Reuse: # GO/5 AsIs: >/1 } >/10 Tile{ ]] }
+  //RESULT: Tile{ [[ } </8 & FindEntryPoint:1$2:1/9 Tile{ AsIs: </0 Reuse: & Module-LookupFunction/4 AsIs: t.Handle/6 Reuse: # GO/5 AsIs: >/1 } >/10 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[8]);
   refalrts::alloc_name(vm, context[9], functions[efunc_gen_FindEntryPoint_B1S2B1]);
   refalrts::alloc_close_call(vm, context[10]);
@@ -975,7 +975,7 @@ static refalrts::FnResult func_FindEntryPoint(refalrts::VM *vm, refalrts::Iter a
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & FindEntryPoint/4 t.Handle#1/5 >/1
+  // </0 & FindEntryPoint/4 t.Handle/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -986,11 +986,11 @@ static refalrts::FnResult func_FindEntryPoint(refalrts::VM *vm, refalrts::Iter a
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Handle#1: 5
+  //DEBUG: t.Handle: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindEntryPoint:1/4 AsIs: t.Handle#1/5 HalfReuse: </1 } & Module-LookupFunction/7 t.Handle#1/5/8 # Go/10 >/11 >/12 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & FindEntryPoint:1/4 AsIs: t.Handle/5 HalfReuse: </1 } & Module-LookupFunction/7 t.Handle/5/8 # Go/10 >/11 >/12 Tile{ ]] }
   refalrts::alloc_name(vm, context[7], functions[efunc_Modulem_LookupFunction]);
   refalrts::copy_evar(vm, context[8], context[9], context[5], context[6]);
   refalrts::alloc_ident(vm, context[10], identifiers[ident_Go]);

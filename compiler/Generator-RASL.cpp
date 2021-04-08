@@ -337,18 +337,18 @@ static refalrts::FnResult func_Mu(refalrts::VM *vm, refalrts::Iter arg_begin, re
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Mu/4 e.Arg#1/2 >/1
+  // </0 & Mu/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -381,18 +381,18 @@ static refalrts::FnResult func_Residue(refalrts::VM *vm, refalrts::Iter arg_begi
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Residue/4 e.Arg#1/2 >/1
+  // </0 & Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 HalfReuse: & $table/1 } >/8 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -425,18 +425,18 @@ static refalrts::FnResult func_u_u_Metau_Residue(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & __Meta_Residue/4 e.Arg#1/2 >/1
+  // </0 & __Meta_Residue/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#1 as range 2
-  //DEBUG: e.Arg#1: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 & __Step-Drop/6 >/7 Tile{ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: e.Arg/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_u_u_Stepm_Drop]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -465,31 +465,31 @@ static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin,
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & Apply/4 e.new#0/2 >/1
+  // </0 & Apply/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Apply/4 t.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & Apply/4 t.new1/5 e.new2/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & Apply/4 s.Fn#1/5 e.Argument#1/7 >/1
+    // </0 & Apply/4 s.Fn/5 e.Argument/7 >/1
     context[7] = context[2];
     context[8] = context[3];
     if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
-    // closed e.Argument#1 as range 7
-    //DEBUG: s.Fn#1: 5
-    //DEBUG: e.Argument#1: 7
+    // closed e.Argument as range 7
+    //DEBUG: s.Fn: 5
+    //DEBUG: e.Argument: 7
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn#1/5 AsIs: e.Argument#1/7 HalfReuse: & $table/1 } >/9 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn/5 AsIs: e.Argument/7 HalfReuse: & $table/1 } >/9 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[9]);
     refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
     refalrts::reinit_name(context[1], functions[efunc_d_table]);
@@ -504,23 +504,23 @@ static refalrts::FnResult func_Apply(refalrts::VM *vm, refalrts::Iter arg_begin,
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Apply/4 (/5 t.Closure#1/9 e.Bounded#1/7 )/6 e.Argument#1/2 >/1
+  // </0 & Apply/4 (/5 t.Closure/9 e.Bounded/7 )/6 e.Argument/2 >/1
   context[7] = 0;
   context[8] = 0;
   if( ! refalrts::brackets_term( context[7], context[8], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Argument#1 as range 2
+  // closed e.Argument as range 2
   context[10] = refalrts::tvar_left( context[9], context[7], context[8] );
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Bounded#1 as range 7
-  //DEBUG: e.Argument#1: 2
-  //DEBUG: t.Closure#1: 9
-  //DEBUG: e.Bounded#1: 7
+  // closed e.Bounded as range 7
+  //DEBUG: e.Argument: 2
+  //DEBUG: t.Closure: 9
+  //DEBUG: e.Bounded: 7
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply/4 } Tile{ AsIs: t.Closure#1/9 } Tile{ AsIs: e.Bounded#1/7 } Tile{ AsIs: e.Argument#1/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply/4 } Tile{ AsIs: t.Closure/9 } Tile{ AsIs: e.Bounded/7 } Tile{ AsIs: e.Argument/2 } Tile{ AsIs: >/1 ]] }
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -545,40 +545,40 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
   // issue here memory for vars with 24 elems
   refalrts::Iter context[24];
   refalrts::zeros( context, 24 );
-  // </0 & Map/4 e.new#0/2 >/1
+  // </0 & Map/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Map/4 t.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & Map/4 t.new1/5 e.new2/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & Map/4 t.new#3/5 t.new#4/9 e.new#5/7 >/1
+    // </0 & Map/4 t.new3/5 t.new4/9 e.new5/7 >/1
     context[7] = context[2];
     context[8] = context[3];
     context[10] = refalrts::tvar_left( context[9], context[7], context[8] );
     if( ! context[10] )
       continue;
-    // closed e.new#5 as range 7
+    // closed e.new5 as range 7
     do {
-      // </0 & Map/4 s.Fn#1/5 t.Next#1/9 e.Tail#1/11 >/1
+      // </0 & Map/4 s.Fn/5 t.Next/9 e.Tail/11 >/1
       context[11] = context[7];
       context[12] = context[8];
       if( ! refalrts::svar_term( context[5], context[5] ) )
         continue;
-      // closed e.Tail#1 as range 11
-      //DEBUG: t.Next#1: 9
-      //DEBUG: s.Fn#1: 5
-      //DEBUG: e.Tail#1: 11
+      // closed e.Tail as range 11
+      //DEBUG: t.Next: 9
+      //DEBUG: s.Fn: 5
+      //DEBUG: e.Tail: 11
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn#1/5 AsIs: t.Next#1/9 } & $table/13 >/14 </15 & Map/16 s.Fn#1/5/17 Tile{ AsIs: e.Tail#1/11 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn/5 AsIs: t.Next/9 } & $table/13 >/14 </15 & Map/16 s.Fn/5/17 Tile{ AsIs: e.Tail/11 } Tile{ AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[13], functions[efunc_d_table]);
       refalrts::alloc_close_call(vm, context[14]);
       refalrts::alloc_open_call(vm, context[15]);
@@ -600,26 +600,26 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & Map/4 (/5 t.#0/15 e.0#0/13 )/6 t.Next#1/9 e.Tail#1/11 >/1
+      // </0 & Map/4 (/5 t./15 e.0/13 )/6 t.Next/9 e.Tail/11 >/1
       context[11] = context[7];
       context[12] = context[8];
       context[13] = 0;
       context[14] = 0;
       if( ! refalrts::brackets_term( context[13], context[14], context[5] ) )
         continue;
-      // closed e.Tail#1 as range 11
+      // closed e.Tail as range 11
       context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
       if( ! context[16] )
         continue;
-      // closed e.0#0 as range 13
-      //DEBUG: t.Next#1: 9
-      //DEBUG: e.Tail#1: 11
-      //DEBUG: t.#0: 15
-      //DEBUG: e.0#0: 13
+      // closed e.0 as range 13
+      //DEBUG: t.Next: 9
+      //DEBUG: e.Tail: 11
+      //DEBUG: t.: 15
+      //DEBUG: e.0: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </17 & Apply@3/18 t.#0/15/19 e.0#0/13/21 Tile{ AsIs: t.Next#1/9 } >/23 Tile{ AsIs: </0 AsIs: & Map/4 AsIs: (/5 AsIs: t.#0/15 AsIs: e.0#0/13 AsIs: )/6 } Tile{ AsIs: e.Tail#1/11 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } </17 & Apply@3/18 t./15/19 e.0/13/21 Tile{ AsIs: t.Next/9 } >/23 Tile{ AsIs: </0 AsIs: & Map/4 AsIs: (/5 AsIs: t./15 AsIs: e.0/13 AsIs: )/6 } Tile{ AsIs: e.Tail/11 } Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[17]);
       refalrts::alloc_name(vm, context[18], functions[efunc_gen_Apply_Z3]);
       refalrts::copy_evar(vm, context[19], context[20], context[15], context[16]);
@@ -644,17 +644,17 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map/4 t.Fn#1/5 t.Next#1/9 e.Tail#1/11 >/1
+    // </0 & Map/4 t.Fn/5 t.Next/9 e.Tail/11 >/1
     context[11] = context[7];
     context[12] = context[8];
-    // closed e.Tail#1 as range 11
-    //DEBUG: t.Fn#1: 5
-    //DEBUG: t.Next#1: 9
-    //DEBUG: e.Tail#1: 11
+    // closed e.Tail as range 11
+    //DEBUG: t.Fn: 5
+    //DEBUG: t.Next: 9
+    //DEBUG: e.Tail: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.Fn#1/5 AsIs: t.Next#1/9 } >/13 </14 & Map/15 t.Fn#1/5/16 Tile{ AsIs: e.Tail#1/11 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.Fn/5 AsIs: t.Next/9 } >/13 </14 & Map/15 t.Fn/5/16 Tile{ AsIs: e.Tail/11 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[13]);
     refalrts::alloc_open_call(vm, context[14]);
     refalrts::alloc_name(vm, context[15], functions[efunc_Map]);
@@ -674,13 +674,13 @@ static refalrts::FnResult func_Map(refalrts::VM *vm, refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map/4 t.Fn#1/5 >/1
+  // </0 & Map/4 t.Fn/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Fn#1: 5
+  //DEBUG: t.Fn: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Map/4 t.Fn#1/5 >/1 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & Map/4 t.Fn/5 >/1 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -701,7 +701,7 @@ static refalrts::FnResult func_gen_Reduce_S1A1(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & Reduce$1=1/4 t.Fn#1/5 (/9 e.Tail#1/7 )/10 t.Acc#2/11 >/1
+  // </0 & Reduce$1=1/4 t.Fn/5 (/9 e.Tail/7 )/10 t.Acc$a/11 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -716,19 +716,19 @@ static refalrts::FnResult func_gen_Reduce_S1A1(refalrts::VM *vm, refalrts::Iter 
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.Tail#1 as range 7
+  // closed e.Tail as range 7
   context[12] = refalrts::tvar_left( context[11], context[2], context[3] );
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: e.Tail#1: 7
-  //DEBUG: t.Acc#2: 11
+  //DEBUG: t.Fn: 5
+  //DEBUG: e.Tail: 7
+  //DEBUG: t.Acc$a: 11
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} (/9 {REMOVED TILE} )/10 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Reduce/4 AsIs: t.Fn#1/5 } Tile{ AsIs: t.Acc#2/11 } Tile{ AsIs: e.Tail#1/7 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Reduce/4 AsIs: t.Fn/5 } Tile{ AsIs: t.Acc$a/11 } Tile{ AsIs: e.Tail/7 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_Reduce]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -753,37 +753,37 @@ static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & Reduce/4 e.new#0/2 >/1
+  // </0 & Reduce/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Reduce/4 t.new#1/5 t.new#2/7 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & Reduce/4 t.new1/5 t.new2/7 e.new3/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#3 as range 2
+  // closed e.new3 as range 2
   do {
-    // </0 & Reduce/4 t.Fn#1/5 t.Acc#1/7 t.Next#1/11 e.Tail#1/9 >/1
+    // </0 & Reduce/4 t.Fn/5 t.Acc/7 t.Next/11 e.Tail/9 >/1
     context[9] = context[2];
     context[10] = context[3];
     context[12] = refalrts::tvar_left( context[11], context[9], context[10] );
     if( ! context[12] )
       continue;
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Fn#1: 5
-    //DEBUG: t.Acc#1: 7
-    //DEBUG: t.Next#1: 11
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Fn: 5
+    //DEBUG: t.Acc: 7
+    //DEBUG: t.Next: 11
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </13 & Reduce$1=1/14 t.Fn#1/5/15 (/17 Tile{ AsIs: e.Tail#1/9 } )/18 Tile{ AsIs: </0 Reuse: & Apply@2/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 AsIs: t.Next#1/11 } >/19 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } </13 & Reduce$1=1/14 t.Fn/5/15 (/17 Tile{ AsIs: e.Tail/9 } )/18 Tile{ AsIs: </0 Reuse: & Apply@2/4 AsIs: t.Fn/5 AsIs: t.Acc/7 AsIs: t.Next/11 } >/19 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[13]);
     refalrts::alloc_name(vm, context[14], functions[efunc_gen_Reduce_S1A1]);
     refalrts::copy_evar(vm, context[15], context[16], context[5], context[6]);
@@ -809,15 +809,15 @@ static refalrts::FnResult func_Reduce(refalrts::VM *vm, refalrts::Iter arg_begin
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Reduce/4 t.Fn#1/5 t.Acc#1/7 >/1
+  // </0 & Reduce/4 t.Fn/5 t.Acc/7 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: t.Acc#1: 7
+  //DEBUG: t.Fn: 5
+  //DEBUG: t.Acc: 7
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Reduce/4 t.Fn#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/7 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} </0 & Reduce/4 t.Fn/5 {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc/7 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -838,7 +838,7 @@ static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin,
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
   refalrts::zeros( context, 7 );
-  // </0 & Fetch/4 e.Argument#1/2 t.Function#1/5 >/1
+  // </0 & Fetch/4 e.Argument/2 t.Function/5 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -847,13 +847,13 @@ static refalrts::FnResult func_Fetch(refalrts::VM *vm, refalrts::Iter arg_begin,
   context[6] = refalrts::tvar_right( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Argument#1 as range 2
-  //DEBUG: t.Function#1: 5
-  //DEBUG: e.Argument#1: 2
+  // closed e.Argument as range 2
+  //DEBUG: t.Function: 5
+  //DEBUG: e.Argument: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply/4 } Tile{ AsIs: t.Function#1/5 } Tile{ AsIs: e.Argument#1/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply/4 } Tile{ AsIs: t.Function/5 } Tile{ AsIs: e.Argument/2 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_Apply]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -878,7 +878,7 @@ static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_beg
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & MapAccum/4 t.Fn#1/5 t.Acc#1/7 e.Tail#1/2 >/1
+  // </0 & MapAccum/4 t.Fn/5 t.Acc/7 e.Tail/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -890,14 +890,14 @@ static refalrts::FnResult func_MapAccum(refalrts::VM *vm, refalrts::Iter arg_beg
   context[8] = refalrts::tvar_left( context[7], context[2], context[3] );
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Tail#1 as range 2
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: t.Acc#1: 7
-  //DEBUG: e.Tail#1: 2
+  // closed e.Tail as range 2
+  //DEBUG: t.Fn: 5
+  //DEBUG: t.Acc: 7
+  //DEBUG: e.Tail: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum/4 AsIs: t.Fn#1/5 AsIs: t.Acc#1/7 } (/9 )/10 Tile{ AsIs: e.Tail#1/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum/4 AsIs: t.Fn/5 AsIs: t.Acc/7 } (/9 )/10 Tile{ AsIs: e.Tail/2 } Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[9]);
   refalrts::alloc_close_bracket(vm, context[10]);
   refalrts::update_name(context[4], functions[efunc_DoMapAccum]);
@@ -925,7 +925,7 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  // </0 & DoMapAccum$1=1/4 t.Fn#1/5 (/9 e.Scanned#1/7 )/10 (/13 e.Tail#1/11 )/14 t.Acc#2/15 e.StepScanned#2/2 >/1
+  // </0 & DoMapAccum$1=1/4 t.Fn/5 (/9 e.Scanned/7 )/10 (/13 e.Tail/11 )/14 t.Acc$a/15 e.StepScanned/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -946,21 +946,21 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1(refalrts::VM *vm, refalrts::I
   if( ! context[13] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[13], context[14]);
-  // closed e.Scanned#1 as range 7
-  // closed e.Tail#1 as range 11
+  // closed e.Scanned as range 7
+  // closed e.Tail as range 11
   context[16] = refalrts::tvar_left( context[15], context[2], context[3] );
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
-  // closed e.StepScanned#2 as range 2
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: e.Scanned#1: 7
-  //DEBUG: e.Tail#1: 11
-  //DEBUG: t.Acc#2: 15
-  //DEBUG: e.StepScanned#2: 2
+  // closed e.StepScanned as range 2
+  //DEBUG: t.Fn: 5
+  //DEBUG: e.Scanned: 7
+  //DEBUG: e.Tail: 11
+  //DEBUG: t.Acc$a: 15
+  //DEBUG: e.StepScanned: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} (/9 {REMOVED TILE} )/10 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum/4 AsIs: t.Fn#1/5 } Tile{ AsIs: t.Acc#2/15 } Tile{ AsIs: (/13 } Tile{ AsIs: e.Scanned#1/7 } Tile{ AsIs: e.StepScanned#2/2 } Tile{ AsIs: )/14 } Tile{ AsIs: e.Tail#1/11 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum/4 AsIs: t.Fn/5 } Tile{ AsIs: t.Acc$a/15 } Tile{ AsIs: (/13 } Tile{ AsIs: e.Scanned/7 } Tile{ AsIs: e.StepScanned/2 } Tile{ AsIs: )/14 } Tile{ AsIs: e.Tail/11 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_DoMapAccum]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -990,14 +990,14 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
-  // </0 & DoMapAccum/4 e.new#0/2 >/1
+  // </0 & DoMapAccum/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoMapAccum/4 t.new#1/5 t.new#2/7 (/11 e.new#3/9 )/12 e.new#4/2 >/1
+  // closed e.new as range 2
+  // </0 & DoMapAccum/4 t.new1/5 t.new2/7 (/11 e.new3/9 )/12 e.new4/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
@@ -1010,28 +1010,28 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.new#3 as range 9
-  // closed e.new#4 as range 2
+  // closed e.new3 as range 9
+  // closed e.new4 as range 2
   do {
-    // </0 & DoMapAccum/4 t.Fn#1/5 t.Acc#1/7 (/11 e.Scanned#1/13 )/12 t.Next#1/17 e.Tail#1/15 >/1
+    // </0 & DoMapAccum/4 t.Fn/5 t.Acc/7 (/11 e.Scanned/13 )/12 t.Next/17 e.Tail/15 >/1
     context[13] = context[9];
     context[14] = context[10];
     context[15] = context[2];
     context[16] = context[3];
-    // closed e.Scanned#1 as range 13
+    // closed e.Scanned as range 13
     context[18] = refalrts::tvar_left( context[17], context[15], context[16] );
     if( ! context[18] )
       continue;
-    // closed e.Tail#1 as range 15
-    //DEBUG: t.Fn#1: 5
-    //DEBUG: t.Acc#1: 7
-    //DEBUG: e.Scanned#1: 13
-    //DEBUG: t.Next#1: 17
-    //DEBUG: e.Tail#1: 15
+    // closed e.Tail as range 15
+    //DEBUG: t.Fn: 5
+    //DEBUG: t.Acc: 7
+    //DEBUG: e.Scanned: 13
+    //DEBUG: t.Next: 17
+    //DEBUG: e.Tail: 15
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1/4 AsIs: t.Fn#1/5 } Tile{ AsIs: (/11 AsIs: e.Scanned#1/13 AsIs: )/12 } (/19 Tile{ AsIs: e.Tail#1/15 } )/20 </21 & Apply@2/22 t.Fn#1/5/23 Tile{ AsIs: t.Acc#1/7 } Tile{ AsIs: t.Next#1/17 } >/25 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1/4 AsIs: t.Fn/5 } Tile{ AsIs: (/11 AsIs: e.Scanned/13 AsIs: )/12 } (/19 Tile{ AsIs: e.Tail/15 } )/20 </21 & Apply@2/22 t.Fn/5/23 Tile{ AsIs: t.Acc/7 } Tile{ AsIs: t.Next/17 } >/25 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[19]);
     refalrts::alloc_close_bracket(vm, context[20]);
     refalrts::alloc_open_call(vm, context[21]);
@@ -1060,17 +1060,17 @@ static refalrts::FnResult func_DoMapAccum(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum/4 t.Fn#1/5 t.Acc#1/7 (/11 e.Scanned#1/9 )/12 >/1
+  // </0 & DoMapAccum/4 t.Fn/5 t.Acc/7 (/11 e.Scanned/9 )/12 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Scanned#1 as range 9
-  //DEBUG: t.Fn#1: 5
-  //DEBUG: t.Acc#1: 7
-  //DEBUG: e.Scanned#1: 9
+  // closed e.Scanned as range 9
+  //DEBUG: t.Fn: 5
+  //DEBUG: t.Acc: 7
+  //DEBUG: e.Scanned: 9
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & DoMapAccum/4 t.Fn#1/5 {REMOVED TILE} (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/7 } Tile{ AsIs: e.Scanned#1/9 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} </0 & DoMapAccum/4 t.Fn/5 {REMOVED TILE} (/11 {REMOVED TILE} )/12 >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc/7 } Tile{ AsIs: e.Scanned/9 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1092,7 +1092,7 @@ static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & UnBracket/4 (/7 e.Expr#1/5 )/8 >/1
+  // </0 & UnBracket/4 (/7 e.Expr/5 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1106,12 +1106,12 @@ static refalrts::FnResult func_UnBracket(refalrts::VM *vm, refalrts::Iter arg_be
   refalrts::bracket_pointers(context[7], context[8]);
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Expr#1 as range 5
-  //DEBUG: e.Expr#1: 5
+  // closed e.Expr as range 5
+  //DEBUG: e.Expr: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & UnBracket/4 (/7 {REMOVED TILE} )/8 >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Expr#1/5 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Expr/5 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1132,7 +1132,7 @@ static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter a
   // issue here memory for vars with 7 elems
   refalrts::Iter context[7];
   refalrts::zeros( context, 7 );
-  // </0 & DelAccumulator/4 t.Acc#1/5 e.Tail#1/2 >/1
+  // </0 & DelAccumulator/4 t.Acc/5 e.Tail/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1141,13 +1141,13 @@ static refalrts::FnResult func_DelAccumulator(refalrts::VM *vm, refalrts::Iter a
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
-  // closed e.Tail#1 as range 2
-  //DEBUG: t.Acc#1: 5
-  //DEBUG: e.Tail#1: 2
+  // closed e.Tail as range 2
+  //DEBUG: t.Acc: 5
+  //DEBUG: e.Tail: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & DelAccumulator/4 t.Acc#1/5 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Tail#1/2 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} </0 & DelAccumulator/4 t.Acc/5 {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Tail/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1168,18 +1168,18 @@ static refalrts::FnResult func_Inc(refalrts::VM *vm, refalrts::Iter arg_begin, r
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  // </0 & Inc/4 e.Num#1/2 >/1
+  // </0 & Inc/4 e.Num/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Num#1 as range 2
-  //DEBUG: e.Num#1: 2
+  // closed e.Num as range 2
+  //DEBUG: e.Num: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Add/0 HalfReuse: 1/4 AsIs: e.Num#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Add/0 HalfReuse: 1/4 AsIs: e.Num/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_Add]);
   refalrts::reinit_number(context[4], 1UL);
@@ -1205,26 +1205,26 @@ static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, r
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Dec/4 e.new#0/2 >/1
+  // </0 & Dec/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Dec/4 s.Num#1/7 >/1
+    // </0 & Dec/4 s.Num/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
-    //DEBUG: s.Num#1: 7
+    //DEBUG: s.Num: 7
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 AsIs: s.Num#1/7 HalfReuse: 1/1 } >/8 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 AsIs: s.Num/7 HalfReuse: 1/1 } >/8 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[8]);
     refalrts::update_name(context[4], functions[efunc_Sub]);
     refalrts::reinit_number(context[1], 1UL);
@@ -1239,13 +1239,13 @@ static refalrts::FnResult func_Dec(refalrts::VM *vm, refalrts::Iter arg_begin, r
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Dec/4 e.Num#1/2 >/1
-  // closed e.Num#1 as range 2
-  //DEBUG: e.Num#1: 2
+  // </0 & Dec/4 e.Num/2 >/1
+  // closed e.Num as range 2
+  //DEBUG: e.Num: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 } (/5 Tile{ AsIs: e.Num#1/2 } )/6 1/7 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Sub/4 } (/5 Tile{ AsIs: e.Num/2 } )/6 1/7 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[5]);
   refalrts::alloc_close_bracket(vm, context[6]);
   refalrts::alloc_number(vm, context[7], 1UL);
@@ -1275,7 +1275,7 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & Pipe$2\1/4 t.Func#1/5 (/9 e.Funcs#1/7 )/10 e.Arg#2/2 >/1
+  // </0 & Pipe$2\1/4 t.Func/5 (/9 e.Funcs/7 )/10 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -1290,15 +1290,15 @@ static refalrts::FnResult func_gen_Pipe_S2L1(refalrts::VM *vm, refalrts::Iter ar
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.Funcs#1 as range 7
-  // closed e.Arg#2 as range 2
-  //DEBUG: t.Func#1: 5
-  //DEBUG: e.Funcs#1: 7
-  //DEBUG: e.Arg#2: 2
+  // closed e.Funcs as range 7
+  // closed e.Arg as range 2
+  //DEBUG: t.Func: 5
+  //DEBUG: e.Funcs: 7
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 & Apply/12 Tile{ AsIs: t.Func#1/5 } Tile{ AsIs: e.Arg#2/2 } >/13 </14 Tile{ HalfReuse: & Pipe/9 AsIs: e.Funcs#1/7 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch/4 } </11 & Apply/12 Tile{ AsIs: t.Func/5 } Tile{ AsIs: e.Arg/2 } >/13 </14 Tile{ HalfReuse: & Pipe/9 AsIs: e.Funcs/7 HalfReuse: >/10 } Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::alloc_name(vm, context[12], functions[efunc_Apply]);
   refalrts::alloc_close_call(vm, context[13]);
@@ -1336,18 +1336,18 @@ static refalrts::FnResult func_gen_Pipe_S3L1(refalrts::VM *vm, refalrts::Iter ar
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
-  // </0 & Pipe$3\1/4 e.Arg#2/2 >/1
+  // </0 & Pipe$3\1/4 e.Arg/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Arg#2 as range 2
-  //DEBUG: e.Arg#2: 2
+  // closed e.Arg as range 2
+  //DEBUG: e.Arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Pipe$3\1/4 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.Arg#2/2 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.Arg/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -1368,30 +1368,30 @@ static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, 
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & Pipe/4 e.new#0/2 >/1
+  // </0 & Pipe/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Pipe/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Pipe/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Pipe/4 t.Func#1/7 >/1
+      // </0 & Pipe/4 t.Func/7 >/1
       if( ! refalrts::empty_seq( context[5], context[6] ) )
         continue;
-      //DEBUG: t.Func#1: 7
+      //DEBUG: t.Func: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & Pipe/4 {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: t.Func#1/7 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: t.Func/7 } Tile{ ]] }
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
       refalrts::Iter res = arg_end->next;
@@ -1401,16 +1401,16 @@ static refalrts::FnResult func_Pipe(refalrts::VM *vm, refalrts::Iter arg_begin, 
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Pipe/4 t.Func#1/7 e.Funcs#1/9 >/1
+    // </0 & Pipe/4 t.Func/7 e.Funcs/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Funcs#1 as range 9
-    //DEBUG: t.Func#1: 7
-    //DEBUG: e.Funcs#1: 9
+    // closed e.Funcs as range 9
+    //DEBUG: t.Func: 7
+    //DEBUG: e.Funcs: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: [*]/0 Reuse: & Pipe$2\1/4 AsIs: t.Func#1/7 } (/11 Tile{ AsIs: e.Funcs#1/9 } )/12 Tile{ HalfReuse: {*}/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: [*]/0 Reuse: & Pipe$2\1/4 AsIs: t.Func/7 } (/11 Tile{ AsIs: e.Funcs/9 } )/12 Tile{ HalfReuse: {*}/1 ]] }
     refalrts::alloc_open_bracket(vm, context[11]);
     refalrts::alloc_close_bracket(vm, context[12]);
     refalrts::reinit_closure_head(context[0]);
@@ -1456,22 +1456,22 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & NumberFromOpcode/4 e.new#0/2 >/1
+  // </0 & NumberFromOpcode/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & NumberFromOpcode/4 e.new#1/5 s.new#2/7 >/1
+    // </0 & NumberFromOpcode/4 e.new1/5 s.new2/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_right( context[7], context[5], context[6] ) )
       continue;
-    // closed e.new#1 as range 5
+    // closed e.new1 as range 5
     do {
-      // </0 & NumberFromOpcode/4 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new3/7 >/1
       if( ! refalrts::empty_seq( context[5], context[6] ) )
         continue;
       do {
@@ -1610,7 +1610,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & NumberFromOpcode/4 s.new#4/10 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new4/10 s.new3/7 >/1
       context[8] = context[5];
       context[9] = context[6];
       if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
@@ -1618,7 +1618,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       if( ! refalrts::empty_seq( context[8], context[9] ) )
         continue;
       do {
-        // </0 & NumberFromOpcode/4 # CmdChar/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdChar/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdChar], context[10] ) )
           continue;
         do {
@@ -1672,7 +1672,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdCharSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdCharSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdCharSave], context[10] ) )
           continue;
         do {
@@ -1709,7 +1709,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdNumber/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdNumber/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNumber], context[10] ) )
           continue;
         do {
@@ -1763,7 +1763,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdNumberSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdNumberSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNumberSave], context[10] ) )
           continue;
         do {
@@ -1800,7 +1800,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdHugeNum/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdHugeNum/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdHugeNum], context[10] ) )
           continue;
         do {
@@ -1854,7 +1854,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdHugeNumSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdHugeNumSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdHugeNumSave], context[10] ) )
           continue;
         do {
@@ -1891,7 +1891,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdName/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdName/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdName], context[10] ) )
           continue;
         do {
@@ -1945,7 +1945,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdNameSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdNameSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNameSave], context[10] ) )
           continue;
         do {
@@ -1982,7 +1982,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdIdent/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdIdent/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdIdent], context[10] ) )
           continue;
         do {
@@ -2036,7 +2036,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdIdentSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdIdentSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdIdentSave], context[10] ) )
           continue;
         do {
@@ -2073,7 +2073,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdBrackets/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdBrackets/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdBrackets], context[10] ) )
           continue;
         do {
@@ -2127,7 +2127,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdBracketsSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdBracketsSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdBracketsSave], context[10] ) )
           continue;
         do {
@@ -2164,7 +2164,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdADT/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdADT/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdADT], context[10] ) )
           continue;
         do {
@@ -2218,7 +2218,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # CmdADTSave/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # CmdADTSave/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdADTSave], context[10] ) )
           continue;
         do {
@@ -2290,7 +2290,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & NumberFromOpcode/4 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new3/7 >/1
       if( ! refalrts::empty_seq( context[5], context[6] ) )
         continue;
       do {
@@ -2326,7 +2326,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & NumberFromOpcode/4 s.new#4/11 # CmdVar/10 s.new#3/7 >/1
+    // </0 & NumberFromOpcode/4 s.new4/11 # CmdVar/10 s.new3/7 >/1
     context[8] = context[5];
     context[9] = context[6];
     context[10] = refalrts::ident_right( identifiers[ident_CmdVar], context[8], context[9] );
@@ -2337,7 +2337,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
     do {
-      // </0 & NumberFromOpcode/4 's'/11 # CmdVar/10 s.new#5/7 >/1
+      // </0 & NumberFromOpcode/4 's'/11 # CmdVar/10 s.new5/7 >/1
       if( ! refalrts::char_term( 's', context[11] ) )
         continue;
       do {
@@ -2409,14 +2409,14 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & NumberFromOpcode/4 e.new#1/5 s.new#2/7 >/1
+    // </0 & NumberFromOpcode/4 e.new1/5 s.new2/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_right( context[7], context[5], context[6] ) )
       continue;
-    // closed e.new#1 as range 5
+    // closed e.new1 as range 5
     do {
-      // </0 & NumberFromOpcode/4 s.new#4/10 s.new#5/11 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new4/10 s.new5/11 s.new3/7 >/1
       context[8] = context[5];
       context[9] = context[6];
       if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
@@ -2426,7 +2426,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       if( ! refalrts::empty_seq( context[8], context[9] ) )
         continue;
       do {
-        // </0 & NumberFromOpcode/4 't'/10 s.new#7/11 s.new#6/7 >/1
+        // </0 & NumberFromOpcode/4 't'/10 s.new7/11 s.new6/7 >/1
         if( ! refalrts::char_term( 't', context[10] ) )
           continue;
         do {
@@ -2448,7 +2448,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & NumberFromOpcode/4 't'/10 # CmdVarSave/11 s.new#8/7 >/1
+        // </0 & NumberFromOpcode/4 't'/10 # CmdVarSave/11 s.new8/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdVarSave], context[11] ) )
           continue;
         do {
@@ -2485,11 +2485,11 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 s.new#7/10 # CmdRepeated/11 s.new#6/7 >/1
+        // </0 & NumberFromOpcode/4 s.new7/10 # CmdRepeated/11 s.new6/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdRepeated], context[11] ) )
           continue;
         do {
-          // </0 & NumberFromOpcode/4 'e'/10 # CmdRepeated/11 s.new#8/7 >/1
+          // </0 & NumberFromOpcode/4 'e'/10 # CmdRepeated/11 s.new8/7 >/1
           if( ! refalrts::char_term( 'e', context[10] ) )
             continue;
           do {
@@ -2526,7 +2526,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & NumberFromOpcode/4 's'/10 # CmdRepeated/11 s.new#8/7 >/1
+          // </0 & NumberFromOpcode/4 's'/10 # CmdRepeated/11 s.new8/7 >/1
           if( ! refalrts::char_term( 's', context[10] ) )
             continue;
           do {
@@ -2579,7 +2579,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & NumberFromOpcode/4 't'/10 # CmdRepeated/11 s.new#8/7 >/1
+        // </0 & NumberFromOpcode/4 't'/10 # CmdRepeated/11 s.new8/7 >/1
         if( ! refalrts::char_term( 't', context[10] ) )
           continue;
         do {
@@ -2632,7 +2632,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & NumberFromOpcode/4 't'/10 # CmdRepeatedSave/11 s.new#6/7 >/1
+      // </0 & NumberFromOpcode/4 't'/10 # CmdRepeatedSave/11 s.new6/7 >/1
       if( ! refalrts::char_term( 't', context[10] ) )
         continue;
       if( ! refalrts::ident_term( identifiers[ident_CmdRepeatedSave], context[11] ) )
@@ -2671,7 +2671,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & NumberFromOpcode/4 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new3/7 >/1
       if( ! refalrts::empty_seq( context[5], context[6] ) )
         continue;
       do {
@@ -2844,7 +2844,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & NumberFromOpcode/4 s.new#4/10 s.new#3/7 >/1
+      // </0 & NumberFromOpcode/4 s.new4/10 s.new3/7 >/1
       context[8] = context[5];
       context[9] = context[6];
       if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
@@ -2852,7 +2852,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       if( ! refalrts::empty_seq( context[8], context[9] ) )
         continue;
       do {
-        // </0 & NumberFromOpcode/4 # Allocate/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # Allocate/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_Allocate], context[10] ) )
           continue;
         do {
@@ -3008,7 +3008,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & NumberFromOpcode/4 # Reinit/10 s.new#5/7 >/1
+        // </0 & NumberFromOpcode/4 # Reinit/10 s.new5/7 >/1
         if( ! refalrts::ident_term( identifiers[ident_Reinit], context[10] ) )
           continue;
         do {
@@ -3146,7 +3146,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & NumberFromOpcode/4 # Update/10 s.new#5/7 >/1
+      // </0 & NumberFromOpcode/4 # Update/10 s.new5/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_Update], context[10] ) )
         continue;
       do {
@@ -3233,7 +3233,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & NumberFromOpcode/4 s.new#3/7 >/1
+    // </0 & NumberFromOpcode/4 s.new3/7 >/1
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
     do {
@@ -3337,7 +3337,7 @@ static refalrts::FnResult func_NumberFromOpcode(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & NumberFromOpcode/4 s.new#1/5 >/1
+  // </0 & NumberFromOpcode/4 s.new1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -3641,14 +3641,14 @@ static refalrts::FnResult func_NumberFromBracket(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  // </0 & NumberFromBracket/4 e.new#0/2 >/1
+  // </0 & NumberFromBracket/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & NumberFromBracket/4 s.new#1/5 >/1
+  // closed e.new as range 2
+  // </0 & NumberFromBracket/4 s.new1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -3765,14 +3765,14 @@ static refalrts::FnResult func_BlockTypeNumber(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  // </0 & BlockTypeNumber/4 e.new#0/2 >/1
+  // </0 & BlockTypeNumber/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & BlockTypeNumber/4 s.new#1/5 >/1
+  // closed e.new as range 2
+  // </0 & BlockTypeNumber/4 s.new1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -3991,15 +3991,15 @@ static refalrts::FnResult func_Revu_NumberFromOpcode(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & Rev_NumberFromOpcode/4 e.new#0/2 >/1
+  // </0 & Rev_NumberFromOpcode/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Rev_NumberFromOpcode/4 s.new#1/7 >/1
+    // </0 & Rev_NumberFromOpcode/4 s.new1/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -4953,7 +4953,7 @@ static refalrts::FnResult func_Revu_NumberFromOpcode(refalrts::VM *vm, refalrts:
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Rev_NumberFromOpcode/4 s.new#1/7 >/1
+    // </0 & Rev_NumberFromOpcode/4 s.new1/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -5874,7 +5874,7 @@ static refalrts::FnResult func_Revu_NumberFromOpcode(refalrts::VM *vm, refalrts:
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Rev_NumberFromOpcode/4 s.new#1/7 >/1
+    // </0 & Rev_NumberFromOpcode/4 s.new1/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -6186,12 +6186,12 @@ static refalrts::FnResult func_Revu_NumberFromOpcode(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Rev_NumberFromOpcode/4 e._#1/2 >/1
-  // closed e._#1 as range 2
-  //DEBUG: e._#1: 2
+  // </0 & Rev_NumberFromOpcode/4 e._/2 >/1
+  // closed e._ as range 2
+  //DEBUG: e._: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Rev_NumberFromOpcode/4 e._#1/2 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & Rev_NumberFromOpcode/4 e._/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
   refalrts::reinit_ident(context[1], identifiers[ident_Fails]);
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6213,15 +6213,15 @@ static refalrts::FnResult func_Revu_NumberFromBracket(refalrts::VM *vm, refalrts
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & Rev_NumberFromBracket/4 e.new#0/2 >/1
+  // </0 & Rev_NumberFromBracket/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Rev_NumberFromBracket/4 s.new#1/7 >/1
+    // </0 & Rev_NumberFromBracket/4 s.new1/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -6335,12 +6335,12 @@ static refalrts::FnResult func_Revu_NumberFromBracket(refalrts::VM *vm, refalrts
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Rev_NumberFromBracket/4 e._#1/2 >/1
-  // closed e._#1 as range 2
-  //DEBUG: e._#1: 2
+  // </0 & Rev_NumberFromBracket/4 e._/2 >/1
+  // closed e._ as range 2
+  //DEBUG: e._: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Rev_NumberFromBracket/4 e._#1/2 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & Rev_NumberFromBracket/4 e._/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
   refalrts::reinit_ident(context[1], identifiers[ident_Fails]);
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6362,15 +6362,15 @@ static refalrts::FnResult func_Revu_BlockTypeNumber(refalrts::VM *vm, refalrts::
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & Rev_BlockTypeNumber/4 e.new#0/2 >/1
+  // </0 & Rev_BlockTypeNumber/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Rev_BlockTypeNumber/4 s.new#1/7 >/1
+    // </0 & Rev_BlockTypeNumber/4 s.new1/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -6592,12 +6592,12 @@ static refalrts::FnResult func_Revu_BlockTypeNumber(refalrts::VM *vm, refalrts::
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Rev_BlockTypeNumber/4 e._#1/2 >/1
-  // closed e._#1 as range 2
-  //DEBUG: e._#1: 2
+  // </0 & Rev_BlockTypeNumber/4 e._/2 >/1
+  // closed e._ as range 2
+  //DEBUG: e._: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & Rev_BlockTypeNumber/4 e._#1/2 {REMOVED TILE}
+  //TRASH: {REMOVED TILE} </0 & Rev_BlockTypeNumber/4 e._/2 {REMOVED TILE}
   //RESULT: Tile{ [[ } Tile{ HalfReuse: # Fails/1 ]] }
   refalrts::reinit_ident(context[1], identifiers[ident_Fails]);
   refalrts::Iter trash_prev = arg_begin->prev;
@@ -6619,7 +6619,7 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A4(refalrts::VM *vm, refalrt
   // issue here memory for vars with 114 elems
   refalrts::Iter context[114];
   refalrts::zeros( context, 114 );
-  // </0 & GenProgram-RASL=4/4 s.Cookie1#1/5 s.Cookie2#1/6 s.FunctionCount#1/7 s.IdentCount#1/8 s.StringCount#1/9 s.ExternalSize#2/10 s.IdentSize#3/11 s.StringSize#4/12 (/15 e.FuncNamesAsBytes#2/13 )/16 (/19 e.IdentsAsBytes#3/17 )/20 (/23 e.StringsAsBytes#4/21 )/24 (/27 e.Items#1/25 )/28 s.RaslLength#5/29 (/32 e.LabelOffsets#5/30 )/33 e.RASLAsWords#5/2 >/1
+  // </0 & GenProgram-RASL=4/4 s.Cookie1/5 s.Cookie2/6 s.FunctionCount/7 s.IdentCount/8 s.StringCount/9 s.ExternalSize/10 s.IdentSize/11 s.StringSize/12 (/15 e.FuncNamesAsBytes/13 )/16 (/19 e.IdentsAsBytes/17 )/20 (/23 e.StringsAsBytes/21 )/24 (/27 e.Items/25 )/28 s.RaslLength/29 (/32 e.LabelOffsets/30 )/33 e.RASLAsWords/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -6665,10 +6665,10 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A4(refalrts::VM *vm, refalrt
   if( ! context[27] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[27], context[28]);
-  // closed e.FuncNamesAsBytes#2 as range 13
-  // closed e.IdentsAsBytes#3 as range 17
-  // closed e.StringsAsBytes#4 as range 21
-  // closed e.Items#1 as range 25
+  // closed e.FuncNamesAsBytes as range 13
+  // closed e.IdentsAsBytes as range 17
+  // closed e.StringsAsBytes as range 21
+  // closed e.Items as range 25
   if( ! refalrts::svar_left( context[29], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[30] = 0;
@@ -6677,27 +6677,27 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A4(refalrts::VM *vm, refalrt
   if( ! context[32] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[32], context[33]);
-  // closed e.LabelOffsets#5 as range 30
-  // closed e.RASLAsWords#5 as range 2
-  //DEBUG: s.Cookie1#1: 5
-  //DEBUG: s.Cookie2#1: 6
-  //DEBUG: s.FunctionCount#1: 7
-  //DEBUG: s.IdentCount#1: 8
-  //DEBUG: s.StringCount#1: 9
-  //DEBUG: s.ExternalSize#2: 10
-  //DEBUG: s.IdentSize#3: 11
-  //DEBUG: s.StringSize#4: 12
-  //DEBUG: e.FuncNamesAsBytes#2: 13
-  //DEBUG: e.IdentsAsBytes#3: 17
-  //DEBUG: e.StringsAsBytes#4: 21
-  //DEBUG: e.Items#1: 25
-  //DEBUG: s.RaslLength#5: 29
-  //DEBUG: e.LabelOffsets#5: 30
-  //DEBUG: e.RASLAsWords#5: 2
+  // closed e.LabelOffsets as range 30
+  // closed e.RASLAsWords as range 2
+  //DEBUG: s.Cookie1: 5
+  //DEBUG: s.Cookie2: 6
+  //DEBUG: s.FunctionCount: 7
+  //DEBUG: s.IdentCount: 8
+  //DEBUG: s.StringCount: 9
+  //DEBUG: s.ExternalSize: 10
+  //DEBUG: s.IdentSize: 11
+  //DEBUG: s.StringSize: 12
+  //DEBUG: e.FuncNamesAsBytes: 13
+  //DEBUG: e.IdentsAsBytes: 17
+  //DEBUG: e.StringsAsBytes: 21
+  //DEBUG: e.Items: 25
+  //DEBUG: s.RaslLength: 29
+  //DEBUG: e.LabelOffsets: 30
+  //DEBUG: e.RASLAsWords: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } 1/34 </35 & PutWordLE@1/36 8/37 >/38 82/39 65/40 83/41 76/42 67/43 79/44 68/45 69/46 </47 & PutBlock@1/48 (/49 Tile{ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Cookie1#1/5 } >/50 )/51 (/52 </53 & PutWordLE/54 Tile{ AsIs: s.Cookie2#1/6 } >/55 )/56 (/57 </58 & PutWordLE/59 Tile{ AsIs: s.FunctionCount#1/7 } >/60 )/61 (/62 </63 & PutWordLE/64 Tile{ AsIs: s.IdentCount#1/8 } >/65 )/66 (/67 </68 & PutWordLE@1/69 >/70 )/71 (/72 </73 & PutWordLE/74 Tile{ AsIs: s.StringCount#1/9 } >/75 )/76 (/77 </78 Tile{ HalfReuse: & PutWordLE/28 AsIs: s.RaslLength#5/29 } >/79 )/80 (/81 </82 & PutWordLE/83 Tile{ AsIs: s.ExternalSize#2/10 } >/84 )/85 (/86 </87 & PutWordLE/88 Tile{ AsIs: s.IdentSize#3/11 } >/89 )/90 (/91 </92 & PutWordLE/93 </94 & Sub/95 Tile{ AsIs: s.StringSize#4/12 } </96 & Mul/97 4/98 s.StringCount#1/9/99 >/100 >/101 >/102 )/103 Tile{ AsIs: (/15 AsIs: e.FuncNamesAsBytes#2/13 AsIs: )/16 AsIs: (/19 AsIs: e.IdentsAsBytes#3/17 AsIs: )/20 AsIs: (/23 AsIs: e.StringsAsBytes#4/21 AsIs: )/24 HalfReuse: </27 } & Map@1/104 Tile{ AsIs: e.RASLAsWords#5/2 } >/105 >/106 </107 & DelAccumulator/108 </109 & DoMapAccum@1/110 Tile{ AsIs: (/32 AsIs: e.LabelOffsets#5/30 AsIs: )/33 } (/111 )/112 Tile{ AsIs: e.Items#1/25 } >/113 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } 1/34 </35 & PutWordLE@1/36 8/37 >/38 82/39 65/40 83/41 76/42 67/43 79/44 68/45 69/46 </47 & PutBlock@1/48 (/49 Tile{ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Cookie1/5 } >/50 )/51 (/52 </53 & PutWordLE/54 Tile{ AsIs: s.Cookie2/6 } >/55 )/56 (/57 </58 & PutWordLE/59 Tile{ AsIs: s.FunctionCount/7 } >/60 )/61 (/62 </63 & PutWordLE/64 Tile{ AsIs: s.IdentCount/8 } >/65 )/66 (/67 </68 & PutWordLE@1/69 >/70 )/71 (/72 </73 & PutWordLE/74 Tile{ AsIs: s.StringCount/9 } >/75 )/76 (/77 </78 Tile{ HalfReuse: & PutWordLE/28 AsIs: s.RaslLength/29 } >/79 )/80 (/81 </82 & PutWordLE/83 Tile{ AsIs: s.ExternalSize/10 } >/84 )/85 (/86 </87 & PutWordLE/88 Tile{ AsIs: s.IdentSize/11 } >/89 )/90 (/91 </92 & PutWordLE/93 </94 & Sub/95 Tile{ AsIs: s.StringSize/12 } </96 & Mul/97 4/98 s.StringCount/9/99 >/100 >/101 >/102 )/103 Tile{ AsIs: (/15 AsIs: e.FuncNamesAsBytes/13 AsIs: )/16 AsIs: (/19 AsIs: e.IdentsAsBytes/17 AsIs: )/20 AsIs: (/23 AsIs: e.StringsAsBytes/21 AsIs: )/24 HalfReuse: </27 } & Map@1/104 Tile{ AsIs: e.RASLAsWords/2 } >/105 >/106 </107 & DelAccumulator/108 </109 & DoMapAccum@1/110 Tile{ AsIs: (/32 AsIs: e.LabelOffsets/30 AsIs: )/33 } (/111 )/112 Tile{ AsIs: e.Items/25 } >/113 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_number(vm, context[34], 1UL);
   refalrts::alloc_open_call(vm, context[35]);
   refalrts::alloc_name(vm, context[36], functions[efunc_gen_PutWordLE_Z1]);
@@ -6876,7 +6876,7 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A3(refalrts::VM *vm, refalrt
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
-  // </0 & GenProgram-RASL=3/4 s.Cookie1#1/5 s.Cookie2#1/6 s.FunctionCount#1/7 s.IdentCount#1/8 s.StringCount#1/9 s.ExternalSize#2/10 s.IdentSize#3/11 (/14 e.FuncNamesAsBytes#2/12 )/15 (/18 e.IdentsAsBytes#3/16 )/19 (/22 e.Items#1/20 )/23 (/26 e.RASL#1/24 )/27 s.StringSize#4/28 e.StringsAsBytes#4/2 >/1
+  // </0 & GenProgram-RASL=3/4 s.Cookie1/5 s.Cookie2/6 s.FunctionCount/7 s.IdentCount/8 s.StringCount/9 s.ExternalSize/10 s.IdentSize/11 (/14 e.FuncNamesAsBytes/12 )/15 (/18 e.IdentsAsBytes/16 )/19 (/22 e.Items/20 )/23 (/26 e.RASL/24 )/27 s.StringSize/28 e.StringsAsBytes/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -6920,30 +6920,30 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A3(refalrts::VM *vm, refalrt
   if( ! context[26] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[26], context[27]);
-  // closed e.FuncNamesAsBytes#2 as range 12
-  // closed e.IdentsAsBytes#3 as range 16
-  // closed e.Items#1 as range 20
-  // closed e.RASL#1 as range 24
+  // closed e.FuncNamesAsBytes as range 12
+  // closed e.IdentsAsBytes as range 16
+  // closed e.Items as range 20
+  // closed e.RASL as range 24
   if( ! refalrts::svar_left( context[28], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.StringsAsBytes#4 as range 2
-  //DEBUG: s.Cookie1#1: 5
-  //DEBUG: s.Cookie2#1: 6
-  //DEBUG: s.FunctionCount#1: 7
-  //DEBUG: s.IdentCount#1: 8
-  //DEBUG: s.StringCount#1: 9
-  //DEBUG: s.ExternalSize#2: 10
-  //DEBUG: s.IdentSize#3: 11
-  //DEBUG: e.FuncNamesAsBytes#2: 12
-  //DEBUG: e.IdentsAsBytes#3: 16
-  //DEBUG: e.Items#1: 20
-  //DEBUG: e.RASL#1: 24
-  //DEBUG: s.StringSize#4: 28
-  //DEBUG: e.StringsAsBytes#4: 2
+  // closed e.StringsAsBytes as range 2
+  //DEBUG: s.Cookie1: 5
+  //DEBUG: s.Cookie2: 6
+  //DEBUG: s.FunctionCount: 7
+  //DEBUG: s.IdentCount: 8
+  //DEBUG: s.StringCount: 9
+  //DEBUG: s.ExternalSize: 10
+  //DEBUG: s.IdentSize: 11
+  //DEBUG: e.FuncNamesAsBytes: 12
+  //DEBUG: e.IdentsAsBytes: 16
+  //DEBUG: e.Items: 20
+  //DEBUG: e.RASL: 24
+  //DEBUG: s.StringSize: 28
+  //DEBUG: e.StringsAsBytes: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.StringSize#4/28 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=4/4 AsIs: s.Cookie1#1/5 AsIs: s.Cookie2#1/6 AsIs: s.FunctionCount#1/7 AsIs: s.IdentCount#1/8 AsIs: s.StringCount#1/9 AsIs: s.ExternalSize#2/10 AsIs: s.IdentSize#3/11 HalfReuse: s.StringSize4 #28/14 } (/29 Tile{ AsIs: e.FuncNamesAsBytes#2/12 } Tile{ AsIs: )/15 AsIs: (/18 AsIs: e.IdentsAsBytes#3/16 AsIs: )/19 AsIs: (/22 } Tile{ AsIs: e.StringsAsBytes#4/2 } Tile{ AsIs: )/23 AsIs: (/26 } Tile{ AsIs: e.Items#1/20 } Tile{ AsIs: )/27 } </30 & Assemble=1/31 </32 & Map@2/33 Tile{ AsIs: e.RASL#1/24 } >/34 >/35 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.StringSize/28 {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=4/4 AsIs: s.Cookie1/5 AsIs: s.Cookie2/6 AsIs: s.FunctionCount/7 AsIs: s.IdentCount/8 AsIs: s.StringCount/9 AsIs: s.ExternalSize/10 AsIs: s.IdentSize/11 HalfReuse: s.StringSize28 /14 } (/29 Tile{ AsIs: e.FuncNamesAsBytes/12 } Tile{ AsIs: )/15 AsIs: (/18 AsIs: e.IdentsAsBytes/16 AsIs: )/19 AsIs: (/22 } Tile{ AsIs: e.StringsAsBytes/2 } Tile{ AsIs: )/23 AsIs: (/26 } Tile{ AsIs: e.Items/20 } Tile{ AsIs: )/27 } </30 & Assemble=1/31 </32 & Map@2/33 Tile{ AsIs: e.RASL/24 } >/34 >/35 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[29]);
   refalrts::alloc_open_call(vm, context[30]);
   refalrts::alloc_name(vm, context[31], functions[efunc_gen_Assemble_A1]);
@@ -6992,7 +6992,7 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A2(refalrts::VM *vm, refalrt
   // issue here memory for vars with 35 elems
   refalrts::Iter context[35];
   refalrts::zeros( context, 35 );
-  // </0 & GenProgram-RASL=2/4 s.Cookie1#1/5 s.Cookie2#1/6 s.FunctionCount#1/7 s.IdentCount#1/8 s.StringCount#1/9 s.ExternalSize#2/10 (/13 e.FuncNamesAsBytes#2/11 )/14 (/17 e.Items#1/15 )/18 (/21 e.RASL#1/19 )/22 (/25 e.Strings#1/23 )/26 s.IdentSize#3/27 e.IdentsAsBytes#3/2 >/1
+  // </0 & GenProgram-RASL=2/4 s.Cookie1/5 s.Cookie2/6 s.FunctionCount/7 s.IdentCount/8 s.StringCount/9 s.ExternalSize/10 (/13 e.FuncNamesAsBytes/11 )/14 (/17 e.Items/15 )/18 (/21 e.RASL/19 )/22 (/25 e.Strings/23 )/26 s.IdentSize/27 e.IdentsAsBytes/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -7034,29 +7034,29 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A2(refalrts::VM *vm, refalrt
   if( ! context[25] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[25], context[26]);
-  // closed e.FuncNamesAsBytes#2 as range 11
-  // closed e.Items#1 as range 15
-  // closed e.RASL#1 as range 19
-  // closed e.Strings#1 as range 23
+  // closed e.FuncNamesAsBytes as range 11
+  // closed e.Items as range 15
+  // closed e.RASL as range 19
+  // closed e.Strings as range 23
   if( ! refalrts::svar_left( context[27], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.IdentsAsBytes#3 as range 2
-  //DEBUG: s.Cookie1#1: 5
-  //DEBUG: s.Cookie2#1: 6
-  //DEBUG: s.FunctionCount#1: 7
-  //DEBUG: s.IdentCount#1: 8
-  //DEBUG: s.StringCount#1: 9
-  //DEBUG: s.ExternalSize#2: 10
-  //DEBUG: e.FuncNamesAsBytes#2: 11
-  //DEBUG: e.Items#1: 15
-  //DEBUG: e.RASL#1: 19
-  //DEBUG: e.Strings#1: 23
-  //DEBUG: s.IdentSize#3: 27
-  //DEBUG: e.IdentsAsBytes#3: 2
+  // closed e.IdentsAsBytes as range 2
+  //DEBUG: s.Cookie1: 5
+  //DEBUG: s.Cookie2: 6
+  //DEBUG: s.FunctionCount: 7
+  //DEBUG: s.IdentCount: 8
+  //DEBUG: s.StringCount: 9
+  //DEBUG: s.ExternalSize: 10
+  //DEBUG: e.FuncNamesAsBytes: 11
+  //DEBUG: e.Items: 15
+  //DEBUG: e.RASL: 19
+  //DEBUG: e.Strings: 23
+  //DEBUG: s.IdentSize: 27
+  //DEBUG: e.IdentsAsBytes: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.IdentSize#3/27 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=3/4 AsIs: s.Cookie1#1/5 AsIs: s.Cookie2#1/6 AsIs: s.FunctionCount#1/7 AsIs: s.IdentCount#1/8 AsIs: s.StringCount#1/9 AsIs: s.ExternalSize#2/10 HalfReuse: s.IdentSize3 #27/13 } (/28 Tile{ AsIs: e.FuncNamesAsBytes#2/11 } Tile{ AsIs: )/26 } (/29 Tile{ AsIs: e.IdentsAsBytes#3/2 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: e.Items#1/15 AsIs: )/18 AsIs: (/21 AsIs: e.RASL#1/19 AsIs: )/22 HalfReuse: </25 } & Lenw/30 </31 & Map@3/32 Tile{ AsIs: e.Strings#1/23 } >/33 >/34 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.IdentSize/27 {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=3/4 AsIs: s.Cookie1/5 AsIs: s.Cookie2/6 AsIs: s.FunctionCount/7 AsIs: s.IdentCount/8 AsIs: s.StringCount/9 AsIs: s.ExternalSize/10 HalfReuse: s.IdentSize27 /13 } (/28 Tile{ AsIs: e.FuncNamesAsBytes/11 } Tile{ AsIs: )/26 } (/29 Tile{ AsIs: e.IdentsAsBytes/2 } Tile{ AsIs: )/14 AsIs: (/17 AsIs: e.Items/15 AsIs: )/18 AsIs: (/21 AsIs: e.RASL/19 AsIs: )/22 HalfReuse: </25 } & Lenw/30 </31 & Map@3/32 Tile{ AsIs: e.Strings/23 } >/33 >/34 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[28]);
   refalrts::alloc_open_bracket(vm, context[29]);
   refalrts::alloc_name(vm, context[30], functions[efunc_Lenw]);
@@ -7105,7 +7105,7 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A1(refalrts::VM *vm, refalrt
   // issue here memory for vars with 33 elems
   refalrts::Iter context[33];
   refalrts::zeros( context, 33 );
-  // </0 & GenProgram-RASL=1/4 s.Cookie1#1/5 s.Cookie2#1/6 s.FunctionCount#1/7 s.IdentCount#1/8 s.StringCount#1/9 (/12 e.Items#1/10 )/13 (/16 e.RASL#1/14 )/17 (/20 e.Strings#1/18 )/21 (/24 e.Idents#1/22 )/25 s.ExternalSize#2/26 e.FuncNamesAsBytes#2/2 >/1
+  // </0 & GenProgram-RASL=1/4 s.Cookie1/5 s.Cookie2/6 s.FunctionCount/7 s.IdentCount/8 s.StringCount/9 (/12 e.Items/10 )/13 (/16 e.RASL/14 )/17 (/20 e.Strings/18 )/21 (/24 e.Idents/22 )/25 s.ExternalSize/26 e.FuncNamesAsBytes/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -7145,28 +7145,28 @@ static refalrts::FnResult func_gen_GenProgramm_RASL_A1(refalrts::VM *vm, refalrt
   if( ! context[24] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[24], context[25]);
-  // closed e.Items#1 as range 10
-  // closed e.RASL#1 as range 14
-  // closed e.Strings#1 as range 18
-  // closed e.Idents#1 as range 22
+  // closed e.Items as range 10
+  // closed e.RASL as range 14
+  // closed e.Strings as range 18
+  // closed e.Idents as range 22
   if( ! refalrts::svar_left( context[26], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.FuncNamesAsBytes#2 as range 2
-  //DEBUG: s.Cookie1#1: 5
-  //DEBUG: s.Cookie2#1: 6
-  //DEBUG: s.FunctionCount#1: 7
-  //DEBUG: s.IdentCount#1: 8
-  //DEBUG: s.StringCount#1: 9
-  //DEBUG: e.Items#1: 10
-  //DEBUG: e.RASL#1: 14
-  //DEBUG: e.Strings#1: 18
-  //DEBUG: e.Idents#1: 22
-  //DEBUG: s.ExternalSize#2: 26
-  //DEBUG: e.FuncNamesAsBytes#2: 2
+  // closed e.FuncNamesAsBytes as range 2
+  //DEBUG: s.Cookie1: 5
+  //DEBUG: s.Cookie2: 6
+  //DEBUG: s.FunctionCount: 7
+  //DEBUG: s.IdentCount: 8
+  //DEBUG: s.StringCount: 9
+  //DEBUG: e.Items: 10
+  //DEBUG: e.RASL: 14
+  //DEBUG: e.Strings: 18
+  //DEBUG: e.Idents: 22
+  //DEBUG: s.ExternalSize: 26
+  //DEBUG: e.FuncNamesAsBytes: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=2/4 AsIs: s.Cookie1#1/5 AsIs: s.Cookie2#1/6 AsIs: s.FunctionCount#1/7 AsIs: s.IdentCount#1/8 AsIs: s.StringCount#1/9 } Tile{ AsIs: s.ExternalSize#2/26 } (/27 Tile{ AsIs: e.FuncNamesAsBytes#2/2 } Tile{ AsIs: )/25 } Tile{ AsIs: (/12 AsIs: e.Items#1/10 AsIs: )/13 AsIs: (/16 AsIs: e.RASL#1/14 AsIs: )/17 AsIs: (/20 AsIs: e.Strings#1/18 AsIs: )/21 HalfReuse: </24 } & Lenw/28 </29 & Map@4/30 Tile{ AsIs: e.Idents#1/22 } >/31 >/32 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenProgram-RASL=2/4 AsIs: s.Cookie1/5 AsIs: s.Cookie2/6 AsIs: s.FunctionCount/7 AsIs: s.IdentCount/8 AsIs: s.StringCount/9 } Tile{ AsIs: s.ExternalSize/26 } (/27 Tile{ AsIs: e.FuncNamesAsBytes/2 } Tile{ AsIs: )/25 } Tile{ AsIs: (/12 AsIs: e.Items/10 AsIs: )/13 AsIs: (/16 AsIs: e.RASL/14 AsIs: )/17 AsIs: (/20 AsIs: e.Strings/18 AsIs: )/21 HalfReuse: </24 } & Lenw/28 </29 & Map@4/30 Tile{ AsIs: e.Idents/22 } >/31 >/32 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[27]);
   refalrts::alloc_name(vm, context[28], functions[efunc_Lenw]);
   refalrts::alloc_open_call(vm, context[29]);
@@ -7212,7 +7212,7 @@ static refalrts::FnResult func_GenProgramm_RASL(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 44 elems
   refalrts::Iter context[44];
   refalrts::zeros( context, 44 );
-  // </0 & GenProgram-RASL/4 (/7 (/11 # ModuleID/13 s.Cookie1#1/39 s.Cookie2#1/40 )/12 (/16 # CmdFuncArray/18 s.FunctionCount#1/41 e.FuncNames#1/14 )/17 (/21 # CmdIdentArray/23 s.IdentCount#1/42 e.Idents#1/19 )/22 (/26 # CmdStringArray/28 s.StringCount#1/43 e.Strings#1/24 )/27 (/31 # RASL/33 e.RASL#1/29 )/32 (/36 # Items/38 e.Items#1/34 )/37 )/8 >/1
+  // </0 & GenProgram-RASL/4 (/7 (/11 # ModuleID/13 s.Cookie1/39 s.Cookie2/40 )/12 (/16 # CmdFuncArray/18 s.FunctionCount/41 e.FuncNames/14 )/17 (/21 # CmdIdentArray/23 s.IdentCount/42 e.Idents/19 )/22 (/26 # CmdStringArray/28 s.StringCount/43 e.Strings/24 )/27 (/31 # RASL/33 e.RASL/29 )/32 (/36 # Items/38 e.Items/34 )/37 )/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -7282,8 +7282,8 @@ static refalrts::FnResult func_GenProgramm_RASL(refalrts::VM *vm, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.RASL#1 as range 29
-  // closed e.Items#1 as range 34
+  // closed e.RASL as range 29
+  // closed e.Items as range 34
   if( ! refalrts::svar_left( context[39], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[40], context[9], context[10] ) )
@@ -7292,27 +7292,27 @@ static refalrts::FnResult func_GenProgramm_RASL(refalrts::VM *vm, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[41], context[14], context[15] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.FuncNames#1 as range 14
+  // closed e.FuncNames as range 14
   if( ! refalrts::svar_left( context[42], context[19], context[20] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Idents#1 as range 19
+  // closed e.Idents as range 19
   if( ! refalrts::svar_left( context[43], context[24], context[25] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Strings#1 as range 24
-  //DEBUG: e.RASL#1: 29
-  //DEBUG: e.Items#1: 34
-  //DEBUG: s.Cookie1#1: 39
-  //DEBUG: s.Cookie2#1: 40
-  //DEBUG: s.FunctionCount#1: 41
-  //DEBUG: e.FuncNames#1: 14
-  //DEBUG: s.IdentCount#1: 42
-  //DEBUG: e.Idents#1: 19
-  //DEBUG: s.StringCount#1: 43
-  //DEBUG: e.Strings#1: 24
+  // closed e.Strings as range 24
+  //DEBUG: e.RASL: 29
+  //DEBUG: e.Items: 34
+  //DEBUG: s.Cookie1: 39
+  //DEBUG: s.Cookie2: 40
+  //DEBUG: s.FunctionCount: 41
+  //DEBUG: e.FuncNames: 14
+  //DEBUG: s.IdentCount: 42
+  //DEBUG: e.Idents: 19
+  //DEBUG: s.StringCount: 43
+  //DEBUG: e.Strings: 24
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.FunctionCount#1/41 {REMOVED TILE} )/17 {REMOVED TILE} # CmdIdentArray/23 s.IdentCount#1/42 {REMOVED TILE} {REMOVED TILE} # CmdStringArray/28 s.StringCount#1/43 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: </11 HalfReuse: & GenProgram-RASL=1/13 AsIs: s.Cookie1#1/39 AsIs: s.Cookie2#1/40 HalfReuse: s.FunctionCount1 #41/12 HalfReuse: s.IdentCount1 #42/16 HalfReuse: s.StringCount1 #43/18 } Tile{ AsIs: (/21 } Tile{ AsIs: e.Items#1/34 } Tile{ HalfReuse: )/31 HalfReuse: (/33 AsIs: e.RASL#1/29 AsIs: )/32 AsIs: (/36 } Tile{ AsIs: e.Strings#1/24 } Tile{ AsIs: )/22 AsIs: (/26 } Tile{ AsIs: e.Idents#1/19 } Tile{ AsIs: )/27 } Tile{ AsIs: </0 Reuse: & Lenw/4 HalfReuse: </7 } Tile{ HalfReuse: & Map@5/38 } Tile{ AsIs: e.FuncNames#1/14 } Tile{ HalfReuse: >/37 HalfReuse: >/8 AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.FunctionCount/41 {REMOVED TILE} )/17 {REMOVED TILE} # CmdIdentArray/23 s.IdentCount/42 {REMOVED TILE} {REMOVED TILE} # CmdStringArray/28 s.StringCount/43 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: </11 HalfReuse: & GenProgram-RASL=1/13 AsIs: s.Cookie1/39 AsIs: s.Cookie2/40 HalfReuse: s.FunctionCount41 /12 HalfReuse: s.IdentCount42 /16 HalfReuse: s.StringCount43 /18 } Tile{ AsIs: (/21 } Tile{ AsIs: e.Items/34 } Tile{ HalfReuse: )/31 HalfReuse: (/33 AsIs: e.RASL/29 AsIs: )/32 AsIs: (/36 } Tile{ AsIs: e.Strings/24 } Tile{ AsIs: )/22 AsIs: (/26 } Tile{ AsIs: e.Idents/19 } Tile{ AsIs: )/27 } Tile{ AsIs: </0 Reuse: & Lenw/4 HalfReuse: </7 } Tile{ HalfReuse: & Map@5/38 } Tile{ AsIs: e.FuncNames/14 } Tile{ HalfReuse: >/37 HalfReuse: >/8 AsIs: >/1 ]] }
   refalrts::reinit_open_call(context[11]);
   refalrts::reinit_name(context[13], functions[efunc_gen_GenProgramm_RASL_A1]);
   refalrts::reinit_svar( context[12], context[41] );
@@ -7365,18 +7365,18 @@ static refalrts::FnResult func_BytesFromFunctionList(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
-  // </0 & BytesFromFunctionList/4 e.FuncNames#1/2 >/1
+  // </0 & BytesFromFunctionList/4 e.FuncNames/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.FuncNames#1 as range 2
-  //DEBUG: e.FuncNames#1: 2
+  // closed e.FuncNames as range 2
+  //DEBUG: e.FuncNames: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@5/4 AsIs: e.FuncNames#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@5/4 AsIs: e.FuncNames/2 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Map_Z5]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -7395,18 +7395,18 @@ static refalrts::FnResult func_BytesFromIdentList(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
-  // </0 & BytesFromIdentList/4 e.Idents#1/2 >/1
+  // </0 & BytesFromIdentList/4 e.Idents/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Idents#1 as range 2
-  //DEBUG: e.Idents#1: 2
+  // closed e.Idents as range 2
+  //DEBUG: e.Idents: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@4/4 AsIs: e.Idents#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@4/4 AsIs: e.Idents/2 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Map_Z4]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -7425,18 +7425,18 @@ static refalrts::FnResult func_BytesFromStringList(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
-  // </0 & BytesFromStringList/4 e.Strings#1/2 >/1
+  // </0 & BytesFromStringList/4 e.Strings/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Strings#1 as range 2
-  //DEBUG: e.Strings#1: 2
+  // closed e.Strings as range 2
+  //DEBUG: e.Strings: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@3/4 AsIs: e.Strings#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Map@3/4 AsIs: e.Strings/2 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Map_Z3]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -7455,18 +7455,18 @@ static refalrts::FnResult func_BytesFromString(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 5 elems
   refalrts::Iter context[5];
   refalrts::zeros( context, 5 );
-  // </0 & BytesFromString/4 e.String#1/2 >/1
+  // </0 & BytesFromString/4 e.String/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.String#1 as range 2
-  //DEBUG: e.String#1: 2
+  // closed e.String as range 2
+  //DEBUG: e.String: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Ord/4 AsIs: e.String#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Ord/4 AsIs: e.String/2 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_Ord]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -7485,18 +7485,18 @@ static refalrts::FnResult func_Asciiz(refalrts::VM *vm, refalrts::Iter arg_begin
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  // </0 & Asciiz/4 e.String#1/2 >/1
+  // </0 & Asciiz/4 e.String/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.String#1 as range 2
-  //DEBUG: e.String#1: 2
+  // closed e.String as range 2
+  //DEBUG: e.String: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Ord/4 AsIs: e.String#1/2 AsIs: >/1 } 0/5 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Ord/4 AsIs: e.String/2 AsIs: >/1 } 0/5 Tile{ ]] }
   refalrts::alloc_number(vm, context[5], 0UL);
   refalrts::update_name(context[4], functions[efunc_Ord]);
   refalrts::push_stack( vm, context[1] );
@@ -7521,29 +7521,29 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & PutBlock/4 e.new#0/2 >/1
+  // </0 & PutBlock/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutBlock/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutBlock/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutBlock/4 # Start/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # Start/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Start], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 1/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 1/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 1UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7566,17 +7566,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # ConstTable/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # ConstTable/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_ConstTable], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 2/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 2/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 2UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7599,17 +7599,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # RefalFunction/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # RefalFunction/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_RefalFunction], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 3/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 3/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 3UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7632,17 +7632,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # NativeFunction/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # NativeFunction/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_NativeFunction], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 4/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 4/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 4UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7665,17 +7665,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # EmptyFunction/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # EmptyFunction/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_EmptyFunction], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 5/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 5/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 5UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7698,17 +7698,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # Swap/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # Swap/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Swap], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 6/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 6/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 6UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7731,17 +7731,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # Reference/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # Reference/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Reference], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 7/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 7/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 7UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7764,17 +7764,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # ConditionRasl/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # ConditionRasl/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_ConditionRasl], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 8/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 8/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 8UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7797,17 +7797,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # ConditionNative/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # ConditionNative/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_ConditionNative], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 9/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 9/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 9UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7830,17 +7830,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # Incorporated/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # Incorporated/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Incorporated], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 10/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 10/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 10UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7863,17 +7863,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # UnitName/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # UnitName/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_UnitName], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 11/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 11/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 11UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7896,17 +7896,17 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutBlock/4 # Metatable/5 e.Bytes#1/6 >/1
+    // </0 & PutBlock/4 # Metatable/5 e.Bytes/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_Metatable], context[5] ) )
       continue;
-    // closed e.Bytes#1 as range 6
-    //DEBUG: e.Bytes#1: 6
+    // closed e.Bytes as range 6
+    //DEBUG: e.Bytes: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 12/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes#1/6 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 12/8 </9 Tile{ HalfReuse: & Fetch@2/0 HalfReuse: </4 HalfReuse: & Lenw/5 AsIs: e.Bytes/6 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[8], 12UL);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_close_call(vm, context[10]);
@@ -7928,14 +7928,14 @@ static refalrts::FnResult func_PutBlock(refalrts::VM *vm, refalrts::Iter arg_beg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock/4 s.Type#1/5 e.Bytes#1/2 >/1
-  // closed e.Bytes#1 as range 2
-  //DEBUG: s.Type#1: 5
-  //DEBUG: e.Bytes#1: 2
+  // </0 & PutBlock/4 s.Type/5 e.Bytes/2 >/1
+  // closed e.Bytes as range 2
+  //DEBUG: s.Type: 5
+  //DEBUG: e.Bytes: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & BlockTypeNumber*12/4 AsIs: s.Type#1/5 } >/6 </7 & Fetch@2/8 </9 & Lenw/10 Tile{ AsIs: e.Bytes#1/2 } >/11 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & BlockTypeNumber*12/4 AsIs: s.Type/5 } >/6 </7 & Fetch@2/8 </9 & Lenw/10 Tile{ AsIs: e.Bytes/2 } >/11 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_close_call(vm, context[6]);
   refalrts::alloc_open_call(vm, context[7]);
   refalrts::alloc_name(vm, context[8], functions[efunc_gen_Fetch_Z2]);
@@ -7971,7 +7971,7 @@ static refalrts::FnResult func_gen_PutWordLE_S2A1(refalrts::VM *vm, refalrts::It
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & PutWordLE$2=1/4 (/7 e.Bytes#1/5 )/8 (/11 s.ValueHigh#2/13 )/12 s.ValueLow#2/14 >/1
+  // </0 & PutWordLE$2=1/4 (/7 e.Bytes/5 )/8 (/11 s.ValueHigh/13 )/12 s.ValueLow/14 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -7989,7 +7989,7 @@ static refalrts::FnResult func_gen_PutWordLE_S2A1(refalrts::VM *vm, refalrts::It
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.Bytes#1 as range 5
+  // closed e.Bytes as range 5
   if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[9], context[10] ) )
@@ -7998,13 +7998,13 @@ static refalrts::FnResult func_gen_PutWordLE_S2A1(refalrts::VM *vm, refalrts::It
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: e.Bytes#1: 5
-  //DEBUG: s.ValueHigh#2: 13
-  //DEBUG: s.ValueLow#2: 14
+  //DEBUG: e.Bytes: 5
+  //DEBUG: s.ValueHigh: 13
+  //DEBUG: s.ValueLow: 14
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} )/12 s.ValueLow#2/14 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 } Tile{ AsIs: e.Bytes#1/5 } Tile{ HalfReuse: s.ValueLow2 #14/11 AsIs: s.ValueHigh#2/13 } Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} )/12 s.ValueLow/14 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 } Tile{ AsIs: e.Bytes/5 } Tile{ HalfReuse: s.ValueLow14 /11 AsIs: s.ValueHigh/13 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_PutWordLE]);
   refalrts::reinit_svar( context[11], context[14] );
   refalrts::push_stack( vm, context[1] );
@@ -8030,19 +8030,19 @@ static refalrts::FnResult func_PutWordLE(refalrts::VM *vm, refalrts::Iter arg_be
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & PutWordLE/4 e.new#0/2 >/1
+  // </0 & PutWordLE/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutWordLE/4 e.new#1/2 s.new#2/5 >/1
+  // closed e.new as range 2
+  // </0 & PutWordLE/4 e.new1/2 s.new2/5 >/1
   if( ! refalrts::svar_right( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 2
+  // closed e.new1 as range 2
   do {
-    // </0 & PutWordLE/4 s.1#1/8 s.2#1/9 s.3#1/10 s.4#1/5 >/1
+    // </0 & PutWordLE/4 s.1/8 s.2/9 s.3/10 s.4/5 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
@@ -8053,14 +8053,14 @@ static refalrts::FnResult func_PutWordLE(refalrts::VM *vm, refalrts::Iter arg_be
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.4#1: 5
-    //DEBUG: s.1#1: 8
-    //DEBUG: s.2#1: 9
-    //DEBUG: s.3#1: 10
+    //DEBUG: s.4: 5
+    //DEBUG: s.1: 8
+    //DEBUG: s.2: 9
+    //DEBUG: s.3: 10
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & PutWordLE/4 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: s.1#1/8 AsIs: s.2#1/9 AsIs: s.3#1/10 AsIs: s.4#1/5 } Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: s.1/8 AsIs: s.2/9 AsIs: s.3/10 AsIs: s.4/5 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -8070,14 +8070,14 @@ static refalrts::FnResult func_PutWordLE(refalrts::VM *vm, refalrts::Iter arg_be
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutWordLE/4 e.Bytes#1/2 s.Value#1/5 >/1
-  // closed e.Bytes#1 as range 2
-  //DEBUG: s.Value#1: 5
-  //DEBUG: e.Bytes#1: 2
+  // </0 & PutWordLE/4 e.Bytes/2 s.Value/5 >/1
+  // closed e.Bytes as range 2
+  //DEBUG: s.Value: 5
+  //DEBUG: e.Bytes: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE$2=1/4 } (/6 Tile{ AsIs: e.Bytes#1/2 } )/7 </8 & Divmod/9 Tile{ AsIs: s.Value#1/5 } 256/10 >/11 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE$2=1/4 } (/6 Tile{ AsIs: e.Bytes/2 } )/7 </8 & Divmod/9 Tile{ AsIs: s.Value/5 } 256/10 >/11 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[6]);
   refalrts::alloc_close_bracket(vm, context[7]);
   refalrts::alloc_open_call(vm, context[8]);
@@ -8114,29 +8114,29 @@ static refalrts::FnResult func_NameWithSignm_Bytes(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & NameWithSign-Bytes/4 e.new#0/2 >/1
+  // </0 & NameWithSign-Bytes/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & NameWithSign-Bytes/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & NameWithSign-Bytes/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & NameWithSign-Bytes/4 # GN-Entry/5 e.Name#1/6 >/1
+    // </0 & NameWithSign-Bytes/4 # GN-Entry/5 e.Name/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[5] ) )
       continue;
-    // closed e.Name#1 as range 6
-    //DEBUG: e.Name#1: 6
+    // closed e.Name as range 6
+    //DEBUG: e.Name: 6
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@1/4 HalfReuse: </5 } & DisplayName/8 Tile{ AsIs: e.Name#1/6 } >/9 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@1/4 HalfReuse: </5 } & DisplayName/8 Tile{ AsIs: e.Name/6 } >/9 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[8], functions[efunc_DisplayName]);
     refalrts::alloc_close_call(vm, context[9]);
     refalrts::update_name(context[4], functions[efunc_gen_Asciiz_Z1]);
@@ -8156,15 +8156,15 @@ static refalrts::FnResult func_NameWithSignm_Bytes(refalrts::VM *vm, refalrts::I
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & NameWithSign-Bytes/4 # GN-Local/5 e.Name#1/2 >/1
+  // </0 & NameWithSign-Bytes/4 # GN-Local/5 e.Name/2 >/1
   if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[5] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Name#1 as range 2
-  //DEBUG: e.Name#1: 2
+  // closed e.Name as range 2
+  //DEBUG: e.Name: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@2/4 HalfReuse: </5 } & DisplayName/6 Tile{ AsIs: e.Name#1/2 } >/7 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@2/4 HalfReuse: </5 } & DisplayName/6 Tile{ AsIs: e.Name/2 } >/7 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_name(vm, context[6], functions[efunc_DisplayName]);
   refalrts::alloc_close_call(vm, context[7]);
   refalrts::update_name(context[4], functions[efunc_gen_Asciiz_Z2]);
@@ -8195,21 +8195,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
   // issue here memory for vars with 34 elems
   refalrts::Iter context[34];
   refalrts::zeros( context, 34 );
-  // </0 & GenCommand-Globals$4=1/4 e.new#0/2 >/1
+  // </0 & GenCommand-Globals$4=1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & GenCommand-Globals$4=1/4 (/7 e.new#1/5 )/8 s.new#2/9 (/12 e.new#3/10 )/13 s.new#4/14 e.new#5/2 >/1
+  // closed e.new as range 2
+  // </0 & GenCommand-Globals$4=1/4 (/7 e.new1/5 )/8 s.new2/9 (/12 e.new3/10 )/13 s.new4/14 e.new5/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[10] = 0;
@@ -8218,12 +8218,12 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
   if( ! context[12] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[12], context[13]);
-  // closed e.new#3 as range 10
+  // closed e.new3 as range 10
   if( ! refalrts::svar_left( context[14], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#5 as range 2
+  // closed e.new5 as range 2
   do {
-    // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels#1/15 )/8 # GN-Entry/9 (/12 e.Name#1/17 )/13 s.Count#2/14 e.Table#2/19 >/1
+    // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels/15 )/8 # GN-Entry/9 (/12 e.Name/17 )/13 s.Count/14 e.Table$a/19 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[10];
@@ -8232,17 +8232,17 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
     context[20] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[9] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    // closed e.Table#2 as range 19
-    //DEBUG: s.Count#2: 14
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
-    //DEBUG: e.Table#2: 19
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    // closed e.Table$a as range 19
+    //DEBUG: s.Count: 14
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
+    //DEBUG: e.Table$a: 19
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </9 HalfReuse: & PutBlock@2/12 } (/21 </22 & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/24 >/25 )/26 (/27 </28 Tile{ HalfReuse: & PutWordLE/13 AsIs: s.Count#2/14 } >/29 )/30 </31 & Map@6/32 Tile{ AsIs: e.Table#2/19 } >/33 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </9 HalfReuse: & PutBlock@2/12 } (/21 </22 & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/24 >/25 )/26 (/27 </28 Tile{ HalfReuse: & PutWordLE/13 AsIs: s.Count/14 } >/29 )/30 </31 & Map@6/32 Tile{ AsIs: e.Table$a/19 } >/33 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[21]);
     refalrts::alloc_open_call(vm, context[22]);
     refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
@@ -8291,7 +8291,7 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels#1/15 )/8 # GN-Local/9 (/12 e.Name#1/17 )/13 s.Count#2/14 e.Table#2/19 >/1
+    // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels/15 )/8 # GN-Local/9 (/12 e.Name/17 )/13 s.Count/14 e.Table$a/19 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[10];
@@ -8300,17 +8300,17 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
     context[20] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[9] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    // closed e.Table#2 as range 19
-    //DEBUG: s.Count#2: 14
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
-    //DEBUG: e.Table#2: 19
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    // closed e.Table$a as range 19
+    //DEBUG: s.Count: 14
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
+    //DEBUG: e.Table$a: 19
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </9 HalfReuse: & PutBlock@2/12 } (/21 </22 & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/24 >/25 )/26 (/27 </28 Tile{ HalfReuse: & PutWordLE/13 AsIs: s.Count#2/14 } >/29 )/30 </31 & Map@6/32 Tile{ AsIs: e.Table#2/19 } >/33 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </9 HalfReuse: & PutBlock@2/12 } (/21 </22 & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/24 >/25 )/26 (/27 </28 Tile{ HalfReuse: & PutWordLE/13 AsIs: s.Count/14 } >/29 )/30 </31 & Map@6/32 Tile{ AsIs: e.Table$a/19 } >/33 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[21]);
     refalrts::alloc_open_call(vm, context[22]);
     refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
@@ -8358,19 +8358,19 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_S4A1(refalrts::VM *vm, re
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels#1/5 )/8 s.ScopeClass#1/9 (/12 e.Name#1/10 )/13 s.Count#2/14 e.Table#2/2 >/1
-  // closed e.Labels#1 as range 5
-  // closed e.Name#1 as range 10
-  // closed e.Table#2 as range 2
-  //DEBUG: s.ScopeClass#1: 9
-  //DEBUG: s.Count#2: 14
-  //DEBUG: e.Labels#1: 5
-  //DEBUG: e.Name#1: 10
-  //DEBUG: e.Table#2: 2
+  // </0 & GenCommand-Globals$4=1/4 (/7 e.Labels/5 )/8 s.ScopeClass/9 (/12 e.Name/10 )/13 s.Count/14 e.Table$a/2 >/1
+  // closed e.Labels as range 5
+  // closed e.Name as range 10
+  // closed e.Table$a as range 2
+  //DEBUG: s.ScopeClass: 9
+  //DEBUG: s.Count: 14
+  //DEBUG: e.Labels: 5
+  //DEBUG: e.Name: 10
+  //DEBUG: e.Table$a: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ScopeClass#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/5 AsIs: )/8 } Tile{ AsIs: </0 Reuse: & PutBlock@2/4 } (/15 </16 & NameWithSign-Bytes*2/17 Tile{ HalfReuse: s.ScopeClass1 #9/12 AsIs: e.Name#1/10 HalfReuse: >/13 } )/18 (/19 </20 & PutWordLE/21 Tile{ AsIs: s.Count#2/14 } >/22 )/23 </24 & Map@6/25 Tile{ AsIs: e.Table#2/2 } >/26 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.ScopeClass/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/5 AsIs: )/8 } Tile{ AsIs: </0 Reuse: & PutBlock@2/4 } (/15 </16 & NameWithSign-Bytes*2/17 Tile{ HalfReuse: s.ScopeClass9 /12 AsIs: e.Name/10 HalfReuse: >/13 } )/18 (/19 </20 & PutWordLE/21 Tile{ AsIs: s.Count/14 } >/22 )/23 </24 & Map@6/25 Tile{ AsIs: e.Table$a/2 } >/26 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[15]);
   refalrts::alloc_open_call(vm, context[16]);
   refalrts::alloc_name(vm, context[17], functions[efunc_gen_NameWithSignm_Bytes_D2]);
@@ -8425,14 +8425,14 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
-  // </0 & GenCommand-Globals/4 e.new#0/2 >/1
+  // </0 & GenCommand-Globals/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & GenCommand-Globals/4 (/7 e.new#1/5 )/8 (/11 s.new#2/13 e.new#3/9 )/12 >/1
+  // closed e.new as range 2
+  // </0 & GenCommand-Globals/4 (/7 e.new1/5 )/8 (/11 s.new2/13 e.new3/9 )/12 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -8447,26 +8447,26 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::bracket_pointers(context[11], context[12]);
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#3 as range 9
+  // closed e.new3 as range 9
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/14 )/8 (/11 # UnitName/13 e.SrcName#1/16 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/14 )/8 (/11 # UnitName/13 e.SrcName/16 )/12 >/1
     context[14] = context[5];
     context[15] = context[6];
     context[16] = context[9];
     context[17] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_UnitName], context[13] ) )
       continue;
-    // closed e.Labels#1 as range 14
-    // closed e.SrcName#1 as range 16
-    //DEBUG: e.Labels#1: 14
-    //DEBUG: e.SrcName#1: 16
+    // closed e.Labels as range 14
+    // closed e.SrcName as range 16
+    //DEBUG: e.Labels: 14
+    //DEBUG: e.SrcName: 16
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/14 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@3/8 HalfReuse: </11 HalfReuse: & Ord/13 AsIs: e.SrcName#1/16 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/14 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@3/8 HalfReuse: </11 HalfReuse: & Ord/13 AsIs: e.SrcName/16 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -8489,37 +8489,37 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals/4 (/7 e.new#4/5 )/8 (/11 s.new#5/13 s.new#6/14 e.new#7/9 )/12 >/1
-  // closed e.new#4 as range 5
+  // </0 & GenCommand-Globals/4 (/7 e.new4/5 )/8 (/11 s.new5/13 s.new6/14 e.new7/9 )/12 >/1
+  // closed e.new4 as range 5
   if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#7 as range 9
+  // closed e.new7 as range 9
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.new#8/15 )/8 (/11 # CmdEnumDescr/13 s.new#9/14 e.new#10/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.new8/15 )/8 (/11 # CmdEnumDescr/13 s.new9/14 e.new10/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdEnumDescr], context[13] ) )
       continue;
-    // closed e.new#8 as range 15
-    // closed e.new#10 as range 17
+    // closed e.new8 as range 15
+    // closed e.new10 as range 17
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdEnumDescr/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdEnumDescr/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@4/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@4/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8548,21 +8548,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdEnumDescr/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdEnumDescr/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@4/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@4/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8590,20 +8590,20 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdEnumDescr/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdEnumDescr/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@4/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@4/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -8627,7 +8627,7 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.Labels-B#1/20 (/26 s.Label#1/28 s.Offset#1/29 )/27 e.Labels-E#1/22 )/8 (/11 # CmdInterpretFuncDescr/13 s.ScopeClass#1/14 e.Name#1/17 s.Label#1/19 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels-B/20 (/26 s.Label/28 s.Offset/29 )/27 e.Labels-E/22 )/8 (/11 # CmdInterpretFuncDescr/13 s.ScopeClass/14 e.Name/17 s.Label/19 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
@@ -8636,7 +8636,7 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
       continue;
     if( ! refalrts::svar_right( context[19], context[17], context[18] ) )
       continue;
-    // closed e.Name#1 as range 17
+    // closed e.Name as range 17
     context[20] = 0;
     context[21] = 0;
     refalrts::start_e_loop(vm);
@@ -8651,21 +8651,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
       refalrts::bracket_pointers(context[26], context[27]);
       if( ! refalrts::repeated_stvar_left( vm, context[28], context[19], context[24], context[25] ) )
         continue;
-      // closed e.Labels-E#1 as range 22
+      // closed e.Labels-E as range 22
       if( ! refalrts::svar_left( context[29], context[24], context[25] ) )
         continue;
       if( ! refalrts::empty_seq( context[24], context[25] ) )
         continue;
-      //DEBUG: s.ScopeClass#1: 14
-      //DEBUG: s.Label#1: 19
-      //DEBUG: e.Name#1: 17
-      //DEBUG: e.Labels-B#1: 20
-      //DEBUG: e.Labels-E#1: 22
-      //DEBUG: s.Offset#1: 29
+      //DEBUG: s.ScopeClass: 14
+      //DEBUG: s.Label: 19
+      //DEBUG: e.Name: 17
+      //DEBUG: e.Labels-B: 20
+      //DEBUG: e.Labels-E: 22
+      //DEBUG: s.Offset: 29
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label#1/19 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels-B#1/20 AsIs: (/26 AsIs: s.Label#1/28 AsIs: s.Offset#1/29 AsIs: )/27 AsIs: e.Labels-E#1/22 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@5/13 } (/30 Tile{ AsIs: </0 Reuse: & NameWithSign-Bytes/4 } Tile{ AsIs: s.ScopeClass#1/14 } Tile{ AsIs: e.Name#1/17 } >/31 )/32 </33 & PutWordLE/34 s.Offset#1/29/35 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label/19 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels-B/20 AsIs: (/26 AsIs: s.Label/28 AsIs: s.Offset/29 AsIs: )/27 AsIs: e.Labels-E/22 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@5/13 } (/30 Tile{ AsIs: </0 Reuse: & NameWithSign-Bytes/4 } Tile{ AsIs: s.ScopeClass/14 } Tile{ AsIs: e.Name/17 } >/31 )/32 </33 & PutWordLE/34 s.Offset/29/35 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_open_bracket(vm, context[30]);
       refalrts::alloc_close_call(vm, context[31]);
       refalrts::alloc_close_bracket(vm, context[32]);
@@ -8701,7 +8701,7 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/15 )/8 (/11 # CmdMetatable/13 s.ScopeClass#1/14 (/21 e.Name#1/19 )/22 e.Table#1/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/15 )/8 (/11 # CmdMetatable/13 s.ScopeClass/14 (/21 e.Name/19 )/22 e.Table/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
@@ -8714,17 +8714,17 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 19
-    // closed e.Table#1 as range 17
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 19
-    //DEBUG: e.Table#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 19
+    // closed e.Table as range 17
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 19
+    //DEBUG: e.Table: 17
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.ScopeClass#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4=1/4 AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: s.ScopeClass1 #14/11 HalfReuse: (/13 } Tile{ AsIs: e.Name#1/19 } Tile{ HalfReuse: )/21 } </23 Tile{ HalfReuse: & Lenw/22 AsIs: e.Table#1/17 HalfReuse: >/12 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} s.ScopeClass/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4=1/4 AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: s.ScopeClass14 /11 HalfReuse: (/13 } Tile{ AsIs: e.Name/19 } Tile{ HalfReuse: )/21 } </23 Tile{ HalfReuse: & Lenw/22 AsIs: e.Table/17 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[23]);
     refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_Globals_S4A1]);
     refalrts::reinit_svar( context[11], context[14] );
@@ -8750,31 +8750,31 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.new#8/15 )/8 (/11 # CmdSwapDescr/13 s.new#9/14 e.new#10/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.new8/15 )/8 (/11 # CmdSwapDescr/13 s.new9/14 e.new10/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdSwapDescr], context[13] ) )
       continue;
-    // closed e.new#8 as range 15
-    // closed e.new#10 as range 17
+    // closed e.new8 as range 15
+    // closed e.new10 as range 17
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8803,21 +8803,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8845,20 +8845,20 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@6/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@6/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -8882,31 +8882,31 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.new#8/15 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.new#9/14 e.new#10/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.new8/15 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.new9/14 e.new10/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdConditionFuncDecsrRasl], context[13] ) )
       continue;
-    // closed e.new#8 as range 15
-    // closed e.new#10 as range 17
+    // closed e.new8 as range 15
+    // closed e.new10 as range 17
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8935,21 +8935,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -8977,20 +8977,20 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@7/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@7/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -9014,31 +9014,31 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.new#8/15 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.new#9/14 e.new#10/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.new8/15 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.new9/14 e.new10/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdConditionFuncDecsrNative], context[13] ) )
       continue;
-    // closed e.new#8 as range 15
-    // closed e.new#10 as range 17
+    // closed e.new8 as range 15
+    // closed e.new10 as range 17
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -9067,21 +9067,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -9109,20 +9109,20 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@8/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@8/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -9145,27 +9145,27 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals/4 (/7 e.new#8/5 )/8 (/11 # CmdNativeFuncDescr/13 s.new#9/14 e.new#10/9 )/12 >/1
+  // </0 & GenCommand-Globals/4 (/7 e.new8/5 )/8 (/11 # CmdNativeFuncDescr/13 s.new9/14 e.new10/9 )/12 >/1
   if( ! refalrts::ident_term( identifiers[ident_CmdNativeFuncDescr], context[13] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#8 as range 5
-  // closed e.new#10 as range 9
+  // closed e.new8 as range 5
+  // closed e.new10 as range 9
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Entry/14 e.Name#1/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Entry/14 e.Name/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@1/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@1/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[19], functions[efunc_gen_Asciiz_Z1]);
     refalrts::alloc_close_call(vm, context[20]);
     refalrts::reinit_open_call(context[11]);
@@ -9194,21 +9194,21 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals/4 (/7 e.Labels#1/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Local/14 e.Name#1/17 )/12 >/1
+    // </0 & GenCommand-Globals/4 (/7 e.Labels/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Local/14 e.Name/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@2/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@2/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[19], functions[efunc_gen_Asciiz_Z2]);
     refalrts::alloc_close_call(vm, context[20]);
     refalrts::reinit_open_call(context[11]);
@@ -9236,16 +9236,16 @@ static refalrts::FnResult func_GenCommandm_Globals(refalrts::VM *vm, refalrts::I
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals/4 (/7 e.Labels#1/5 )/8 (/11 # CmdNativeFuncDescr/13 s.ScopeClass#1/14 e.Name#1/9 )/12 >/1
-  // closed e.Labels#1 as range 5
-  // closed e.Name#1 as range 9
-  //DEBUG: s.ScopeClass#1: 14
-  //DEBUG: e.Labels#1: 5
-  //DEBUG: e.Name#1: 9
+  // </0 & GenCommand-Globals/4 (/7 e.Labels/5 )/8 (/11 # CmdNativeFuncDescr/13 s.ScopeClass/14 e.Name/9 )/12 >/1
+  // closed e.Labels as range 5
+  // closed e.Name as range 9
+  //DEBUG: s.ScopeClass: 14
+  //DEBUG: e.Labels: 5
+  //DEBUG: e.Name: 9
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/5 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@9/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/9 HalfReuse: >/12 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/5 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@9/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/9 HalfReuse: >/12 AsIs: >/1 ]] }
   refalrts::reinit_open_bracket(context[0]);
   refalrts::reinit_close_bracket(context[4]);
   refalrts::reinit_open_call(context[7]);
@@ -9279,7 +9279,7 @@ static refalrts::FnResult func_gen_Assemble_A3(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & Assemble=3/4 s.RaslLength#3/5 (/8 e.Labels#3/6 )/9 e.RASLAsWords#4/2 >/1
+  // </0 & Assemble=3/4 s.RaslLength/5 (/8 e.Labels/6 )/9 e.RASLAsWords$b/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9293,15 +9293,15 @@ static refalrts::FnResult func_gen_Assemble_A3(refalrts::VM *vm, refalrts::Iter 
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[8], context[9]);
-  // closed e.Labels#3 as range 6
-  // closed e.RASLAsWords#4 as range 2
-  //DEBUG: s.RaslLength#3: 5
-  //DEBUG: e.Labels#3: 6
-  //DEBUG: e.RASLAsWords#4: 2
+  // closed e.Labels as range 6
+  // closed e.RASLAsWords$b as range 2
+  //DEBUG: s.RaslLength: 5
+  //DEBUG: e.Labels: 6
+  //DEBUG: e.RASLAsWords$b: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} </0 & Assemble=3/4 {REMOVED TILE} {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: s.RaslLength#3/5 AsIs: (/8 AsIs: e.Labels#3/6 AsIs: )/9 } Tile{ AsIs: e.RASLAsWords#4/2 } Tile{ ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: s.RaslLength/5 AsIs: (/8 AsIs: e.Labels/6 AsIs: )/9 } Tile{ AsIs: e.RASLAsWords$b/2 } Tile{ ]] }
   refalrts::link_brackets( context[8], context[9] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -9324,7 +9324,7 @@ static refalrts::FnResult func_gen_Assemble_A2(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & Assemble=2/4 (/7 s.RaslLength#3/9 e.Labels#3/5 )/8 e.RASLAsWords#3/2 >/1
+  // </0 & Assemble=2/4 (/7 s.RaslLength/9 e.Labels/5 )/8 e.RASLAsWords$a/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -9336,17 +9336,17 @@ static refalrts::FnResult func_gen_Assemble_A2(refalrts::VM *vm, refalrts::Iter 
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.RASLAsWords#3 as range 2
+  // closed e.RASLAsWords$a as range 2
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.Labels#3 as range 5
-  //DEBUG: e.RASLAsWords#3: 2
-  //DEBUG: s.RaslLength#3: 9
-  //DEBUG: e.Labels#3: 5
+  // closed e.Labels as range 5
+  //DEBUG: e.RASLAsWords$a: 2
+  //DEBUG: s.RaslLength: 9
+  //DEBUG: e.Labels: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} s.RaslLength#3/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Assemble=3/4 HalfReuse: s.RaslLength3 #9/7 } (/10 e.Labels#3/5/11 )/13 </14 & ResolveLabeledDestinations/15 (/16 Tile{ AsIs: e.Labels#3/5 } Tile{ AsIs: )/8 AsIs: e.RASLAsWords#3/2 AsIs: >/1 } >/17 Tile{ ]] }
+  //TRASH: {REMOVED TILE} s.RaslLength/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Assemble=3/4 HalfReuse: s.RaslLength9 /7 } (/10 e.Labels/5/11 )/13 </14 & ResolveLabeledDestinations/15 (/16 Tile{ AsIs: e.Labels/5 } Tile{ AsIs: )/8 AsIs: e.RASLAsWords$a/2 AsIs: >/1 } >/17 Tile{ ]] }
   refalrts::alloc_open_bracket(vm, context[10]);
   refalrts::copy_evar(vm, context[11], context[12], context[5], context[6]);
   refalrts::alloc_close_bracket(vm, context[13]);
@@ -9385,18 +9385,18 @@ static refalrts::FnResult func_gen_Assemble_A1(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 13 elems
   refalrts::Iter context[13];
   refalrts::zeros( context, 13 );
-  // </0 & Assemble=1/4 e.RASLAsWords#2/2 >/1
+  // </0 & Assemble=1/4 e.RASLAsWords/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.RASLAsWords#2 as range 2
-  //DEBUG: e.RASLAsWords#2: 2
+  // closed e.RASLAsWords as range 2
+  //DEBUG: e.RASLAsWords: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Assemble=2/4 } </5 & DoMapAccum@2/6 (/7 0/8 )/9 (/10 )/11 Tile{ AsIs: e.RASLAsWords#2/2 } >/12 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Assemble=2/4 } </5 & DoMapAccum@2/6 (/7 0/8 )/9 (/10 )/11 Tile{ AsIs: e.RASLAsWords/2 } >/12 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_DoMapAccum_Z2]);
   refalrts::alloc_open_bracket(vm, context[7]);
@@ -9434,18 +9434,18 @@ static refalrts::FnResult func_Assemble(refalrts::VM *vm, refalrts::Iter arg_beg
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & Assemble/4 e.RASL#1/2 >/1
+  // </0 & Assemble/4 e.RASL/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.RASL#1 as range 2
-  //DEBUG: e.RASL#1: 2
+  // closed e.RASL as range 2
+  //DEBUG: e.RASL: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & Assemble=1/6 Tile{ AsIs: </0 Reuse: & Map@2/4 AsIs: e.RASL#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & Assemble=1/6 Tile{ AsIs: </0 Reuse: & Map@2/4 AsIs: e.RASL/2 AsIs: >/1 } >/7 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_Assemble_A1]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -9476,15 +9476,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 35 elems
   refalrts::Iter context[35];
   refalrts::zeros( context, 35 );
-  // </0 & GenCommand-RASL/4 e.new#0/2 >/1
+  // </0 & GenCommand-RASL/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & GenCommand-RASL/4 (/9 s.new#1/11 e.new#2/7 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 s.new1/11 e.new2/7 )/10 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[7] = 0;
@@ -9497,9 +9497,9 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
       continue;
-    // closed e.new#2 as range 7
+    // closed e.new2 as range 7
     do {
-      // </0 & GenCommand-RASL/4 (/9 # LABEL/11 s.Label#1/14 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # LABEL/11 s.Label/14 )/10 >/1
       context[12] = context[7];
       context[13] = context[8];
       if( ! refalrts::ident_term( identifiers[ident_LABEL], context[11] ) )
@@ -9508,11 +9508,11 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         continue;
       if( ! refalrts::empty_seq( context[12], context[13] ) )
         continue;
-      //DEBUG: s.Label#1: 14
+      //DEBUG: s.Label: 14
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & GenCommand-RASL/4 {REMOVED TILE} >/1 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # LABEL/11 AsIs: s.Label#1/14 AsIs: )/10 } Tile{ ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # LABEL/11 AsIs: s.Label/14 AsIs: )/10 } Tile{ ]] }
       refalrts::link_brackets( context[9], context[10] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
@@ -9524,7 +9524,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 s.new#3/11 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new3/11 )/10 >/1
       if( ! refalrts::empty_seq( context[7], context[8] ) )
         continue;
       do {
@@ -9565,25 +9565,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 s.new#3/11 s.new#4/14 e.new#5/12 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new3/11 s.new4/14 e.new5/12 )/10 >/1
       context[12] = context[7];
       context[13] = context[8];
       if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
         continue;
-      // closed e.new#5 as range 12
+      // closed e.new5 as range 12
       do {
-        // </0 & GenCommand-RASL/4 (/9 s.new#6/11 s.new#7/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 s.new6/11 s.new7/14 )/10 >/1
         if( ! refalrts::empty_seq( context[12], context[13] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIssueMemory/11 s.Memory#1/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIssueMemory/11 s.Memory/14 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_CmdIssueMemory], context[11] ) )
             continue;
-          //DEBUG: s.Memory#1: 14
+          //DEBUG: s.Memory: 14
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </15 Tile{ HalfReuse: & PutCommand$3:1/0 HalfReuse: 2/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Memory#1/14 HalfReuse: 256/10 AsIs: >/1 } (/16 0/17 )/18 0/19 (/20 0/21 )/22 0/23 >/24 Tile{ ]] }
+          //RESULT: Tile{ [[ } </15 Tile{ HalfReuse: & PutCommand$3:1/0 HalfReuse: 2/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Memory/14 HalfReuse: 256/10 AsIs: >/1 } (/16 0/17 )/18 0/19 (/20 0/21 )/22 0/23 >/24 Tile{ ]] }
           refalrts::alloc_open_call(vm, context[15]);
           refalrts::alloc_open_bracket(vm, context[16]);
           refalrts::alloc_number(vm, context[17], 0UL);
@@ -9616,14 +9616,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdReserveBacktrackStack/11 s.Depth#1/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdReserveBacktrackStack/11 s.Depth/14 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdReserveBacktrackStack], context[11] ) )
           continue;
-        //DEBUG: s.Depth#1: 14
+        //DEBUG: s.Depth: 14
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </15 Tile{ HalfReuse: & PutCommand$3:1/0 HalfReuse: 3/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Depth#1/14 HalfReuse: 256/10 AsIs: >/1 } (/16 0/17 )/18 0/19 (/20 0/21 )/22 0/23 >/24 Tile{ ]] }
+        //RESULT: Tile{ [[ } </15 Tile{ HalfReuse: & PutCommand$3:1/0 HalfReuse: 3/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Depth/14 HalfReuse: 256/10 AsIs: >/1 } (/16 0/17 )/18 0/19 (/20 0/21 )/22 0/23 >/24 Tile{ ]] }
         refalrts::alloc_open_call(vm, context[15]);
         refalrts::alloc_open_bracket(vm, context[16]);
         refalrts::alloc_number(vm, context[17], 0UL);
@@ -9656,7 +9656,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdOnFailGoTo/11 s.Offset#1/14 # Func$_name:/17 e.FuncName#1/15 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdOnFailGoTo/11 s.Offset/14 # Func$_name:/17 e.FuncName/15 )/10 >/1
       context[15] = context[12];
       context[16] = context[13];
       if( ! refalrts::ident_term( identifiers[ident_CmdOnFailGoTo], context[11] ) )
@@ -9664,13 +9664,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       context[17] = refalrts::ident_left( identifiers[ident_Funck32_namek58_], context[15], context[16] );
       if( ! context[17] )
         continue;
-      // closed e.FuncName#1 as range 15
-      //DEBUG: s.Offset#1: 14
-      //DEBUG: e.FuncName#1: 15
+      // closed e.FuncName as range 15
+      //DEBUG: s.Offset: 14
+      //DEBUG: e.FuncName: 15
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 & GenCommand-RASL/4 {REMOVED TILE} # Func$_name:/17 {REMOVED TILE} )/10 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # CmdOnFailGoTo/11 AsIs: s.Offset#1/14 } Tile{ AsIs: e.FuncName#1/15 } Tile{ HalfReuse: )/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/9 AsIs: # CmdOnFailGoTo/11 AsIs: s.Offset/14 } Tile{ AsIs: e.FuncName/15 } Tile{ HalfReuse: )/1 ]] }
       refalrts::reinit_close_bracket(context[1]);
       refalrts::link_brackets( context[9], context[1] );
       refalrts::Iter trash_prev = arg_begin->prev;
@@ -9684,7 +9684,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 s.new#3/11 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new3/11 )/10 >/1
       if( ! refalrts::empty_seq( context[7], context[8] ) )
         continue;
       do {
@@ -9743,34 +9743,34 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 s.new#3/11 s.new#4/14 s.new#5/15 e.new#6/12 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 s.new3/11 s.new4/14 s.new5/15 e.new6/12 )/10 >/1
     context[12] = context[7];
     context[13] = context[8];
     if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
       continue;
     if( ! refalrts::svar_left( context[15], context[12], context[13] ) )
       continue;
-    // closed e.new#6 as range 12
+    // closed e.new6 as range 12
     do {
-      // </0 & GenCommand-RASL/4 (/9 s.new#7/11 s.new#8/14 s.new#9/15 s.new#10/18 e.new#11/16 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new7/11 s.new8/14 s.new9/15 s.new10/18 e.new11/16 )/10 >/1
       context[16] = context[12];
       context[17] = context[13];
       if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
         continue;
-      // closed e.new#11 as range 16
+      // closed e.new11 as range 16
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdChar/11 s.Direction#1/14 s.BracketNumber#1/15 s.Char#1/18 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdChar/11 s.Direction/14 s.BracketNumber/15 s.Char/18 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdChar], context[11] ) )
           continue;
         if( ! refalrts::empty_seq( context[16], context[17] ) )
           continue;
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.Char#1: 18
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.Char: 18
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.BracketNumber#1/15 {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 AsIs: # CmdChar/11 AsIs: s.Direction#1/14 } )/19 0/20 </21 & Ord/22 Tile{ AsIs: s.Char#1/18 } >/23 Tile{ HalfReuse: s.BracketNumber1 #15/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.BracketNumber/15 {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 AsIs: # CmdChar/11 AsIs: s.Direction/14 } )/19 0/20 </21 & Ord/22 Tile{ AsIs: s.Char/18 } >/23 Tile{ HalfReuse: s.BracketNumber15 /10 AsIs: >/1 ]] }
         refalrts::alloc_close_bracket(vm, context[19]);
         refalrts::alloc_number(vm, context[20], 0UL);
         refalrts::alloc_open_call(vm, context[21]);
@@ -9795,7 +9795,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCharSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.Char#1/21 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCharSave/11 s.Direction/14 s.BracketNumber/15 s.SaveOffset/18 s.Char/21 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdCharSave], context[11] ) )
@@ -9804,14 +9804,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           continue;
         if( ! refalrts::empty_seq( context[19], context[20] ) )
           continue;
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.SaveOffset#1: 18
-        //DEBUG: s.Char#1: 21
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.SaveOffset: 18
+        //DEBUG: s.Char: 21
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.BracketNumber#1/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 AsIs: # CmdCharSave/11 AsIs: s.Direction#1/14 } )/22 Tile{ AsIs: s.SaveOffset#1/18 } </23 & Ord/24 Tile{ AsIs: s.Char#1/21 } >/25 Tile{ HalfReuse: s.BracketNumber1 #15/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.BracketNumber/15 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 AsIs: # CmdCharSave/11 AsIs: s.Direction/14 } )/22 Tile{ AsIs: s.SaveOffset/18 } </23 & Ord/24 Tile{ AsIs: s.Char/21 } >/25 Tile{ HalfReuse: s.BracketNumber15 /10 AsIs: >/1 ]] }
         refalrts::alloc_close_bracket(vm, context[22]);
         refalrts::alloc_open_call(vm, context[23]);
         refalrts::alloc_name(vm, context[24], functions[efunc_Ord]);
@@ -9837,21 +9837,21 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 s.new#12/14 s.new#13/15 s.new#14/18 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 s.new12/14 s.new13/15 s.new14/18 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNumber], context[11] ) )
           continue;
         if( ! refalrts::empty_seq( context[16], context[17] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgLeft/14 s.BracketNumber#1/15 s.Number#1/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgLeft/14 s.BracketNumber/15 s.Number/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.Number#1: 18
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.Number: 18
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 13/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 13/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/15 } 256/25 >/26 >/27 Tile{ ]] }
           refalrts::alloc_close_bracket(vm, context[19]);
           refalrts::alloc_number(vm, context[20], 0UL);
           refalrts::alloc_open_call(vm, context[21]);
@@ -9887,15 +9887,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgRight/14 s.BracketNumber#1/15 s.Number#1/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgRight/14 s.BracketNumber/15 s.Number/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.Number#1: 18
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.Number: 18
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 14/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 14/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/15 } 256/25 >/26 >/27 Tile{ ]] }
           refalrts::alloc_close_bracket(vm, context[19]);
           refalrts::alloc_number(vm, context[20], 0UL);
           refalrts::alloc_open_call(vm, context[21]);
@@ -9931,15 +9931,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgTerm/14 s.BracketNumber#1/15 s.Number#1/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 # AlgTerm/14 s.BracketNumber/15 s.Number/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.Number#1: 18
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.Number: 18
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 15/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 15/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Number/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/15 } 256/25 >/26 >/27 Tile{ ]] }
           refalrts::alloc_close_bracket(vm, context[19]);
           refalrts::alloc_number(vm, context[20], 0UL);
           refalrts::alloc_open_call(vm, context[21]);
@@ -9974,14 +9974,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 s.Direction#1/14 s.BracketNumber#1/15 s.Number#1/18 )/10 >/1
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.Number#1: 18
+        // </0 & GenCommand-RASL/4 (/9 # CmdNumber/11 s.Direction/14 s.BracketNumber/15 s.Number/18 )/10 >/1
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.Number: 18
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/15 s.Number#1/18 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.Number1 #18/9 HalfReuse: s.BracketNumber1 #15/11 } </19 & NumberFromOpcode*119/20 # CmdNumber/21 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/15 s.Number/18 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.Number18 /9 HalfReuse: s.BracketNumber15 /11 } </19 & NumberFromOpcode*119/20 # CmdNumber/21 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[19]);
         refalrts::alloc_name(vm, context[20], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[21], identifiers[ident_CmdNumber]);
@@ -10004,7 +10004,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 s.new#12/14 s.new#13/15 s.new#14/18 s.new#15/21 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 s.new12/14 s.new13/15 s.new14/18 s.new15/21 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdNumberSave], context[11] ) )
@@ -10014,16 +10014,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         if( ! refalrts::empty_seq( context[19], context[20] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 # AlgLeft/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.Number#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 # AlgLeft/14 s.BracketNumber/15 s.SaveOffset/18 s.Number/21 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.Number#1: 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.Number: 21
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 16/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Number#1/21 HalfReuse: 256/10 AsIs: >/1 } </26 & Divmod/27 Tile{ AsIs: s.BracketNumber#1/15 } 256/28 >/29 >/30 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 16/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Number/21 HalfReuse: 256/10 AsIs: >/1 } </26 & Divmod/27 Tile{ AsIs: s.BracketNumber/15 } 256/28 >/29 >/30 Tile{ ]] }
           refalrts::alloc_number(vm, context[22], 256UL);
           refalrts::alloc_close_call(vm, context[23]);
           refalrts::alloc_open_call(vm, context[24]);
@@ -10061,16 +10061,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 # AlgRight/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.Number#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 # AlgRight/14 s.BracketNumber/15 s.SaveOffset/18 s.Number/21 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.Number#1: 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.Number: 21
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 17/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Number#1/21 HalfReuse: 256/10 AsIs: >/1 } </26 & Divmod/27 Tile{ AsIs: s.BracketNumber#1/15 } 256/28 >/29 >/30 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 17/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Number/21 HalfReuse: 256/10 AsIs: >/1 } </26 & Divmod/27 Tile{ AsIs: s.BracketNumber/15 } 256/28 >/29 >/30 Tile{ ]] }
           refalrts::alloc_number(vm, context[22], 256UL);
           refalrts::alloc_close_call(vm, context[23]);
           refalrts::alloc_open_call(vm, context[24]);
@@ -10107,15 +10107,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.Number#1/21 )/10 >/1
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.SaveOffset#1: 18
-        //DEBUG: s.Number#1: 21
+        // </0 & GenCommand-RASL/4 (/9 # CmdNumberSave/11 s.Direction/14 s.BracketNumber/15 s.SaveOffset/18 s.Number/21 )/10 >/1
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.SaveOffset: 18
+        //DEBUG: s.Number: 21
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset#1/18 s.Number#1/21 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset1 #18/9 HalfReuse: s.Number1 #21/11 } Tile{ AsIs: s.BracketNumber#1/15 } </22 & NumberFromOpcode*119/23 # CmdNumberSave/24 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset/18 s.Number/21 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset18 /9 HalfReuse: s.Number21 /11 } Tile{ AsIs: s.BracketNumber/15 } </22 & NumberFromOpcode*119/23 # CmdNumberSave/24 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[22]);
         refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[24], identifiers[ident_CmdNumberSave]);
@@ -10139,26 +10139,26 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdName/11 s.new#12/14 s.new#13/15 s.new#14/18 e.new#15/19 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdName/11 s.new12/14 s.new13/15 s.new14/18 e.new15/19 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdName], context[11] ) )
           continue;
-        // closed e.new#15 as range 19
+        // closed e.new15 as range 19
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgLeft/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgLeft/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 23/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 23/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10194,19 +10194,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgRight/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgRight/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 24/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 24/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10242,19 +10242,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgTerm/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdName/11 # AlgTerm/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 25/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 25/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10289,18 +10289,18 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdName/11 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdName/11 s.Direction/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
         context[21] = context[19];
         context[22] = context[20];
-        // closed e.Name#1 as range 21
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.NameId#1: 18
-        //DEBUG: e.Name#1: 21
+        // closed e.Name as range 21
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.NameId: 18
+        //DEBUG: e.Name: 21
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId1 #18/9 HalfReuse: s.BracketNumber1 #15/11 } </23 & NumberFromOpcode*119/24 # CmdName/25 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/15 s.NameId/18 e.Name/21 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId18 /9 HalfReuse: s.BracketNumber15 /11 } </23 & NumberFromOpcode*119/24 # CmdName/25 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[23]);
         refalrts::alloc_name(vm, context[24], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[25], identifiers[ident_CmdName]);
@@ -10323,29 +10323,29 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 s.new#12/14 s.new#13/15 s.new#14/18 s.new#15/21 e.new#16/19 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 s.new12/14 s.new13/15 s.new14/18 s.new15/21 e.new16/19 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdNameSave], context[11] ) )
           continue;
         if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
           continue;
-        // closed e.new#16 as range 19
+        // closed e.new16 as range 19
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 # AlgLeft/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 # AlgLeft/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
           context[22] = context[19];
           context[23] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          // closed e.Name#1 as range 22
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 22
+          // closed e.Name as range 22
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 22
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/22 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 26/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId#1/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber#1/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/22 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 26/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[24], 256UL);
           refalrts::alloc_close_call(vm, context[25]);
           refalrts::alloc_open_call(vm, context[26]);
@@ -10383,20 +10383,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 # AlgRight/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 # AlgRight/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
           context[22] = context[19];
           context[23] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          // closed e.Name#1 as range 22
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 22
+          // closed e.Name as range 22
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 22
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/22 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 27/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId#1/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber#1/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/22 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 27/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[24], 256UL);
           refalrts::alloc_close_call(vm, context[25]);
           refalrts::alloc_open_call(vm, context[26]);
@@ -10433,19 +10433,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdNameSave/11 s.Direction/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
         context[22] = context[19];
         context[23] = context[20];
-        // closed e.Name#1 as range 22
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.SaveOffset#1: 18
-        //DEBUG: s.NameId#1: 21
-        //DEBUG: e.Name#1: 22
+        // closed e.Name as range 22
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.SaveOffset: 18
+        //DEBUG: s.NameId: 21
+        //DEBUG: e.Name: 22
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset1 #18/9 HalfReuse: s.NameId1 #21/11 } Tile{ AsIs: s.BracketNumber#1/15 } </24 & NumberFromOpcode*119/25 # CmdNameSave/26 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset/18 s.NameId/21 e.Name/22 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset18 /9 HalfReuse: s.NameId21 /11 } Tile{ AsIs: s.BracketNumber/15 } </24 & NumberFromOpcode*119/25 # CmdNameSave/26 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[24]);
         refalrts::alloc_name(vm, context[25], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[26], identifiers[ident_CmdNameSave]);
@@ -10469,26 +10469,26 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 s.new#12/14 s.new#13/15 s.new#14/18 e.new#15/19 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 s.new12/14 s.new13/15 s.new14/18 e.new15/19 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdIdent], context[11] ) )
           continue;
-        // closed e.new#15 as range 19
+        // closed e.new15 as range 19
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgLeft/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgLeft/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 28/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 28/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10524,19 +10524,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgRight/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgRight/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 29/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 29/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10572,19 +10572,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgTerm/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 # AlgTerm/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
           context[21] = context[19];
           context[22] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          // closed e.Name#1 as range 21
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.NameId#1: 18
-          //DEBUG: e.Name#1: 21
+          // closed e.Name as range 21
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.NameId: 18
+          //DEBUG: e.Name: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 30/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId#1/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber#1/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 30/9 HalfReuse: (/11 HalfReuse: 0/14 } )/23 0/24 </25 & Divmod/26 Tile{ AsIs: s.NameId/18 } 256/27 >/28 </29 & Divmod/30 Tile{ AsIs: s.BracketNumber/15 } 256/31 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_close_bracket(vm, context[23]);
           refalrts::alloc_number(vm, context[24], 0UL);
           refalrts::alloc_open_call(vm, context[25]);
@@ -10619,18 +10619,18 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 s.Direction#1/14 s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdIdent/11 s.Direction/14 s.BracketNumber/15 s.NameId/18 e.Name/21 )/10 >/1
         context[21] = context[19];
         context[22] = context[20];
-        // closed e.Name#1 as range 21
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.NameId#1: 18
-        //DEBUG: e.Name#1: 21
+        // closed e.Name as range 21
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.NameId: 18
+        //DEBUG: e.Name: 21
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/15 s.NameId#1/18 e.Name#1/21 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId1 #18/9 HalfReuse: s.BracketNumber1 #15/11 } </23 & NumberFromOpcode*119/24 # CmdIdent/25 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/15 s.NameId/18 e.Name/21 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId18 /9 HalfReuse: s.BracketNumber15 /11 } </23 & NumberFromOpcode*119/24 # CmdIdent/25 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[23]);
         refalrts::alloc_name(vm, context[24], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[25], identifiers[ident_CmdIdent]);
@@ -10653,29 +10653,29 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 s.new#12/14 s.new#13/15 s.new#14/18 s.new#15/21 e.new#16/19 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 s.new12/14 s.new13/15 s.new14/18 s.new15/21 e.new16/19 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::ident_term( identifiers[ident_CmdIdentSave], context[11] ) )
           continue;
         if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
           continue;
-        // closed e.new#16 as range 19
+        // closed e.new16 as range 19
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 # AlgLeft/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 # AlgLeft/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
           context[22] = context[19];
           context[23] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          // closed e.Name#1 as range 22
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 22
+          // closed e.Name as range 22
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 22
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/22 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 31/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId#1/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber#1/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/22 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 31/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[24], 256UL);
           refalrts::alloc_close_call(vm, context[25]);
           refalrts::alloc_open_call(vm, context[26]);
@@ -10713,20 +10713,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 # AlgRight/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 # AlgRight/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
           context[22] = context[19];
           context[23] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          // closed e.Name#1 as range 22
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.SaveOffset#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 22
+          // closed e.Name as range 22
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.SaveOffset: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 22
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/22 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 32/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset#1/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId#1/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber#1/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/22 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 32/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.SaveOffset/18 } 256/24 >/25 </26 & Divmod/27 Tile{ AsIs: s.NameId/21 } 256/28 >/29 </30 & Divmod/31 Tile{ AsIs: s.BracketNumber/15 } 256/32 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[24], 256UL);
           refalrts::alloc_close_call(vm, context[25]);
           refalrts::alloc_open_call(vm, context[26]);
@@ -10763,19 +10763,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdIdentSave/11 s.Direction/14 s.BracketNumber/15 s.SaveOffset/18 s.NameId/21 e.Name/22 )/10 >/1
         context[22] = context[19];
         context[23] = context[20];
-        // closed e.Name#1 as range 22
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.SaveOffset#1: 18
-        //DEBUG: s.NameId#1: 21
-        //DEBUG: e.Name#1: 22
+        // closed e.Name as range 22
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.SaveOffset: 18
+        //DEBUG: s.NameId: 21
+        //DEBUG: e.Name: 22
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset#1/18 s.NameId#1/21 e.Name#1/22 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset1 #18/9 HalfReuse: s.NameId1 #21/11 } Tile{ AsIs: s.BracketNumber#1/15 } </24 & NumberFromOpcode*119/25 # CmdIdentSave/26 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.SaveOffset/18 s.NameId/21 e.Name/22 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.SaveOffset18 /9 HalfReuse: s.NameId21 /11 } Tile{ AsIs: s.BracketNumber/15 } </24 & NumberFromOpcode*119/25 # CmdIdentSave/26 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[24]);
         refalrts::alloc_name(vm, context[25], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[26], identifiers[ident_CmdIdentSave]);
@@ -10799,23 +10799,23 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 s.new#12/11 s.new#13/14 s.new#14/15 s.new#15/18 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 s.new12/11 s.new13/14 s.new14/15 s.new15/18 )/10 >/1
         if( ! refalrts::empty_seq( context[16], context[17] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 s.new#16/14 s.new#17/15 s.new#18/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 s.new16/14 s.new17/15 s.new18/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_CmdBrackets], context[11] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgLeft/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgLeft/14 s.Num/15 s.NumRanges/18 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
               continue;
-            //DEBUG: s.Num#1: 15
-            //DEBUG: s.NumRanges#1: 18
+            //DEBUG: s.Num: 15
+            //DEBUG: s.NumRanges: 18
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 33/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 33/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num/15 } 256/25 >/26 >/27 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[19]);
             refalrts::alloc_number(vm, context[20], 0UL);
             refalrts::alloc_open_call(vm, context[21]);
@@ -10851,15 +10851,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgRight/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgRight/14 s.Num/15 s.NumRanges/18 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
               continue;
-            //DEBUG: s.Num#1: 15
-            //DEBUG: s.NumRanges#1: 18
+            //DEBUG: s.Num: 15
+            //DEBUG: s.NumRanges: 18
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 34/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 34/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num/15 } 256/25 >/26 >/27 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[19]);
             refalrts::alloc_number(vm, context[20], 0UL);
             refalrts::alloc_open_call(vm, context[21]);
@@ -10895,15 +10895,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgTerm/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 # AlgTerm/14 s.Num/15 s.NumRanges/18 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
               continue;
-            //DEBUG: s.Num#1: 15
-            //DEBUG: s.NumRanges#1: 18
+            //DEBUG: s.Num: 15
+            //DEBUG: s.NumRanges: 18
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 35/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 35/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num/15 } 256/25 >/26 >/27 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[19]);
             refalrts::alloc_number(vm, context[20], 0UL);
             refalrts::alloc_open_call(vm, context[21]);
@@ -10938,14 +10938,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
-          //DEBUG: s.Direction#1: 14
-          //DEBUG: s.Num#1: 15
-          //DEBUG: s.NumRanges#1: 18
+          // </0 & GenCommand-RASL/4 (/9 # CmdBrackets/11 s.Direction/14 s.Num/15 s.NumRanges/18 )/10 >/1
+          //DEBUG: s.Direction: 14
+          //DEBUG: s.Num: 15
+          //DEBUG: s.NumRanges: 18
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/15 s.NumRanges#1/18 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NumRanges1 #18/9 HalfReuse: s.Num1 #15/11 } </19 & NumberFromOpcode*119/20 # CmdBrackets/21 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num/15 s.NumRanges/18 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NumRanges18 /9 HalfReuse: s.Num15 /11 } </19 & NumberFromOpcode*119/20 # CmdBrackets/21 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[19]);
           refalrts::alloc_name(vm, context[20], functions[efunc_gen_NumberFromOpcode_D119]);
           refalrts::alloc_ident(vm, context[21], identifiers[ident_CmdBrackets]);
@@ -10967,19 +10967,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 s.new#16/14 s.new#17/15 s.new#18/18 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 s.new16/14 s.new17/15 s.new18/18 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdBracketsSave], context[11] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 # AlgLeft/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 # AlgLeft/14 s.Num/15 s.NumRanges/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Num#1: 15
-          //DEBUG: s.NumRanges#1: 18
+          //DEBUG: s.Num: 15
+          //DEBUG: s.NumRanges: 18
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 36/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 36/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num/15 } 256/25 >/26 >/27 Tile{ ]] }
           refalrts::alloc_close_bracket(vm, context[19]);
           refalrts::alloc_number(vm, context[20], 0UL);
           refalrts::alloc_open_call(vm, context[21]);
@@ -11015,15 +11015,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 # AlgRight/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 # AlgRight/14 s.Num/15 s.NumRanges/18 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Num#1: 15
-          //DEBUG: s.NumRanges#1: 18
+          //DEBUG: s.Num: 15
+          //DEBUG: s.NumRanges: 18
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 37/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 37/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.NumRanges/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Num/15 } 256/25 >/26 >/27 Tile{ ]] }
           refalrts::alloc_close_bracket(vm, context[19]);
           refalrts::alloc_number(vm, context[20], 0UL);
           refalrts::alloc_open_call(vm, context[21]);
@@ -11058,14 +11058,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 s.Direction#1/14 s.Num#1/15 s.NumRanges#1/18 )/10 >/1
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.Num#1: 15
-        //DEBUG: s.NumRanges#1: 18
+        // </0 & GenCommand-RASL/4 (/9 # CmdBracketsSave/11 s.Direction/14 s.Num/15 s.NumRanges/18 )/10 >/1
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.Num: 15
+        //DEBUG: s.NumRanges: 18
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num#1/15 s.NumRanges#1/18 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NumRanges1 #18/9 HalfReuse: s.Num1 #15/11 } </19 & NumberFromOpcode*119/20 # CmdBracketsSave/21 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.Num/15 s.NumRanges/18 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NumRanges18 /9 HalfReuse: s.Num15 /11 } </19 & NumberFromOpcode*119/20 # CmdBracketsSave/21 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[19]);
         refalrts::alloc_name(vm, context[20], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[21], identifiers[ident_CmdBracketsSave]);
@@ -11088,34 +11088,34 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 s.new#12/11 s.new#13/14 s.new#14/15 s.new#15/18 s.new#16/21 e.new#17/19 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 s.new12/11 s.new13/14 s.new14/15 s.new15/18 s.new16/21 e.new17/19 )/10 >/1
         context[19] = context[16];
         context[20] = context[17];
         if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
           continue;
-        // closed e.new#17 as range 19
+        // closed e.new17 as range 19
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 s.new#18/14 s.new#19/15 s.new#20/18 s.new#21/21 e.new#22/22 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 s.new18/14 s.new19/15 s.new20/18 s.new21/21 e.new22/22 )/10 >/1
           context[22] = context[19];
           context[23] = context[20];
           if( ! refalrts::ident_term( identifiers[ident_CmdADT], context[11] ) )
             continue;
-          // closed e.new#22 as range 22
+          // closed e.new22 as range 22
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgLeft/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgLeft/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
             context[24] = context[22];
             context[25] = context[23];
             if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
               continue;
-            // closed e.Name#1 as range 24
-            //DEBUG: s.BracketNumber#1: 15
-            //DEBUG: s.InnerBrackets#1: 18
-            //DEBUG: s.NameId#1: 21
-            //DEBUG: e.Name#1: 24
+            // closed e.Name as range 24
+            //DEBUG: s.BracketNumber: 15
+            //DEBUG: s.InnerBrackets: 18
+            //DEBUG: s.NameId: 21
+            //DEBUG: e.Name: 24
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 38/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 38/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
             refalrts::alloc_number(vm, context[26], 256UL);
             refalrts::alloc_close_call(vm, context[27]);
             refalrts::alloc_open_call(vm, context[28]);
@@ -11153,20 +11153,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgRight/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgRight/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
             context[24] = context[22];
             context[25] = context[23];
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
               continue;
-            // closed e.Name#1 as range 24
-            //DEBUG: s.BracketNumber#1: 15
-            //DEBUG: s.InnerBrackets#1: 18
-            //DEBUG: s.NameId#1: 21
-            //DEBUG: e.Name#1: 24
+            // closed e.Name as range 24
+            //DEBUG: s.BracketNumber: 15
+            //DEBUG: s.InnerBrackets: 18
+            //DEBUG: s.NameId: 21
+            //DEBUG: e.Name: 24
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 39/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 39/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
             refalrts::alloc_number(vm, context[26], 256UL);
             refalrts::alloc_close_call(vm, context[27]);
             refalrts::alloc_open_call(vm, context[28]);
@@ -11204,20 +11204,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgTerm/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 # AlgTerm/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
             context[24] = context[22];
             context[25] = context[23];
             if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
               continue;
-            // closed e.Name#1 as range 24
-            //DEBUG: s.BracketNumber#1: 15
-            //DEBUG: s.InnerBrackets#1: 18
-            //DEBUG: s.NameId#1: 21
-            //DEBUG: e.Name#1: 24
+            // closed e.Name as range 24
+            //DEBUG: s.BracketNumber: 15
+            //DEBUG: s.InnerBrackets: 18
+            //DEBUG: s.NameId: 21
+            //DEBUG: e.Name: 24
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 40/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 40/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
             refalrts::alloc_number(vm, context[26], 256UL);
             refalrts::alloc_close_call(vm, context[27]);
             refalrts::alloc_open_call(vm, context[28]);
@@ -11254,19 +11254,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdADT/11 s.Direction/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
           context[24] = context[22];
           context[25] = context[23];
-          // closed e.Name#1 as range 24
-          //DEBUG: s.Direction#1: 14
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.InnerBrackets#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 24
+          // closed e.Name as range 24
+          //DEBUG: s.Direction: 14
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.InnerBrackets: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 24
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.NameId1 #21/9 HalfReuse: s.InnerBrackets1 #18/11 } Tile{ AsIs: s.BracketNumber#1/15 } </26 & NumberFromOpcode*119/27 # CmdADT/28 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerBrackets/18 s.NameId/21 e.Name/24 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.NameId21 /9 HalfReuse: s.InnerBrackets18 /11 } Tile{ AsIs: s.BracketNumber/15 } </26 & NumberFromOpcode*119/27 # CmdADT/28 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[26]);
           refalrts::alloc_name(vm, context[27], functions[efunc_gen_NumberFromOpcode_D119]);
           refalrts::alloc_ident(vm, context[28], identifiers[ident_CmdADT]);
@@ -11289,27 +11289,27 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 s.new#18/14 s.new#19/15 s.new#20/18 s.new#21/21 e.new#22/22 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 s.new18/14 s.new19/15 s.new20/18 s.new21/21 e.new22/22 )/10 >/1
         context[22] = context[19];
         context[23] = context[20];
         if( ! refalrts::ident_term( identifiers[ident_CmdADTSave], context[11] ) )
           continue;
-        // closed e.new#22 as range 22
+        // closed e.new22 as range 22
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgLeft/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgLeft/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
           context[24] = context[22];
           context[25] = context[23];
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          // closed e.Name#1 as range 24
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.InnerBrackets#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 24
+          // closed e.Name as range 24
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.InnerBrackets: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 24
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 41/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 41/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[26], 256UL);
           refalrts::alloc_close_call(vm, context[27]);
           refalrts::alloc_open_call(vm, context[28]);
@@ -11347,20 +11347,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgRight/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgRight/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
           context[24] = context[22];
           context[25] = context[23];
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          // closed e.Name#1 as range 24
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.InnerBrackets#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 24
+          // closed e.Name as range 24
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.InnerBrackets: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 24
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 42/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 42/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[26], 256UL);
           refalrts::alloc_close_call(vm, context[27]);
           refalrts::alloc_open_call(vm, context[28]);
@@ -11398,20 +11398,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgTerm/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 # AlgTerm/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
           context[24] = context[22];
           context[25] = context[23];
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          // closed e.Name#1 as range 24
-          //DEBUG: s.BracketNumber#1: 15
-          //DEBUG: s.InnerBrackets#1: 18
-          //DEBUG: s.NameId#1: 21
-          //DEBUG: e.Name#1: 24
+          // closed e.Name as range 24
+          //DEBUG: s.BracketNumber: 15
+          //DEBUG: s.InnerBrackets: 18
+          //DEBUG: s.NameId: 21
+          //DEBUG: e.Name: 24
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name#1/24 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 43/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId#1/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets#1/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber#1/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.Name/24 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 43/9 HalfReuse: </11 HalfReuse: & Divmod/14 } Tile{ AsIs: s.NameId/21 } 256/26 >/27 </28 & Divmod/29 Tile{ AsIs: s.InnerBrackets/18 } 256/30 >/31 </32 & Divmod/33 Tile{ AsIs: s.BracketNumber/15 } 256/34 Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[26], 256UL);
           refalrts::alloc_close_call(vm, context[27]);
           refalrts::alloc_open_call(vm, context[28]);
@@ -11448,19 +11448,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdADTSave/11 s.Direction/14 s.BracketNumber/15 s.InnerBrackets/18 s.NameId/21 e.Name/24 )/10 >/1
         context[24] = context[22];
         context[25] = context[23];
-        // closed e.Name#1 as range 24
-        //DEBUG: s.Direction#1: 14
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.InnerBrackets#1: 18
-        //DEBUG: s.NameId#1: 21
-        //DEBUG: e.Name#1: 24
+        // closed e.Name as range 24
+        //DEBUG: s.Direction: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.InnerBrackets: 18
+        //DEBUG: s.NameId: 21
+        //DEBUG: e.Name: 24
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerBrackets#1/18 s.NameId#1/21 e.Name#1/24 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.NameId1 #21/9 HalfReuse: s.InnerBrackets1 #18/11 } Tile{ AsIs: s.BracketNumber#1/15 } </26 & NumberFromOpcode*119/27 # CmdADTSave/28 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.InnerBrackets/18 s.NameId/21 e.Name/24 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 HalfReuse: s.NameId21 /9 HalfReuse: s.InnerBrackets18 /11 } Tile{ AsIs: s.BracketNumber/15 } </26 & NumberFromOpcode*119/27 # CmdADTSave/28 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[26]);
         refalrts::alloc_name(vm, context[27], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::alloc_ident(vm, context[28], identifiers[ident_CmdADTSave]);
@@ -11483,21 +11483,21 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 s.new#12/14 s.new#13/15 s.new#14/18 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 s.new12/14 s.new13/15 s.new14/18 )/10 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdCallSave], context[11] ) )
         continue;
       if( ! refalrts::empty_seq( context[16], context[17] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 # AlgLeft/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 # AlgLeft/14 s.BracketNumber/15 s.InnerBrackets/18 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
           continue;
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.InnerBrackets#1: 18
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.InnerBrackets: 18
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 44/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.InnerBrackets#1/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 44/9 HalfReuse: (/11 HalfReuse: 0/14 } )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.InnerBrackets/18 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/15 } 256/25 >/26 >/27 Tile{ ]] }
         refalrts::alloc_close_bracket(vm, context[19]);
         refalrts::alloc_number(vm, context[20], 0UL);
         refalrts::alloc_open_call(vm, context[21]);
@@ -11532,14 +11532,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 s.Direction#1/14 s.BracketNumber#1/15 s.InnerBrackets#1/18 )/10 >/1
-      //DEBUG: s.Direction#1: 14
-      //DEBUG: s.BracketNumber#1: 15
-      //DEBUG: s.InnerBrackets#1: 18
+      // </0 & GenCommand-RASL/4 (/9 # CmdCallSave/11 s.Direction/14 s.BracketNumber/15 s.InnerBrackets/18 )/10 >/1
+      //DEBUG: s.Direction: 14
+      //DEBUG: s.BracketNumber: 15
+      //DEBUG: s.InnerBrackets: 18
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/15 s.InnerBrackets#1/18 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.InnerBrackets1 #18/9 HalfReuse: s.BracketNumber1 #15/11 } </19 & NumberFromOpcode*119/20 # CmdCallSave/21 Tile{ AsIs: s.Direction#1/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/15 s.InnerBrackets/18 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.InnerBrackets18 /9 HalfReuse: s.BracketNumber15 /11 } </19 & NumberFromOpcode*119/20 # CmdCallSave/21 Tile{ AsIs: s.Direction/14 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[19]);
       refalrts::alloc_name(vm, context[20], functions[efunc_gen_NumberFromOpcode_D119]);
       refalrts::alloc_ident(vm, context[21], identifiers[ident_CmdCallSave]);
@@ -11562,17 +11562,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdEmpty/11 s.Direction#1/14 s.Num#1/15 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdEmpty/11 s.Direction/14 s.Num/15 )/10 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdEmpty], context[11] ) )
         continue;
       if( ! refalrts::empty_seq( context[12], context[13] ) )
         continue;
-      //DEBUG: s.Direction#1: 14
-      //DEBUG: s.Num#1: 15
+      //DEBUG: s.Direction: 14
+      //DEBUG: s.Num: 15
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Direction#1/14 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/9 HalfReuse: (/11 } 0/16 )/17 0/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Num#1/15 HalfReuse: 256/10 AsIs: >/1 } >/25 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.Direction/14 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/9 HalfReuse: (/11 } 0/16 )/17 0/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Num/15 HalfReuse: 256/10 AsIs: >/1 } >/25 Tile{ ]] }
       refalrts::alloc_number(vm, context[16], 0UL);
       refalrts::alloc_close_bracket(vm, context[17]);
       refalrts::alloc_number(vm, context[18], 0UL);
@@ -11604,7 +11604,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgLeft/14 s.BracketNumber#1/15 's'/18 s.VarNumber#1/19 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgLeft/14 s.BracketNumber/15 's'/18 s.VarNumber/19 )/10 >/1
     context[16] = context[12];
     context[17] = context[13];
     if( ! refalrts::ident_term( identifiers[ident_CmdVar], context[11] ) )
@@ -11618,12 +11618,12 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[16], context[17] ) )
       continue;
-    //DEBUG: s.BracketNumber#1: 15
-    //DEBUG: s.VarNumber#1: 19
+    //DEBUG: s.BracketNumber: 15
+    //DEBUG: s.VarNumber: 19
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 47/9 HalfReuse: (/11 HalfReuse: 0/14 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/18 AsIs: s.VarNumber#1/19 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/15 } 256/25 >/26 >/27 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 47/9 HalfReuse: (/11 HalfReuse: 0/14 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/18 AsIs: s.VarNumber/19 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/15 } 256/25 >/26 >/27 Tile{ ]] }
     refalrts::alloc_close_bracket(vm, context[20]);
     refalrts::alloc_number(vm, context[21], 0UL);
     refalrts::alloc_open_call(vm, context[22]);
@@ -11659,7 +11659,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-RASL/4 (/9 s.new#1/11 e.new#2/7 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 s.new1/11 e.new2/7 )/10 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[7] = 0;
@@ -11672,47 +11672,47 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::svar_left( context[11], context[7], context[8] ) )
       continue;
-    // closed e.new#2 as range 7
+    // closed e.new2 as range 7
     do {
-      // </0 & GenCommand-RASL/4 (/9 s.new#3/11 e.new#4/12 s.new#5/15 s.new#6/14 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new3/11 e.new4/12 s.new5/15 s.new6/14 )/10 >/1
       context[12] = context[7];
       context[13] = context[8];
       if( ! refalrts::svar_right( context[14], context[12], context[13] ) )
         continue;
       if( ! refalrts::svar_right( context[15], context[12], context[13] ) )
         continue;
-      // closed e.new#4 as range 12
+      // closed e.new4 as range 12
       do {
-        // </0 & GenCommand-RASL/4 (/9 s.new#7/11 e.new#10/16 s.new#11/19 s.new#12/18 s.new#9/15 s.new#8/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 s.new7/11 e.new10/16 s.new11/19 s.new12/18 s.new9/15 s.new8/14 )/10 >/1
         context[16] = context[12];
         context[17] = context[13];
         if( ! refalrts::svar_right( context[18], context[16], context[17] ) )
           continue;
         if( ! refalrts::svar_right( context[19], context[16], context[17] ) )
           continue;
-        // closed e.new#10 as range 16
+        // closed e.new10 as range 16
         do {
-          // </0 & GenCommand-RASL/4 (/9 s.new#13/11 s.new#17/19 s.new#16/18 s.new#15/15 s.new#14/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 s.new13/11 s.new17/19 s.new16/18 s.new15/15 s.new14/14 )/10 >/1
           if( ! refalrts::empty_seq( context[16], context[17] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new#21/19 s.new#20/18 s.new#19/15 s.new#18/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new21/19 s.new20/18 s.new19/15 s.new18/14 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_CmdVar], context[11] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new#24/19 s.new#23/18 's'/15 s.new#22/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new24/19 s.new23/18 's'/15 s.new22/14 )/10 >/1
               if( ! refalrts::char_term( 's', context[15] ) )
                 continue;
               do {
-                // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgRight/19 s.BracketNumber#1/18 's'/15 s.VarNumber#1/14 )/10 >/1
+                // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgRight/19 s.BracketNumber/18 's'/15 s.VarNumber/14 )/10 >/1
                 if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[19] ) )
                   continue;
-                //DEBUG: s.BracketNumber#1: 18
-                //DEBUG: s.VarNumber#1: 14
+                //DEBUG: s.BracketNumber: 18
+                //DEBUG: s.VarNumber: 14
 
                 refalrts::reset_allocator(vm);
                 //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-                //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 48/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+                //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 48/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
                 refalrts::alloc_close_bracket(vm, context[20]);
                 refalrts::alloc_number(vm, context[21], 0UL);
                 refalrts::alloc_open_call(vm, context[22]);
@@ -11747,15 +11747,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
               } while ( 0 );
               refalrts::stop_sentence(vm);
 
-              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgTerm/19 s.BracketNumber#1/18 's'/15 s.VarNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgTerm/19 s.BracketNumber/18 's'/15 s.VarNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[19] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 18
-              //DEBUG: s.VarNumber#1: 14
+              //DEBUG: s.BracketNumber: 18
+              //DEBUG: s.VarNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 49/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 49/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[20]);
               refalrts::alloc_number(vm, context[21], 0UL);
               refalrts::alloc_open_call(vm, context[22]);
@@ -11791,19 +11791,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new#24/19 s.new#23/18 't'/15 s.new#22/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.new24/19 s.new23/18 't'/15 s.new22/14 )/10 >/1
               if( ! refalrts::char_term( 't', context[15] ) )
                 continue;
               do {
-                // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgLeft/19 s.BracketNumber#1/18 't'/15 s.VarNumber#1/14 )/10 >/1
+                // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgLeft/19 s.BracketNumber/18 't'/15 s.VarNumber/14 )/10 >/1
                 if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[19] ) )
                   continue;
-                //DEBUG: s.BracketNumber#1: 18
-                //DEBUG: s.VarNumber#1: 14
+                //DEBUG: s.BracketNumber: 18
+                //DEBUG: s.VarNumber: 14
 
                 refalrts::reset_allocator(vm);
                 //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-                //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 50/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+                //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 50/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
                 refalrts::alloc_close_bracket(vm, context[20]);
                 refalrts::alloc_number(vm, context[21], 0UL);
                 refalrts::alloc_open_call(vm, context[22]);
@@ -11838,15 +11838,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
               } while ( 0 );
               refalrts::stop_sentence(vm);
 
-              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgRight/19 s.BracketNumber#1/18 't'/15 s.VarNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 # AlgRight/19 s.BracketNumber/18 't'/15 s.VarNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[19] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 18
-              //DEBUG: s.VarNumber#1: 14
+              //DEBUG: s.BracketNumber: 18
+              //DEBUG: s.VarNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 51/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 51/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[20]);
               refalrts::alloc_number(vm, context[21], 0UL);
               refalrts::alloc_open_call(vm, context[22]);
@@ -11881,15 +11881,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.Direction#1/19 s.BracketNumber#1/18 s.Mode#1/15 s.VarNumber#1/14 )/10 >/1
-            //DEBUG: s.Direction#1: 19
-            //DEBUG: s.BracketNumber#1: 18
-            //DEBUG: s.Mode#1: 15
-            //DEBUG: s.VarNumber#1: 14
+            // </0 & GenCommand-RASL/4 (/9 # CmdVar/11 s.Direction/19 s.BracketNumber/18 s.Mode/15 s.VarNumber/14 )/10 >/1
+            //DEBUG: s.Direction: 19
+            //DEBUG: s.BracketNumber: 18
+            //DEBUG: s.Mode: 15
+            //DEBUG: s.VarNumber: 14
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/15 {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ } </20 & PutCommand$3=1@3/21 Tile{ AsIs: s.VarNumber#1/14 } Tile{ AsIs: s.BracketNumber#1/18 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode1 #15/9 AsIs: # CmdVar/11 AsIs: s.Direction#1/19 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode/15 {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ } </20 & PutCommand$3=1@3/21 Tile{ AsIs: s.VarNumber/14 } Tile{ AsIs: s.BracketNumber/18 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode15 /9 AsIs: # CmdVar/11 AsIs: s.Direction/19 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_gen_PutCommand_S3A1Z3]);
             refalrts::update_name(context[4], functions[efunc_gen_NumberFromOpcode_D119]);
@@ -11911,23 +11911,23 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.new#21/19 s.new#20/18 s.new#19/15 s.new#18/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.new21/19 s.new20/18 s.new19/15 s.new18/14 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_CmdVarSave], context[11] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.new#24/19 s.new#23/18 't'/15 s.new#22/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.new24/19 s.new23/18 't'/15 s.new22/14 )/10 >/1
             if( ! refalrts::char_term( 't', context[15] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 # AlgLeft/19 s.BracketNumber#1/18 't'/15 s.VarNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 # AlgLeft/19 s.BracketNumber/18 't'/15 s.VarNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[19] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 18
-              //DEBUG: s.VarNumber#1: 14
+              //DEBUG: s.BracketNumber: 18
+              //DEBUG: s.VarNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 52/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 52/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[20]);
               refalrts::alloc_number(vm, context[21], 0UL);
               refalrts::alloc_open_call(vm, context[22]);
@@ -11962,15 +11962,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 # AlgRight/19 s.BracketNumber#1/18 't'/15 s.VarNumber#1/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 # AlgRight/19 s.BracketNumber/18 't'/15 s.VarNumber/14 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[19] ) )
               continue;
-            //DEBUG: s.BracketNumber#1: 18
-            //DEBUG: s.VarNumber#1: 14
+            //DEBUG: s.BracketNumber: 18
+            //DEBUG: s.VarNumber: 14
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 53/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber#1/18 } 256/25 >/26 >/27 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 53/9 HalfReuse: (/11 HalfReuse: 0/19 } )/20 0/21 </22 Tile{ HalfReuse: & Divmod/15 AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.BracketNumber/18 } 256/25 >/26 >/27 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[20]);
             refalrts::alloc_number(vm, context[21], 0UL);
             refalrts::alloc_open_call(vm, context[22]);
@@ -12005,15 +12005,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.Direction#1/19 s.BracketNumber#1/18 s.Mode#1/15 s.VarNumber#1/14 )/10 >/1
-          //DEBUG: s.Direction#1: 19
-          //DEBUG: s.BracketNumber#1: 18
-          //DEBUG: s.Mode#1: 15
-          //DEBUG: s.VarNumber#1: 14
+          // </0 & GenCommand-RASL/4 (/9 # CmdVarSave/11 s.Direction/19 s.BracketNumber/18 s.Mode/15 s.VarNumber/14 )/10 >/1
+          //DEBUG: s.Direction: 19
+          //DEBUG: s.BracketNumber: 18
+          //DEBUG: s.Mode: 15
+          //DEBUG: s.VarNumber: 14
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode#1/15 {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </20 & PutCommand$3=1@3/21 Tile{ AsIs: s.VarNumber#1/14 } Tile{ AsIs: s.BracketNumber#1/18 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode1 #15/9 AsIs: # CmdVarSave/11 AsIs: s.Direction#1/19 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Mode/15 {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ } </20 & PutCommand$3=1@3/21 Tile{ AsIs: s.VarNumber/14 } Tile{ AsIs: s.BracketNumber/18 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode15 /9 AsIs: # CmdVarSave/11 AsIs: s.Direction/19 } Tile{ HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_gen_PutCommand_S3A1Z3]);
           refalrts::update_name(context[4], functions[efunc_gen_NumberFromOpcode_D119]);
@@ -12036,7 +12036,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new#17/22 s.new#16/19 s.new#15/18 s.new#14/15 s.new#13/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new17/22 s.new16/19 s.new15/18 s.new14/15 s.new13/14 )/10 >/1
           context[20] = context[16];
           context[21] = context[17];
           if( ! refalrts::ident_term( identifiers[ident_CmdRepeated], context[11] ) )
@@ -12046,20 +12046,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           if( ! refalrts::empty_seq( context[20], context[21] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new#21/22 s.new#20/19 'e'/18 s.new#19/15 s.new#18/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new21/22 s.new20/19 'e'/18 s.new19/15 s.new18/14 )/10 >/1
             if( ! refalrts::char_term( 'e', context[18] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber#1/19 'e'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber/19 'e'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[22] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 19
-              //DEBUG: s.VarNumber#1: 15
-              //DEBUG: s.SampleNumber#1: 14
+              //DEBUG: s.BracketNumber: 19
+              //DEBUG: s.VarNumber: 15
+              //DEBUG: s.SampleNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 54/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 54/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
               refalrts::alloc_number(vm, context[23], 256UL);
               refalrts::alloc_close_call(vm, context[24]);
               refalrts::alloc_open_call(vm, context[25]);
@@ -12096,16 +12096,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber#1/19 'e'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber/19 'e'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[22] ) )
               continue;
-            //DEBUG: s.BracketNumber#1: 19
-            //DEBUG: s.VarNumber#1: 15
-            //DEBUG: s.SampleNumber#1: 14
+            //DEBUG: s.BracketNumber: 19
+            //DEBUG: s.VarNumber: 15
+            //DEBUG: s.SampleNumber: 14
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 55/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 55/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
             refalrts::alloc_number(vm, context[23], 256UL);
             refalrts::alloc_close_call(vm, context[24]);
             refalrts::alloc_open_call(vm, context[25]);
@@ -12143,20 +12143,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new#21/22 s.new#20/19 's'/18 s.new#19/15 s.new#18/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new21/22 s.new20/19 's'/18 s.new19/15 s.new18/14 )/10 >/1
             if( ! refalrts::char_term( 's', context[18] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber#1/19 's'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber/19 's'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[22] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 19
-              //DEBUG: s.VarNumber#1: 15
-              //DEBUG: s.SampleNumber#1: 14
+              //DEBUG: s.BracketNumber: 19
+              //DEBUG: s.VarNumber: 15
+              //DEBUG: s.SampleNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 56/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 56/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
               refalrts::alloc_number(vm, context[23], 256UL);
               refalrts::alloc_close_call(vm, context[24]);
               refalrts::alloc_open_call(vm, context[25]);
@@ -12194,16 +12194,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber#1/19 's'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber/19 's'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[22] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 19
-              //DEBUG: s.VarNumber#1: 15
-              //DEBUG: s.SampleNumber#1: 14
+              //DEBUG: s.BracketNumber: 19
+              //DEBUG: s.VarNumber: 15
+              //DEBUG: s.SampleNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 57/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 57/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
               refalrts::alloc_number(vm, context[23], 256UL);
               refalrts::alloc_close_call(vm, context[24]);
               refalrts::alloc_open_call(vm, context[25]);
@@ -12240,16 +12240,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgTerm/22 s.BracketNumber#1/19 's'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgTerm/22 s.BracketNumber/19 's'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[22] ) )
               continue;
-            //DEBUG: s.BracketNumber#1: 19
-            //DEBUG: s.VarNumber#1: 15
-            //DEBUG: s.SampleNumber#1: 14
+            //DEBUG: s.BracketNumber: 19
+            //DEBUG: s.VarNumber: 15
+            //DEBUG: s.SampleNumber: 14
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 58/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 58/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
             refalrts::alloc_number(vm, context[23], 256UL);
             refalrts::alloc_close_call(vm, context[24]);
             refalrts::alloc_open_call(vm, context[25]);
@@ -12287,20 +12287,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new#21/22 s.new#20/19 't'/18 s.new#19/15 s.new#18/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.new21/22 s.new20/19 't'/18 s.new19/15 s.new18/14 )/10 >/1
             if( ! refalrts::char_term( 't', context[18] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber#1/19 't'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgLeft/22 s.BracketNumber/19 't'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[22] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 19
-              //DEBUG: s.VarNumber#1: 15
-              //DEBUG: s.SampleNumber#1: 14
+              //DEBUG: s.BracketNumber: 19
+              //DEBUG: s.VarNumber: 15
+              //DEBUG: s.SampleNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 59/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 59/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
               refalrts::alloc_number(vm, context[23], 256UL);
               refalrts::alloc_close_call(vm, context[24]);
               refalrts::alloc_open_call(vm, context[25]);
@@ -12338,16 +12338,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber#1/19 't'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+              // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgRight/22 s.BracketNumber/19 't'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
               if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[22] ) )
                 continue;
-              //DEBUG: s.BracketNumber#1: 19
-              //DEBUG: s.VarNumber#1: 15
-              //DEBUG: s.SampleNumber#1: 14
+              //DEBUG: s.BracketNumber: 19
+              //DEBUG: s.VarNumber: 15
+              //DEBUG: s.SampleNumber: 14
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 60/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 60/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
               refalrts::alloc_number(vm, context[23], 256UL);
               refalrts::alloc_close_call(vm, context[24]);
               refalrts::alloc_open_call(vm, context[25]);
@@ -12384,16 +12384,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgTerm/22 s.BracketNumber#1/19 't'/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+            // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 # AlgTerm/22 s.BracketNumber/19 't'/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[22] ) )
               continue;
-            //DEBUG: s.BracketNumber#1: 19
-            //DEBUG: s.VarNumber#1: 15
-            //DEBUG: s.SampleNumber#1: 14
+            //DEBUG: s.BracketNumber: 19
+            //DEBUG: s.VarNumber: 15
+            //DEBUG: s.SampleNumber: 14
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 61/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber#1/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber#1/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 61/9 HalfReuse: </11 HalfReuse: & Divmod/22 } Tile{ AsIs: s.VarNumber/15 } 256/23 >/24 </25 & Divmod/26 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </27 & Divmod/28 Tile{ AsIs: s.BracketNumber/19 HalfReuse: 256/18 } >/29 >/30 Tile{ ]] }
             refalrts::alloc_number(vm, context[23], 256UL);
             refalrts::alloc_close_call(vm, context[24]);
             refalrts::alloc_open_call(vm, context[25]);
@@ -12430,16 +12430,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.Direction#1/22 s.BracketNumber#1/19 s.Mode#1/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
-          //DEBUG: s.Direction#1: 22
-          //DEBUG: s.BracketNumber#1: 19
-          //DEBUG: s.Mode#1: 18
-          //DEBUG: s.VarNumber#1: 15
-          //DEBUG: s.SampleNumber#1: 14
+          // </0 & GenCommand-RASL/4 (/9 # CmdRepeated/11 s.Direction/22 s.BracketNumber/19 s.Mode/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
+          //DEBUG: s.Direction: 22
+          //DEBUG: s.BracketNumber: 19
+          //DEBUG: s.Mode: 18
+          //DEBUG: s.VarNumber: 15
+          //DEBUG: s.SampleNumber: 14
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/19 s.Mode#1/18 {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3=1/24 Tile{ AsIs: s.VarNumber#1/15 AsIs: s.SampleNumber#1/14 HalfReuse: s.BracketNumber1 #19/10 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode1 #18/9 AsIs: # CmdRepeated/11 AsIs: s.Direction#1/22 } >/25 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/19 s.Mode/18 {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ } </23 & PutCommand$3=1/24 Tile{ AsIs: s.VarNumber/15 AsIs: s.SampleNumber/14 HalfReuse: s.BracketNumber19 /10 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: s.Mode18 /9 AsIs: # CmdRepeated/11 AsIs: s.Direction/22 } >/25 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3A1]);
           refalrts::alloc_close_call(vm, context[25]);
@@ -12462,22 +12462,22 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 s.new#16/19 s.new#15/18 s.new#14/15 s.new#13/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 s.new16/19 s.new15/18 s.new14/15 s.new13/14 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdRepeatedTVarSave], context[11] ) )
           continue;
         if( ! refalrts::empty_seq( context[16], context[17] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 # AlgLeft/19 s.BracketNumber#1/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 # AlgLeft/19 s.BracketNumber/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[19] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 18
-          //DEBUG: s.VarNumber#1: 15
-          //DEBUG: s.SampleNumber#1: 14
+          //DEBUG: s.BracketNumber: 18
+          //DEBUG: s.VarNumber: 15
+          //DEBUG: s.SampleNumber: 14
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 62/9 HalfReuse: </11 HalfReuse: & Divmod/19 } Tile{ AsIs: s.VarNumber#1/15 } 256/20 >/21 </22 & Divmod/23 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </24 & Divmod/25 Tile{ AsIs: s.BracketNumber#1/18 } 256/26 >/27 >/28 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 62/9 HalfReuse: </11 HalfReuse: & Divmod/19 } Tile{ AsIs: s.VarNumber/15 } 256/20 >/21 </22 & Divmod/23 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </24 & Divmod/25 Tile{ AsIs: s.BracketNumber/18 } 256/26 >/27 >/28 Tile{ ]] }
           refalrts::alloc_number(vm, context[20], 256UL);
           refalrts::alloc_close_call(vm, context[21]);
           refalrts::alloc_open_call(vm, context[22]);
@@ -12515,16 +12515,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 # AlgRight/19 s.BracketNumber#1/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 # AlgRight/19 s.BracketNumber/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[19] ) )
             continue;
-          //DEBUG: s.BracketNumber#1: 18
-          //DEBUG: s.VarNumber#1: 15
-          //DEBUG: s.SampleNumber#1: 14
+          //DEBUG: s.BracketNumber: 18
+          //DEBUG: s.VarNumber: 15
+          //DEBUG: s.SampleNumber: 14
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 63/9 HalfReuse: </11 HalfReuse: & Divmod/19 } Tile{ AsIs: s.VarNumber#1/15 } 256/20 >/21 </22 & Divmod/23 Tile{ AsIs: s.SampleNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </24 & Divmod/25 Tile{ AsIs: s.BracketNumber#1/18 } 256/26 >/27 >/28 Tile{ ]] }
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 63/9 HalfReuse: </11 HalfReuse: & Divmod/19 } Tile{ AsIs: s.VarNumber/15 } 256/20 >/21 </22 & Divmod/23 Tile{ AsIs: s.SampleNumber/14 HalfReuse: 256/10 AsIs: >/1 } </24 & Divmod/25 Tile{ AsIs: s.BracketNumber/18 } 256/26 >/27 >/28 Tile{ ]] }
           refalrts::alloc_number(vm, context[20], 256UL);
           refalrts::alloc_close_call(vm, context[21]);
           refalrts::alloc_open_call(vm, context[22]);
@@ -12561,15 +12561,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 s.Direction#1/19 s.BracketNumber#1/18 s.VarNumber#1/15 s.SampleNumber#1/14 )/10 >/1
-        //DEBUG: s.Direction#1: 19
-        //DEBUG: s.BracketNumber#1: 18
-        //DEBUG: s.VarNumber#1: 15
-        //DEBUG: s.SampleNumber#1: 14
+        // </0 & GenCommand-RASL/4 (/9 # CmdRepeatedTVarSave/11 s.Direction/19 s.BracketNumber/18 s.VarNumber/15 s.SampleNumber/14 )/10 >/1
+        //DEBUG: s.Direction: 19
+        //DEBUG: s.BracketNumber: 18
+        //DEBUG: s.VarNumber: 15
+        //DEBUG: s.SampleNumber: 14
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber#1/18 {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </20 & PutCommand$3=1/21 Tile{ AsIs: s.VarNumber#1/15 AsIs: s.SampleNumber#1/14 HalfReuse: s.BracketNumber1 #18/10 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: 't'/9 Reuse: # CmdRepeatedSave/11 AsIs: s.Direction#1/19 } >/22 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.BracketNumber/18 {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ } </20 & PutCommand$3=1/21 Tile{ AsIs: s.VarNumber/15 AsIs: s.SampleNumber/14 HalfReuse: s.BracketNumber18 /10 } Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 HalfReuse: 't'/9 Reuse: # CmdRepeatedSave/11 AsIs: s.Direction/19 } >/22 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[20]);
         refalrts::alloc_name(vm, context[21], functions[efunc_gen_PutCommand_S3A1]);
         refalrts::alloc_close_call(vm, context[22]);
@@ -12593,19 +12593,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 s.new#7/11 s.new#9/15 s.new#8/14 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 s.new7/11 s.new9/15 s.new8/14 )/10 >/1
       if( ! refalrts::empty_seq( context[12], context[13] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdEPrepare/11 s.BracketNumber#1/15 s.VarNumber#1/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdEPrepare/11 s.BracketNumber/15 s.VarNumber/14 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEPrepare], context[11] ) )
           continue;
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.VarNumber#1: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.VarNumber: 14
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.BracketNumber#1/15 } 256/23 >/24 >/25 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.BracketNumber/15 } 256/23 >/24 >/25 Tile{ ]] }
         refalrts::alloc_number(vm, context[16], 0UL);
         refalrts::alloc_close_bracket(vm, context[17]);
         refalrts::alloc_number(vm, context[18], 0UL);
@@ -12641,15 +12641,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdEStart/11 s.BracketNumber#1/15 s.VarNumber#1/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdEStart/11 s.BracketNumber/15 s.VarNumber/14 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEStart], context[11] ) )
           continue;
-        //DEBUG: s.BracketNumber#1: 15
-        //DEBUG: s.VarNumber#1: 14
+        //DEBUG: s.BracketNumber: 15
+        //DEBUG: s.VarNumber: 14
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.VarNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.BracketNumber#1/15 } 256/23 >/24 >/25 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.VarNumber/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.BracketNumber/15 } 256/23 >/24 >/25 Tile{ ]] }
         refalrts::alloc_number(vm, context[16], 0UL);
         refalrts::alloc_close_bracket(vm, context[17]);
         refalrts::alloc_number(vm, context[18], 0UL);
@@ -12685,15 +12685,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdSave/11 s.OldBracketNumber#1/15 s.NewBracketNumber#1/14 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdSave/11 s.OldBracketNumber/15 s.NewBracketNumber/14 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSave], context[11] ) )
           continue;
-        //DEBUG: s.OldBracketNumber#1: 15
-        //DEBUG: s.NewBracketNumber#1: 14
+        //DEBUG: s.OldBracketNumber: 15
+        //DEBUG: s.NewBracketNumber: 14
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.NewBracketNumber#1/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.OldBracketNumber#1/15 } 256/23 >/24 >/25 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/9 HalfReuse: (/11 } 0/16 )/17 0/18 </19 & Divmod/20 Tile{ AsIs: s.NewBracketNumber/14 HalfReuse: 256/10 AsIs: >/1 } </21 & Divmod/22 Tile{ AsIs: s.OldBracketNumber/15 } 256/23 >/24 >/25 Tile{ ]] }
         refalrts::alloc_number(vm, context[16], 0UL);
         refalrts::alloc_close_bracket(vm, context[17]);
         refalrts::alloc_number(vm, context[18], 0UL);
@@ -12728,15 +12728,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdVariableDebugTable/11 s.StringId#1/15 s.Offset#1/14 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdVariableDebugTable/11 s.StringId/15 s.Offset/14 )/10 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdVariableDebugTable], context[11] ) )
         continue;
-      //DEBUG: s.StringId#1: 15
-      //DEBUG: s.Offset#1: 14
+      //DEBUG: s.StringId: 15
+      //DEBUG: s.Offset: 14
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/9 HalfReuse: </11 } & Divmod/16 Tile{ AsIs: s.StringId#1/15 } 256/17 >/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Offset#1/14 HalfReuse: 256/10 AsIs: >/1 } >/25 Tile{ ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/9 HalfReuse: </11 } & Divmod/16 Tile{ AsIs: s.StringId/15 } 256/17 >/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Offset/14 HalfReuse: 256/10 AsIs: >/1 } >/25 Tile{ ]] }
       refalrts::alloc_name(vm, context[16], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[17], 256UL);
       refalrts::alloc_close_call(vm, context[18]);
@@ -12792,14 +12792,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 s.new#3/11 s.new#4/14 e.new#5/12 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 s.new3/11 s.new4/14 e.new5/12 )/10 >/1
     context[12] = context[7];
     context[13] = context[8];
     if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
       continue;
-    // closed e.new#5 as range 12
+    // closed e.new5 as range 12
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdSetRes/11 s.new#6/14 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdSetRes/11 s.new6/14 )/10 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSetRes], context[11] ) )
         continue;
       if( ! refalrts::empty_seq( context[12], context[13] ) )
@@ -12848,12 +12848,12 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdSetRes/11 s.Offset#1/14 )/10 >/1
-      //DEBUG: s.Offset#1: 14
+      // </0 & GenCommand-RASL/4 (/9 # CmdSetRes/11 s.Offset/14 )/10 >/1
+      //DEBUG: s.Offset: 14
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </15 & PutCommand$3:1/16 70/17 (/18 0/19 )/20 0/21 (/22 0/23 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Offset#1/14 HalfReuse: 256/10 AsIs: >/1 } >/24 Tile{ ]] }
+      //RESULT: Tile{ [[ } </15 & PutCommand$3:1/16 70/17 (/18 0/19 )/20 0/21 (/22 0/23 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </9 HalfReuse: & Divmod/11 AsIs: s.Offset/14 HalfReuse: 256/10 AsIs: >/1 } >/24 Tile{ ]] }
       refalrts::alloc_open_call(vm, context[15]);
       refalrts::alloc_name(vm, context[16], functions[efunc_gen_PutCommand_S3B1]);
       refalrts::alloc_number(vm, context[17], 70UL);
@@ -12886,14 +12886,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 s.new#6/11 s.new#7/14 s.new#8/17 e.new#9/15 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 s.new6/11 s.new7/14 s.new8/17 e.new9/15 )/10 >/1
     context[15] = context[12];
     context[16] = context[13];
     if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
       continue;
-    // closed e.new#9 as range 15
+    // closed e.new9 as range 15
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 s.new#10/14 s.new#11/17 s.new#12/20 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 s.new10/14 s.new11/17 s.new12/20 )/10 >/1
       context[18] = context[15];
       context[19] = context[16];
       if( ! refalrts::ident_term( identifiers[ident_CmdCopyVar], context[11] ) )
@@ -12903,15 +12903,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       if( ! refalrts::empty_seq( context[18], context[19] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 'e'/14 s.Target#1/17 s.Sample#1/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 'e'/14 s.Target/17 s.Sample/20 )/10 >/1
         if( ! refalrts::char_term( 'e', context[14] ) )
           continue;
-        //DEBUG: s.Target#1: 17
-        //DEBUG: s.Sample#1: 20
+        //DEBUG: s.Target: 17
+        //DEBUG: s.Sample: 20
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.Target#1/17 } 256/21 >/22 </23 & Divmod/24 Tile{ AsIs: s.Sample#1/20 HalfReuse: 256/10 AsIs: >/1 } (/25 0/26 )/27 0/28 >/29 Tile{ ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.Target/17 } 256/21 >/22 </23 & Divmod/24 Tile{ AsIs: s.Sample/20 HalfReuse: 256/10 AsIs: >/1 } (/25 0/26 )/27 0/28 >/29 Tile{ ]] }
         refalrts::alloc_number(vm, context[21], 256UL);
         refalrts::alloc_close_call(vm, context[22]);
         refalrts::alloc_open_call(vm, context[23]);
@@ -12944,14 +12944,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 s.Mode#1/14 s.Target#1/17 s.Sample#1/20 )/10 >/1
-      //DEBUG: s.Mode#1: 14
-      //DEBUG: s.Target#1: 17
-      //DEBUG: s.Sample#1: 20
+      // </0 & GenCommand-RASL/4 (/9 # CmdCopyVar/11 s.Mode/14 s.Target/17 s.Sample/20 )/10 >/1
+      //DEBUG: s.Mode: 14
+      //DEBUG: s.Target: 17
+      //DEBUG: s.Sample: 20
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Mode#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/9 HalfReuse: </11 } & Divmod/21 Tile{ AsIs: s.Target#1/17 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Sample#1/20 HalfReuse: 256/10 AsIs: >/1 } (/26 0/27 )/28 0/29 >/30 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.Mode/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/9 HalfReuse: </11 } & Divmod/21 Tile{ AsIs: s.Target/17 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Sample/20 HalfReuse: 256/10 AsIs: >/1 } (/26 0/27 )/28 0/29 >/30 Tile{ ]] }
       refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[22], 256UL);
       refalrts::alloc_close_call(vm, context[23]);
@@ -12987,17 +12987,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdReinitSVar/11 s.Offset#1/14 s.Sample#1/17 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdReinitSVar/11 s.Offset/14 s.Sample/17 )/10 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdReinitSVar], context[11] ) )
         continue;
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
-      //DEBUG: s.Offset#1: 14
-      //DEBUG: s.Sample#1: 17
+      //DEBUG: s.Offset: 14
+      //DEBUG: s.Sample: 17
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/9 HalfReuse: (/11 } 0/18 )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Sample#1/17 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Offset#1/14 } 256/25 >/26 >/27 Tile{ ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/9 HalfReuse: (/11 } 0/18 )/19 0/20 </21 & Divmod/22 Tile{ AsIs: s.Sample/17 HalfReuse: 256/10 AsIs: >/1 } </23 & Divmod/24 Tile{ AsIs: s.Offset/14 } 256/25 >/26 >/27 Tile{ ]] }
       refalrts::alloc_number(vm, context[18], 0UL);
       refalrts::alloc_close_bracket(vm, context[19]);
       refalrts::alloc_number(vm, context[20], 0UL);
@@ -13032,34 +13032,34 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#10/14 s.new#11/17 s.new#12/20 e.new#13/18 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new10/14 s.new11/17 s.new12/20 e.new13/18 )/10 >/1
     context[18] = context[15];
     context[19] = context[16];
     if( ! refalrts::ident_term( identifiers[ident_CmdCreateElem], context[11] ) )
       continue;
     if( ! refalrts::svar_left( context[20], context[18], context[19] ) )
       continue;
-    // closed e.new#13 as range 18
+    // closed e.new13 as range 18
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#14/14 s.new#15/17 # ElOpenBracket/20 e.new#16/21 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new14/14 s.new15/17 # ElOpenBracket/20 e.new16/21 )/10 >/1
       context[21] = context[18];
       context[22] = context[19];
       if( ! refalrts::ident_term( identifiers[ident_ElOpenBracket], context[20] ) )
         continue;
-      // closed e.new#16 as range 21
+      // closed e.new16 as range 21
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#17/14 s.new#18/17 # ElOpenBracket/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new17/14 s.new18/17 # ElOpenBracket/20 )/10 >/1
         if( ! refalrts::empty_seq( context[21], context[22] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber#1/17 # ElOpenBracket/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber/17 # ElOpenBracket/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Allocate], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 1/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 1/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 79UL);
@@ -13091,14 +13091,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber#1/17 # ElOpenBracket/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber/17 # ElOpenBracket/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Reinit], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 1/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 1/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 86UL);
@@ -13129,13 +13129,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenBracket/20 )/10 >/1
-        //DEBUG: s.CreateMode#1: 14
-        //DEBUG: s.ElemNumber#1: 17
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenBracket/20 )/10 >/1
+        //DEBUG: s.CreateMode: 14
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/17 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@7/4 HalfReuse: s.ElemNumber1 #17/9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/17 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@7/4 HalfReuse: s.ElemNumber17 /9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z7]);
         refalrts::reinit_svar( context[9], context[17] );
@@ -13156,17 +13156,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenBracket/20 e.Info#1/23 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenBracket/20 e.Info/23 )/10 >/1
       context[23] = context[21];
       context[24] = context[22];
-      // closed e.Info#1 as range 23
-      //DEBUG: s.CreateMode#1: 14
-      //DEBUG: s.ElemNumber#1: 17
-      //DEBUG: e.Info#1: 23
+      // closed e.Info as range 23
+      //DEBUG: s.CreateMode: 14
+      //DEBUG: s.ElemNumber: 17
+      //DEBUG: e.Info: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.CreateMode#1/14 s.ElemNumber#1/17 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode1 #14/11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenBracket/20 AsIs: e.Info#1/23 HalfReuse: >/10 HalfReuse: s.ElemNumber1 #17/1 } >/30 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.CreateMode/14 s.ElemNumber/17 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode14 /11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenBracket/20 AsIs: e.Info/23 HalfReuse: >/10 HalfReuse: s.ElemNumber17 /1 } >/30 Tile{ ]] }
       refalrts::alloc_ident(vm, context[25], identifiers[ident_ElBracket]);
       refalrts::alloc_close_bracket(vm, context[26]);
       refalrts::alloc_number(vm, context[27], 0UL);
@@ -13194,25 +13194,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#14/14 s.new#15/17 # ElOpenADT/20 e.new#16/21 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new14/14 s.new15/17 # ElOpenADT/20 e.new16/21 )/10 >/1
       context[21] = context[18];
       context[22] = context[19];
       if( ! refalrts::ident_term( identifiers[ident_ElOpenADT], context[20] ) )
         continue;
-      // closed e.new#16 as range 21
+      // closed e.new16 as range 21
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#17/14 s.new#18/17 # ElOpenADT/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new17/14 s.new18/17 # ElOpenADT/20 )/10 >/1
         if( ! refalrts::empty_seq( context[21], context[22] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber#1/17 # ElOpenADT/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber/17 # ElOpenADT/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Allocate], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 79UL);
@@ -13244,14 +13244,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber#1/17 # ElOpenADT/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber/17 # ElOpenADT/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Reinit], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 86UL);
@@ -13282,13 +13282,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenADT/20 )/10 >/1
-        //DEBUG: s.CreateMode#1: 14
-        //DEBUG: s.ElemNumber#1: 17
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenADT/20 )/10 >/1
+        //DEBUG: s.CreateMode: 14
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/17 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber1 #17/9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/17 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber17 /9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z1]);
         refalrts::reinit_svar( context[9], context[17] );
@@ -13309,17 +13309,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenADT/20 e.Info#1/23 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenADT/20 e.Info/23 )/10 >/1
       context[23] = context[21];
       context[24] = context[22];
-      // closed e.Info#1 as range 23
-      //DEBUG: s.CreateMode#1: 14
-      //DEBUG: s.ElemNumber#1: 17
-      //DEBUG: e.Info#1: 23
+      // closed e.Info as range 23
+      //DEBUG: s.CreateMode: 14
+      //DEBUG: s.ElemNumber: 17
+      //DEBUG: e.Info: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.CreateMode#1/14 s.ElemNumber#1/17 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode1 #14/11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenADT/20 AsIs: e.Info#1/23 HalfReuse: >/10 HalfReuse: s.ElemNumber1 #17/1 } >/30 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.CreateMode/14 s.ElemNumber/17 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode14 /11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenADT/20 AsIs: e.Info/23 HalfReuse: >/10 HalfReuse: s.ElemNumber17 /1 } >/30 Tile{ ]] }
       refalrts::alloc_ident(vm, context[25], identifiers[ident_ElBracket]);
       refalrts::alloc_close_bracket(vm, context[26]);
       refalrts::alloc_number(vm, context[27], 0UL);
@@ -13347,25 +13347,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#14/14 s.new#15/17 # ElOpenCall/20 e.new#16/21 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new14/14 s.new15/17 # ElOpenCall/20 e.new16/21 )/10 >/1
       context[21] = context[18];
       context[22] = context[19];
       if( ! refalrts::ident_term( identifiers[ident_ElOpenCall], context[20] ) )
         continue;
-      // closed e.new#16 as range 21
+      // closed e.new16 as range 21
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#17/14 s.new#18/17 # ElOpenCall/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new17/14 s.new18/17 # ElOpenCall/20 )/10 >/1
         if( ! refalrts::empty_seq( context[21], context[22] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber#1/17 # ElOpenCall/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber/17 # ElOpenCall/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Allocate], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 2/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 2/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 79UL);
@@ -13397,14 +13397,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber#1/17 # ElOpenCall/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber/17 # ElOpenCall/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Reinit], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 2/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 2/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 86UL);
@@ -13435,13 +13435,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenCall/20 )/10 >/1
-        //DEBUG: s.CreateMode#1: 14
-        //DEBUG: s.ElemNumber#1: 17
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenCall/20 )/10 >/1
+        //DEBUG: s.CreateMode: 14
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/17 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@8/4 HalfReuse: s.ElemNumber1 #17/9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/17 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@8/4 HalfReuse: s.ElemNumber17 /9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z8]);
         refalrts::reinit_svar( context[9], context[17] );
@@ -13462,17 +13462,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElOpenCall/20 e.Info#1/23 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElOpenCall/20 e.Info/23 )/10 >/1
       context[23] = context[21];
       context[24] = context[22];
-      // closed e.Info#1 as range 23
-      //DEBUG: s.CreateMode#1: 14
-      //DEBUG: s.ElemNumber#1: 17
-      //DEBUG: e.Info#1: 23
+      // closed e.Info as range 23
+      //DEBUG: s.CreateMode: 14
+      //DEBUG: s.ElemNumber: 17
+      //DEBUG: e.Info: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.CreateMode#1/14 s.ElemNumber#1/17 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode1 #14/11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenCall/20 AsIs: e.Info#1/23 HalfReuse: >/10 HalfReuse: s.ElemNumber1 #17/1 } >/30 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.CreateMode/14 s.ElemNumber/17 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode14 /11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElOpenCall/20 AsIs: e.Info/23 HalfReuse: >/10 HalfReuse: s.ElemNumber17 /1 } >/30 Tile{ ]] }
       refalrts::alloc_ident(vm, context[25], identifiers[ident_ElBracket]);
       refalrts::alloc_close_bracket(vm, context[26]);
       refalrts::alloc_number(vm, context[27], 0UL);
@@ -13500,25 +13500,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#14/14 s.new#15/17 # ElCloseBracket/20 e.new#16/21 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new14/14 s.new15/17 # ElCloseBracket/20 e.new16/21 )/10 >/1
       context[21] = context[18];
       context[22] = context[19];
       if( ! refalrts::ident_term( identifiers[ident_ElCloseBracket], context[20] ) )
         continue;
-      // closed e.new#16 as range 21
+      // closed e.new16 as range 21
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#17/14 s.new#18/17 # ElCloseBracket/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new17/14 s.new18/17 # ElCloseBracket/20 )/10 >/1
         if( ! refalrts::empty_seq( context[21], context[22] ) )
           continue;
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber#1/17 # ElCloseBracket/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber/17 # ElCloseBracket/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Allocate], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 4/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 4/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 79UL);
@@ -13550,14 +13550,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber#1/17 # ElCloseBracket/20 )/10 >/1
+          // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber/17 # ElCloseBracket/20 )/10 >/1
           if( ! refalrts::ident_term( identifiers[ident_Reinit], context[14] ) )
             continue;
-          //DEBUG: s.ElemNumber#1: 17
+          //DEBUG: s.ElemNumber: 17
 
           refalrts::reset_allocator(vm);
           //TRASH: {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 4/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+          //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 4/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[23]);
           refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
           refalrts::alloc_number(vm, context[25], 86UL);
@@ -13588,13 +13588,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElCloseBracket/20 )/10 >/1
-        //DEBUG: s.CreateMode#1: 14
-        //DEBUG: s.ElemNumber#1: 17
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElCloseBracket/20 )/10 >/1
+        //DEBUG: s.CreateMode: 14
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/17 {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@9/4 HalfReuse: s.ElemNumber1 #17/9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/17 {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@9/4 HalfReuse: s.ElemNumber17 /9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
         refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z9]);
         refalrts::reinit_svar( context[9], context[17] );
@@ -13615,17 +13615,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElCloseBracket/20 e.Info#1/23 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElCloseBracket/20 e.Info/23 )/10 >/1
       context[23] = context[21];
       context[24] = context[22];
-      // closed e.Info#1 as range 23
-      //DEBUG: s.CreateMode#1: 14
-      //DEBUG: s.ElemNumber#1: 17
-      //DEBUG: e.Info#1: 23
+      // closed e.Info as range 23
+      //DEBUG: s.CreateMode: 14
+      //DEBUG: s.ElemNumber: 17
+      //DEBUG: e.Info: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.CreateMode#1/14 s.ElemNumber#1/17 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode1 #14/11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElCloseBracket/20 AsIs: e.Info#1/23 HalfReuse: >/10 HalfReuse: s.ElemNumber1 #17/1 } >/30 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.CreateMode/14 s.ElemNumber/17 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode14 /11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElCloseBracket/20 AsIs: e.Info/23 HalfReuse: >/10 HalfReuse: s.ElemNumber17 /1 } >/30 Tile{ ]] }
       refalrts::alloc_ident(vm, context[25], identifiers[ident_ElBracket]);
       refalrts::alloc_close_bracket(vm, context[26]);
       refalrts::alloc_number(vm, context[27], 0UL);
@@ -13652,25 +13652,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#14/14 s.new#15/17 # ElCloseADT/20 e.new#16/21 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new14/14 s.new15/17 # ElCloseADT/20 e.new16/21 )/10 >/1
     context[21] = context[18];
     context[22] = context[19];
     if( ! refalrts::ident_term( identifiers[ident_ElCloseADT], context[20] ) )
       continue;
-    // closed e.new#16 as range 21
+    // closed e.new16 as range 21
     do {
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new#17/14 s.new#18/17 # ElCloseADT/20 )/10 >/1
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.new17/14 s.new18/17 # ElCloseADT/20 )/10 >/1
       if( ! refalrts::empty_seq( context[21], context[22] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber#1/17 # ElCloseADT/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Allocate/14 s.ElemNumber/17 # ElCloseADT/20 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_Allocate], context[14] ) )
           continue;
-        //DEBUG: s.ElemNumber#1: 17
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 3/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 79/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 3/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[23]);
         refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
         refalrts::alloc_number(vm, context[25], 79UL);
@@ -13702,14 +13702,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber#1/17 # ElCloseADT/20 )/10 >/1
+        // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 # Reinit/14 s.ElemNumber/17 # ElCloseADT/20 )/10 >/1
         if( ! refalrts::ident_term( identifiers[ident_Reinit], context[14] ) )
           continue;
-        //DEBUG: s.ElemNumber#1: 17
+        //DEBUG: s.ElemNumber: 17
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 3/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber#1/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ } </23 & PutCommand$3:1/24 86/25 (/26 0/27 )/28 0/29 (/30 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 3/9 HalfReuse: </11 HalfReuse: & Divmod/14 AsIs: s.ElemNumber/17 HalfReuse: 256/20 HalfReuse: >/10 AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[23]);
         refalrts::alloc_name(vm, context[24], functions[efunc_gen_PutCommand_S3B1]);
         refalrts::alloc_number(vm, context[25], 86UL);
@@ -13740,13 +13740,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElCloseADT/20 )/10 >/1
-      //DEBUG: s.CreateMode#1: 14
-      //DEBUG: s.ElemNumber#1: 17
+      // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElCloseADT/20 )/10 >/1
+      //DEBUG: s.CreateMode: 14
+      //DEBUG: s.ElemNumber: 17
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/17 {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@10/4 HalfReuse: s.ElemNumber1 #17/9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/17 {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@10/4 HalfReuse: s.ElemNumber17 /9 HalfReuse: </11 } & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/14 } Tile{ Reuse: # ElBracket/20 HalfReuse: >/10 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
       refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z10]);
       refalrts::reinit_svar( context[9], context[17] );
@@ -13767,17 +13767,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode#1/14 s.ElemNumber#1/17 # ElCloseADT/20 e.Info#1/23 )/10 >/1
+    // </0 & GenCommand-RASL/4 (/9 # CmdCreateElem/11 s.CreateMode/14 s.ElemNumber/17 # ElCloseADT/20 e.Info/23 )/10 >/1
     context[23] = context[21];
     context[24] = context[22];
-    // closed e.Info#1 as range 23
-    //DEBUG: s.CreateMode#1: 14
-    //DEBUG: s.ElemNumber#1: 17
-    //DEBUG: e.Info#1: 23
+    // closed e.Info as range 23
+    //DEBUG: s.CreateMode: 14
+    //DEBUG: s.ElemNumber: 17
+    //DEBUG: e.Info: 23
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.CreateMode#1/14 s.ElemNumber#1/17 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode1 #14/11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElCloseADT/20 AsIs: e.Info#1/23 HalfReuse: >/10 HalfReuse: s.ElemNumber1 #17/1 } >/30 Tile{ ]] }
+    //TRASH: {REMOVED TILE} s.CreateMode/14 s.ElemNumber/17 {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/9 HalfReuse: s.CreateMode14 /11 } # ElBracket/25 )/26 0/27 </28 & CreateCommandInfo*8/29 Tile{ AsIs: # ElCloseADT/20 AsIs: e.Info/23 HalfReuse: >/10 HalfReuse: s.ElemNumber17 /1 } >/30 Tile{ ]] }
     refalrts::alloc_ident(vm, context[25], identifiers[ident_ElBracket]);
     refalrts::alloc_close_bracket(vm, context[26]);
     refalrts::alloc_number(vm, context[27], 0UL);
@@ -13804,7 +13804,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-RASL/4 (/7 s.new#1/9 e.new#2/5 )/8 >/1
+  // </0 & GenCommand-RASL/4 (/7 s.new1/9 e.new2/5 )/8 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -13815,50 +13815,50 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[9], context[5], context[6] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 5
+  // closed e.new2 as range 5
   do {
-    // </0 & GenCommand-RASL/4 (/7 s.new#3/9 s.new#4/12 e.new#5/10 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 s.new3/9 s.new4/12 e.new5/10 )/8 >/1
     context[10] = context[5];
     context[11] = context[6];
     if( ! refalrts::svar_left( context[12], context[10], context[11] ) )
       continue;
-    // closed e.new#5 as range 10
+    // closed e.new5 as range 10
     do {
-      // </0 & GenCommand-RASL/4 (/7 s.new#6/9 s.new#7/12 s.new#8/15 e.new#9/13 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 s.new6/9 s.new7/12 s.new8/15 e.new9/13 )/8 >/1
       context[13] = context[10];
       context[14] = context[11];
       if( ! refalrts::svar_left( context[15], context[13], context[14] ) )
         continue;
-      // closed e.new#9 as range 13
+      // closed e.new9 as range 13
       do {
-        // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#10/12 s.new#11/15 s.new#12/18 e.new#13/16 )/8 >/1
+        // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new10/12 s.new11/15 s.new12/18 e.new13/16 )/8 >/1
         context[16] = context[13];
         context[17] = context[14];
         if( ! refalrts::ident_term( identifiers[ident_CmdCreateElem], context[9] ) )
           continue;
         if( ! refalrts::svar_left( context[18], context[16], context[17] ) )
           continue;
-        // closed e.new#13 as range 16
+        // closed e.new13 as range 16
         do {
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#14/12 s.new#15/15 # ElCloseCall/18 e.new#16/19 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new14/12 s.new15/15 # ElCloseCall/18 e.new16/19 )/8 >/1
           context[19] = context[16];
           context[20] = context[17];
           if( ! refalrts::ident_term( identifiers[ident_ElCloseCall], context[18] ) )
             continue;
-          // closed e.new#16 as range 19
+          // closed e.new16 as range 19
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#17/12 s.new#18/15 # ElCloseCall/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new17/12 s.new18/15 # ElCloseCall/18 )/8 >/1
             if( ! refalrts::empty_seq( context[19], context[20] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElCloseCall/18 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElCloseCall/18 )/8 >/1
               if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
                 continue;
-              //DEBUG: s.ElemNumber#1: 15
+              //DEBUG: s.ElemNumber: 15
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ } </21 & PutCommand$3:1/22 79/23 (/24 0/25 )/26 0/27 (/28 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 5/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber#1/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
+              //RESULT: Tile{ [[ } </21 & PutCommand$3:1/22 79/23 (/24 0/25 )/26 0/27 (/28 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 5/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_open_call(vm, context[21]);
               refalrts::alloc_name(vm, context[22], functions[efunc_gen_PutCommand_S3B1]);
               refalrts::alloc_number(vm, context[23], 79UL);
@@ -13890,14 +13890,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElCloseCall/18 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElCloseCall/18 )/8 >/1
               if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
                 continue;
-              //DEBUG: s.ElemNumber#1: 15
+              //DEBUG: s.ElemNumber: 15
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ } </21 & PutCommand$3:1/22 86/23 (/24 0/25 )/26 0/27 (/28 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 5/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber#1/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
+              //RESULT: Tile{ [[ } </21 & PutCommand$3:1/22 86/23 (/24 0/25 )/26 0/27 (/28 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 5/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_open_call(vm, context[21]);
               refalrts::alloc_name(vm, context[22], functions[efunc_gen_PutCommand_S3B1]);
               refalrts::alloc_number(vm, context[23], 86UL);
@@ -13928,13 +13928,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElCloseCall/18 )/8 >/1
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElCloseCall/18 )/8 >/1
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@11/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/21 Tile{ AsIs: s.CreateMode#1/12 } Tile{ Reuse: # ElBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@11/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/21 Tile{ AsIs: s.CreateMode/12 } Tile{ Reuse: # ElBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[21], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z11]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -13955,17 +13955,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElCloseCall/18 e.Info#1/21 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElCloseCall/18 e.Info/21 )/8 >/1
           context[21] = context[19];
           context[22] = context[20];
-          // closed e.Info#1 as range 21
-          //DEBUG: s.CreateMode#1: 12
-          //DEBUG: s.ElemNumber#1: 15
-          //DEBUG: e.Info#1: 21
+          // closed e.Info as range 21
+          //DEBUG: s.CreateMode: 12
+          //DEBUG: s.ElemNumber: 15
+          //DEBUG: e.Info: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.CreateMode#1/12 s.ElemNumber#1/15 {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode1 #12/9 } # ElBracket/23 )/24 0/25 </26 & CreateCommandInfo*8/27 Tile{ AsIs: # ElCloseCall/18 AsIs: e.Info#1/21 HalfReuse: >/8 HalfReuse: s.ElemNumber1 #15/1 } >/28 Tile{ ]] }
+          //TRASH: {REMOVED TILE} s.CreateMode/12 s.ElemNumber/15 {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode12 /9 } # ElBracket/23 )/24 0/25 </26 & CreateCommandInfo*8/27 Tile{ AsIs: # ElCloseCall/18 AsIs: e.Info/21 HalfReuse: >/8 HalfReuse: s.ElemNumber15 /1 } >/28 Tile{ ]] }
           refalrts::alloc_ident(vm, context[23], identifiers[ident_ElBracket]);
           refalrts::alloc_close_bracket(vm, context[24]);
           refalrts::alloc_number(vm, context[25], 0UL);
@@ -13993,25 +13993,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#14/12 s.new#15/15 s.new#16/18 s.new#17/21 e.new#18/19 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new14/12 s.new15/15 s.new16/18 s.new17/21 e.new18/19 )/8 >/1
           context[19] = context[16];
           context[20] = context[17];
           if( ! refalrts::svar_left( context[21], context[19], context[20] ) )
             continue;
-          // closed e.new#18 as range 19
+          // closed e.new18 as range 19
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElChar/18 s.Char#1/21 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElChar/18 s.Char/21 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElChar], context[18] ) )
               continue;
             if( ! refalrts::empty_seq( context[19], context[20] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.Char#1: 21
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.Char: 21
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.CreateMode#1/12 s.ElemNumber#1/15 {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode1 #12/9 } # ElChar/22 )/23 0/24 </25 Tile{ HalfReuse: & Ord/18 AsIs: s.Char#1/21 } >/26 Tile{ HalfReuse: s.ElemNumber1 #15/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.CreateMode/12 s.ElemNumber/15 {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode12 /9 } # ElChar/22 )/23 0/24 </25 Tile{ HalfReuse: & Ord/18 AsIs: s.Char/21 } >/26 Tile{ HalfReuse: s.ElemNumber15 /8 AsIs: >/1 ]] }
             refalrts::alloc_ident(vm, context[22], identifiers[ident_ElChar]);
             refalrts::alloc_close_bracket(vm, context[23]);
             refalrts::alloc_number(vm, context[24], 0UL);
@@ -14038,26 +14038,26 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#19/12 s.new#20/15 # ElName/18 s.new#21/21 e.new#22/22 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new19/12 s.new20/15 # ElName/18 s.new21/21 e.new22/22 )/8 >/1
             context[22] = context[19];
             context[23] = context[20];
             if( ! refalrts::ident_term( identifiers[ident_ElName], context[18] ) )
               continue;
-            // closed e.new#22 as range 22
+            // closed e.new22 as range 22
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElName/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElName/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 75/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 75/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14093,19 +14093,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElName/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElName/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 82/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 82/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14141,19 +14141,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber#1/15 # ElName/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber/15 # ElName/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Update], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 90/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 90/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14188,18 +14188,18 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElName/18 s.NameId#1/21 e.#0/24 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElName/18 s.NameId/21 e./24 )/8 >/1
             context[24] = context[22];
             context[25] = context[23];
-            // closed e.#0 as range 24
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.NameId#1: 21
-            //DEBUG: e.#0: 24
+            // closed e. as range 24
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.NameId: 21
+            //DEBUG: e.: 24
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE} s.NameId#1/21 e.#0/24 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId1 #21/7 HalfReuse: s.ElemNumber1 #15/9 } </26 & NumberFromOpcode*119/27 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElName/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE} s.NameId/21 e./24 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId21 /7 HalfReuse: s.ElemNumber15 /9 } </26 & NumberFromOpcode*119/27 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElName/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[26]);
             refalrts::alloc_name(vm, context[27], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z3]);
@@ -14222,21 +14222,21 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#19/12 s.new#20/15 # ElNumber/18 s.new#21/21 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new19/12 s.new20/15 # ElNumber/18 s.new21/21 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[18] ) )
               continue;
             if( ! refalrts::empty_seq( context[19], context[20] ) )
               continue;
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElNumber/18 s.Number#1/21 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElNumber/18 s.Number/21 )/8 >/1
               if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
                 continue;
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.Number#1: 21
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.Number: 21
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 76/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 76/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[22]);
               refalrts::alloc_number(vm, context[23], 0UL);
               refalrts::alloc_open_call(vm, context[24]);
@@ -14272,15 +14272,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElNumber/18 s.Number#1/21 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElNumber/18 s.Number/21 )/8 >/1
               if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
                 continue;
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.Number#1: 21
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.Number: 21
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 83/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 83/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[22]);
               refalrts::alloc_number(vm, context[23], 0UL);
               refalrts::alloc_open_call(vm, context[24]);
@@ -14316,15 +14316,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber#1/15 # ElNumber/18 s.Number#1/21 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber/15 # ElNumber/18 s.Number/21 )/8 >/1
               if( ! refalrts::ident_term( identifiers[ident_Update], context[12] ) )
                 continue;
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.Number#1: 21
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.Number: 21
 
               refalrts::reset_allocator(vm);
               //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 91/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 91/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.Number/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
               refalrts::alloc_close_bracket(vm, context[22]);
               refalrts::alloc_number(vm, context[23], 0UL);
               refalrts::alloc_open_call(vm, context[24]);
@@ -14359,14 +14359,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElNumber/18 s.Number#1/21 )/8 >/1
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.Number#1: 21
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElNumber/18 s.Number/21 )/8 >/1
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.Number: 21
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE} s.Number#1/21 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.Number1 #21/7 HalfReuse: s.ElemNumber1 #15/9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElNumber/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE} s.Number/21 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.Number21 /7 HalfReuse: s.ElemNumber15 /9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElNumber/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[22]);
             refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z3]);
@@ -14389,26 +14389,26 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#19/12 s.new#20/15 # ElIdent/18 s.new#21/21 e.new#22/22 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new19/12 s.new20/15 # ElIdent/18 s.new21/21 e.new22/22 )/8 >/1
             context[22] = context[19];
             context[23] = context[20];
             if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[18] ) )
               continue;
-            // closed e.new#22 as range 22
+            // closed e.new22 as range 22
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElIdent/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElIdent/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 78/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 78/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14444,19 +14444,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElIdent/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElIdent/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 85/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 85/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14492,19 +14492,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             refalrts::stop_sentence(vm);
 
             do {
-              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber#1/15 # ElIdent/18 s.NameId#1/21 e.#0/24 )/8 >/1
+              // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Update/12 s.ElemNumber/15 # ElIdent/18 s.NameId/21 e./24 )/8 >/1
               context[24] = context[22];
               context[25] = context[23];
               if( ! refalrts::ident_term( identifiers[ident_Update], context[12] ) )
                 continue;
-              // closed e.#0 as range 24
-              //DEBUG: s.ElemNumber#1: 15
-              //DEBUG: s.NameId#1: 21
-              //DEBUG: e.#0: 24
+              // closed e. as range 24
+              //DEBUG: s.ElemNumber: 15
+              //DEBUG: s.NameId: 21
+              //DEBUG: e.: 24
 
               refalrts::reset_allocator(vm);
-              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.#0/24 {REMOVED TILE}
-              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 93/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId#1/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber#1/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+              //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e./24 {REMOVED TILE}
+              //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 93/7 HalfReuse: (/9 HalfReuse: 0/12 } )/26 0/27 </28 Tile{ HalfReuse: & Divmod/18 AsIs: s.NameId/21 } 256/29 >/30 </31 & Divmod/32 Tile{ AsIs: s.ElemNumber/15 } 256/33 Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
               refalrts::alloc_close_bracket(vm, context[26]);
               refalrts::alloc_number(vm, context[27], 0UL);
               refalrts::alloc_open_call(vm, context[28]);
@@ -14539,18 +14539,18 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
             } while ( 0 );
             refalrts::stop_sentence(vm);
 
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElIdent/18 s.NameId#1/21 e.#0/24 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElIdent/18 s.NameId/21 e./24 )/8 >/1
             context[24] = context[22];
             context[25] = context[23];
-            // closed e.#0 as range 24
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.NameId#1: 21
-            //DEBUG: e.#0: 24
+            // closed e. as range 24
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.NameId: 21
+            //DEBUG: e.: 24
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE} s.NameId#1/21 e.#0/24 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId1 #21/7 HalfReuse: s.ElemNumber1 #15/9 } </26 & NumberFromOpcode*119/27 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElIdent/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE} s.NameId/21 e./24 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.NameId21 /7 HalfReuse: s.ElemNumber15 /9 } </26 & NumberFromOpcode*119/27 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElIdent/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[26]);
             refalrts::alloc_name(vm, context[27], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z3]);
@@ -14572,21 +14572,21 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#19/12 s.new#20/15 # ElString/18 s.new#21/21 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new19/12 s.new20/15 # ElString/18 s.new21/21 )/8 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElString], context[18] ) )
             continue;
           if( ! refalrts::empty_seq( context[19], context[20] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElString/18 s.StringId#1/21 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElString/18 s.StringId/21 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
               continue;
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.StringId#1: 21
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.StringId: 21
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 80/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.StringId#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 80/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.StringId/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[22]);
             refalrts::alloc_number(vm, context[23], 0UL);
             refalrts::alloc_open_call(vm, context[24]);
@@ -14621,14 +14621,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElString/18 s.StringId#1/21 )/8 >/1
-          //DEBUG: s.CreateMode#1: 12
-          //DEBUG: s.ElemNumber#1: 15
-          //DEBUG: s.StringId#1: 21
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElString/18 s.StringId/21 )/8 >/1
+          //DEBUG: s.CreateMode: 12
+          //DEBUG: s.ElemNumber: 15
+          //DEBUG: s.StringId: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE} s.StringId#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.StringId1 #21/7 HalfReuse: s.ElemNumber1 #15/9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElString/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE} s.StringId/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.StringId21 /7 HalfReuse: s.ElemNumber15 /9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElString/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[22]);
           refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
           refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z3]);
@@ -14651,20 +14651,20 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#14/12 s.new#15/15 # ElClosureHead/18 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new14/12 s.new15/15 # ElClosureHead/18 )/8 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElClosureHead], context[18] ) )
             continue;
           if( ! refalrts::empty_seq( context[16], context[17] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElClosureHead/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElClosureHead/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
               continue;
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ } </19 & PutCommand$3:1/20 113/21 (/22 0/23 )/24 0/25 (/26 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber#1/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //RESULT: Tile{ [[ } </19 & PutCommand$3:1/20 113/21 (/22 0/23 )/24 0/25 (/26 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[19]);
             refalrts::alloc_name(vm, context[20], functions[efunc_gen_PutCommand_S3B1]);
             refalrts::alloc_number(vm, context[21], 113UL);
@@ -14696,14 +14696,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElClosureHead/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElClosureHead/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
               continue;
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ } </19 & PutCommand$3:1/20 87/21 (/22 0/23 )/24 0/25 (/26 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber#1/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //RESULT: Tile{ [[ } </19 & PutCommand$3:1/20 87/21 (/22 0/23 )/24 0/25 (/26 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/12 AsIs: s.ElemNumber/15 HalfReuse: 256/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_open_call(vm, context[19]);
             refalrts::alloc_name(vm, context[20], functions[efunc_gen_PutCommand_S3B1]);
             refalrts::alloc_number(vm, context[21], 87UL);
@@ -14734,13 +14734,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElClosureHead/18 )/8 >/1
-          //DEBUG: s.CreateMode#1: 12
-          //DEBUG: s.ElemNumber#1: 15
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElClosureHead/18 )/8 >/1
+          //DEBUG: s.CreateMode: 12
+          //DEBUG: s.ElemNumber: 15
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElClosureHead/18 HalfReuse: >/8 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElClosureHead/18 HalfReuse: >/8 AsIs: >/1 ]] }
           refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
           refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z1]);
           refalrts::reinit_svar( context[7], context[15] );
@@ -14761,7 +14761,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#14/12 s.new#15/15 # ElUnwrappedClosure/18 s.new#16/21 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new14/12 s.new15/15 # ElUnwrappedClosure/18 s.new16/21 )/8 >/1
           context[19] = context[16];
           context[20] = context[17];
           if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[18] ) )
@@ -14771,15 +14771,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           if( ! refalrts::empty_seq( context[19], context[20] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber#1/15 # ElUnwrappedClosure/18 s.HeadCounter#1/21 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Allocate/12 s.ElemNumber/15 # ElUnwrappedClosure/18 s.HeadCounter/21 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_Allocate], context[12] ) )
               continue;
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.HeadCounter#1: 21
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.HeadCounter: 21
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 114/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.HeadCounter#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 114/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.HeadCounter/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[22]);
             refalrts::alloc_number(vm, context[23], 0UL);
             refalrts::alloc_open_call(vm, context[24]);
@@ -14815,15 +14815,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber#1/15 # ElUnwrappedClosure/18 s.HeadCounter#1/21 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 # Reinit/12 s.ElemNumber/15 # ElUnwrappedClosure/18 s.HeadCounter/21 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_Reinit], context[12] ) )
               continue;
-            //DEBUG: s.ElemNumber#1: 15
-            //DEBUG: s.HeadCounter#1: 21
+            //DEBUG: s.ElemNumber: 15
+            //DEBUG: s.HeadCounter: 21
 
             refalrts::reset_allocator(vm);
             //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 88/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.HeadCounter#1/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber#1/15 } 256/27 >/28 >/29 Tile{ ]] }
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 88/7 HalfReuse: (/9 HalfReuse: 0/12 } )/22 0/23 </24 Tile{ HalfReuse: & Divmod/18 AsIs: s.HeadCounter/21 HalfReuse: 256/8 AsIs: >/1 } </25 & Divmod/26 Tile{ AsIs: s.ElemNumber/15 } 256/27 >/28 >/29 Tile{ ]] }
             refalrts::alloc_close_bracket(vm, context[22]);
             refalrts::alloc_number(vm, context[23], 0UL);
             refalrts::alloc_open_call(vm, context[24]);
@@ -14858,14 +14858,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElUnwrappedClosure/18 s.HeadCounter#1/21 )/8 >/1
-          //DEBUG: s.CreateMode#1: 12
-          //DEBUG: s.ElemNumber#1: 15
-          //DEBUG: s.HeadCounter#1: 21
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElUnwrappedClosure/18 s.HeadCounter/21 )/8 >/1
+          //DEBUG: s.CreateMode: 12
+          //DEBUG: s.ElemNumber: 15
+          //DEBUG: s.HeadCounter: 21
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE} s.HeadCounter#1/21 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.HeadCounter1 #21/7 HalfReuse: s.ElemNumber1 #15/9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElUnwrappedClosure/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE} s.HeadCounter/21 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@3/4 HalfReuse: s.HeadCounter21 /7 HalfReuse: s.ElemNumber15 /9 } </22 & NumberFromOpcode*119/23 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElUnwrappedClosure/18 } Tile{ HalfReuse: >/8 AsIs: >/1 ]] }
           refalrts::alloc_open_call(vm, context[22]);
           refalrts::alloc_name(vm, context[23], functions[efunc_gen_NumberFromOpcode_D119]);
           refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z3]);
@@ -14888,19 +14888,19 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new#14/12 s.new#15/15 s.new#16/18 )/8 >/1
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.new14/12 s.new15/15 s.new16/18 )/8 >/1
           if( ! refalrts::empty_seq( context[16], context[17] ) )
             continue;
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElOpenADT/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElOpenADT/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElOpenADT], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElOpenADT/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@1/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElOpenADT/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z1]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -14921,15 +14921,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElOpenBracket/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElOpenBracket/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElOpenBracket], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@7/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElOpenBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@7/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElOpenBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z7]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -14950,15 +14950,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElOpenCall/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElOpenCall/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElOpenCall], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@8/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElOpenCall/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@8/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElOpenCall/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z8]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -14979,15 +14979,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElCloseADT/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElCloseADT/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElCloseADT], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@10/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElCloseADT/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@10/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElCloseADT/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z10]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -15008,15 +15008,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElCloseBracket/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElCloseBracket/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElCloseBracket], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@9/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElCloseBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@9/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElCloseBracket/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z9]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -15037,15 +15037,15 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 # ElCloseCall/18 )/8 >/1
+            // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 # ElCloseCall/18 )/8 >/1
             if( ! refalrts::ident_term( identifiers[ident_ElCloseCall], context[18] ) )
               continue;
-            //DEBUG: s.CreateMode#1: 12
-            //DEBUG: s.ElemNumber#1: 15
+            //DEBUG: s.CreateMode: 12
+            //DEBUG: s.ElemNumber: 15
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber#1/15 {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@11/4 HalfReuse: s.ElemNumber1 #15/7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode#1/12 } Tile{ AsIs: # ElCloseCall/18 HalfReuse: >/8 AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} {REMOVED TILE} s.ElemNumber/15 {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1@11/4 HalfReuse: s.ElemNumber15 /7 HalfReuse: </9 } & NumberFromOpcode*119/19 Tile{ AsIs: s.CreateMode/12 } Tile{ AsIs: # ElCloseCall/18 HalfReuse: >/8 AsIs: >/1 ]] }
             refalrts::alloc_name(vm, context[19], functions[efunc_gen_NumberFromOpcode_D119]);
             refalrts::update_name(context[4], functions[efunc_gen_PutCommand_S3A1Z11]);
             refalrts::reinit_svar( context[7], context[15] );
@@ -15065,14 +15065,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 s.ElementType#1/18 )/8 >/1
-          //DEBUG: s.CreateMode#1: 12
-          //DEBUG: s.ElemNumber#1: 15
-          //DEBUG: s.ElementType#1: 18
+          // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 s.ElementType/18 )/8 >/1
+          //DEBUG: s.CreateMode: 12
+          //DEBUG: s.ElemNumber: 15
+          //DEBUG: s.ElementType: 18
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.CreateMode#1/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode1 #12/9 } Tile{ AsIs: s.ElementType#1/18 AsIs: )/8 HalfReuse: 0/1 } </19 & NumberFromBracket*6/20 s.ElementType#1/18/21 >/22 Tile{ AsIs: s.ElemNumber#1/15 } >/23 Tile{ ]] }
+          //TRASH: {REMOVED TILE} s.CreateMode/12 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode12 /9 } Tile{ AsIs: s.ElementType/18 AsIs: )/8 HalfReuse: 0/1 } </19 & NumberFromBracket*6/20 s.ElementType/18/21 >/22 Tile{ AsIs: s.ElemNumber/15 } >/23 Tile{ ]] }
           refalrts::alloc_open_call(vm, context[19]);
           refalrts::alloc_name(vm, context[20], functions[efunc_gen_NumberFromBracket_D6]);
           refalrts::copy_stvar(vm, context[21], context[18]);
@@ -15098,18 +15098,18 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode#1/12 s.ElemNumber#1/15 s.ElementType#1/18 e.Info#1/19 )/8 >/1
+        // </0 & GenCommand-RASL/4 (/7 # CmdCreateElem/9 s.CreateMode/12 s.ElemNumber/15 s.ElementType/18 e.Info/19 )/8 >/1
         context[19] = context[16];
         context[20] = context[17];
-        // closed e.Info#1 as range 19
-        //DEBUG: s.CreateMode#1: 12
-        //DEBUG: s.ElemNumber#1: 15
-        //DEBUG: s.ElementType#1: 18
-        //DEBUG: e.Info#1: 19
+        // closed e.Info as range 19
+        //DEBUG: s.CreateMode: 12
+        //DEBUG: s.ElemNumber: 15
+        //DEBUG: s.ElementType: 18
+        //DEBUG: e.Info: 19
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.CreateMode#1/12 s.ElemNumber#1/15 {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode1 #12/9 } s.ElementType#1/18/21 )/22 0/23 </24 & CreateCommandInfo*8/25 Tile{ AsIs: s.ElementType#1/18 AsIs: e.Info#1/19 HalfReuse: >/8 HalfReuse: s.ElemNumber1 #15/1 } >/26 Tile{ ]] }
+        //TRASH: {REMOVED TILE} s.CreateMode/12 s.ElemNumber/15 {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand/4 AsIs: (/7 HalfReuse: s.CreateMode12 /9 } s.ElementType/18/21 )/22 0/23 </24 & CreateCommandInfo*8/25 Tile{ AsIs: s.ElementType/18 AsIs: e.Info/19 HalfReuse: >/8 HalfReuse: s.ElemNumber15 /1 } >/26 Tile{ ]] }
         refalrts::copy_stvar(vm, context[21], context[18]);
         refalrts::alloc_close_bracket(vm, context[22]);
         refalrts::alloc_number(vm, context[23], 0UL);
@@ -15136,17 +15136,17 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/7 # CmdLinkBrackets/9 s.Left#1/12 s.Right#1/15 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 # CmdLinkBrackets/9 s.Left/12 s.Right/15 )/8 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdLinkBrackets], context[9] ) )
         continue;
       if( ! refalrts::empty_seq( context[13], context[14] ) )
         continue;
-      //DEBUG: s.Left#1: 12
-      //DEBUG: s.Right#1: 15
+      //DEBUG: s.Left: 12
+      //DEBUG: s.Right: 15
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/7 HalfReuse: </9 } & Divmod/16 Tile{ AsIs: s.Left#1/12 } 256/17 >/18 </19 & Divmod/20 Tile{ AsIs: s.Right#1/15 HalfReuse: 256/8 AsIs: >/1 } (/21 0/22 )/23 0/24 >/25 Tile{ ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/7 HalfReuse: </9 } & Divmod/16 Tile{ AsIs: s.Left/12 } 256/17 >/18 </19 & Divmod/20 Tile{ AsIs: s.Right/15 HalfReuse: 256/8 AsIs: >/1 } (/21 0/22 )/23 0/24 >/25 Tile{ ]] }
       refalrts::alloc_name(vm, context[16], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[17], 256UL);
       refalrts::alloc_close_call(vm, context[18]);
@@ -15181,16 +15181,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/7 # CmdPushStack/9 s.ElemNumber#1/12 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 # CmdPushStack/9 s.ElemNumber/12 )/8 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdPushStack], context[9] ) )
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 12
+    //DEBUG: s.ElemNumber: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 95/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber#1/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
+    //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 95/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
     refalrts::alloc_open_call(vm, context[13]);
     refalrts::alloc_name(vm, context[14], functions[efunc_gen_PutCommand_S3B1]);
     refalrts::alloc_number(vm, context[15], 95UL);
@@ -15245,25 +15245,25 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-RASL/4 (/7 s.new#3/9 e.new#4/10 s.new#5/12 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 s.new3/9 e.new4/10 s.new5/12 )/8 >/1
     context[10] = context[5];
     context[11] = context[6];
     if( ! refalrts::svar_right( context[12], context[10], context[11] ) )
       continue;
-    // closed e.new#4 as range 10
+    // closed e.new4 as range 10
     do {
-      // </0 & GenCommand-RASL/4 (/7 s.new#6/9 s.new#7/12 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 s.new6/9 s.new7/12 )/8 >/1
       if( ! refalrts::empty_seq( context[10], context[11] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/7 # CmdWrapClosure/9 s.Offset#1/12 )/8 >/1
+        // </0 & GenCommand-RASL/4 (/7 # CmdWrapClosure/9 s.Offset/12 )/8 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdWrapClosure], context[9] ) )
           continue;
-        //DEBUG: s.Offset#1: 12
+        //DEBUG: s.Offset: 12
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 110/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.Offset#1/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
+        //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 110/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.Offset/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
         refalrts::alloc_open_call(vm, context[13]);
         refalrts::alloc_name(vm, context[14], functions[efunc_gen_PutCommand_S3B1]);
         refalrts::alloc_number(vm, context[15], 110UL);
@@ -15296,14 +15296,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/7 # CmdInsertElem/9 s.ElemNumber#1/12 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 # CmdInsertElem/9 s.ElemNumber/12 )/8 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdInsertElem], context[9] ) )
         continue;
-      //DEBUG: s.ElemNumber#1: 12
+      //DEBUG: s.ElemNumber: 12
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 96/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber#1/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
+      //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 96/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_gen_PutCommand_S3B1]);
       refalrts::alloc_number(vm, context[15], 96UL);
@@ -15337,7 +15337,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 s.new#7/15 s.new#6/12 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 s.new7/15 s.new6/12 )/8 >/1
       context[13] = context[10];
       context[14] = context[11];
       if( ! refalrts::ident_term( identifiers[ident_CmdInsertVar], context[9] ) )
@@ -15347,14 +15347,14 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       if( ! refalrts::empty_seq( context[13], context[14] ) )
         continue;
       do {
-        // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 'e'/15 s.Offset#1/12 )/8 >/1
+        // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 'e'/15 s.Offset/12 )/8 >/1
         if( ! refalrts::char_term( 'e', context[15] ) )
           continue;
-        //DEBUG: s.Offset#1: 12
+        //DEBUG: s.Offset: 12
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </16 & PutCommand$3:1/17 97/18 (/19 0/20 )/21 0/22 (/23 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/15 AsIs: s.Offset#1/12 HalfReuse: 256/8 AsIs: >/1 } >/24 Tile{ ]] }
+        //RESULT: Tile{ [[ } </16 & PutCommand$3:1/17 97/18 (/19 0/20 )/21 0/22 (/23 Tile{ HalfReuse: 0/0 HalfReuse: )/4 HalfReuse: 0/7 HalfReuse: </9 HalfReuse: & Divmod/15 AsIs: s.Offset/12 HalfReuse: 256/8 AsIs: >/1 } >/24 Tile{ ]] }
         refalrts::alloc_open_call(vm, context[16]);
         refalrts::alloc_name(vm, context[17], functions[efunc_gen_PutCommand_S3B1]);
         refalrts::alloc_number(vm, context[18], 97UL);
@@ -15387,13 +15387,13 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 s.Mode#1/15 s.Offset#1/12 )/8 >/1
-      //DEBUG: s.Mode#1: 15
-      //DEBUG: s.Offset#1: 12
+      // </0 & GenCommand-RASL/4 (/7 # CmdInsertVar/9 s.Mode/15 s.Offset/12 )/8 >/1
+      //DEBUG: s.Mode: 15
+      //DEBUG: s.Offset: 12
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Mode#1/15 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/7 HalfReuse: (/9 } 0/16 )/17 0/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Offset#1/12 HalfReuse: 256/8 AsIs: >/1 } >/25 Tile{ ]] }
+      //TRASH: {REMOVED TILE} s.Mode/15 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/7 HalfReuse: (/9 } 0/16 )/17 0/18 (/19 0/20 )/21 0/22 </23 & Divmod/24 Tile{ AsIs: s.Offset/12 HalfReuse: 256/8 AsIs: >/1 } >/25 Tile{ ]] }
       refalrts::alloc_number(vm, context[16], 0UL);
       refalrts::alloc_close_bracket(vm, context[17]);
       refalrts::alloc_number(vm, context[18], 0UL);
@@ -15426,16 +15426,16 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-RASL/4 (/7 # CmdInsertRange/9 s.ElemNumber#1/12 )/8 >/1
+      // </0 & GenCommand-RASL/4 (/7 # CmdInsertRange/9 s.ElemNumber/12 )/8 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdInsertRange], context[9] ) )
         continue;
       if( ! refalrts::empty_seq( context[10], context[11] ) )
         continue;
-      //DEBUG: s.ElemNumber#1: 12
+      //DEBUG: s.ElemNumber: 12
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 99/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber#1/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
+      //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 99/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.ElemNumber/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_gen_PutCommand_S3B1]);
       refalrts::alloc_number(vm, context[15], 99UL);
@@ -15468,7 +15468,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/7 # CmdInsertTile/9 s.BeginOffset#1/15 s.EndOffset#1/12 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 # CmdInsertTile/9 s.BeginOffset/15 s.EndOffset/12 )/8 >/1
     context[13] = context[10];
     context[14] = context[11];
     if( ! refalrts::ident_term( identifiers[ident_CmdInsertTile], context[9] ) )
@@ -15477,12 +15477,12 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[13], context[14] ) )
       continue;
-    //DEBUG: s.EndOffset#1: 12
-    //DEBUG: s.BeginOffset#1: 15
+    //DEBUG: s.EndOffset: 12
+    //DEBUG: s.BeginOffset: 15
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/7 HalfReuse: </9 } & Divmod/16 Tile{ AsIs: s.BeginOffset#1/15 } 256/17 >/18 </19 & Divmod/20 Tile{ AsIs: s.EndOffset#1/12 HalfReuse: 256/8 AsIs: >/1 } (/21 0/22 )/23 0/24 >/25 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/7 HalfReuse: </9 } & Divmod/16 Tile{ AsIs: s.BeginOffset/15 } 256/17 >/18 </19 & Divmod/20 Tile{ AsIs: s.EndOffset/12 HalfReuse: 256/8 AsIs: >/1 } (/21 0/22 )/23 0/24 >/25 Tile{ ]] }
     refalrts::alloc_name(vm, context[16], functions[efunc_Divmod]);
     refalrts::alloc_number(vm, context[17], 256UL);
     refalrts::alloc_close_call(vm, context[18]);
@@ -15539,7 +15539,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-RASL/4 (/7 # CmdSpliceToFreeList-Range/9 s.Start#1/12 s.End#1/13 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 # CmdSpliceToFreeList-Range/9 s.Start/12 s.End/13 )/8 >/1
     context[10] = context[5];
     context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeListm_Range], context[9] ) )
@@ -15550,12 +15550,12 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[10], context[11] ) )
       continue;
-    //DEBUG: s.Start#1: 12
-    //DEBUG: s.End#1: 13
+    //DEBUG: s.Start: 12
+    //DEBUG: s.End: 13
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/7 HalfReuse: </9 } & Divmod/14 Tile{ AsIs: s.Start#1/12 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.End#1/13 HalfReuse: 256/8 AsIs: >/1 } (/19 0/20 )/21 0/22 >/23 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/7 HalfReuse: </9 } & Divmod/14 Tile{ AsIs: s.Start/12 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.End/13 HalfReuse: 256/8 AsIs: >/1 } (/19 0/20 )/21 0/22 >/23 Tile{ ]] }
     refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
     refalrts::alloc_number(vm, context[15], 256UL);
     refalrts::alloc_close_call(vm, context[16]);
@@ -15612,7 +15612,7 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-RASL/4 (/7 # CmdTrash/9 s.new#3/12 )/8 >/1
+    // </0 & GenCommand-RASL/4 (/7 # CmdTrash/9 s.new3/12 )/8 >/1
     context[10] = context[5];
     context[11] = context[6];
     if( ! refalrts::ident_term( identifiers[ident_CmdTrash], context[9] ) )
@@ -15643,12 +15643,12 @@ static refalrts::FnResult func_GenCommandm_RASL(refalrts::VM *vm, refalrts::Iter
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-RASL/4 (/7 # CmdTrash/9 s.Offset#1/12 )/8 >/1
-    //DEBUG: s.Offset#1: 12
+    // </0 & GenCommand-RASL/4 (/7 # CmdTrash/9 s.Offset/12 )/8 >/1
+    //DEBUG: s.Offset: 12
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 104/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.Offset#1/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
+    //RESULT: Tile{ [[ } </13 & PutCommand$3:1/14 104/15 (/16 0/17 )/18 0/19 (/20 0/21 Tile{ HalfReuse: )/0 HalfReuse: 0/4 HalfReuse: </7 HalfReuse: & Divmod/9 AsIs: s.Offset/12 HalfReuse: 256/8 AsIs: >/1 } >/22 Tile{ ]] }
     refalrts::alloc_open_call(vm, context[13]);
     refalrts::alloc_name(vm, context[14], functions[efunc_gen_PutCommand_S3B1]);
     refalrts::alloc_number(vm, context[15], 104UL);
@@ -15712,14 +15712,14 @@ static refalrts::FnResult func_gen_PutCommand_S3B1(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 34 elems
   refalrts::Iter context[34];
   refalrts::zeros( context, 34 );
-  // </0 & PutCommand$3:1/4 e.new#0/2 >/1
+  // </0 & PutCommand$3:1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3:1/4 s.new#1/5 (/8 s.new#2/10 )/9 s.new#3/11 (/14 s.new#4/16 )/15 s.new#5/17 (/20 s.new#6/22 )/21 s.new#7/23 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3:1/4 s.new1/5 (/8 s.new2/10 )/9 s.new3/11 (/14 s.new4/16 )/15 s.new5/17 (/20 s.new6/22 )/21 s.new7/23 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[6] = 0;
@@ -15761,21 +15761,21 @@ static refalrts::FnResult func_gen_PutCommand_S3B1(refalrts::VM *vm, refalrts::I
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & PutCommand$3:1/4 s.OpCode#2/5 (/8 0/10 )/9 s.LoArg1#3/11 (/14 0/16 )/15 s.LoArg2#3/17 (/20 0/22 )/21 s.LoArg3#3/23 >/1
+    // </0 & PutCommand$3:1/4 s.OpCode/5 (/8 0/10 )/9 s.LoArg1/11 (/14 0/16 )/15 s.LoArg2/17 (/20 0/22 )/21 s.LoArg3/23 >/1
     if( ! refalrts::number_term( 0UL, context[10] ) )
       continue;
     if( ! refalrts::number_term( 0UL, context[16] ) )
       continue;
     if( ! refalrts::number_term( 0UL, context[22] ) )
       continue;
-    //DEBUG: s.OpCode#2: 5
-    //DEBUG: s.LoArg1#3: 11
-    //DEBUG: s.LoArg2#3: 17
-    //DEBUG: s.LoArg3#3: 23
+    //DEBUG: s.OpCode: 5
+    //DEBUG: s.LoArg1: 11
+    //DEBUG: s.LoArg2: 17
+    //DEBUG: s.LoArg3: 23
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} & PutCommand$3:1/4 s.OpCode#2/5 (/8 0/10 )/9 s.LoArg1#3/11 (/14 0/16 )/15 s.LoArg2#3/17 {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ HalfReuse: s.OpCode2 #5/20 HalfReuse: s.LoArg13 #11/22 HalfReuse: s.LoArg23 #17/21 AsIs: s.LoArg3#3/23 HalfReuse: )/1 ]] }
+    //TRASH: {REMOVED TILE} & PutCommand$3:1/4 s.OpCode/5 (/8 0/10 )/9 s.LoArg1/11 (/14 0/16 )/15 s.LoArg2/17 {REMOVED TILE}
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ HalfReuse: s.OpCode5 /20 HalfReuse: s.LoArg111 /22 HalfReuse: s.LoArg217 /21 AsIs: s.LoArg3/23 HalfReuse: )/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_svar( context[20], context[5] );
     refalrts::reinit_svar( context[22], context[11] );
@@ -15790,18 +15790,18 @@ static refalrts::FnResult func_gen_PutCommand_S3B1(refalrts::VM *vm, refalrts::I
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3:1/4 s.OpCode#2/5 (/8 s.HiArg1#3/10 )/9 s.LoArg1#3/11 (/14 s.HiArg2#3/16 )/15 s.LoArg2#3/17 (/20 s.HiArg3#3/22 )/21 s.LoArg3#3/23 >/1
-  //DEBUG: s.OpCode#2: 5
-  //DEBUG: s.HiArg1#3: 10
-  //DEBUG: s.LoArg1#3: 11
-  //DEBUG: s.HiArg2#3: 16
-  //DEBUG: s.LoArg2#3: 17
-  //DEBUG: s.HiArg3#3: 22
-  //DEBUG: s.LoArg3#3: 23
+  // </0 & PutCommand$3:1/4 s.OpCode/5 (/8 s.HiArg1/10 )/9 s.LoArg1/11 (/14 s.HiArg2/16 )/15 s.LoArg2/17 (/20 s.HiArg3/22 )/21 s.LoArg3/23 >/1
+  //DEBUG: s.OpCode: 5
+  //DEBUG: s.HiArg1: 10
+  //DEBUG: s.LoArg1: 11
+  //DEBUG: s.HiArg2: 16
+  //DEBUG: s.LoArg2: 17
+  //DEBUG: s.HiArg3: 22
+  //DEBUG: s.LoArg3: 23
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LoArg2#3/17 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 AsIs: & PutCommand$3:1/4 } 111/24 </25 Tile{ HalfReuse: & Divmod/8 AsIs: s.HiArg1#3/10 HalfReuse: 256/9 } >/26 </27 Tile{ HalfReuse: & Divmod/14 AsIs: s.HiArg2#3/16 HalfReuse: 256/15 } >/28 </29 Tile{ HalfReuse: & Divmod/20 AsIs: s.HiArg3#3/22 } 256/30 >/31 >/32 (/33 Tile{ AsIs: s.OpCode#2/5 } Tile{ AsIs: s.LoArg1#3/11 } Tile{ HalfReuse: s.LoArg23 #17/21 AsIs: s.LoArg3#3/23 HalfReuse: )/1 ]] }
+  //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.LoArg2/17 {REMOVED TILE} {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 AsIs: & PutCommand$3:1/4 } 111/24 </25 Tile{ HalfReuse: & Divmod/8 AsIs: s.HiArg1/10 HalfReuse: 256/9 } >/26 </27 Tile{ HalfReuse: & Divmod/14 AsIs: s.HiArg2/16 HalfReuse: 256/15 } >/28 </29 Tile{ HalfReuse: & Divmod/20 AsIs: s.HiArg3/22 } 256/30 >/31 >/32 (/33 Tile{ AsIs: s.OpCode/5 } Tile{ AsIs: s.LoArg1/11 } Tile{ HalfReuse: s.LoArg217 /21 AsIs: s.LoArg3/23 HalfReuse: )/1 ]] }
   refalrts::alloc_number(vm, context[24], 111UL);
   refalrts::alloc_open_call(vm, context[25]);
   refalrts::alloc_close_call(vm, context[26]);
@@ -15856,7 +15856,7 @@ static refalrts::FnResult func_gen_PutCommand_S3A1(refalrts::VM *vm, refalrts::I
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1/4 s.Arg1#1/5 s.Arg2#1/6 s.Arg3#1/7 s.OpCode#2/8 >/1
+  // </0 & PutCommand$3=1/4 s.Arg1/5 s.Arg2/6 s.Arg3/7 s.OpCode/8 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -15872,14 +15872,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1(refalrts::VM *vm, refalrts::I
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: s.Arg1#1: 5
-  //DEBUG: s.Arg2#1: 6
-  //DEBUG: s.Arg3#1: 7
-  //DEBUG: s.OpCode#2: 8
+  //DEBUG: s.Arg1: 5
+  //DEBUG: s.Arg2: 6
+  //DEBUG: s.Arg3: 7
+  //DEBUG: s.OpCode: 8
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } </9 & Divmod/10 Tile{ AsIs: s.Arg1#1/5 } 256/11 >/12 </13 & Divmod/14 Tile{ AsIs: s.Arg2#1/6 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg3#1/7 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } </9 & Divmod/10 Tile{ AsIs: s.Arg1/5 } 256/11 >/12 </13 & Divmod/14 Tile{ AsIs: s.Arg2/6 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg3/7 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[9]);
   refalrts::alloc_name(vm, context[10], functions[efunc_Divmod]);
   refalrts::alloc_number(vm, context[11], 256UL);
@@ -15928,22 +15928,22 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 28 elems
   refalrts::Iter context[28];
   refalrts::zeros( context, 28 );
-  // </0 & PutCommand/4 e.new#0/2 >/1
+  // </0 & PutCommand/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutCommand/4 e.new#1/5 s.new#2/7 >/1
+    // </0 & PutCommand/4 e.new1/5 s.new2/7 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_right( context[7], context[5], context[6] ) )
       continue;
-    // closed e.new#1 as range 5
+    // closed e.new1 as range 5
     do {
-      // </0 & PutCommand/4 s.new#3/7 >/1
+      // </0 & PutCommand/4 s.new3/7 >/1
       if( ! refalrts::empty_seq( context[5], context[6] ) )
         continue;
       do {
@@ -16978,12 +16978,12 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 s.Symbolic#1/7 >/1
-      //DEBUG: s.Symbolic#1: 7
+      // </0 & PutCommand/4 s.Symbolic/7 >/1
+      //DEBUG: s.Symbolic: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } (/8 Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 AsIs: s.Symbolic#1/7 AsIs: >/1 } 0/9 0/10 0/11 )/12 Tile{ ]] }
+      //RESULT: Tile{ [[ } (/8 Tile{ AsIs: </0 Reuse: & NumberFromOpcode*119/4 AsIs: s.Symbolic/7 AsIs: >/1 } 0/9 0/10 0/11 )/12 Tile{ ]] }
       refalrts::alloc_open_bracket(vm, context[8]);
       refalrts::alloc_number(vm, context[9], 0UL);
       refalrts::alloc_number(vm, context[10], 0UL);
@@ -17004,7 +17004,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 s.new#4/10 s.new#5/11 s.new#6/12 s.new#3/7 >/1
+    // </0 & PutCommand/4 s.new4/10 s.new5/11 s.new6/12 s.new3/7 >/1
     context[8] = context[5];
     context[9] = context[6];
     if( ! refalrts::svar_left( context[10], context[8], context[9] ) )
@@ -17016,16 +17016,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! refalrts::empty_seq( context[8], context[9] ) )
       continue;
     do {
-      // </0 & PutCommand/4 # CmdProfileFunction/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdProfileFunction/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdProfileFunction], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 0/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 0/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17064,16 +17064,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 # CmdLoadConstants/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdLoadConstants/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdLoadConstants], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 1/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 1/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17112,16 +17112,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 # CmdIssueMemory/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdIssueMemory/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdIssueMemory], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 2/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 2/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17160,16 +17160,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 # CmdReserveBacktrackStack/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdReserveBacktrackStack/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdReserveBacktrackStack], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 3/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 3/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17208,16 +17208,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 # CmdOnFailGoTo/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdOnFailGoTo/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdOnFailGoTo], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17256,16 +17256,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 # CmdProfilerStopSentence/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+      // </0 & PutCommand/4 # CmdProfilerStopSentence/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdProfilerStopSentence], context[10] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 7
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 7
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 5/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 5/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_open_call(vm, context[13]);
       refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
       refalrts::alloc_number(vm, context[15], 256UL);
@@ -17303,16 +17303,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 # CmdInitB0/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/7 >/1
+    // </0 & PutCommand/4 # CmdInitB0/10 s.Arg1/11 s.Arg2/12 s.Arg3/7 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdInitB0], context[10] ) )
       continue;
-    //DEBUG: s.Arg1#1: 11
-    //DEBUG: s.Arg2#1: 12
-    //DEBUG: s.Arg3#1: 7
+    //DEBUG: s.Arg1: 11
+    //DEBUG: s.Arg2: 12
+    //DEBUG: s.Arg3: 7
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 6/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 6/10 } </13 & Divmod/14 Tile{ AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/7 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[13]);
     refalrts::alloc_name(vm, context[14], functions[efunc_Divmod]);
     refalrts::alloc_number(vm, context[15], 256UL);
@@ -17351,7 +17351,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutCommand/4 t.new#1/7 s.new#2/9 s.new#3/10 s.new#4/11 >/1
+    // </0 & PutCommand/4 t.new1/7 s.new2/9 s.new3/10 s.new4/11 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
@@ -17366,20 +17366,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
     do {
-      // </0 & PutCommand/4 s.new#5/7 s.new#6/9 s.new#7/10 s.new#8/11 >/1
+      // </0 & PutCommand/4 s.new5/7 s.new6/9 s.new7/10 s.new8/11 >/1
       if( ! refalrts::svar_term( context[7], context[7] ) )
         continue;
       do {
-        // </0 & PutCommand/4 # CmdInitB0-Lite/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdInitB0-Lite/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdInitB0m_Lite], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 7/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 7/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17418,16 +17418,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdEmpty/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdEmpty/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEmpty], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17466,16 +17466,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdNotEmpty/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdNotEmpty/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNotEmpty], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 46/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 46/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17514,16 +17514,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdEPrepare/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdEPrepare/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEPrepare], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17562,16 +17562,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdEStart/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdEStart/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEStart], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17610,16 +17610,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSave/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSave/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSave], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17658,16 +17658,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdResetAllocator/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdResetAllocator/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdResetAllocator], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 67/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 67/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17706,16 +17706,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSetResArgBegin/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSetResArgBegin/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetResArgBegin], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 68/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 68/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17754,16 +17754,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSetResRightEdge/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSetResRightEdge/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetResRightEdge], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 69/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 69/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17802,16 +17802,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSetRes/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSetRes/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetRes], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 70/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 70/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17850,16 +17850,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdCopyEVar/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdCopyEVar/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdCopyEVar], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17898,16 +17898,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdCopySTVar/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdCopySTVar/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdCopySTVar], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17946,16 +17946,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdReinitSVar/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdReinitSVar/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdReinitSVar], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -17994,16 +17994,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdLinkBrackets/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdLinkBrackets/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdLinkBrackets], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18042,16 +18042,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdPushStack/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdPushStack/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdPushStack], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 95/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 95/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18090,16 +18090,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdWrapClosure/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdWrapClosure/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdWrapClosure], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 110/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 110/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18138,16 +18138,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceElem/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceElem/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceElem], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 96/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 96/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18186,16 +18186,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceEVar/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceEVar/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceEVar], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 97/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 97/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18234,16 +18234,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceSTVar/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceSTVar/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceSTVar], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18282,16 +18282,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceRange/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceRange/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceRange], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 99/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 99/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18330,16 +18330,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceTile/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceTile/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceTile], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18378,16 +18378,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceToFreeList/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceToFreeList/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeList], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 101/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 101/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18426,16 +18426,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdNextStep/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdNextStep/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNextStep], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 102/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 102/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18474,16 +18474,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdTrashLeftEdge/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdTrashLeftEdge/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdTrashLeftEdge], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 103/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 103/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18522,16 +18522,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdTrash/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdTrash/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdTrash], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 104/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 104/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18570,16 +18570,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdFail/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdFail/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdFail], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 105/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 105/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18618,16 +18618,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdFetchSwapHead/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdFetchSwapHead/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapHead], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 106/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 106/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18666,16 +18666,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdFetchSwapInfoBounds/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdFetchSwapInfoBounds/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapInfoBounds], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 107/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 107/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18714,16 +18714,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSwapSave/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSwapSave/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSwapSave], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 108/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 108/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18762,16 +18762,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdPerformNative/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdPerformNative/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdPerformNative], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 109/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 109/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18810,16 +18810,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdScale/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdScale/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdScale], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 111/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 111/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18858,16 +18858,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdVariableDebugOffset/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdVariableDebugOffset/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdVariableDebugOffset], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18906,16 +18906,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdSpliceToFreeList-Range/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdSpliceToFreeList-Range/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeListm_Range], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -18954,16 +18954,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdPushState/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdPushState/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdPushState], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 116/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 116/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -19002,16 +19002,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdPopState/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdPopState/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdPopState], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 117/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 117/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -19050,16 +19050,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 # CmdMainLoopReturnSuccess/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 # CmdMainLoopReturnSuccess/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdMainLoopReturnSuccess], context[7] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 118/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1#1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2#1/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3#1/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 118/7 } </12 & Divmod/13 Tile{ AsIs: s.Arg1/9 } 256/14 >/15 </16 & Divmod/17 Tile{ AsIs: s.Arg2/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg3/11 } 256/22 >/23 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[12]);
         refalrts::alloc_name(vm, context[13], functions[efunc_Divmod]);
         refalrts::alloc_number(vm, context[14], 256UL);
@@ -19097,15 +19097,15 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 s.Symbolic#1/7 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
-      //DEBUG: s.Symbolic#1: 7
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      // </0 & PutCommand/4 s.Symbolic/7 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
+      //DEBUG: s.Symbolic: 7
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 } Tile{ AsIs: s.Arg1#1/9 AsIs: s.Arg2#1/10 AsIs: s.Arg3#1/11 HalfReuse: </1 } & NumberFromOpcode*119/12 Tile{ AsIs: s.Symbolic#1/7 } >/13 >/14 Tile{ ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3=1/4 } Tile{ AsIs: s.Arg1/9 AsIs: s.Arg2/10 AsIs: s.Arg3/11 HalfReuse: </1 } & NumberFromOpcode*119/12 Tile{ AsIs: s.Symbolic/7 } >/13 >/14 Tile{ ]] }
       refalrts::alloc_name(vm, context[12], functions[efunc_gen_NumberFromOpcode_D119]);
       refalrts::alloc_close_call(vm, context[13]);
       refalrts::alloc_close_call(vm, context[14]);
@@ -19127,29 +19127,29 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/7 e.new#5/12 s.new#6/14 )/8 s.new#7/9 s.new#8/10 s.new#9/11 >/1
+    // </0 & PutCommand/4 (/7 e.new5/12 s.new6/14 )/8 s.new7/9 s.new8/10 s.new9/11 >/1
     context[12] = 0;
     context[13] = 0;
     if( ! refalrts::brackets_term( context[12], context[13], context[7] ) )
       continue;
     if( ! refalrts::svar_right( context[14], context[12], context[13] ) )
       continue;
-    // closed e.new#5 as range 12
+    // closed e.new5 as range 12
     do {
-      // </0 & PutCommand/4 (/7 s.new#10/14 )/8 s.new#11/9 s.new#12/10 s.new#13/11 >/1
+      // </0 & PutCommand/4 (/7 s.new10/14 )/8 s.new11/9 s.new12/10 s.new13/11 >/1
       if( ! refalrts::empty_seq( context[12], context[13] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/7 # CmdProfileFunction/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdProfileFunction/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdProfileFunction], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 0/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 0/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19186,16 +19186,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdLoadConstants/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdLoadConstants/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdLoadConstants], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 1/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 1/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19232,16 +19232,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdIssueMemory/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdIssueMemory/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdIssueMemory], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 2/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 2/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19278,16 +19278,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdReserveBacktrackStack/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdReserveBacktrackStack/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdReserveBacktrackStack], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 3/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 3/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19324,16 +19324,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdOnFailGoTo/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdOnFailGoTo/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdOnFailGoTo], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19370,16 +19370,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdProfilerStopSentence/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdProfilerStopSentence/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdProfilerStopSentence], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 5/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 5/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19416,16 +19416,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdInitB0/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdInitB0/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdInitB0], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 6/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 6/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -19461,16 +19461,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/7 # CmdInitB0-Lite/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdInitB0-Lite/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdInitB0m_Lite], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 7/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 7/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -19506,7 +19506,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/7 s.new#11/17 s.new#10/14 )/8 s.new#12/9 s.new#13/10 s.new#14/11 >/1
+    // </0 & PutCommand/4 (/7 s.new11/17 s.new10/14 )/8 s.new12/9 s.new13/10 s.new14/11 >/1
     context[15] = context[12];
     context[16] = context[13];
     if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
@@ -19514,20 +19514,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! refalrts::empty_seq( context[15], context[16] ) )
       continue;
     do {
-      // </0 & PutCommand/4 (/7 # CmdChar/17 s.new#15/14 )/8 s.new#16/9 s.new#17/10 s.new#18/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdChar/17 s.new15/14 )/8 s.new16/9 s.new17/10 s.new18/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdChar], context[17] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgLeft/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgLeft/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 8/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 8/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -19565,16 +19565,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgRight/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgRight/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 9/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 9/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -19611,16 +19611,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgTerm/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdChar/17 # AlgTerm/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 10/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 10/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[18], 256UL);
       refalrts::alloc_close_call(vm, context[19]);
       refalrts::alloc_open_call(vm, context[20]);
@@ -19658,20 +19658,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/7 # CmdCharSave/17 s.new#15/14 )/8 s.new#16/9 s.new#17/10 s.new#18/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdCharSave/17 s.new15/14 )/8 s.new16/9 s.new17/10 s.new18/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdCharSave], context[17] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/7 # CmdCharSave/17 # AlgLeft/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+        // </0 & PutCommand/4 (/7 # CmdCharSave/17 # AlgLeft/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 9
-        //DEBUG: s.Arg2#1: 10
-        //DEBUG: s.Arg3#1: 11
+        //DEBUG: s.Arg1: 9
+        //DEBUG: s.Arg2: 10
+        //DEBUG: s.Arg3: 11
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 11/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 11/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -19708,16 +19708,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/7 # CmdCharSave/17 # AlgRight/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdCharSave/17 # AlgRight/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 12/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 12/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[18], 256UL);
       refalrts::alloc_close_call(vm, context[19]);
       refalrts::alloc_open_call(vm, context[20]);
@@ -19754,18 +19754,18 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/7 # CmdNumber/17 # AlgLeft/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+    // </0 & PutCommand/4 (/7 # CmdNumber/17 # AlgLeft/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdNumber], context[17] ) )
       continue;
     if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
       continue;
-    //DEBUG: s.Arg1#1: 9
-    //DEBUG: s.Arg2#1: 10
-    //DEBUG: s.Arg3#1: 11
+    //DEBUG: s.Arg1: 9
+    //DEBUG: s.Arg2: 10
+    //DEBUG: s.Arg3: 11
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.Arg1#1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 13/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #9/8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} s.Arg1/9 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 13/7 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg19 /8 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/10 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/11 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_number(vm, context[18], 256UL);
     refalrts::alloc_close_call(vm, context[19]);
     refalrts::alloc_open_call(vm, context[20]);
@@ -19803,7 +19803,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutCommand/4 (/9 e.new#1/7 s.new#2/14 )/10 s.new#3/11 s.new#4/12 s.new#5/13 >/1
+    // </0 & PutCommand/4 (/9 e.new1/7 s.new2/14 )/10 s.new3/11 s.new4/12 s.new5/13 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[7] = 0;
@@ -19822,9 +19822,9 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     if( ! refalrts::svar_right( context[14], context[7], context[8] ) )
       continue;
-    // closed e.new#1 as range 7
+    // closed e.new1 as range 7
     do {
-      // </0 & PutCommand/4 (/9 s.new#10/17 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+      // </0 & PutCommand/4 (/9 s.new10/17 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
       context[15] = context[7];
       context[16] = context[8];
       if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
@@ -19832,20 +19832,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 # CmdNumber/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNumber/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNumber], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdNumber/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdNumber/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 14/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 14/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -19882,16 +19882,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdNumber/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNumber/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 15/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 15/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -19929,20 +19929,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdNumberSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNumberSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNumberSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdNumberSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdNumberSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 16/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 16/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -19979,16 +19979,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdNumberSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNumberSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 17/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 17/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20026,20 +20026,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdHugeNum/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdHugeNum/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdHugeNum], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 18/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 18/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20077,16 +20077,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 19/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 19/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20123,16 +20123,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdHugeNum/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 20/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 20/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20170,20 +20170,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdHugeNumSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 21/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 21/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20220,16 +20220,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdHugeNumSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 22/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 22/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20267,20 +20267,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdName/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdName/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdName], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdName/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdName/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 23/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 23/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20318,16 +20318,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdName/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdName/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 24/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 24/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20364,16 +20364,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdName/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdName/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 25/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 25/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20411,20 +20411,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdNameSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNameSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdNameSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdNameSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdNameSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 26/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 26/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20461,16 +20461,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdNameSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdNameSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 27/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 27/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20508,20 +20508,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdIdent/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdIdent/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdIdent], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 28/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 28/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20559,16 +20559,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 29/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 29/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20605,16 +20605,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdIdent/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 30/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 30/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20652,20 +20652,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdIdentSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdIdentSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdIdentSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdIdentSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdIdentSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 31/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 31/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20702,16 +20702,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdIdentSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdIdentSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 32/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 32/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20749,20 +20749,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdBrackets/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdBrackets/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdBrackets], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 33/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 33/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20800,16 +20800,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 34/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 34/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20846,16 +20846,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdBrackets/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 35/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 35/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20893,20 +20893,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdBracketsSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 36/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 36/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -20943,16 +20943,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdBracketsSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 37/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 37/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -20990,20 +20990,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdADT/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdADT/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdADT], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 38/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 38/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -21041,16 +21041,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 39/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 39/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -21087,16 +21087,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdADT/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 40/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 40/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -21134,20 +21134,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdADTSave/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdADTSave/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdADTSave], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 41/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 41/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -21185,16 +21185,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 42/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 42/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -21231,16 +21231,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdADTSave/17 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 43/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 43/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -21277,18 +21277,18 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 # CmdCallSave/17 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdCallSave/17 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdCallSave], context[17] ) )
         continue;
       if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 44/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 44/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[18], 256UL);
       refalrts::alloc_close_call(vm, context[19]);
       refalrts::alloc_open_call(vm, context[20]);
@@ -21326,20 +21326,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+      // </0 & PutCommand/4 (/9 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
       if( ! refalrts::empty_seq( context[7], context[8] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 # CmdEmpty/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdEmpty/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEmpty], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 45/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -21375,16 +21375,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 # CmdNotEmpty/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdNotEmpty/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdNotEmpty], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 46/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 46/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -21421,7 +21421,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 s.new#10/17 s.new#11/18 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+      // </0 & PutCommand/4 (/9 s.new10/17 s.new11/18 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
       context[15] = context[7];
       context[16] = context[8];
       if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
@@ -21431,24 +21431,24 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 s.new#16/17 # CmdVar/18 s.new#15/14 )/10 s.new#12/11 s.new#13/12 s.new#14/13 >/1
+        // </0 & PutCommand/4 (/9 s.new16/17 # CmdVar/18 s.new15/14 )/10 s.new12/11 s.new13/12 s.new14/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdVar], context[18] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 s.new#20/14 )/10 s.new#17/11 s.new#18/12 s.new#19/13 >/1
+          // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 s.new20/14 )/10 s.new17/11 s.new18/12 s.new19/13 >/1
           if( ! refalrts::char_term( 's', context[17] ) )
             continue;
           do {
-            // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+            // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
               continue;
-            //DEBUG: s.Arg1#1: 11
-            //DEBUG: s.Arg2#1: 12
-            //DEBUG: s.Arg3#1: 13
+            //DEBUG: s.Arg1: 11
+            //DEBUG: s.Arg2: 12
+            //DEBUG: s.Arg3: 13
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 47/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 47/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
             refalrts::alloc_close_call(vm, context[19]);
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21486,16 +21486,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+            // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
               continue;
-            //DEBUG: s.Arg1#1: 11
-            //DEBUG: s.Arg2#1: 12
-            //DEBUG: s.Arg3#1: 13
+            //DEBUG: s.Arg1: 11
+            //DEBUG: s.Arg2: 12
+            //DEBUG: s.Arg3: 13
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 48/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 48/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
             refalrts::alloc_close_call(vm, context[19]);
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21532,16 +21532,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 's'/17 # CmdVar/18 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 49/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 49/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21578,20 +21578,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 s.new#20/14 )/10 s.new#17/11 s.new#18/12 s.new#19/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 s.new20/14 )/10 s.new17/11 s.new18/12 s.new19/13 >/1
         if( ! refalrts::char_term( 't', context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 50/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 50/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21628,16 +21628,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdVar/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 51/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 51/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
         refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21675,22 +21675,22 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 s.new#15/14 )/10 s.new#12/11 s.new#13/12 s.new#14/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 s.new15/14 )/10 s.new12/11 s.new13/12 s.new14/13 >/1
         if( ! refalrts::char_term( 't', context[17] ) )
           continue;
         if( ! refalrts::ident_term( identifiers[ident_CmdVarSave], context[18] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 52/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 52/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21727,16 +21727,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdVarSave/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 53/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 53/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
         refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21774,24 +21774,24 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 s.new#16/17 # CmdRepeated/18 s.new#15/14 )/10 s.new#12/11 s.new#13/12 s.new#14/13 >/1
+        // </0 & PutCommand/4 (/9 s.new16/17 # CmdRepeated/18 s.new15/14 )/10 s.new12/11 s.new13/12 s.new14/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdRepeated], context[18] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 s.new#20/14 )/10 s.new#17/11 s.new#18/12 s.new#19/13 >/1
+          // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 s.new20/14 )/10 s.new17/11 s.new18/12 s.new19/13 >/1
           if( ! refalrts::char_term( 'e', context[17] ) )
             continue;
           do {
-            // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+            // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
               continue;
-            //DEBUG: s.Arg1#1: 11
-            //DEBUG: s.Arg2#1: 12
-            //DEBUG: s.Arg3#1: 13
+            //DEBUG: s.Arg1: 11
+            //DEBUG: s.Arg2: 12
+            //DEBUG: s.Arg3: 13
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 54/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 54/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
             refalrts::alloc_close_call(vm, context[19]);
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21828,16 +21828,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 'e'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 55/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 55/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21875,20 +21875,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 s.new#20/14 )/10 s.new#17/11 s.new#18/12 s.new#19/13 >/1
+          // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 s.new20/14 )/10 s.new17/11 s.new18/12 s.new19/13 >/1
           if( ! refalrts::char_term( 's', context[17] ) )
             continue;
           do {
-            // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+            // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
               continue;
-            //DEBUG: s.Arg1#1: 11
-            //DEBUG: s.Arg2#1: 12
-            //DEBUG: s.Arg3#1: 13
+            //DEBUG: s.Arg1: 11
+            //DEBUG: s.Arg2: 12
+            //DEBUG: s.Arg3: 13
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 56/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 56/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
             refalrts::alloc_close_call(vm, context[19]);
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21926,16 +21926,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
           refalrts::stop_sentence(vm);
 
           do {
-            // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+            // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
             if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
               continue;
-            //DEBUG: s.Arg1#1: 11
-            //DEBUG: s.Arg2#1: 12
-            //DEBUG: s.Arg3#1: 13
+            //DEBUG: s.Arg1: 11
+            //DEBUG: s.Arg2: 12
+            //DEBUG: s.Arg3: 13
 
             refalrts::reset_allocator(vm);
-            //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 57/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+            //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+            //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 57/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
             refalrts::alloc_close_call(vm, context[19]);
             refalrts::alloc_open_call(vm, context[20]);
             refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -21972,16 +21972,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
           } while ( 0 );
           refalrts::stop_sentence(vm);
 
-          // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 's'/17 # CmdRepeated/18 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 58/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 58/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22018,20 +22018,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 s.new#20/14 )/10 s.new#17/11 s.new#18/12 s.new#19/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 s.new20/14 )/10 s.new17/11 s.new18/12 s.new19/13 >/1
         if( ! refalrts::char_term( 't', context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 59/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 59/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22069,16 +22069,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 60/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 60/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
           refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22115,16 +22115,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgTerm/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeated/18 # AlgTerm/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgTerm], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 61/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 61/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
         refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22161,22 +22161,22 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 s.new#15/14 )/10 s.new#12/11 s.new#13/12 s.new#14/13 >/1
+      // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 s.new15/14 )/10 s.new12/11 s.new13/12 s.new14/13 >/1
       if( ! refalrts::char_term( 't', context[17] ) )
         continue;
       if( ! refalrts::ident_term( identifiers[ident_CmdRepeatedSave], context[18] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 # AlgLeft/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 # AlgLeft/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_AlgLeft], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 62/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 62/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
         refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22213,16 +22213,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 # AlgRight/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 't'/17 # CmdRepeatedSave/18 # AlgRight/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_AlgRight], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 63/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg11 #11/14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 63/9 HalfReuse: </17 HalfReuse: & Divmod/18 HalfReuse: s.Arg111 /14 HalfReuse: 256/10 } >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_close_call(vm, context[19]);
       refalrts::alloc_open_call(vm, context[20]);
       refalrts::alloc_name(vm, context[21], functions[efunc_Divmod]);
@@ -22259,18 +22259,18 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/9 # CmdEPrepare/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+    // </0 & PutCommand/4 (/9 # CmdEPrepare/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdEPrepare], context[14] ) )
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
-    //DEBUG: s.Arg1#1: 11
-    //DEBUG: s.Arg2#1: 12
-    //DEBUG: s.Arg3#1: 13
+    //DEBUG: s.Arg1: 11
+    //DEBUG: s.Arg2: 12
+    //DEBUG: s.Arg3: 13
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 64/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_number(vm, context[15], 256UL);
     refalrts::alloc_close_call(vm, context[16]);
     refalrts::alloc_open_call(vm, context[17]);
@@ -22307,7 +22307,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutCommand/4 (/9 e.new#1/7 s.new#2/14 )/10 s.new#3/11 s.new#4/12 s.new#5/13 >/1
+    // </0 & PutCommand/4 (/9 e.new1/7 s.new2/14 )/10 s.new3/11 s.new4/12 s.new5/13 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[7] = 0;
@@ -22326,22 +22326,22 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       continue;
     if( ! refalrts::svar_right( context[14], context[7], context[8] ) )
       continue;
-    // closed e.new#1 as range 7
+    // closed e.new1 as range 7
     do {
-      // </0 & PutCommand/4 (/9 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+      // </0 & PutCommand/4 (/9 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
       if( ! refalrts::empty_seq( context[7], context[8] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 # CmdEStart/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdEStart/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdEStart], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 65/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22378,16 +22378,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdSave/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdSave/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSave], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 66/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22424,16 +22424,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdResetAllocator/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdResetAllocator/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdResetAllocator], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 67/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 67/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22470,16 +22470,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdSetResArgBegin/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdSetResArgBegin/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetResArgBegin], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 68/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 68/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22516,16 +22516,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdSetResRightEdge/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdSetResRightEdge/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetResRightEdge], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 69/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 69/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22562,16 +22562,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdSetRes/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdSetRes/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdSetRes], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 70/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 70/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22608,16 +22608,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdCopyEVar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdCopyEVar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdCopyEVar], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 71/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22654,16 +22654,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # CmdCopySTVar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # CmdCopySTVar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_CmdCopySTVar], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 72/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[15], 256UL);
         refalrts::alloc_close_call(vm, context[16]);
         refalrts::alloc_open_call(vm, context[17]);
@@ -22699,16 +22699,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 # CmdReinitSVar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdReinitSVar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdReinitSVar], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 73/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -22745,7 +22745,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 s.new#10/17 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+      // </0 & PutCommand/4 (/9 s.new10/17 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
       context[15] = context[7];
       context[16] = context[8];
       if( ! refalrts::svar_left( context[17], context[15], context[16] ) )
@@ -22753,20 +22753,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       if( ! refalrts::empty_seq( context[15], context[16] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 # Allocate/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # Allocate/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_Allocate], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElChar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElChar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElChar], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 74/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 74/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -22804,16 +22804,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElName/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElName/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElName], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 75/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 75/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -22851,16 +22851,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 76/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 76/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -22898,16 +22898,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElHugeNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElHugeNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 77/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 77/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -22945,16 +22945,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElIdent/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElIdent/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 78/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 78/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -22992,16 +22992,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElBracket/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElBracket/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElBracket], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 79/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 79/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23039,16 +23039,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElString/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElString/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElString], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 80/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 80/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23086,16 +23086,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Allocate/17 # ElClosureHead/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Allocate/17 # ElClosureHead/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElClosureHead], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 113/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 113/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23132,16 +23132,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # Allocate/17 # ElUnwrappedClosure/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Allocate/17 # ElUnwrappedClosure/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 114/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 114/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23179,20 +23179,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # Reinit/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+        // </0 & PutCommand/4 (/9 # Reinit/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_Reinit], context[17] ) )
           continue;
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElChar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElChar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElChar], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 81/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 81/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23230,16 +23230,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElName/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElName/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElName], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 82/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 82/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23277,16 +23277,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 83/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 83/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23324,16 +23324,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElHugeNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElHugeNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 84/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 84/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23371,16 +23371,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElIdent/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElIdent/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 85/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 85/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23418,16 +23418,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElBracket/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElBracket/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElBracket], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 86/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 86/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23465,16 +23465,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         refalrts::stop_sentence(vm);
 
         do {
-          // </0 & PutCommand/4 (/9 # Reinit/17 # ElClosureHead/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+          // </0 & PutCommand/4 (/9 # Reinit/17 # ElClosureHead/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
           if( ! refalrts::ident_term( identifiers[ident_ElClosureHead], context[14] ) )
             continue;
-          //DEBUG: s.Arg1#1: 11
-          //DEBUG: s.Arg2#1: 12
-          //DEBUG: s.Arg3#1: 13
+          //DEBUG: s.Arg1: 11
+          //DEBUG: s.Arg2: 12
+          //DEBUG: s.Arg3: 13
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 87/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 87/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
           refalrts::alloc_number(vm, context[18], 256UL);
           refalrts::alloc_close_call(vm, context[19]);
           refalrts::alloc_open_call(vm, context[20]);
@@ -23511,16 +23511,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & PutCommand/4 (/9 # Reinit/17 # ElUnwrappedClosure/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Reinit/17 # ElUnwrappedClosure/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 88/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 88/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23557,20 +23557,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 # Update/17 s.new#14/14 )/10 s.new#11/11 s.new#12/12 s.new#13/13 >/1
+      // </0 & PutCommand/4 (/9 # Update/17 s.new14/14 )/10 s.new11/11 s.new12/12 s.new13/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_Update], context[17] ) )
         continue;
       do {
-        // </0 & PutCommand/4 (/9 # Update/17 # ElChar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Update/17 # ElChar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElChar], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 89/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 89/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23608,16 +23608,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # Update/17 # ElName/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Update/17 # ElName/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElName], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 90/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 90/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23655,16 +23655,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # Update/17 # ElNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Update/17 # ElNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 91/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 91/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23702,16 +23702,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & PutCommand/4 (/9 # Update/17 # ElHugeNumber/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+        // </0 & PutCommand/4 (/9 # Update/17 # ElHugeNumber/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
         if( ! refalrts::ident_term( identifiers[ident_ElHugeNumber], context[14] ) )
           continue;
-        //DEBUG: s.Arg1#1: 11
-        //DEBUG: s.Arg2#1: 12
-        //DEBUG: s.Arg3#1: 13
+        //DEBUG: s.Arg1: 11
+        //DEBUG: s.Arg2: 12
+        //DEBUG: s.Arg3: 13
 
         refalrts::reset_allocator(vm);
-        //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 92/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+        //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 92/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_number(vm, context[18], 256UL);
         refalrts::alloc_close_call(vm, context[19]);
         refalrts::alloc_open_call(vm, context[20]);
@@ -23748,16 +23748,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & PutCommand/4 (/9 # Update/17 # ElIdent/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # Update/17 # ElIdent/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Arg1#1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 93/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg11 #11/10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2#1/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3#1/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Arg1/11 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 93/9 HalfReuse: </17 HalfReuse: & Divmod/14 HalfReuse: s.Arg111 /10 } 256/18 >/19 </20 & Divmod/21 Tile{ AsIs: s.Arg2/12 } 256/22 >/23 </24 & Divmod/25 Tile{ AsIs: s.Arg3/13 } 256/26 >/27 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[18], 256UL);
       refalrts::alloc_close_call(vm, context[19]);
       refalrts::alloc_open_call(vm, context[20]);
@@ -23794,20 +23794,20 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/9 s.new#9/14 )/10 s.new#6/11 s.new#7/12 s.new#8/13 >/1
+    // </0 & PutCommand/4 (/9 s.new9/14 )/10 s.new6/11 s.new7/12 s.new8/13 >/1
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
     do {
-      // </0 & PutCommand/4 (/9 # CmdLinkBrackets/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdLinkBrackets/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdLinkBrackets], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 94/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -23844,16 +23844,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdPushStack/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdPushStack/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdPushStack], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 95/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 95/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -23890,16 +23890,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdWrapClosure/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdWrapClosure/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdWrapClosure], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 110/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 110/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -23936,16 +23936,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceElem/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceElem/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceElem], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 96/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 96/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -23982,16 +23982,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceEVar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceEVar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceEVar], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 97/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 97/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24028,16 +24028,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceSTVar/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceSTVar/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceSTVar], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 98/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24074,16 +24074,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceRange/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceRange/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceRange], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 99/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 99/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24120,16 +24120,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceTile/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceTile/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceTile], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 100/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24166,16 +24166,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSpliceToFreeList/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSpliceToFreeList/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeList], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 101/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 101/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24212,16 +24212,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdNextStep/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdNextStep/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdNextStep], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 102/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 102/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24258,16 +24258,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdTrashLeftEdge/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdTrashLeftEdge/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdTrashLeftEdge], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 103/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 103/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24304,16 +24304,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdTrash/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdTrash/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdTrash], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 104/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 104/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24350,16 +24350,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdFail/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdFail/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdFail], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 105/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 105/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24396,16 +24396,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdFetchSwapHead/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdFetchSwapHead/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapHead], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 106/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 106/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24442,16 +24442,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdFetchSwapInfoBounds/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdFetchSwapInfoBounds/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdFetchSwapInfoBounds], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 107/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 107/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24488,16 +24488,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdSwapSave/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdSwapSave/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdSwapSave], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 108/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 108/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24534,16 +24534,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdPerformNative/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdPerformNative/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdPerformNative], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 109/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 109/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24580,16 +24580,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdScale/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdScale/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdScale], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 111/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 111/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24626,16 +24626,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/9 # CmdVariableDebugOffset/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+      // </0 & PutCommand/4 (/9 # CmdVariableDebugOffset/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdVariableDebugOffset], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 11
-      //DEBUG: s.Arg2#1: 12
-      //DEBUG: s.Arg3#1: 13
+      //DEBUG: s.Arg1: 11
+      //DEBUG: s.Arg2: 12
+      //DEBUG: s.Arg3: 13
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 112/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24671,16 +24671,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/9 # CmdSpliceToFreeList-Range/14 )/10 s.Arg1#1/11 s.Arg2#1/12 s.Arg3#1/13 >/1
+    // </0 & PutCommand/4 (/9 # CmdSpliceToFreeList-Range/14 )/10 s.Arg1/11 s.Arg2/12 s.Arg3/13 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdSpliceToFreeListm_Range], context[14] ) )
       continue;
-    //DEBUG: s.Arg1#1: 11
-    //DEBUG: s.Arg2#1: 12
-    //DEBUG: s.Arg3#1: 13
+    //DEBUG: s.Arg1: 11
+    //DEBUG: s.Arg2: 12
+    //DEBUG: s.Arg3: 13
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1#1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 115/9 HalfReuse: </14 HalfReuse: & Divmod/10 AsIs: s.Arg1/11 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/12 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/13 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_number(vm, context[15], 256UL);
     refalrts::alloc_close_call(vm, context[16]);
     refalrts::alloc_open_call(vm, context[17]);
@@ -24716,14 +24716,14 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand/4 (/7 e.new#1/5 )/8 s.new#2/9 s.new#3/10 s.new#4/11 >/1
+  // </0 & PutCommand/4 (/7 e.new1/5 )/8 s.new2/9 s.new3/10 s.new4/11 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[9], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[10], context[2], context[3] ) )
@@ -24733,7 +24733,7 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & PutCommand/4 (/7 s.new#8/14 )/8 s.new#5/9 s.new#6/10 s.new#7/11 >/1
+    // </0 & PutCommand/4 (/7 s.new8/14 )/8 s.new5/9 s.new6/10 s.new7/11 >/1
     context[12] = context[5];
     context[13] = context[6];
     if( ! refalrts::svar_left( context[14], context[12], context[13] ) )
@@ -24741,16 +24741,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     if( ! refalrts::empty_seq( context[12], context[13] ) )
       continue;
     do {
-      // </0 & PutCommand/4 (/7 # CmdPushState/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdPushState/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdPushState], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 116/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 116/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24787,16 +24787,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & PutCommand/4 (/7 # CmdPopState/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+      // </0 & PutCommand/4 (/7 # CmdPopState/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
       if( ! refalrts::ident_term( identifiers[ident_CmdPopState], context[14] ) )
         continue;
-      //DEBUG: s.Arg1#1: 9
-      //DEBUG: s.Arg2#1: 10
-      //DEBUG: s.Arg3#1: 11
+      //DEBUG: s.Arg1: 9
+      //DEBUG: s.Arg2: 10
+      //DEBUG: s.Arg3: 11
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 117/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 117/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_number(vm, context[15], 256UL);
       refalrts::alloc_close_call(vm, context[16]);
       refalrts::alloc_open_call(vm, context[17]);
@@ -24832,16 +24832,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & PutCommand/4 (/7 # CmdMainLoopReturnSuccess/14 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
+    // </0 & PutCommand/4 (/7 # CmdMainLoopReturnSuccess/14 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
     if( ! refalrts::ident_term( identifiers[ident_CmdMainLoopReturnSuccess], context[14] ) )
       continue;
-    //DEBUG: s.Arg1#1: 9
-    //DEBUG: s.Arg2#1: 10
-    //DEBUG: s.Arg3#1: 11
+    //DEBUG: s.Arg1: 9
+    //DEBUG: s.Arg2: 10
+    //DEBUG: s.Arg3: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 118/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1#1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2#1/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3#1/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 118/7 HalfReuse: </14 HalfReuse: & Divmod/8 AsIs: s.Arg1/9 } 256/15 >/16 </17 & Divmod/18 Tile{ AsIs: s.Arg2/10 } 256/19 >/20 </21 & Divmod/22 Tile{ AsIs: s.Arg3/11 } 256/23 >/24 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_number(vm, context[15], 256UL);
     refalrts::alloc_close_call(vm, context[16]);
     refalrts::alloc_open_call(vm, context[17]);
@@ -24877,16 +24877,16 @@ static refalrts::FnResult func_PutCommand(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand/4 (/7 e.Symbolic#1/5 )/8 s.Arg1#1/9 s.Arg2#1/10 s.Arg3#1/11 >/1
-  // closed e.Symbolic#1 as range 5
-  //DEBUG: s.Arg1#1: 9
-  //DEBUG: s.Arg2#1: 10
-  //DEBUG: s.Arg3#1: 11
-  //DEBUG: e.Symbolic#1: 5
+  // </0 & PutCommand/4 (/7 e.Symbolic/5 )/8 s.Arg1/9 s.Arg2/10 s.Arg3/11 >/1
+  // closed e.Symbolic as range 5
+  //DEBUG: s.Arg1: 9
+  //DEBUG: s.Arg2: 10
+  //DEBUG: s.Arg3: 11
+  //DEBUG: e.Symbolic: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & PutCommand$3=1/8 AsIs: s.Arg1#1/9 AsIs: s.Arg2#1/10 AsIs: s.Arg3#1/11 HalfReuse: </1 } Tile{ Reuse: & NumberFromOpcode*119/4 } Tile{ AsIs: e.Symbolic#1/5 } Tile{ HalfReuse: >/7 } >/12 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & PutCommand$3=1/8 AsIs: s.Arg1/9 AsIs: s.Arg2/10 AsIs: s.Arg3/11 HalfReuse: </1 } Tile{ Reuse: & NumberFromOpcode*119/4 } Tile{ AsIs: e.Symbolic/5 } Tile{ HalfReuse: >/7 } >/12 Tile{ ]] }
   refalrts::alloc_close_call(vm, context[12]);
   refalrts::reinit_name(context[8], functions[efunc_gen_PutCommand_S3A1]);
   refalrts::reinit_open_call(context[1]);
@@ -24920,14 +24920,14 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 6 elems
   refalrts::Iter context[6];
   refalrts::zeros( context, 6 );
-  // </0 & CreateCommandTag/4 e.new#0/2 >/1
+  // </0 & CreateCommandTag/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & CreateCommandTag/4 s.new#1/5 >/1
+  // closed e.new as range 2
+  // </0 & CreateCommandTag/4 s.new1/5 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
@@ -25034,12 +25034,12 @@ static refalrts::FnResult func_CreateCommandTag(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & CreateCommandTag/4 s.Other#1/5 >/1
-  //DEBUG: s.Other#1: 5
+  // </0 & CreateCommandTag/4 s.Other/5 >/1
+  //DEBUG: s.Other: 5
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & CreateCommandTag/4 s.Other#1/5 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other1 #5/1 ]] }
+  //TRASH: {REMOVED TILE} </0 & CreateCommandTag/4 s.Other/5 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Other5 /1 ]] }
   refalrts::reinit_svar( context[1], context[5] );
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
@@ -25060,35 +25060,35 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & CreateCommandInfo/4 e.new#0/2 >/1
+  // </0 & CreateCommandInfo/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & CreateCommandInfo/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & CreateCommandInfo/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & CreateCommandInfo/4 s.new#3/5 s.new#4/8 e.new#5/6 >/1
+    // </0 & CreateCommandInfo/4 s.new3/5 s.new4/8 e.new5/6 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
-    // closed e.new#5 as range 6
+    // closed e.new5 as range 6
     do {
-      // </0 & CreateCommandInfo/4 # ElChar/5 s.Char#1/8 >/1
+      // </0 & CreateCommandInfo/4 # ElChar/5 s.Char/8 >/1
       if( ! refalrts::ident_term( identifiers[ident_ElChar], context[5] ) )
         continue;
       if( ! refalrts::empty_seq( context[6], context[7] ) )
         continue;
-      //DEBUG: s.Char#1: 8
+      //DEBUG: s.Char: 8
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} </0 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Ord/5 AsIs: s.Char#1/8 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: </4 HalfReuse: & Ord/5 AsIs: s.Char/8 AsIs: >/1 ]] }
       refalrts::reinit_open_call(context[4]);
       refalrts::reinit_name(context[5], functions[efunc_Ord]);
       refalrts::push_stack( vm, context[1] );
@@ -25102,18 +25102,18 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & CreateCommandInfo/4 # ElName/5 s.NameId#1/8 e.Name#1/9 >/1
+      // </0 & CreateCommandInfo/4 # ElName/5 s.NameId/8 e.Name/9 >/1
       context[9] = context[6];
       context[10] = context[7];
       if( ! refalrts::ident_term( identifiers[ident_ElName], context[5] ) )
         continue;
-      // closed e.Name#1 as range 9
-      //DEBUG: s.NameId#1: 8
-      //DEBUG: e.Name#1: 9
+      // closed e.Name as range 9
+      //DEBUG: s.NameId: 8
+      //DEBUG: e.Name: 9
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElName/5 s.NameId#1/8 e.Name#1/9 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.NameId1 #8/1 ]] }
+      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElName/5 s.NameId/8 e.Name/9 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.NameId8 /1 ]] }
       refalrts::reinit_svar( context[1], context[8] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
@@ -25124,16 +25124,16 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & CreateCommandInfo/4 # ElNumber/5 s.Number#1/8 >/1
+      // </0 & CreateCommandInfo/4 # ElNumber/5 s.Number/8 >/1
       if( ! refalrts::ident_term( identifiers[ident_ElNumber], context[5] ) )
         continue;
       if( ! refalrts::empty_seq( context[6], context[7] ) )
         continue;
-      //DEBUG: s.Number#1: 8
+      //DEBUG: s.Number: 8
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElNumber/5 s.Number#1/8 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Number1 #8/1 ]] }
+      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElNumber/5 s.Number/8 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.Number8 /1 ]] }
       refalrts::reinit_svar( context[1], context[8] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
@@ -25144,18 +25144,18 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId#1/8 e.Name#1/9 >/1
+      // </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId/8 e.Name/9 >/1
       context[9] = context[6];
       context[10] = context[7];
       if( ! refalrts::ident_term( identifiers[ident_ElIdent], context[5] ) )
         continue;
-      // closed e.Name#1 as range 9
-      //DEBUG: s.NameId#1: 8
-      //DEBUG: e.Name#1: 9
+      // closed e.Name as range 9
+      //DEBUG: s.NameId: 8
+      //DEBUG: e.Name: 9
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId#1/8 e.Name#1/9 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.NameId1 #8/1 ]] }
+      //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElIdent/5 s.NameId/8 e.Name/9 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ HalfReuse: s.NameId8 /1 ]] }
       refalrts::reinit_svar( context[1], context[8] );
       refalrts::Iter trash_prev = arg_begin->prev;
       refalrts::use(trash_prev);
@@ -25165,16 +25165,16 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & CreateCommandInfo/4 # ElString/5 s.StringId#1/8 >/1
+    // </0 & CreateCommandInfo/4 # ElString/5 s.StringId/8 >/1
     if( ! refalrts::ident_term( identifiers[ident_ElString], context[5] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.StringId#1: 8
+    //DEBUG: s.StringId: 8
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElString/5 s.StringId#1/8 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.StringId1 #8/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElString/5 s.StringId/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.StringId8 /1 ]] }
     refalrts::reinit_svar( context[1], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -25204,7 +25204,7 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & CreateCommandInfo/4 # ElUnwrappedClosure/5 s.HeadCounter#1/8 >/1
+    // </0 & CreateCommandInfo/4 # ElUnwrappedClosure/5 s.HeadCounter/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::ident_term( identifiers[ident_ElUnwrappedClosure], context[5] ) )
@@ -25213,11 +25213,11 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.HeadCounter#1: 8
+    //DEBUG: s.HeadCounter: 8
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElUnwrappedClosure/5 s.HeadCounter#1/8 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.HeadCounter1 #8/1 ]] }
+    //TRASH: {REMOVED TILE} </0 & CreateCommandInfo/4 # ElUnwrappedClosure/5 s.HeadCounter/8 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ HalfReuse: s.HeadCounter8 /1 ]] }
     refalrts::reinit_svar( context[1], context[8] );
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -25227,7 +25227,7 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & CreateCommandInfo/4 s.new#3/5 >/1
+  // </0 & CreateCommandInfo/4 s.new3/5 >/1
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
@@ -25332,12 +25332,12 @@ static refalrts::FnResult func_CreateCommandInfo(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & CreateCommandInfo/4 s.Bracket#1/5 >/1
-  //DEBUG: s.Bracket#1: 5
+  // </0 & CreateCommandInfo/4 s.Bracket/5 >/1
+  //DEBUG: s.Bracket: 5
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & NumberFromBracket*6/4 AsIs: s.Bracket#1/5 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & NumberFromBracket*6/4 AsIs: s.Bracket/5 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_NumberFromBracket_D6]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -25356,18 +25356,18 @@ static refalrts::FnResult func_CalcLabelsOffsets(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & CalcLabelsOffsets/4 e.RASL#1/2 >/1
+  // </0 & CalcLabelsOffsets/4 e.RASL/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.RASL#1 as range 2
-  //DEBUG: e.RASL#1: 2
+  // closed e.RASL as range 2
+  //DEBUG: e.RASL: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & DoMapAccum@2/6 (/7 0/8 )/9 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.RASL#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 & DoMapAccum@2/6 (/7 0/8 )/9 Tile{ HalfReuse: (/0 HalfReuse: )/4 AsIs: e.RASL/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_DoMapAccum_Z2]);
   refalrts::alloc_open_bracket(vm, context[7]);
@@ -25399,7 +25399,7 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1S1A1(refalrts:
   // issue here memory for vars with 37 elems
   refalrts::Iter context[37];
   refalrts::zeros( context, 37 );
-  // </0 & ResolveLabeledDestinations$1:1$1=1/4 (/7 e.ReadyRASL#1/5 )/8 (/11 e.Labels-B#2/9 )/12 (/15 e.Labels-E#2/13 )/16 (/19 e.UnscannedRASL#1/17 )/20 (/23 s.JumpHigh#5/25 )/24 s.JumpLow#5/26 >/1
+  // </0 & ResolveLabeledDestinations$1:1$1=1/4 (/7 e.ReadyRASL/5 )/8 (/11 e.Labels-B/9 )/12 (/15 e.Labels-E/13 )/16 (/19 e.UnscannedRASL/17 )/20 (/23 s.JumpHigh/25 )/24 s.JumpLow/26 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -25435,10 +25435,10 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1S1A1(refalrts:
   if( ! context[23] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[23], context[24]);
-  // closed e.ReadyRASL#1 as range 5
-  // closed e.Labels-B#2 as range 9
-  // closed e.Labels-E#2 as range 13
-  // closed e.UnscannedRASL#1 as range 17
+  // closed e.ReadyRASL as range 5
+  // closed e.Labels-B as range 9
+  // closed e.Labels-E as range 13
+  // closed e.UnscannedRASL as range 17
   if( ! refalrts::svar_left( context[25], context[21], context[22] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[21], context[22] ) )
@@ -25447,16 +25447,16 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1S1A1(refalrts:
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: e.ReadyRASL#1: 5
-  //DEBUG: e.Labels-B#2: 9
-  //DEBUG: e.Labels-E#2: 13
-  //DEBUG: e.UnscannedRASL#1: 17
-  //DEBUG: s.JumpHigh#5: 25
-  //DEBUG: s.JumpLow#5: 26
+  //DEBUG: e.ReadyRASL: 5
+  //DEBUG: e.Labels-B: 9
+  //DEBUG: e.Labels-E: 13
+  //DEBUG: e.UnscannedRASL: 17
+  //DEBUG: s.JumpHigh: 25
+  //DEBUG: s.JumpLow: 26
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL#1/5 } Tile{ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/7 } </27 & Divmod/28 Tile{ AsIs: s.JumpLow#5/26 } 256/29 >/30 Tile{ HalfReuse: </20 HalfReuse: & Divmod/23 AsIs: s.JumpHigh#5/25 HalfReuse: 256/24 } >/31 Tile{ AsIs: (/19 } 0/32 )/33 0/34 >/35 </36 Tile{ HalfReuse: & ResolveLabeledDestinations@1/8 AsIs: (/11 AsIs: e.Labels-B#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E#2/13 AsIs: )/16 } Tile{ AsIs: e.UnscannedRASL#1/17 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL/5 } Tile{ AsIs: </0 Reuse: & PutCommand$3:1/4 HalfReuse: 4/7 } </27 & Divmod/28 Tile{ AsIs: s.JumpLow/26 } 256/29 >/30 Tile{ HalfReuse: </20 HalfReuse: & Divmod/23 AsIs: s.JumpHigh/25 HalfReuse: 256/24 } >/31 Tile{ AsIs: (/19 } 0/32 )/33 0/34 >/35 </36 Tile{ HalfReuse: & ResolveLabeledDestinations@1/8 AsIs: (/11 AsIs: e.Labels-B/9 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E/13 AsIs: )/16 } Tile{ AsIs: e.UnscannedRASL/17 } Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[27]);
   refalrts::alloc_name(vm, context[28], functions[efunc_Divmod]);
   refalrts::alloc_number(vm, context[29], 256UL);
@@ -25514,14 +25514,14 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1(refalrts::VM 
   // issue here memory for vars with 51 elems
   refalrts::Iter context[51];
   refalrts::zeros( context, 51 );
-  // </0 & ResolveLabeledDestinations$1:1/4 e.new#0/2 >/1
+  // </0 & ResolveLabeledDestinations$1:1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 (/15 e.new#3/13 )/16 (/19 e.new#4/17 )/20 s.new#5/21 (/24 e.new#6/22 )/25 s.new#7/26 >/1
+  // closed e.new as range 2
+  // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 (/15 e.new3/13 )/16 (/19 e.new4/17 )/20 s.new5/21 (/24 e.new6/22 )/25 s.new7/26 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -25546,10 +25546,10 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1(refalrts::VM 
   if( ! context[19] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[19], context[20]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 13
-  // closed e.new#4 as range 17
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 13
+  // closed e.new4 as range 17
   if( ! refalrts::svar_left( context[21], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[22] = 0;
@@ -25558,13 +25558,13 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1(refalrts::VM 
   if( ! context[24] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[24], context[25]);
-  // closed e.new#6 as range 22
+  // closed e.new6 as range 22
   if( ! refalrts::svar_left( context[26], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.ReadyRASL#1/27 )/8 (/11 e.Labels-B#2/29 )/12 (/15 e.Labels-E#2/31 )/16 (/19 e.UnscannedRASL#1/33 )/20 s.RelativeJump#3/21 (/24 e.FuncName#1/35 )/25 '<'/26 >/1
+    // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.ReadyRASL/27 )/8 (/11 e.Labels-B/29 )/12 (/15 e.Labels-E/31 )/16 (/19 e.UnscannedRASL/33 )/20 s.RelativeJump/21 (/24 e.FuncName/35 )/25 '<'/26 >/1
     context[27] = context[5];
     context[28] = context[6];
     context[29] = context[9];
@@ -25577,21 +25577,21 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1(refalrts::VM 
     context[36] = context[23];
     if( ! refalrts::char_term( '<', context[26] ) )
       continue;
-    // closed e.ReadyRASL#1 as range 27
-    // closed e.Labels-B#2 as range 29
-    // closed e.Labels-E#2 as range 31
-    // closed e.UnscannedRASL#1 as range 33
-    // closed e.FuncName#1 as range 35
-    //DEBUG: s.RelativeJump#3: 21
-    //DEBUG: e.ReadyRASL#1: 27
-    //DEBUG: e.Labels-B#2: 29
-    //DEBUG: e.Labels-E#2: 31
-    //DEBUG: e.UnscannedRASL#1: 33
-    //DEBUG: e.FuncName#1: 35
+    // closed e.ReadyRASL as range 27
+    // closed e.Labels-B as range 29
+    // closed e.Labels-E as range 31
+    // closed e.UnscannedRASL as range 33
+    // closed e.FuncName as range 35
+    //DEBUG: s.RelativeJump: 21
+    //DEBUG: e.ReadyRASL: 27
+    //DEBUG: e.Labels-B: 29
+    //DEBUG: e.Labels-E: 31
+    //DEBUG: e.UnscannedRASL: 33
+    //DEBUG: e.FuncName: 35
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.FuncName#1/35 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1:1$1=1/4 AsIs: (/7 AsIs: e.ReadyRASL#1/27 AsIs: )/8 AsIs: (/11 AsIs: e.Labels-B#2/29 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E#2/31 AsIs: )/16 AsIs: (/19 AsIs: e.UnscannedRASL#1/33 AsIs: )/20 } </37 Tile{ HalfReuse: & Divmod/24 } Tile{ AsIs: s.RelativeJump#3/21 } Tile{ HalfReuse: 256/25 HalfReuse: >/26 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} e.FuncName/35 {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1:1$1=1/4 AsIs: (/7 AsIs: e.ReadyRASL/27 AsIs: )/8 AsIs: (/11 AsIs: e.Labels-B/29 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E/31 AsIs: )/16 AsIs: (/19 AsIs: e.UnscannedRASL/33 AsIs: )/20 } </37 Tile{ HalfReuse: & Divmod/24 } Tile{ AsIs: s.RelativeJump/21 } Tile{ HalfReuse: 256/25 HalfReuse: >/26 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[37]);
     refalrts::update_name(context[4], functions[efunc_gen_ResolveLabeledDestinations_S1B1S1A1]);
     refalrts::reinit_name(context[24], functions[efunc_Divmod]);
@@ -25616,23 +25616,23 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1B1(refalrts::VM 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.ReadyRASL#1/5 )/8 (/11 e.Labels-B#2/9 )/12 (/15 e.Labels-E#2/13 )/16 (/19 e.UnscannedRASL#1/17 )/20 s.RelativeJump#3/21 (/24 e.FuncName#1/22 )/25 s.Other#4/26 >/1
-  // closed e.ReadyRASL#1 as range 5
-  // closed e.Labels-B#2 as range 9
-  // closed e.Labels-E#2 as range 13
-  // closed e.UnscannedRASL#1 as range 17
-  // closed e.FuncName#1 as range 22
-  //DEBUG: s.RelativeJump#3: 21
-  //DEBUG: s.Other#4: 26
-  //DEBUG: e.ReadyRASL#1: 5
-  //DEBUG: e.Labels-B#2: 9
-  //DEBUG: e.Labels-E#2: 13
-  //DEBUG: e.UnscannedRASL#1: 17
-  //DEBUG: e.FuncName#1: 22
+  // </0 & ResolveLabeledDestinations$1:1/4 (/7 e.ReadyRASL/5 )/8 (/11 e.Labels-B/9 )/12 (/15 e.Labels-E/13 )/16 (/19 e.UnscannedRASL/17 )/20 s.RelativeJump/21 (/24 e.FuncName/22 )/25 s.Other/26 >/1
+  // closed e.ReadyRASL as range 5
+  // closed e.Labels-B as range 9
+  // closed e.Labels-E as range 13
+  // closed e.UnscannedRASL as range 17
+  // closed e.FuncName as range 22
+  //DEBUG: s.RelativeJump: 21
+  //DEBUG: s.Other: 26
+  //DEBUG: e.ReadyRASL: 5
+  //DEBUG: e.Labels-B: 9
+  //DEBUG: e.Labels-E: 13
+  //DEBUG: e.UnscannedRASL: 17
+  //DEBUG: e.FuncName: 22
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} e.ReadyRASL#1/5 {REMOVED TILE} e.Labels-B#2/9 {REMOVED TILE} e.Labels-E#2/13 {REMOVED TILE} e.UnscannedRASL#1/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Other#4/26 {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintErr/4 HalfReuse: 'C'/7 } Tile{ HalfReuse: 'o'/12 HalfReuse: 'm'/15 } 'p'/27 Tile{ HalfReuse: 'i'/16 HalfReuse: 'l'/19 } Tile{ HalfReuse: 'a'/8 HalfReuse: 't'/11 } Tile{ HalfReuse: 'i'/25 }"on failure in the function "/28 </30 & DisplayName/31 Tile{ AsIs: e.FuncName#1/22 } >/32 ':'/33 >/34 </35 & PrintErr/36"  this function tries to jump over "/37 </39 Tile{ HalfReuse: & Symb/20 AsIs: s.RelativeJump#3/21 HalfReuse: >/24 }" commands, but the maximum jump length is 65535."/40 >/42 </43 & PrintErr/44"  Compilation aborted."/45 >/47 </48 & Exit/49 1/50 Tile{ AsIs: >/1 ]] }
+  //TRASH: {REMOVED TILE} e.ReadyRASL/5 {REMOVED TILE} e.Labels-B/9 {REMOVED TILE} e.Labels-E/13 {REMOVED TILE} e.UnscannedRASL/17 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Other/26 {REMOVED TILE}
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PrintErr/4 HalfReuse: 'C'/7 } Tile{ HalfReuse: 'o'/12 HalfReuse: 'm'/15 } 'p'/27 Tile{ HalfReuse: 'i'/16 HalfReuse: 'l'/19 } Tile{ HalfReuse: 'a'/8 HalfReuse: 't'/11 } Tile{ HalfReuse: 'i'/25 }"on failure in the function "/28 </30 & DisplayName/31 Tile{ AsIs: e.FuncName/22 } >/32 ':'/33 >/34 </35 & PrintErr/36"  this function tries to jump over "/37 </39 Tile{ HalfReuse: & Symb/20 AsIs: s.RelativeJump/21 HalfReuse: >/24 }" commands, but the maximum jump length is 65535."/40 >/42 </43 & PrintErr/44"  Compilation aborted."/45 >/47 </48 & Exit/49 1/50 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_char(vm, context[27], 'p');
   refalrts::alloc_chars(vm, context[28], context[29], "on failure in the function ", 27);
   refalrts::alloc_open_call(vm, context[30]);
@@ -25705,7 +25705,7 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1A2(refalrts::VM 
   // issue here memory for vars with 31 elems
   refalrts::Iter context[31];
   refalrts::zeros( context, 31 );
-  // </0 & ResolveLabeledDestinations$1=2/4 (/7 e.ReadyRASL#1/5 )/8 (/11 e.Labels-B#2/9 )/12 (/15 e.Labels-E#2/13 )/16 (/19 e.UnscannedRASL#1/17 )/20 (/23 e.FuncName#1/21 )/24 s.RelativeJump#3/25 >/1
+  // </0 & ResolveLabeledDestinations$1=2/4 (/7 e.ReadyRASL/5 )/8 (/11 e.Labels-B/9 )/12 (/15 e.Labels-E/13 )/16 (/19 e.UnscannedRASL/17 )/20 (/23 e.FuncName/21 )/24 s.RelativeJump/25 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -25741,25 +25741,25 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1A2(refalrts::VM 
   if( ! context[23] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[23], context[24]);
-  // closed e.ReadyRASL#1 as range 5
-  // closed e.Labels-B#2 as range 9
-  // closed e.Labels-E#2 as range 13
-  // closed e.UnscannedRASL#1 as range 17
-  // closed e.FuncName#1 as range 21
+  // closed e.ReadyRASL as range 5
+  // closed e.Labels-B as range 9
+  // closed e.Labels-E as range 13
+  // closed e.UnscannedRASL as range 17
+  // closed e.FuncName as range 21
   if( ! refalrts::svar_left( context[25], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  //DEBUG: e.ReadyRASL#1: 5
-  //DEBUG: e.Labels-B#2: 9
-  //DEBUG: e.Labels-E#2: 13
-  //DEBUG: e.UnscannedRASL#1: 17
-  //DEBUG: e.FuncName#1: 21
-  //DEBUG: s.RelativeJump#3: 25
+  //DEBUG: e.ReadyRASL: 5
+  //DEBUG: e.Labels-B: 9
+  //DEBUG: e.Labels-E: 13
+  //DEBUG: e.UnscannedRASL: 17
+  //DEBUG: e.FuncName: 21
+  //DEBUG: s.RelativeJump: 25
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1:1/4 AsIs: (/7 AsIs: e.ReadyRASL#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Labels-B#2/9 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E#2/13 AsIs: )/16 AsIs: (/19 AsIs: e.UnscannedRASL#1/17 AsIs: )/20 HalfReuse: s.RelativeJump3 #25/23 } (/26 Tile{ AsIs: e.FuncName#1/21 } )/27 </28 Tile{ HalfReuse: & TermCompare/24 AsIs: s.RelativeJump#3/25 } 65536/29 >/30 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1:1/4 AsIs: (/7 AsIs: e.ReadyRASL/5 AsIs: )/8 AsIs: (/11 AsIs: e.Labels-B/9 AsIs: )/12 AsIs: (/15 AsIs: e.Labels-E/13 AsIs: )/16 AsIs: (/19 AsIs: e.UnscannedRASL/17 AsIs: )/20 HalfReuse: s.RelativeJump25 /23 } (/26 Tile{ AsIs: e.FuncName/21 } )/27 </28 Tile{ HalfReuse: & TermCompare/24 AsIs: s.RelativeJump/25 } 65536/29 >/30 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_open_bracket(vm, context[26]);
   refalrts::alloc_close_bracket(vm, context[27]);
   refalrts::alloc_open_call(vm, context[28]);
@@ -25801,7 +25801,7 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1A1(refalrts::VM 
   // issue here memory for vars with 35 elems
   refalrts::Iter context[35];
   refalrts::zeros( context, 35 );
-  // </0 & ResolveLabeledDestinations$1=1/4 s.DestinationLabel#1/5 (/8 e.ReadyRASL#1/6 )/9 (/12 e.UnscannedRASL#1/10 )/13 (/16 e.FuncName#1/14 )/17 s.CommandOffset#1/18 e.Labels-B#2/19 (/25 s.DestinationLabel#1/27 s.DestinationOffset#2/28 )/26 e.Labels-E#2/21 >/1
+  // </0 & ResolveLabeledDestinations$1=1/4 s.DestinationLabel/5 (/8 e.ReadyRASL/6 )/9 (/12 e.UnscannedRASL/10 )/13 (/16 e.FuncName/14 )/17 s.CommandOffset/18 e.Labels-B/19 (/25 s.DestinationLabel/27 s.DestinationOffset/28 )/26 e.Labels-E/21 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
@@ -25827,9 +25827,9 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1A1(refalrts::VM 
   if( ! context[16] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[16], context[17]);
-  // closed e.ReadyRASL#1 as range 6
-  // closed e.UnscannedRASL#1 as range 10
-  // closed e.FuncName#1 as range 14
+  // closed e.ReadyRASL as range 6
+  // closed e.UnscannedRASL as range 10
+  // closed e.FuncName as range 14
   if( ! refalrts::svar_left( context[18], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   context[19] = 0;
@@ -25846,23 +25846,23 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_S1A1(refalrts::VM 
     refalrts::bracket_pointers(context[25], context[26]);
     if( ! refalrts::repeated_stvar_left( vm, context[27], context[5], context[23], context[24] ) )
       continue;
-    // closed e.Labels-E#2 as range 21
+    // closed e.Labels-E as range 21
     if( ! refalrts::svar_left( context[28], context[23], context[24] ) )
       continue;
     if( ! refalrts::empty_seq( context[23], context[24] ) )
       continue;
-    //DEBUG: s.DestinationLabel#1: 5
-    //DEBUG: e.ReadyRASL#1: 6
-    //DEBUG: e.UnscannedRASL#1: 10
-    //DEBUG: e.FuncName#1: 14
-    //DEBUG: s.CommandOffset#1: 18
-    //DEBUG: e.Labels-B#2: 19
-    //DEBUG: e.Labels-E#2: 21
-    //DEBUG: s.DestinationOffset#2: 28
+    //DEBUG: s.DestinationLabel: 5
+    //DEBUG: e.ReadyRASL: 6
+    //DEBUG: e.UnscannedRASL: 10
+    //DEBUG: e.FuncName: 14
+    //DEBUG: s.CommandOffset: 18
+    //DEBUG: e.Labels-B: 19
+    //DEBUG: e.Labels-E: 21
+    //DEBUG: s.DestinationOffset: 28
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.DestinationLabel#1/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CommandOffset#1/18 {REMOVED TILE} {REMOVED TILE} s.DestinationLabel#1/27 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=2/4 } (/29 Tile{ AsIs: e.ReadyRASL#1/6 } )/30 Tile{ AsIs: (/8 } Tile{ AsIs: e.Labels-B#2/19 } )/31 Tile{ AsIs: (/25 } Tile{ AsIs: e.Labels-E#2/21 } Tile{ AsIs: )/9 AsIs: (/12 AsIs: e.UnscannedRASL#1/10 AsIs: )/13 AsIs: (/16 AsIs: e.FuncName#1/14 AsIs: )/17 } </32 & Sub/33 Tile{ AsIs: s.DestinationOffset#2/28 HalfReuse: s.CommandOffset1 #18/26 } >/34 Tile{ AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} s.DestinationLabel/5 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.CommandOffset/18 {REMOVED TILE} {REMOVED TILE} s.DestinationLabel/27 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=2/4 } (/29 Tile{ AsIs: e.ReadyRASL/6 } )/30 Tile{ AsIs: (/8 } Tile{ AsIs: e.Labels-B/19 } )/31 Tile{ AsIs: (/25 } Tile{ AsIs: e.Labels-E/21 } Tile{ AsIs: )/9 AsIs: (/12 AsIs: e.UnscannedRASL/10 AsIs: )/13 AsIs: (/16 AsIs: e.FuncName/14 AsIs: )/17 } </32 & Sub/33 Tile{ AsIs: s.DestinationOffset/28 HalfReuse: s.CommandOffset18 /26 } >/34 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[29]);
     refalrts::alloc_close_bracket(vm, context[30]);
     refalrts::alloc_close_bracket(vm, context[31]);
@@ -25913,29 +25913,29 @@ static refalrts::FnResult func_ResolveLabeledDestinations(refalrts::VM *vm, refa
   // issue here memory for vars with 26 elems
   refalrts::Iter context[26];
   refalrts::zeros( context, 26 );
-  // </0 & ResolveLabeledDestinations/4 e.new#0/2 >/1
+  // </0 & ResolveLabeledDestinations/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & ResolveLabeledDestinations/4 (/7 e.new#1/5 )/8 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & ResolveLabeledDestinations/4 (/7 e.new1/5 )/8 e.new2/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 2
   do {
-    // </0 & ResolveLabeledDestinations/4 (/7 e.Labels#1/9 )/8 e.ReadyRASL#1/13 (/19 # CmdOnFailGoTo/21 s.CommandOffset#1/22 s.DestinationLabel#1/23 e.FuncName#1/17 )/20 e.UnscannedRASL#1/15 >/1
+    // </0 & ResolveLabeledDestinations/4 (/7 e.Labels/9 )/8 e.ReadyRASL/13 (/19 # CmdOnFailGoTo/21 s.CommandOffset/22 s.DestinationLabel/23 e.FuncName/17 )/20 e.UnscannedRASL/15 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
     context[12] = context[3];
-    // closed e.Labels#1 as range 9
+    // closed e.Labels as range 9
     context[13] = 0;
     context[14] = 0;
     refalrts::start_e_loop(vm);
@@ -25951,22 +25951,22 @@ static refalrts::FnResult func_ResolveLabeledDestinations(refalrts::VM *vm, refa
       context[21] = refalrts::ident_left( identifiers[ident_CmdOnFailGoTo], context[17], context[18] );
       if( ! context[21] )
         continue;
-      // closed e.UnscannedRASL#1 as range 15
+      // closed e.UnscannedRASL as range 15
       if( ! refalrts::svar_left( context[22], context[17], context[18] ) )
         continue;
       if( ! refalrts::svar_left( context[23], context[17], context[18] ) )
         continue;
-      // closed e.FuncName#1 as range 17
-      //DEBUG: e.Labels#1: 9
-      //DEBUG: e.ReadyRASL#1: 13
-      //DEBUG: e.UnscannedRASL#1: 15
-      //DEBUG: s.CommandOffset#1: 22
-      //DEBUG: s.DestinationLabel#1: 23
-      //DEBUG: e.FuncName#1: 17
+      // closed e.FuncName as range 17
+      //DEBUG: e.Labels: 9
+      //DEBUG: e.ReadyRASL: 13
+      //DEBUG: e.UnscannedRASL: 15
+      //DEBUG: s.CommandOffset: 22
+      //DEBUG: s.DestinationLabel: 23
+      //DEBUG: e.FuncName: 17
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.DestinationLabel#1/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=1/4 HalfReuse: s.DestinationLabel1 #23/7 } Tile{ HalfReuse: (/8 AsIs: e.ReadyRASL#1/13 HalfReuse: )/19 HalfReuse: (/21 } Tile{ AsIs: e.UnscannedRASL#1/15 } )/24 (/25 Tile{ AsIs: e.FuncName#1/17 } Tile{ AsIs: )/20 } Tile{ AsIs: s.CommandOffset#1/22 } Tile{ AsIs: e.Labels#1/9 } Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.DestinationLabel/23 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=1/4 HalfReuse: s.DestinationLabel23 /7 } Tile{ HalfReuse: (/8 AsIs: e.ReadyRASL/13 HalfReuse: )/19 HalfReuse: (/21 } Tile{ AsIs: e.UnscannedRASL/15 } )/24 (/25 Tile{ AsIs: e.FuncName/17 } Tile{ AsIs: )/20 } Tile{ AsIs: s.CommandOffset/22 } Tile{ AsIs: e.Labels/9 } Tile{ AsIs: >/1 ]] }
       refalrts::alloc_close_bracket(vm, context[24]);
       refalrts::alloc_open_bracket(vm, context[25]);
       refalrts::update_name(context[4], functions[efunc_gen_ResolveLabeledDestinations_S1A1]);
@@ -25995,15 +25995,15 @@ static refalrts::FnResult func_ResolveLabeledDestinations(refalrts::VM *vm, refa
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & ResolveLabeledDestinations/4 (/7 e.Labels#1/5 )/8 e.ReadyRASL#1/2 >/1
-  // closed e.Labels#1 as range 5
-  // closed e.ReadyRASL#1 as range 2
-  //DEBUG: e.Labels#1: 5
-  //DEBUG: e.ReadyRASL#1: 2
+  // </0 & ResolveLabeledDestinations/4 (/7 e.Labels/5 )/8 e.ReadyRASL/2 >/1
+  // closed e.Labels as range 5
+  // closed e.ReadyRASL as range 2
+  //DEBUG: e.Labels: 5
+  //DEBUG: e.ReadyRASL: 2
 
   refalrts::reset_allocator(vm);
-  //TRASH: {REMOVED TILE} </0 & ResolveLabeledDestinations/4 (/7 e.Labels#1/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
-  //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL#1/2 } Tile{ ]] }
+  //TRASH: {REMOVED TILE} </0 & ResolveLabeledDestinations/4 (/7 e.Labels/5 )/8 {REMOVED TILE} >/1 {REMOVED TILE}
+  //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL/2 } Tile{ ]] }
   refalrts::Iter trash_prev = arg_begin->prev;
   refalrts::use(trash_prev);
   refalrts::Iter res = arg_end->next;
@@ -26071,18 +26071,18 @@ static refalrts::FnResult func_PutBlockReference(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & PutBlockReference/4 e.Reference#1/2 >/1
+  // </0 & PutBlockReference/4 e.Reference/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.Reference#1 as range 2
-  //DEBUG: e.Reference#1: 2
+  // closed e.Reference as range 2
+  //DEBUG: e.Reference: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & PutBlock@10/6 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Reference#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & PutBlock@10/6 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Reference/2 AsIs: >/1 } >/7 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_PutBlock_Z10]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -26113,18 +26113,18 @@ static refalrts::FnResult func_PutBlockIncorporated(refalrts::VM *vm, refalrts::
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & PutBlockIncorporated/4 e.LibName#1/2 >/1
+  // </0 & PutBlockIncorporated/4 e.LibName/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.LibName#1 as range 2
-  //DEBUG: e.LibName#1: 2
+  // closed e.LibName as range 2
+  //DEBUG: e.LibName: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 & PutBlock@11/6 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.LibName#1/2 AsIs: >/1 } >/7 Tile{ ]] }
+  //RESULT: Tile{ [[ } </5 & PutBlock@11/6 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.LibName/2 AsIs: >/1 } >/7 Tile{ ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::alloc_name(vm, context[6], functions[efunc_gen_PutBlock_Z11]);
   refalrts::alloc_close_call(vm, context[7]);
@@ -26155,14 +26155,14 @@ static refalrts::FnResult func_gen_Apply_Z2(refalrts::VM *vm, refalrts::Iter arg
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & Apply@2/4 e.new#0/2 >/1
+  // </0 & Apply@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Apply@2/4 t.new#1/5 t.new#2/7 t.new#3/9 >/1
+  // closed e.new as range 2
+  // </0 & Apply@2/4 t.new1/5 t.new2/7 t.new3/9 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
@@ -26175,16 +26175,16 @@ static refalrts::FnResult func_gen_Apply_Z2(refalrts::VM *vm, refalrts::Iter arg
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   do {
-    // </0 & Apply@2/4 s.Fn#1/5 t.Acc#1/7 t.Next#1/9 >/1
+    // </0 & Apply@2/4 s.Fn/5 t.Acc/7 t.Next/9 >/1
     if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
-    //DEBUG: t.Acc#1: 7
-    //DEBUG: t.Next#1: 9
-    //DEBUG: s.Fn#1: 5
+    //DEBUG: t.Acc: 7
+    //DEBUG: t.Next: 9
+    //DEBUG: s.Fn: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn#1/5 AsIs: t.Acc#1/7 AsIs: t.Next#1/9 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn/5 AsIs: t.Acc/7 AsIs: t.Next/9 HalfReuse: & $table/1 } >/11 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
     refalrts::reinit_name(context[1], functions[efunc_d_table]);
@@ -26200,7 +26200,7 @@ static refalrts::FnResult func_gen_Apply_Z2(refalrts::VM *vm, refalrts::Iter arg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Apply@2/4 (/5 t.Closure#1/13 e.Bounded#1/11 )/6 t.Acc#1/7 t.Next#1/9 >/1
+    // </0 & Apply@2/4 (/5 t.Closure/13 e.Bounded/11 )/6 t.Acc/7 t.Next/9 >/1
     context[11] = 0;
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[5] ) )
@@ -26208,15 +26208,15 @@ static refalrts::FnResult func_gen_Apply_Z2(refalrts::VM *vm, refalrts::Iter arg
     context[14] = refalrts::tvar_left( context[13], context[11], context[12] );
     if( ! context[14] )
       continue;
-    // closed e.Bounded#1 as range 11
-    //DEBUG: t.Acc#1: 7
-    //DEBUG: t.Next#1: 9
-    //DEBUG: t.Closure#1: 13
-    //DEBUG: e.Bounded#1: 11
+    // closed e.Bounded as range 11
+    //DEBUG: t.Acc: 7
+    //DEBUG: t.Next: 9
+    //DEBUG: t.Closure: 13
+    //DEBUG: e.Bounded: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@4/4 } Tile{ AsIs: t.Closure#1/13 } Tile{ AsIs: e.Bounded#1/11 } Tile{ AsIs: t.Acc#1/7 AsIs: t.Next#1/9 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@4/4 } Tile{ AsIs: t.Closure/13 } Tile{ AsIs: e.Bounded/11 } Tile{ AsIs: t.Acc/7 AsIs: t.Next/9 AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_gen_Apply_Z4]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -26230,14 +26230,14 @@ static refalrts::FnResult func_gen_Apply_Z2(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Apply@2/4 t.dyn#0/5 t.Acc#1/7 t.Next#1/9 >/1
-  //DEBUG: t.dyn#0: 5
-  //DEBUG: t.Acc#1: 7
-  //DEBUG: t.Next#1: 9
+  // </0 & Apply@2/4 t.dyn0/5 t.Acc/7 t.Next/9 >/1
+  //DEBUG: t.dyn0: 5
+  //DEBUG: t.Acc: 7
+  //DEBUG: t.Next: 9
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn#0/5 AsIs: t.Acc#1/7 AsIs: t.Next#1/9 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn0/5 AsIs: t.Acc/7 AsIs: t.Next/9 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Apply_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -26256,15 +26256,15 @@ static refalrts::FnResult func_gen_PutWordLE_Z1(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 10 elems
   refalrts::Iter context[10];
   refalrts::zeros( context, 10 );
-  // </0 & PutWordLE@1/4 e.new#0/2 >/1
+  // </0 & PutWordLE@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutWordLE@1/4 s.1#1/7 s.2#1/8 s.3#1/9 >/1
+    // </0 & PutWordLE@1/4 s.1/7 s.2/8 s.3/9 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
@@ -26275,13 +26275,13 @@ static refalrts::FnResult func_gen_PutWordLE_Z1(refalrts::VM *vm, refalrts::Iter
       continue;
     if( ! refalrts::empty_seq( context[5], context[6] ) )
       continue;
-    //DEBUG: s.1#1: 7
-    //DEBUG: s.2#1: 8
-    //DEBUG: s.3#1: 9
+    //DEBUG: s.1: 7
+    //DEBUG: s.2: 8
+    //DEBUG: s.3: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & PutWordLE@1/4 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: s.1#1/7 AsIs: s.2#1/8 AsIs: s.3#1/9 HalfReuse: 0/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: s.1/7 AsIs: s.2/8 AsIs: s.3/9 HalfReuse: 0/1 ]] }
     refalrts::reinit_number(context[1], 0UL);
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
@@ -26292,15 +26292,15 @@ static refalrts::FnResult func_gen_PutWordLE_Z1(refalrts::VM *vm, refalrts::Iter
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & PutWordLE@1/4 e.Bytes#1/5 >/1
+    // </0 & PutWordLE@1/4 e.Bytes/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Bytes#1 as range 5
-    //DEBUG: e.Bytes#1: 5
+    // closed e.Bytes as range 5
+    //DEBUG: e.Bytes: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & PutWordLE@1/4 AsIs: e.Bytes#1/5 HalfReuse: 0/1 } >/7 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & PutWordLE@1/4 AsIs: e.Bytes/5 HalfReuse: 0/1 } >/7 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[7]);
     refalrts::reinit_number(context[1], 0UL);
     refalrts::push_stack( vm, context[7] );
@@ -26314,13 +26314,13 @@ static refalrts::FnResult func_gen_PutWordLE_Z1(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutWordLE@1/4 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutWordLE@1/4 e.dyn0/2 >/1
+  // closed e.dyn0 as range 2
+  //DEBUG: e.dyn0: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE@0/4 AsIs: e.dyn#0/2 HalfReuse: 0/1 } >/5 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE@0/4 AsIs: e.dyn0/2 HalfReuse: 0/1 } >/5 Tile{ ]] }
   refalrts::alloc_close_call(vm, context[5]);
   refalrts::update_name(context[4], functions[efunc_gen_PutWordLE_Z0]);
   refalrts::reinit_number(context[1], 0UL);
@@ -26346,37 +26346,37 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 14 elems
   refalrts::Iter context[14];
   refalrts::zeros( context, 14 );
-  // </0 & Map@1/4 e.new#0/2 >/1
+  // </0 & Map@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@1/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@1/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Map@1/4 (/7 e.#0/11 )/8 e.Tail#1/9 >/1
+      // </0 & Map@1/4 (/7 e./11 )/8 e.Tail/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
       context[12] = 0;
       if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
         continue;
-      // closed e.#0 as range 11
-      // closed e.Tail#1 as range 9
-      //DEBUG: e.#0: 11
-      //DEBUG: e.Tail#1: 9
+      // closed e. as range 11
+      // closed e.Tail as range 9
+      //DEBUG: e.: 11
+      //DEBUG: e.Tail: 9
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} & Map@1/4 (/7 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: e.#0/11 } Tile{ AsIs: </0 } Tile{ HalfReuse: & Map@1/8 AsIs: e.Tail#1/9 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: e./11 } Tile{ AsIs: </0 } Tile{ HalfReuse: & Map@1/8 AsIs: e.Tail/9 AsIs: >/1 ]] }
       refalrts::reinit_name(context[8], functions[efunc_gen_Map_Z1]);
       refalrts::push_stack( vm, context[1] );
       refalrts::push_stack( vm, context[0] );
@@ -26390,16 +26390,16 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@1/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@1/4 t.Next/7 e.Tail/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnBracket*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@1/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & UnBracket*1/4 AsIs: t.Next/7 } >/11 </12 & Map@1/13 Tile{ AsIs: e.Tail/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
     refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z1]);
@@ -26434,13 +26434,13 @@ static refalrts::FnResult func_gen_Map_Z1(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@1/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@1/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & UnBracket@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & UnBracket@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_UnBracket_Z0]);
@@ -26466,14 +26466,14 @@ static refalrts::FnResult func_gen_PutBlock_Z1(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 85 elems
   refalrts::Iter context[85];
   refalrts::zeros( context, 85 );
-  // </0 & PutBlock@1/4 e.new#0/2 >/1
+  // </0 & PutBlock@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutBlock@1/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 (/15 e.new#3/13 )/16 (/19 e.new#4/17 )/20 (/23 e.new#5/21 )/24 (/27 e.new#6/25 )/28 (/31 e.new#7/29 )/32 (/35 e.new#8/33 )/36 (/39 e.new#9/37 )/40 (/43 e.new#10/41 )/44 (/47 e.new#11/45 )/48 (/51 e.new#12/49 )/52 (/55 e.new#13/53 )/56 e.new#14/2 >/1
+  // closed e.new as range 2
+  // </0 & PutBlock@1/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 (/15 e.new3/13 )/16 (/19 e.new4/17 )/20 (/23 e.new5/21 )/24 (/27 e.new6/25 )/28 (/31 e.new7/29 )/32 (/35 e.new8/33 )/36 (/39 e.new9/37 )/40 (/43 e.new10/41 )/44 (/47 e.new11/45 )/48 (/51 e.new12/49 )/52 (/55 e.new13/53 )/56 e.new14/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -26552,22 +26552,22 @@ static refalrts::FnResult func_gen_PutBlock_Z1(refalrts::VM *vm, refalrts::Iter 
   if( ! context[55] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[55], context[56]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 13
-  // closed e.new#4 as range 17
-  // closed e.new#5 as range 21
-  // closed e.new#6 as range 25
-  // closed e.new#7 as range 29
-  // closed e.new#8 as range 33
-  // closed e.new#9 as range 37
-  // closed e.new#10 as range 41
-  // closed e.new#11 as range 45
-  // closed e.new#12 as range 49
-  // closed e.new#13 as range 53
-  // closed e.new#14 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 13
+  // closed e.new4 as range 17
+  // closed e.new5 as range 21
+  // closed e.new6 as range 25
+  // closed e.new7 as range 29
+  // closed e.new8 as range 33
+  // closed e.new9 as range 37
+  // closed e.new10 as range 41
+  // closed e.new11 as range 45
+  // closed e.new12 as range 49
+  // closed e.new13 as range 53
+  // closed e.new14 as range 2
   do {
-    // </0 & PutBlock@1/4 (/7 e.Call#0/57 )/8 (/11 e.Call0#0/59 )/12 (/15 e.Call1#0/61 )/16 (/19 e.Call2#0/63 )/20 (/23 e.Call3#0/65 )/24 (/27 e.Call4#0/67 )/28 (/31 e.Call5#0/69 )/32 (/35 e.Call6#0/71 )/36 (/39 e.Call7#0/73 )/40 (/43 e.Call8#0/75 )/44 (/47 e.FuncNamesAsBytes#2/77 )/48 (/51 e.IdentsAsBytes#3/79 )/52 (/55 e.StringsAsBytes#4/81 )/56 e.Call9#0/83 >/1
+    // </0 & PutBlock@1/4 (/7 e.Call/57 )/8 (/11 e.Call0/59 )/12 (/15 e.Call1/61 )/16 (/19 e.Call2/63 )/20 (/23 e.Call3/65 )/24 (/27 e.Call4/67 )/28 (/31 e.Call5/69 )/32 (/35 e.Call6/71 )/36 (/39 e.Call7/73 )/40 (/43 e.Call8/75 )/44 (/47 e.FuncNamesAsBytes/77 )/48 (/51 e.IdentsAsBytes/79 )/52 (/55 e.StringsAsBytes/81 )/56 e.Call9/83 >/1
     context[57] = context[5];
     context[58] = context[6];
     context[59] = context[9];
@@ -26596,38 +26596,38 @@ static refalrts::FnResult func_gen_PutBlock_Z1(refalrts::VM *vm, refalrts::Iter 
     context[82] = context[54];
     context[83] = context[2];
     context[84] = context[3];
-    // closed e.Call#0 as range 57
-    // closed e.Call0#0 as range 59
-    // closed e.Call1#0 as range 61
-    // closed e.Call2#0 as range 63
-    // closed e.Call3#0 as range 65
-    // closed e.Call4#0 as range 67
-    // closed e.Call5#0 as range 69
-    // closed e.Call6#0 as range 71
-    // closed e.Call7#0 as range 73
-    // closed e.Call8#0 as range 75
-    // closed e.FuncNamesAsBytes#2 as range 77
-    // closed e.IdentsAsBytes#3 as range 79
-    // closed e.StringsAsBytes#4 as range 81
-    // closed e.Call9#0 as range 83
-    //DEBUG: e.Call#0: 57
-    //DEBUG: e.Call0#0: 59
-    //DEBUG: e.Call1#0: 61
-    //DEBUG: e.Call2#0: 63
-    //DEBUG: e.Call3#0: 65
-    //DEBUG: e.Call4#0: 67
-    //DEBUG: e.Call5#0: 69
-    //DEBUG: e.Call6#0: 71
-    //DEBUG: e.Call7#0: 73
-    //DEBUG: e.Call8#0: 75
-    //DEBUG: e.FuncNamesAsBytes#2: 77
-    //DEBUG: e.IdentsAsBytes#3: 79
-    //DEBUG: e.StringsAsBytes#4: 81
-    //DEBUG: e.Call9#0: 83
+    // closed e.Call as range 57
+    // closed e.Call0 as range 59
+    // closed e.Call1 as range 61
+    // closed e.Call2 as range 63
+    // closed e.Call3 as range 65
+    // closed e.Call4 as range 67
+    // closed e.Call5 as range 69
+    // closed e.Call6 as range 71
+    // closed e.Call7 as range 73
+    // closed e.Call8 as range 75
+    // closed e.FuncNamesAsBytes as range 77
+    // closed e.IdentsAsBytes as range 79
+    // closed e.StringsAsBytes as range 81
+    // closed e.Call9 as range 83
+    //DEBUG: e.Call: 57
+    //DEBUG: e.Call0: 59
+    //DEBUG: e.Call1: 61
+    //DEBUG: e.Call2: 63
+    //DEBUG: e.Call3: 65
+    //DEBUG: e.Call4: 67
+    //DEBUG: e.Call5: 69
+    //DEBUG: e.Call6: 71
+    //DEBUG: e.Call7: 73
+    //DEBUG: e.Call8: 75
+    //DEBUG: e.FuncNamesAsBytes: 77
+    //DEBUG: e.IdentsAsBytes: 79
+    //DEBUG: e.StringsAsBytes: 81
+    //DEBUG: e.Call9: 83
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} )/24 (/27 {REMOVED TILE} )/28 (/31 {REMOVED TILE} )/32 (/35 {REMOVED TILE} )/36 (/39 {REMOVED TILE} )/40 (/43 {REMOVED TILE} )/44 (/47 {REMOVED TILE} )/48 (/51 {REMOVED TILE} )/52 (/55 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 2/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </20 HalfReuse: & Lenw/23 } Tile{ AsIs: e.Call#0/57 } Tile{ AsIs: e.Call0#0/59 } Tile{ AsIs: e.Call1#0/61 } Tile{ AsIs: e.Call2#0/63 } Tile{ AsIs: e.Call3#0/65 } Tile{ AsIs: e.Call4#0/67 } Tile{ AsIs: e.Call5#0/69 } Tile{ AsIs: e.Call6#0/71 } Tile{ AsIs: e.Call7#0/73 } Tile{ AsIs: e.Call8#0/75 } Tile{ AsIs: e.FuncNamesAsBytes#2/77 } Tile{ AsIs: e.IdentsAsBytes#3/79 } Tile{ AsIs: e.StringsAsBytes#4/81 } Tile{ AsIs: e.Call9#0/83 } Tile{ HalfReuse: >/56 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: 2/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </20 HalfReuse: & Lenw/23 } Tile{ AsIs: e.Call/57 } Tile{ AsIs: e.Call0/59 } Tile{ AsIs: e.Call1/61 } Tile{ AsIs: e.Call2/63 } Tile{ AsIs: e.Call3/65 } Tile{ AsIs: e.Call4/67 } Tile{ AsIs: e.Call5/69 } Tile{ AsIs: e.Call6/71 } Tile{ AsIs: e.Call7/73 } Tile{ AsIs: e.Call8/75 } Tile{ AsIs: e.FuncNamesAsBytes/77 } Tile{ AsIs: e.IdentsAsBytes/79 } Tile{ AsIs: e.StringsAsBytes/81 } Tile{ AsIs: e.Call9/83 } Tile{ HalfReuse: >/56 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_number(context[0], 2UL);
     refalrts::reinit_open_call(context[4]);
     refalrts::reinit_name(context[7], functions[efunc_gen_Fetch_Z2]);
@@ -26662,39 +26662,39 @@ static refalrts::FnResult func_gen_PutBlock_Z1(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@1/4 (/7 e.Call#0/5 )/8 (/11 e.Call0#0/9 )/12 (/15 e.Call1#0/13 )/16 (/19 e.Call2#0/17 )/20 (/23 e.Call3#0/21 )/24 (/27 e.Call4#0/25 )/28 (/31 e.Call5#0/29 )/32 (/35 e.Call6#0/33 )/36 (/39 e.Call7#0/37 )/40 (/43 e.Call8#0/41 )/44 (/47 e.FuncNamesAsBytes#2/45 )/48 (/51 e.IdentsAsBytes#3/49 )/52 (/55 e.StringsAsBytes#4/53 )/56 e.Call9#0/2 >/1
-  // closed e.Call#0 as range 5
-  // closed e.Call0#0 as range 9
-  // closed e.Call1#0 as range 13
-  // closed e.Call2#0 as range 17
-  // closed e.Call3#0 as range 21
-  // closed e.Call4#0 as range 25
-  // closed e.Call5#0 as range 29
-  // closed e.Call6#0 as range 33
-  // closed e.Call7#0 as range 37
-  // closed e.Call8#0 as range 41
-  // closed e.FuncNamesAsBytes#2 as range 45
-  // closed e.IdentsAsBytes#3 as range 49
-  // closed e.StringsAsBytes#4 as range 53
-  // closed e.Call9#0 as range 2
-  //DEBUG: e.Call#0: 5
-  //DEBUG: e.Call0#0: 9
-  //DEBUG: e.Call1#0: 13
-  //DEBUG: e.Call2#0: 17
-  //DEBUG: e.Call3#0: 21
-  //DEBUG: e.Call4#0: 25
-  //DEBUG: e.Call5#0: 29
-  //DEBUG: e.Call6#0: 33
-  //DEBUG: e.Call7#0: 37
-  //DEBUG: e.Call8#0: 41
-  //DEBUG: e.FuncNamesAsBytes#2: 45
-  //DEBUG: e.IdentsAsBytes#3: 49
-  //DEBUG: e.StringsAsBytes#4: 53
-  //DEBUG: e.Call9#0: 2
+  // </0 & PutBlock@1/4 (/7 e.Call/5 )/8 (/11 e.Call0/9 )/12 (/15 e.Call1/13 )/16 (/19 e.Call2/17 )/20 (/23 e.Call3/21 )/24 (/27 e.Call4/25 )/28 (/31 e.Call5/29 )/32 (/35 e.Call6/33 )/36 (/39 e.Call7/37 )/40 (/43 e.Call8/41 )/44 (/47 e.FuncNamesAsBytes/45 )/48 (/51 e.IdentsAsBytes/49 )/52 (/55 e.StringsAsBytes/53 )/56 e.Call9/2 >/1
+  // closed e.Call as range 5
+  // closed e.Call0 as range 9
+  // closed e.Call1 as range 13
+  // closed e.Call2 as range 17
+  // closed e.Call3 as range 21
+  // closed e.Call4 as range 25
+  // closed e.Call5 as range 29
+  // closed e.Call6 as range 33
+  // closed e.Call7 as range 37
+  // closed e.Call8 as range 41
+  // closed e.FuncNamesAsBytes as range 45
+  // closed e.IdentsAsBytes as range 49
+  // closed e.StringsAsBytes as range 53
+  // closed e.Call9 as range 2
+  //DEBUG: e.Call: 5
+  //DEBUG: e.Call0: 9
+  //DEBUG: e.Call1: 13
+  //DEBUG: e.Call2: 17
+  //DEBUG: e.Call3: 21
+  //DEBUG: e.Call4: 25
+  //DEBUG: e.Call5: 29
+  //DEBUG: e.Call6: 33
+  //DEBUG: e.Call7: 37
+  //DEBUG: e.Call8: 41
+  //DEBUG: e.FuncNamesAsBytes: 45
+  //DEBUG: e.IdentsAsBytes: 49
+  //DEBUG: e.StringsAsBytes: 53
+  //DEBUG: e.Call9: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 (/15 {REMOVED TILE} )/16 (/19 {REMOVED TILE} )/20 (/23 {REMOVED TILE} )/24 (/27 {REMOVED TILE} )/28 (/31 {REMOVED TILE} )/32 (/35 {REMOVED TILE} )/36 (/39 {REMOVED TILE} )/40 (/43 {REMOVED TILE} )/44 (/47 {REMOVED TILE} )/48 (/51 {REMOVED TILE} )/52 (/55 {REMOVED TILE} )/56 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # ConstTable/7 } Tile{ AsIs: e.Call#0/5 } Tile{ AsIs: e.Call0#0/9 } Tile{ AsIs: e.Call1#0/13 } Tile{ AsIs: e.Call2#0/17 } Tile{ AsIs: e.Call3#0/21 } Tile{ AsIs: e.Call4#0/25 } Tile{ AsIs: e.Call5#0/29 } Tile{ AsIs: e.Call6#0/33 } Tile{ AsIs: e.Call7#0/37 } Tile{ AsIs: e.Call8#0/41 } Tile{ AsIs: e.FuncNamesAsBytes#2/45 } Tile{ AsIs: e.IdentsAsBytes#3/49 } Tile{ AsIs: e.StringsAsBytes#4/53 } Tile{ AsIs: e.Call9#0/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # ConstTable/7 } Tile{ AsIs: e.Call/5 } Tile{ AsIs: e.Call0/9 } Tile{ AsIs: e.Call1/13 } Tile{ AsIs: e.Call2/17 } Tile{ AsIs: e.Call3/21 } Tile{ AsIs: e.Call4/25 } Tile{ AsIs: e.Call5/29 } Tile{ AsIs: e.Call6/33 } Tile{ AsIs: e.Call7/37 } Tile{ AsIs: e.Call8/41 } Tile{ AsIs: e.FuncNamesAsBytes/45 } Tile{ AsIs: e.IdentsAsBytes/49 } Tile{ AsIs: e.StringsAsBytes/53 } Tile{ AsIs: e.Call9/2 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[7], identifiers[ident_ConstTable]);
   refalrts::push_stack( vm, context[1] );
@@ -26732,14 +26732,14 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 50 elems
   refalrts::Iter context[50];
   refalrts::zeros( context, 50 );
-  // </0 & DoMapAccum@1/4 e.new#0/2 >/1
+  // </0 & DoMapAccum@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoMapAccum@1/4 t.new#1/5 (/9 e.new#2/7 )/10 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & DoMapAccum@1/4 t.new1/5 (/9 e.new2/7 )/10 e.new3/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
@@ -26749,21 +26749,21 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.new#2 as range 7
-  // closed e.new#3 as range 2
+  // closed e.new2 as range 7
+  // closed e.new3 as range 2
   do {
-    // </0 & DoMapAccum@1/4 t.new#4/5 (/9 e.new#7/11 )/10 t.new#5/15 e.new#6/13 >/1
+    // </0 & DoMapAccum@1/4 t.new4/5 (/9 e.new7/11 )/10 t.new5/15 e.new6/13 >/1
     context[11] = context[7];
     context[12] = context[8];
     context[13] = context[2];
     context[14] = context[3];
-    // closed e.new#7 as range 11
+    // closed e.new7 as range 11
     context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
     if( ! context[16] )
       continue;
-    // closed e.new#6 as range 13
+    // closed e.new6 as range 13
     do {
-      // </0 & DoMapAccum@1/4 (/5 e.new#8/21 )/6 (/9 e.new#12/17 )/10 (/15 s.new#9/25 e.new#10/23 )/16 e.new#11/19 >/1
+      // </0 & DoMapAccum@1/4 (/5 e.new8/21 )/6 (/9 e.new12/17 )/10 (/15 s.new9/25 e.new10/23 )/16 e.new11/19 >/1
       context[17] = context[11];
       context[18] = context[12];
       context[19] = context[13];
@@ -26776,14 +26776,14 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       context[24] = 0;
       if( ! refalrts::brackets_term( context[23], context[24], context[15] ) )
         continue;
-      // closed e.new#8 as range 21
-      // closed e.new#12 as range 17
-      // closed e.new#11 as range 19
+      // closed e.new8 as range 21
+      // closed e.new12 as range 17
+      // closed e.new11 as range 19
       if( ! refalrts::svar_left( context[25], context[23], context[24] ) )
         continue;
-      // closed e.new#10 as range 23
+      // closed e.new10 as range 23
       do {
-        // </0 & DoMapAccum@1/4 (/5 e.#0/26 )/6 (/9 e.Scanned#1/28 )/10 (/15 # UnitName/25 e.1#0/30 )/16 e.Tail#1/32 >/1
+        // </0 & DoMapAccum@1/4 (/5 e./26 )/6 (/9 e.Scanned/28 )/10 (/15 # UnitName/25 e.1/30 )/16 e.Tail/32 >/1
         context[26] = context[21];
         context[27] = context[22];
         context[28] = context[17];
@@ -26794,18 +26794,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
         context[33] = context[20];
         if( ! refalrts::ident_term( identifiers[ident_UnitName], context[25] ) )
           continue;
-        // closed e.#0 as range 26
-        // closed e.Scanned#1 as range 28
-        // closed e.1#0 as range 30
-        // closed e.Tail#1 as range 32
-        //DEBUG: e.#0: 26
-        //DEBUG: e.Scanned#1: 28
-        //DEBUG: e.1#0: 30
-        //DEBUG: e.Tail#1: 32
+        // closed e. as range 26
+        // closed e.Scanned as range 28
+        // closed e.1 as range 30
+        // closed e.Tail as range 32
+        //DEBUG: e.: 26
+        //DEBUG: e.Scanned: 28
+        //DEBUG: e.1: 30
+        //DEBUG: e.Tail: 32
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned#1/28 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail#1/32 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e.#0/26 } )/34 </35 & PutBlock@3/36 </37 Tile{ HalfReuse: & Ord/25 AsIs: e.1#0/30 HalfReuse: >/16 } >/38 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned/28 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail/32 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e./26 } )/34 </35 & PutBlock@3/36 </37 Tile{ HalfReuse: & Ord/25 AsIs: e.1/30 HalfReuse: >/16 } >/38 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_bracket(vm, context[34]);
         refalrts::alloc_open_call(vm, context[35]);
         refalrts::alloc_name(vm, context[36], functions[efunc_gen_PutBlock_Z3]);
@@ -26839,7 +26839,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & DoMapAccum@1/4 (/5 e.new#13/26 )/6 (/9 e.new#17/28 )/10 (/15 # CmdEnumDescr/25 s.new#14/34 e.new#15/30 )/16 e.new#16/32 >/1
+      // </0 & DoMapAccum@1/4 (/5 e.new13/26 )/6 (/9 e.new17/28 )/10 (/15 # CmdEnumDescr/25 s.new14/34 e.new15/30 )/16 e.new16/32 >/1
       context[26] = context[21];
       context[27] = context[22];
       context[28] = context[17];
@@ -26850,14 +26850,14 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       context[33] = context[20];
       if( ! refalrts::ident_term( identifiers[ident_CmdEnumDescr], context[25] ) )
         continue;
-      // closed e.new#13 as range 26
-      // closed e.new#17 as range 28
-      // closed e.new#16 as range 32
+      // closed e.new13 as range 26
+      // closed e.new17 as range 28
+      // closed e.new16 as range 32
       if( ! refalrts::svar_left( context[34], context[30], context[31] ) )
         continue;
-      // closed e.new#15 as range 30
+      // closed e.new15 as range 30
       do {
-        // </0 & DoMapAccum@1/4 (/5 e.#0/35 )/6 (/9 e.Scanned#1/37 )/10 (/15 # CmdEnumDescr/25 # GN-Entry/34 e.2#0/39 )/16 e.Tail#1/41 >/1
+        // </0 & DoMapAccum@1/4 (/5 e./35 )/6 (/9 e.Scanned/37 )/10 (/15 # CmdEnumDescr/25 # GN-Entry/34 e.2/39 )/16 e.Tail/41 >/1
         context[35] = context[26];
         context[36] = context[27];
         context[37] = context[28];
@@ -26868,18 +26868,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
         context[42] = context[33];
         if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[34] ) )
           continue;
-        // closed e.#0 as range 35
-        // closed e.Scanned#1 as range 37
-        // closed e.2#0 as range 39
-        // closed e.Tail#1 as range 41
-        //DEBUG: e.#0: 35
-        //DEBUG: e.Scanned#1: 37
-        //DEBUG: e.2#0: 39
-        //DEBUG: e.Tail#1: 41
+        // closed e. as range 35
+        // closed e.Scanned as range 37
+        // closed e.2 as range 39
+        // closed e.Tail as range 41
+        //DEBUG: e.: 35
+        //DEBUG: e.Scanned: 37
+        //DEBUG: e.2: 39
+        //DEBUG: e.Tail: 41
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned#1/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail#1/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e.#0/35 } )/43 </44 & PutBlock@4/45 </46 & Asciiz@1/47 Tile{ HalfReuse: </25 HalfReuse: & DisplayName/34 AsIs: e.2#0/39 HalfReuse: >/16 } >/48 >/49 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e./35 } )/43 </44 & PutBlock@4/45 </46 & Asciiz@1/47 Tile{ HalfReuse: </25 HalfReuse: & DisplayName/34 AsIs: e.2/39 HalfReuse: >/16 } >/48 >/49 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_bracket(vm, context[43]);
         refalrts::alloc_open_call(vm, context[44]);
         refalrts::alloc_name(vm, context[45], functions[efunc_gen_PutBlock_Z4]);
@@ -26919,7 +26919,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & DoMapAccum@1/4 (/5 e.#0/35 )/6 (/9 e.Scanned#1/37 )/10 (/15 # CmdEnumDescr/25 # GN-Local/34 e.2#0/39 )/16 e.Tail#1/41 >/1
+        // </0 & DoMapAccum@1/4 (/5 e./35 )/6 (/9 e.Scanned/37 )/10 (/15 # CmdEnumDescr/25 # GN-Local/34 e.2/39 )/16 e.Tail/41 >/1
         context[35] = context[26];
         context[36] = context[27];
         context[37] = context[28];
@@ -26930,18 +26930,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
         context[42] = context[33];
         if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[34] ) )
           continue;
-        // closed e.#0 as range 35
-        // closed e.Scanned#1 as range 37
-        // closed e.2#0 as range 39
-        // closed e.Tail#1 as range 41
-        //DEBUG: e.#0: 35
-        //DEBUG: e.Scanned#1: 37
-        //DEBUG: e.2#0: 39
-        //DEBUG: e.Tail#1: 41
+        // closed e. as range 35
+        // closed e.Scanned as range 37
+        // closed e.2 as range 39
+        // closed e.Tail as range 41
+        //DEBUG: e.: 35
+        //DEBUG: e.Scanned: 37
+        //DEBUG: e.2: 39
+        //DEBUG: e.Tail: 41
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned#1/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail#1/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e.#0/35 } )/43 </44 & PutBlock@4/45 </46 & Asciiz@2/47 Tile{ HalfReuse: </25 HalfReuse: & DisplayName/34 AsIs: e.2#0/39 HalfReuse: >/16 } >/48 >/49 Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e./35 } )/43 </44 & PutBlock@4/45 </46 & Asciiz@2/47 Tile{ HalfReuse: </25 HalfReuse: & DisplayName/34 AsIs: e.2/39 HalfReuse: >/16 } >/48 >/49 Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_bracket(vm, context[43]);
         refalrts::alloc_open_call(vm, context[44]);
         refalrts::alloc_name(vm, context[45], functions[efunc_gen_PutBlock_Z4]);
@@ -26980,7 +26980,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & DoMapAccum@1/4 (/5 e.#0/35 )/6 (/9 e.Scanned#1/37 )/10 (/15 # CmdEnumDescr/25 s.ScopeClass#1/34 e.2#0/39 )/16 e.Tail#1/41 >/1
+      // </0 & DoMapAccum@1/4 (/5 e./35 )/6 (/9 e.Scanned/37 )/10 (/15 # CmdEnumDescr/25 s.ScopeClass/34 e.2/39 )/16 e.Tail/41 >/1
       context[35] = context[26];
       context[36] = context[27];
       context[37] = context[28];
@@ -26989,19 +26989,19 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
       context[40] = context[31];
       context[41] = context[32];
       context[42] = context[33];
-      // closed e.#0 as range 35
-      // closed e.Scanned#1 as range 37
-      // closed e.2#0 as range 39
-      // closed e.Tail#1 as range 41
-      //DEBUG: s.ScopeClass#1: 34
-      //DEBUG: e.#0: 35
-      //DEBUG: e.Scanned#1: 37
-      //DEBUG: e.2#0: 39
-      //DEBUG: e.Tail#1: 41
+      // closed e. as range 35
+      // closed e.Scanned as range 37
+      // closed e.2 as range 39
+      // closed e.Tail as range 41
+      //DEBUG: s.ScopeClass: 34
+      //DEBUG: e.: 35
+      //DEBUG: e.Scanned: 37
+      //DEBUG: e.2: 39
+      //DEBUG: e.Tail: 41
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned#1/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail#1/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e.#0/35 } )/43 </44 & PutBlock@4/45 </46 Tile{ HalfReuse: & NameWithSign-Bytes*2/25 AsIs: s.ScopeClass#1/34 AsIs: e.2#0/39 HalfReuse: >/16 } >/47 Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 } Tile{ HalfReuse: & DoMapAccum$1=1@1/6 AsIs: (/9 AsIs: e.Scanned/37 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail/41 } Tile{ HalfReuse: )/4 AsIs: (/5 } Tile{ AsIs: e./35 } )/43 </44 & PutBlock@4/45 </46 Tile{ HalfReuse: & NameWithSign-Bytes*2/25 AsIs: s.ScopeClass/34 AsIs: e.2/39 HalfReuse: >/16 } >/47 Tile{ AsIs: >/1 ]] }
       refalrts::alloc_close_bracket(vm, context[43]);
       refalrts::alloc_open_call(vm, context[44]);
       refalrts::alloc_name(vm, context[45], functions[efunc_gen_PutBlock_Z4]);
@@ -27035,21 +27035,21 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & DoMapAccum@1/4 t.Acc#1/5 (/9 e.Scanned#1/17 )/10 t.Next#1/15 e.Tail#1/19 >/1
+    // </0 & DoMapAccum@1/4 t.Acc/5 (/9 e.Scanned/17 )/10 t.Next/15 e.Tail/19 >/1
     context[17] = context[11];
     context[18] = context[12];
     context[19] = context[13];
     context[20] = context[14];
-    // closed e.Scanned#1 as range 17
-    // closed e.Tail#1 as range 19
-    //DEBUG: t.Acc#1: 5
-    //DEBUG: t.Next#1: 15
-    //DEBUG: e.Scanned#1: 17
-    //DEBUG: e.Tail#1: 19
+    // closed e.Scanned as range 17
+    // closed e.Tail as range 19
+    //DEBUG: t.Acc: 5
+    //DEBUG: t.Next: 15
+    //DEBUG: e.Scanned: 17
+    //DEBUG: e.Tail: 19
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@1/4 } Tile{ AsIs: (/9 AsIs: e.Scanned#1/17 AsIs: )/10 } (/21 Tile{ AsIs: e.Tail#1/19 } )/22 </23 & GenCommand-Globals*4/24 Tile{ AsIs: t.Acc#1/5 } Tile{ AsIs: t.Next#1/15 } >/25 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@1/4 } Tile{ AsIs: (/9 AsIs: e.Scanned/17 AsIs: )/10 } (/21 Tile{ AsIs: e.Tail/19 } )/22 </23 & GenCommand-Globals*4/24 Tile{ AsIs: t.Acc/5 } Tile{ AsIs: t.Next/15 } >/25 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[21]);
     refalrts::alloc_close_bracket(vm, context[22]);
     refalrts::alloc_open_call(vm, context[23]);
@@ -27078,18 +27078,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & DoMapAccum@1/4 t.Acc#1/5 (/9 e.Scanned#1/11 )/10 >/1
+    // </0 & DoMapAccum@1/4 t.Acc/5 (/9 e.Scanned/11 )/10 >/1
     context[11] = context[7];
     context[12] = context[8];
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // closed e.Scanned#1 as range 11
-    //DEBUG: t.Acc#1: 5
-    //DEBUG: e.Scanned#1: 11
+    // closed e.Scanned as range 11
+    //DEBUG: t.Acc: 5
+    //DEBUG: e.Scanned: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & DoMapAccum@1/4 {REMOVED TILE} (/9 {REMOVED TILE} )/10 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/5 } Tile{ AsIs: e.Scanned#1/11 } Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc/5 } Tile{ AsIs: e.Scanned/11 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -27100,16 +27100,16 @@ static refalrts::FnResult func_gen_DoMapAccum_Z1(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum@1/4 t.acc#0/5 (/9 e.scanned#0/7 )/10 e.items#0/2 >/1
-  // closed e.scanned#0 as range 7
-  // closed e.items#0 as range 2
-  //DEBUG: t.acc#0: 5
-  //DEBUG: e.scanned#0: 7
-  //DEBUG: e.items#0: 2
+  // </0 & DoMapAccum@1/4 t.acc/5 (/9 e.scanned/7 )/10 e.items/2 >/1
+  // closed e.scanned as range 7
+  // closed e.items as range 2
+  //DEBUG: t.acc: 5
+  //DEBUG: e.scanned: 7
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </11 Tile{ HalfReuse: & DoMapAccum@0/0 Reuse: & GenCommand-Globals@0/4 AsIs: t.acc#0/5 AsIs: (/9 AsIs: e.scanned#0/7 AsIs: )/10 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </11 Tile{ HalfReuse: & DoMapAccum@0/0 Reuse: & GenCommand-Globals@0/4 AsIs: t.acc/5 AsIs: (/9 AsIs: e.scanned/7 AsIs: )/10 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::reinit_name(context[0], functions[efunc_gen_DoMapAccum_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_Globals_Z0]);
@@ -27136,27 +27136,27 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & Map@2/4 e.new#0/2 >/1
+  // </0 & Map@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@2/4 t.Next#1/7 e.Tail#1/5 >/1
+    // </0 & Map@2/4 t.Next/7 e.Tail/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.Tail#1 as range 5
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 5
+    // closed e.Tail as range 5
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-RASL/4 AsIs: t.Next#1/7 } >/9 </10 & Map@2/11 Tile{ AsIs: e.Tail#1/5 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-RASL/4 AsIs: t.Next/7 } >/9 </10 & Map@2/11 Tile{ AsIs: e.Tail/5 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[9]);
     refalrts::alloc_open_call(vm, context[10]);
     refalrts::alloc_name(vm, context[11], functions[efunc_gen_Map_Z2]);
@@ -27191,13 +27191,13 @@ static refalrts::FnResult func_gen_Map_Z2(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@2/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@2/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & GenCommand-RASL@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & GenCommand-RASL@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_RASL_Z0]);
@@ -27223,40 +27223,40 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & Map@3/4 e.new#0/2 >/1
+  // </0 & Map@3/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@3/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@3/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Map@3/4 (/7 s.StringId#2/13 e.0#0/11 )/8 e.Tail#1/9 >/1
+      // </0 & Map@3/4 (/7 s.StringId/13 e.0/11 )/8 e.Tail/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
       context[12] = 0;
       if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
         continue;
-      // closed e.Tail#1 as range 9
+      // closed e.Tail as range 9
       if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
         continue;
-      // closed e.0#0 as range 11
-      //DEBUG: e.Tail#1: 9
-      //DEBUG: s.StringId#2: 13
-      //DEBUG: e.0#0: 11
+      // closed e.0 as range 11
+      //DEBUG: e.Tail: 9
+      //DEBUG: s.StringId: 13
+      //DEBUG: e.0: 11
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.StringId#2/13 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@1/4 HalfReuse: </7 } & Lenw/14 Tile{ AsIs: e.0#0/11 } >/15 >/16 </17 Tile{ HalfReuse: & Map@3/8 AsIs: e.Tail#1/9 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.StringId/13 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@1/4 HalfReuse: </7 } & Lenw/14 Tile{ AsIs: e.0/11 } >/15 >/16 </17 Tile{ HalfReuse: & Map@3/8 AsIs: e.Tail/9 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[14], functions[efunc_Lenw]);
       refalrts::alloc_close_call(vm, context[15]);
       refalrts::alloc_close_call(vm, context[16]);
@@ -27281,16 +27281,16 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@3/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@3/4 t.Next/7 e.Tail/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromStringList\1*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@3/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromStringList\1*1/4 AsIs: t.Next/7 } >/11 </12 & Map@3/13 Tile{ AsIs: e.Tail/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
     refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z3]);
@@ -27325,13 +27325,13 @@ static refalrts::FnResult func_gen_Map_Z3(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@3/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@3/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromStringList\1@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromStringList\1@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_BytesFromStringList_L1Z0]);
@@ -27357,40 +27357,40 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 18 elems
   refalrts::Iter context[18];
   refalrts::zeros( context, 18 );
-  // </0 & Map@4/4 e.new#0/2 >/1
+  // </0 & Map@4/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@4/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@4/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Map@4/4 (/7 s.IdentId#2/13 e.0#0/11 )/8 e.Tail#1/9 >/1
+      // </0 & Map@4/4 (/7 s.IdentId/13 e.0/11 )/8 e.Tail/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
       context[12] = 0;
       if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
         continue;
-      // closed e.Tail#1 as range 9
+      // closed e.Tail as range 9
       if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
         continue;
-      // closed e.0#0 as range 11
-      //DEBUG: e.Tail#1: 9
-      //DEBUG: s.IdentId#2: 13
-      //DEBUG: e.0#0: 11
+      // closed e.0 as range 11
+      //DEBUG: e.Tail: 9
+      //DEBUG: s.IdentId: 13
+      //DEBUG: e.0: 11
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.IdentId#2/13 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz/4 HalfReuse: </7 } & DisplayName/14 Tile{ AsIs: e.0#0/11 } >/15 >/16 </17 Tile{ HalfReuse: & Map@4/8 AsIs: e.Tail#1/9 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.IdentId/13 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz/4 HalfReuse: </7 } & DisplayName/14 Tile{ AsIs: e.0/11 } >/15 >/16 </17 Tile{ HalfReuse: & Map@4/8 AsIs: e.Tail/9 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[14], functions[efunc_DisplayName]);
       refalrts::alloc_close_call(vm, context[15]);
       refalrts::alloc_close_call(vm, context[16]);
@@ -27415,16 +27415,16 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@4/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@4/4 t.Next/7 e.Tail/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromIdentList\1*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@4/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromIdentList\1*1/4 AsIs: t.Next/7 } >/11 </12 & Map@4/13 Tile{ AsIs: e.Tail/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
     refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z4]);
@@ -27459,13 +27459,13 @@ static refalrts::FnResult func_gen_Map_Z4(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@4/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@4/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromIdentList\1@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromIdentList\1@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_BytesFromIdentList_L1Z0]);
@@ -27491,49 +27491,49 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & Map@5/4 e.new#0/2 >/1
+  // </0 & Map@5/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@5/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@5/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Map@5/4 (/7 s.new#3/13 e.new#4/11 )/8 e.new#5/9 >/1
+      // </0 & Map@5/4 (/7 s.new3/13 e.new4/11 )/8 e.new5/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
       context[12] = 0;
       if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
         continue;
-      // closed e.new#5 as range 9
+      // closed e.new5 as range 9
       if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
         continue;
-      // closed e.new#4 as range 11
+      // closed e.new4 as range 11
       do {
-        // </0 & Map@5/4 (/7 # GN-Entry/13 e.0#0/14 )/8 e.Tail#1/16 >/1
+        // </0 & Map@5/4 (/7 # GN-Entry/13 e.0/14 )/8 e.Tail/16 >/1
         context[14] = context[11];
         context[15] = context[12];
         context[16] = context[9];
         context[17] = context[10];
         if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[13] ) )
           continue;
-        // closed e.0#0 as range 14
-        // closed e.Tail#1 as range 16
-        //DEBUG: e.0#0: 14
-        //DEBUG: e.Tail#1: 16
+        // closed e.0 as range 14
+        // closed e.Tail as range 16
+        //DEBUG: e.0: 14
+        //DEBUG: e.Tail: 16
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@1/4 HalfReuse: </7 HalfReuse: & DisplayName/13 AsIs: e.0#0/14 HalfReuse: >/8 } >/18 </19 & Map@5/20 Tile{ AsIs: e.Tail#1/16 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@1/4 HalfReuse: </7 HalfReuse: & DisplayName/13 AsIs: e.0/14 HalfReuse: >/8 } >/18 </19 & Map@5/20 Tile{ AsIs: e.Tail/16 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[18]);
         refalrts::alloc_open_call(vm, context[19]);
         refalrts::alloc_name(vm, context[20], functions[efunc_gen_Map_Z5]);
@@ -27558,21 +27558,21 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
       refalrts::stop_sentence(vm);
 
       do {
-        // </0 & Map@5/4 (/7 # GN-Local/13 e.0#0/14 )/8 e.Tail#1/16 >/1
+        // </0 & Map@5/4 (/7 # GN-Local/13 e.0/14 )/8 e.Tail/16 >/1
         context[14] = context[11];
         context[15] = context[12];
         context[16] = context[9];
         context[17] = context[10];
         if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[13] ) )
           continue;
-        // closed e.0#0 as range 14
-        // closed e.Tail#1 as range 16
-        //DEBUG: e.0#0: 14
-        //DEBUG: e.Tail#1: 16
+        // closed e.0 as range 14
+        // closed e.Tail as range 16
+        //DEBUG: e.0: 14
+        //DEBUG: e.Tail: 16
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@2/4 HalfReuse: </7 HalfReuse: & DisplayName/13 AsIs: e.0#0/14 HalfReuse: >/8 } >/18 </19 & Map@5/20 Tile{ AsIs: e.Tail#1/16 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ AsIs: </0 Reuse: & Asciiz@2/4 HalfReuse: </7 HalfReuse: & DisplayName/13 AsIs: e.0/14 HalfReuse: >/8 } >/18 </19 & Map@5/20 Tile{ AsIs: e.Tail/16 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_close_call(vm, context[18]);
         refalrts::alloc_open_call(vm, context[19]);
         refalrts::alloc_name(vm, context[20], functions[efunc_gen_Map_Z5]);
@@ -27596,20 +27596,20 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & Map@5/4 (/7 s.ScopeClass#2/13 e.0#0/14 )/8 e.Tail#1/16 >/1
+      // </0 & Map@5/4 (/7 s.ScopeClass/13 e.0/14 )/8 e.Tail/16 >/1
       context[14] = context[11];
       context[15] = context[12];
       context[16] = context[9];
       context[17] = context[10];
-      // closed e.0#0 as range 14
-      // closed e.Tail#1 as range 16
-      //DEBUG: s.ScopeClass#2: 13
-      //DEBUG: e.0#0: 14
-      //DEBUG: e.Tail#1: 16
+      // closed e.0 as range 14
+      // closed e.Tail as range 16
+      //DEBUG: s.ScopeClass: 13
+      //DEBUG: e.0: 14
+      //DEBUG: e.Tail: 16
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.ScopeClass#2/13 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & NameWithSign-Bytes*2/4 HalfReuse: s.ScopeClass2 #13/7 } Tile{ AsIs: e.0#0/14 } >/18 </19 Tile{ HalfReuse: & Map@5/8 AsIs: e.Tail#1/16 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.ScopeClass/13 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & NameWithSign-Bytes*2/4 HalfReuse: s.ScopeClass13 /7 } Tile{ AsIs: e.0/14 } >/18 </19 Tile{ HalfReuse: & Map@5/8 AsIs: e.Tail/16 AsIs: >/1 ]] }
       refalrts::alloc_close_call(vm, context[18]);
       refalrts::alloc_open_call(vm, context[19]);
       refalrts::update_name(context[4], functions[efunc_gen_NameWithSignm_Bytes_D2]);
@@ -27629,16 +27629,16 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@5/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@5/4 t.Next/7 e.Tail/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromFunctionList\1*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@5/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromFunctionList\1*1/4 AsIs: t.Next/7 } >/11 </12 & Map@5/13 Tile{ AsIs: e.Tail/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
     refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z5]);
@@ -27673,13 +27673,13 @@ static refalrts::FnResult func_gen_Map_Z5(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@5/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@5/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromFunctionList\1@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & BytesFromFunctionList\1@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_BytesFromFunctionList_L1Z0]);
@@ -27705,23 +27705,23 @@ static refalrts::FnResult func_gen_Asciiz_Z1(refalrts::VM *vm, refalrts::Iter ar
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Asciiz@1/4 e.new#0/2 >/1
+  // </0 & Asciiz@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Asciiz@1/4 e.Call#0/5 >/1
+    // </0 & Asciiz@1/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 42/7 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Call#0/5 AsIs: >/1 } 0/8 Tile{ ]] }
+    //RESULT: Tile{ [[ } 42/7 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Call/5 AsIs: >/1 } 0/8 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 42UL);
     refalrts::alloc_number(vm, context[8], 0UL);
     refalrts::update_name(context[4], functions[efunc_Ord]);
@@ -27738,13 +27738,13 @@ static refalrts::FnResult func_gen_Asciiz_Z1(refalrts::VM *vm, refalrts::Iter ar
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Asciiz@1/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & Asciiz@1/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Asciiz@0/0 HalfReuse: '*'/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Asciiz@0/0 HalfReuse: '*'/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Asciiz_Z0]);
   refalrts::reinit_char(context[4], '*');
@@ -27770,23 +27770,23 @@ static refalrts::FnResult func_gen_Asciiz_Z2(refalrts::VM *vm, refalrts::Iter ar
   // issue here memory for vars with 9 elems
   refalrts::Iter context[9];
   refalrts::zeros( context, 9 );
-  // </0 & Asciiz@2/4 e.new#0/2 >/1
+  // </0 & Asciiz@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Asciiz@2/4 e.Call#0/5 >/1
+    // </0 & Asciiz@2/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 35/7 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Call#0/5 AsIs: >/1 } 0/8 Tile{ ]] }
+    //RESULT: Tile{ [[ } 35/7 Tile{ AsIs: </0 Reuse: & Ord/4 AsIs: e.Call/5 AsIs: >/1 } 0/8 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 35UL);
     refalrts::alloc_number(vm, context[8], 0UL);
     refalrts::update_name(context[4], functions[efunc_Ord]);
@@ -27803,13 +27803,13 @@ static refalrts::FnResult func_gen_Asciiz_Z2(refalrts::VM *vm, refalrts::Iter ar
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Asciiz@2/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & Asciiz@2/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Asciiz@0/0 HalfReuse: '#'/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Asciiz@0/0 HalfReuse: '#'/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Asciiz_Z0]);
   refalrts::reinit_char(context[4], '#');
@@ -27835,26 +27835,26 @@ static refalrts::FnResult func_gen_Fetch_Z1(refalrts::VM *vm, refalrts::Iter arg
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & Fetch@1/4 e.new#0/2 >/1
+  // </0 & Fetch@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Fetch@1/4 s.Length#3/7 e.#0/5 >/1
+    // </0 & Fetch@1/4 s.Length/7 e./5 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
       continue;
-    // closed e.#0 as range 5
-    //DEBUG: s.Length#3: 7
-    //DEBUG: e.#0: 5
+    // closed e. as range 5
+    //DEBUG: s.Length: 7
+    //DEBUG: e.: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Length#3/7 } >/8 </9 & Ord/10 Tile{ AsIs: e.#0/5 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Length/7 } >/8 </9 & Ord/10 Tile{ AsIs: e./5 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[8]);
     refalrts::alloc_open_call(vm, context[9]);
     refalrts::alloc_name(vm, context[10], functions[efunc_Ord]);
@@ -27874,15 +27874,15 @@ static refalrts::FnResult func_gen_Fetch_Z1(refalrts::VM *vm, refalrts::Iter arg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Fetch@1/4 e.Argument#1/5 >/1
+    // </0 & Fetch@1/4 e.Argument/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Argument#1 as range 5
-    //DEBUG: e.Argument#1: 5
+    // closed e.Argument as range 5
+    //DEBUG: e.Argument: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromStringList\1\1*1/4 AsIs: e.Argument#1/5 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & BytesFromStringList\1\1*1/4 AsIs: e.Argument/5 AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_gen_BytesFromStringList_L1L1D1]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -27890,13 +27890,13 @@ static refalrts::FnResult func_gen_Fetch_Z1(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Fetch@1/4 e.arg#0/2 >/1
-  // closed e.arg#0 as range 2
-  //DEBUG: e.arg#0: 2
+  // </0 & Fetch@1/4 e.arg/2 >/1
+  // closed e.arg as range 2
+  //DEBUG: e.arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@0/4 AsIs: e.arg#0/2 HalfReuse: & BytesFromStringList\1\1@0/1 } >/5 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@0/4 AsIs: e.arg/2 HalfReuse: & BytesFromStringList\1\1@0/1 } >/5 Tile{ ]] }
   refalrts::alloc_close_call(vm, context[5]);
   refalrts::update_name(context[4], functions[efunc_gen_Fetch_Z0]);
   refalrts::reinit_name(context[1], functions[efunc_gen_BytesFromStringList_L1L1Z0]);
@@ -27922,26 +27922,26 @@ static refalrts::FnResult func_gen_Fetch_Z2(refalrts::VM *vm, refalrts::Iter arg
   // issue here memory for vars with 8 elems
   refalrts::Iter context[8];
   refalrts::zeros( context, 8 );
-  // </0 & Fetch@2/4 e.new#0/2 >/1
+  // </0 & Fetch@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Fetch@2/4 s.Length#2/7 e.#0/5 >/1
+    // </0 & Fetch@2/4 s.Length/7 e./5 >/1
     context[5] = context[2];
     context[6] = context[3];
     if( ! refalrts::svar_left( context[7], context[5], context[6] ) )
       continue;
-    // closed e.#0 as range 5
-    //DEBUG: s.Length#2: 7
-    //DEBUG: e.#0: 5
+    // closed e. as range 5
+    //DEBUG: s.Length: 7
+    //DEBUG: e.: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Length#2/7 } Tile{ AsIs: >/1 } Tile{ AsIs: e.#0/5 } Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 AsIs: s.Length/7 } Tile{ AsIs: >/1 } Tile{ AsIs: e./5 } Tile{ ]] }
     refalrts::update_name(context[4], functions[efunc_PutWordLE]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -27956,15 +27956,15 @@ static refalrts::FnResult func_gen_Fetch_Z2(refalrts::VM *vm, refalrts::Iter arg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Fetch@2/4 e.Argument#1/5 >/1
+    // </0 & Fetch@2/4 e.Argument/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Argument#1 as range 5
-    //DEBUG: e.Argument#1: 5
+    // closed e.Argument as range 5
+    //DEBUG: e.Argument: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock\1*1/4 AsIs: e.Argument#1/5 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock\1*1/4 AsIs: e.Argument/5 AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_gen_PutBlock_L1D1]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -27972,13 +27972,13 @@ static refalrts::FnResult func_gen_Fetch_Z2(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Fetch@2/4 e.arg#0/2 >/1
-  // closed e.arg#0 as range 2
-  //DEBUG: e.arg#0: 2
+  // </0 & Fetch@2/4 e.arg/2 >/1
+  // closed e.arg as range 2
+  //DEBUG: e.arg: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@0/4 AsIs: e.arg#0/2 HalfReuse: & PutBlock\1@0/1 } >/5 Tile{ ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Fetch@0/4 AsIs: e.arg/2 HalfReuse: & PutBlock\1@0/1 } >/5 Tile{ ]] }
   refalrts::alloc_close_call(vm, context[5]);
   refalrts::update_name(context[4], functions[efunc_gen_Fetch_Z0]);
   refalrts::reinit_name(context[1], functions[efunc_gen_PutBlock_L1Z0]);
@@ -28004,43 +28004,43 @@ static refalrts::FnResult func_gen_Map_Z6(refalrts::VM *vm, refalrts::Iter arg_b
   // issue here memory for vars with 20 elems
   refalrts::Iter context[20];
   refalrts::zeros( context, 20 );
-  // </0 & Map@6/4 e.new#0/2 >/1
+  // </0 & Map@6/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & Map@6/4 t.new#1/7 e.new#2/5 >/1
+    // </0 & Map@6/4 t.new1/7 e.new2/5 >/1
     context[5] = context[2];
     context[6] = context[3];
     context[8] = refalrts::tvar_left( context[7], context[5], context[6] );
     if( ! context[8] )
       continue;
-    // closed e.new#2 as range 5
+    // closed e.new2 as range 5
     do {
-      // </0 & Map@6/4 (/7 s.Ident#3/13 s.Function#3/14 )/8 e.Tail#1/9 >/1
+      // </0 & Map@6/4 (/7 s.Ident/13 s.Function/14 )/8 e.Tail/9 >/1
       context[9] = context[5];
       context[10] = context[6];
       context[11] = 0;
       context[12] = 0;
       if( ! refalrts::brackets_term( context[11], context[12], context[7] ) )
         continue;
-      // closed e.Tail#1 as range 9
+      // closed e.Tail as range 9
       if( ! refalrts::svar_left( context[13], context[11], context[12] ) )
         continue;
       if( ! refalrts::svar_left( context[14], context[11], context[12] ) )
         continue;
       if( ! refalrts::empty_seq( context[11], context[12] ) )
         continue;
-      //DEBUG: e.Tail#1: 9
-      //DEBUG: s.Ident#3: 13
-      //DEBUG: s.Function#3: 14
+      //DEBUG: e.Tail: 9
+      //DEBUG: s.Ident: 13
+      //DEBUG: s.Function: 14
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} s.Ident#3/13 {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 HalfReuse: s.Ident3 #13/7 } >/15 </16 & PutWordLE/17 Tile{ AsIs: s.Function#3/14 } >/18 </19 Tile{ HalfReuse: & Map@6/8 AsIs: e.Tail#1/9 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} s.Ident/13 {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutWordLE/4 HalfReuse: s.Ident13 /7 } >/15 </16 & PutWordLE/17 Tile{ AsIs: s.Function/14 } >/18 </19 Tile{ HalfReuse: & Map@6/8 AsIs: e.Tail/9 AsIs: >/1 ]] }
       refalrts::alloc_close_call(vm, context[15]);
       refalrts::alloc_open_call(vm, context[16]);
       refalrts::alloc_name(vm, context[17], functions[efunc_PutWordLE]);
@@ -28066,16 +28066,16 @@ static refalrts::FnResult func_gen_Map_Z6(refalrts::VM *vm, refalrts::Iter arg_b
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & Map@6/4 t.Next#1/7 e.Tail#1/9 >/1
+    // </0 & Map@6/4 t.Next/7 e.Tail/9 >/1
     context[9] = context[5];
     context[10] = context[6];
-    // closed e.Tail#1 as range 9
-    //DEBUG: t.Next#1: 7
-    //DEBUG: e.Tail#1: 9
+    // closed e.Tail as range 9
+    //DEBUG: t.Next: 7
+    //DEBUG: e.Tail: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4\1*1/4 AsIs: t.Next#1/7 } >/11 </12 & Map@6/13 Tile{ AsIs: e.Tail#1/9 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4\1*1/4 AsIs: t.Next/7 } >/11 </12 & Map@6/13 Tile{ AsIs: e.Tail/9 } Tile{ AsIs: >/1 ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::alloc_open_call(vm, context[12]);
     refalrts::alloc_name(vm, context[13], functions[efunc_gen_Map_Z6]);
@@ -28110,13 +28110,13 @@ static refalrts::FnResult func_gen_Map_Z6(refalrts::VM *vm, refalrts::Iter arg_b
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Map@6/4 e.items#0/2 >/1
-  // closed e.items#0 as range 2
-  //DEBUG: e.items#0: 2
+  // </0 & Map@6/4 e.items/2 >/1
+  // closed e.items as range 2
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & GenCommand-Globals$4\1@0/4 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & Map@0/0 Reuse: & GenCommand-Globals$4\1@0/4 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_Map_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_Globals_S4L1Z0]);
@@ -28142,14 +28142,14 @@ static refalrts::FnResult func_gen_PutBlock_Z2(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 19 elems
   refalrts::Iter context[19];
   refalrts::zeros( context, 19 );
-  // </0 & PutBlock@2/4 e.new#0/2 >/1
+  // </0 & PutBlock@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutBlock@2/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & PutBlock@2/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -28162,27 +28162,27 @@ static refalrts::FnResult func_gen_PutBlock_Z2(refalrts::VM *vm, refalrts::Iter 
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 2
   do {
-    // </0 & PutBlock@2/4 (/7 e.Call#0/13 )/8 (/11 e.Call0#0/15 )/12 e.Call1#0/17 >/1
+    // </0 & PutBlock@2/4 (/7 e.Call/13 )/8 (/11 e.Call0/15 )/12 e.Call1/17 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[2];
     context[18] = context[3];
-    // closed e.Call#0 as range 13
-    // closed e.Call0#0 as range 15
-    // closed e.Call1#0 as range 17
-    //DEBUG: e.Call#0: 13
-    //DEBUG: e.Call0#0: 15
-    //DEBUG: e.Call1#0: 17
+    // closed e.Call as range 13
+    // closed e.Call0 as range 15
+    // closed e.Call1 as range 17
+    //DEBUG: e.Call: 13
+    //DEBUG: e.Call0: 15
+    //DEBUG: e.Call1: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 12/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </8 HalfReuse: & Lenw/11 } Tile{ AsIs: e.Call#0/13 } Tile{ AsIs: e.Call0#0/15 } Tile{ AsIs: e.Call1#0/17 } Tile{ HalfReuse: >/12 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: 12/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </8 HalfReuse: & Lenw/11 } Tile{ AsIs: e.Call/13 } Tile{ AsIs: e.Call0/15 } Tile{ AsIs: e.Call1/17 } Tile{ HalfReuse: >/12 } Tile{ AsIs: >/1 ]] }
     refalrts::reinit_number(context[0], 12UL);
     refalrts::reinit_open_call(context[4]);
     refalrts::reinit_name(context[7], functions[efunc_gen_Fetch_Z2]);
@@ -28206,17 +28206,17 @@ static refalrts::FnResult func_gen_PutBlock_Z2(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@2/4 (/7 e.Call#0/5 )/8 (/11 e.Call0#0/9 )/12 e.Call1#0/2 >/1
-  // closed e.Call#0 as range 5
-  // closed e.Call0#0 as range 9
-  // closed e.Call1#0 as range 2
-  //DEBUG: e.Call#0: 5
-  //DEBUG: e.Call0#0: 9
-  //DEBUG: e.Call1#0: 2
+  // </0 & PutBlock@2/4 (/7 e.Call/5 )/8 (/11 e.Call0/9 )/12 e.Call1/2 >/1
+  // closed e.Call as range 5
+  // closed e.Call0 as range 9
+  // closed e.Call1 as range 2
+  //DEBUG: e.Call: 5
+  //DEBUG: e.Call0: 9
+  //DEBUG: e.Call1: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 {REMOVED TILE} )/12 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # Metatable/7 } Tile{ AsIs: e.Call#0/5 } Tile{ AsIs: e.Call0#0/9 } Tile{ AsIs: e.Call1#0/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # Metatable/7 } Tile{ AsIs: e.Call/5 } Tile{ AsIs: e.Call0/9 } Tile{ AsIs: e.Call1/2 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[7], identifiers[ident_Metatable]);
   refalrts::push_stack( vm, context[1] );
@@ -28243,23 +28243,23 @@ static refalrts::FnResult func_gen_PutBlock_Z3(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & PutBlock@3/4 e.new#0/2 >/1
+  // </0 & PutBlock@3/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@3/4 e.Call#0/5 >/1
+    // </0 & PutBlock@3/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 11/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
+    //RESULT: Tile{ [[ } 11/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 11UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28282,13 +28282,13 @@ static refalrts::FnResult func_gen_PutBlock_Z3(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@3/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@3/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # UnitName/5 Tile{ AsIs: e.Call#0/2 } 0/6 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # UnitName/5 Tile{ AsIs: e.Call/2 } 0/6 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_ident(vm, context[5], identifiers[ident_UnitName]);
   refalrts::alloc_number(vm, context[6], 0UL);
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
@@ -28316,23 +28316,23 @@ static refalrts::FnResult func_gen_PutBlock_Z4(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & PutBlock@4/4 e.new#0/2 >/1
+  // </0 & PutBlock@4/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@4/4 e.Call#0/5 >/1
+    // </0 & PutBlock@4/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 5/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 5/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 5UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28353,13 +28353,13 @@ static refalrts::FnResult func_gen_PutBlock_Z4(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@4/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@4/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # EmptyFunction/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # EmptyFunction/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[4], identifiers[ident_EmptyFunction]);
@@ -28385,36 +28385,36 @@ static refalrts::FnResult func_gen_PutBlock_Z5(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & PutBlock@5/4 e.new#0/2 >/1
+  // </0 & PutBlock@5/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutBlock@5/4 (/7 e.new#1/5 )/8 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutBlock@5/4 (/7 e.new1/5 )/8 e.new2/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
   if( ! context[7] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[7], context[8]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 2
   do {
-    // </0 & PutBlock@5/4 (/7 e.Call#0/9 )/8 e.Call0#0/11 >/1
+    // </0 & PutBlock@5/4 (/7 e.Call/9 )/8 e.Call0/11 >/1
     context[9] = context[5];
     context[10] = context[6];
     context[11] = context[2];
     context[12] = context[3];
-    // closed e.Call#0 as range 9
-    // closed e.Call0#0 as range 11
-    //DEBUG: e.Call#0: 9
-    //DEBUG: e.Call0#0: 11
+    // closed e.Call as range 9
+    // closed e.Call0 as range 11
+    //DEBUG: e.Call: 9
+    //DEBUG: e.Call0: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: 3/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </8 } & Lenw/13 Tile{ AsIs: e.Call#0/9 } Tile{ AsIs: e.Call0#0/11 } >/14 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: 3/0 HalfReuse: </4 HalfReuse: & Fetch@2/7 } Tile{ HalfReuse: </8 } & Lenw/13 Tile{ AsIs: e.Call/9 } Tile{ AsIs: e.Call0/11 } >/14 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[13], functions[efunc_Lenw]);
     refalrts::alloc_close_call(vm, context[14]);
     refalrts::reinit_number(context[0], 3UL);
@@ -28438,15 +28438,15 @@ static refalrts::FnResult func_gen_PutBlock_Z5(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@5/4 (/7 e.Call#0/5 )/8 e.Call0#0/2 >/1
-  // closed e.Call#0 as range 5
-  // closed e.Call0#0 as range 2
-  //DEBUG: e.Call#0: 5
-  //DEBUG: e.Call0#0: 2
+  // </0 & PutBlock@5/4 (/7 e.Call/5 )/8 e.Call0/2 >/1
+  // closed e.Call as range 5
+  // closed e.Call0 as range 2
+  //DEBUG: e.Call: 5
+  //DEBUG: e.Call0: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # RefalFunction/7 } Tile{ AsIs: e.Call#0/5 } Tile{ AsIs: e.Call0#0/2 } Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 HalfReuse: # RefalFunction/7 } Tile{ AsIs: e.Call/5 } Tile{ AsIs: e.Call0/2 } Tile{ AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[7], identifiers[ident_RefalFunction]);
   refalrts::push_stack( vm, context[1] );
@@ -28472,23 +28472,23 @@ static refalrts::FnResult func_gen_PutBlock_Z6(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & PutBlock@6/4 e.new#0/2 >/1
+  // </0 & PutBlock@6/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@6/4 e.Call#0/5 >/1
+    // </0 & PutBlock@6/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 6/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 6/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 6UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28509,13 +28509,13 @@ static refalrts::FnResult func_gen_PutBlock_Z6(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@6/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@6/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # Swap/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # Swap/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[4], identifiers[ident_Swap]);
@@ -28541,23 +28541,23 @@ static refalrts::FnResult func_gen_PutBlock_Z7(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & PutBlock@7/4 e.new#0/2 >/1
+  // </0 & PutBlock@7/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@7/4 e.Call#0/5 >/1
+    // </0 & PutBlock@7/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 8/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 8/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 8UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28578,13 +28578,13 @@ static refalrts::FnResult func_gen_PutBlock_Z7(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@7/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@7/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # ConditionRasl/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # ConditionRasl/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[4], identifiers[ident_ConditionRasl]);
@@ -28610,23 +28610,23 @@ static refalrts::FnResult func_gen_PutBlock_Z8(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & PutBlock@8/4 e.new#0/2 >/1
+  // </0 & PutBlock@8/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@8/4 e.Call#0/5 >/1
+    // </0 & PutBlock@8/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 9/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 9/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 9UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28647,13 +28647,13 @@ static refalrts::FnResult func_gen_PutBlock_Z8(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@8/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@8/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # ConditionNative/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # ConditionNative/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[4], identifiers[ident_ConditionNative]);
@@ -28679,23 +28679,23 @@ static refalrts::FnResult func_gen_PutBlock_Z9(refalrts::VM *vm, refalrts::Iter 
   // issue here memory for vars with 11 elems
   refalrts::Iter context[11];
   refalrts::zeros( context, 11 );
-  // </0 & PutBlock@9/4 e.new#0/2 >/1
+  // </0 & PutBlock@9/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@9/4 e.Call#0/5 >/1
+    // </0 & PutBlock@9/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 4/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 AsIs: >/1 } >/10 Tile{ ]] }
+    //RESULT: Tile{ [[ } 4/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 AsIs: >/1 } >/10 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 4UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -28716,13 +28716,13 @@ static refalrts::FnResult func_gen_PutBlock_Z9(refalrts::VM *vm, refalrts::Iter 
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@9/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@9/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # NativeFunction/4 AsIs: e.Call#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </5 Tile{ HalfReuse: & PutBlock@0/0 HalfReuse: # NativeFunction/4 AsIs: e.Call/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[5]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutBlock_Z0]);
   refalrts::reinit_ident(context[4], identifiers[ident_NativeFunction]);
@@ -28748,14 +28748,14 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   // issue here memory for vars with 53 elems
   refalrts::Iter context[53];
   refalrts::zeros( context, 53 );
-  // </0 & DoMapAccum@2/4 e.new#0/2 >/1
+  // </0 & DoMapAccum@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoMapAccum@2/4 t.new#1/5 (/9 e.new#2/7 )/10 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & DoMapAccum@2/4 t.new1/5 (/9 e.new2/7 )/10 e.new3/2 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
@@ -28765,21 +28765,21 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   if( ! context[9] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[9], context[10]);
-  // closed e.new#2 as range 7
-  // closed e.new#3 as range 2
+  // closed e.new2 as range 7
+  // closed e.new3 as range 2
   do {
-    // </0 & DoMapAccum@2/4 t.new#4/5 (/9 e.new#7/11 )/10 t.new#5/15 e.new#6/13 >/1
+    // </0 & DoMapAccum@2/4 t.new4/5 (/9 e.new7/11 )/10 t.new5/15 e.new6/13 >/1
     context[11] = context[7];
     context[12] = context[8];
     context[13] = context[2];
     context[14] = context[3];
-    // closed e.new#7 as range 11
+    // closed e.new7 as range 11
     context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
     if( ! context[16] )
       continue;
-    // closed e.new#6 as range 13
+    // closed e.new6 as range 13
     do {
-      // </0 & DoMapAccum@2/4 (/5 s.new#8/23 e.new#9/21 )/6 (/9 e.new#12/17 )/10 t.new#10/15 e.new#11/19 >/1
+      // </0 & DoMapAccum@2/4 (/5 s.new8/23 e.new9/21 )/6 (/9 e.new12/17 )/10 t.new10/15 e.new11/19 >/1
       context[17] = context[11];
       context[18] = context[12];
       context[19] = context[13];
@@ -28788,13 +28788,13 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
       context[22] = 0;
       if( ! refalrts::brackets_term( context[21], context[22], context[5] ) )
         continue;
-      // closed e.new#12 as range 17
-      // closed e.new#11 as range 19
+      // closed e.new12 as range 17
+      // closed e.new11 as range 19
       if( ! refalrts::svar_left( context[23], context[21], context[22] ) )
         continue;
-      // closed e.new#9 as range 21
+      // closed e.new9 as range 21
       do {
-        // </0 & DoMapAccum@2/4 (/5 s.new#13/23 e.new#14/24 )/6 (/9 e.new#19/26 )/10 (/15 s.new#15/32 s.new#16/33 e.new#17/30 )/16 e.new#18/28 >/1
+        // </0 & DoMapAccum@2/4 (/5 s.new13/23 e.new14/24 )/6 (/9 e.new19/26 )/10 (/15 s.new15/32 s.new16/33 e.new17/30 )/16 e.new18/28 >/1
         context[24] = context[21];
         context[25] = context[22];
         context[26] = context[17];
@@ -28805,16 +28805,16 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
         context[31] = 0;
         if( ! refalrts::brackets_term( context[30], context[31], context[15] ) )
           continue;
-        // closed e.new#14 as range 24
-        // closed e.new#19 as range 26
-        // closed e.new#18 as range 28
+        // closed e.new14 as range 24
+        // closed e.new19 as range 26
+        // closed e.new18 as range 28
         if( ! refalrts::svar_left( context[32], context[30], context[31] ) )
           continue;
         if( ! refalrts::svar_left( context[33], context[30], context[31] ) )
           continue;
-        // closed e.new#17 as range 30
+        // closed e.new17 as range 30
         do {
-          // </0 & DoMapAccum@2/4 (/5 s.Offset#2/23 e.1#0/34 )/6 (/9 e.Scanned#1/36 )/10 (/15 # LABEL/32 s.Label#2/33 )/16 e.Tail#1/38 >/1
+          // </0 & DoMapAccum@2/4 (/5 s.Offset/23 e.1/34 )/6 (/9 e.Scanned/36 )/10 (/15 # LABEL/32 s.Label/33 )/16 e.Tail/38 >/1
           context[34] = context[24];
           context[35] = context[25];
           context[36] = context[26];
@@ -28825,18 +28825,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
             continue;
           if( ! refalrts::empty_seq( context[30], context[31] ) )
             continue;
-          // closed e.1#0 as range 34
-          // closed e.Scanned#1 as range 36
-          // closed e.Tail#1 as range 38
-          //DEBUG: s.Offset#2: 23
-          //DEBUG: s.Label#2: 33
-          //DEBUG: e.1#0: 34
-          //DEBUG: e.Scanned#1: 36
-          //DEBUG: e.Tail#1: 38
+          // closed e.1 as range 34
+          // closed e.Scanned as range 36
+          // closed e.Tail as range 38
+          //DEBUG: s.Offset: 23
+          //DEBUG: s.Label: 33
+          //DEBUG: e.1: 34
+          //DEBUG: e.Scanned: 36
+          //DEBUG: e.Tail: 38
 
           refalrts::reset_allocator(vm);
-          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label#2/33 {REMOVED TILE}
-          //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoMapAccum@2/4 AsIs: (/5 AsIs: s.Offset#2/23 AsIs: e.1#0/34 HalfReuse: (/6 HalfReuse: s.Label2 #33/9 } s.Offset#2/23/40 Tile{ HalfReuse: )/32 } Tile{ AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Scanned#1/36 } Tile{ AsIs: )/16 AsIs: e.Tail#1/38 AsIs: >/1 ]] }
+          //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label/33 {REMOVED TILE}
+          //RESULT: Tile{ [[ AsIs: </0 AsIs: & DoMapAccum@2/4 AsIs: (/5 AsIs: s.Offset/23 AsIs: e.1/34 HalfReuse: (/6 HalfReuse: s.Label33 /9 } s.Offset/23/40 Tile{ HalfReuse: )/32 } Tile{ AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Scanned/36 } Tile{ AsIs: )/16 AsIs: e.Tail/38 AsIs: >/1 ]] }
           refalrts::copy_stvar(vm, context[40], context[23]);
           refalrts::reinit_open_bracket(context[6]);
           refalrts::reinit_svar( context[9], context[33] );
@@ -28858,7 +28858,7 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
         } while ( 0 );
         refalrts::stop_sentence(vm);
 
-        // </0 & DoMapAccum@2/4 (/5 s.Offset#2/23 e.1#0/34 )/6 (/9 e.Scanned#1/36 )/10 (/15 # CmdOnFailGoTo/32 s.Destination#2/33 e.3#0/38 )/16 e.Tail#1/40 >/1
+        // </0 & DoMapAccum@2/4 (/5 s.Offset/23 e.1/34 )/6 (/9 e.Scanned/36 )/10 (/15 # CmdOnFailGoTo/32 s.Destination/33 e.3/38 )/16 e.Tail/40 >/1
         context[34] = context[24];
         context[35] = context[25];
         context[36] = context[26];
@@ -28869,20 +28869,20 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
         context[41] = context[29];
         if( ! refalrts::ident_term( identifiers[ident_CmdOnFailGoTo], context[32] ) )
           continue;
-        // closed e.1#0 as range 34
-        // closed e.Scanned#1 as range 36
-        // closed e.3#0 as range 38
-        // closed e.Tail#1 as range 40
-        //DEBUG: s.Offset#2: 23
-        //DEBUG: s.Destination#2: 33
-        //DEBUG: e.1#0: 34
-        //DEBUG: e.Scanned#1: 36
-        //DEBUG: e.3#0: 38
-        //DEBUG: e.Tail#1: 40
+        // closed e.1 as range 34
+        // closed e.Scanned as range 36
+        // closed e.3 as range 38
+        // closed e.Tail as range 40
+        //DEBUG: s.Offset: 23
+        //DEBUG: s.Destination: 33
+        //DEBUG: e.1: 34
+        //DEBUG: e.Scanned: 36
+        //DEBUG: e.3: 38
+        //DEBUG: e.Tail: 40
 
         refalrts::reset_allocator(vm);
         //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-        //RESULT: Tile{ [[ } </42 Tile{ HalfReuse: & DoMapAccum$1=1@2/6 AsIs: (/9 AsIs: e.Scanned#1/36 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail#1/40 } )/43 (/44 Tile{ AsIs: </0 Reuse: & Add/4 HalfReuse: 1/5 AsIs: s.Offset#2/23 } >/45 Tile{ AsIs: e.1#0/34 } )/46 (/47 # CmdOnFailGoTo/48 </49 & Add/50 1/51 s.Offset#2/23/52 Tile{ HalfReuse: >/32 AsIs: s.Destination#2/33 AsIs: e.3#0/38 AsIs: )/16 } Tile{ AsIs: >/1 ]] }
+        //RESULT: Tile{ [[ } </42 Tile{ HalfReuse: & DoMapAccum$1=1@2/6 AsIs: (/9 AsIs: e.Scanned/36 AsIs: )/10 AsIs: (/15 } Tile{ AsIs: e.Tail/40 } )/43 (/44 Tile{ AsIs: </0 Reuse: & Add/4 HalfReuse: 1/5 AsIs: s.Offset/23 } >/45 Tile{ AsIs: e.1/34 } )/46 (/47 # CmdOnFailGoTo/48 </49 & Add/50 1/51 s.Offset/23/52 Tile{ HalfReuse: >/32 AsIs: s.Destination/33 AsIs: e.3/38 AsIs: )/16 } Tile{ AsIs: >/1 ]] }
         refalrts::alloc_open_call(vm, context[42]);
         refalrts::alloc_close_bracket(vm, context[43]);
         refalrts::alloc_open_bracket(vm, context[44]);
@@ -28925,25 +28925,25 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
       } while ( 0 );
       refalrts::stop_sentence(vm);
 
-      // </0 & DoMapAccum@2/4 (/5 s.Offset#2/23 e.0#0/24 )/6 (/9 e.Scanned#1/26 )/10 t.Next#1/15 e.Tail#1/28 >/1
+      // </0 & DoMapAccum@2/4 (/5 s.Offset/23 e.0/24 )/6 (/9 e.Scanned/26 )/10 t.Next/15 e.Tail/28 >/1
       context[24] = context[21];
       context[25] = context[22];
       context[26] = context[17];
       context[27] = context[18];
       context[28] = context[19];
       context[29] = context[20];
-      // closed e.0#0 as range 24
-      // closed e.Scanned#1 as range 26
-      // closed e.Tail#1 as range 28
-      //DEBUG: t.Next#1: 15
-      //DEBUG: s.Offset#2: 23
-      //DEBUG: e.0#0: 24
-      //DEBUG: e.Scanned#1: 26
-      //DEBUG: e.Tail#1: 28
+      // closed e.0 as range 24
+      // closed e.Scanned as range 26
+      // closed e.Tail as range 28
+      //DEBUG: t.Next: 15
+      //DEBUG: s.Offset: 23
+      //DEBUG: e.0: 24
+      //DEBUG: e.Scanned: 26
+      //DEBUG: e.Tail: 28
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@2/4 AsIs: (/5 } Tile{ AsIs: e.Scanned#1/26 } Tile{ AsIs: )/6 AsIs: (/9 } Tile{ AsIs: e.Tail#1/28 } )/30 (/31 </32 & Add/33 1/34 Tile{ AsIs: s.Offset#2/23 } >/35 Tile{ AsIs: e.0#0/24 } Tile{ AsIs: )/10 AsIs: t.Next#1/15 } Tile{ AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@2/4 AsIs: (/5 } Tile{ AsIs: e.Scanned/26 } Tile{ AsIs: )/6 AsIs: (/9 } Tile{ AsIs: e.Tail/28 } )/30 (/31 </32 & Add/33 1/34 Tile{ AsIs: s.Offset/23 } >/35 Tile{ AsIs: e.0/24 } Tile{ AsIs: )/10 AsIs: t.Next/15 } Tile{ AsIs: >/1 ]] }
       refalrts::alloc_close_bracket(vm, context[30]);
       refalrts::alloc_open_bracket(vm, context[31]);
       refalrts::alloc_open_call(vm, context[32]);
@@ -28974,21 +28974,21 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & DoMapAccum@2/4 t.Acc#1/5 (/9 e.Scanned#1/17 )/10 t.Next#1/15 e.Tail#1/19 >/1
+    // </0 & DoMapAccum@2/4 t.Acc/5 (/9 e.Scanned/17 )/10 t.Next/15 e.Tail/19 >/1
     context[17] = context[11];
     context[18] = context[12];
     context[19] = context[13];
     context[20] = context[14];
-    // closed e.Scanned#1 as range 17
-    // closed e.Tail#1 as range 19
-    //DEBUG: t.Acc#1: 5
-    //DEBUG: t.Next#1: 15
-    //DEBUG: e.Scanned#1: 17
-    //DEBUG: e.Tail#1: 19
+    // closed e.Scanned as range 17
+    // closed e.Tail as range 19
+    //DEBUG: t.Acc: 5
+    //DEBUG: t.Next: 15
+    //DEBUG: e.Scanned: 17
+    //DEBUG: e.Tail: 19
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@2/4 } Tile{ AsIs: (/9 AsIs: e.Scanned#1/17 AsIs: )/10 } (/21 Tile{ AsIs: e.Tail#1/19 } )/22 </23 & CalcLabelsOffsets\1*3/24 Tile{ AsIs: t.Acc#1/5 } Tile{ AsIs: t.Next#1/15 } >/25 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum$1=1@2/4 } Tile{ AsIs: (/9 AsIs: e.Scanned/17 AsIs: )/10 } (/21 Tile{ AsIs: e.Tail/19 } )/22 </23 & CalcLabelsOffsets\1*3/24 Tile{ AsIs: t.Acc/5 } Tile{ AsIs: t.Next/15 } >/25 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[21]);
     refalrts::alloc_close_bracket(vm, context[22]);
     refalrts::alloc_open_call(vm, context[23]);
@@ -29017,18 +29017,18 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & DoMapAccum@2/4 t.Acc#1/5 (/9 e.Scanned#1/11 )/10 >/1
+    // </0 & DoMapAccum@2/4 t.Acc/5 (/9 e.Scanned/11 )/10 >/1
     context[11] = context[7];
     context[12] = context[8];
     if( ! refalrts::empty_seq( context[2], context[3] ) )
       continue;
-    // closed e.Scanned#1 as range 11
-    //DEBUG: t.Acc#1: 5
-    //DEBUG: e.Scanned#1: 11
+    // closed e.Scanned as range 11
+    //DEBUG: t.Acc: 5
+    //DEBUG: e.Scanned: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} </0 & DoMapAccum@2/4 {REMOVED TILE} (/9 {REMOVED TILE} )/10 >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc#1/5 } Tile{ AsIs: e.Scanned#1/11 } Tile{ ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: t.Acc/5 } Tile{ AsIs: e.Scanned/11 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -29039,16 +29039,16 @@ static refalrts::FnResult func_gen_DoMapAccum_Z2(refalrts::VM *vm, refalrts::Ite
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum@2/4 t.acc#0/5 (/9 e.scanned#0/7 )/10 e.items#0/2 >/1
-  // closed e.scanned#0 as range 7
-  // closed e.items#0 as range 2
-  //DEBUG: t.acc#0: 5
-  //DEBUG: e.scanned#0: 7
-  //DEBUG: e.items#0: 2
+  // </0 & DoMapAccum@2/4 t.acc/5 (/9 e.scanned/7 )/10 e.items/2 >/1
+  // closed e.scanned as range 7
+  // closed e.items as range 2
+  //DEBUG: t.acc: 5
+  //DEBUG: e.scanned: 7
+  //DEBUG: e.items: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </11 Tile{ HalfReuse: & DoMapAccum@0/0 Reuse: & CalcLabelsOffsets\1@0/4 AsIs: t.acc#0/5 AsIs: (/9 AsIs: e.scanned#0/7 AsIs: )/10 AsIs: e.items#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </11 Tile{ HalfReuse: & DoMapAccum@0/0 Reuse: & CalcLabelsOffsets\1@0/4 AsIs: t.acc/5 AsIs: (/9 AsIs: e.scanned/7 AsIs: )/10 AsIs: e.items/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[11]);
   refalrts::reinit_name(context[0], functions[efunc_gen_DoMapAccum_Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_CalcLabelsOffsets_L1Z0]);
@@ -29075,31 +29075,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z1(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@1/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@1/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@1/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@1/4 s.Offset#2/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@1/4 s.Offset$a/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.Offset#2: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.Offset$a: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 0/16 </17 & Divmod/18 Tile{ AsIs: s.Offset#2/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 0/16 </17 & Divmod/18 Tile{ AsIs: s.Offset$a/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29131,14 +29131,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z1(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@1/4 s.Offset#2/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.Offset#2: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@1/4 s.Offset$a/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.Offset$a: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 0/4 AsIs: s.Offset#2/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 0/4 AsIs: s.Offset$a/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29165,34 +29165,34 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z3(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 22 elems
   refalrts::Iter context[22];
   refalrts::zeros( context, 22 );
-  // </0 & PutCommand$3=1@3/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@3/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@3/4 s.new#1/5 s.new#2/6 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@3/4 s.new1/5 s.new2/6 e.new3/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[6], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#3 as range 2
+  // closed e.new3 as range 2
   do {
-    // </0 & PutCommand$3=1@3/4 s.Number#1/5 s.BracketNumber#1/6 s.OpCode#2/9 >/1
+    // </0 & PutCommand$3=1@3/4 s.Number/5 s.BracketNumber/6 s.OpCode/9 >/1
     context[7] = context[2];
     context[8] = context[3];
     if( ! refalrts::svar_left( context[9], context[7], context[8] ) )
       continue;
     if( ! refalrts::empty_seq( context[7], context[8] ) )
       continue;
-    //DEBUG: s.Number#1: 5
-    //DEBUG: s.BracketNumber#1: 6
-    //DEBUG: s.OpCode#2: 9
+    //DEBUG: s.Number: 5
+    //DEBUG: s.BracketNumber: 6
+    //DEBUG: s.OpCode: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/9 } (/10 0/11 )/12 0/13 </14 & Divmod/15 Tile{ AsIs: s.Number#1/5 } 256/16 >/17 </18 & Divmod/19 Tile{ AsIs: s.BracketNumber#1/6 } 256/20 >/21 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/9 } (/10 0/11 )/12 0/13 </14 & Divmod/15 Tile{ AsIs: s.Number/5 } 256/16 >/17 </18 & Divmod/19 Tile{ AsIs: s.BracketNumber/6 } 256/20 >/21 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[10]);
     refalrts::alloc_number(vm, context[11], 0UL);
     refalrts::alloc_close_bracket(vm, context[12]);
@@ -29227,15 +29227,15 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z3(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@3/4 s.Number#1/5 s.BracketNumber#1/6 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.Number#1: 5
-  //DEBUG: s.BracketNumber#1: 6
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@3/4 s.Number/5 s.BracketNumber/6 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.Number: 5
+  //DEBUG: s.BracketNumber: 6
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & PutCommand$3=1@0/0 HalfReuse: 0/4 AsIs: s.Number#1/5 AsIs: s.BracketNumber#1/6 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </7 Tile{ HalfReuse: & PutCommand$3=1@0/0 HalfReuse: 0/4 AsIs: s.Number/5 AsIs: s.BracketNumber/6 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[7]);
   refalrts::reinit_name(context[0], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[4], 0UL);
@@ -29261,31 +29261,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z7(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@7/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@7/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@7/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@7/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@7/4 s.ElemNumber#1/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@7/4 s.ElemNumber/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.ElemNumber: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 1/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber#1/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 1/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29317,14 +29317,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z7(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@7/4 s.ElemNumber#1/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.ElemNumber#1: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@7/4 s.ElemNumber/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.ElemNumber: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 1/4 AsIs: s.ElemNumber#1/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 1/4 AsIs: s.ElemNumber/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29351,31 +29351,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z8(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@8/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@8/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@8/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@8/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@8/4 s.ElemNumber#1/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@8/4 s.ElemNumber/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.ElemNumber: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 2/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber#1/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 2/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29407,14 +29407,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z8(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@8/4 s.ElemNumber#1/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.ElemNumber#1: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@8/4 s.ElemNumber/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.ElemNumber: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 2/4 AsIs: s.ElemNumber#1/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 2/4 AsIs: s.ElemNumber/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29441,31 +29441,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z9(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@9/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@9/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@9/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@9/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@9/4 s.ElemNumber#1/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@9/4 s.ElemNumber/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.ElemNumber: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 4/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber#1/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 4/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29497,14 +29497,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z9(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@9/4 s.ElemNumber#1/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.ElemNumber#1: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@9/4 s.ElemNumber/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.ElemNumber: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 4/4 AsIs: s.ElemNumber#1/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 4/4 AsIs: s.ElemNumber/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29531,31 +29531,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z10(refalrts::VM *vm, refalrts
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@10/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@10/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@10/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@10/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@10/4 s.ElemNumber#1/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@10/4 s.ElemNumber/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.ElemNumber: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 3/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber#1/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 3/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29587,14 +29587,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z10(refalrts::VM *vm, refalrts
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@10/4 s.ElemNumber#1/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.ElemNumber#1: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@10/4 s.ElemNumber/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.ElemNumber: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 3/4 AsIs: s.ElemNumber#1/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 3/4 AsIs: s.ElemNumber/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29621,31 +29621,31 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z11(refalrts::VM *vm, refalrts
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & PutCommand$3=1@11/4 e.new#0/2 >/1
+  // </0 & PutCommand$3=1@11/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & PutCommand$3=1@11/4 s.new#1/5 e.new#2/2 >/1
+  // closed e.new as range 2
+  // </0 & PutCommand$3=1@11/4 s.new1/5 e.new2/2 >/1
   if( ! refalrts::svar_left( context[5], context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & PutCommand$3=1@11/4 s.ElemNumber#1/5 s.OpCode#2/8 >/1
+    // </0 & PutCommand$3=1@11/4 s.ElemNumber/5 s.OpCode/8 >/1
     context[6] = context[2];
     context[7] = context[3];
     if( ! refalrts::svar_left( context[8], context[6], context[7] ) )
       continue;
     if( ! refalrts::empty_seq( context[6], context[7] ) )
       continue;
-    //DEBUG: s.ElemNumber#1: 5
-    //DEBUG: s.OpCode#2: 8
+    //DEBUG: s.ElemNumber: 5
+    //DEBUG: s.OpCode: 8
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode#2/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 5/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber#1/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutCommand$3:1/4 } Tile{ AsIs: s.OpCode/8 } (/9 0/10 )/11 0/12 (/13 0/14 )/15 5/16 </17 & Divmod/18 Tile{ AsIs: s.ElemNumber/5 } 256/19 >/20 Tile{ AsIs: >/1 ]] }
     refalrts::alloc_open_bracket(vm, context[9]);
     refalrts::alloc_number(vm, context[10], 0UL);
     refalrts::alloc_close_bracket(vm, context[11]);
@@ -29677,14 +29677,14 @@ static refalrts::FnResult func_gen_PutCommand_S3A1Z11(refalrts::VM *vm, refalrts
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutCommand$3=1@11/4 s.ElemNumber#1/5 e.dyn#0/2 >/1
-  // closed e.dyn#0 as range 2
-  //DEBUG: s.ElemNumber#1: 5
-  //DEBUG: e.dyn#0: 2
+  // </0 & PutCommand$3=1@11/4 s.ElemNumber/5 e.dyn/2 >/1
+  // closed e.dyn as range 2
+  //DEBUG: s.ElemNumber: 5
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 5/4 AsIs: s.ElemNumber#1/5 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </6 & PutCommand$3=1@0/7 Tile{ HalfReuse: 0/0 HalfReuse: 5/4 AsIs: s.ElemNumber/5 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[6]);
   refalrts::alloc_name(vm, context[7], functions[efunc_gen_PutCommand_S3A1Z0]);
   refalrts::reinit_number(context[0], 0UL);
@@ -29711,14 +29711,14 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_Z1(refalrts::VM *v
   // issue here memory for vars with 30 elems
   refalrts::Iter context[30];
   refalrts::zeros( context, 30 );
-  // </0 & ResolveLabeledDestinations@1/4 e.new#0/2 >/1
+  // </0 & ResolveLabeledDestinations@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & ResolveLabeledDestinations@1/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & ResolveLabeledDestinations@1/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -29731,19 +29731,19 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_Z1(refalrts::VM *v
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 2
   do {
-    // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B#2/13 )/8 (/11 e.Labels-E#2/15 )/12 e.ReadyRASL#1/19 (/25 # CmdOnFailGoTo/27 s.CommandOffset#1/28 s.DestinationLabel#1/29 e.FuncName#1/23 )/26 e.UnscannedRASL#1/21 >/1
+    // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B/13 )/8 (/11 e.Labels-E/15 )/12 e.ReadyRASL/19 (/25 # CmdOnFailGoTo/27 s.CommandOffset/28 s.DestinationLabel/29 e.FuncName/23 )/26 e.UnscannedRASL/21 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[2];
     context[18] = context[3];
-    // closed e.Labels-B#2 as range 13
-    // closed e.Labels-E#2 as range 15
+    // closed e.Labels-B as range 13
+    // closed e.Labels-E as range 15
     context[19] = 0;
     context[20] = 0;
     refalrts::start_e_loop(vm);
@@ -29759,23 +29759,23 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_Z1(refalrts::VM *v
       context[27] = refalrts::ident_left( identifiers[ident_CmdOnFailGoTo], context[23], context[24] );
       if( ! context[27] )
         continue;
-      // closed e.UnscannedRASL#1 as range 21
+      // closed e.UnscannedRASL as range 21
       if( ! refalrts::svar_left( context[28], context[23], context[24] ) )
         continue;
       if( ! refalrts::svar_left( context[29], context[23], context[24] ) )
         continue;
-      // closed e.FuncName#1 as range 23
-      //DEBUG: e.Labels-B#2: 13
-      //DEBUG: e.Labels-E#2: 15
-      //DEBUG: e.ReadyRASL#1: 19
-      //DEBUG: e.UnscannedRASL#1: 21
-      //DEBUG: s.CommandOffset#1: 28
-      //DEBUG: s.DestinationLabel#1: 29
-      //DEBUG: e.FuncName#1: 23
+      // closed e.FuncName as range 23
+      //DEBUG: e.Labels-B: 13
+      //DEBUG: e.Labels-E: 15
+      //DEBUG: e.ReadyRASL: 19
+      //DEBUG: e.UnscannedRASL: 21
+      //DEBUG: s.CommandOffset: 28
+      //DEBUG: s.DestinationLabel: 29
+      //DEBUG: e.FuncName: 23
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.DestinationLabel#1/29 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=1/4 HalfReuse: s.DestinationLabel1 #29/7 } Tile{ HalfReuse: (/12 AsIs: e.ReadyRASL#1/19 HalfReuse: )/25 HalfReuse: (/27 } Tile{ AsIs: e.UnscannedRASL#1/21 } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.FuncName#1/23 } Tile{ AsIs: )/26 } Tile{ AsIs: s.CommandOffset#1/28 } Tile{ AsIs: e.Labels-B#2/13 } Tile{ AsIs: e.Labels-E#2/15 } Tile{ AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.DestinationLabel/29 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+      //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations$1=1/4 HalfReuse: s.DestinationLabel29 /7 } Tile{ HalfReuse: (/12 AsIs: e.ReadyRASL/19 HalfReuse: )/25 HalfReuse: (/27 } Tile{ AsIs: e.UnscannedRASL/21 } Tile{ AsIs: )/8 AsIs: (/11 } Tile{ AsIs: e.FuncName/23 } Tile{ AsIs: )/26 } Tile{ AsIs: s.CommandOffset/28 } Tile{ AsIs: e.Labels-B/13 } Tile{ AsIs: e.Labels-E/15 } Tile{ AsIs: >/1 ]] }
       refalrts::update_name(context[4], functions[efunc_gen_ResolveLabeledDestinations_S1A1]);
       refalrts::reinit_svar( context[7], context[29] );
       refalrts::reinit_open_bracket(context[12]);
@@ -29804,23 +29804,23 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_Z1(refalrts::VM *v
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B#2/13 )/8 (/11 e.Labels-E#2/15 )/12 e.ReadyRASL#1/17 >/1
+    // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B/13 )/8 (/11 e.Labels-E/15 )/12 e.ReadyRASL/17 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[2];
     context[18] = context[3];
-    // closed e.Labels-B#2 as range 13
-    // closed e.Labels-E#2 as range 15
-    // closed e.ReadyRASL#1 as range 17
-    //DEBUG: e.Labels-B#2: 13
-    //DEBUG: e.Labels-E#2: 15
-    //DEBUG: e.ReadyRASL#1: 17
+    // closed e.Labels-B as range 13
+    // closed e.Labels-E as range 15
+    // closed e.ReadyRASL as range 17
+    //DEBUG: e.Labels-B: 13
+    //DEBUG: e.Labels-E: 15
+    //DEBUG: e.ReadyRASL: 17
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B#2/13 )/8 (/11 e.Labels-E#2/15 )/12 {REMOVED TILE} >/1 {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL#1/17 } Tile{ ]] }
+    //TRASH: {REMOVED TILE} </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B/13 )/8 (/11 e.Labels-E/15 )/12 {REMOVED TILE} >/1 {REMOVED TILE}
+    //RESULT: Tile{ [[ } Tile{ AsIs: e.ReadyRASL/17 } Tile{ ]] }
     refalrts::Iter trash_prev = arg_begin->prev;
     refalrts::use(trash_prev);
     refalrts::Iter res = arg_end->next;
@@ -29830,17 +29830,17 @@ static refalrts::FnResult func_gen_ResolveLabeledDestinations_Z1(refalrts::VM *v
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B#2/5 )/8 (/11 e.Labels-E#2/9 )/12 e.dyn#1/2 >/1
-  // closed e.Labels-B#2 as range 5
-  // closed e.Labels-E#2 as range 9
-  // closed e.dyn#1 as range 2
-  //DEBUG: e.Labels-B#2: 5
-  //DEBUG: e.Labels-E#2: 9
-  //DEBUG: e.dyn#1: 2
+  // </0 & ResolveLabeledDestinations@1/4 (/7 e.Labels-B/5 )/8 (/11 e.Labels-E/9 )/12 e.dyn1/2 >/1
+  // closed e.Labels-B as range 5
+  // closed e.Labels-E as range 9
+  // closed e.dyn1 as range 2
+  //DEBUG: e.Labels-B: 5
+  //DEBUG: e.Labels-E: 9
+  //DEBUG: e.dyn1: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} )/8 (/11 {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations@0/4 AsIs: (/7 } Tile{ AsIs: e.Labels-B#2/5 } Tile{ AsIs: e.Labels-E#2/9 } Tile{ AsIs: )/12 AsIs: e.dyn#1/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & ResolveLabeledDestinations@0/4 AsIs: (/7 } Tile{ AsIs: e.Labels-B/5 } Tile{ AsIs: e.Labels-E/9 } Tile{ AsIs: )/12 AsIs: e.dyn1/2 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_ResolveLabeledDestinations_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -29866,23 +29866,23 @@ static refalrts::FnResult func_gen_PutBlock_Z10(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & PutBlock@10/4 e.new#0/2 >/1
+  // </0 & PutBlock@10/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@10/4 e.Call#0/5 >/1
+    // </0 & PutBlock@10/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 7/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
+    //RESULT: Tile{ [[ } 7/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 7UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -29905,13 +29905,13 @@ static refalrts::FnResult func_gen_PutBlock_Z10(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@10/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@10/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # Reference/5 Tile{ AsIs: e.Call#0/2 } 0/6 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # Reference/5 Tile{ AsIs: e.Call/2 } 0/6 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_ident(vm, context[5], identifiers[ident_Reference]);
   refalrts::alloc_number(vm, context[6], 0UL);
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
@@ -29939,23 +29939,23 @@ static refalrts::FnResult func_gen_PutBlock_Z11(refalrts::VM *vm, refalrts::Iter
   // issue here memory for vars with 12 elems
   refalrts::Iter context[12];
   refalrts::zeros( context, 12 );
-  // </0 & PutBlock@11/4 e.new#0/2 >/1
+  // </0 & PutBlock@11/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
+  // closed e.new as range 2
   do {
-    // </0 & PutBlock@11/4 e.Call#0/5 >/1
+    // </0 & PutBlock@11/4 e.Call/5 >/1
     context[5] = context[2];
     context[6] = context[3];
-    // closed e.Call#0 as range 5
-    //DEBUG: e.Call#0: 5
+    // closed e.Call as range 5
+    //DEBUG: e.Call: 5
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } 10/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call#0/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
+    //RESULT: Tile{ [[ } 10/7 </8 & Fetch@2/9 Tile{ AsIs: </0 Reuse: & Lenw/4 AsIs: e.Call/5 HalfReuse: 0/1 } >/10 >/11 Tile{ ]] }
     refalrts::alloc_number(vm, context[7], 10UL);
     refalrts::alloc_open_call(vm, context[8]);
     refalrts::alloc_name(vm, context[9], functions[efunc_gen_Fetch_Z2]);
@@ -29978,13 +29978,13 @@ static refalrts::FnResult func_gen_PutBlock_Z11(refalrts::VM *vm, refalrts::Iter
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & PutBlock@11/4 e.Call#0/2 >/1
-  // closed e.Call#0 as range 2
-  //DEBUG: e.Call#0: 2
+  // </0 & PutBlock@11/4 e.Call/2 >/1
+  // closed e.Call as range 2
+  //DEBUG: e.Call: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # Incorporated/5 Tile{ AsIs: e.Call#0/2 } 0/6 Tile{ AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & PutBlock@0/4 } # Incorporated/5 Tile{ AsIs: e.Call/2 } 0/6 Tile{ AsIs: >/1 ]] }
   refalrts::alloc_ident(vm, context[5], identifiers[ident_Incorporated]);
   refalrts::alloc_number(vm, context[6], 0UL);
   refalrts::update_name(context[4], functions[efunc_gen_PutBlock_Z0]);
@@ -30012,35 +30012,35 @@ static refalrts::FnResult func_gen_Apply_Z3(refalrts::VM *vm, refalrts::Iter arg
   // issue here memory for vars with 15 elems
   refalrts::Iter context[15];
   refalrts::zeros( context, 15 );
-  // </0 & Apply@3/4 e.new#0/2 >/1
+  // </0 & Apply@3/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Apply@3/4 t.new#1/5 e.new#2/2 t.new#3/7 >/1
+  // closed e.new as range 2
+  // </0 & Apply@3/4 t.new1/5 e.new2/2 t.new3/7 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
   context[8] = refalrts::tvar_right( context[7], context[2], context[3] );
   if( ! context[8] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & Apply@3/4 s.Fn#1/5 e.X#0/9 t.X#0/7 >/1
+    // </0 & Apply@3/4 s.Fn/5 e.X/9 t.X/7 >/1
     context[9] = context[2];
     context[10] = context[3];
     if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
-    // closed e.X#0 as range 9
-    //DEBUG: t.X#0: 7
-    //DEBUG: s.Fn#1: 5
-    //DEBUG: e.X#0: 9
+    // closed e.X as range 9
+    //DEBUG: t.X: 7
+    //DEBUG: s.Fn: 5
+    //DEBUG: e.X: 9
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn#1/5 AsIs: e.X#0/9 AsIs: t.X#0/7 HalfReuse: & $table/1 } >/11 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn/5 AsIs: e.X/9 AsIs: t.X/7 HalfReuse: & $table/1 } >/11 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[11]);
     refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
     refalrts::reinit_name(context[1], functions[efunc_d_table]);
@@ -30056,26 +30056,26 @@ static refalrts::FnResult func_gen_Apply_Z3(refalrts::VM *vm, refalrts::Iter arg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Apply@3/4 (/5 t.Closure#1/13 e.Bounded#1/11 )/6 e.X#0/9 t.X#0/7 >/1
+    // </0 & Apply@3/4 (/5 t.Closure/13 e.Bounded/11 )/6 e.X/9 t.X/7 >/1
     context[9] = context[2];
     context[10] = context[3];
     context[11] = 0;
     context[12] = 0;
     if( ! refalrts::brackets_term( context[11], context[12], context[5] ) )
       continue;
-    // closed e.X#0 as range 9
+    // closed e.X as range 9
     context[14] = refalrts::tvar_left( context[13], context[11], context[12] );
     if( ! context[14] )
       continue;
-    // closed e.Bounded#1 as range 11
-    //DEBUG: t.X#0: 7
-    //DEBUG: e.X#0: 9
-    //DEBUG: t.Closure#1: 13
-    //DEBUG: e.Bounded#1: 11
+    // closed e.Bounded as range 11
+    //DEBUG: t.X: 7
+    //DEBUG: e.X: 9
+    //DEBUG: t.Closure: 13
+    //DEBUG: e.Bounded: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply@3/4 } Tile{ AsIs: t.Closure#1/13 } Tile{ AsIs: e.Bounded#1/11 } Tile{ AsIs: e.X#0/9 } Tile{ AsIs: t.X#0/7 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply@3/4 } Tile{ AsIs: t.Closure/13 } Tile{ AsIs: e.Bounded/11 } Tile{ AsIs: e.X/9 } Tile{ AsIs: t.X/7 AsIs: >/1 ]] }
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -30089,15 +30089,15 @@ static refalrts::FnResult func_gen_Apply_Z3(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Apply@3/4 t.dyn#0/5 e.X#0/2 t.X#0/7 >/1
-  // closed e.X#0 as range 2
-  //DEBUG: t.dyn#0: 5
-  //DEBUG: t.X#0: 7
-  //DEBUG: e.X#0: 2
+  // </0 & Apply@3/4 t.dyn0/5 e.X/2 t.X/7 >/1
+  // closed e.X as range 2
+  //DEBUG: t.dyn0: 5
+  //DEBUG: t.X: 7
+  //DEBUG: e.X: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn#0/5 AsIs: e.X#0/2 AsIs: t.X#0/7 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn0/5 AsIs: e.X/2 AsIs: t.X/7 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Apply_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -30116,14 +30116,14 @@ static refalrts::FnResult func_gen_Apply_Z4(refalrts::VM *vm, refalrts::Iter arg
   // issue here memory for vars with 17 elems
   refalrts::Iter context[17];
   refalrts::zeros( context, 17 );
-  // </0 & Apply@4/4 e.new#0/2 >/1
+  // </0 & Apply@4/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & Apply@4/4 t.new#1/5 e.new#2/2 t.new#3/9 t.new#4/7 >/1
+  // closed e.new as range 2
+  // </0 & Apply@4/4 t.new1/5 e.new2/2 t.new3/9 t.new4/7 >/1
   context[6] = refalrts::tvar_left( context[5], context[2], context[3] );
   if( ! context[6] )
     return refalrts::cRecognitionImpossible;
@@ -30133,22 +30133,22 @@ static refalrts::FnResult func_gen_Apply_Z4(refalrts::VM *vm, refalrts::Iter arg
   context[10] = refalrts::tvar_right( context[9], context[2], context[3] );
   if( ! context[10] )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#2 as range 2
+  // closed e.new2 as range 2
   do {
-    // </0 & Apply@4/4 s.Fn#1/5 e.X#0/11 t.X#0/9 t.X0#0/7 >/1
+    // </0 & Apply@4/4 s.Fn/5 e.X/11 t.X/9 t.X0/7 >/1
     context[11] = context[2];
     context[12] = context[3];
     if( ! refalrts::svar_term( context[5], context[5] ) )
       continue;
-    // closed e.X#0 as range 11
-    //DEBUG: t.X#0: 9
-    //DEBUG: t.X0#0: 7
-    //DEBUG: s.Fn#1: 5
-    //DEBUG: e.X#0: 11
+    // closed e.X as range 11
+    //DEBUG: t.X: 9
+    //DEBUG: t.X0: 7
+    //DEBUG: s.Fn: 5
+    //DEBUG: e.X: 11
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn#1/5 AsIs: e.X#0/11 AsIs: t.X#0/9 AsIs: t.X0#0/7 HalfReuse: & $table/1 } >/13 Tile{ ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & __Meta_Mu/4 AsIs: s.Fn/5 AsIs: e.X/11 AsIs: t.X/9 AsIs: t.X0/7 HalfReuse: & $table/1 } >/13 Tile{ ]] }
     refalrts::alloc_close_call(vm, context[13]);
     refalrts::update_name(context[4], functions[efunc_u_u_Metau_Mu]);
     refalrts::reinit_name(context[1], functions[efunc_d_table]);
@@ -30164,27 +30164,27 @@ static refalrts::FnResult func_gen_Apply_Z4(refalrts::VM *vm, refalrts::Iter arg
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & Apply@4/4 (/5 t.Closure#1/15 e.Bounded#1/13 )/6 e.X#0/11 t.X#0/9 t.X0#0/7 >/1
+    // </0 & Apply@4/4 (/5 t.Closure/15 e.Bounded/13 )/6 e.X/11 t.X/9 t.X0/7 >/1
     context[11] = context[2];
     context[12] = context[3];
     context[13] = 0;
     context[14] = 0;
     if( ! refalrts::brackets_term( context[13], context[14], context[5] ) )
       continue;
-    // closed e.X#0 as range 11
+    // closed e.X as range 11
     context[16] = refalrts::tvar_left( context[15], context[13], context[14] );
     if( ! context[16] )
       continue;
-    // closed e.Bounded#1 as range 13
-    //DEBUG: t.X#0: 9
-    //DEBUG: t.X0#0: 7
-    //DEBUG: e.X#0: 11
-    //DEBUG: t.Closure#1: 15
-    //DEBUG: e.Bounded#1: 13
+    // closed e.Bounded as range 13
+    //DEBUG: t.X: 9
+    //DEBUG: t.X0: 7
+    //DEBUG: e.X: 11
+    //DEBUG: t.Closure: 15
+    //DEBUG: e.Bounded: 13
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} (/5 {REMOVED TILE} {REMOVED TILE} )/6 {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply@4/4 } Tile{ AsIs: t.Closure#1/15 } Tile{ AsIs: e.Bounded#1/13 } Tile{ AsIs: e.X#0/11 } Tile{ AsIs: t.X#0/9 AsIs: t.X0#0/7 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 AsIs: & Apply@4/4 } Tile{ AsIs: t.Closure/15 } Tile{ AsIs: e.Bounded/13 } Tile{ AsIs: e.X/11 } Tile{ AsIs: t.X/9 AsIs: t.X0/7 AsIs: >/1 ]] }
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
     refalrts::Iter trash_prev = arg_begin->prev;
@@ -30198,16 +30198,16 @@ static refalrts::FnResult func_gen_Apply_Z4(refalrts::VM *vm, refalrts::Iter arg
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & Apply@4/4 t.dyn#0/5 e.X#0/2 t.X#0/9 t.X0#0/7 >/1
-  // closed e.X#0 as range 2
-  //DEBUG: t.dyn#0: 5
-  //DEBUG: t.X#0: 9
-  //DEBUG: t.X0#0: 7
-  //DEBUG: e.X#0: 2
+  // </0 & Apply@4/4 t.dyn0/5 e.X/2 t.X/9 t.X0/7 >/1
+  // closed e.X as range 2
+  //DEBUG: t.dyn0: 5
+  //DEBUG: t.X: 9
+  //DEBUG: t.X0: 7
+  //DEBUG: e.X: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE}
-  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn#0/5 AsIs: e.X#0/2 AsIs: t.X#0/9 AsIs: t.X0#0/7 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ AsIs: </0 Reuse: & Apply@0/4 AsIs: t.dyn0/5 AsIs: e.X/2 AsIs: t.X/9 AsIs: t.X0/7 AsIs: >/1 ]] }
   refalrts::update_name(context[4], functions[efunc_gen_Apply_Z0]);
   refalrts::push_stack( vm, context[1] );
   refalrts::push_stack( vm, context[0] );
@@ -30226,14 +30226,14 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z1(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & DoMapAccum$1=1@1/4 e.new#0/2 >/1
+  // </0 & DoMapAccum$1=1@1/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoMapAccum$1=1@1/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & DoMapAccum$1=1@1/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -30246,31 +30246,31 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z1(refalrts::VM *vm, refalrts:
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 2
   do {
-    // </0 & DoMapAccum$1=1@1/4 (/7 e.Scanned0#1/13 )/8 (/11 e.Tail0#1/15 )/12 t.Acc#2/19 e.StepScanned#2/17 >/1
+    // </0 & DoMapAccum$1=1@1/4 (/7 e.Scanned0/13 )/8 (/11 e.Tail0/15 )/12 t.Acc$a/19 e.StepScanned/17 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[2];
     context[18] = context[3];
-    // closed e.Scanned0#1 as range 13
-    // closed e.Tail0#1 as range 15
+    // closed e.Scanned0 as range 13
+    // closed e.Tail0 as range 15
     context[20] = refalrts::tvar_left( context[19], context[17], context[18] );
     if( ! context[20] )
       continue;
-    // closed e.StepScanned#2 as range 17
-    //DEBUG: e.Scanned0#1: 13
-    //DEBUG: e.Tail0#1: 15
-    //DEBUG: t.Acc#2: 19
-    //DEBUG: e.StepScanned#2: 17
+    // closed e.StepScanned as range 17
+    //DEBUG: e.Scanned0: 13
+    //DEBUG: e.Tail0: 15
+    //DEBUG: t.Acc$a: 19
+    //DEBUG: e.StepScanned: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 } Tile{ AsIs: t.Acc#2/19 } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned0#1/13 } Tile{ AsIs: e.StepScanned#2/17 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Tail0#1/15 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@1/4 } Tile{ AsIs: t.Acc$a/19 } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned0/13 } Tile{ AsIs: e.StepScanned/17 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Tail0/15 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z1]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -30289,17 +30289,17 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z1(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum$1=1@1/4 (/7 e.Scanned0#1/5 )/8 (/11 e.Tail0#1/9 )/12 e.dyn#0/2 >/1
-  // closed e.Scanned0#1 as range 5
-  // closed e.Tail0#1 as range 9
-  // closed e.dyn#0 as range 2
-  //DEBUG: e.Scanned0#1: 5
-  //DEBUG: e.Tail0#1: 9
-  //DEBUG: e.dyn#0: 2
+  // </0 & DoMapAccum$1=1@1/4 (/7 e.Scanned0/5 )/8 (/11 e.Tail0/9 )/12 e.dyn/2 >/1
+  // closed e.Scanned0 as range 5
+  // closed e.Tail0 as range 9
+  // closed e.dyn as range 2
+  //DEBUG: e.Scanned0: 5
+  //DEBUG: e.Tail0: 9
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </13 Tile{ HalfReuse: & DoMapAccum$1=1@0/0 Reuse: & GenCommand-Globals@0/4 AsIs: (/7 AsIs: e.Scanned0#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Tail0#1/9 AsIs: )/12 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </13 Tile{ HalfReuse: & DoMapAccum$1=1@0/0 Reuse: & GenCommand-Globals@0/4 AsIs: (/7 AsIs: e.Scanned0/5 AsIs: )/8 AsIs: (/11 AsIs: e.Tail0/9 AsIs: )/12 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[13]);
   refalrts::reinit_name(context[0], functions[efunc_gen_DoMapAccum_S1A1Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_Globals_Z0]);
@@ -30327,14 +30327,14 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z2(refalrts::VM *vm, refalrts:
   // issue here memory for vars with 21 elems
   refalrts::Iter context[21];
   refalrts::zeros( context, 21 );
-  // </0 & DoMapAccum$1=1@2/4 e.new#0/2 >/1
+  // </0 & DoMapAccum$1=1@2/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & DoMapAccum$1=1@2/4 (/7 e.new#1/5 )/8 (/11 e.new#2/9 )/12 e.new#3/2 >/1
+  // closed e.new as range 2
+  // </0 & DoMapAccum$1=1@2/4 (/7 e.new1/5 )/8 (/11 e.new2/9 )/12 e.new3/2 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -30347,31 +30347,31 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z2(refalrts::VM *vm, refalrts:
   if( ! context[11] )
     return refalrts::cRecognitionImpossible;
   refalrts::bracket_pointers(context[11], context[12]);
-  // closed e.new#1 as range 5
-  // closed e.new#2 as range 9
-  // closed e.new#3 as range 2
+  // closed e.new1 as range 5
+  // closed e.new2 as range 9
+  // closed e.new3 as range 2
   do {
-    // </0 & DoMapAccum$1=1@2/4 (/7 e.Scanned0#1/13 )/8 (/11 e.Tail0#1/15 )/12 t.Acc#2/19 e.StepScanned#2/17 >/1
+    // </0 & DoMapAccum$1=1@2/4 (/7 e.Scanned0/13 )/8 (/11 e.Tail0/15 )/12 t.Acc$a/19 e.StepScanned/17 >/1
     context[13] = context[5];
     context[14] = context[6];
     context[15] = context[9];
     context[16] = context[10];
     context[17] = context[2];
     context[18] = context[3];
-    // closed e.Scanned0#1 as range 13
-    // closed e.Tail0#1 as range 15
+    // closed e.Scanned0 as range 13
+    // closed e.Tail0 as range 15
     context[20] = refalrts::tvar_left( context[19], context[17], context[18] );
     if( ! context[20] )
       continue;
-    // closed e.StepScanned#2 as range 17
-    //DEBUG: e.Scanned0#1: 13
-    //DEBUG: e.Tail0#1: 15
-    //DEBUG: t.Acc#2: 19
-    //DEBUG: e.StepScanned#2: 17
+    // closed e.StepScanned as range 17
+    //DEBUG: e.Scanned0: 13
+    //DEBUG: e.Tail0: 15
+    //DEBUG: t.Acc$a: 19
+    //DEBUG: e.StepScanned: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} (/7 {REMOVED TILE} )/8 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 } Tile{ AsIs: t.Acc#2/19 } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned0#1/13 } Tile{ AsIs: e.StepScanned#2/17 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Tail0#1/15 } Tile{ AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & DoMapAccum@2/4 } Tile{ AsIs: t.Acc$a/19 } Tile{ AsIs: (/11 } Tile{ AsIs: e.Scanned0/13 } Tile{ AsIs: e.StepScanned/17 } Tile{ AsIs: )/12 } Tile{ AsIs: e.Tail0/15 } Tile{ AsIs: >/1 ]] }
     refalrts::update_name(context[4], functions[efunc_gen_DoMapAccum_Z2]);
     refalrts::push_stack( vm, context[1] );
     refalrts::push_stack( vm, context[0] );
@@ -30390,17 +30390,17 @@ static refalrts::FnResult func_gen_DoMapAccum_S1A1Z2(refalrts::VM *vm, refalrts:
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & DoMapAccum$1=1@2/4 (/7 e.Scanned0#1/5 )/8 (/11 e.Tail0#1/9 )/12 e.dyn#0/2 >/1
-  // closed e.Scanned0#1 as range 5
-  // closed e.Tail0#1 as range 9
-  // closed e.dyn#0 as range 2
-  //DEBUG: e.Scanned0#1: 5
-  //DEBUG: e.Tail0#1: 9
-  //DEBUG: e.dyn#0: 2
+  // </0 & DoMapAccum$1=1@2/4 (/7 e.Scanned0/5 )/8 (/11 e.Tail0/9 )/12 e.dyn/2 >/1
+  // closed e.Scanned0 as range 5
+  // closed e.Tail0 as range 9
+  // closed e.dyn as range 2
+  //DEBUG: e.Scanned0: 5
+  //DEBUG: e.Tail0: 9
+  //DEBUG: e.dyn: 2
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ } </13 Tile{ HalfReuse: & DoMapAccum$1=1@0/0 Reuse: & CalcLabelsOffsets\1@0/4 AsIs: (/7 AsIs: e.Scanned0#1/5 AsIs: )/8 AsIs: (/11 AsIs: e.Tail0#1/9 AsIs: )/12 AsIs: e.dyn#0/2 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ } </13 Tile{ HalfReuse: & DoMapAccum$1=1@0/0 Reuse: & CalcLabelsOffsets\1@0/4 AsIs: (/7 AsIs: e.Scanned0/5 AsIs: )/8 AsIs: (/11 AsIs: e.Tail0/9 AsIs: )/12 AsIs: e.dyn/2 AsIs: >/1 ]] }
   refalrts::alloc_open_call(vm, context[13]);
   refalrts::reinit_name(context[0], functions[efunc_gen_DoMapAccum_S1A1Z0]);
   refalrts::update_name(context[4], functions[efunc_gen_CalcLabelsOffsets_L1Z0]);
@@ -30428,14 +30428,14 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   // issue here memory for vars with 36 elems
   refalrts::Iter context[36];
   refalrts::zeros( context, 36 );
-  // </0 & GenCommand-Globals*4/4 e.new#0/2 >/1
+  // </0 & GenCommand-Globals*4/4 e.new/2 >/1
   context[0] = arg_begin;
   context[1] = arg_end;
   context[2] = 0;
   context[3] = 0;
   context[4] = refalrts::call_left( context[2], context[3], context[0], context[1] );
-  // closed e.new#0 as range 2
-  // </0 & GenCommand-Globals*4/4 (/7 e.new#1/5 )/8 (/11 s.new#2/13 s.new#3/14 e.new#4/9 )/12 >/1
+  // closed e.new as range 2
+  // </0 & GenCommand-Globals*4/4 (/7 e.new1/5 )/8 (/11 s.new2/13 s.new3/14 e.new4/9 )/12 >/1
   context[5] = 0;
   context[6] = 0;
   context[7] = refalrts::brackets_left( context[5], context[6], context[2], context[3] );
@@ -30450,14 +30450,14 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::bracket_pointers(context[11], context[12]);
   if( ! refalrts::empty_seq( context[2], context[3] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#1 as range 5
+  // closed e.new1 as range 5
   if( ! refalrts::svar_left( context[13], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
   if( ! refalrts::svar_left( context[14], context[9], context[10] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#4 as range 9
+  // closed e.new4 as range 9
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels-B#1/20 (/26 s.Label#1/28 s.Offset#1/29 )/27 e.Labels-E#1/22 )/8 (/11 # CmdInterpretFuncDescr/13 s.ScopeClass#1/14 e.Name#1/17 s.Label#1/19 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels-B/20 (/26 s.Label/28 s.Offset/29 )/27 e.Labels-E/22 )/8 (/11 # CmdInterpretFuncDescr/13 s.ScopeClass/14 e.Name/17 s.Label/19 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
@@ -30466,7 +30466,7 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
       continue;
     if( ! refalrts::svar_right( context[19], context[17], context[18] ) )
       continue;
-    // closed e.Name#1 as range 17
+    // closed e.Name as range 17
     context[20] = 0;
     context[21] = 0;
     refalrts::start_e_loop(vm);
@@ -30481,21 +30481,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
       refalrts::bracket_pointers(context[26], context[27]);
       if( ! refalrts::repeated_stvar_left( vm, context[28], context[19], context[24], context[25] ) )
         continue;
-      // closed e.Labels-E#1 as range 22
+      // closed e.Labels-E as range 22
       if( ! refalrts::svar_left( context[29], context[24], context[25] ) )
         continue;
       if( ! refalrts::empty_seq( context[24], context[25] ) )
         continue;
-      //DEBUG: s.ScopeClass#1: 14
-      //DEBUG: s.Label#1: 19
-      //DEBUG: e.Name#1: 17
-      //DEBUG: e.Labels-B#1: 20
-      //DEBUG: e.Labels-E#1: 22
-      //DEBUG: s.Offset#1: 29
+      //DEBUG: s.ScopeClass: 14
+      //DEBUG: s.Label: 19
+      //DEBUG: e.Name: 17
+      //DEBUG: e.Labels-B: 20
+      //DEBUG: e.Labels-E: 22
+      //DEBUG: s.Offset: 29
 
       refalrts::reset_allocator(vm);
-      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label#1/19 {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels-B#1/20 AsIs: (/26 AsIs: s.Label#1/28 AsIs: s.Offset#1/29 AsIs: )/27 AsIs: e.Labels-E#1/22 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@5/13 } (/30 Tile{ AsIs: </0 Reuse: & NameWithSign-Bytes/4 } Tile{ AsIs: s.ScopeClass#1/14 } Tile{ AsIs: e.Name#1/17 } >/31 )/32 </33 & PutWordLE/34 s.Offset#1/29/35 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} s.Label/19 {REMOVED TILE}
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels-B/20 AsIs: (/26 AsIs: s.Label/28 AsIs: s.Offset/29 AsIs: )/27 AsIs: e.Labels-E/22 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@5/13 } (/30 Tile{ AsIs: </0 Reuse: & NameWithSign-Bytes/4 } Tile{ AsIs: s.ScopeClass/14 } Tile{ AsIs: e.Name/17 } >/31 )/32 </33 & PutWordLE/34 s.Offset/29/35 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_open_bracket(vm, context[30]);
       refalrts::alloc_close_call(vm, context[31]);
       refalrts::alloc_close_bracket(vm, context[32]);
@@ -30531,7 +30531,7 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/15 )/8 (/11 # CmdMetatable/13 s.ScopeClass#1/14 (/21 e.Name#1/19 )/22 e.Table#1/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/15 )/8 (/11 # CmdMetatable/13 s.ScopeClass/14 (/21 e.Name/19 )/22 e.Table/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
@@ -30544,17 +30544,17 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     if( ! context[21] )
       continue;
     refalrts::bracket_pointers(context[21], context[22]);
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 19
-    // closed e.Table#1 as range 17
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 19
-    //DEBUG: e.Table#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 19
+    // closed e.Table as range 17
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 19
+    //DEBUG: e.Table: 17
 
     refalrts::reset_allocator(vm);
-    //TRASH: {REMOVED TILE} s.ScopeClass#1/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4=1/4 AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: s.ScopeClass1 #14/11 HalfReuse: (/13 } Tile{ AsIs: e.Name#1/19 } Tile{ HalfReuse: )/21 } </23 Tile{ HalfReuse: & Lenw/22 AsIs: e.Table#1/17 HalfReuse: >/12 AsIs: >/1 ]] }
+    //TRASH: {REMOVED TILE} s.ScopeClass/14 {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
+    //RESULT: Tile{ [[ AsIs: </0 Reuse: & GenCommand-Globals$4=1/4 AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: s.ScopeClass14 /11 HalfReuse: (/13 } Tile{ AsIs: e.Name/19 } Tile{ HalfReuse: )/21 } </23 Tile{ HalfReuse: & Lenw/22 AsIs: e.Table/17 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_open_call(vm, context[23]);
     refalrts::update_name(context[4], functions[efunc_gen_GenCommandm_Globals_S4A1]);
     refalrts::reinit_svar( context[11], context[14] );
@@ -30580,31 +30580,31 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.new#5/15 )/8 (/11 # CmdSwapDescr/13 s.new#6/14 e.new#7/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.new5/15 )/8 (/11 # CmdSwapDescr/13 s.new6/14 e.new7/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdSwapDescr], context[13] ) )
       continue;
-    // closed e.new#5 as range 15
-    // closed e.new#7 as range 17
+    // closed e.new5 as range 15
+    // closed e.new7 as range 17
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30633,21 +30633,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@6/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30675,20 +30675,20 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdSwapDescr/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdSwapDescr/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@6/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@6/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -30712,31 +30712,31 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.new#5/15 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.new#6/14 e.new#7/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.new5/15 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.new6/14 e.new7/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdConditionFuncDecsrRasl], context[13] ) )
       continue;
-    // closed e.new#5 as range 15
-    // closed e.new#7 as range 17
+    // closed e.new5 as range 15
+    // closed e.new7 as range 17
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30765,21 +30765,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@7/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30807,20 +30807,20 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrRasl/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@7/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@7/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -30844,31 +30844,31 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.new#5/15 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.new#6/14 e.new#7/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.new5/15 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.new6/14 e.new7/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_CmdConditionFuncDecsrNative], context[13] ) )
       continue;
-    // closed e.new#5 as range 15
-    // closed e.new#7 as range 17
+    // closed e.new5 as range 15
+    // closed e.new7 as range 17
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Entry/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Entry/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@1/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z1]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30897,21 +30897,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     refalrts::stop_sentence(vm);
 
     do {
-      // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Local/14 e.Name#1/21 )/12 >/1
+      // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 # GN-Local/14 e.Name/21 )/12 >/1
       context[19] = context[15];
       context[20] = context[16];
       context[21] = context[17];
       context[22] = context[18];
       if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
         continue;
-      // closed e.Labels#1 as range 19
-      // closed e.Name#1 as range 21
-      //DEBUG: e.Labels#1: 19
-      //DEBUG: e.Name#1: 21
+      // closed e.Labels as range 19
+      // closed e.Name as range 21
+      //DEBUG: e.Labels: 19
+      //DEBUG: e.Name: 21
 
       refalrts::reset_allocator(vm);
       //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+      //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/19 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@8/13 HalfReuse: </14 } & Asciiz@2/23 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/21 } >/24 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
       refalrts::alloc_name(vm, context[23], functions[efunc_gen_Asciiz_Z2]);
       refalrts::alloc_close_call(vm, context[24]);
       refalrts::reinit_open_call(context[11]);
@@ -30939,20 +30939,20 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
     } while ( 0 );
     refalrts::stop_sentence(vm);
 
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.ScopeClass#1/14 e.Name#1/21 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/19 )/8 (/11 # CmdConditionFuncDecsrNative/13 s.ScopeClass/14 e.Name/21 )/12 >/1
     context[19] = context[15];
     context[20] = context[16];
     context[21] = context[17];
     context[22] = context[18];
-    // closed e.Labels#1 as range 19
-    // closed e.Name#1 as range 21
-    //DEBUG: s.ScopeClass#1: 14
-    //DEBUG: e.Labels#1: 19
-    //DEBUG: e.Name#1: 21
+    // closed e.Labels as range 19
+    // closed e.Name as range 21
+    //DEBUG: s.ScopeClass: 14
+    //DEBUG: e.Labels: 19
+    //DEBUG: e.Name: 21
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@8/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/21 HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/19 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@8/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/21 HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::reinit_open_bracket(context[0]);
     refalrts::reinit_close_bracket(context[4]);
     refalrts::reinit_open_call(context[7]);
@@ -30975,27 +30975,27 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals*4/4 (/7 e.new#5/5 )/8 (/11 # CmdNativeFuncDescr/13 s.new#6/14 e.new#7/9 )/12 >/1
+  // </0 & GenCommand-Globals*4/4 (/7 e.new5/5 )/8 (/11 # CmdNativeFuncDescr/13 s.new6/14 e.new7/9 )/12 >/1
   if( ! refalrts::ident_term( identifiers[ident_CmdNativeFuncDescr], context[13] ) )
     return refalrts::cRecognitionImpossible;
-  // closed e.new#5 as range 5
-  // closed e.new#7 as range 9
+  // closed e.new5 as range 5
+  // closed e.new7 as range 9
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Entry/14 e.Name#1/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Entry/14 e.Name/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Entry], context[14] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@1/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@1/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[19], functions[efunc_gen_Asciiz_Z1]);
     refalrts::alloc_close_call(vm, context[20]);
     refalrts::reinit_open_call(context[11]);
@@ -31024,21 +31024,21 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   refalrts::stop_sentence(vm);
 
   do {
-    // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Local/14 e.Name#1/17 )/12 >/1
+    // </0 & GenCommand-Globals*4/4 (/7 e.Labels/15 )/8 (/11 # CmdNativeFuncDescr/13 # GN-Local/14 e.Name/17 )/12 >/1
     context[15] = context[5];
     context[16] = context[6];
     context[17] = context[9];
     context[18] = context[10];
     if( ! refalrts::ident_term( identifiers[ident_GNm_Local], context[14] ) )
       continue;
-    // closed e.Labels#1 as range 15
-    // closed e.Name#1 as range 17
-    //DEBUG: e.Labels#1: 15
-    //DEBUG: e.Name#1: 17
+    // closed e.Labels as range 15
+    // closed e.Name as range 17
+    //DEBUG: e.Labels: 15
+    //DEBUG: e.Name: 17
 
     refalrts::reset_allocator(vm);
     //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels#1/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@2/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name#1/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
+    //RESULT: Tile{ [[ } Tile{ AsIs: (/7 AsIs: e.Labels/15 AsIs: )/8 HalfReuse: </11 HalfReuse: & PutBlock@9/13 HalfReuse: </14 } & Asciiz@2/19 Tile{ AsIs: </0 Reuse: & DisplayName/4 } Tile{ AsIs: e.Name/17 } >/20 Tile{ HalfReuse: >/12 AsIs: >/1 ]] }
     refalrts::alloc_name(vm, context[19], functions[efunc_gen_Asciiz_Z2]);
     refalrts::alloc_close_call(vm, context[20]);
     refalrts::reinit_open_call(context[11]);
@@ -31066,16 +31066,16 @@ static refalrts::FnResult func_gen_GenCommandm_Globals_D4(refalrts::VM *vm, refa
   } while ( 0 );
   refalrts::stop_sentence(vm);
 
-  // </0 & GenCommand-Globals*4/4 (/7 e.Labels#1/5 )/8 (/11 # CmdNativeFuncDescr/13 s.ScopeClass#1/14 e.Name#1/9 )/12 >/1
-  // closed e.Labels#1 as range 5
-  // closed e.Name#1 as range 9
-  //DEBUG: s.ScopeClass#1: 14
-  //DEBUG: e.Labels#1: 5
-  //DEBUG: e.Name#1: 9
+  // </0 & GenCommand-Globals*4/4 (/7 e.Labels/5 )/8 (/11 # CmdNativeFuncDescr/13 s.ScopeClass/14 e.Name/9 )/12 >/1
+  // closed e.Labels as range 5
+  // closed e.Name as range 9
+  //DEBUG: s.ScopeClass: 14
+  //DEBUG: e.Labels: 5
+  //DEBUG: e.Name: 9
 
   refalrts::reset_allocator(vm);
   //TRASH: {REMOVED TILE} {REMOVED TILE} {REMOVED TILE} {REMOVED TILE}
-  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels#1/5 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@9/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass#1/14 AsIs: e.Name#1/9 HalfReuse: >/12 AsIs: >/1 ]] }
+  //RESULT: Tile{ [[ HalfReuse: (/0 } Tile{ AsIs: e.Labels/5 } Tile{ HalfReuse: )/4 HalfReuse: </7 } Tile{ HalfReuse: & PutBlock@9/8 HalfReuse: </11 HalfReuse: & NameWithSign-Bytes*2/13 AsIs: s.ScopeClass/14 AsIs: e.Name/9 HalfReuse: >/12 AsIs: >/1 ]] }
   refalrts::reinit_open_bracket(context[0]);
   refalrts::reinit_close_bracket(context[4]);
   refalrts::reinit_open_call(context[7]);
